@@ -1,0 +1,1 @@
+set_config -loc 18 0 0 CFG_RCOSC_EN 1'b1

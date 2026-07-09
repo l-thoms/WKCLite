@@ -1,0 +1,29 @@
+{
+    "language": 0,
+    "keep_advertise": false,
+    "power_save": 0,
+    "display": {
+        "brightness": 3,
+        "direction": 0,
+        "output_mode": 0,
+        "capture_index": 0,
+        "capture_osd": false,
+        "position": [
+            {
+                "x_offset": 0,
+                "y_offset": 0,
+                "output_timing": 0
+            },
+            {
+                "x_offset": 0,
+                "y_offset": 0,
+                "output_timing": 0
+            }
+        ]
+    },
+    "peripherals": {
+        "remember_state": false,
+        "fan": 0,
+        "eye": 0
+    }
+}

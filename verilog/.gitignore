@@ -1,0 +1,17 @@
+alta_db/
+alta_logs/
+*.bin
+*.inc
+*.ip
+*.qpf
+*.qsf
+*.sdc
+*.tcl
+*.vcd
+*.vqm
+*.vvp
+*.txt
+*.post.asf
+*.post_map.asf
+*.pre.asf
+*.pre_map.asf

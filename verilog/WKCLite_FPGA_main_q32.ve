@@ -1,0 +1,31 @@
+CLKOSC      PIN_OSC
+
+CO1       PIN_31
+BPO1      PIN_23
+BCLK1     PIN_18
+I2S1      PIN_15
+Q11       PIN_7
+Q12       PIN_8
+
+CO2       PIN_27
+BPO2      PIN_26
+BCLK2     PIN_14
+I2S2      PIN_13
+Q21       PIN_9
+Q22       PIN_10
+
+SCL       PIN_22
+SDA       PIN_21
+
+LOCKA     PIN_11
+LOCKB     PIN_12
+
+BRIP      PIN_2
+BRIN      PIN_3
+STDBY     PIN_19
+CHRG      PIN_20
+PWDN      PIN_29
+DISP      PIN_28
+
+CSEL1     PIN_1
+CSEL2     PIN_5

@@ -1,0 +1,398 @@
+{
+    "language_list": ["en_us", "zh_cn", "zh_tw"],
+    "language_name": {
+        "en_us": "English",
+        "zh_cn": "简体中文",
+        "zh_tw": "繁體中文"
+    },
+    "main_battery_disconnected_warning": {
+        "en_us": "Warning: The current device is not connected to a battery. Please ensure that the connected power source (such as a power bank) provides stable power to avoid accidental shutdown.",
+        "zh_cn": "警告: 当前设备未连接电池，请确保连接的电源（如充电宝）供电稳定，以免意外关机。",
+        "zh_tw": "警告: 當前設備未連接電池，請確保連接的電源（如移動電源）供電穩定，以免意外關機。"
+    },
+    "menu_device_info": {
+        "en_us": "Info",
+        "zh_cn": "基本信息",
+        "zh_tw": "基本訊息"
+    },
+    "menu_settings": {
+        "en_us": "Settings",
+        "zh_cn": "系统设置",
+        "zh_tw": "系統設定"
+    },
+    "menu_camera": {
+        "en_us": "Camera",
+        "zh_cn": "相机",
+        "zh_tw": "相機"
+    },
+    "menu_files": {
+        "en_us": "Files",
+        "zh_cn": "文件管理",
+        "zh_tw": "文件管理"
+    },
+    "menu_brightness": {
+        "en_us": "Brightness",
+        "zh_cn": "亮度",
+        "zh_tw": "亮度"
+    },
+    "menu_tweaking": {
+        "en_us": "Tweaking",
+        "zh_cn": "正在调节",
+        "zh_tw": "正在調節"
+    },
+    "menu_off": {
+        "en_us": "Off",
+        "zh_cn": "关",
+        "zh_tw": "關"
+    },
+    "menu_fan": {
+        "en_us": "Fan",
+        "zh_cn": "风扇",
+        "zh_tw": "風扇"
+    },
+    "menu_fan_off": {
+        "en_us": "Fan",
+        "zh_cn": "风扇",
+        "zh_tw": "風扇"
+    },
+    "menu_eye": {
+        "en_us": "Eye",
+        "zh_cn": "发光眼",
+        "zh_tw": "發光眼"
+    },
+    "menu_locked": {
+        "en_us": "Locked",
+        "zh_cn": "已锁定",
+        "zh_tw": "已鎖定"
+    },
+    "menu_unlocked": {
+        "en_us": "Unlocked",
+        "zh_cn": "未锁定",
+        "zh_tw": "未鎖定"
+    },
+    "menu_lock_too_fast": {
+        "en_us": "Please try again later.",
+        "zh_cn": "操作太快，请稍候再试",
+        "zh_tw": "操作太快，請稍候再試"
+    },
+    "menu_lock_check_battery": {
+        "en_us": "Please check your battery.",
+        "zh_cn": "请确保电量充足再上锁",
+        "zh_tw": "請確保電量充足再上鎖"
+    },
+    "menu_capture_under_development": {
+        "en_us": "Camera capture is still under development.",
+        "zh_cn": "拍摄功能仍在开发中，敬请期待。",
+        "zh_tw": "拍摄功能仍在開發中，敬請期待。"
+    },
+    "device_info_title": {
+        "en_us": "Device Information",
+        "zh_cn": "设备信息",
+        "zh_tw": "設備資訊"
+    },
+    "device_info_device_name": {
+        "en_us": "Device Name: ",
+        "zh_cn": "设备名称: ",
+        "zh_tw": "設備名稱: "
+    },
+    "device_info_owner": {
+        "en_us": "Owner: ",
+        "zh_cn": "持有者: ",
+        "zh_tw": "持有者: "
+    },
+    "device_info_character": {
+        "en_us": "Character: ",
+        "zh_cn": "角色: ",
+        "zh_tw": "角色: "
+    },
+    "device_info_manufacturer": {
+        "en_us": "Manufacturer: ",
+        "zh_cn": "店家: ",
+        "zh_tw": "店家: "
+    },
+    "device_info_model": {
+        "en_us": "Device Model: ",
+        "zh_cn": "设备型号: ",
+        "zh_tw": "設備型號: "
+    },
+    "device_info_mac_address": {
+        "en_us": "MAC Address: ",
+        "zh_cn": "MAC地址: ",
+        "zh_tw": "MAC位址: "
+    },
+    "files_empty_directory": {
+        "en_us": "Capture directory is empty",
+        "zh_cn": "相册目录为空",
+        "zh_tw": "相冊目錄為空"
+    },
+    "files_access_failed": {
+        "en_us": "Failed to access capture directory",
+        "zh_cn": "访问相册目录失败",
+        "zh_tw": "存取相冊目錄失敗"
+    },
+    "files_insert_sd_card": {
+        "en_us": "Please insert your SD card",
+        "zh_cn": "请插入SD卡",
+        "zh_tw": "請插入SD卡"
+    },
+    "files_last_modified": {
+        "en_us": "Last Modified: ",
+        "zh_cn": "修改时间: ",
+        "zh_tw": "修改時間: "
+    },
+    "files_unknown": {
+        "en_us": "Unknown",
+        "zh_cn": "未知",
+        "zh_tw": "未知"
+    },
+    "files_file_size": {
+        "en_us": "File Size: ",
+        "zh_cn": "文件大小: ",
+        "zh_tw": "檔案大小: "
+    },
+    "files_resolution": {
+        "en_us": "Resolution: ",
+        "zh_cn": "图像尺寸: ",
+        "zh_tw": "影像尺寸: "
+    },
+    "files_delete": {
+        "en_us": "Delete",
+        "zh_cn": "删除",
+        "zh_tw": "刪除"
+    },
+    "files_delete_confirm": {
+        "en_us": "Are you sure to delete?",
+        "zh_cn": "是否删除?",
+        "zh_tw": "是否刪除?"
+    },
+    "files_delete_ok": {
+        "en_us": "Ok",
+        "zh_cn": "是",
+        "zh_tw": "是"
+    },
+    "files_delete_cancel": {
+        "en_us": "Cancel",
+        "zh_cn": "否",
+        "zh_tw": "否"
+    },
+    "settings_ok": {
+        "en_us": "Ok",
+        "zh_cn": "是",
+        "zh_tw": "是"
+    },
+    "settings_cancel": {
+        "en_us": "Cancel",
+        "zh_cn": "否",
+        "zh_tw": "否"
+    },
+    "settings_title": {
+        "en_us": "Settings",
+        "zh_cn": "设置",
+        "zh_tw": "設定"
+    },
+    "settings_display_settings": {
+        "en_us": "Display",
+        "zh_cn": "显示设置",
+        "zh_tw": "顯示設定"
+    },
+    "settings_misc_settings": {
+        "en_us": "Miscellaneous",
+        "zh_cn": "其他设置",
+        "zh_tw": "其他設定"
+    },
+    "settings_advanced_settings": {
+        "en_us": "Advanced",
+        "zh_cn": "高级设置",
+        "zh_tw": "進階設定"
+    },
+    "settings_screen_orientation": {
+        "en_us": "Screen Orientation",
+        "zh_cn": "屏幕方向",
+        "zh_tw": "螢幕方向"
+    },
+    "settings_output_mode": {
+        "en_us": "Output Mode",
+        "zh_cn": "输出模式",
+        "zh_tw": "輸出模式"
+    },
+    "settings_adjust_position": {
+        "en_us": "OSD Position Adjustment",
+        "zh_cn": "OSD图像位置调整",
+        "zh_tw": "OSD圖像位置調整"
+    },
+    "settings_capture_output": {
+        "en_us": "Capture Card Output Channel",
+        "zh_cn": "采集卡输出",
+        "zh_tw": "擷取輸出"
+    },
+    "settings_capture_osd": {
+        "en_us": "Capture Card with OSD",
+        "zh_cn": "采集卡包含OSD",
+        "zh_tw": "擷取包含OSD"
+    },
+    "settings_power_save": {
+        "en_us": "Power Save",
+        "zh_cn": "省电模式",
+        "zh_tw": "節電模式"
+    },
+    "settings_never": {
+        "en_us": "Never",
+        "zh_cn": "永不",
+        "zh_tw": "永不"
+    },
+    "settings_1min": {
+        "en_us": "1 Minute",
+        "zh_cn": "1分钟",
+        "zh_tw": "1分鐘"
+    },
+    "settings_5min": {
+        "en_us": "5 Minutes",
+        "zh_cn": "5分钟",
+        "zh_tw": "5分鐘"
+    },
+    "settings_10min": {
+        "en_us": "10 Minutes",
+        "zh_cn": "10分钟",
+        "zh_tw": "10分鐘"
+    },
+    "settings_keep_advertise": {
+        "en_us": "Keep Advertising",
+        "zh_cn": "连接后保持广播",
+        "zh_tw": "連接後保持廣播"
+    },
+    "settings_remember_peripherals": {
+        "en_us": "Remember Peripherals",
+        "zh_cn": "记忆外设状态",
+        "zh_tw": "記住週邊狀態"
+    },
+    "settings_clear_paired_devices": {
+        "en_us": "Clear Paired Devices",
+        "zh_cn": "清除连接设备",
+        "zh_tw": "清除配對裝置"
+    },
+    "settings_factory_reset": {
+        "en_us": "Factory Reset",
+        "zh_cn": "恢复出厂设置",
+        "zh_tw": "恢復原廠設定"
+    },
+    "settings_confirm_clear_devices": {
+        "en_us": "Are you sure to clear paired devices?",
+        "zh_cn": "确定清除连接设备?",
+        "zh_tw": "確定清除配對裝置?"
+    },
+    "settings_confirm_factory_reset": {
+        "en_us": "Are you sure to factory reset?",
+        "zh_cn": "确定恢复出厂设置?",
+        "zh_tw": "確定恢復原廠設定?"
+    },
+    "settings_horizontal": {
+        "en_us": "Horizontal",
+        "zh_cn": "横向",
+        "zh_tw": "橫向"
+    },
+    "settings_vertical": {
+        "en_us": "Vertical",
+        "zh_cn": "纵向",
+        "zh_tw": "縱向"
+    },
+    "settings_vertical_tiled": {
+        "en_us": "Vertical Tiled",
+        "zh_cn": "纵向拼接",
+        "zh_tw": "縱向拼接"
+    },
+    "settings_rising_edge": {
+        "en_us": "Rising Edge",
+        "zh_cn": "上升沿",
+        "zh_tw": "上升緣"
+    },
+    "settings_falling_edge": {
+        "en_us": "Falling Edge",
+        "zh_cn": "下降沿",
+        "zh_tw": "下降緣"
+    },
+    "settings_debug_mode": {
+        "en_us": "Debug",
+        "zh_cn": "调试模式",
+        "zh_tw": "除錯模式"
+    },
+    "settings_screen_id_1": {
+        "en_us": "#1",
+        "zh_cn": "屏1",
+        "zh_tw": "螢幕1"
+    },
+    "settings_screen_id_2": {
+        "en_us": "#2",
+        "zh_cn": "屏2",
+        "zh_tw": "螢幕2"
+    },
+    "settings_adjusting_screen1_position": {
+        "en_us": "Adjusting screen 1 position",
+        "zh_cn": "正在调整屏1输出位置",
+        "zh_tw": "正在調整螢幕1輸出位置"
+    },
+    "settings_adjusting_screen1_position_next": {
+        "en_us": "Press OK to adjust screen 1 timing",
+        "zh_cn": "按确认键调整屏1输出时序",
+        "zh_tw": "按確認鍵調整螢幕1輸出時序"
+    },
+    "settings_adjusting_screen1_timing": {
+        "en_us": "Adjusting screen 1 timing",
+        "zh_cn": "正在调整屏1输出时序",
+        "zh_tw": "正在調整螢幕1時序"
+    },
+    "settings_adjusting_screen1_timing_next": {
+        "en_us": "Press OK to adjust screen 2 position",
+        "zh_cn": "按确认键调整屏2输出位置",
+        "zh_tw": "按确认键調整螢幕2輸出位置"
+    },
+    "settings_adjusting_screen2_position": {
+        "en_us": "Adjusting screen 2 position",
+        "zh_cn": "正在调整屏2输出位置",
+        "zh_tw": "正在調整螢幕2位置"
+    },
+    "settings_adjusting_screen2_position_next": {
+        "en_us": "Press OK to adjust screen 2 timing",
+        "zh_cn": "按确认键调整屏2输出时序",
+        "zh_tw": "按確認鍵調整螢幕2輸出時序"
+    },
+    "settings_adjusting_screen2_timing": {
+        "en_us": "Adjusting screen 2 timing",
+        "zh_cn": "正在调整屏2输出时序",
+        "zh_tw": "正在調整螢幕2時序"
+    },
+    "settings_save_and_exit": {
+        "en_us": "Press OK to save and exit",
+        "zh_cn": "按确认键保存并退出",
+        "zh_tw": "按確認鍵儲存並離開"
+    },
+    "settings_language": {
+        "en_us": "Language",
+        "zh_cn": "语言",
+        "zh_tw": "語言"
+    },
+    "ble_passkey": {
+        "en_us": "Pass key: ",
+        "zh_cn": "验证码: ",
+        "zh_tw": "驗證碼: "
+    },
+    "ble_disconnect_previous_device": {
+        "en_us": "Please disconnect previous device",
+        "zh_cn": "请断开上一设备",
+        "zh_tw": "請斷開上一設備"
+    },
+    "ble_verification_success": {
+        "en_us": "Verification successed",
+        "zh_cn": "验证成功",
+        "zh_tw": "驗證成功"
+    },
+    "ble_verification_failed": {
+        "en_us": "Verification failed",
+        "zh_cn": "验证失败",
+        "zh_tw": "驗證失敗"
+    },
+    "ble_device_disconnected": {
+        "en_us": "Device disconnected",
+        "zh_cn": "设备断开连接",
+        "zh_tw": "設備斷開連接"
+    }
+}

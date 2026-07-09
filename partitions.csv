@@ -1,0 +1,8 @@
+# Name,   Type, SubType, Offset,  Size, Flags
+nvs,data,nvs,0x9000,0x5000,
+otadata,data,ota,0xE000,0x2000,
+app,app,ota_0,0x10000,0x200000,
+data_static,data,fat,0x210000,0x180000,
+data_fonts,data,fat,0x390000,0x400000,
+data_dynamic,data,littlefs,0x790000,0x860000,
+coredump,data,coredump,0xFF0000,0x10000,

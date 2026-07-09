@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "WkcResGen": {
+      "commandName": "Project",
+      "commandLineArgs": "images H:\\Develop\\Embedded\\WKCLite\\images_raw H:\\Develop\\Embedded\\WKCLite\\resources\\images"
+    }
+  }
+}

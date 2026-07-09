@@ -61,14 +61,15 @@ wire	AsyncReset_X10001_Y10003_GND;
 wire	AsyncReset_X10002_Y10001_GND;
 wire	AsyncReset_X10002_Y10002_GND;
 wire	AsyncReset_X10002_Y10003_GND;
-wire	AsyncReset_X10003_Y10001_GND;
 wire	AsyncReset_X10003_Y10002_GND;
 wire	AsyncReset_X10003_Y10003_GND;
 wire	AsyncReset_X10004_Y10001_GND;
 wire	AsyncReset_X10004_Y10002_GND;
 wire	AsyncReset_X10004_Y10003_GND;
+wire	AsyncReset_X10005_Y10001_GND;
 wire	AsyncReset_X10005_Y10002_GND;
 wire	AsyncReset_X10005_Y10003_GND;
+wire	AsyncReset_X10006_Y10001_GND;
 wire	AsyncReset_X10006_Y10002_GND;
 wire	AsyncReset_X10006_Y10003_GND;
 wire	AsyncReset_X10007_Y10001_GND;
@@ -77,12 +78,12 @@ wire	AsyncReset_X10007_Y10003_GND;
 wire	AsyncReset_X10008_Y10001_GND;
 wire	AsyncReset_X10008_Y10002_GND;
 wire	AsyncReset_X10008_Y10003_GND;
+wire	AsyncReset_X10009_Y10001_GND;
 wire	AsyncReset_X10009_Y10002_GND;
 wire	AsyncReset_X10009_Y10003_GND;
 wire	AsyncReset_X10010_Y10001_GND;
 wire	AsyncReset_X10010_Y10002_GND;
 wire	AsyncReset_X10010_Y10003_GND;
-wire	AsyncReset_X10011_Y10001_GND;
 wire	AsyncReset_X10011_Y10002_GND;
 wire	AsyncReset_X10011_Y10003_GND;
 wire	AsyncReset_X10012_Y10001_GND;
@@ -117,19 +118,18 @@ wire	[1:0] BCLK1_clk_q_dataa_combout;
 //wire	BCLK1_clk_q_dataa_combout[0];
 //wire	BCLK1_clk_q_dataa_combout[1];
 wire	BCLK1_i_o;
-wire	BCLK1_i_o_X10020_Y10001_SIG_VCC;
+wire	BCLK1_i_o_X10004_Y10001_SIG_VCC;
+wire	BCLK1_i_o_X10019_Y10003_SIG_VCC;
 wire	BCLK1_i_o_int;
 reg	BCLK2_clk_1_q;
-wire	BCLK2_clk__feeder__LutOut;
 reg	BCLK2_clk_q;
 wire	[1:0] BCLK2_clk_q_dataa_combout;
 //wire	BCLK2_clk_q_dataa_combout[0];
 //wire	BCLK2_clk_q_dataa_combout[1];
 wire	BCLK2_i_o;
-wire	BCLK2_i_o_X10003_Y10001_SIG_VCC;
 wire	BCLK2_i_o_X10004_Y10001_SIG_VCC;
-wire	BCLK2_i_o_X10010_Y10001_SIG_VCC;
-wire	BCLK2_i_o_X10020_Y10003_SIG_VCC;
+wire	BCLK2_i_o_X10014_Y10003_SIG_VCC;
+wire	BCLK2_i_o_X10019_Y10003_SIG_VCC;
 wire	[3:0] CHRG_i_o;
 //wire	CHRG_i_o[0];
 //wire	CHRG_i_o[1];
@@ -190,13 +190,12 @@ reg	CLKOSC_clk_21_q;
 wire	CLKOSC_clk_2__feeder__LutOut;
 reg	CLKOSC_clk_2_q;
 wire	CLKOSC_clk_2_q_A_1_Y;
-wire	CLKOSC_clk_2_q_A_1_Y__SyncLoad_X10011_Y10003_SIG;
-wire	CLKOSC_clk_2_q_A_1_Y__SyncLoad_X10017_Y10003_SIG;
+wire	CLKOSC_clk_2_q_A_1_Y__SyncLoad_X10016_Y10003_SIG;
+wire	CLKOSC_clk_2_q_A_1_Y__SyncLoad_X10019_Y10002_SIG;
 wire	CLKOSC_clk_2_q_A_2_Y;
-wire	CLKOSC_clk_2_q_A_2_Y__SyncLoad_X10001_Y10003_SIG;
+wire	CLKOSC_clk_2_q_A_2_Y__SyncLoad_X10016_Y10002_SIG;
 wire	CLKOSC_clk_2_q_A_3_Y;
-wire	CLKOSC_clk_2_q_A_3_Y__SyncLoad_X10016_Y10002_SIG;
-wire	CLKOSC_clk_2_q_A_3_Y__SyncLoad_X10017_Y10002_SIG;
+wire	CLKOSC_clk_2_q_A_3_Y__SyncLoad_X10009_Y10002_SIG;
 wire	[2:0] CLKOSC_clk_2_q_A_3_Y_dataa_1_combout;
 //wire	CLKOSC_clk_2_q_A_3_Y_dataa_1_combout[0];
 //wire	CLKOSC_clk_2_q_A_3_Y_dataa_1_combout[1];
@@ -207,7 +206,7 @@ wire	[3:0] CLKOSC_clk_2_q_A_3_Y_dataa_combout;
 //wire	CLKOSC_clk_2_q_A_3_Y_dataa_combout[2];
 //wire	CLKOSC_clk_2_q_A_3_Y_dataa_combout[3];
 wire	CLKOSC_clk_2_q_A_Y;
-wire	CLKOSC_clk_2_q_A_Y__SyncLoad_X10020_Y10002_SIG;
+wire	CLKOSC_clk_2_q_A_Y__SyncLoad_X10015_Y10002_SIG;
 wire	[3:0] CLKOSC_clk_2_q_dataa_combout;
 //wire	CLKOSC_clk_2_q_dataa_combout[0];
 //wire	CLKOSC_clk_2_q_dataa_combout[1];
@@ -259,55 +258,57 @@ wire	[1:0] CLKOSC_clk_q_dataa_combout;
 //wire	CLKOSC_clk_q_dataa_combout[0];
 //wire	CLKOSC_clk_q_dataa_combout[1];
 wire	CLKOSC_i_o;
-wire	CLKOSC_i_o_X10001_Y10002_SIG_VCC;
-wire	CLKOSC_i_o_X10004_Y10002_SIG_VCC;
-wire	CLKOSC_i_o_X10010_Y10002_SIG_VCC;
+wire	CLKOSC_i_o_X10005_Y10001_SIG_VCC;
+wire	CLKOSC_i_o_X10005_Y10002_SIG_VCC;
+wire	CLKOSC_i_o_X10006_Y10003_SIG_VCC;
+wire	CLKOSC_i_o_X10010_Y10001_SIG_VCC;
 wire	CLKOSC_i_o_X10010_Y10003_SIG_VCC;
-wire	CLKOSC_i_o_X10012_Y10002_SIG_VCC;
-wire	CLKOSC_i_o_X10016_Y10003_SIG_VCC;
-wire	\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10004_Y10001_SIG_SIG ;
+wire	CLKOSC_i_o_X10011_Y10002_SIG_VCC;
+wire	CLKOSC_i_o_X10017_Y10003_SIG_VCC;
+wire	CLKOSC_i_o_X10018_Y10001_SIG_VCC;
+wire	\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10001_Y10001_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10006_Y10001_SIG_SIG ;
 wire	\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10007_Y10001_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10015_Y10002_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10001_Y10001_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10011_Y10001_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10019_Y10002_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10011_Y10003_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10008_Y10001_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10009_Y10001_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10010_Y10002_SIG_SIG ;
 wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10001_Y10003_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10003_Y10002_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10005_Y10003_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10007_Y10003_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10008_Y10003_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10011_Y10003_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10017_Y10002_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10002_Y10002_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10009_Y10002_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10014_Y10002_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10015_Y10002_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10016_Y10002_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10016_Y10003_SIG_SIG ;
 wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10020_Y10002_SIG_SIG ;
 wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10001_Y10003_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10003_Y10002_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10005_Y10003_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10007_Y10003_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10008_Y10003_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10002_Y10002_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10009_Y10002_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10014_Y10002_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10015_Y10002_SIG_SIG ;
 wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10016_Y10002_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10017_Y10003_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10019_Y10002_SIG_SIG ;
 wire	\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10020_Y10002_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10002_Y10001_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10003_Y10001_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10014_Y10001_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10008_Y10001_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10018_Y10002_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10017_Y10001_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10018_Y10001_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10019_Y10001_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|sda_d_0_11_q_B_Y_A_Y_X10011_Y10003_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10010_Y10001_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10018_Y10003_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10002_Y10001_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10005_Y10001_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10014_Y10003_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10007_Y10002_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10016_Y10001_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|sda_d_0_11_q_B_Y_A_Y_X10015_Y10001_SIG_SIG ;
 wire	\CLKOSC_i_o__i2c_device|sda_d_0_11_q_B_Y_A_Y_X10016_Y10001_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|sda_d_0_11_q_B_Y_A_Y_X10017_Y10001_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_X10019_Y10001_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_X10018_Y10001_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|sda_d_0_11_q_B_Y_A_Y_X10019_Y10002_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_X10007_Y10002_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_X10017_Y10001_SIG_SIG ;
 wire	\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10003_Y10003_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10004_Y10003_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10005_Y10002_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10006_Y10003_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10012_Y10002_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10005_Y10003_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10008_Y10003_SIG_SIG ;
 wire	\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10012_Y10003_SIG_SIG ;
-wire	\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10014_Y10003_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10015_Y10003_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10020_Y10001_SIG_SIG ;
+wire	\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10020_Y10003_SIG_SIG ;
 wire	CLKOSC_i_o_int;
 wire	[3:0] CO1_i_o;
 //wire	CO1_i_o[0];
@@ -335,17 +336,18 @@ wire	[1:0] DISP_i_o;
 //wire	DISP_i_o[0];
 //wire	DISP_i_o[1];
 wire	GCLK;
-wire	GCLK_X10002_Y10002_SIG_VCC;
-wire	GCLK_X10006_Y10002_SIG_VCC;
-wire	GCLK_X10008_Y10002_SIG_VCC;
+wire	GCLK_X10001_Y10002_SIG_VCC;
+wire	GCLK_X10012_Y10002_SIG_VCC;
+wire	GCLK_X10014_Y10001_SIG_VCC;
 wire	GCLK_X10015_Y10001_SIG_VCC;
-wire	GCLK_X10016_Y10001_SIG_VCC;
-wire	\GCLK__i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_B_Y_B_Y_X10018_Y10003_SIG_SIG ;
-wire	\GCLK__i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_X10009_Y10003_SIG_SIG ;
-wire	\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10019_Y10003_SIG_SIG ;
-wire	\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10008_Y10002_SIG_SIG ;
-wire	\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10015_Y10003_SIG_SIG ;
-wire	\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10007_Y10002_SIG_SIG ;
+wire	GCLK_X10016_Y10003_SIG_VCC;
+wire	GCLK_X10019_Y10001_SIG_VCC;
+wire	\GCLK__i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_B_Y_B_Y_X10007_Y10003_SIG_SIG ;
+wire	\GCLK__i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_X10002_Y10003_SIG_SIG ;
+wire	\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10004_Y10003_SIG_SIG ;
+wire	\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10004_Y10002_SIG_SIG ;
+wire	\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10009_Y10003_SIG_SIG ;
+wire	\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10003_Y10002_SIG_SIG ;
 wire	GCLK_int;
 reg	I2S1_d_q;
 wire	[3:0] I2S1_i_o;
@@ -366,58 +368,60 @@ wire	[3:0] STDBY_i_o;
 //wire	STDBY_i_o[1];
 //wire	STDBY_i_o[2];
 //wire	STDBY_i_o[3];
-wire	SyncLoad_X10001_Y10001_GND;
-wire	SyncLoad_X10001_Y10002_VCC;
+wire	SyncLoad_X10001_Y10002_GND;
 wire	SyncLoad_X10002_Y10001_GND;
-wire	SyncLoad_X10002_Y10002_GND;
 wire	SyncLoad_X10002_Y10003_GND;
-wire	SyncLoad_X10004_Y10001_GND;
-wire	SyncLoad_X10006_Y10002_GND;
+wire	SyncLoad_X10003_Y10002_GND;
+wire	SyncLoad_X10004_Y10001_VCC;
+wire	SyncLoad_X10004_Y10002_GND;
+wire	SyncLoad_X10004_Y10003_GND;
+wire	SyncLoad_X10005_Y10001_GND;
+wire	SyncLoad_X10006_Y10001_GND;
 wire	SyncLoad_X10007_Y10001_GND;
 wire	SyncLoad_X10007_Y10002_GND;
+wire	SyncLoad_X10007_Y10003_GND;
 wire	SyncLoad_X10008_Y10001_GND;
-wire	SyncLoad_X10008_Y10002_GND;
+wire	SyncLoad_X10009_Y10001_GND;
 wire	SyncLoad_X10009_Y10003_GND;
-wire	SyncLoad_X10010_Y10001_VCC;
-wire	SyncLoad_X10011_Y10001_GND;
+wire	SyncLoad_X10010_Y10001_GND;
 wire	SyncLoad_X10012_Y10001_GND;
-wire	SyncLoad_X10014_Y10001_GND;
-wire	SyncLoad_X10014_Y10002_GND;
-wire	SyncLoad_X10015_Y10003_GND;
+wire	SyncLoad_X10012_Y10002_VCC;
+wire	SyncLoad_X10016_Y10001_VCC;
 wire	SyncLoad_X10017_Y10001_VCC;
+wire	SyncLoad_X10017_Y10002_GND;
+wire	SyncLoad_X10017_Y10003_VCC;
 wire	SyncLoad_X10018_Y10001_VCC;
-wire	SyncLoad_X10018_Y10003_GND;
+wire	SyncLoad_X10018_Y10002_GND;
 wire	SyncLoad_X10019_Y10001_GND;
-wire	SyncLoad_X10019_Y10003_GND;
-wire	SyncLoad_X10020_Y10001_VCC;
-wire	SyncLoad_X10020_Y10003_VCC;
-wire	SyncReset_X10001_Y10002_GND;
+wire	SyncLoad_X10019_Y10003_VCC;
+wire	SyncReset_X10001_Y10001_GND;
 wire	SyncReset_X10001_Y10003_GND;
-wire	SyncReset_X10003_Y10001_GND;
-wire	SyncReset_X10003_Y10002_GND;
-wire	SyncReset_X10004_Y10002_GND;
-wire	SyncReset_X10005_Y10003_GND;
-wire	SyncReset_X10007_Y10003_GND;
-wire	SyncReset_X10008_Y10003_GND;
+wire	SyncReset_X10002_Y10002_GND;
+wire	SyncReset_X10004_Y10001_GND;
+wire	SyncReset_X10006_Y10002_GND;
+wire	SyncReset_X10006_Y10003_GND;
+wire	SyncReset_X10008_Y10002_GND;
 wire	SyncReset_X10009_Y10002_GND;
-wire	SyncReset_X10010_Y10001_GND;
+wire	SyncReset_X10010_Y10002_GND;
 wire	SyncReset_X10010_Y10003_GND;
 wire	SyncReset_X10011_Y10002_GND;
 wire	SyncReset_X10011_Y10003_GND;
+wire	SyncReset_X10012_Y10002_GND;
+wire	SyncReset_X10014_Y10001_GND;
+wire	SyncReset_X10014_Y10002_GND;
+wire	SyncReset_X10014_Y10003_GND;
 wire	SyncReset_X10015_Y10001_GND;
 wire	SyncReset_X10015_Y10002_GND;
 wire	SyncReset_X10016_Y10001_GND;
 wire	SyncReset_X10016_Y10002_GND;
 wire	SyncReset_X10016_Y10003_GND;
 wire	SyncReset_X10017_Y10001_GND;
-wire	SyncReset_X10017_Y10002_GND;
 wire	SyncReset_X10017_Y10003_GND;
 wire	SyncReset_X10018_Y10001_GND;
-wire	SyncReset_X10018_Y10002_GND;
+wire	SyncReset_X10018_Y10003_GND;
 wire	SyncReset_X10019_Y10002_GND;
-wire	SyncReset_X10020_Y10001_GND;
+wire	SyncReset_X10019_Y10003_GND;
 wire	SyncReset_X10020_Y10002_GND;
-wire	SyncReset_X10020_Y10003_GND;
 wire	\gclk|clkout1 ;
 wire	\gclk|clkout2 ;
 wire	\gclk|clkout3 ;
@@ -467,9 +471,7 @@ wire	[2:0] \i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_datac_combout ;
 //wire	\i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_datac_combout [0];
 //wire	\i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_datac_combout [1];
 //wire	\i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_datac_combout [2];
-wire	\i2c_device|OFFSET_PRIMARY_q_5__feeder__LutOut ;
-wire	\i2c_device|OFFSET_PRIMARY_q_6__feeder__LutOut ;
-wire	\i2c_device|OFFSET_PRIMARY_q_7__feeder__LutOut ;
+wire	\i2c_device|OFFSET_PRIMARY_q_4__feeder__LutOut ;
 reg	[7:0] \i2c_device|OFFSET_SECONDARY ;
 //reg	\i2c_device|OFFSET_SECONDARY [0];
 //reg	\i2c_device|OFFSET_SECONDARY [1];
@@ -514,19 +516,19 @@ wire	[2:0] \i2c_device|bit_pos ;
 //wire	\i2c_device|bit_pos [1];
 //wire	\i2c_device|bit_pos [2];
 wire	\i2c_device|bit_pos_A_2_1_Y ;
-wire	\i2c_device|bit_pos_A_2_1_Y__SyncLoad_X10003_Y10002_SIG ;
+wire	\i2c_device|bit_pos_A_2_1_Y__SyncLoad_X10014_Y10002_SIG ;
 wire	\i2c_device|bit_pos_A_2_2_Y ;
-wire	\i2c_device|bit_pos_A_2_2_Y__SyncLoad_X10005_Y10003_SIG ;
+wire	\i2c_device|bit_pos_A_2_2_Y__SyncLoad_X10020_Y10002_SIG ;
 wire	\i2c_device|bit_pos_A_2_3_Y ;
-wire	\i2c_device|bit_pos_A_2_3_Y__SyncLoad_X10008_Y10003_SIG ;
+wire	\i2c_device|bit_pos_A_2_3_Y__SyncLoad_X10002_Y10002_SIG ;
 wire	\i2c_device|bit_pos_A_2_Y ;
-wire	\i2c_device|bit_pos_A_2_Y__SyncLoad_X10007_Y10003_SIG ;
+wire	\i2c_device|bit_pos_A_2_Y__SyncLoad_X10001_Y10003_SIG ;
 wire	\i2c_device|bit_pos_dataa_0_combout ;
 wire	\i2c_device|bit_pos_dataa_0_combout_A_3_Y_B_Y_A_Y ;
 wire	\i2c_device|bit_pos_dataa_0_combout_A_Y ;
-wire	\i2c_device|bit_pos_dataa_0_combout_A_Y__SyncLoad_X10012_Y10003_SIG ;
+wire	\i2c_device|bit_pos_dataa_0_combout_A_Y__SyncLoad_X10020_Y10001_SIG ;
 wire	\i2c_device|bit_pos_dataa_0_combout_B_Y ;
-wire	\i2c_device|bit_pos_dataa_0_combout_B_Y__SyncLoad_X10003_Y10003_SIG ;
+wire	\i2c_device|bit_pos_dataa_0_combout_B_Y__SyncLoad_X10008_Y10003_SIG ;
 wire	[3:0] \i2c_device|bit_pos_dataa_0_combout_datab_combout ;
 //wire	\i2c_device|bit_pos_dataa_0_combout_datab_combout [0];
 //wire	\i2c_device|bit_pos_dataa_0_combout_datab_combout [1];
@@ -541,9 +543,9 @@ wire	[4:0] \i2c_device|bit_pos_dataa_0_cout ;
 wire	\i2c_device|bit_pos_dataa_0_cout_cout_4_combout ;
 wire	\i2c_device|bit_pos_dataa_1_combout ;
 wire	\i2c_device|bit_pos_dataa_1_combout_A_Y ;
-wire	\i2c_device|bit_pos_dataa_1_combout_A_Y__SyncLoad_X10012_Y10002_SIG ;
+wire	\i2c_device|bit_pos_dataa_1_combout_A_Y__SyncLoad_X10012_Y10003_SIG ;
 wire	\i2c_device|bit_pos_dataa_1_combout_B_Y ;
-wire	\i2c_device|bit_pos_dataa_1_combout_B_Y__SyncLoad_X10014_Y10003_SIG ;
+wire	\i2c_device|bit_pos_dataa_1_combout_B_Y__SyncLoad_X10003_Y10003_SIG ;
 wire	[3:0] \i2c_device|bit_pos_dataa_1_combout_datab_combout ;
 //wire	\i2c_device|bit_pos_dataa_1_combout_datab_combout [0];
 //wire	\i2c_device|bit_pos_dataa_1_combout_datab_combout [1];
@@ -551,12 +553,12 @@ wire	[3:0] \i2c_device|bit_pos_dataa_1_combout_datab_combout ;
 //wire	\i2c_device|bit_pos_dataa_1_combout_datab_combout [3];
 wire	\i2c_device|bit_pos_dataa_2_combout ;
 wire	\i2c_device|bit_pos_dataa_2_combout_A_1_Y_B_Y ;
-wire	\i2c_device|bit_pos_dataa_2_combout_A_1_Y_B_Y__SyncLoad_X10004_Y10003_SIG ;
+wire	\i2c_device|bit_pos_dataa_2_combout_A_1_Y_B_Y__SyncLoad_X10020_Y10003_SIG ;
 wire	\i2c_device|bit_pos_dataa_2_combout_A_3_Y_B_Y_A_Y ;
 wire	\i2c_device|bit_pos_dataa_2_combout_A_Y_B_1_Y ;
-wire	\i2c_device|bit_pos_dataa_2_combout_A_Y_B_1_Y__SyncLoad_X10005_Y10002_SIG ;
+wire	\i2c_device|bit_pos_dataa_2_combout_A_Y_B_1_Y__SyncLoad_X10005_Y10003_SIG ;
 wire	\i2c_device|bit_pos_dataa_2_combout_A_Y_B_Y ;
-wire	\i2c_device|bit_pos_dataa_2_combout_A_Y_B_Y__SyncLoad_X10006_Y10003_SIG ;
+wire	\i2c_device|bit_pos_dataa_2_combout_A_Y_B_Y__SyncLoad_X10015_Y10003_SIG ;
 wire	[3:0] \i2c_device|bit_pos_dataa_2_combout_datab_combout ;
 //wire	\i2c_device|bit_pos_dataa_2_combout_datab_combout [0];
 //wire	\i2c_device|bit_pos_dataa_2_combout_datab_combout [1];
@@ -713,8 +715,9 @@ wire	[1:0] \i2c_device|brin_rec ;
 wire	\i2c_device|brin_rec_A_0_1_Y ;
 wire	\i2c_device|brin_rec_A_0_Y ;
 wire	\i2c_device|brin_rec_A_0_Y_B_Y ;
-wire	\i2c_device|brin_rec_A_0_Y__SyncLoad_X10015_Y10002_SIG ;
-wire	\i2c_device|brin_rec_A_0_Y__SyncReset_X10004_Y10001_SIG ;
+wire	\i2c_device|brin_rec_A_0_Y__SyncLoad_X10001_Y10001_SIG ;
+wire	\i2c_device|brin_rec_A_0_Y__SyncLoad_X10011_Y10003_SIG ;
+wire	\i2c_device|brin_rec_A_0_Y__SyncReset_X10006_Y10001_SIG ;
 wire	\i2c_device|brin_rec_A_0_Y__SyncReset_X10007_Y10001_SIG ;
 reg	\i2c_device|brin_rec_d_0_q ;
 reg	[22:0] \i2c_device|brip_cnt ;
@@ -868,18 +871,18 @@ wire	[1:0] \i2c_device|brip_rec ;
 wire	\i2c_device|brip_rec_A_0_1_Y ;
 wire	\i2c_device|brip_rec_A_0_Y ;
 wire	\i2c_device|brip_rec_A_0_Y_B_Y ;
-wire	\i2c_device|brip_rec_A_0_Y__SyncLoad_X10019_Y10002_SIG ;
-wire	\i2c_device|brip_rec_A_0_Y__SyncReset_X10001_Y10001_SIG ;
-wire	\i2c_device|brip_rec_A_0_Y__SyncReset_X10011_Y10001_SIG ;
+wire	\i2c_device|brip_rec_A_0_Y__SyncLoad_X10010_Y10002_SIG ;
+wire	\i2c_device|brip_rec_A_0_Y__SyncReset_X10008_Y10001_SIG ;
+wire	\i2c_device|brip_rec_A_0_Y__SyncReset_X10009_Y10001_SIG ;
 reg	\i2c_device|brip_rec_d_0_q ;
 wire	[2:0] \i2c_device|i2c_state ;
 //wire	\i2c_device|i2c_state [0];
 //wire	\i2c_device|i2c_state [1];
 //wire	\i2c_device|i2c_state [2];
 wire	\i2c_device|i2c_state_A_0_1_Y_A_1_Y_A_1_Y_B_Y ;
-wire	\i2c_device|i2c_state_A_0_1_Y_A_1_Y_A_1_Y_B_Y__SyncLoad_X10010_Y10003_SIG ;
+wire	\i2c_device|i2c_state_A_0_1_Y_A_1_Y_A_1_Y_B_Y__SyncLoad_X10006_Y10003_SIG ;
 wire	\i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y ;
-wire	\i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y__SyncLoad_X10010_Y10002_SIG ;
+wire	\i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y__SyncLoad_X10005_Y10002_SIG ;
 wire	\i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y ;
 wire	\i2c_device|i2c_state_A_0_2_Y_A_2_Y_B_Y ;
 wire	\i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y ;
@@ -1060,9 +1063,9 @@ wire	[1:0] \i2c_device|locka_rec ;
 wire	\i2c_device|locka_rec_A_0_1_Y ;
 wire	\i2c_device|locka_rec_A_0_Y ;
 wire	\i2c_device|locka_rec_A_0_Y_B_Y ;
-wire	\i2c_device|locka_rec_A_0_Y__SyncLoad_X10003_Y10001_SIG ;
-wire	\i2c_device|locka_rec_A_0_Y__SyncReset_X10002_Y10001_SIG ;
-wire	\i2c_device|locka_rec_A_0_Y__SyncReset_X10014_Y10001_SIG ;
+wire	\i2c_device|locka_rec_A_0_Y__SyncLoad_X10018_Y10003_SIG ;
+wire	\i2c_device|locka_rec_A_0_Y__SyncReset_X10010_Y10001_SIG ;
+wire	\i2c_device|locka_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ;
 reg	\i2c_device|locka_rec_d_0_q ;
 reg	[22:0] \i2c_device|lockb_cnt ;
 //reg	\i2c_device|lockb_cnt [0];
@@ -1228,9 +1231,10 @@ wire	[1:0] \i2c_device|lockb_rec ;
 wire	\i2c_device|lockb_rec_A_0_1_Y ;
 wire	\i2c_device|lockb_rec_A_0_Y ;
 wire	\i2c_device|lockb_rec_A_0_Y_B_Y ;
-wire	\i2c_device|lockb_rec_A_0_Y__SyncLoad_X10018_Y10002_SIG ;
-wire	\i2c_device|lockb_rec_A_0_Y__SyncReset_X10008_Y10001_SIG ;
-wire	\i2c_device|lockb_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ;
+wire	\i2c_device|lockb_rec_A_0_Y__SyncLoad_X10014_Y10003_SIG ;
+wire	\i2c_device|lockb_rec_A_0_Y__SyncReset_X10002_Y10001_SIG ;
+wire	\i2c_device|lockb_rec_A_0_Y__SyncReset_X10005_Y10001_SIG ;
+wire	\i2c_device|lockb_rec_d_0__feeder__LutOut ;
 reg	\i2c_device|lockb_rec_d_0_q ;
 wire	[2:0] \i2c_device|scl ;
 //wire	\i2c_device|scl [0];
@@ -1244,20 +1248,18 @@ wire	[1:0] \i2c_device|scl_asdata_0_q_dataa_combout ;
 wire	[1:0] \i2c_device|scl_asdata_0_q_datad_1_combout ;
 //wire	\i2c_device|scl_asdata_0_q_datad_1_combout [0];
 //wire	\i2c_device|scl_asdata_0_q_datad_1_combout [1];
-wire	\i2c_device|scl_d_0__feeder__LutOut ;
 reg	\i2c_device|scl_d_0_q ;
 wire	[3:0] \i2c_device|scl_d_0_q_datab_combout ;
 //wire	\i2c_device|scl_d_0_q_datab_combout [0];
 //wire	\i2c_device|scl_d_0_q_datab_combout [1];
 //wire	\i2c_device|scl_d_0_q_datab_combout [2];
 //wire	\i2c_device|scl_d_0_q_datab_combout [3];
-wire	\i2c_device|scl_q_0__feeder__LutOut ;
 wire	[2:0] \i2c_device|sda ;
 //wire	\i2c_device|sda [0];
 //wire	\i2c_device|sda [1];
 //wire	\i2c_device|sda [2];
 wire	\i2c_device|sda_A_0_1_Y_B_Y_B_Y ;
-wire	\i2c_device|sda_A_0_1_Y_B_Y_B_Y__SyncLoad_X10016_Y10003_SIG ;
+wire	\i2c_device|sda_A_0_1_Y_B_Y_B_Y__SyncLoad_X10011_Y10002_SIG ;
 wire	\i2c_device|sda_A_0_Y ;
 wire	\i2c_device|sda_d_0_10__feeder__LutOut ;
 reg	\i2c_device|sda_d_0_10_q ;
@@ -1307,7 +1309,7 @@ reg	\i2c_device|sda_d_0_8_q ;
 wire	\i2c_device|sda_d_0_9__feeder__LutOut ;
 reg	\i2c_device|sda_d_0_9_q ;
 wire	\i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y ;
-wire	\i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y__SyncReset_X10019_Y10001_INV ;
+wire	\i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y__SyncReset_X10007_Y10002_INV ;
 wire	\i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y ;
 wire	[2:0] \i2c_device|sda_d_0_9_q_dataa_1_combout ;
 //wire	\i2c_device|sda_d_0_9_q_dataa_1_combout [0];
@@ -1321,22 +1323,19 @@ wire	[2:0] \i2c_device|sda_d_0_9_q_dataa_combout ;
 //wire	\i2c_device|sda_d_0_9_q_dataa_combout [0];
 //wire	\i2c_device|sda_d_0_9_q_dataa_combout [1];
 //wire	\i2c_device|sda_d_0_9_q_dataa_combout [2];
-wire	\i2c_device|sda_d_0__feeder__LutOut ;
 reg	\i2c_device|sda_d_0_q ;
 wire	[3:0] \i2c_device|sda_d_0_q_datab_combout ;
 //wire	\i2c_device|sda_d_0_q_datab_combout [0];
 //wire	\i2c_device|sda_d_0_q_datab_combout [1];
 //wire	\i2c_device|sda_d_0_q_datab_combout [2];
 //wire	\i2c_device|sda_d_0_q_datab_combout [3];
-wire	\i2c_device|sda_q_0__feeder__LutOut ;
 wire	[1:0] \i2c_device|start ;
 //wire	\i2c_device|start [0];
 //wire	\i2c_device|start [1];
 wire	\i2c_device|start_A_0_Y ;
 wire	\i2c_device|start_B_0_Y ;
 wire	\i2c_device|start_B_0_Y_A_Y ;
-wire	\i2c_device|start_B_0_Y__SyncLoad_X10004_Y10002_SIG ;
-wire	\i2c_device|start_d_0__feeder__LutOut ;
+wire	\i2c_device|start_B_0_Y__SyncLoad_X10010_Y10003_SIG ;
 reg	\i2c_device|start_d_0_q ;
 wire	[1:0] \i2c_device|stop ;
 //wire	\i2c_device|stop [0];
@@ -1344,13 +1343,13 @@ wire	[1:0] \i2c_device|stop ;
 wire	\i2c_device|stop_A_0_Y ;
 wire	\i2c_device|stop_B_0_Y_B_Y_A_4_Y ;
 wire	\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10003_Y10003_SIG ;
-wire	\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10004_Y10003_SIG ;
 wire	\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10005_Y10002_SIG ;
-wire	\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10006_Y10003_SIG ;
-wire	\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10010_Y10002_SIG ;
-wire	\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10012_Y10002_SIG ;
+wire	\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10005_Y10003_SIG ;
+wire	\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10008_Y10003_SIG ;
 wire	\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10012_Y10003_SIG ;
-wire	\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10014_Y10003_SIG ;
+wire	\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10015_Y10003_SIG ;
+wire	\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10020_Y10001_SIG ;
+wire	\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10020_Y10003_SIG ;
 wire	[1:0] \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1_combout ;
 //wire	\i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1_combout [0];
 //wire	\i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1_combout [1];
@@ -1406,10 +1405,10 @@ wire	\i2c_device|write_value_q_5__feeder__LutOut ;
 wire	\i2c_device|write_value_q_6__feeder__LutOut ;
 wire	\i2c_device|write_value_q_7__feeder__LutOut ;
 reg	\i2s_osd_select_1|BCLKD ;
-wire	\i2s_osd_select_1|BCLKD_X10009_Y10002_INV_VCC ;
+wire	\i2s_osd_select_1|BCLKD_X10008_Y10002_INV_VCC ;
 wire	\i2s_osd_select_1|BCLKD_X5017_Y5012_INV_VCC ;
 wire	\i2s_osd_select_1|BCLKD_X5017_Y5012_SIG_VCC ;
-wire	\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10014_Y10002_INV_SIG ;
+wire	\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10017_Y10002_INV_SIG ;
 wire	\i2s_osd_select_1|BCLKD_int ;
 reg	\i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I ;
 wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_datac_combout ;
@@ -1487,16 +1486,14 @@ reg	[2:0] \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo ;
 wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_1_Y_B_Y ;
 wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_2_Y_A_1_Y ;
 wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ;
-wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10018_Y10003_SIG ;
-wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10019_Y10003_SIG ;
+wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10004_Y10003_SIG ;
+wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10007_Y10003_SIG ;
 wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y ;
 wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y ;
-wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y__SyncLoad_X10016_Y10001_SIG ;
+wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y__SyncLoad_X10014_Y10001_SIG ;
 wire	[1:0] \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_dataa_2_combout ;
 //wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_dataa_2_combout [0];
 //wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_dataa_2_combout [1];
-wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_0__feeder__LutOut ;
-wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_1__feeder__LutOut ;
 reg	[1:0] \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|DataInA ;
 //reg	\i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|DataInA [0];
 //reg	\i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|DataInA [1];
@@ -1542,7 +1539,6 @@ wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portData
 wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_2_Y ;
 wire	[7:0] \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div ;
 //wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div [0];
-wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg__feeder__LutOut ;
 reg	\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg_q ;
 //wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div [1];
 //wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div [2];
@@ -1561,7 +1557,7 @@ reg	[7:0] \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count ;
 //reg	\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [6];
 //reg	\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [7];
 wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y ;
-wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y__SyncReset_X10002_Y10002_SIG ;
+wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y__SyncReset_X10019_Y10001_SIG ;
 wire	[3:0] \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_dataa_5_combout ;
 //wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_dataa_5_combout [0];
 //wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_dataa_5_combout [1];
@@ -1644,7 +1640,7 @@ reg	[11:0] \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de ;
 //reg	\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [8];
 //reg	\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [9];
 wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y ;
-wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10008_Y10002_SIG ;
+wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10004_Y10002_SIG ;
 wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y ;
 wire	[3:0] \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_2_combout ;
 //wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_2_combout [0];
@@ -1690,7 +1686,7 @@ wire	\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_9_combout ;
 reg	\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE ;
 wire	\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y ;
 wire	\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y ;
-wire	\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10014_Y10002_SIG ;
+wire	\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10017_Y10002_SIG ;
 reg	\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d_q ;
 wire	\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_inv ;
 wire	\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_reg__feeder__LutOut ;
@@ -1703,7 +1699,7 @@ wire	[3:0] \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW_datad_combout ;
 wire	\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW_reg__feeder__LutOut ;
 reg	\i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW ;
 wire	\i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_B_Y ;
-wire	\i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_B_Y__SyncLoad_X10009_Y10002_SIG ;
+wire	\i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_B_Y__SyncLoad_X10008_Y10002_INV ;
 wire	[3:0] \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_dataa_combout ;
 //wire	\i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_dataa_combout [0];
 //wire	\i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_dataa_combout [1];
@@ -1711,10 +1707,10 @@ wire	[3:0] \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_dataa_combout ;
 //wire	\i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_dataa_combout [3];
 wire	\i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_reg__feeder__LutOut ;
 reg	\i2s_osd_select_2|BCLKD ;
-wire	\i2s_osd_select_2|BCLKD_X10011_Y10002_INV_VCC ;
+wire	\i2s_osd_select_2|BCLKD_X10006_Y10002_INV_VCC ;
 wire	\i2s_osd_select_2|BCLKD_X5019_Y5012_INV_VCC ;
 wire	\i2s_osd_select_2|BCLKD_X5019_Y5012_SIG_VCC ;
-wire	\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10002_Y10003_INV_SIG ;
+wire	\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10018_Y10002_INV_SIG ;
 wire	\i2s_osd_select_2|BCLKD_int ;
 reg	\i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I ;
 wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_datac_combout ;
@@ -1792,16 +1788,14 @@ reg	[2:0] \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo ;
 wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_1_Y_B_Y ;
 wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_2_Y_A_1_Y ;
 wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ;
+wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10002_Y10003_SIG ;
 wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10009_Y10003_SIG ;
-wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10015_Y10003_SIG ;
 wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y ;
 wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y ;
 wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y__SyncLoad_X10015_Y10001_SIG ;
 wire	[1:0] \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_dataa_2_combout ;
 //wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_dataa_2_combout [0];
 //wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_dataa_2_combout [1];
-wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_0__feeder__LutOut ;
-wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_1__feeder__LutOut ;
 reg	[1:0] \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|DataInA ;
 //reg	\i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|DataInA [0];
 //reg	\i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|DataInA [1];
@@ -1847,9 +1841,10 @@ wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portData
 wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_2_Y ;
 wire	[7:0] \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div ;
 //wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div [0];
+wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg__feeder__LutOut ;
 reg	\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q ;
 wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y ;
-wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y__SyncReset_X10006_Y10002_SIG ;
+wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y__SyncReset_X10001_Y10002_SIG ;
 wire	[2:0] \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa_1_combout ;
 //wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa_1_combout [0];
 //wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa_1_combout [1];
@@ -1952,7 +1947,7 @@ reg	[11:0] \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de ;
 //reg	\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [8];
 //reg	\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [9];
 wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y ;
-wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10007_Y10002_SIG ;
+wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10003_Y10002_SIG ;
 wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y ;
 wire	[3:0] \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_2_combout ;
 //wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_2_combout [0];
@@ -1998,7 +1993,7 @@ wire	\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_9_combout ;
 reg	\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE ;
 wire	\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y ;
 wire	\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y ;
-wire	\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10002_Y10003_SIG ;
+wire	\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10018_Y10002_SIG ;
 reg	\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d_q ;
 wire	\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_inv ;
 wire	\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_reg__feeder__LutOut ;
@@ -2011,7 +2006,7 @@ wire	[3:0] \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_RAW_datad_combout ;
 wire	\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_RAW_reg__feeder__LutOut ;
 reg	\i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW ;
 wire	\i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_B_Y ;
-wire	\i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_B_Y__SyncLoad_X10011_Y10002_INV ;
+wire	\i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_B_Y__SyncLoad_X10006_Y10002_SIG ;
 wire	[3:0] \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_dataa_combout ;
 //wire	\i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_dataa_combout [0];
 //wire	\i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_dataa_combout [1];
@@ -2027,29 +2022,29 @@ wire unknown;
 assign unknown = 1'bx;
 
 alta_slice BCLK1_clk(
-	.A(),
-	.B(),
+	.A(vcc),
+	.B(\i2c_device|lockb_cnt [10]),
 	.C(BCLK1_clk_1_q),
-	.D(),
-	.Cin(),
+	.D(vcc),
+	.Cin(\i2c_device|lockb_cnt_dataa_8_1_cout [2]),
 	.Qin(BCLK1_clk_q),
-	.Clk(BCLK1_i_o_X10020_Y10001_SIG_VCC),
-	.AsyncReset(AsyncReset_X10020_Y10001_GND),
-	.SyncReset(SyncReset_X10020_Y10001_GND),
+	.Clk(BCLK1_i_o_X10004_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10004_Y10001_GND),
+	.SyncReset(SyncReset_X10004_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10020_Y10001_VCC),
-	.LutOut(),
-	.Cout(),
+	.SyncLoad(SyncLoad_X10004_Y10001_VCC),
+	.LutOut(\i2c_device|lockb_cnt_dataa_8_1_combout [2]),
+	.Cout(\i2c_device|lockb_cnt_dataa_8_1_cout [3]),
 	.Q(BCLK1_clk_q));
-defparam BCLK1_clk.coord_x = 20;
-defparam BCLK1_clk.coord_y = 4;
+defparam BCLK1_clk.coord_x = 19;
+defparam BCLK1_clk.coord_y = 7;
 defparam BCLK1_clk.coord_z = 2;
-defparam BCLK1_clk.mask = 16'hFFFF;
+defparam BCLK1_clk.mask = 16'h96E8;
 defparam BCLK1_clk.modeMux = 1'b1;
 defparam BCLK1_clk.FeedbackMux = 1'b0;
 defparam BCLK1_clk.ShiftMux = 1'b0;
 defparam BCLK1_clk.BypassEn = 1'b1;
-defparam BCLK1_clk.CarryEnb = 1'b1;
+defparam BCLK1_clk.CarryEnb = 1'b0;
 
 alta_slice BCLK1_clk_1(
 	.A(BCLK1_clk_q),
@@ -2058,17 +2053,17 @@ alta_slice BCLK1_clk_1(
 	.D(I2S1_i_o[3]),
 	.Cin(),
 	.Qin(BCLK1_clk_1_q),
-	.Clk(BCLK1_i_o_X10020_Y10001_SIG_VCC),
-	.AsyncReset(AsyncReset_X10020_Y10001_GND),
-	.SyncReset(SyncReset_X10020_Y10001_GND),
+	.Clk(BCLK1_i_o_X10019_Y10003_SIG_VCC),
+	.AsyncReset(AsyncReset_X10019_Y10003_GND),
+	.SyncReset(SyncReset_X10019_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10020_Y10001_VCC),
+	.SyncLoad(SyncLoad_X10019_Y10003_VCC),
 	.LutOut(BCLK1_clk_q_dataa_combout[0]),
 	.Cout(),
 	.Q(BCLK1_clk_1_q));
 defparam BCLK1_clk_1.coord_x = 20;
-defparam BCLK1_clk_1.coord_y = 4;
-defparam BCLK1_clk_1.coord_z = 0;
+defparam BCLK1_clk_1.coord_y = 7;
+defparam BCLK1_clk_1.coord_z = 1;
 defparam BCLK1_clk_1.mask = 16'h0100;
 defparam BCLK1_clk_1.modeMux = 1'b0;
 defparam BCLK1_clk_1.FeedbackMux = 1'b1;
@@ -2126,29 +2121,29 @@ defparam \BCLK1_i|o~ALTA_GCLK .coord_y = 4;
 defparam \BCLK1_i|o~ALTA_GCLK .coord_z = 1;
 
 alta_slice BCLK2_clk(
-	.A(),
-	.B(),
-	.C(),
-	.D(BCLK2_clk_1_q),
+	.A(vcc),
+	.B(\i2c_device|lockb_cnt [8]),
+	.C(BCLK2_clk_1_q),
+	.D(vcc),
 	.Cin(),
 	.Qin(BCLK2_clk_q),
-	.Clk(BCLK2_i_o_X10003_Y10001_SIG_VCC),
-	.AsyncReset(AsyncReset_X10003_Y10001_GND),
-	.SyncReset(),
+	.Clk(BCLK2_i_o_X10004_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10004_Y10001_GND),
+	.SyncReset(SyncReset_X10004_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(BCLK2_clk__feeder__LutOut),
-	.Cout(),
+	.SyncLoad(SyncLoad_X10004_Y10001_VCC),
+	.LutOut(\i2c_device|lockb_cnt_dataa_8_1_combout [0]),
+	.Cout(\i2c_device|lockb_cnt_dataa_8_1_cout [1]),
 	.Q(BCLK2_clk_q));
 defparam BCLK2_clk.coord_x = 19;
-defparam BCLK2_clk.coord_y = 9;
-defparam BCLK2_clk.coord_z = 15;
-defparam BCLK2_clk.mask = 16'hFF00;
-defparam BCLK2_clk.modeMux = 1'b0;
+defparam BCLK2_clk.coord_y = 7;
+defparam BCLK2_clk.coord_z = 0;
+defparam BCLK2_clk.mask = 16'h66DD;
+defparam BCLK2_clk.modeMux = 1'b1;
 defparam BCLK2_clk.FeedbackMux = 1'b0;
 defparam BCLK2_clk.ShiftMux = 1'b0;
-defparam BCLK2_clk.BypassEn = 1'b0;
-defparam BCLK2_clk.CarryEnb = 1'b1;
+defparam BCLK2_clk.BypassEn = 1'b1;
+defparam BCLK2_clk.CarryEnb = 1'b0;
 
 alta_slice BCLK2_clk_1(
 	.A(BCLK2_clk_q),
@@ -2157,17 +2152,17 @@ alta_slice BCLK2_clk_1(
 	.D(I2S2_i_o[3]),
 	.Cin(),
 	.Qin(BCLK2_clk_1_q),
-	.Clk(BCLK2_i_o_X10020_Y10003_SIG_VCC),
-	.AsyncReset(AsyncReset_X10020_Y10003_GND),
-	.SyncReset(SyncReset_X10020_Y10003_GND),
+	.Clk(BCLK2_i_o_X10019_Y10003_SIG_VCC),
+	.AsyncReset(AsyncReset_X10019_Y10003_GND),
+	.SyncReset(SyncReset_X10019_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10020_Y10003_VCC),
+	.SyncLoad(SyncLoad_X10019_Y10003_VCC),
 	.LutOut(BCLK2_clk_q_dataa_combout[0]),
 	.Cout(),
 	.Q(BCLK2_clk_1_q));
 defparam BCLK2_clk_1.coord_x = 20;
-defparam BCLK2_clk_1.coord_y = 9;
-defparam BCLK2_clk_1.coord_z = 0;
+defparam BCLK2_clk_1.coord_y = 7;
+defparam BCLK2_clk_1.coord_z = 2;
 defparam BCLK2_clk_1.mask = 16'h0100;
 defparam BCLK2_clk_1.modeMux = 1'b0;
 defparam BCLK2_clk_1.FeedbackMux = 1'b1;
@@ -2430,12 +2425,12 @@ defparam CHRG_i.IN_REG_DELAY = 3'b000;
 alta_slice CLKOSC_clk(
 	.A(),
 	.B(),
-	.C(\i2c_device|write_value [2]),
-	.D(),
+	.C(),
+	.D(\i2c_device|write_value [2]),
 	.Cin(),
 	.Qin(CLKOSC_clk_q),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_B_Y_A_Y_X10011_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10011_Y10003_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_B_Y_A_Y_X10019_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10019_Y10002_GND),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
@@ -2444,8 +2439,8 @@ alta_slice CLKOSC_clk(
 	.Q(CLKOSC_clk_q));
 defparam CLKOSC_clk.coord_x = 15;
 defparam CLKOSC_clk.coord_y = 1;
-defparam CLKOSC_clk.coord_z = 0;
-defparam CLKOSC_clk.mask = 16'h0F0F;
+defparam CLKOSC_clk.coord_z = 13;
+defparam CLKOSC_clk.mask = 16'h00FF;
 defparam CLKOSC_clk.modeMux = 1'b0;
 defparam CLKOSC_clk.FeedbackMux = 1'b0;
 defparam CLKOSC_clk.ShiftMux = 1'b0;
@@ -2453,24 +2448,24 @@ defparam CLKOSC_clk.BypassEn = 1'b0;
 defparam CLKOSC_clk.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_1(
-	.A(CLKOSC_clk_2_q_A_3_Y_dataa_combout[0]),
-	.B(CLKOSC_clk_2_q_A_3_Y_dataa_combout[2]),
+	.A(CLKOSC_clk_2_q_A_3_Y_dataa_combout[2]),
+	.B(CLKOSC_clk_2_q_A_3_Y_dataa_combout[0]),
 	.C(vcc),
 	.D(\i2c_device|scl_asdata_0_q_dataa_combout [1]),
 	.Cin(),
 	.Qin(CLKOSC_clk_1_q),
-	.Clk(CLKOSC_i_o_X10010_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10010_Y10002_GND),
+	.Clk(CLKOSC_i_o_X10005_Y10002_SIG_VCC),
+	.AsyncReset(AsyncReset_X10005_Y10002_GND),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
 	.LutOut(CLKOSC_clk_1_q_A_1_Y_A_Y),
 	.Cout(),
 	.Q(CLKOSC_clk_1_q));
-defparam CLKOSC_clk_1.coord_x = 10;
-defparam CLKOSC_clk_1.coord_y = 4;
-defparam CLKOSC_clk_1.coord_z = 13;
-defparam CLKOSC_clk_1.mask = 16'h70FC;
+defparam CLKOSC_clk_1.coord_x = 11;
+defparam CLKOSC_clk_1.coord_y = 3;
+defparam CLKOSC_clk_1.coord_z = 11;
+defparam CLKOSC_clk_1.mask = 16'h70FA;
 defparam CLKOSC_clk_1.modeMux = 1'b0;
 defparam CLKOSC_clk_1.FeedbackMux = 1'b1;
 defparam CLKOSC_clk_1.ShiftMux = 1'b0;
@@ -2478,14 +2473,14 @@ defparam CLKOSC_clk_1.BypassEn = 1'b0;
 defparam CLKOSC_clk_1.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_10(
-	.A(CLKOSC_clk_9_q_dataa_combout_datac_2_combout[3]),
-	.B(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
+	.A(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
+	.B(CLKOSC_clk_9_q_dataa_combout_datac_2_combout[3]),
 	.C(vcc),
 	.D(CLKOSC_clk_9_q_dataa_combout_datac_2_combout[1]),
 	.Cin(),
 	.Qin(CLKOSC_clk_10_q),
-	.Clk(CLKOSC_i_o_X10012_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10012_Y10002_GND),
+	.Clk(CLKOSC_i_o_X10018_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10018_Y10001_GND),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
@@ -2493,9 +2488,9 @@ alta_slice CLKOSC_clk_10(
 	.Cout(),
 	.Q(CLKOSC_clk_10_q));
 defparam CLKOSC_clk_10.coord_x = 10;
-defparam CLKOSC_clk_10.coord_y = 3;
-defparam CLKOSC_clk_10.coord_z = 14;
-defparam CLKOSC_clk_10.mask = 16'h1032;
+defparam CLKOSC_clk_10.coord_y = 4;
+defparam CLKOSC_clk_10.coord_z = 10;
+defparam CLKOSC_clk_10.mask = 16'h1054;
 defparam CLKOSC_clk_10.modeMux = 1'b0;
 defparam CLKOSC_clk_10.FeedbackMux = 1'b1;
 defparam CLKOSC_clk_10.ShiftMux = 1'b0;
@@ -2517,9 +2512,9 @@ alta_slice CLKOSC_clk_10_q_dataa(
 	.LutOut(CLKOSC_clk_9_q_dataa_combout[2]),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_10_q_dataa.coord_x = 10;
-defparam CLKOSC_clk_10_q_dataa.coord_y = 3;
-defparam CLKOSC_clk_10_q_dataa.coord_z = 0;
+defparam CLKOSC_clk_10_q_dataa.coord_x = 11;
+defparam CLKOSC_clk_10_q_dataa.coord_y = 4;
+defparam CLKOSC_clk_10_q_dataa.coord_z = 3;
 defparam CLKOSC_clk_10_q_dataa.mask = 16'h0F00;
 defparam CLKOSC_clk_10_q_dataa.modeMux = 1'b0;
 defparam CLKOSC_clk_10_q_dataa.FeedbackMux = 1'b0;
@@ -2534,17 +2529,17 @@ alta_slice CLKOSC_clk_11(
 	.D(CLKOSC_clk_2_q_A_3_Y_dataa_1_combout[2]),
 	.Cin(),
 	.Qin(CLKOSC_clk_11_q),
-	.Clk(CLKOSC_i_o_X10010_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10010_Y10002_GND),
+	.Clk(CLKOSC_i_o_X10005_Y10002_SIG_VCC),
+	.AsyncReset(AsyncReset_X10005_Y10002_GND),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
 	.LutOut(CLKOSC_clk_11_q_A_Y_A_Y),
 	.Cout(),
 	.Q(CLKOSC_clk_11_q));
-defparam CLKOSC_clk_11.coord_x = 10;
-defparam CLKOSC_clk_11.coord_y = 4;
-defparam CLKOSC_clk_11.coord_z = 10;
+defparam CLKOSC_clk_11.coord_x = 11;
+defparam CLKOSC_clk_11.coord_y = 3;
+defparam CLKOSC_clk_11.coord_z = 0;
 defparam CLKOSC_clk_11.mask = 16'hFF50;
 defparam CLKOSC_clk_11.modeMux = 1'b0;
 defparam CLKOSC_clk_11.FeedbackMux = 1'b1;
@@ -2553,10 +2548,10 @@ defparam CLKOSC_clk_11.BypassEn = 1'b0;
 defparam CLKOSC_clk_11.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_11_q_dataa(
-	.A(CLKOSC_clk_11_q),
+	.A(CLKOSC_clk_2_q_dataa_combout[2]),
 	.B(CLKOSC_clk_2_q_dataa_combout[1]),
-	.C(CLKOSC_clk_2_q_dataa_combout[3]),
-	.D(CLKOSC_clk_2_q_dataa_combout[2]),
+	.C(CLKOSC_clk_11_q),
+	.D(CLKOSC_clk_2_q_dataa_combout[3]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -2567,10 +2562,10 @@ alta_slice CLKOSC_clk_11_q_dataa(
 	.LutOut(CLKOSC_clk_11_q_dataa_combout[1]),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_11_q_dataa.coord_x = 10;
-defparam CLKOSC_clk_11_q_dataa.coord_y = 4;
-defparam CLKOSC_clk_11_q_dataa.coord_z = 9;
-defparam CLKOSC_clk_11_q_dataa.mask = 16'h040F;
+defparam CLKOSC_clk_11_q_dataa.coord_x = 11;
+defparam CLKOSC_clk_11_q_dataa.coord_y = 3;
+defparam CLKOSC_clk_11_q_dataa.coord_z = 15;
+defparam CLKOSC_clk_11_q_dataa.mask = 16'h005D;
 defparam CLKOSC_clk_11_q_dataa.modeMux = 1'b0;
 defparam CLKOSC_clk_11_q_dataa.FeedbackMux = 1'b0;
 defparam CLKOSC_clk_11_q_dataa.ShiftMux = 1'b0;
@@ -2579,8 +2574,8 @@ defparam CLKOSC_clk_11_q_dataa.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_11_q_dataa_combout_combout_2(
 	.A(vcc),
-	.B(\i2c_device|i2c_state_dataa_0_combout [0]),
-	.C(vcc),
+	.B(vcc),
+	.C(\i2c_device|i2c_state_dataa_0_combout [0]),
 	.D(\i2c_device|i2c_state_dataa_0_combout [1]),
 	.Cin(),
 	.Qin(),
@@ -2592,10 +2587,10 @@ alta_slice CLKOSC_clk_11_q_dataa_combout_combout_2(
 	.LutOut(CLKOSC_clk_11_q_dataa_combout[2]),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_11_q_dataa_combout_combout_2.coord_x = 10;
-defparam CLKOSC_clk_11_q_dataa_combout_combout_2.coord_y = 4;
-defparam CLKOSC_clk_11_q_dataa_combout_combout_2.coord_z = 6;
-defparam CLKOSC_clk_11_q_dataa_combout_combout_2.mask = 16'h0033;
+defparam CLKOSC_clk_11_q_dataa_combout_combout_2.coord_x = 11;
+defparam CLKOSC_clk_11_q_dataa_combout_combout_2.coord_y = 3;
+defparam CLKOSC_clk_11_q_dataa_combout_combout_2.coord_z = 12;
+defparam CLKOSC_clk_11_q_dataa_combout_combout_2.mask = 16'h000F;
 defparam CLKOSC_clk_11_q_dataa_combout_combout_2.modeMux = 1'b0;
 defparam CLKOSC_clk_11_q_dataa_combout_combout_2.FeedbackMux = 1'b0;
 defparam CLKOSC_clk_11_q_dataa_combout_combout_2.ShiftMux = 1'b0;
@@ -2609,17 +2604,17 @@ alta_slice CLKOSC_clk_12(
 	.D(\i2c_device|OFFSET_PRIMARY [7]),
 	.Cin(),
 	.Qin(CLKOSC_clk_12_q),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_X10019_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10001_GND),
-	.SyncReset(\i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y__SyncReset_X10019_Y10001_INV ),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_X10007_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10007_Y10002_GND),
+	.SyncReset(\i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y__SyncReset_X10007_Y10002_INV ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10019_Y10001_GND),
+	.SyncLoad(SyncLoad_X10007_Y10002_GND),
 	.LutOut(\i2c_device|OFFSET_PRIMARY_A_7_Y_B_Y ),
 	.Cout(),
 	.Q(CLKOSC_clk_12_q));
-defparam CLKOSC_clk_12.coord_x = 15;
-defparam CLKOSC_clk_12.coord_y = 4;
-defparam CLKOSC_clk_12.coord_z = 12;
+defparam CLKOSC_clk_12.coord_x = 16;
+defparam CLKOSC_clk_12.coord_y = 2;
+defparam CLKOSC_clk_12.coord_z = 2;
 defparam CLKOSC_clk_12.mask = 16'hEAC0;
 defparam CLKOSC_clk_12.modeMux = 1'b0;
 defparam CLKOSC_clk_12.FeedbackMux = 1'b0;
@@ -2628,10 +2623,10 @@ defparam CLKOSC_clk_12.BypassEn = 1'b1;
 defparam CLKOSC_clk_12.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_12_q_dataa(
-	.A(CLKOSC_clk_4_q),
-	.B(CLKOSC_clk_12_q),
+	.A(CLKOSC_clk_12_q),
+	.B(CLKOSC_clk_14_q),
 	.C(CLKOSC_clk_3_q),
-	.D(CLKOSC_clk_14_q),
+	.D(CLKOSC_clk_4_q),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -2642,10 +2637,10 @@ alta_slice CLKOSC_clk_12_q_dataa(
 	.LutOut(CLKOSC_clk_2_q_datab_combout[2]),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_12_q_dataa.coord_x = 15;
-defparam CLKOSC_clk_12_q_dataa.coord_y = 4;
-defparam CLKOSC_clk_12_q_dataa.coord_z = 13;
-defparam CLKOSC_clk_12_q_dataa.mask = 16'hABFB;
+defparam CLKOSC_clk_12_q_dataa.coord_x = 16;
+defparam CLKOSC_clk_12_q_dataa.coord_y = 2;
+defparam CLKOSC_clk_12_q_dataa.coord_z = 8;
+defparam CLKOSC_clk_12_q_dataa.mask = 16'hFF35;
 defparam CLKOSC_clk_12_q_dataa.modeMux = 1'b0;
 defparam CLKOSC_clk_12_q_dataa.FeedbackMux = 1'b0;
 defparam CLKOSC_clk_12_q_dataa.ShiftMux = 1'b0;
@@ -2654,23 +2649,23 @@ defparam CLKOSC_clk_12_q_dataa.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_13(
 	.A(CSEL2_q_1[1]),
-	.B(\i2c_device|OFFSET_SECONDARY [6]),
+	.B(\i2c_device|OFFSET_PRIMARY [6]),
 	.C(\i2c_device|sda_d_0_9_q_dataa_combout [1]),
-	.D(\i2c_device|OFFSET_PRIMARY [6]),
+	.D(\i2c_device|OFFSET_SECONDARY [6]),
 	.Cin(),
 	.Qin(CLKOSC_clk_13_q),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_X10019_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10001_GND),
-	.SyncReset(\i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y__SyncReset_X10019_Y10001_INV ),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_X10007_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10007_Y10002_GND),
+	.SyncReset(\i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y__SyncReset_X10007_Y10002_INV ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10019_Y10001_GND),
+	.SyncLoad(SyncLoad_X10007_Y10002_GND),
 	.LutOut(\i2c_device|OFFSET_PRIMARY_A_6_Y_B_Y ),
 	.Cout(),
 	.Q(CLKOSC_clk_13_q));
-defparam CLKOSC_clk_13.coord_x = 15;
-defparam CLKOSC_clk_13.coord_y = 4;
-defparam CLKOSC_clk_13.coord_z = 4;
-defparam CLKOSC_clk_13.mask = 16'hEAC0;
+defparam CLKOSC_clk_13.coord_x = 16;
+defparam CLKOSC_clk_13.coord_y = 2;
+defparam CLKOSC_clk_13.coord_z = 14;
+defparam CLKOSC_clk_13.mask = 16'hF888;
 defparam CLKOSC_clk_13.modeMux = 1'b0;
 defparam CLKOSC_clk_13.FeedbackMux = 1'b0;
 defparam CLKOSC_clk_13.ShiftMux = 1'b0;
@@ -2679,9 +2674,9 @@ defparam CLKOSC_clk_13.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_13_q_dataa(
 	.A(CLKOSC_clk_13_q),
-	.B(CLKOSC_clk_4_q),
+	.B(CLKOSC_clk_15_q),
 	.C(CLKOSC_clk_3_q),
-	.D(CLKOSC_clk_15_q),
+	.D(CLKOSC_clk_4_q),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -2692,10 +2687,10 @@ alta_slice CLKOSC_clk_13_q_dataa(
 	.LutOut(CLKOSC_clk_2_q_datab_combout[1]),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_13_q_dataa.coord_x = 15;
-defparam CLKOSC_clk_13_q_dataa.coord_y = 4;
-defparam CLKOSC_clk_13_q_dataa.coord_z = 11;
-defparam CLKOSC_clk_13_q_dataa.mask = 16'h37F7;
+defparam CLKOSC_clk_13_q_dataa.coord_x = 16;
+defparam CLKOSC_clk_13_q_dataa.coord_y = 2;
+defparam CLKOSC_clk_13_q_dataa.coord_z = 3;
+defparam CLKOSC_clk_13_q_dataa.mask = 16'h35FF;
 defparam CLKOSC_clk_13_q_dataa.modeMux = 1'b0;
 defparam CLKOSC_clk_13_q_dataa.FeedbackMux = 1'b0;
 defparam CLKOSC_clk_13_q_dataa.ShiftMux = 1'b0;
@@ -2703,24 +2698,24 @@ defparam CLKOSC_clk_13_q_dataa.BypassEn = 1'b0;
 defparam CLKOSC_clk_13_q_dataa.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_14(
-	.A(CSEL2_q_1[1]),
-	.B(\i2c_device|OFFSET_SECONDARY [5]),
+	.A(\i2c_device|OFFSET_SECONDARY [5]),
+	.B(\i2c_device|OFFSET_PRIMARY [5]),
 	.C(\i2c_device|sda_d_0_9_q_dataa_combout [1]),
-	.D(\i2c_device|OFFSET_PRIMARY [5]),
+	.D(CSEL2_q_1[1]),
 	.Cin(),
 	.Qin(CLKOSC_clk_14_q),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_X10019_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10001_GND),
-	.SyncReset(\i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y__SyncReset_X10019_Y10001_INV ),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_X10007_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10007_Y10002_GND),
+	.SyncReset(\i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y__SyncReset_X10007_Y10002_INV ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10019_Y10001_GND),
+	.SyncLoad(SyncLoad_X10007_Y10002_GND),
 	.LutOut(\i2c_device|OFFSET_PRIMARY_A_5_Y_B_Y ),
 	.Cout(),
 	.Q(CLKOSC_clk_14_q));
-defparam CLKOSC_clk_14.coord_x = 15;
-defparam CLKOSC_clk_14.coord_y = 4;
-defparam CLKOSC_clk_14.coord_z = 3;
-defparam CLKOSC_clk_14.mask = 16'hEAC0;
+defparam CLKOSC_clk_14.coord_x = 16;
+defparam CLKOSC_clk_14.coord_y = 2;
+defparam CLKOSC_clk_14.coord_z = 9;
+defparam CLKOSC_clk_14.mask = 16'hECA0;
 defparam CLKOSC_clk_14.modeMux = 1'b0;
 defparam CLKOSC_clk_14.FeedbackMux = 1'b0;
 defparam CLKOSC_clk_14.ShiftMux = 1'b0;
@@ -2728,24 +2723,24 @@ defparam CLKOSC_clk_14.BypassEn = 1'b1;
 defparam CLKOSC_clk_14.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_15(
-	.A(CSEL2_q_1[1]),
-	.B(vcc),
+	.A(vcc),
+	.B(CSEL2_q_1[1]),
 	.C(\i2c_device|write_value_d_4_q_dataa_combout [2]),
 	.D(\i2c_device|OFFSET_PRIMARY [4]),
 	.Cin(),
 	.Qin(CLKOSC_clk_15_q),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_X10019_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10001_GND),
-	.SyncReset(\i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y__SyncReset_X10019_Y10001_INV ),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_X10007_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10007_Y10002_GND),
+	.SyncReset(\i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y__SyncReset_X10007_Y10002_INV ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10019_Y10001_GND),
+	.SyncLoad(SyncLoad_X10007_Y10002_GND),
 	.LutOut(\i2c_device|OFFSET_PRIMARY_A_4_Y_A_Y ),
 	.Cout(),
 	.Q(CLKOSC_clk_15_q));
-defparam CLKOSC_clk_15.coord_x = 15;
-defparam CLKOSC_clk_15.coord_y = 4;
-defparam CLKOSC_clk_15.coord_z = 10;
-defparam CLKOSC_clk_15.mask = 16'hAF0F;
+defparam CLKOSC_clk_15.coord_x = 16;
+defparam CLKOSC_clk_15.coord_y = 2;
+defparam CLKOSC_clk_15.coord_z = 11;
+defparam CLKOSC_clk_15.mask = 16'hCF0F;
 defparam CLKOSC_clk_15.modeMux = 1'b0;
 defparam CLKOSC_clk_15.FeedbackMux = 1'b0;
 defparam CLKOSC_clk_15.ShiftMux = 1'b0;
@@ -2759,17 +2754,17 @@ alta_slice CLKOSC_clk_16(
 	.D(\i2c_device|write_value_d_3_q_datab_combout [1]),
 	.Cin(),
 	.Qin(CLKOSC_clk_16_q),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_X10019_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10001_GND),
-	.SyncReset(\i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y__SyncReset_X10019_Y10001_INV ),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_X10007_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10007_Y10002_GND),
+	.SyncReset(\i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y__SyncReset_X10007_Y10002_INV ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10019_Y10001_GND),
+	.SyncLoad(SyncLoad_X10007_Y10002_GND),
 	.LutOut(\i2c_device|OFFSET_PRIMARY_A_3_Y_B_Y_B_Y ),
 	.Cout(),
 	.Q(CLKOSC_clk_16_q));
-defparam CLKOSC_clk_16.coord_x = 15;
-defparam CLKOSC_clk_16.coord_y = 4;
-defparam CLKOSC_clk_16.coord_z = 2;
+defparam CLKOSC_clk_16.coord_x = 16;
+defparam CLKOSC_clk_16.coord_y = 2;
+defparam CLKOSC_clk_16.coord_z = 0;
 defparam CLKOSC_clk_16.mask = 16'h33FF;
 defparam CLKOSC_clk_16.modeMux = 1'b0;
 defparam CLKOSC_clk_16.FeedbackMux = 1'b0;
@@ -2792,9 +2787,9 @@ alta_slice CLKOSC_clk_16_q_dataa(
 	.LutOut(CLKOSC_clk_16_q_dataa_combout[0]),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_16_q_dataa.coord_x = 15;
-defparam CLKOSC_clk_16_q_dataa.coord_y = 4;
-defparam CLKOSC_clk_16_q_dataa.coord_z = 14;
+defparam CLKOSC_clk_16_q_dataa.coord_x = 16;
+defparam CLKOSC_clk_16_q_dataa.coord_y = 2;
+defparam CLKOSC_clk_16_q_dataa.coord_z = 6;
 defparam CLKOSC_clk_16_q_dataa.mask = 16'hFF35;
 defparam CLKOSC_clk_16_q_dataa.modeMux = 1'b0;
 defparam CLKOSC_clk_16_q_dataa.FeedbackMux = 1'b0;
@@ -2803,24 +2798,24 @@ defparam CLKOSC_clk_16_q_dataa.BypassEn = 1'b0;
 defparam CLKOSC_clk_16_q_dataa.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_17(
-	.A(vcc),
-	.B(CLKOSC_clk_q_dataa_combout[1]),
+	.A(CLKOSC_clk_q_dataa_combout[1]),
+	.B(vcc),
 	.C(vcc),
 	.D(CLKOSC_clk_q_dataa_combout[0]),
 	.Cin(),
 	.Qin(CLKOSC_clk_17_q),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_X10019_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10001_GND),
-	.SyncReset(\i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y__SyncReset_X10019_Y10001_INV ),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_X10007_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10007_Y10002_GND),
+	.SyncReset(\i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y__SyncReset_X10007_Y10002_INV ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10019_Y10001_GND),
+	.SyncLoad(SyncLoad_X10007_Y10002_GND),
 	.LutOut(\i2c_device|OFFSET_PRIMARY_A_2_Y_B_Y_B_Y ),
 	.Cout(),
 	.Q(CLKOSC_clk_17_q));
-defparam CLKOSC_clk_17.coord_x = 15;
-defparam CLKOSC_clk_17.coord_y = 4;
-defparam CLKOSC_clk_17.coord_z = 6;
-defparam CLKOSC_clk_17.mask = 16'h33FF;
+defparam CLKOSC_clk_17.coord_x = 16;
+defparam CLKOSC_clk_17.coord_y = 2;
+defparam CLKOSC_clk_17.coord_z = 5;
+defparam CLKOSC_clk_17.mask = 16'h55FF;
 defparam CLKOSC_clk_17.modeMux = 1'b0;
 defparam CLKOSC_clk_17.FeedbackMux = 1'b0;
 defparam CLKOSC_clk_17.ShiftMux = 1'b0;
@@ -2842,9 +2837,9 @@ alta_slice CLKOSC_clk_17_q_dataa(
 	.LutOut(CLKOSC_clk_16_q_dataa_combout[2]),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_17_q_dataa.coord_x = 15;
-defparam CLKOSC_clk_17_q_dataa.coord_y = 4;
-defparam CLKOSC_clk_17_q_dataa.coord_z = 0;
+defparam CLKOSC_clk_17_q_dataa.coord_x = 16;
+defparam CLKOSC_clk_17_q_dataa.coord_y = 2;
+defparam CLKOSC_clk_17_q_dataa.coord_z = 4;
 defparam CLKOSC_clk_17_q_dataa.mask = 16'h35FF;
 defparam CLKOSC_clk_17_q_dataa.modeMux = 1'b0;
 defparam CLKOSC_clk_17_q_dataa.FeedbackMux = 1'b0;
@@ -2853,24 +2848,24 @@ defparam CLKOSC_clk_17_q_dataa.BypassEn = 1'b0;
 defparam CLKOSC_clk_17_q_dataa.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_18(
-	.A(\i2c_device|OFFSET_SECONDARY_dataa_1_combout [0]),
-	.B(\i2c_device|OFFSET_SECONDARY_dataa_1_combout [3]),
+	.A(\i2c_device|OFFSET_SECONDARY_dataa_1_combout [3]),
+	.B(\i2c_device|OFFSET_SECONDARY_dataa_1_combout [0]),
 	.C(\i2c_device|OFFSET_SECONDARY_dataa_1_combout [2]),
 	.D(\i2c_device|sda_d_0_12_q_dataa_combout [1]),
 	.Cin(),
 	.Qin(CLKOSC_clk_18_q),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_X10019_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10001_GND),
-	.SyncReset(\i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y__SyncReset_X10019_Y10001_INV ),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_X10007_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10007_Y10002_GND),
+	.SyncReset(\i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y__SyncReset_X10007_Y10002_INV ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10019_Y10001_GND),
+	.SyncLoad(SyncLoad_X10007_Y10002_GND),
 	.LutOut(CSEL1_A_Y_A_Y_B_Y),
 	.Cout(),
 	.Q(CLKOSC_clk_18_q));
-defparam CLKOSC_clk_18.coord_x = 15;
-defparam CLKOSC_clk_18.coord_y = 4;
-defparam CLKOSC_clk_18.coord_z = 15;
-defparam CLKOSC_clk_18.mask = 16'h7F3F;
+defparam CLKOSC_clk_18.coord_x = 16;
+defparam CLKOSC_clk_18.coord_y = 2;
+defparam CLKOSC_clk_18.coord_z = 13;
+defparam CLKOSC_clk_18.mask = 16'h7F5F;
 defparam CLKOSC_clk_18.modeMux = 1'b0;
 defparam CLKOSC_clk_18.FeedbackMux = 1'b0;
 defparam CLKOSC_clk_18.ShiftMux = 1'b0;
@@ -2884,17 +2879,17 @@ alta_slice CLKOSC_clk_19(
 	.D(\i2c_device|sda_d_0_12_q_dataa_combout [1]),
 	.Cin(),
 	.Qin(CLKOSC_clk_19_q),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_X10019_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10001_GND),
-	.SyncReset(\i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y__SyncReset_X10019_Y10001_INV ),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_X10007_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10007_Y10002_GND),
+	.SyncReset(\i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y__SyncReset_X10007_Y10002_INV ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10019_Y10001_GND),
+	.SyncLoad(SyncLoad_X10007_Y10002_GND),
 	.LutOut(CSEL2_A_Y_B_Y_A_Y),
 	.Cout(),
 	.Q(CLKOSC_clk_19_q));
-defparam CLKOSC_clk_19.coord_x = 15;
-defparam CLKOSC_clk_19.coord_y = 4;
-defparam CLKOSC_clk_19.coord_z = 5;
+defparam CLKOSC_clk_19.coord_x = 16;
+defparam CLKOSC_clk_19.coord_y = 2;
+defparam CLKOSC_clk_19.coord_z = 1;
 defparam CLKOSC_clk_19.mask = 16'h7F5F;
 defparam CLKOSC_clk_19.modeMux = 1'b0;
 defparam CLKOSC_clk_19.FeedbackMux = 1'b0;
@@ -2903,9 +2898,9 @@ defparam CLKOSC_clk_19.BypassEn = 1'b1;
 defparam CLKOSC_clk_19.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_1_q_dataa(
-	.A(CLKOSC_clk_3_q),
+	.A(\i2c_device|bit_pos_dataa_1_combout_datab_combout [2]),
 	.B(\i2c_device|bit_pos_dataa_1_combout_datab_combout [3]),
-	.C(\i2c_device|bit_pos_dataa_1_combout_datab_combout [2]),
+	.C(CLKOSC_clk_3_q),
 	.D(CLKOSC_clk_1_q),
 	.Cin(),
 	.Qin(),
@@ -2917,10 +2912,10 @@ alta_slice CLKOSC_clk_1_q_dataa(
 	.LutOut(CLKOSC_clk_1_q_dataa_combout[3]),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_1_q_dataa.coord_x = 9;
-defparam CLKOSC_clk_1_q_dataa.coord_y = 4;
-defparam CLKOSC_clk_1_q_dataa.coord_z = 1;
-defparam CLKOSC_clk_1_q_dataa.mask = 16'hFC74;
+defparam CLKOSC_clk_1_q_dataa.coord_x = 10;
+defparam CLKOSC_clk_1_q_dataa.coord_y = 2;
+defparam CLKOSC_clk_1_q_dataa.coord_z = 15;
+defparam CLKOSC_clk_1_q_dataa.mask = 16'hEE2E;
 defparam CLKOSC_clk_1_q_dataa.modeMux = 1'b0;
 defparam CLKOSC_clk_1_q_dataa.FeedbackMux = 1'b0;
 defparam CLKOSC_clk_1_q_dataa.ShiftMux = 1'b0;
@@ -2942,9 +2937,9 @@ alta_slice CLKOSC_clk_1_q_dataa_1(
 	.LutOut(CLKOSC_clk_1_q_dataa_1_combout[3]),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_1_q_dataa_1.coord_x = 9;
-defparam CLKOSC_clk_1_q_dataa_1.coord_y = 3;
-defparam CLKOSC_clk_1_q_dataa_1.coord_z = 14;
+defparam CLKOSC_clk_1_q_dataa_1.coord_x = 11;
+defparam CLKOSC_clk_1_q_dataa_1.coord_y = 2;
+defparam CLKOSC_clk_1_q_dataa_1.coord_z = 1;
 defparam CLKOSC_clk_1_q_dataa_1.mask = 16'hE2EE;
 defparam CLKOSC_clk_1_q_dataa_1.modeMux = 1'b0;
 defparam CLKOSC_clk_1_q_dataa_1.FeedbackMux = 1'b0;
@@ -2953,9 +2948,9 @@ defparam CLKOSC_clk_1_q_dataa_1.BypassEn = 1'b0;
 defparam CLKOSC_clk_1_q_dataa_1.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_1_q_dataa_2(
-	.A(\i2c_device|bit_pos_dataa_0_combout_datab_combout [2]),
+	.A(CLKOSC_clk_4_q),
 	.B(\i2c_device|bit_pos_dataa_1_combout_datab_combout [3]),
-	.C(CLKOSC_clk_4_q),
+	.C(\i2c_device|bit_pos_dataa_0_combout_datab_combout [2]),
 	.D(CLKOSC_clk_1_q),
 	.Cin(),
 	.Qin(),
@@ -2967,10 +2962,10 @@ alta_slice CLKOSC_clk_1_q_dataa_2(
 	.LutOut(CLKOSC_clk_1_q_dataa_2_combout[3]),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_1_q_dataa_2.coord_x = 9;
-defparam CLKOSC_clk_1_q_dataa_2.coord_y = 4;
-defparam CLKOSC_clk_1_q_dataa_2.coord_z = 2;
-defparam CLKOSC_clk_1_q_dataa_2.mask = 16'hEE2E;
+defparam CLKOSC_clk_1_q_dataa_2.coord_x = 10;
+defparam CLKOSC_clk_1_q_dataa_2.coord_y = 2;
+defparam CLKOSC_clk_1_q_dataa_2.coord_z = 11;
+defparam CLKOSC_clk_1_q_dataa_2.mask = 16'hFC74;
 defparam CLKOSC_clk_1_q_dataa_2.modeMux = 1'b0;
 defparam CLKOSC_clk_1_q_dataa_2.FeedbackMux = 1'b0;
 defparam CLKOSC_clk_1_q_dataa_2.ShiftMux = 1'b0;
@@ -2978,10 +2973,10 @@ defparam CLKOSC_clk_1_q_dataa_2.BypassEn = 1'b0;
 defparam CLKOSC_clk_1_q_dataa_2.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_1_q_dataa_3(
-	.A(vcc),
-	.B(CLKOSC_clk_9_q),
+	.A(\i2c_device|i2c_state_dataa_0_combout [0]),
+	.B(vcc),
 	.C(CLKOSC_clk_1_q),
-	.D(\i2c_device|i2c_state_dataa_0_combout [0]),
+	.D(CLKOSC_clk_9_q),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -2992,10 +2987,10 @@ alta_slice CLKOSC_clk_1_q_dataa_3(
 	.LutOut(CLKOSC_clk_1_q_dataa_3_combout[2]),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_1_q_dataa_3.coord_x = 15;
-defparam CLKOSC_clk_1_q_dataa_3.coord_y = 5;
-defparam CLKOSC_clk_1_q_dataa_3.coord_z = 12;
-defparam CLKOSC_clk_1_q_dataa_3.mask = 16'h0C00;
+defparam CLKOSC_clk_1_q_dataa_3.coord_x = 10;
+defparam CLKOSC_clk_1_q_dataa_3.coord_y = 3;
+defparam CLKOSC_clk_1_q_dataa_3.coord_z = 14;
+defparam CLKOSC_clk_1_q_dataa_3.mask = 16'h0A00;
 defparam CLKOSC_clk_1_q_dataa_3.modeMux = 1'b0;
 defparam CLKOSC_clk_1_q_dataa_3.FeedbackMux = 1'b0;
 defparam CLKOSC_clk_1_q_dataa_3.ShiftMux = 1'b0;
@@ -3005,8 +3000,8 @@ defparam CLKOSC_clk_1_q_dataa_3.CarryEnb = 1'b1;
 alta_slice CLKOSC_clk_1_q_datab(
 	.A(vcc),
 	.B(vcc),
-	.C(\i2c_device|sda_d_0_4_q_dataa_combout [0]),
-	.D(CLKOSC_clk_1_q),
+	.C(CLKOSC_clk_1_q),
+	.D(\i2c_device|sda_d_0_4_q_dataa_combout [0]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -3017,10 +3012,10 @@ alta_slice CLKOSC_clk_1_q_datab(
 	.LutOut(CLKOSC_clk_2_q_dataa_combout[3]),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_1_q_datab.coord_x = 11;
-defparam CLKOSC_clk_1_q_datab.coord_y = 4;
-defparam CLKOSC_clk_1_q_datab.coord_z = 6;
-defparam CLKOSC_clk_1_q_datab.mask = 16'h0F00;
+defparam CLKOSC_clk_1_q_datab.coord_x = 10;
+defparam CLKOSC_clk_1_q_datab.coord_y = 2;
+defparam CLKOSC_clk_1_q_datab.coord_z = 12;
+defparam CLKOSC_clk_1_q_datab.mask = 16'h00F0;
 defparam CLKOSC_clk_1_q_datab.modeMux = 1'b0;
 defparam CLKOSC_clk_1_q_datab.FeedbackMux = 1'b0;
 defparam CLKOSC_clk_1_q_datab.ShiftMux = 1'b0;
@@ -3030,8 +3025,8 @@ defparam CLKOSC_clk_1_q_datab.CarryEnb = 1'b1;
 alta_slice CLKOSC_clk_1_q_datab_1(
 	.A(vcc),
 	.B(vcc),
-	.C(\i2c_device|sda_d_0_4_q_dataa_combout [0]),
-	.D(CLKOSC_clk_1_q),
+	.C(CLKOSC_clk_1_q),
+	.D(\i2c_device|sda_d_0_4_q_dataa_combout [0]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -3042,9 +3037,9 @@ alta_slice CLKOSC_clk_1_q_datab_1(
 	.LutOut(CLKOSC_clk_1_q_datab_1_combout[1]),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_1_q_datab_1.coord_x = 11;
-defparam CLKOSC_clk_1_q_datab_1.coord_y = 4;
-defparam CLKOSC_clk_1_q_datab_1.coord_z = 1;
+defparam CLKOSC_clk_1_q_datab_1.coord_x = 10;
+defparam CLKOSC_clk_1_q_datab_1.coord_y = 3;
+defparam CLKOSC_clk_1_q_datab_1.coord_z = 3;
 defparam CLKOSC_clk_1_q_datab_1.mask = 16'h000F;
 defparam CLKOSC_clk_1_q_datab_1.modeMux = 1'b0;
 defparam CLKOSC_clk_1_q_datab_1.FeedbackMux = 1'b0;
@@ -3053,10 +3048,10 @@ defparam CLKOSC_clk_1_q_datab_1.BypassEn = 1'b0;
 defparam CLKOSC_clk_1_q_datab_1.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_1_q_datab_1_combout_datab_1(
-	.A(CLKOSC_clk_1_q_datab_1_combout[1]),
-	.B(CLKOSC_clk_1_q_datab_1_combout[3]),
-	.C(\i2c_device|i2c_state_datac_0_1_combout [0]),
-	.D(\i2c_device|i2c_state_datac_0_1_combout [2]),
+	.A(\i2c_device|i2c_state_datac_0_1_combout [0]),
+	.B(\i2c_device|i2c_state_datac_0_1_combout [2]),
+	.C(CLKOSC_clk_1_q_datab_1_combout[3]),
+	.D(CLKOSC_clk_1_q_datab_1_combout[1]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -3067,10 +3062,10 @@ alta_slice CLKOSC_clk_1_q_datab_1_combout_datab_1(
 	.LutOut(CLKOSC_clk_9_q_dataa_combout_datac_2_combout[3]),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_1_q_datab_1_combout_datab_1.coord_x = 11;
-defparam CLKOSC_clk_1_q_datab_1_combout_datab_1.coord_y = 4;
-defparam CLKOSC_clk_1_q_datab_1_combout_datab_1.coord_z = 0;
-defparam CLKOSC_clk_1_q_datab_1_combout_datab_1.mask = 16'h0004;
+defparam CLKOSC_clk_1_q_datab_1_combout_datab_1.coord_x = 10;
+defparam CLKOSC_clk_1_q_datab_1_combout_datab_1.coord_y = 3;
+defparam CLKOSC_clk_1_q_datab_1_combout_datab_1.coord_z = 10;
+defparam CLKOSC_clk_1_q_datab_1_combout_datab_1.mask = 16'h0010;
 defparam CLKOSC_clk_1_q_datab_1_combout_datab_1.modeMux = 1'b0;
 defparam CLKOSC_clk_1_q_datab_1_combout_datab_1.FeedbackMux = 1'b0;
 defparam CLKOSC_clk_1_q_datab_1_combout_datab_1.ShiftMux = 1'b0;
@@ -3084,17 +3079,17 @@ alta_slice CLKOSC_clk_2(
 	.D(),
 	.Cin(),
 	.Qin(CLKOSC_clk_2_q),
-	.Clk(CLKOSC_i_o_X10010_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10010_Y10002_GND),
-	.SyncReset(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10010_Y10002_SIG ),
+	.Clk(CLKOSC_i_o_X10005_Y10002_SIG_VCC),
+	.AsyncReset(AsyncReset_X10005_Y10002_GND),
+	.SyncReset(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10005_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y__SyncLoad_X10010_Y10002_SIG ),
+	.SyncLoad(\i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y__SyncLoad_X10005_Y10002_SIG ),
 	.LutOut(CLKOSC_clk_2__feeder__LutOut),
 	.Cout(),
 	.Q(CLKOSC_clk_2_q));
-defparam CLKOSC_clk_2.coord_x = 10;
-defparam CLKOSC_clk_2.coord_y = 4;
-defparam CLKOSC_clk_2.coord_z = 1;
+defparam CLKOSC_clk_2.coord_x = 11;
+defparam CLKOSC_clk_2.coord_y = 3;
+defparam CLKOSC_clk_2.coord_z = 5;
 defparam CLKOSC_clk_2.mask = 16'hF0F0;
 defparam CLKOSC_clk_2.modeMux = 1'b0;
 defparam CLKOSC_clk_2.FeedbackMux = 1'b1;
@@ -3109,8 +3104,8 @@ alta_slice CLKOSC_clk_20(
 	.D(\i2c_device|scl_d_0_q_datab_combout [1]),
 	.Cin(),
 	.Qin(CLKOSC_clk_20_q),
-	.Clk(CLKOSC_i_o_X10004_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10004_Y10002_GND),
+	.Clk(CLKOSC_i_o_X10018_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10018_Y10001_GND),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
@@ -3118,7 +3113,7 @@ alta_slice CLKOSC_clk_20(
 	.Cout(),
 	.Q(CLKOSC_clk_20_q));
 defparam CLKOSC_clk_20.coord_x = 10;
-defparam CLKOSC_clk_20.coord_y = 2;
+defparam CLKOSC_clk_20.coord_y = 4;
 defparam CLKOSC_clk_20.coord_z = 3;
 defparam CLKOSC_clk_20.mask = 16'hFF50;
 defparam CLKOSC_clk_20.modeMux = 1'b0;
@@ -3134,17 +3129,17 @@ alta_slice CLKOSC_clk_21(
 	.D(CLKOSC_clk_11_q_dataa_combout[3]),
 	.Cin(),
 	.Qin(CLKOSC_clk_21_q),
-	.Clk(CLKOSC_i_o_X10010_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10010_Y10002_GND),
+	.Clk(CLKOSC_i_o_X10005_Y10002_SIG_VCC),
+	.AsyncReset(AsyncReset_X10005_Y10002_GND),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
 	.LutOut(\i2c_device|i2c_state_A_0_2_Y_A_2_Y_B_Y ),
 	.Cout(),
 	.Q(CLKOSC_clk_21_q));
-defparam CLKOSC_clk_21.coord_x = 10;
-defparam CLKOSC_clk_21.coord_y = 4;
-defparam CLKOSC_clk_21.coord_z = 5;
+defparam CLKOSC_clk_21.coord_x = 11;
+defparam CLKOSC_clk_21.coord_y = 3;
+defparam CLKOSC_clk_21.coord_z = 3;
 defparam CLKOSC_clk_21.mask = 16'h4450;
 defparam CLKOSC_clk_21.modeMux = 1'b0;
 defparam CLKOSC_clk_21.FeedbackMux = 1'b1;
@@ -3153,9 +3148,9 @@ defparam CLKOSC_clk_21.BypassEn = 1'b0;
 defparam CLKOSC_clk_21.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_2_q_A_1_Y_combout(
-	.A(CLKOSC_clk_3_q),
-	.B(vcc),
-	.C(CLKOSC_clk_2_q),
+	.A(vcc),
+	.B(CLKOSC_clk_2_q),
+	.C(CLKOSC_clk_3_q),
 	.D(CLKOSC_clk_4_q),
 	.Cin(),
 	.Qin(),
@@ -3167,10 +3162,10 @@ alta_slice CLKOSC_clk_2_q_A_1_Y_combout(
 	.LutOut(CLKOSC_clk_2_q_A_1_Y),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_2_q_A_1_Y_combout.coord_x = 9;
-defparam CLKOSC_clk_2_q_A_1_Y_combout.coord_y = 4;
-defparam CLKOSC_clk_2_q_A_1_Y_combout.coord_z = 7;
-defparam CLKOSC_clk_2_q_A_1_Y_combout.mask = 16'hAFFF;
+defparam CLKOSC_clk_2_q_A_1_Y_combout.coord_x = 11;
+defparam CLKOSC_clk_2_q_A_1_Y_combout.coord_y = 2;
+defparam CLKOSC_clk_2_q_A_1_Y_combout.coord_z = 2;
+defparam CLKOSC_clk_2_q_A_1_Y_combout.mask = 16'hF3FF;
 defparam CLKOSC_clk_2_q_A_1_Y_combout.modeMux = 1'b0;
 defparam CLKOSC_clk_2_q_A_1_Y_combout.FeedbackMux = 1'b0;
 defparam CLKOSC_clk_2_q_A_1_Y_combout.ShiftMux = 1'b0;
@@ -3178,9 +3173,9 @@ defparam CLKOSC_clk_2_q_A_1_Y_combout.BypassEn = 1'b0;
 defparam CLKOSC_clk_2_q_A_1_Y_combout.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_2_q_A_2_Y_combout(
-	.A(CLKOSC_clk_3_q),
-	.B(vcc),
-	.C(CLKOSC_clk_2_q),
+	.A(vcc),
+	.B(CLKOSC_clk_2_q),
+	.C(CLKOSC_clk_3_q),
 	.D(CLKOSC_clk_4_q),
 	.Cin(),
 	.Qin(),
@@ -3192,10 +3187,10 @@ alta_slice CLKOSC_clk_2_q_A_2_Y_combout(
 	.LutOut(CLKOSC_clk_2_q_A_2_Y),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_2_q_A_2_Y_combout.coord_x = 9;
-defparam CLKOSC_clk_2_q_A_2_Y_combout.coord_y = 4;
-defparam CLKOSC_clk_2_q_A_2_Y_combout.coord_z = 8;
-defparam CLKOSC_clk_2_q_A_2_Y_combout.mask = 16'hFFAF;
+defparam CLKOSC_clk_2_q_A_2_Y_combout.coord_x = 11;
+defparam CLKOSC_clk_2_q_A_2_Y_combout.coord_y = 2;
+defparam CLKOSC_clk_2_q_A_2_Y_combout.coord_z = 5;
+defparam CLKOSC_clk_2_q_A_2_Y_combout.mask = 16'hFFF3;
 defparam CLKOSC_clk_2_q_A_2_Y_combout.modeMux = 1'b0;
 defparam CLKOSC_clk_2_q_A_2_Y_combout.FeedbackMux = 1'b0;
 defparam CLKOSC_clk_2_q_A_2_Y_combout.ShiftMux = 1'b0;
@@ -3218,8 +3213,8 @@ alta_slice CLKOSC_clk_2_q_A_3_Y_combout(
 	.Cout(),
 	.Q());
 defparam CLKOSC_clk_2_q_A_3_Y_combout.coord_x = 11;
-defparam CLKOSC_clk_2_q_A_3_Y_combout.coord_y = 4;
-defparam CLKOSC_clk_2_q_A_3_Y_combout.coord_z = 12;
+defparam CLKOSC_clk_2_q_A_3_Y_combout.coord_y = 2;
+defparam CLKOSC_clk_2_q_A_3_Y_combout.coord_z = 13;
 defparam CLKOSC_clk_2_q_A_3_Y_combout.mask = 16'h3FFF;
 defparam CLKOSC_clk_2_q_A_3_Y_combout.modeMux = 1'b0;
 defparam CLKOSC_clk_2_q_A_3_Y_combout.FeedbackMux = 1'b0;
@@ -3228,9 +3223,9 @@ defparam CLKOSC_clk_2_q_A_3_Y_combout.BypassEn = 1'b0;
 defparam CLKOSC_clk_2_q_A_3_Y_combout.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_2_q_A_3_Y_dataa(
-	.A(CLKOSC_clk_8_q_datac_combout[2]),
-	.B(CLKOSC_clk_8_q_datac_combout[3]),
-	.C(CLKOSC_clk_8_q_datac_combout[1]),
+	.A(CLKOSC_clk_8_q_datac_combout[3]),
+	.B(CLKOSC_clk_8_q_datac_combout[1]),
+	.C(CLKOSC_clk_8_q_datac_combout[2]),
 	.D(CLKOSC_clk_2_q_A_3_Y),
 	.Cin(),
 	.Qin(),
@@ -3243,9 +3238,9 @@ alta_slice CLKOSC_clk_2_q_A_3_Y_dataa(
 	.Cout(),
 	.Q());
 defparam CLKOSC_clk_2_q_A_3_Y_dataa.coord_x = 10;
-defparam CLKOSC_clk_2_q_A_3_Y_dataa.coord_y = 4;
-defparam CLKOSC_clk_2_q_A_3_Y_dataa.coord_z = 14;
-defparam CLKOSC_clk_2_q_A_3_Y_dataa.mask = 16'h888B;
+defparam CLKOSC_clk_2_q_A_3_Y_dataa.coord_y = 3;
+defparam CLKOSC_clk_2_q_A_3_Y_dataa.coord_z = 13;
+defparam CLKOSC_clk_2_q_A_3_Y_dataa.mask = 16'hA0B1;
 defparam CLKOSC_clk_2_q_A_3_Y_dataa.modeMux = 1'b0;
 defparam CLKOSC_clk_2_q_A_3_Y_dataa.FeedbackMux = 1'b0;
 defparam CLKOSC_clk_2_q_A_3_Y_dataa.ShiftMux = 1'b0;
@@ -3253,10 +3248,10 @@ defparam CLKOSC_clk_2_q_A_3_Y_dataa.BypassEn = 1'b0;
 defparam CLKOSC_clk_2_q_A_3_Y_dataa.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_2_q_A_3_Y_dataa_1(
-	.A(CLKOSC_clk_2_q_A_3_Y),
-	.B(CLKOSC_clk_2_q_dataa_combout[2]),
-	.C(vcc),
-	.D(CLKOSC_clk_11_q_dataa_combout[3]),
+	.A(CLKOSC_clk_2_q_dataa_combout[2]),
+	.B(vcc),
+	.C(CLKOSC_clk_11_q_dataa_combout[3]),
+	.D(CLKOSC_clk_2_q_A_3_Y),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -3267,10 +3262,10 @@ alta_slice CLKOSC_clk_2_q_A_3_Y_dataa_1(
 	.LutOut(CLKOSC_clk_2_q_A_3_Y_dataa_1_combout[2]),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_2_q_A_3_Y_dataa_1.coord_x = 10;
-defparam CLKOSC_clk_2_q_A_3_Y_dataa_1.coord_y = 4;
-defparam CLKOSC_clk_2_q_A_3_Y_dataa_1.coord_z = 11;
-defparam CLKOSC_clk_2_q_A_3_Y_dataa_1.mask = 16'h4400;
+defparam CLKOSC_clk_2_q_A_3_Y_dataa_1.coord_x = 11;
+defparam CLKOSC_clk_2_q_A_3_Y_dataa_1.coord_y = 3;
+defparam CLKOSC_clk_2_q_A_3_Y_dataa_1.coord_z = 7;
+defparam CLKOSC_clk_2_q_A_3_Y_dataa_1.mask = 16'h00A0;
 defparam CLKOSC_clk_2_q_A_3_Y_dataa_1.modeMux = 1'b0;
 defparam CLKOSC_clk_2_q_A_3_Y_dataa_1.FeedbackMux = 1'b0;
 defparam CLKOSC_clk_2_q_A_3_Y_dataa_1.ShiftMux = 1'b0;
@@ -3278,10 +3273,10 @@ defparam CLKOSC_clk_2_q_A_3_Y_dataa_1.BypassEn = 1'b0;
 defparam CLKOSC_clk_2_q_A_3_Y_dataa_1.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_2_q_A_3_Y_dataa_2(
-	.A(vcc),
+	.A(CLKOSC_clk_2_q_A_3_Y),
 	.B(CLKOSC_clk_8_q_datac_combout[1]),
-	.C(CLKOSC_clk_2_q_A_3_Y),
-	.D(\i2c_device|scl_asdata_0_q_dataa_combout [1]),
+	.C(\i2c_device|scl_asdata_0_q_dataa_combout [1]),
+	.D(vcc),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -3292,10 +3287,10 @@ alta_slice CLKOSC_clk_2_q_A_3_Y_dataa_2(
 	.LutOut(CLKOSC_clk_1_q_datab_1_combout[3]),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_2_q_A_3_Y_dataa_2.coord_x = 11;
-defparam CLKOSC_clk_2_q_A_3_Y_dataa_2.coord_y = 4;
-defparam CLKOSC_clk_2_q_A_3_Y_dataa_2.coord_z = 9;
-defparam CLKOSC_clk_2_q_A_3_Y_dataa_2.mask = 16'h03FF;
+defparam CLKOSC_clk_2_q_A_3_Y_dataa_2.coord_x = 10;
+defparam CLKOSC_clk_2_q_A_3_Y_dataa_2.coord_y = 3;
+defparam CLKOSC_clk_2_q_A_3_Y_dataa_2.coord_z = 8;
+defparam CLKOSC_clk_2_q_A_3_Y_dataa_2.mask = 16'h1F1F;
 defparam CLKOSC_clk_2_q_A_3_Y_dataa_2.modeMux = 1'b0;
 defparam CLKOSC_clk_2_q_A_3_Y_dataa_2.FeedbackMux = 1'b0;
 defparam CLKOSC_clk_2_q_A_3_Y_dataa_2.ShiftMux = 1'b0;
@@ -3303,9 +3298,9 @@ defparam CLKOSC_clk_2_q_A_3_Y_dataa_2.BypassEn = 1'b0;
 defparam CLKOSC_clk_2_q_A_3_Y_dataa_2.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_2_q_A_Y_combout(
-	.A(CLKOSC_clk_3_q),
-	.B(vcc),
-	.C(CLKOSC_clk_2_q),
+	.A(vcc),
+	.B(CLKOSC_clk_2_q),
+	.C(CLKOSC_clk_3_q),
 	.D(CLKOSC_clk_4_q),
 	.Cin(),
 	.Qin(),
@@ -3317,10 +3312,10 @@ alta_slice CLKOSC_clk_2_q_A_Y_combout(
 	.LutOut(CLKOSC_clk_2_q_A_Y),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_2_q_A_Y_combout.coord_x = 9;
-defparam CLKOSC_clk_2_q_A_Y_combout.coord_y = 4;
-defparam CLKOSC_clk_2_q_A_Y_combout.coord_z = 4;
-defparam CLKOSC_clk_2_q_A_Y_combout.mask = 16'hFF5F;
+defparam CLKOSC_clk_2_q_A_Y_combout.coord_x = 11;
+defparam CLKOSC_clk_2_q_A_Y_combout.coord_y = 2;
+defparam CLKOSC_clk_2_q_A_Y_combout.coord_z = 6;
+defparam CLKOSC_clk_2_q_A_Y_combout.mask = 16'hFF3F;
 defparam CLKOSC_clk_2_q_A_Y_combout.modeMux = 1'b0;
 defparam CLKOSC_clk_2_q_A_Y_combout.FeedbackMux = 1'b0;
 defparam CLKOSC_clk_2_q_A_Y_combout.ShiftMux = 1'b0;
@@ -3328,9 +3323,9 @@ defparam CLKOSC_clk_2_q_A_Y_combout.BypassEn = 1'b0;
 defparam CLKOSC_clk_2_q_A_Y_combout.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_2_q_dataa(
-	.A(CLKOSC_clk_2_q_datab_combout[2]),
+	.A(CLKOSC_clk_2_q),
 	.B(CLKOSC_clk_2_q_datab_combout[1]),
-	.C(CLKOSC_clk_2_q),
+	.C(CLKOSC_clk_2_q_datab_combout[2]),
 	.D(CLKOSC_clk_2_q_datab_combout[3]),
 	.Cin(),
 	.Qin(),
@@ -3342,10 +3337,10 @@ alta_slice CLKOSC_clk_2_q_dataa(
 	.LutOut(CLKOSC_clk_2_q_dataa_combout[1]),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_2_q_dataa.coord_x = 9;
-defparam CLKOSC_clk_2_q_dataa.coord_y = 4;
-defparam CLKOSC_clk_2_q_dataa.coord_z = 14;
-defparam CLKOSC_clk_2_q_dataa.mask = 16'hFF08;
+defparam CLKOSC_clk_2_q_dataa.coord_x = 16;
+defparam CLKOSC_clk_2_q_dataa.coord_y = 2;
+defparam CLKOSC_clk_2_q_dataa.coord_z = 12;
+defparam CLKOSC_clk_2_q_dataa.mask = 16'hFF40;
 defparam CLKOSC_clk_2_q_dataa.modeMux = 1'b0;
 defparam CLKOSC_clk_2_q_dataa.FeedbackMux = 1'b0;
 defparam CLKOSC_clk_2_q_dataa.ShiftMux = 1'b0;
@@ -3353,10 +3348,10 @@ defparam CLKOSC_clk_2_q_dataa.BypassEn = 1'b0;
 defparam CLKOSC_clk_2_q_dataa.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_2_q_datab(
-	.A(CLKOSC_clk_16_q_dataa_combout[2]),
+	.A(CLKOSC_clk_2_q),
 	.B(vcc),
-	.C(CLKOSC_clk_16_q_dataa_combout[0]),
-	.D(CLKOSC_clk_2_q),
+	.C(CLKOSC_clk_16_q_dataa_combout[2]),
+	.D(CLKOSC_clk_16_q_dataa_combout[0]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -3367,9 +3362,9 @@ alta_slice CLKOSC_clk_2_q_datab(
 	.LutOut(CLKOSC_clk_2_q_datab_combout[3]),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_2_q_datab.coord_x = 15;
-defparam CLKOSC_clk_2_q_datab.coord_y = 4;
-defparam CLKOSC_clk_2_q_datab.coord_z = 8;
+defparam CLKOSC_clk_2_q_datab.coord_x = 16;
+defparam CLKOSC_clk_2_q_datab.coord_y = 2;
+defparam CLKOSC_clk_2_q_datab.coord_z = 7;
 defparam CLKOSC_clk_2_q_datab.mask = 16'hA000;
 defparam CLKOSC_clk_2_q_datab.modeMux = 1'b0;
 defparam CLKOSC_clk_2_q_datab.FeedbackMux = 1'b0;
@@ -3384,17 +3379,17 @@ alta_slice CLKOSC_clk_3(
 	.D(),
 	.Cin(),
 	.Qin(CLKOSC_clk_3_q),
-	.Clk(CLKOSC_i_o_X10010_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10010_Y10002_GND),
-	.SyncReset(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10010_Y10002_SIG ),
+	.Clk(CLKOSC_i_o_X10005_Y10002_SIG_VCC),
+	.AsyncReset(AsyncReset_X10005_Y10002_GND),
+	.SyncReset(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10005_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y__SyncLoad_X10010_Y10002_SIG ),
+	.SyncLoad(\i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y__SyncLoad_X10005_Y10002_SIG ),
 	.LutOut(CLKOSC_clk_3__feeder__LutOut),
 	.Cout(),
 	.Q(CLKOSC_clk_3_q));
-defparam CLKOSC_clk_3.coord_x = 10;
-defparam CLKOSC_clk_3.coord_y = 4;
-defparam CLKOSC_clk_3.coord_z = 3;
+defparam CLKOSC_clk_3.coord_x = 11;
+defparam CLKOSC_clk_3.coord_y = 3;
+defparam CLKOSC_clk_3.coord_z = 1;
 defparam CLKOSC_clk_3.mask = 16'hF0F0;
 defparam CLKOSC_clk_3.modeMux = 1'b0;
 defparam CLKOSC_clk_3.FeedbackMux = 1'b1;
@@ -3417,9 +3412,9 @@ alta_slice CLKOSC_clk_3_q_A_Y_B_Y_B_Y_combout(
 	.LutOut(CLKOSC_clk_3_q_A_Y_B_Y_B_Y),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_3_q_A_Y_B_Y_B_Y_combout.coord_x = 10;
-defparam CLKOSC_clk_3_q_A_Y_B_Y_B_Y_combout.coord_y = 4;
-defparam CLKOSC_clk_3_q_A_Y_B_Y_B_Y_combout.coord_z = 8;
+defparam CLKOSC_clk_3_q_A_Y_B_Y_B_Y_combout.coord_x = 11;
+defparam CLKOSC_clk_3_q_A_Y_B_Y_B_Y_combout.coord_y = 3;
+defparam CLKOSC_clk_3_q_A_Y_B_Y_B_Y_combout.coord_z = 10;
 defparam CLKOSC_clk_3_q_A_Y_B_Y_B_Y_combout.mask = 16'h5545;
 defparam CLKOSC_clk_3_q_A_Y_B_Y_B_Y_combout.modeMux = 1'b0;
 defparam CLKOSC_clk_3_q_A_Y_B_Y_B_Y_combout.FeedbackMux = 1'b0;
@@ -3434,17 +3429,17 @@ alta_slice CLKOSC_clk_4(
 	.D(),
 	.Cin(),
 	.Qin(CLKOSC_clk_4_q),
-	.Clk(CLKOSC_i_o_X10010_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10010_Y10002_GND),
-	.SyncReset(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10010_Y10002_SIG ),
+	.Clk(CLKOSC_i_o_X10005_Y10002_SIG_VCC),
+	.AsyncReset(AsyncReset_X10005_Y10002_GND),
+	.SyncReset(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10005_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y__SyncLoad_X10010_Y10002_SIG ),
+	.SyncLoad(\i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y__SyncLoad_X10005_Y10002_SIG ),
 	.LutOut(CLKOSC_clk_4__feeder__LutOut),
 	.Cout(),
 	.Q(CLKOSC_clk_4_q));
-defparam CLKOSC_clk_4.coord_x = 10;
-defparam CLKOSC_clk_4.coord_y = 4;
-defparam CLKOSC_clk_4.coord_z = 2;
+defparam CLKOSC_clk_4.coord_x = 11;
+defparam CLKOSC_clk_4.coord_y = 3;
+defparam CLKOSC_clk_4.coord_z = 8;
 defparam CLKOSC_clk_4.mask = 16'hF0F0;
 defparam CLKOSC_clk_4.modeMux = 1'b0;
 defparam CLKOSC_clk_4.FeedbackMux = 1'b1;
@@ -3459,16 +3454,16 @@ alta_slice CLKOSC_clk_5(
 	.D(),
 	.Cin(),
 	.Qin(CLKOSC_clk_5_q),
-	.Clk(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10004_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10004_Y10003_GND),
-	.SyncReset(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10004_Y10003_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10020_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10020_Y10003_GND),
+	.SyncReset(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10020_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|bit_pos_dataa_2_combout_A_1_Y_B_Y__SyncLoad_X10004_Y10003_SIG ),
+	.SyncLoad(\i2c_device|bit_pos_dataa_2_combout_A_1_Y_B_Y__SyncLoad_X10020_Y10003_SIG ),
 	.LutOut(CLKOSC_clk_5__feeder__LutOut),
 	.Cout(),
 	.Q(CLKOSC_clk_5_q));
-defparam CLKOSC_clk_5.coord_x = 8;
-defparam CLKOSC_clk_5.coord_y = 2;
+defparam CLKOSC_clk_5.coord_x = 9;
+defparam CLKOSC_clk_5.coord_y = 3;
 defparam CLKOSC_clk_5.coord_z = 0;
 defparam CLKOSC_clk_5.mask = 16'hF0F0;
 defparam CLKOSC_clk_5.modeMux = 1'b0;
@@ -3484,16 +3479,16 @@ alta_slice CLKOSC_clk_6(
 	.D(),
 	.Cin(),
 	.Qin(CLKOSC_clk_6_q),
-	.Clk(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10014_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10003_GND),
-	.SyncReset(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10014_Y10003_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10003_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10003_Y10003_GND),
+	.SyncReset(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10003_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|bit_pos_dataa_1_combout_B_Y__SyncLoad_X10014_Y10003_SIG ),
+	.SyncLoad(\i2c_device|bit_pos_dataa_1_combout_B_Y__SyncLoad_X10003_Y10003_SIG ),
 	.LutOut(CLKOSC_clk_6__feeder__LutOut),
 	.Cout(),
 	.Q(CLKOSC_clk_6_q));
-defparam CLKOSC_clk_6.coord_x = 15;
-defparam CLKOSC_clk_6.coord_y = 3;
+defparam CLKOSC_clk_6.coord_x = 9;
+defparam CLKOSC_clk_6.coord_y = 2;
 defparam CLKOSC_clk_6.coord_z = 0;
 defparam CLKOSC_clk_6.mask = 16'hF0F0;
 defparam CLKOSC_clk_6.modeMux = 1'b0;
@@ -3503,9 +3498,9 @@ defparam CLKOSC_clk_6.BypassEn = 1'b1;
 defparam CLKOSC_clk_6.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_6_q_dataa(
-	.A(CLKOSC_clk_5_q),
+	.A(CLKOSC_clk_7_q),
 	.B(CLKOSC_clk_6_q),
-	.C(CLKOSC_clk_7_q),
+	.C(CLKOSC_clk_5_q),
 	.D(\i2c_device|sda_d_0_2_q ),
 	.Cin(),
 	.Qin(),
@@ -3517,9 +3512,9 @@ alta_slice CLKOSC_clk_6_q_dataa(
 	.LutOut(CLKOSC_clk_6_q_dataa_combout[3]),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_6_q_dataa.coord_x = 9;
-defparam CLKOSC_clk_6_q_dataa.coord_y = 3;
-defparam CLKOSC_clk_6_q_dataa.coord_z = 3;
+defparam CLKOSC_clk_6_q_dataa.coord_x = 10;
+defparam CLKOSC_clk_6_q_dataa.coord_y = 2;
+defparam CLKOSC_clk_6_q_dataa.coord_z = 0;
 defparam CLKOSC_clk_6_q_dataa.mask = 16'h0020;
 defparam CLKOSC_clk_6_q_dataa.modeMux = 1'b0;
 defparam CLKOSC_clk_6_q_dataa.FeedbackMux = 1'b0;
@@ -3534,17 +3529,17 @@ alta_slice CLKOSC_clk_7(
 	.D(),
 	.Cin(),
 	.Qin(CLKOSC_clk_7_q),
-	.Clk(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10012_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10012_Y10003_GND),
-	.SyncReset(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10012_Y10003_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10020_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10020_Y10001_GND),
+	.SyncReset(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10020_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|bit_pos_dataa_0_combout_A_Y__SyncLoad_X10012_Y10003_SIG ),
+	.SyncLoad(\i2c_device|bit_pos_dataa_0_combout_A_Y__SyncLoad_X10020_Y10001_SIG ),
 	.LutOut(CLKOSC_clk_7__feeder__LutOut),
 	.Cout(),
 	.Q(CLKOSC_clk_7_q));
-defparam CLKOSC_clk_7.coord_x = 8;
-defparam CLKOSC_clk_7.coord_y = 3;
-defparam CLKOSC_clk_7.coord_z = 0;
+defparam CLKOSC_clk_7.coord_x = 10;
+defparam CLKOSC_clk_7.coord_y = 2;
+defparam CLKOSC_clk_7.coord_z = 1;
 defparam CLKOSC_clk_7.mask = 16'hF0F0;
 defparam CLKOSC_clk_7.modeMux = 1'b0;
 defparam CLKOSC_clk_7.FeedbackMux = 1'b1;
@@ -3559,17 +3554,17 @@ alta_slice CLKOSC_clk_8(
 	.D(),
 	.Cin(),
 	.Qin(CLKOSC_clk_8_q),
-	.Clk(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10003_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10003_Y10003_GND),
-	.SyncReset(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10003_Y10003_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10008_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10008_Y10003_GND),
+	.SyncReset(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10008_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|bit_pos_dataa_0_combout_B_Y__SyncLoad_X10003_Y10003_SIG ),
+	.SyncLoad(\i2c_device|bit_pos_dataa_0_combout_B_Y__SyncLoad_X10008_Y10003_SIG ),
 	.LutOut(CLKOSC_clk_8__feeder__LutOut),
 	.Cout(),
 	.Q(CLKOSC_clk_8_q));
-defparam CLKOSC_clk_8.coord_x = 12;
-defparam CLKOSC_clk_8.coord_y = 3;
-defparam CLKOSC_clk_8.coord_z = 12;
+defparam CLKOSC_clk_8.coord_x = 11;
+defparam CLKOSC_clk_8.coord_y = 1;
+defparam CLKOSC_clk_8.coord_z = 0;
 defparam CLKOSC_clk_8.mask = 16'hF0F0;
 defparam CLKOSC_clk_8.modeMux = 1'b0;
 defparam CLKOSC_clk_8.FeedbackMux = 1'b1;
@@ -3579,9 +3574,9 @@ defparam CLKOSC_clk_8.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_8_q_datac(
 	.A(CLKOSC_clk_8_q),
-	.B(\i2c_device|sda_d_0_1_q ),
-	.C(CLKOSC_clk_6_q_dataa_combout[3]),
-	.D(\i2c_device|sda_d_0_3_q ),
+	.B(CLKOSC_clk_6_q_dataa_combout[3]),
+	.C(\i2c_device|sda_d_0_3_q ),
+	.D(\i2c_device|sda_d_0_1_q ),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -3592,10 +3587,10 @@ alta_slice CLKOSC_clk_8_q_datac(
 	.LutOut(CLKOSC_clk_8_q_datac_combout[2]),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_8_q_datac.coord_x = 10;
-defparam CLKOSC_clk_8_q_datac.coord_y = 3;
-defparam CLKOSC_clk_8_q_datac.coord_z = 8;
-defparam CLKOSC_clk_8_q_datac.mask = 16'h0020;
+defparam CLKOSC_clk_8_q_datac.coord_x = 11;
+defparam CLKOSC_clk_8_q_datac.coord_y = 2;
+defparam CLKOSC_clk_8_q_datac.coord_z = 14;
+defparam CLKOSC_clk_8_q_datac.mask = 16'h0008;
 defparam CLKOSC_clk_8_q_datac.modeMux = 1'b0;
 defparam CLKOSC_clk_8_q_datac.FeedbackMux = 1'b0;
 defparam CLKOSC_clk_8_q_datac.ShiftMux = 1'b0;
@@ -3603,14 +3598,14 @@ defparam CLKOSC_clk_8_q_datac.BypassEn = 1'b0;
 defparam CLKOSC_clk_8_q_datac.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_9(
-	.A(CLKOSC_clk_9_q_dataa_combout_datac_2_combout[3]),
-	.B(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
+	.A(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
+	.B(\i2c_device|sda_d_0_4_q_datac_combout [1]),
 	.C(vcc),
-	.D(\i2c_device|sda_d_0_4_q_datac_combout [1]),
+	.D(CLKOSC_clk_9_q_dataa_combout_datac_2_combout[3]),
 	.Cin(),
 	.Qin(CLKOSC_clk_9_q),
-	.Clk(CLKOSC_i_o_X10012_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10012_Y10002_GND),
+	.Clk(CLKOSC_i_o_X10018_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10018_Y10001_GND),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
@@ -3618,9 +3613,9 @@ alta_slice CLKOSC_clk_9(
 	.Cout(),
 	.Q(CLKOSC_clk_9_q));
 defparam CLKOSC_clk_9.coord_x = 10;
-defparam CLKOSC_clk_9.coord_y = 3;
-defparam CLKOSC_clk_9.coord_z = 2;
-defparam CLKOSC_clk_9.mask = 16'h3210;
+defparam CLKOSC_clk_9.coord_y = 4;
+defparam CLKOSC_clk_9.coord_z = 7;
+defparam CLKOSC_clk_9.mask = 16'h4450;
 defparam CLKOSC_clk_9.modeMux = 1'b0;
 defparam CLKOSC_clk_9.FeedbackMux = 1'b1;
 defparam CLKOSC_clk_9.ShiftMux = 1'b0;
@@ -3642,9 +3637,9 @@ alta_slice CLKOSC_clk_9_q_dataa(
 	.LutOut(CLKOSC_clk_9_q_dataa_combout[3]),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_9_q_dataa.coord_x = 10;
-defparam CLKOSC_clk_9_q_dataa.coord_y = 3;
-defparam CLKOSC_clk_9_q_dataa.coord_z = 3;
+defparam CLKOSC_clk_9_q_dataa.coord_x = 11;
+defparam CLKOSC_clk_9_q_dataa.coord_y = 4;
+defparam CLKOSC_clk_9_q_dataa.coord_z = 13;
 defparam CLKOSC_clk_9_q_dataa.mask = 16'h000F;
 defparam CLKOSC_clk_9_q_dataa.modeMux = 1'b0;
 defparam CLKOSC_clk_9_q_dataa.FeedbackMux = 1'b0;
@@ -3667,9 +3662,9 @@ alta_slice CLKOSC_clk_9_q_dataa_combout_datac_2(
 	.LutOut(CLKOSC_clk_9_q_dataa_combout_datac_2_combout[1]),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_9_q_dataa_combout_datac_2.coord_x = 10;
-defparam CLKOSC_clk_9_q_dataa_combout_datac_2.coord_y = 3;
-defparam CLKOSC_clk_9_q_dataa_combout_datac_2.coord_z = 7;
+defparam CLKOSC_clk_9_q_dataa_combout_datac_2.coord_x = 11;
+defparam CLKOSC_clk_9_q_dataa_combout_datac_2.coord_y = 4;
+defparam CLKOSC_clk_9_q_dataa_combout_datac_2.coord_z = 2;
 defparam CLKOSC_clk_9_q_dataa_combout_datac_2.mask = 16'h0313;
 defparam CLKOSC_clk_9_q_dataa_combout_datac_2.modeMux = 1'b0;
 defparam CLKOSC_clk_9_q_dataa_combout_datac_2.FeedbackMux = 1'b0;
@@ -3678,10 +3673,10 @@ defparam CLKOSC_clk_9_q_dataa_combout_datac_2.BypassEn = 1'b0;
 defparam CLKOSC_clk_9_q_dataa_combout_datac_2.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_q_dataa(
-	.A(CLKOSC_clk_q),
-	.B(\i2c_device|lockb_cnt_dataa_11_2_combout_dataa_0_combout [2]),
-	.C(\i2c_device|sda_d_0_12_q_dataa_combout [1]),
-	.D(CSEL2_q_1[2]),
+	.A(\i2c_device|lockb_cnt_dataa_11_2_combout_dataa_0_combout [2]),
+	.B(CSEL2_q_1[2]),
+	.C(CLKOSC_clk_q),
+	.D(\i2c_device|sda_d_0_12_q_dataa_combout [1]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -3693,9 +3688,9 @@ alta_slice CLKOSC_clk_q_dataa(
 	.Cout(),
 	.Q());
 defparam CLKOSC_clk_q_dataa.coord_x = 15;
-defparam CLKOSC_clk_q_dataa.coord_y = 1;
-defparam CLKOSC_clk_q_dataa.coord_z = 1;
-defparam CLKOSC_clk_q_dataa.mask = 16'h8ACF;
+defparam CLKOSC_clk_q_dataa.coord_y = 4;
+defparam CLKOSC_clk_q_dataa.coord_z = 15;
+defparam CLKOSC_clk_q_dataa.mask = 16'hA2F3;
 defparam CLKOSC_clk_q_dataa.modeMux = 1'b0;
 defparam CLKOSC_clk_q_dataa.FeedbackMux = 1'b0;
 defparam CLKOSC_clk_q_dataa.ShiftMux = 1'b0;
@@ -3703,10 +3698,10 @@ defparam CLKOSC_clk_q_dataa.BypassEn = 1'b0;
 defparam CLKOSC_clk_q_dataa.CarryEnb = 1'b1;
 
 alta_slice CLKOSC_clk_q_dataa_1(
-	.A(CLKOSC_clk_q),
+	.A(vcc),
 	.B(vcc),
 	.C(DISP_i_o[1]),
-	.D(vcc),
+	.D(CLKOSC_clk_q),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -3717,10 +3712,10 @@ alta_slice CLKOSC_clk_q_dataa_1(
 	.LutOut(CLKOSC_clk_q_dataa_1_combout),
 	.Cout(),
 	.Q());
-defparam CLKOSC_clk_q_dataa_1.coord_x = 15;
+defparam CLKOSC_clk_q_dataa_1.coord_x = 18;
 defparam CLKOSC_clk_q_dataa_1.coord_y = 1;
-defparam CLKOSC_clk_q_dataa_1.coord_z = 9;
-defparam CLKOSC_clk_q_dataa_1.mask = 16'h5050;
+defparam CLKOSC_clk_q_dataa_1.coord_z = 8;
+defparam CLKOSC_clk_q_dataa_1.mask = 16'h00F0;
 defparam CLKOSC_clk_q_dataa_1.modeMux = 1'b0;
 defparam CLKOSC_clk_q_dataa_1.FeedbackMux = 1'b0;
 defparam CLKOSC_clk_q_dataa_1.ShiftMux = 1'b0;
@@ -3902,23 +3897,23 @@ defparam CSEL1_o.IN_DATA_DELAY = 3'b000;
 defparam CSEL1_o.IN_REG_DELAY = 3'b000;
 
 alta_slice CSEL1_q(
-	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [1]),
-	.B(\i2c_device|OFFSET_PRIMARY [1]),
+	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [6]),
+	.B(\i2c_device|OFFSET_PRIMARY [6]),
 	.C(\i2c_device|write_value [1]),
 	.D(vcc),
-	.Cin(\i2c_device|OFFSET_PRIMARY_datab_0_cout [1]),
+	.Cin(\i2c_device|OFFSET_PRIMARY_datab_0_cout [6]),
 	.Qin(CSEL1_q_1[3]),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_B_Y_A_Y_X10017_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10017_Y10001_GND),
-	.SyncReset(SyncReset_X10017_Y10001_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_B_Y_A_Y_X10016_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10016_Y10001_GND),
+	.SyncReset(SyncReset_X10016_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10017_Y10001_VCC),
-	.LutOut(\i2c_device|OFFSET_PRIMARY_datab_0_combout [1]),
-	.Cout(\i2c_device|OFFSET_PRIMARY_datab_0_cout [2]),
+	.SyncLoad(SyncLoad_X10016_Y10001_VCC),
+	.LutOut(\i2c_device|OFFSET_PRIMARY_datab_0_combout [6]),
+	.Cout(\i2c_device|OFFSET_PRIMARY_datab_0_cout [7]),
 	.Q(CSEL1_q_1[3]));
-defparam CSEL1_q.coord_x = 16;
-defparam CSEL1_q.coord_y = 5;
-defparam CSEL1_q.coord_z = 3;
+defparam CSEL1_q.coord_x = 17;
+defparam CSEL1_q.coord_y = 2;
+defparam CSEL1_q.coord_z = 8;
 defparam CSEL1_q.mask = 16'h69B2;
 defparam CSEL1_q.modeMux = 1'b1;
 defparam CSEL1_q.FeedbackMux = 1'b0;
@@ -3969,24 +3964,24 @@ defparam CSEL2_o.IN_DATA_DELAY = 3'b000;
 defparam CSEL2_o.IN_REG_DELAY = 3'b000;
 
 alta_slice CSEL2_q(
-	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [2]),
-	.B(\i2c_device|OFFSET_PRIMARY [2]),
+	.A(\i2c_device|OFFSET_PRIMARY [5]),
+	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [5]),
 	.C(\i2c_device|write_value [0]),
 	.D(vcc),
-	.Cin(\i2c_device|OFFSET_PRIMARY_datab_0_cout [2]),
+	.Cin(\i2c_device|OFFSET_PRIMARY_datab_0_cout [5]),
 	.Qin(CSEL2_q_1[3]),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_B_Y_A_Y_X10017_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10017_Y10001_GND),
-	.SyncReset(SyncReset_X10017_Y10001_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_B_Y_A_Y_X10016_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10016_Y10001_GND),
+	.SyncReset(SyncReset_X10016_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10017_Y10001_VCC),
-	.LutOut(\i2c_device|OFFSET_PRIMARY_datab_0_combout [2]),
-	.Cout(\i2c_device|OFFSET_PRIMARY_datab_0_cout [3]),
+	.SyncLoad(SyncLoad_X10016_Y10001_VCC),
+	.LutOut(\i2c_device|OFFSET_PRIMARY_datab_0_combout [5]),
+	.Cout(\i2c_device|OFFSET_PRIMARY_datab_0_cout [6]),
 	.Q(CSEL2_q_1[3]));
-defparam CSEL2_q.coord_x = 16;
-defparam CSEL2_q.coord_y = 5;
-defparam CSEL2_q.coord_z = 4;
-defparam CSEL2_q.mask = 16'h69B2;
+defparam CSEL2_q.coord_x = 17;
+defparam CSEL2_q.coord_y = 2;
+defparam CSEL2_q.coord_z = 7;
+defparam CSEL2_q.mask = 16'h69D4;
 defparam CSEL2_q.modeMux = 1'b1;
 defparam CSEL2_q.FeedbackMux = 1'b0;
 defparam CSEL2_q.ShiftMux = 1'b0;
@@ -4036,29 +4031,29 @@ defparam DISP_i.IN_DATA_DELAY = 3'b000;
 defparam DISP_i.IN_REG_DELAY = 3'b000;
 
 alta_slice I2S1_d(
-	.A(),
-	.B(),
+	.A(\i2c_device|lockb_cnt [11]),
+	.B(vcc),
 	.C(I2S1_i_o[3]),
-	.D(),
-	.Cin(),
+	.D(vcc),
+	.Cin(\i2c_device|lockb_cnt_dataa_8_1_cout [3]),
 	.Qin(I2S1_d_q),
-	.Clk(BCLK1_i_o_X10020_Y10001_SIG_VCC),
-	.AsyncReset(AsyncReset_X10020_Y10001_GND),
-	.SyncReset(SyncReset_X10020_Y10001_GND),
+	.Clk(BCLK1_i_o_X10004_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10004_Y10001_GND),
+	.SyncReset(SyncReset_X10004_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10020_Y10001_VCC),
-	.LutOut(),
-	.Cout(),
+	.SyncLoad(SyncLoad_X10004_Y10001_VCC),
+	.LutOut(\i2c_device|lockb_cnt_dataa_8_1_combout [3]),
+	.Cout(\i2c_device|lockb_cnt_dataa_8_1_cout [4]),
 	.Q(I2S1_d_q));
-defparam I2S1_d.coord_x = 20;
-defparam I2S1_d.coord_y = 4;
-defparam I2S1_d.coord_z = 1;
-defparam I2S1_d.mask = 16'hFFFF;
+defparam I2S1_d.coord_x = 19;
+defparam I2S1_d.coord_y = 7;
+defparam I2S1_d.coord_z = 3;
+defparam I2S1_d.mask = 16'h69B2;
 defparam I2S1_d.modeMux = 1'b1;
 defparam I2S1_d.FeedbackMux = 1'b0;
 defparam I2S1_d.ShiftMux = 1'b0;
 defparam I2S1_d.BypassEn = 1'b1;
-defparam I2S1_d.CarryEnb = 1'b1;
+defparam I2S1_d.CarryEnb = 1'b0;
 
 alta_rio I2S1_i(
 	.padio(I2S1),
@@ -4104,23 +4099,23 @@ defparam I2S1_i.IN_REG_DELAY = 3'b000;
 
 alta_slice I2S2_d(
 	.A(vcc),
-	.B(\i2c_device|locka_cnt [6]),
+	.B(\i2c_device|lockb_cnt [9]),
 	.C(I2S2_i_o[3]),
 	.D(vcc),
-	.Cin(),
+	.Cin(\i2c_device|lockb_cnt_dataa_8_1_cout [1]),
 	.Qin(I2S2_d_q),
-	.Clk(BCLK2_i_o_X10010_Y10001_SIG_VCC),
-	.AsyncReset(AsyncReset_X10010_Y10001_GND),
-	.SyncReset(SyncReset_X10010_Y10001_GND),
+	.Clk(BCLK2_i_o_X10004_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10004_Y10001_GND),
+	.SyncReset(SyncReset_X10004_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10010_Y10001_VCC),
-	.LutOut(\i2c_device|locka_cnt_dataa_6_1_combout [0]),
-	.Cout(\i2c_device|locka_cnt_dataa_6_1_cout [1]),
+	.SyncLoad(SyncLoad_X10004_Y10001_VCC),
+	.LutOut(\i2c_device|lockb_cnt_dataa_8_1_combout [1]),
+	.Cout(\i2c_device|lockb_cnt_dataa_8_1_cout [2]),
 	.Q(I2S2_d_q));
 defparam I2S2_d.coord_x = 19;
-defparam I2S2_d.coord_y = 10;
-defparam I2S2_d.coord_z = 0;
-defparam I2S2_d.mask = 16'h66DD;
+defparam I2S2_d.coord_y = 7;
+defparam I2S2_d.coord_z = 1;
+defparam I2S2_d.mask = 16'h96E8;
 defparam I2S2_d.modeMux = 1'b1;
 defparam I2S2_d.FeedbackMux = 1'b0;
 defparam I2S2_d.ShiftMux = 1'b0;
@@ -4589,43 +4584,43 @@ defparam STDBY_i.OUT_DELAY = 1'b0;
 defparam STDBY_i.IN_DATA_DELAY = 3'b000;
 defparam STDBY_i.IN_REG_DELAY = 3'b000;
 
-alta_asyncctrl asyncreset_ctrl_X10001_Y10001_N1(
+alta_asyncctrl asyncreset_ctrl_X10001_Y10001_N0(
 	.Din(),
 	.Dout(AsyncReset_X10001_Y10001_GND));
-defparam asyncreset_ctrl_X10001_Y10001_N1.coord_x = 16;
-defparam asyncreset_ctrl_X10001_Y10001_N1.coord_y = 6;
-defparam asyncreset_ctrl_X10001_Y10001_N1.coord_z = 1;
-defparam asyncreset_ctrl_X10001_Y10001_N1.AsyncCtrlMux = 2'b00;
+defparam asyncreset_ctrl_X10001_Y10001_N0.coord_x = 20;
+defparam asyncreset_ctrl_X10001_Y10001_N0.coord_y = 9;
+defparam asyncreset_ctrl_X10001_Y10001_N0.coord_z = 0;
+defparam asyncreset_ctrl_X10001_Y10001_N0.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10001_Y10002_N0(
 	.Din(),
 	.Dout(AsyncReset_X10001_Y10002_GND));
-defparam asyncreset_ctrl_X10001_Y10002_N0.coord_x = 15;
-defparam asyncreset_ctrl_X10001_Y10002_N0.coord_y = 5;
+defparam asyncreset_ctrl_X10001_Y10002_N0.coord_x = 18;
+defparam asyncreset_ctrl_X10001_Y10002_N0.coord_y = 4;
 defparam asyncreset_ctrl_X10001_Y10002_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10001_Y10002_N0.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10001_Y10003_N0(
 	.Din(),
 	.Dout(AsyncReset_X10001_Y10003_GND));
-defparam asyncreset_ctrl_X10001_Y10003_N0.coord_x = 14;
-defparam asyncreset_ctrl_X10001_Y10003_N0.coord_y = 6;
+defparam asyncreset_ctrl_X10001_Y10003_N0.coord_x = 12;
+defparam asyncreset_ctrl_X10001_Y10003_N0.coord_y = 1;
 defparam asyncreset_ctrl_X10001_Y10003_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10001_Y10003_N0.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10002_Y10001_N1(
 	.Din(),
 	.Dout(AsyncReset_X10002_Y10001_GND));
-defparam asyncreset_ctrl_X10002_Y10001_N1.coord_x = 18;
-defparam asyncreset_ctrl_X10002_Y10001_N1.coord_y = 9;
+defparam asyncreset_ctrl_X10002_Y10001_N1.coord_x = 19;
+defparam asyncreset_ctrl_X10002_Y10001_N1.coord_y = 6;
 defparam asyncreset_ctrl_X10002_Y10001_N1.coord_z = 1;
 defparam asyncreset_ctrl_X10002_Y10001_N1.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10002_Y10002_N0(
 	.Din(),
 	.Dout(AsyncReset_X10002_Y10002_GND));
-defparam asyncreset_ctrl_X10002_Y10002_N0.coord_x = 18;
-defparam asyncreset_ctrl_X10002_Y10002_N0.coord_y = 1;
+defparam asyncreset_ctrl_X10002_Y10002_N0.coord_x = 15;
+defparam asyncreset_ctrl_X10002_Y10002_N0.coord_y = 4;
 defparam asyncreset_ctrl_X10002_Y10002_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10002_Y10002_N0.AsyncCtrlMux = 2'b00;
 
@@ -4637,58 +4632,58 @@ defparam asyncreset_ctrl_X10002_Y10003_N1.coord_y = 2;
 defparam asyncreset_ctrl_X10002_Y10003_N1.coord_z = 1;
 defparam asyncreset_ctrl_X10002_Y10003_N1.AsyncCtrlMux = 2'b00;
 
-alta_asyncctrl asyncreset_ctrl_X10003_Y10001_N0(
-	.Din(),
-	.Dout(AsyncReset_X10003_Y10001_GND));
-defparam asyncreset_ctrl_X10003_Y10001_N0.coord_x = 19;
-defparam asyncreset_ctrl_X10003_Y10001_N0.coord_y = 9;
-defparam asyncreset_ctrl_X10003_Y10001_N0.coord_z = 0;
-defparam asyncreset_ctrl_X10003_Y10001_N0.AsyncCtrlMux = 2'b00;
-
-alta_asyncctrl asyncreset_ctrl_X10003_Y10002_N0(
+alta_asyncctrl asyncreset_ctrl_X10003_Y10002_N1(
 	.Din(),
 	.Dout(AsyncReset_X10003_Y10002_GND));
-defparam asyncreset_ctrl_X10003_Y10002_N0.coord_x = 14;
-defparam asyncreset_ctrl_X10003_Y10002_N0.coord_y = 4;
-defparam asyncreset_ctrl_X10003_Y10002_N0.coord_z = 0;
-defparam asyncreset_ctrl_X10003_Y10002_N0.AsyncCtrlMux = 2'b00;
+defparam asyncreset_ctrl_X10003_Y10002_N1.coord_x = 19;
+defparam asyncreset_ctrl_X10003_Y10002_N1.coord_y = 3;
+defparam asyncreset_ctrl_X10003_Y10002_N1.coord_z = 1;
+defparam asyncreset_ctrl_X10003_Y10002_N1.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10003_Y10003_N0(
 	.Din(),
 	.Dout(AsyncReset_X10003_Y10003_GND));
-defparam asyncreset_ctrl_X10003_Y10003_N0.coord_x = 12;
-defparam asyncreset_ctrl_X10003_Y10003_N0.coord_y = 3;
+defparam asyncreset_ctrl_X10003_Y10003_N0.coord_x = 9;
+defparam asyncreset_ctrl_X10003_Y10003_N0.coord_y = 2;
 defparam asyncreset_ctrl_X10003_Y10003_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10003_Y10003_N0.AsyncCtrlMux = 2'b00;
 
-alta_asyncctrl asyncreset_ctrl_X10004_Y10001_N1(
+alta_asyncctrl asyncreset_ctrl_X10004_Y10001_N0(
 	.Din(),
 	.Dout(AsyncReset_X10004_Y10001_GND));
-defparam asyncreset_ctrl_X10004_Y10001_N1.coord_x = 20;
-defparam asyncreset_ctrl_X10004_Y10001_N1.coord_y = 5;
-defparam asyncreset_ctrl_X10004_Y10001_N1.coord_z = 1;
-defparam asyncreset_ctrl_X10004_Y10001_N1.AsyncCtrlMux = 2'b00;
+defparam asyncreset_ctrl_X10004_Y10001_N0.coord_x = 19;
+defparam asyncreset_ctrl_X10004_Y10001_N0.coord_y = 7;
+defparam asyncreset_ctrl_X10004_Y10001_N0.coord_z = 0;
+defparam asyncreset_ctrl_X10004_Y10001_N0.AsyncCtrlMux = 2'b00;
 
-alta_asyncctrl asyncreset_ctrl_X10004_Y10002_N0(
+alta_asyncctrl asyncreset_ctrl_X10004_Y10002_N1(
 	.Din(),
 	.Dout(AsyncReset_X10004_Y10002_GND));
-defparam asyncreset_ctrl_X10004_Y10002_N0.coord_x = 10;
-defparam asyncreset_ctrl_X10004_Y10002_N0.coord_y = 2;
-defparam asyncreset_ctrl_X10004_Y10002_N0.coord_z = 0;
-defparam asyncreset_ctrl_X10004_Y10002_N0.AsyncCtrlMux = 2'b00;
+defparam asyncreset_ctrl_X10004_Y10002_N1.coord_x = 19;
+defparam asyncreset_ctrl_X10004_Y10002_N1.coord_y = 1;
+defparam asyncreset_ctrl_X10004_Y10002_N1.coord_z = 1;
+defparam asyncreset_ctrl_X10004_Y10002_N1.AsyncCtrlMux = 2'b00;
 
-alta_asyncctrl asyncreset_ctrl_X10004_Y10003_N0(
+alta_asyncctrl asyncreset_ctrl_X10004_Y10003_N1(
 	.Din(),
 	.Dout(AsyncReset_X10004_Y10003_GND));
-defparam asyncreset_ctrl_X10004_Y10003_N0.coord_x = 8;
-defparam asyncreset_ctrl_X10004_Y10003_N0.coord_y = 2;
-defparam asyncreset_ctrl_X10004_Y10003_N0.coord_z = 0;
-defparam asyncreset_ctrl_X10004_Y10003_N0.AsyncCtrlMux = 2'b00;
+defparam asyncreset_ctrl_X10004_Y10003_N1.coord_x = 17;
+defparam asyncreset_ctrl_X10004_Y10003_N1.coord_y = 3;
+defparam asyncreset_ctrl_X10004_Y10003_N1.coord_z = 1;
+defparam asyncreset_ctrl_X10004_Y10003_N1.AsyncCtrlMux = 2'b00;
+
+alta_asyncctrl asyncreset_ctrl_X10005_Y10001_N1(
+	.Din(),
+	.Dout(AsyncReset_X10005_Y10001_GND));
+defparam asyncreset_ctrl_X10005_Y10001_N1.coord_x = 19;
+defparam asyncreset_ctrl_X10005_Y10001_N1.coord_y = 5;
+defparam asyncreset_ctrl_X10005_Y10001_N1.coord_z = 1;
+defparam asyncreset_ctrl_X10005_Y10001_N1.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10005_Y10002_N0(
 	.Din(),
 	.Dout(AsyncReset_X10005_Y10002_GND));
-defparam asyncreset_ctrl_X10005_Y10002_N0.coord_x = 9;
+defparam asyncreset_ctrl_X10005_Y10002_N0.coord_x = 11;
 defparam asyncreset_ctrl_X10005_Y10002_N0.coord_y = 3;
 defparam asyncreset_ctrl_X10005_Y10002_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10005_Y10002_N0.AsyncCtrlMux = 2'b00;
@@ -4696,23 +4691,31 @@ defparam asyncreset_ctrl_X10005_Y10002_N0.AsyncCtrlMux = 2'b00;
 alta_asyncctrl asyncreset_ctrl_X10005_Y10003_N0(
 	.Din(),
 	.Dout(AsyncReset_X10005_Y10003_GND));
-defparam asyncreset_ctrl_X10005_Y10003_N0.coord_x = 14;
-defparam asyncreset_ctrl_X10005_Y10003_N0.coord_y = 3;
+defparam asyncreset_ctrl_X10005_Y10003_N0.coord_x = 9;
+defparam asyncreset_ctrl_X10005_Y10003_N0.coord_y = 1;
 defparam asyncreset_ctrl_X10005_Y10003_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10005_Y10003_N0.AsyncCtrlMux = 2'b00;
+
+alta_asyncctrl asyncreset_ctrl_X10006_Y10001_N1(
+	.Din(),
+	.Dout(AsyncReset_X10006_Y10001_GND));
+defparam asyncreset_ctrl_X10006_Y10001_N1.coord_x = 18;
+defparam asyncreset_ctrl_X10006_Y10001_N1.coord_y = 6;
+defparam asyncreset_ctrl_X10006_Y10001_N1.coord_z = 1;
+defparam asyncreset_ctrl_X10006_Y10001_N1.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10006_Y10002_N0(
 	.Din(),
 	.Dout(AsyncReset_X10006_Y10002_GND));
-defparam asyncreset_ctrl_X10006_Y10002_N0.coord_x = 16;
-defparam asyncreset_ctrl_X10006_Y10002_N0.coord_y = 2;
+defparam asyncreset_ctrl_X10006_Y10002_N0.coord_x = 15;
+defparam asyncreset_ctrl_X10006_Y10002_N0.coord_y = 6;
 defparam asyncreset_ctrl_X10006_Y10002_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10006_Y10002_N0.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10006_Y10003_N0(
 	.Din(),
 	.Dout(AsyncReset_X10006_Y10003_GND));
-defparam asyncreset_ctrl_X10006_Y10003_N0.coord_x = 9;
+defparam asyncreset_ctrl_X10006_Y10003_N0.coord_x = 11;
 defparam asyncreset_ctrl_X10006_Y10003_N0.coord_y = 2;
 defparam asyncreset_ctrl_X10006_Y10003_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10006_Y10003_N0.AsyncCtrlMux = 2'b00;
@@ -4720,304 +4723,304 @@ defparam asyncreset_ctrl_X10006_Y10003_N0.AsyncCtrlMux = 2'b00;
 alta_asyncctrl asyncreset_ctrl_X10007_Y10001_N1(
 	.Din(),
 	.Dout(AsyncReset_X10007_Y10001_GND));
-defparam asyncreset_ctrl_X10007_Y10001_N1.coord_x = 20;
-defparam asyncreset_ctrl_X10007_Y10001_N1.coord_y = 6;
+defparam asyncreset_ctrl_X10007_Y10001_N1.coord_x = 18;
+defparam asyncreset_ctrl_X10007_Y10001_N1.coord_y = 7;
 defparam asyncreset_ctrl_X10007_Y10001_N1.coord_z = 1;
 defparam asyncreset_ctrl_X10007_Y10001_N1.AsyncCtrlMux = 2'b00;
 
-alta_asyncctrl asyncreset_ctrl_X10007_Y10002_N1(
+alta_asyncctrl asyncreset_ctrl_X10007_Y10002_N0(
 	.Din(),
 	.Dout(AsyncReset_X10007_Y10002_GND));
-defparam asyncreset_ctrl_X10007_Y10002_N1.coord_x = 18;
-defparam asyncreset_ctrl_X10007_Y10002_N1.coord_y = 5;
-defparam asyncreset_ctrl_X10007_Y10002_N1.coord_z = 1;
-defparam asyncreset_ctrl_X10007_Y10002_N1.AsyncCtrlMux = 2'b00;
+defparam asyncreset_ctrl_X10007_Y10002_N0.coord_x = 16;
+defparam asyncreset_ctrl_X10007_Y10002_N0.coord_y = 2;
+defparam asyncreset_ctrl_X10007_Y10002_N0.coord_z = 0;
+defparam asyncreset_ctrl_X10007_Y10002_N0.AsyncCtrlMux = 2'b00;
 
-alta_asyncctrl asyncreset_ctrl_X10007_Y10003_N0(
+alta_asyncctrl asyncreset_ctrl_X10007_Y10003_N1(
 	.Din(),
 	.Dout(AsyncReset_X10007_Y10003_GND));
-defparam asyncreset_ctrl_X10007_Y10003_N0.coord_x = 10;
-defparam asyncreset_ctrl_X10007_Y10003_N0.coord_y = 1;
-defparam asyncreset_ctrl_X10007_Y10003_N0.coord_z = 0;
-defparam asyncreset_ctrl_X10007_Y10003_N0.AsyncCtrlMux = 2'b00;
+defparam asyncreset_ctrl_X10007_Y10003_N1.coord_x = 18;
+defparam asyncreset_ctrl_X10007_Y10003_N1.coord_y = 2;
+defparam asyncreset_ctrl_X10007_Y10003_N1.coord_z = 1;
+defparam asyncreset_ctrl_X10007_Y10003_N1.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10008_Y10001_N1(
 	.Din(),
 	.Dout(AsyncReset_X10008_Y10001_GND));
-defparam asyncreset_ctrl_X10008_Y10001_N1.coord_x = 18;
-defparam asyncreset_ctrl_X10008_Y10001_N1.coord_y = 3;
+defparam asyncreset_ctrl_X10008_Y10001_N1.coord_x = 17;
+defparam asyncreset_ctrl_X10008_Y10001_N1.coord_y = 11;
 defparam asyncreset_ctrl_X10008_Y10001_N1.coord_z = 1;
 defparam asyncreset_ctrl_X10008_Y10001_N1.AsyncCtrlMux = 2'b00;
 
-alta_asyncctrl asyncreset_ctrl_X10008_Y10002_N1(
+alta_asyncctrl asyncreset_ctrl_X10008_Y10002_N0(
 	.Din(),
 	.Dout(AsyncReset_X10008_Y10002_GND));
-defparam asyncreset_ctrl_X10008_Y10002_N1.coord_x = 16;
-defparam asyncreset_ctrl_X10008_Y10002_N1.coord_y = 3;
-defparam asyncreset_ctrl_X10008_Y10002_N1.coord_z = 1;
-defparam asyncreset_ctrl_X10008_Y10002_N1.AsyncCtrlMux = 2'b00;
+defparam asyncreset_ctrl_X10008_Y10002_N0.coord_x = 15;
+defparam asyncreset_ctrl_X10008_Y10002_N0.coord_y = 3;
+defparam asyncreset_ctrl_X10008_Y10002_N0.coord_z = 0;
+defparam asyncreset_ctrl_X10008_Y10002_N0.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10008_Y10003_N0(
 	.Din(),
 	.Dout(AsyncReset_X10008_Y10003_GND));
-defparam asyncreset_ctrl_X10008_Y10003_N0.coord_x = 8;
-defparam asyncreset_ctrl_X10008_Y10003_N0.coord_y = 4;
+defparam asyncreset_ctrl_X10008_Y10003_N0.coord_x = 11;
+defparam asyncreset_ctrl_X10008_Y10003_N0.coord_y = 1;
 defparam asyncreset_ctrl_X10008_Y10003_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10008_Y10003_N0.AsyncCtrlMux = 2'b00;
+
+alta_asyncctrl asyncreset_ctrl_X10009_Y10001_N1(
+	.Din(),
+	.Dout(AsyncReset_X10009_Y10001_GND));
+defparam asyncreset_ctrl_X10009_Y10001_N1.coord_x = 17;
+defparam asyncreset_ctrl_X10009_Y10001_N1.coord_y = 10;
+defparam asyncreset_ctrl_X10009_Y10001_N1.coord_z = 1;
+defparam asyncreset_ctrl_X10009_Y10001_N1.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10009_Y10002_N0(
 	.Din(),
 	.Dout(AsyncReset_X10009_Y10002_GND));
-defparam asyncreset_ctrl_X10009_Y10002_N0.coord_x = 16;
-defparam asyncreset_ctrl_X10009_Y10002_N0.coord_y = 1;
+defparam asyncreset_ctrl_X10009_Y10002_N0.coord_x = 11;
+defparam asyncreset_ctrl_X10009_Y10002_N0.coord_y = 4;
 defparam asyncreset_ctrl_X10009_Y10002_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10009_Y10002_N0.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10009_Y10003_N1(
 	.Din(),
 	.Dout(AsyncReset_X10009_Y10003_GND));
-defparam asyncreset_ctrl_X10009_Y10003_N1.coord_x = 17;
+defparam asyncreset_ctrl_X10009_Y10003_N1.coord_x = 14;
 defparam asyncreset_ctrl_X10009_Y10003_N1.coord_y = 4;
 defparam asyncreset_ctrl_X10009_Y10003_N1.coord_z = 1;
 defparam asyncreset_ctrl_X10009_Y10003_N1.AsyncCtrlMux = 2'b00;
 
-alta_asyncctrl asyncreset_ctrl_X10010_Y10001_N0(
+alta_asyncctrl asyncreset_ctrl_X10010_Y10001_N1(
 	.Din(),
 	.Dout(AsyncReset_X10010_Y10001_GND));
-defparam asyncreset_ctrl_X10010_Y10001_N0.coord_x = 19;
-defparam asyncreset_ctrl_X10010_Y10001_N0.coord_y = 10;
-defparam asyncreset_ctrl_X10010_Y10001_N0.coord_z = 0;
-defparam asyncreset_ctrl_X10010_Y10001_N0.AsyncCtrlMux = 2'b00;
+defparam asyncreset_ctrl_X10010_Y10001_N1.coord_x = 19;
+defparam asyncreset_ctrl_X10010_Y10001_N1.coord_y = 8;
+defparam asyncreset_ctrl_X10010_Y10001_N1.coord_z = 1;
+defparam asyncreset_ctrl_X10010_Y10001_N1.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10010_Y10002_N0(
 	.Din(),
 	.Dout(AsyncReset_X10010_Y10002_GND));
-defparam asyncreset_ctrl_X10010_Y10002_N0.coord_x = 10;
-defparam asyncreset_ctrl_X10010_Y10002_N0.coord_y = 4;
+defparam asyncreset_ctrl_X10010_Y10002_N0.coord_x = 18;
+defparam asyncreset_ctrl_X10010_Y10002_N0.coord_y = 10;
 defparam asyncreset_ctrl_X10010_Y10002_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10010_Y10002_N0.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10010_Y10003_N0(
 	.Din(),
 	.Dout(AsyncReset_X10010_Y10003_GND));
-defparam asyncreset_ctrl_X10010_Y10003_N0.coord_x = 11;
-defparam asyncreset_ctrl_X10010_Y10003_N0.coord_y = 3;
+defparam asyncreset_ctrl_X10010_Y10003_N0.coord_x = 9;
+defparam asyncreset_ctrl_X10010_Y10003_N0.coord_y = 4;
 defparam asyncreset_ctrl_X10010_Y10003_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10010_Y10003_N0.AsyncCtrlMux = 2'b00;
-
-alta_asyncctrl asyncreset_ctrl_X10011_Y10001_N1(
-	.Din(),
-	.Dout(AsyncReset_X10011_Y10001_GND));
-defparam asyncreset_ctrl_X10011_Y10001_N1.coord_x = 16;
-defparam asyncreset_ctrl_X10011_Y10001_N1.coord_y = 7;
-defparam asyncreset_ctrl_X10011_Y10001_N1.coord_z = 1;
-defparam asyncreset_ctrl_X10011_Y10001_N1.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10011_Y10002_N0(
 	.Din(),
 	.Dout(AsyncReset_X10011_Y10002_GND));
-defparam asyncreset_ctrl_X10011_Y10002_N0.coord_x = 15;
-defparam asyncreset_ctrl_X10011_Y10002_N0.coord_y = 2;
+defparam asyncreset_ctrl_X10011_Y10002_N0.coord_x = 10;
+defparam asyncreset_ctrl_X10011_Y10002_N0.coord_y = 3;
 defparam asyncreset_ctrl_X10011_Y10002_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10011_Y10002_N0.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10011_Y10003_N0(
 	.Din(),
 	.Dout(AsyncReset_X10011_Y10003_GND));
-defparam asyncreset_ctrl_X10011_Y10003_N0.coord_x = 15;
-defparam asyncreset_ctrl_X10011_Y10003_N0.coord_y = 1;
+defparam asyncreset_ctrl_X10011_Y10003_N0.coord_x = 17;
+defparam asyncreset_ctrl_X10011_Y10003_N0.coord_y = 6;
 defparam asyncreset_ctrl_X10011_Y10003_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10011_Y10003_N0.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10012_Y10001_N1(
 	.Din(),
 	.Dout(AsyncReset_X10012_Y10001_GND));
-defparam asyncreset_ctrl_X10012_Y10001_N1.coord_x = 18;
-defparam asyncreset_ctrl_X10012_Y10001_N1.coord_y = 4;
+defparam asyncreset_ctrl_X10012_Y10001_N1.coord_x = 19;
+defparam asyncreset_ctrl_X10012_Y10001_N1.coord_y = 9;
 defparam asyncreset_ctrl_X10012_Y10001_N1.coord_z = 1;
 defparam asyncreset_ctrl_X10012_Y10001_N1.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10012_Y10002_N0(
 	.Din(),
 	.Dout(AsyncReset_X10012_Y10002_GND));
-defparam asyncreset_ctrl_X10012_Y10002_N0.coord_x = 10;
-defparam asyncreset_ctrl_X10012_Y10002_N0.coord_y = 3;
+defparam asyncreset_ctrl_X10012_Y10002_N0.coord_x = 17;
+defparam asyncreset_ctrl_X10012_Y10002_N0.coord_y = 4;
 defparam asyncreset_ctrl_X10012_Y10002_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10012_Y10002_N0.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10012_Y10003_N0(
 	.Din(),
 	.Dout(AsyncReset_X10012_Y10003_GND));
-defparam asyncreset_ctrl_X10012_Y10003_N0.coord_x = 8;
-defparam asyncreset_ctrl_X10012_Y10003_N0.coord_y = 3;
+defparam asyncreset_ctrl_X10012_Y10003_N0.coord_x = 14;
+defparam asyncreset_ctrl_X10012_Y10003_N0.coord_y = 1;
 defparam asyncreset_ctrl_X10012_Y10003_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10012_Y10003_N0.AsyncCtrlMux = 2'b00;
 
-alta_asyncctrl asyncreset_ctrl_X10014_Y10001_N1(
+alta_asyncctrl asyncreset_ctrl_X10014_Y10001_N0(
 	.Din(),
 	.Dout(AsyncReset_X10014_Y10001_GND));
-defparam asyncreset_ctrl_X10014_Y10001_N1.coord_x = 18;
-defparam asyncreset_ctrl_X10014_Y10001_N1.coord_y = 10;
-defparam asyncreset_ctrl_X10014_Y10001_N1.coord_z = 1;
-defparam asyncreset_ctrl_X10014_Y10001_N1.AsyncCtrlMux = 2'b00;
+defparam asyncreset_ctrl_X10014_Y10001_N0.coord_x = 18;
+defparam asyncreset_ctrl_X10014_Y10001_N0.coord_y = 3;
+defparam asyncreset_ctrl_X10014_Y10001_N0.coord_z = 0;
+defparam asyncreset_ctrl_X10014_Y10001_N0.AsyncCtrlMux = 2'b00;
 
-alta_asyncctrl asyncreset_ctrl_X10014_Y10002_N1(
+alta_asyncctrl asyncreset_ctrl_X10014_Y10002_N0(
 	.Din(),
 	.Dout(AsyncReset_X10014_Y10002_GND));
-defparam asyncreset_ctrl_X10014_Y10002_N1.coord_x = 14;
-defparam asyncreset_ctrl_X10014_Y10002_N1.coord_y = 1;
-defparam asyncreset_ctrl_X10014_Y10002_N1.coord_z = 1;
-defparam asyncreset_ctrl_X10014_Y10002_N1.AsyncCtrlMux = 2'b00;
+defparam asyncreset_ctrl_X10014_Y10002_N0.coord_x = 12;
+defparam asyncreset_ctrl_X10014_Y10002_N0.coord_y = 2;
+defparam asyncreset_ctrl_X10014_Y10002_N0.coord_z = 0;
+defparam asyncreset_ctrl_X10014_Y10002_N0.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10014_Y10003_N0(
 	.Din(),
 	.Dout(AsyncReset_X10014_Y10003_GND));
-defparam asyncreset_ctrl_X10014_Y10003_N0.coord_x = 15;
-defparam asyncreset_ctrl_X10014_Y10003_N0.coord_y = 3;
+defparam asyncreset_ctrl_X10014_Y10003_N0.coord_x = 20;
+defparam asyncreset_ctrl_X10014_Y10003_N0.coord_y = 6;
 defparam asyncreset_ctrl_X10014_Y10003_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10014_Y10003_N0.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10015_Y10001_N0(
 	.Din(),
 	.Dout(AsyncReset_X10015_Y10001_GND));
-defparam asyncreset_ctrl_X10015_Y10001_N0.coord_x = 17;
-defparam asyncreset_ctrl_X10015_Y10001_N0.coord_y = 2;
+defparam asyncreset_ctrl_X10015_Y10001_N0.coord_x = 16;
+defparam asyncreset_ctrl_X10015_Y10001_N0.coord_y = 4;
 defparam asyncreset_ctrl_X10015_Y10001_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10015_Y10001_N0.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10015_Y10002_N0(
 	.Din(),
 	.Dout(AsyncReset_X10015_Y10002_GND));
-defparam asyncreset_ctrl_X10015_Y10002_N0.coord_x = 19;
-defparam asyncreset_ctrl_X10015_Y10002_N0.coord_y = 5;
+defparam asyncreset_ctrl_X10015_Y10002_N0.coord_x = 12;
+defparam asyncreset_ctrl_X10015_Y10002_N0.coord_y = 4;
 defparam asyncreset_ctrl_X10015_Y10002_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10015_Y10002_N0.AsyncCtrlMux = 2'b00;
 
-alta_asyncctrl asyncreset_ctrl_X10015_Y10003_N1(
+alta_asyncctrl asyncreset_ctrl_X10015_Y10003_N0(
 	.Din(),
 	.Dout(AsyncReset_X10015_Y10003_GND));
-defparam asyncreset_ctrl_X10015_Y10003_N1.coord_x = 12;
-defparam asyncreset_ctrl_X10015_Y10003_N1.coord_y = 2;
-defparam asyncreset_ctrl_X10015_Y10003_N1.coord_z = 1;
-defparam asyncreset_ctrl_X10015_Y10003_N1.AsyncCtrlMux = 2'b00;
+defparam asyncreset_ctrl_X10015_Y10003_N0.coord_x = 10;
+defparam asyncreset_ctrl_X10015_Y10003_N0.coord_y = 1;
+defparam asyncreset_ctrl_X10015_Y10003_N0.coord_z = 0;
+defparam asyncreset_ctrl_X10015_Y10003_N0.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10016_Y10001_N0(
 	.Din(),
 	.Dout(AsyncReset_X10016_Y10001_GND));
 defparam asyncreset_ctrl_X10016_Y10001_N0.coord_x = 17;
-defparam asyncreset_ctrl_X10016_Y10001_N0.coord_y = 1;
+defparam asyncreset_ctrl_X10016_Y10001_N0.coord_y = 2;
 defparam asyncreset_ctrl_X10016_Y10001_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10016_Y10001_N0.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10016_Y10002_N0(
 	.Din(),
 	.Dout(AsyncReset_X10016_Y10002_GND));
-defparam asyncreset_ctrl_X10016_Y10002_N0.coord_x = 9;
-defparam asyncreset_ctrl_X10016_Y10002_N0.coord_y = 4;
+defparam asyncreset_ctrl_X10016_Y10002_N0.coord_x = 12;
+defparam asyncreset_ctrl_X10016_Y10002_N0.coord_y = 3;
 defparam asyncreset_ctrl_X10016_Y10002_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10016_Y10002_N0.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10016_Y10003_N0(
 	.Din(),
 	.Dout(AsyncReset_X10016_Y10003_GND));
-defparam asyncreset_ctrl_X10016_Y10003_N0.coord_x = 11;
-defparam asyncreset_ctrl_X10016_Y10003_N0.coord_y = 2;
+defparam asyncreset_ctrl_X10016_Y10003_N0.coord_x = 18;
+defparam asyncreset_ctrl_X10016_Y10003_N0.coord_y = 1;
 defparam asyncreset_ctrl_X10016_Y10003_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10016_Y10003_N0.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10017_Y10001_N0(
 	.Din(),
 	.Dout(AsyncReset_X10017_Y10001_GND));
-defparam asyncreset_ctrl_X10017_Y10001_N0.coord_x = 16;
-defparam asyncreset_ctrl_X10017_Y10001_N0.coord_y = 5;
+defparam asyncreset_ctrl_X10017_Y10001_N0.coord_x = 15;
+defparam asyncreset_ctrl_X10017_Y10001_N0.coord_y = 2;
 defparam asyncreset_ctrl_X10017_Y10001_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10017_Y10001_N0.AsyncCtrlMux = 2'b00;
 
-alta_asyncctrl asyncreset_ctrl_X10017_Y10002_N0(
+alta_asyncctrl asyncreset_ctrl_X10017_Y10002_N1(
 	.Din(),
 	.Dout(AsyncReset_X10017_Y10002_GND));
-defparam asyncreset_ctrl_X10017_Y10002_N0.coord_x = 11;
-defparam asyncreset_ctrl_X10017_Y10002_N0.coord_y = 4;
-defparam asyncreset_ctrl_X10017_Y10002_N0.coord_z = 0;
-defparam asyncreset_ctrl_X10017_Y10002_N0.AsyncCtrlMux = 2'b00;
+defparam asyncreset_ctrl_X10017_Y10002_N1.coord_x = 14;
+defparam asyncreset_ctrl_X10017_Y10002_N1.coord_y = 3;
+defparam asyncreset_ctrl_X10017_Y10002_N1.coord_z = 1;
+defparam asyncreset_ctrl_X10017_Y10002_N1.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10017_Y10003_N0(
 	.Din(),
 	.Dout(AsyncReset_X10017_Y10003_GND));
-defparam asyncreset_ctrl_X10017_Y10003_N0.coord_x = 9;
-defparam asyncreset_ctrl_X10017_Y10003_N0.coord_y = 1;
+defparam asyncreset_ctrl_X10017_Y10003_N0.coord_x = 20;
+defparam asyncreset_ctrl_X10017_Y10003_N0.coord_y = 10;
 defparam asyncreset_ctrl_X10017_Y10003_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10017_Y10003_N0.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10018_Y10001_N0(
 	.Din(),
 	.Dout(AsyncReset_X10018_Y10001_GND));
-defparam asyncreset_ctrl_X10018_Y10001_N0.coord_x = 16;
+defparam asyncreset_ctrl_X10018_Y10001_N0.coord_x = 10;
 defparam asyncreset_ctrl_X10018_Y10001_N0.coord_y = 4;
 defparam asyncreset_ctrl_X10018_Y10001_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10018_Y10001_N0.AsyncCtrlMux = 2'b00;
 
-alta_asyncctrl asyncreset_ctrl_X10018_Y10002_N0(
+alta_asyncctrl asyncreset_ctrl_X10018_Y10002_N1(
 	.Din(),
 	.Dout(AsyncReset_X10018_Y10002_GND));
-defparam asyncreset_ctrl_X10018_Y10002_N0.coord_x = 19;
-defparam asyncreset_ctrl_X10018_Y10002_N0.coord_y = 4;
-defparam asyncreset_ctrl_X10018_Y10002_N0.coord_z = 0;
-defparam asyncreset_ctrl_X10018_Y10002_N0.AsyncCtrlMux = 2'b00;
+defparam asyncreset_ctrl_X10018_Y10002_N1.coord_x = 14;
+defparam asyncreset_ctrl_X10018_Y10002_N1.coord_y = 6;
+defparam asyncreset_ctrl_X10018_Y10002_N1.coord_z = 1;
+defparam asyncreset_ctrl_X10018_Y10002_N1.AsyncCtrlMux = 2'b00;
 
-alta_asyncctrl asyncreset_ctrl_X10018_Y10003_N1(
+alta_asyncctrl asyncreset_ctrl_X10018_Y10003_N0(
 	.Din(),
 	.Dout(AsyncReset_X10018_Y10003_GND));
-defparam asyncreset_ctrl_X10018_Y10003_N1.coord_x = 17;
-defparam asyncreset_ctrl_X10018_Y10003_N1.coord_y = 5;
-defparam asyncreset_ctrl_X10018_Y10003_N1.coord_z = 1;
-defparam asyncreset_ctrl_X10018_Y10003_N1.AsyncCtrlMux = 2'b00;
+defparam asyncreset_ctrl_X10018_Y10003_N0.coord_x = 20;
+defparam asyncreset_ctrl_X10018_Y10003_N0.coord_y = 8;
+defparam asyncreset_ctrl_X10018_Y10003_N0.coord_z = 0;
+defparam asyncreset_ctrl_X10018_Y10003_N0.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10019_Y10001_N0(
 	.Din(),
 	.Dout(AsyncReset_X10019_Y10001_GND));
-defparam asyncreset_ctrl_X10019_Y10001_N0.coord_x = 15;
-defparam asyncreset_ctrl_X10019_Y10001_N0.coord_y = 4;
+defparam asyncreset_ctrl_X10019_Y10001_N0.coord_x = 16;
+defparam asyncreset_ctrl_X10019_Y10001_N0.coord_y = 3;
 defparam asyncreset_ctrl_X10019_Y10001_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10019_Y10001_N0.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10019_Y10002_N0(
 	.Din(),
 	.Dout(AsyncReset_X10019_Y10002_GND));
-defparam asyncreset_ctrl_X10019_Y10002_N0.coord_x = 17;
-defparam asyncreset_ctrl_X10019_Y10002_N0.coord_y = 6;
+defparam asyncreset_ctrl_X10019_Y10002_N0.coord_x = 15;
+defparam asyncreset_ctrl_X10019_Y10002_N0.coord_y = 1;
 defparam asyncreset_ctrl_X10019_Y10002_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10019_Y10002_N0.AsyncCtrlMux = 2'b00;
 
-alta_asyncctrl asyncreset_ctrl_X10019_Y10003_N1(
+alta_asyncctrl asyncreset_ctrl_X10019_Y10003_N0(
 	.Din(),
 	.Dout(AsyncReset_X10019_Y10003_GND));
-defparam asyncreset_ctrl_X10019_Y10003_N1.coord_x = 12;
-defparam asyncreset_ctrl_X10019_Y10003_N1.coord_y = 1;
-defparam asyncreset_ctrl_X10019_Y10003_N1.coord_z = 1;
-defparam asyncreset_ctrl_X10019_Y10003_N1.AsyncCtrlMux = 2'b00;
+defparam asyncreset_ctrl_X10019_Y10003_N0.coord_x = 20;
+defparam asyncreset_ctrl_X10019_Y10003_N0.coord_y = 7;
+defparam asyncreset_ctrl_X10019_Y10003_N0.coord_z = 0;
+defparam asyncreset_ctrl_X10019_Y10003_N0.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10020_Y10001_N0(
 	.Din(),
 	.Dout(AsyncReset_X10020_Y10001_GND));
-defparam asyncreset_ctrl_X10020_Y10001_N0.coord_x = 20;
-defparam asyncreset_ctrl_X10020_Y10001_N0.coord_y = 4;
+defparam asyncreset_ctrl_X10020_Y10001_N0.coord_x = 10;
+defparam asyncreset_ctrl_X10020_Y10001_N0.coord_y = 2;
 defparam asyncreset_ctrl_X10020_Y10001_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10020_Y10001_N0.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10020_Y10002_N0(
 	.Din(),
 	.Dout(AsyncReset_X10020_Y10002_GND));
-defparam asyncreset_ctrl_X10020_Y10002_N0.coord_x = 14;
-defparam asyncreset_ctrl_X10020_Y10002_N0.coord_y = 5;
+defparam asyncreset_ctrl_X10020_Y10002_N0.coord_x = 16;
+defparam asyncreset_ctrl_X10020_Y10002_N0.coord_y = 1;
 defparam asyncreset_ctrl_X10020_Y10002_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10020_Y10002_N0.AsyncCtrlMux = 2'b00;
 
 alta_asyncctrl asyncreset_ctrl_X10020_Y10003_N0(
 	.Din(),
 	.Dout(AsyncReset_X10020_Y10003_GND));
-defparam asyncreset_ctrl_X10020_Y10003_N0.coord_x = 20;
-defparam asyncreset_ctrl_X10020_Y10003_N0.coord_y = 9;
+defparam asyncreset_ctrl_X10020_Y10003_N0.coord_x = 9;
+defparam asyncreset_ctrl_X10020_Y10003_N0.coord_y = 3;
 defparam asyncreset_ctrl_X10020_Y10003_N0.coord_z = 0;
 defparam asyncreset_ctrl_X10020_Y10003_N0.AsyncCtrlMux = 2'b00;
 
@@ -5037,112 +5040,92 @@ defparam asyncreset_ctrl_X5019_Y5012_N0.coord_y = 12;
 defparam asyncreset_ctrl_X5019_Y5012_N0.coord_z = 0;
 defparam asyncreset_ctrl_X5019_Y5012_N0.AsyncCtrlMux = 2'b00;
 
-alta_clkenctrl clken_ctrl_X10001_Y10001_N1(
+alta_clkenctrl clken_ctrl_X10001_Y10001_N0(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|brip_rec_A_0_Y_B_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10001_Y10001_SIG_SIG ));
-defparam clken_ctrl_X10001_Y10001_N1.coord_x = 16;
-defparam clken_ctrl_X10001_Y10001_N1.coord_y = 6;
-defparam clken_ctrl_X10001_Y10001_N1.coord_z = 1;
-defparam clken_ctrl_X10001_Y10001_N1.ClkMux = 2'b10;
-defparam clken_ctrl_X10001_Y10001_N1.ClkEnMux = 2'b10;
+	.ClkEn(\i2c_device|brin_rec_A_0_Y_B_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10001_Y10001_SIG_SIG ));
+defparam clken_ctrl_X10001_Y10001_N0.coord_x = 20;
+defparam clken_ctrl_X10001_Y10001_N0.coord_y = 9;
+defparam clken_ctrl_X10001_Y10001_N0.coord_z = 0;
+defparam clken_ctrl_X10001_Y10001_N0.ClkMux = 2'b10;
+defparam clken_ctrl_X10001_Y10001_N0.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10001_Y10002_N0(
-	.ClkIn(CLKOSC_i_o),
+	.ClkIn(GCLK),
 	.ClkEn(),
-	.ClkOut(CLKOSC_i_o_X10001_Y10002_SIG_VCC));
-defparam clken_ctrl_X10001_Y10002_N0.coord_x = 15;
-defparam clken_ctrl_X10001_Y10002_N0.coord_y = 5;
+	.ClkOut(GCLK_X10001_Y10002_SIG_VCC));
+defparam clken_ctrl_X10001_Y10002_N0.coord_x = 18;
+defparam clken_ctrl_X10001_Y10002_N0.coord_y = 4;
 defparam clken_ctrl_X10001_Y10002_N0.coord_z = 0;
 defparam clken_ctrl_X10001_Y10002_N0.ClkMux = 2'b10;
 defparam clken_ctrl_X10001_Y10002_N0.ClkEnMux = 2'b01;
 
 alta_clkenctrl clken_ctrl_X10001_Y10003_N0(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10001_Y10003_SIG_SIG ));
-defparam clken_ctrl_X10001_Y10003_N0.coord_x = 14;
-defparam clken_ctrl_X10001_Y10003_N0.coord_y = 6;
+	.ClkEn(\i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10001_Y10003_SIG_SIG ));
+defparam clken_ctrl_X10001_Y10003_N0.coord_x = 12;
+defparam clken_ctrl_X10001_Y10003_N0.coord_y = 1;
 defparam clken_ctrl_X10001_Y10003_N0.coord_z = 0;
 defparam clken_ctrl_X10001_Y10003_N0.ClkMux = 2'b10;
 defparam clken_ctrl_X10001_Y10003_N0.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10001_Y10003_N1(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10001_Y10003_SIG_SIG ));
-defparam clken_ctrl_X10001_Y10003_N1.coord_x = 14;
-defparam clken_ctrl_X10001_Y10003_N1.coord_y = 6;
+	.ClkEn(\i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10001_Y10003_SIG_SIG ));
+defparam clken_ctrl_X10001_Y10003_N1.coord_x = 12;
+defparam clken_ctrl_X10001_Y10003_N1.coord_y = 1;
 defparam clken_ctrl_X10001_Y10003_N1.coord_z = 1;
 defparam clken_ctrl_X10001_Y10003_N1.ClkMux = 2'b10;
 defparam clken_ctrl_X10001_Y10003_N1.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10002_Y10001_N1(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|locka_rec_A_0_Y_B_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10002_Y10001_SIG_SIG ));
-defparam clken_ctrl_X10002_Y10001_N1.coord_x = 18;
-defparam clken_ctrl_X10002_Y10001_N1.coord_y = 9;
+	.ClkEn(\i2c_device|lockb_rec_A_0_Y_B_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10002_Y10001_SIG_SIG ));
+defparam clken_ctrl_X10002_Y10001_N1.coord_x = 19;
+defparam clken_ctrl_X10002_Y10001_N1.coord_y = 6;
 defparam clken_ctrl_X10002_Y10001_N1.coord_z = 1;
 defparam clken_ctrl_X10002_Y10001_N1.ClkMux = 2'b10;
 defparam clken_ctrl_X10002_Y10001_N1.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10002_Y10002_N0(
-	.ClkIn(GCLK),
-	.ClkEn(),
-	.ClkOut(GCLK_X10002_Y10002_SIG_VCC));
-defparam clken_ctrl_X10002_Y10002_N0.coord_x = 18;
-defparam clken_ctrl_X10002_Y10002_N0.coord_y = 1;
+	.ClkIn(CLKOSC_i_o),
+	.ClkEn(\i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10002_Y10002_SIG_SIG ));
+defparam clken_ctrl_X10002_Y10002_N0.coord_x = 15;
+defparam clken_ctrl_X10002_Y10002_N0.coord_y = 4;
 defparam clken_ctrl_X10002_Y10002_N0.coord_z = 0;
 defparam clken_ctrl_X10002_Y10002_N0.ClkMux = 2'b10;
-defparam clken_ctrl_X10002_Y10002_N0.ClkEnMux = 2'b01;
+defparam clken_ctrl_X10002_Y10002_N0.ClkEnMux = 2'b10;
+
+alta_clkenctrl clken_ctrl_X10002_Y10002_N1(
+	.ClkIn(CLKOSC_i_o),
+	.ClkEn(\i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10002_Y10002_SIG_SIG ));
+defparam clken_ctrl_X10002_Y10002_N1.coord_x = 15;
+defparam clken_ctrl_X10002_Y10002_N1.coord_y = 4;
+defparam clken_ctrl_X10002_Y10002_N1.coord_z = 1;
+defparam clken_ctrl_X10002_Y10002_N1.ClkMux = 2'b10;
+defparam clken_ctrl_X10002_Y10002_N1.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10002_Y10003_N1(
-	.ClkIn(\i2s_osd_select_2|BCLKD ),
-	.ClkEn(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y ),
-	.ClkOut(\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10002_Y10003_INV_SIG ));
+	.ClkIn(GCLK),
+	.ClkEn(\i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y ),
+	.ClkOut(\GCLK__i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_X10002_Y10003_SIG_SIG ));
 defparam clken_ctrl_X10002_Y10003_N1.coord_x = 14;
 defparam clken_ctrl_X10002_Y10003_N1.coord_y = 2;
 defparam clken_ctrl_X10002_Y10003_N1.coord_z = 1;
-defparam clken_ctrl_X10002_Y10003_N1.ClkMux = 2'b11;
+defparam clken_ctrl_X10002_Y10003_N1.ClkMux = 2'b10;
 defparam clken_ctrl_X10002_Y10003_N1.ClkEnMux = 2'b10;
 
-alta_clkenctrl clken_ctrl_X10003_Y10001_N0(
-	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|locka_rec_A_0_Y_B_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10003_Y10001_SIG_SIG ));
-defparam clken_ctrl_X10003_Y10001_N0.coord_x = 19;
-defparam clken_ctrl_X10003_Y10001_N0.coord_y = 9;
-defparam clken_ctrl_X10003_Y10001_N0.coord_z = 0;
-defparam clken_ctrl_X10003_Y10001_N0.ClkMux = 2'b10;
-defparam clken_ctrl_X10003_Y10001_N0.ClkEnMux = 2'b10;
-
-alta_clkenctrl clken_ctrl_X10003_Y10001_N1(
-	.ClkIn(BCLK2_i_o),
-	.ClkEn(),
-	.ClkOut(BCLK2_i_o_X10003_Y10001_SIG_VCC));
-defparam clken_ctrl_X10003_Y10001_N1.coord_x = 19;
-defparam clken_ctrl_X10003_Y10001_N1.coord_y = 9;
-defparam clken_ctrl_X10003_Y10001_N1.coord_z = 1;
-defparam clken_ctrl_X10003_Y10001_N1.ClkMux = 2'b10;
-defparam clken_ctrl_X10003_Y10001_N1.ClkEnMux = 2'b01;
-
-alta_clkenctrl clken_ctrl_X10003_Y10002_N0(
-	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10003_Y10002_SIG_SIG ));
-defparam clken_ctrl_X10003_Y10002_N0.coord_x = 14;
-defparam clken_ctrl_X10003_Y10002_N0.coord_y = 4;
-defparam clken_ctrl_X10003_Y10002_N0.coord_z = 0;
-defparam clken_ctrl_X10003_Y10002_N0.ClkMux = 2'b10;
-defparam clken_ctrl_X10003_Y10002_N0.ClkEnMux = 2'b10;
-
 alta_clkenctrl clken_ctrl_X10003_Y10002_N1(
-	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10003_Y10002_SIG_SIG ));
-defparam clken_ctrl_X10003_Y10002_N1.coord_x = 14;
-defparam clken_ctrl_X10003_Y10002_N1.coord_y = 4;
+	.ClkIn(GCLK),
+	.ClkEn(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y ),
+	.ClkOut(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10003_Y10002_SIG_SIG ));
+defparam clken_ctrl_X10003_Y10002_N1.coord_x = 19;
+defparam clken_ctrl_X10003_Y10002_N1.coord_y = 3;
 defparam clken_ctrl_X10003_Y10002_N1.coord_z = 1;
 defparam clken_ctrl_X10003_Y10002_N1.ClkMux = 2'b10;
 defparam clken_ctrl_X10003_Y10002_N1.ClkEnMux = 2'b10;
@@ -5151,8 +5134,8 @@ alta_clkenctrl clken_ctrl_X10003_Y10003_N0(
 	.ClkIn(CLKOSC_i_o),
 	.ClkEn(\i2c_device|stop_B_0_Y_B_Y_A_Y ),
 	.ClkOut(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10003_Y10003_SIG_SIG ));
-defparam clken_ctrl_X10003_Y10003_N0.coord_x = 12;
-defparam clken_ctrl_X10003_Y10003_N0.coord_y = 3;
+defparam clken_ctrl_X10003_Y10003_N0.coord_x = 9;
+defparam clken_ctrl_X10003_Y10003_N0.coord_y = 2;
 defparam clken_ctrl_X10003_Y10003_N0.coord_z = 0;
 defparam clken_ctrl_X10003_Y10003_N0.ClkMux = 2'b10;
 defparam clken_ctrl_X10003_Y10003_N0.ClkEnMux = 2'b10;
@@ -5161,548 +5144,598 @@ alta_clkenctrl clken_ctrl_X10004_Y10001_N0(
 	.ClkIn(BCLK2_i_o),
 	.ClkEn(),
 	.ClkOut(BCLK2_i_o_X10004_Y10001_SIG_VCC));
-defparam clken_ctrl_X10004_Y10001_N0.coord_x = 20;
-defparam clken_ctrl_X10004_Y10001_N0.coord_y = 5;
+defparam clken_ctrl_X10004_Y10001_N0.coord_x = 19;
+defparam clken_ctrl_X10004_Y10001_N0.coord_y = 7;
 defparam clken_ctrl_X10004_Y10001_N0.coord_z = 0;
 defparam clken_ctrl_X10004_Y10001_N0.ClkMux = 2'b10;
 defparam clken_ctrl_X10004_Y10001_N0.ClkEnMux = 2'b01;
 
 alta_clkenctrl clken_ctrl_X10004_Y10001_N1(
-	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|brin_rec_A_0_Y_B_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10004_Y10001_SIG_SIG ));
-defparam clken_ctrl_X10004_Y10001_N1.coord_x = 20;
-defparam clken_ctrl_X10004_Y10001_N1.coord_y = 5;
+	.ClkIn(BCLK1_i_o),
+	.ClkEn(),
+	.ClkOut(BCLK1_i_o_X10004_Y10001_SIG_VCC));
+defparam clken_ctrl_X10004_Y10001_N1.coord_x = 19;
+defparam clken_ctrl_X10004_Y10001_N1.coord_y = 7;
 defparam clken_ctrl_X10004_Y10001_N1.coord_z = 1;
 defparam clken_ctrl_X10004_Y10001_N1.ClkMux = 2'b10;
-defparam clken_ctrl_X10004_Y10001_N1.ClkEnMux = 2'b10;
+defparam clken_ctrl_X10004_Y10001_N1.ClkEnMux = 2'b01;
 
-alta_clkenctrl clken_ctrl_X10004_Y10002_N0(
+alta_clkenctrl clken_ctrl_X10004_Y10002_N1(
+	.ClkIn(GCLK),
+	.ClkEn(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y ),
+	.ClkOut(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10004_Y10002_SIG_SIG ));
+defparam clken_ctrl_X10004_Y10002_N1.coord_x = 19;
+defparam clken_ctrl_X10004_Y10002_N1.coord_y = 1;
+defparam clken_ctrl_X10004_Y10002_N1.coord_z = 1;
+defparam clken_ctrl_X10004_Y10002_N1.ClkMux = 2'b10;
+defparam clken_ctrl_X10004_Y10002_N1.ClkEnMux = 2'b10;
+
+alta_clkenctrl clken_ctrl_X10004_Y10003_N1(
+	.ClkIn(GCLK),
+	.ClkEn(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y ),
+	.ClkOut(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10004_Y10003_SIG_SIG ));
+defparam clken_ctrl_X10004_Y10003_N1.coord_x = 17;
+defparam clken_ctrl_X10004_Y10003_N1.coord_y = 3;
+defparam clken_ctrl_X10004_Y10003_N1.coord_z = 1;
+defparam clken_ctrl_X10004_Y10003_N1.ClkMux = 2'b10;
+defparam clken_ctrl_X10004_Y10003_N1.ClkEnMux = 2'b10;
+
+alta_clkenctrl clken_ctrl_X10005_Y10001_N0(
 	.ClkIn(CLKOSC_i_o),
 	.ClkEn(),
-	.ClkOut(CLKOSC_i_o_X10004_Y10002_SIG_VCC));
-defparam clken_ctrl_X10004_Y10002_N0.coord_x = 10;
-defparam clken_ctrl_X10004_Y10002_N0.coord_y = 2;
-defparam clken_ctrl_X10004_Y10002_N0.coord_z = 0;
-defparam clken_ctrl_X10004_Y10002_N0.ClkMux = 2'b10;
-defparam clken_ctrl_X10004_Y10002_N0.ClkEnMux = 2'b01;
+	.ClkOut(CLKOSC_i_o_X10005_Y10001_SIG_VCC));
+defparam clken_ctrl_X10005_Y10001_N0.coord_x = 19;
+defparam clken_ctrl_X10005_Y10001_N0.coord_y = 5;
+defparam clken_ctrl_X10005_Y10001_N0.coord_z = 0;
+defparam clken_ctrl_X10005_Y10001_N0.ClkMux = 2'b10;
+defparam clken_ctrl_X10005_Y10001_N0.ClkEnMux = 2'b01;
 
-alta_clkenctrl clken_ctrl_X10004_Y10003_N0(
+alta_clkenctrl clken_ctrl_X10005_Y10001_N1(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|stop_B_0_Y_B_Y_A_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10004_Y10003_SIG_SIG ));
-defparam clken_ctrl_X10004_Y10003_N0.coord_x = 8;
-defparam clken_ctrl_X10004_Y10003_N0.coord_y = 2;
-defparam clken_ctrl_X10004_Y10003_N0.coord_z = 0;
-defparam clken_ctrl_X10004_Y10003_N0.ClkMux = 2'b10;
-defparam clken_ctrl_X10004_Y10003_N0.ClkEnMux = 2'b10;
+	.ClkEn(\i2c_device|lockb_rec_A_0_Y_B_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10005_Y10001_SIG_SIG ));
+defparam clken_ctrl_X10005_Y10001_N1.coord_x = 19;
+defparam clken_ctrl_X10005_Y10001_N1.coord_y = 5;
+defparam clken_ctrl_X10005_Y10001_N1.coord_z = 1;
+defparam clken_ctrl_X10005_Y10001_N1.ClkMux = 2'b10;
+defparam clken_ctrl_X10005_Y10001_N1.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10005_Y10002_N0(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|stop_B_0_Y_B_Y_A_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10005_Y10002_SIG_SIG ));
-defparam clken_ctrl_X10005_Y10002_N0.coord_x = 9;
+	.ClkEn(),
+	.ClkOut(CLKOSC_i_o_X10005_Y10002_SIG_VCC));
+defparam clken_ctrl_X10005_Y10002_N0.coord_x = 11;
 defparam clken_ctrl_X10005_Y10002_N0.coord_y = 3;
 defparam clken_ctrl_X10005_Y10002_N0.coord_z = 0;
 defparam clken_ctrl_X10005_Y10002_N0.ClkMux = 2'b10;
-defparam clken_ctrl_X10005_Y10002_N0.ClkEnMux = 2'b10;
+defparam clken_ctrl_X10005_Y10002_N0.ClkEnMux = 2'b01;
 
 alta_clkenctrl clken_ctrl_X10005_Y10003_N0(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10005_Y10003_SIG_SIG ));
-defparam clken_ctrl_X10005_Y10003_N0.coord_x = 14;
-defparam clken_ctrl_X10005_Y10003_N0.coord_y = 3;
+	.ClkEn(\i2c_device|stop_B_0_Y_B_Y_A_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10005_Y10003_SIG_SIG ));
+defparam clken_ctrl_X10005_Y10003_N0.coord_x = 9;
+defparam clken_ctrl_X10005_Y10003_N0.coord_y = 1;
 defparam clken_ctrl_X10005_Y10003_N0.coord_z = 0;
 defparam clken_ctrl_X10005_Y10003_N0.ClkMux = 2'b10;
 defparam clken_ctrl_X10005_Y10003_N0.ClkEnMux = 2'b10;
 
-alta_clkenctrl clken_ctrl_X10005_Y10003_N1(
+alta_clkenctrl clken_ctrl_X10006_Y10001_N1(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10005_Y10003_SIG_SIG ));
-defparam clken_ctrl_X10005_Y10003_N1.coord_x = 14;
-defparam clken_ctrl_X10005_Y10003_N1.coord_y = 3;
-defparam clken_ctrl_X10005_Y10003_N1.coord_z = 1;
-defparam clken_ctrl_X10005_Y10003_N1.ClkMux = 2'b10;
-defparam clken_ctrl_X10005_Y10003_N1.ClkEnMux = 2'b10;
+	.ClkEn(\i2c_device|brin_rec_A_0_Y_B_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10006_Y10001_SIG_SIG ));
+defparam clken_ctrl_X10006_Y10001_N1.coord_x = 18;
+defparam clken_ctrl_X10006_Y10001_N1.coord_y = 6;
+defparam clken_ctrl_X10006_Y10001_N1.coord_z = 1;
+defparam clken_ctrl_X10006_Y10001_N1.ClkMux = 2'b10;
+defparam clken_ctrl_X10006_Y10001_N1.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10006_Y10002_N0(
-	.ClkIn(GCLK),
+	.ClkIn(\i2s_osd_select_2|BCLKD ),
 	.ClkEn(),
-	.ClkOut(GCLK_X10006_Y10002_SIG_VCC));
-defparam clken_ctrl_X10006_Y10002_N0.coord_x = 16;
-defparam clken_ctrl_X10006_Y10002_N0.coord_y = 2;
+	.ClkOut(\i2s_osd_select_2|BCLKD_X10006_Y10002_INV_VCC ));
+defparam clken_ctrl_X10006_Y10002_N0.coord_x = 15;
+defparam clken_ctrl_X10006_Y10002_N0.coord_y = 6;
 defparam clken_ctrl_X10006_Y10002_N0.coord_z = 0;
-defparam clken_ctrl_X10006_Y10002_N0.ClkMux = 2'b10;
+defparam clken_ctrl_X10006_Y10002_N0.ClkMux = 2'b11;
 defparam clken_ctrl_X10006_Y10002_N0.ClkEnMux = 2'b01;
 
 alta_clkenctrl clken_ctrl_X10006_Y10003_N0(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|stop_B_0_Y_B_Y_A_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10006_Y10003_SIG_SIG ));
-defparam clken_ctrl_X10006_Y10003_N0.coord_x = 9;
+	.ClkEn(),
+	.ClkOut(CLKOSC_i_o_X10006_Y10003_SIG_VCC));
+defparam clken_ctrl_X10006_Y10003_N0.coord_x = 11;
 defparam clken_ctrl_X10006_Y10003_N0.coord_y = 2;
 defparam clken_ctrl_X10006_Y10003_N0.coord_z = 0;
 defparam clken_ctrl_X10006_Y10003_N0.ClkMux = 2'b10;
-defparam clken_ctrl_X10006_Y10003_N0.ClkEnMux = 2'b10;
+defparam clken_ctrl_X10006_Y10003_N0.ClkEnMux = 2'b01;
 
 alta_clkenctrl clken_ctrl_X10007_Y10001_N1(
 	.ClkIn(CLKOSC_i_o),
 	.ClkEn(\i2c_device|brin_rec_A_0_Y_B_Y ),
 	.ClkOut(\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10007_Y10001_SIG_SIG ));
-defparam clken_ctrl_X10007_Y10001_N1.coord_x = 20;
-defparam clken_ctrl_X10007_Y10001_N1.coord_y = 6;
+defparam clken_ctrl_X10007_Y10001_N1.coord_x = 18;
+defparam clken_ctrl_X10007_Y10001_N1.coord_y = 7;
 defparam clken_ctrl_X10007_Y10001_N1.coord_z = 1;
 defparam clken_ctrl_X10007_Y10001_N1.ClkMux = 2'b10;
 defparam clken_ctrl_X10007_Y10001_N1.ClkEnMux = 2'b10;
 
+alta_clkenctrl clken_ctrl_X10007_Y10002_N0(
+	.ClkIn(CLKOSC_i_o),
+	.ClkEn(\i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_X10007_Y10002_SIG_SIG ));
+defparam clken_ctrl_X10007_Y10002_N0.coord_x = 16;
+defparam clken_ctrl_X10007_Y10002_N0.coord_y = 2;
+defparam clken_ctrl_X10007_Y10002_N0.coord_z = 0;
+defparam clken_ctrl_X10007_Y10002_N0.ClkMux = 2'b10;
+defparam clken_ctrl_X10007_Y10002_N0.ClkEnMux = 2'b10;
+
 alta_clkenctrl clken_ctrl_X10007_Y10002_N1(
-	.ClkIn(GCLK),
-	.ClkEn(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y ),
-	.ClkOut(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10007_Y10002_SIG_SIG ));
-defparam clken_ctrl_X10007_Y10002_N1.coord_x = 18;
-defparam clken_ctrl_X10007_Y10002_N1.coord_y = 5;
+	.ClkIn(CLKOSC_i_o),
+	.ClkEn(\i2c_device|sda_d_0_11_q_A_Y_B_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10007_Y10002_SIG_SIG ));
+defparam clken_ctrl_X10007_Y10002_N1.coord_x = 16;
+defparam clken_ctrl_X10007_Y10002_N1.coord_y = 2;
 defparam clken_ctrl_X10007_Y10002_N1.coord_z = 1;
 defparam clken_ctrl_X10007_Y10002_N1.ClkMux = 2'b10;
 defparam clken_ctrl_X10007_Y10002_N1.ClkEnMux = 2'b10;
 
-alta_clkenctrl clken_ctrl_X10007_Y10003_N0(
-	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10007_Y10003_SIG_SIG ));
-defparam clken_ctrl_X10007_Y10003_N0.coord_x = 10;
-defparam clken_ctrl_X10007_Y10003_N0.coord_y = 1;
-defparam clken_ctrl_X10007_Y10003_N0.coord_z = 0;
-defparam clken_ctrl_X10007_Y10003_N0.ClkMux = 2'b10;
-defparam clken_ctrl_X10007_Y10003_N0.ClkEnMux = 2'b10;
-
 alta_clkenctrl clken_ctrl_X10007_Y10003_N1(
-	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10007_Y10003_SIG_SIG ));
-defparam clken_ctrl_X10007_Y10003_N1.coord_x = 10;
-defparam clken_ctrl_X10007_Y10003_N1.coord_y = 1;
+	.ClkIn(GCLK),
+	.ClkEn(\i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_B_Y_B_Y ),
+	.ClkOut(\GCLK__i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_B_Y_B_Y_X10007_Y10003_SIG_SIG ));
+defparam clken_ctrl_X10007_Y10003_N1.coord_x = 18;
+defparam clken_ctrl_X10007_Y10003_N1.coord_y = 2;
 defparam clken_ctrl_X10007_Y10003_N1.coord_z = 1;
 defparam clken_ctrl_X10007_Y10003_N1.ClkMux = 2'b10;
 defparam clken_ctrl_X10007_Y10003_N1.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10008_Y10001_N1(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|lockb_rec_A_0_Y_B_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10008_Y10001_SIG_SIG ));
-defparam clken_ctrl_X10008_Y10001_N1.coord_x = 18;
-defparam clken_ctrl_X10008_Y10001_N1.coord_y = 3;
+	.ClkEn(\i2c_device|brip_rec_A_0_Y_B_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10008_Y10001_SIG_SIG ));
+defparam clken_ctrl_X10008_Y10001_N1.coord_x = 17;
+defparam clken_ctrl_X10008_Y10001_N1.coord_y = 11;
 defparam clken_ctrl_X10008_Y10001_N1.coord_z = 1;
 defparam clken_ctrl_X10008_Y10001_N1.ClkMux = 2'b10;
 defparam clken_ctrl_X10008_Y10001_N1.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10008_Y10002_N0(
-	.ClkIn(GCLK),
+	.ClkIn(\i2s_osd_select_1|BCLKD ),
 	.ClkEn(),
-	.ClkOut(GCLK_X10008_Y10002_SIG_VCC));
-defparam clken_ctrl_X10008_Y10002_N0.coord_x = 16;
+	.ClkOut(\i2s_osd_select_1|BCLKD_X10008_Y10002_INV_VCC ));
+defparam clken_ctrl_X10008_Y10002_N0.coord_x = 15;
 defparam clken_ctrl_X10008_Y10002_N0.coord_y = 3;
 defparam clken_ctrl_X10008_Y10002_N0.coord_z = 0;
-defparam clken_ctrl_X10008_Y10002_N0.ClkMux = 2'b10;
+defparam clken_ctrl_X10008_Y10002_N0.ClkMux = 2'b11;
 defparam clken_ctrl_X10008_Y10002_N0.ClkEnMux = 2'b01;
-
-alta_clkenctrl clken_ctrl_X10008_Y10002_N1(
-	.ClkIn(GCLK),
-	.ClkEn(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y ),
-	.ClkOut(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10008_Y10002_SIG_SIG ));
-defparam clken_ctrl_X10008_Y10002_N1.coord_x = 16;
-defparam clken_ctrl_X10008_Y10002_N1.coord_y = 3;
-defparam clken_ctrl_X10008_Y10002_N1.coord_z = 1;
-defparam clken_ctrl_X10008_Y10002_N1.ClkMux = 2'b10;
-defparam clken_ctrl_X10008_Y10002_N1.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10008_Y10003_N0(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10008_Y10003_SIG_SIG ));
-defparam clken_ctrl_X10008_Y10003_N0.coord_x = 8;
-defparam clken_ctrl_X10008_Y10003_N0.coord_y = 4;
+	.ClkEn(\i2c_device|stop_B_0_Y_B_Y_A_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10008_Y10003_SIG_SIG ));
+defparam clken_ctrl_X10008_Y10003_N0.coord_x = 11;
+defparam clken_ctrl_X10008_Y10003_N0.coord_y = 1;
 defparam clken_ctrl_X10008_Y10003_N0.coord_z = 0;
 defparam clken_ctrl_X10008_Y10003_N0.ClkMux = 2'b10;
 defparam clken_ctrl_X10008_Y10003_N0.ClkEnMux = 2'b10;
 
-alta_clkenctrl clken_ctrl_X10008_Y10003_N1(
+alta_clkenctrl clken_ctrl_X10009_Y10001_N1(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10008_Y10003_SIG_SIG ));
-defparam clken_ctrl_X10008_Y10003_N1.coord_x = 8;
-defparam clken_ctrl_X10008_Y10003_N1.coord_y = 4;
-defparam clken_ctrl_X10008_Y10003_N1.coord_z = 1;
-defparam clken_ctrl_X10008_Y10003_N1.ClkMux = 2'b10;
-defparam clken_ctrl_X10008_Y10003_N1.ClkEnMux = 2'b10;
+	.ClkEn(\i2c_device|brip_rec_A_0_Y_B_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10009_Y10001_SIG_SIG ));
+defparam clken_ctrl_X10009_Y10001_N1.coord_x = 17;
+defparam clken_ctrl_X10009_Y10001_N1.coord_y = 10;
+defparam clken_ctrl_X10009_Y10001_N1.coord_z = 1;
+defparam clken_ctrl_X10009_Y10001_N1.ClkMux = 2'b10;
+defparam clken_ctrl_X10009_Y10001_N1.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10009_Y10002_N0(
-	.ClkIn(\i2s_osd_select_1|BCLKD ),
-	.ClkEn(),
-	.ClkOut(\i2s_osd_select_1|BCLKD_X10009_Y10002_INV_VCC ));
-defparam clken_ctrl_X10009_Y10002_N0.coord_x = 16;
-defparam clken_ctrl_X10009_Y10002_N0.coord_y = 1;
+	.ClkIn(CLKOSC_i_o),
+	.ClkEn(\i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10009_Y10002_SIG_SIG ));
+defparam clken_ctrl_X10009_Y10002_N0.coord_x = 11;
+defparam clken_ctrl_X10009_Y10002_N0.coord_y = 4;
 defparam clken_ctrl_X10009_Y10002_N0.coord_z = 0;
-defparam clken_ctrl_X10009_Y10002_N0.ClkMux = 2'b11;
-defparam clken_ctrl_X10009_Y10002_N0.ClkEnMux = 2'b01;
+defparam clken_ctrl_X10009_Y10002_N0.ClkMux = 2'b10;
+defparam clken_ctrl_X10009_Y10002_N0.ClkEnMux = 2'b10;
+
+alta_clkenctrl clken_ctrl_X10009_Y10002_N1(
+	.ClkIn(CLKOSC_i_o),
+	.ClkEn(\i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10009_Y10002_SIG_SIG ));
+defparam clken_ctrl_X10009_Y10002_N1.coord_x = 11;
+defparam clken_ctrl_X10009_Y10002_N1.coord_y = 4;
+defparam clken_ctrl_X10009_Y10002_N1.coord_z = 1;
+defparam clken_ctrl_X10009_Y10002_N1.ClkMux = 2'b10;
+defparam clken_ctrl_X10009_Y10002_N1.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10009_Y10003_N1(
 	.ClkIn(GCLK),
-	.ClkEn(\i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y ),
-	.ClkOut(\GCLK__i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_X10009_Y10003_SIG_SIG ));
-defparam clken_ctrl_X10009_Y10003_N1.coord_x = 17;
+	.ClkEn(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y ),
+	.ClkOut(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10009_Y10003_SIG_SIG ));
+defparam clken_ctrl_X10009_Y10003_N1.coord_x = 14;
 defparam clken_ctrl_X10009_Y10003_N1.coord_y = 4;
 defparam clken_ctrl_X10009_Y10003_N1.coord_z = 1;
 defparam clken_ctrl_X10009_Y10003_N1.ClkMux = 2'b10;
 defparam clken_ctrl_X10009_Y10003_N1.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10010_Y10001_N0(
-	.ClkIn(BCLK2_i_o),
+	.ClkIn(CLKOSC_i_o),
 	.ClkEn(),
-	.ClkOut(BCLK2_i_o_X10010_Y10001_SIG_VCC));
+	.ClkOut(CLKOSC_i_o_X10010_Y10001_SIG_VCC));
 defparam clken_ctrl_X10010_Y10001_N0.coord_x = 19;
-defparam clken_ctrl_X10010_Y10001_N0.coord_y = 10;
+defparam clken_ctrl_X10010_Y10001_N0.coord_y = 8;
 defparam clken_ctrl_X10010_Y10001_N0.coord_z = 0;
 defparam clken_ctrl_X10010_Y10001_N0.ClkMux = 2'b10;
 defparam clken_ctrl_X10010_Y10001_N0.ClkEnMux = 2'b01;
 
+alta_clkenctrl clken_ctrl_X10010_Y10001_N1(
+	.ClkIn(CLKOSC_i_o),
+	.ClkEn(\i2c_device|locka_rec_A_0_Y_B_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10010_Y10001_SIG_SIG ));
+defparam clken_ctrl_X10010_Y10001_N1.coord_x = 19;
+defparam clken_ctrl_X10010_Y10001_N1.coord_y = 8;
+defparam clken_ctrl_X10010_Y10001_N1.coord_z = 1;
+defparam clken_ctrl_X10010_Y10001_N1.ClkMux = 2'b10;
+defparam clken_ctrl_X10010_Y10001_N1.ClkEnMux = 2'b10;
+
 alta_clkenctrl clken_ctrl_X10010_Y10002_N0(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(),
-	.ClkOut(CLKOSC_i_o_X10010_Y10002_SIG_VCC));
-defparam clken_ctrl_X10010_Y10002_N0.coord_x = 10;
-defparam clken_ctrl_X10010_Y10002_N0.coord_y = 4;
+	.ClkEn(\i2c_device|brip_rec_A_0_Y_B_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10010_Y10002_SIG_SIG ));
+defparam clken_ctrl_X10010_Y10002_N0.coord_x = 18;
+defparam clken_ctrl_X10010_Y10002_N0.coord_y = 10;
 defparam clken_ctrl_X10010_Y10002_N0.coord_z = 0;
 defparam clken_ctrl_X10010_Y10002_N0.ClkMux = 2'b10;
-defparam clken_ctrl_X10010_Y10002_N0.ClkEnMux = 2'b01;
+defparam clken_ctrl_X10010_Y10002_N0.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10010_Y10003_N0(
 	.ClkIn(CLKOSC_i_o),
 	.ClkEn(),
 	.ClkOut(CLKOSC_i_o_X10010_Y10003_SIG_VCC));
-defparam clken_ctrl_X10010_Y10003_N0.coord_x = 11;
-defparam clken_ctrl_X10010_Y10003_N0.coord_y = 3;
+defparam clken_ctrl_X10010_Y10003_N0.coord_x = 9;
+defparam clken_ctrl_X10010_Y10003_N0.coord_y = 4;
 defparam clken_ctrl_X10010_Y10003_N0.coord_z = 0;
 defparam clken_ctrl_X10010_Y10003_N0.ClkMux = 2'b10;
 defparam clken_ctrl_X10010_Y10003_N0.ClkEnMux = 2'b01;
 
-alta_clkenctrl clken_ctrl_X10011_Y10001_N1(
-	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|brip_rec_A_0_Y_B_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10011_Y10001_SIG_SIG ));
-defparam clken_ctrl_X10011_Y10001_N1.coord_x = 16;
-defparam clken_ctrl_X10011_Y10001_N1.coord_y = 7;
-defparam clken_ctrl_X10011_Y10001_N1.coord_z = 1;
-defparam clken_ctrl_X10011_Y10001_N1.ClkMux = 2'b10;
-defparam clken_ctrl_X10011_Y10001_N1.ClkEnMux = 2'b10;
-
 alta_clkenctrl clken_ctrl_X10011_Y10002_N0(
-	.ClkIn(\i2s_osd_select_2|BCLKD ),
+	.ClkIn(CLKOSC_i_o),
 	.ClkEn(),
-	.ClkOut(\i2s_osd_select_2|BCLKD_X10011_Y10002_INV_VCC ));
-defparam clken_ctrl_X10011_Y10002_N0.coord_x = 15;
-defparam clken_ctrl_X10011_Y10002_N0.coord_y = 2;
+	.ClkOut(CLKOSC_i_o_X10011_Y10002_SIG_VCC));
+defparam clken_ctrl_X10011_Y10002_N0.coord_x = 10;
+defparam clken_ctrl_X10011_Y10002_N0.coord_y = 3;
 defparam clken_ctrl_X10011_Y10002_N0.coord_z = 0;
-defparam clken_ctrl_X10011_Y10002_N0.ClkMux = 2'b11;
+defparam clken_ctrl_X10011_Y10002_N0.ClkMux = 2'b10;
 defparam clken_ctrl_X10011_Y10002_N0.ClkEnMux = 2'b01;
 
 alta_clkenctrl clken_ctrl_X10011_Y10003_N0(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|sda_d_0_11_q_B_Y_A_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_B_Y_A_Y_X10011_Y10003_SIG_SIG ));
-defparam clken_ctrl_X10011_Y10003_N0.coord_x = 15;
-defparam clken_ctrl_X10011_Y10003_N0.coord_y = 1;
+	.ClkEn(\i2c_device|brin_rec_A_0_Y_B_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10011_Y10003_SIG_SIG ));
+defparam clken_ctrl_X10011_Y10003_N0.coord_x = 17;
+defparam clken_ctrl_X10011_Y10003_N0.coord_y = 6;
 defparam clken_ctrl_X10011_Y10003_N0.coord_z = 0;
 defparam clken_ctrl_X10011_Y10003_N0.ClkMux = 2'b10;
 defparam clken_ctrl_X10011_Y10003_N0.ClkEnMux = 2'b10;
 
-alta_clkenctrl clken_ctrl_X10011_Y10003_N1(
-	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10011_Y10003_SIG_SIG ));
-defparam clken_ctrl_X10011_Y10003_N1.coord_x = 15;
-defparam clken_ctrl_X10011_Y10003_N1.coord_y = 1;
-defparam clken_ctrl_X10011_Y10003_N1.coord_z = 1;
-defparam clken_ctrl_X10011_Y10003_N1.ClkMux = 2'b10;
-defparam clken_ctrl_X10011_Y10003_N1.ClkEnMux = 2'b10;
-
 alta_clkenctrl clken_ctrl_X10012_Y10001_N1(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|lockb_rec_A_0_Y_B_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ));
-defparam clken_ctrl_X10012_Y10001_N1.coord_x = 18;
-defparam clken_ctrl_X10012_Y10001_N1.coord_y = 4;
+	.ClkEn(\i2c_device|locka_rec_A_0_Y_B_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ));
+defparam clken_ctrl_X10012_Y10001_N1.coord_x = 19;
+defparam clken_ctrl_X10012_Y10001_N1.coord_y = 9;
 defparam clken_ctrl_X10012_Y10001_N1.coord_z = 1;
 defparam clken_ctrl_X10012_Y10001_N1.ClkMux = 2'b10;
 defparam clken_ctrl_X10012_Y10001_N1.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10012_Y10002_N0(
-	.ClkIn(CLKOSC_i_o),
+	.ClkIn(GCLK),
 	.ClkEn(),
-	.ClkOut(CLKOSC_i_o_X10012_Y10002_SIG_VCC));
-defparam clken_ctrl_X10012_Y10002_N0.coord_x = 10;
-defparam clken_ctrl_X10012_Y10002_N0.coord_y = 3;
+	.ClkOut(GCLK_X10012_Y10002_SIG_VCC));
+defparam clken_ctrl_X10012_Y10002_N0.coord_x = 17;
+defparam clken_ctrl_X10012_Y10002_N0.coord_y = 4;
 defparam clken_ctrl_X10012_Y10002_N0.coord_z = 0;
 defparam clken_ctrl_X10012_Y10002_N0.ClkMux = 2'b10;
 defparam clken_ctrl_X10012_Y10002_N0.ClkEnMux = 2'b01;
-
-alta_clkenctrl clken_ctrl_X10012_Y10002_N1(
-	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|stop_B_0_Y_B_Y_A_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10012_Y10002_SIG_SIG ));
-defparam clken_ctrl_X10012_Y10002_N1.coord_x = 10;
-defparam clken_ctrl_X10012_Y10002_N1.coord_y = 3;
-defparam clken_ctrl_X10012_Y10002_N1.coord_z = 1;
-defparam clken_ctrl_X10012_Y10002_N1.ClkMux = 2'b10;
-defparam clken_ctrl_X10012_Y10002_N1.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10012_Y10003_N0(
 	.ClkIn(CLKOSC_i_o),
 	.ClkEn(\i2c_device|stop_B_0_Y_B_Y_A_Y ),
 	.ClkOut(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10012_Y10003_SIG_SIG ));
-defparam clken_ctrl_X10012_Y10003_N0.coord_x = 8;
-defparam clken_ctrl_X10012_Y10003_N0.coord_y = 3;
+defparam clken_ctrl_X10012_Y10003_N0.coord_x = 14;
+defparam clken_ctrl_X10012_Y10003_N0.coord_y = 1;
 defparam clken_ctrl_X10012_Y10003_N0.coord_z = 0;
 defparam clken_ctrl_X10012_Y10003_N0.ClkMux = 2'b10;
 defparam clken_ctrl_X10012_Y10003_N0.ClkEnMux = 2'b10;
 
-alta_clkenctrl clken_ctrl_X10014_Y10001_N1(
+alta_clkenctrl clken_ctrl_X10014_Y10001_N0(
+	.ClkIn(GCLK),
+	.ClkEn(),
+	.ClkOut(GCLK_X10014_Y10001_SIG_VCC));
+defparam clken_ctrl_X10014_Y10001_N0.coord_x = 18;
+defparam clken_ctrl_X10014_Y10001_N0.coord_y = 3;
+defparam clken_ctrl_X10014_Y10001_N0.coord_z = 0;
+defparam clken_ctrl_X10014_Y10001_N0.ClkMux = 2'b10;
+defparam clken_ctrl_X10014_Y10001_N0.ClkEnMux = 2'b01;
+
+alta_clkenctrl clken_ctrl_X10014_Y10002_N0(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|locka_rec_A_0_Y_B_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10014_Y10001_SIG_SIG ));
-defparam clken_ctrl_X10014_Y10001_N1.coord_x = 18;
-defparam clken_ctrl_X10014_Y10001_N1.coord_y = 10;
-defparam clken_ctrl_X10014_Y10001_N1.coord_z = 1;
-defparam clken_ctrl_X10014_Y10001_N1.ClkMux = 2'b10;
-defparam clken_ctrl_X10014_Y10001_N1.ClkEnMux = 2'b10;
+	.ClkEn(\i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10014_Y10002_SIG_SIG ));
+defparam clken_ctrl_X10014_Y10002_N0.coord_x = 12;
+defparam clken_ctrl_X10014_Y10002_N0.coord_y = 2;
+defparam clken_ctrl_X10014_Y10002_N0.coord_z = 0;
+defparam clken_ctrl_X10014_Y10002_N0.ClkMux = 2'b10;
+defparam clken_ctrl_X10014_Y10002_N0.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10014_Y10002_N1(
-	.ClkIn(\i2s_osd_select_1|BCLKD ),
-	.ClkEn(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y ),
-	.ClkOut(\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10014_Y10002_INV_SIG ));
-defparam clken_ctrl_X10014_Y10002_N1.coord_x = 14;
-defparam clken_ctrl_X10014_Y10002_N1.coord_y = 1;
+	.ClkIn(CLKOSC_i_o),
+	.ClkEn(\i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10014_Y10002_SIG_SIG ));
+defparam clken_ctrl_X10014_Y10002_N1.coord_x = 12;
+defparam clken_ctrl_X10014_Y10002_N1.coord_y = 2;
 defparam clken_ctrl_X10014_Y10002_N1.coord_z = 1;
-defparam clken_ctrl_X10014_Y10002_N1.ClkMux = 2'b11;
+defparam clken_ctrl_X10014_Y10002_N1.ClkMux = 2'b10;
 defparam clken_ctrl_X10014_Y10002_N1.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10014_Y10003_N0(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|stop_B_0_Y_B_Y_A_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10014_Y10003_SIG_SIG ));
-defparam clken_ctrl_X10014_Y10003_N0.coord_x = 15;
-defparam clken_ctrl_X10014_Y10003_N0.coord_y = 3;
+	.ClkEn(\i2c_device|lockb_rec_A_0_Y_B_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10014_Y10003_SIG_SIG ));
+defparam clken_ctrl_X10014_Y10003_N0.coord_x = 20;
+defparam clken_ctrl_X10014_Y10003_N0.coord_y = 6;
 defparam clken_ctrl_X10014_Y10003_N0.coord_z = 0;
 defparam clken_ctrl_X10014_Y10003_N0.ClkMux = 2'b10;
 defparam clken_ctrl_X10014_Y10003_N0.ClkEnMux = 2'b10;
 
+alta_clkenctrl clken_ctrl_X10014_Y10003_N1(
+	.ClkIn(BCLK2_i_o),
+	.ClkEn(),
+	.ClkOut(BCLK2_i_o_X10014_Y10003_SIG_VCC));
+defparam clken_ctrl_X10014_Y10003_N1.coord_x = 20;
+defparam clken_ctrl_X10014_Y10003_N1.coord_y = 6;
+defparam clken_ctrl_X10014_Y10003_N1.coord_z = 1;
+defparam clken_ctrl_X10014_Y10003_N1.ClkMux = 2'b10;
+defparam clken_ctrl_X10014_Y10003_N1.ClkEnMux = 2'b01;
+
 alta_clkenctrl clken_ctrl_X10015_Y10001_N0(
+	.ClkIn(CLKOSC_i_o),
+	.ClkEn(\i2c_device|sda_d_0_11_q_B_Y_A_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_B_Y_A_Y_X10015_Y10001_SIG_SIG ));
+defparam clken_ctrl_X10015_Y10001_N0.coord_x = 16;
+defparam clken_ctrl_X10015_Y10001_N0.coord_y = 4;
+defparam clken_ctrl_X10015_Y10001_N0.coord_z = 0;
+defparam clken_ctrl_X10015_Y10001_N0.ClkMux = 2'b10;
+defparam clken_ctrl_X10015_Y10001_N0.ClkEnMux = 2'b10;
+
+alta_clkenctrl clken_ctrl_X10015_Y10001_N1(
 	.ClkIn(GCLK),
 	.ClkEn(),
 	.ClkOut(GCLK_X10015_Y10001_SIG_VCC));
-defparam clken_ctrl_X10015_Y10001_N0.coord_x = 17;
-defparam clken_ctrl_X10015_Y10001_N0.coord_y = 2;
-defparam clken_ctrl_X10015_Y10001_N0.coord_z = 0;
-defparam clken_ctrl_X10015_Y10001_N0.ClkMux = 2'b10;
-defparam clken_ctrl_X10015_Y10001_N0.ClkEnMux = 2'b01;
+defparam clken_ctrl_X10015_Y10001_N1.coord_x = 16;
+defparam clken_ctrl_X10015_Y10001_N1.coord_y = 4;
+defparam clken_ctrl_X10015_Y10001_N1.coord_z = 1;
+defparam clken_ctrl_X10015_Y10001_N1.ClkMux = 2'b10;
+defparam clken_ctrl_X10015_Y10001_N1.ClkEnMux = 2'b01;
 
 alta_clkenctrl clken_ctrl_X10015_Y10002_N0(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|brin_rec_A_0_Y_B_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10015_Y10002_SIG_SIG ));
-defparam clken_ctrl_X10015_Y10002_N0.coord_x = 19;
-defparam clken_ctrl_X10015_Y10002_N0.coord_y = 5;
+	.ClkEn(\i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10015_Y10002_SIG_SIG ));
+defparam clken_ctrl_X10015_Y10002_N0.coord_x = 12;
+defparam clken_ctrl_X10015_Y10002_N0.coord_y = 4;
 defparam clken_ctrl_X10015_Y10002_N0.coord_z = 0;
 defparam clken_ctrl_X10015_Y10002_N0.ClkMux = 2'b10;
 defparam clken_ctrl_X10015_Y10002_N0.ClkEnMux = 2'b10;
 
-alta_clkenctrl clken_ctrl_X10015_Y10003_N1(
-	.ClkIn(GCLK),
-	.ClkEn(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y ),
-	.ClkOut(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10015_Y10003_SIG_SIG ));
-defparam clken_ctrl_X10015_Y10003_N1.coord_x = 12;
-defparam clken_ctrl_X10015_Y10003_N1.coord_y = 2;
-defparam clken_ctrl_X10015_Y10003_N1.coord_z = 1;
-defparam clken_ctrl_X10015_Y10003_N1.ClkMux = 2'b10;
-defparam clken_ctrl_X10015_Y10003_N1.ClkEnMux = 2'b10;
+alta_clkenctrl clken_ctrl_X10015_Y10002_N1(
+	.ClkIn(CLKOSC_i_o),
+	.ClkEn(\i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10015_Y10002_SIG_SIG ));
+defparam clken_ctrl_X10015_Y10002_N1.coord_x = 12;
+defparam clken_ctrl_X10015_Y10002_N1.coord_y = 4;
+defparam clken_ctrl_X10015_Y10002_N1.coord_z = 1;
+defparam clken_ctrl_X10015_Y10002_N1.ClkMux = 2'b10;
+defparam clken_ctrl_X10015_Y10002_N1.ClkEnMux = 2'b10;
+
+alta_clkenctrl clken_ctrl_X10015_Y10003_N0(
+	.ClkIn(CLKOSC_i_o),
+	.ClkEn(\i2c_device|stop_B_0_Y_B_Y_A_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10015_Y10003_SIG_SIG ));
+defparam clken_ctrl_X10015_Y10003_N0.coord_x = 10;
+defparam clken_ctrl_X10015_Y10003_N0.coord_y = 1;
+defparam clken_ctrl_X10015_Y10003_N0.coord_z = 0;
+defparam clken_ctrl_X10015_Y10003_N0.ClkMux = 2'b10;
+defparam clken_ctrl_X10015_Y10003_N0.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10016_Y10001_N0(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|sda_d_0_11_q_B_Y_A_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_B_Y_A_Y_X10016_Y10001_SIG_SIG ));
+	.ClkEn(\i2c_device|sda_d_0_11_q_A_Y_B_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10016_Y10001_SIG_SIG ));
 defparam clken_ctrl_X10016_Y10001_N0.coord_x = 17;
-defparam clken_ctrl_X10016_Y10001_N0.coord_y = 1;
+defparam clken_ctrl_X10016_Y10001_N0.coord_y = 2;
 defparam clken_ctrl_X10016_Y10001_N0.coord_z = 0;
 defparam clken_ctrl_X10016_Y10001_N0.ClkMux = 2'b10;
 defparam clken_ctrl_X10016_Y10001_N0.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10016_Y10001_N1(
-	.ClkIn(GCLK),
-	.ClkEn(),
-	.ClkOut(GCLK_X10016_Y10001_SIG_VCC));
+	.ClkIn(CLKOSC_i_o),
+	.ClkEn(\i2c_device|sda_d_0_11_q_B_Y_A_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_B_Y_A_Y_X10016_Y10001_SIG_SIG ));
 defparam clken_ctrl_X10016_Y10001_N1.coord_x = 17;
-defparam clken_ctrl_X10016_Y10001_N1.coord_y = 1;
+defparam clken_ctrl_X10016_Y10001_N1.coord_y = 2;
 defparam clken_ctrl_X10016_Y10001_N1.coord_z = 1;
 defparam clken_ctrl_X10016_Y10001_N1.ClkMux = 2'b10;
-defparam clken_ctrl_X10016_Y10001_N1.ClkEnMux = 2'b01;
+defparam clken_ctrl_X10016_Y10001_N1.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10016_Y10002_N0(
 	.ClkIn(CLKOSC_i_o),
 	.ClkEn(\i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y ),
 	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10016_Y10002_SIG_SIG ));
-defparam clken_ctrl_X10016_Y10002_N0.coord_x = 9;
-defparam clken_ctrl_X10016_Y10002_N0.coord_y = 4;
+defparam clken_ctrl_X10016_Y10002_N0.coord_x = 12;
+defparam clken_ctrl_X10016_Y10002_N0.coord_y = 3;
 defparam clken_ctrl_X10016_Y10002_N0.coord_z = 0;
 defparam clken_ctrl_X10016_Y10002_N0.ClkMux = 2'b10;
 defparam clken_ctrl_X10016_Y10002_N0.ClkEnMux = 2'b10;
 
+alta_clkenctrl clken_ctrl_X10016_Y10002_N1(
+	.ClkIn(CLKOSC_i_o),
+	.ClkEn(\i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10016_Y10002_SIG_SIG ));
+defparam clken_ctrl_X10016_Y10002_N1.coord_x = 12;
+defparam clken_ctrl_X10016_Y10002_N1.coord_y = 3;
+defparam clken_ctrl_X10016_Y10002_N1.coord_z = 1;
+defparam clken_ctrl_X10016_Y10002_N1.ClkMux = 2'b10;
+defparam clken_ctrl_X10016_Y10002_N1.ClkEnMux = 2'b10;
+
 alta_clkenctrl clken_ctrl_X10016_Y10003_N0(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(),
-	.ClkOut(CLKOSC_i_o_X10016_Y10003_SIG_VCC));
-defparam clken_ctrl_X10016_Y10003_N0.coord_x = 11;
-defparam clken_ctrl_X10016_Y10003_N0.coord_y = 2;
+	.ClkEn(\i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10016_Y10003_SIG_SIG ));
+defparam clken_ctrl_X10016_Y10003_N0.coord_x = 18;
+defparam clken_ctrl_X10016_Y10003_N0.coord_y = 1;
 defparam clken_ctrl_X10016_Y10003_N0.coord_z = 0;
 defparam clken_ctrl_X10016_Y10003_N0.ClkMux = 2'b10;
-defparam clken_ctrl_X10016_Y10003_N0.ClkEnMux = 2'b01;
+defparam clken_ctrl_X10016_Y10003_N0.ClkEnMux = 2'b10;
+
+alta_clkenctrl clken_ctrl_X10016_Y10003_N1(
+	.ClkIn(GCLK),
+	.ClkEn(),
+	.ClkOut(GCLK_X10016_Y10003_SIG_VCC));
+defparam clken_ctrl_X10016_Y10003_N1.coord_x = 18;
+defparam clken_ctrl_X10016_Y10003_N1.coord_y = 1;
+defparam clken_ctrl_X10016_Y10003_N1.coord_z = 1;
+defparam clken_ctrl_X10016_Y10003_N1.ClkMux = 2'b10;
+defparam clken_ctrl_X10016_Y10003_N1.ClkEnMux = 2'b01;
 
 alta_clkenctrl clken_ctrl_X10017_Y10001_N0(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|sda_d_0_11_q_A_Y_B_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10017_Y10001_SIG_SIG ));
-defparam clken_ctrl_X10017_Y10001_N0.coord_x = 16;
-defparam clken_ctrl_X10017_Y10001_N0.coord_y = 5;
+	.ClkEn(\i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_X10017_Y10001_SIG_SIG ));
+defparam clken_ctrl_X10017_Y10001_N0.coord_x = 15;
+defparam clken_ctrl_X10017_Y10001_N0.coord_y = 2;
 defparam clken_ctrl_X10017_Y10001_N0.coord_z = 0;
 defparam clken_ctrl_X10017_Y10001_N0.ClkMux = 2'b10;
 defparam clken_ctrl_X10017_Y10001_N0.ClkEnMux = 2'b10;
 
-alta_clkenctrl clken_ctrl_X10017_Y10001_N1(
-	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|sda_d_0_11_q_B_Y_A_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_B_Y_A_Y_X10017_Y10001_SIG_SIG ));
-defparam clken_ctrl_X10017_Y10001_N1.coord_x = 16;
-defparam clken_ctrl_X10017_Y10001_N1.coord_y = 5;
-defparam clken_ctrl_X10017_Y10001_N1.coord_z = 1;
-defparam clken_ctrl_X10017_Y10001_N1.ClkMux = 2'b10;
-defparam clken_ctrl_X10017_Y10001_N1.ClkEnMux = 2'b10;
-
-alta_clkenctrl clken_ctrl_X10017_Y10002_N0(
-	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10017_Y10002_SIG_SIG ));
-defparam clken_ctrl_X10017_Y10002_N0.coord_x = 11;
-defparam clken_ctrl_X10017_Y10002_N0.coord_y = 4;
-defparam clken_ctrl_X10017_Y10002_N0.coord_z = 0;
-defparam clken_ctrl_X10017_Y10002_N0.ClkMux = 2'b10;
-defparam clken_ctrl_X10017_Y10002_N0.ClkEnMux = 2'b10;
+alta_clkenctrl clken_ctrl_X10017_Y10002_N1(
+	.ClkIn(\i2s_osd_select_1|BCLKD ),
+	.ClkEn(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y ),
+	.ClkOut(\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10017_Y10002_INV_SIG ));
+defparam clken_ctrl_X10017_Y10002_N1.coord_x = 14;
+defparam clken_ctrl_X10017_Y10002_N1.coord_y = 3;
+defparam clken_ctrl_X10017_Y10002_N1.coord_z = 1;
+defparam clken_ctrl_X10017_Y10002_N1.ClkMux = 2'b11;
+defparam clken_ctrl_X10017_Y10002_N1.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10017_Y10003_N0(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10017_Y10003_SIG_SIG ));
-defparam clken_ctrl_X10017_Y10003_N0.coord_x = 9;
-defparam clken_ctrl_X10017_Y10003_N0.coord_y = 1;
+	.ClkEn(),
+	.ClkOut(CLKOSC_i_o_X10017_Y10003_SIG_VCC));
+defparam clken_ctrl_X10017_Y10003_N0.coord_x = 20;
+defparam clken_ctrl_X10017_Y10003_N0.coord_y = 10;
 defparam clken_ctrl_X10017_Y10003_N0.coord_z = 0;
 defparam clken_ctrl_X10017_Y10003_N0.ClkMux = 2'b10;
-defparam clken_ctrl_X10017_Y10003_N0.ClkEnMux = 2'b10;
+defparam clken_ctrl_X10017_Y10003_N0.ClkEnMux = 2'b01;
 
 alta_clkenctrl clken_ctrl_X10018_Y10001_N0(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|sda_d_0_11_q_A_Y_B_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10018_Y10001_SIG_SIG ));
-defparam clken_ctrl_X10018_Y10001_N0.coord_x = 16;
+	.ClkEn(),
+	.ClkOut(CLKOSC_i_o_X10018_Y10001_SIG_VCC));
+defparam clken_ctrl_X10018_Y10001_N0.coord_x = 10;
 defparam clken_ctrl_X10018_Y10001_N0.coord_y = 4;
 defparam clken_ctrl_X10018_Y10001_N0.coord_z = 0;
 defparam clken_ctrl_X10018_Y10001_N0.ClkMux = 2'b10;
-defparam clken_ctrl_X10018_Y10001_N0.ClkEnMux = 2'b10;
+defparam clken_ctrl_X10018_Y10001_N0.ClkEnMux = 2'b01;
 
-alta_clkenctrl clken_ctrl_X10018_Y10001_N1(
+alta_clkenctrl clken_ctrl_X10018_Y10002_N1(
+	.ClkIn(\i2s_osd_select_2|BCLKD ),
+	.ClkEn(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y ),
+	.ClkOut(\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10018_Y10002_INV_SIG ));
+defparam clken_ctrl_X10018_Y10002_N1.coord_x = 14;
+defparam clken_ctrl_X10018_Y10002_N1.coord_y = 6;
+defparam clken_ctrl_X10018_Y10002_N1.coord_z = 1;
+defparam clken_ctrl_X10018_Y10002_N1.ClkMux = 2'b11;
+defparam clken_ctrl_X10018_Y10002_N1.ClkEnMux = 2'b10;
+
+alta_clkenctrl clken_ctrl_X10018_Y10003_N0(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_X10018_Y10001_SIG_SIG ));
-defparam clken_ctrl_X10018_Y10001_N1.coord_x = 16;
-defparam clken_ctrl_X10018_Y10001_N1.coord_y = 4;
-defparam clken_ctrl_X10018_Y10001_N1.coord_z = 1;
-defparam clken_ctrl_X10018_Y10001_N1.ClkMux = 2'b10;
-defparam clken_ctrl_X10018_Y10001_N1.ClkEnMux = 2'b10;
-
-alta_clkenctrl clken_ctrl_X10018_Y10002_N0(
-	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|lockb_rec_A_0_Y_B_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10018_Y10002_SIG_SIG ));
-defparam clken_ctrl_X10018_Y10002_N0.coord_x = 19;
-defparam clken_ctrl_X10018_Y10002_N0.coord_y = 4;
-defparam clken_ctrl_X10018_Y10002_N0.coord_z = 0;
-defparam clken_ctrl_X10018_Y10002_N0.ClkMux = 2'b10;
-defparam clken_ctrl_X10018_Y10002_N0.ClkEnMux = 2'b10;
-
-alta_clkenctrl clken_ctrl_X10018_Y10003_N1(
-	.ClkIn(GCLK),
-	.ClkEn(\i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_B_Y_B_Y ),
-	.ClkOut(\GCLK__i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_B_Y_B_Y_X10018_Y10003_SIG_SIG ));
-defparam clken_ctrl_X10018_Y10003_N1.coord_x = 17;
-defparam clken_ctrl_X10018_Y10003_N1.coord_y = 5;
-defparam clken_ctrl_X10018_Y10003_N1.coord_z = 1;
-defparam clken_ctrl_X10018_Y10003_N1.ClkMux = 2'b10;
-defparam clken_ctrl_X10018_Y10003_N1.ClkEnMux = 2'b10;
+	.ClkEn(\i2c_device|locka_rec_A_0_Y_B_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10018_Y10003_SIG_SIG ));
+defparam clken_ctrl_X10018_Y10003_N0.coord_x = 20;
+defparam clken_ctrl_X10018_Y10003_N0.coord_y = 8;
+defparam clken_ctrl_X10018_Y10003_N0.coord_z = 0;
+defparam clken_ctrl_X10018_Y10003_N0.ClkMux = 2'b10;
+defparam clken_ctrl_X10018_Y10003_N0.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10019_Y10001_N0(
-	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_X10019_Y10001_SIG_SIG ));
-defparam clken_ctrl_X10019_Y10001_N0.coord_x = 15;
-defparam clken_ctrl_X10019_Y10001_N0.coord_y = 4;
+	.ClkIn(GCLK),
+	.ClkEn(),
+	.ClkOut(GCLK_X10019_Y10001_SIG_VCC));
+defparam clken_ctrl_X10019_Y10001_N0.coord_x = 16;
+defparam clken_ctrl_X10019_Y10001_N0.coord_y = 3;
 defparam clken_ctrl_X10019_Y10001_N0.coord_z = 0;
 defparam clken_ctrl_X10019_Y10001_N0.ClkMux = 2'b10;
-defparam clken_ctrl_X10019_Y10001_N0.ClkEnMux = 2'b10;
-
-alta_clkenctrl clken_ctrl_X10019_Y10001_N1(
-	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|sda_d_0_11_q_A_Y_B_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10019_Y10001_SIG_SIG ));
-defparam clken_ctrl_X10019_Y10001_N1.coord_x = 15;
-defparam clken_ctrl_X10019_Y10001_N1.coord_y = 4;
-defparam clken_ctrl_X10019_Y10001_N1.coord_z = 1;
-defparam clken_ctrl_X10019_Y10001_N1.ClkMux = 2'b10;
-defparam clken_ctrl_X10019_Y10001_N1.ClkEnMux = 2'b10;
+defparam clken_ctrl_X10019_Y10001_N0.ClkEnMux = 2'b01;
 
 alta_clkenctrl clken_ctrl_X10019_Y10002_N0(
 	.ClkIn(CLKOSC_i_o),
-	.ClkEn(\i2c_device|brip_rec_A_0_Y_B_Y ),
-	.ClkOut(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10019_Y10002_SIG_SIG ));
-defparam clken_ctrl_X10019_Y10002_N0.coord_x = 17;
-defparam clken_ctrl_X10019_Y10002_N0.coord_y = 6;
+	.ClkEn(\i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10019_Y10002_SIG_SIG ));
+defparam clken_ctrl_X10019_Y10002_N0.coord_x = 15;
+defparam clken_ctrl_X10019_Y10002_N0.coord_y = 1;
 defparam clken_ctrl_X10019_Y10002_N0.coord_z = 0;
 defparam clken_ctrl_X10019_Y10002_N0.ClkMux = 2'b10;
 defparam clken_ctrl_X10019_Y10002_N0.ClkEnMux = 2'b10;
 
-alta_clkenctrl clken_ctrl_X10019_Y10003_N1(
-	.ClkIn(GCLK),
-	.ClkEn(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y ),
-	.ClkOut(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10019_Y10003_SIG_SIG ));
-defparam clken_ctrl_X10019_Y10003_N1.coord_x = 12;
-defparam clken_ctrl_X10019_Y10003_N1.coord_y = 1;
-defparam clken_ctrl_X10019_Y10003_N1.coord_z = 1;
-defparam clken_ctrl_X10019_Y10003_N1.ClkMux = 2'b10;
-defparam clken_ctrl_X10019_Y10003_N1.ClkEnMux = 2'b10;
+alta_clkenctrl clken_ctrl_X10019_Y10002_N1(
+	.ClkIn(CLKOSC_i_o),
+	.ClkEn(\i2c_device|sda_d_0_11_q_B_Y_A_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_B_Y_A_Y_X10019_Y10002_SIG_SIG ));
+defparam clken_ctrl_X10019_Y10002_N1.coord_x = 15;
+defparam clken_ctrl_X10019_Y10002_N1.coord_y = 1;
+defparam clken_ctrl_X10019_Y10002_N1.coord_z = 1;
+defparam clken_ctrl_X10019_Y10002_N1.ClkMux = 2'b10;
+defparam clken_ctrl_X10019_Y10002_N1.ClkEnMux = 2'b10;
 
-alta_clkenctrl clken_ctrl_X10020_Y10001_N0(
+alta_clkenctrl clken_ctrl_X10019_Y10003_N0(
 	.ClkIn(BCLK1_i_o),
 	.ClkEn(),
-	.ClkOut(BCLK1_i_o_X10020_Y10001_SIG_VCC));
-defparam clken_ctrl_X10020_Y10001_N0.coord_x = 20;
-defparam clken_ctrl_X10020_Y10001_N0.coord_y = 4;
+	.ClkOut(BCLK1_i_o_X10019_Y10003_SIG_VCC));
+defparam clken_ctrl_X10019_Y10003_N0.coord_x = 20;
+defparam clken_ctrl_X10019_Y10003_N0.coord_y = 7;
+defparam clken_ctrl_X10019_Y10003_N0.coord_z = 0;
+defparam clken_ctrl_X10019_Y10003_N0.ClkMux = 2'b10;
+defparam clken_ctrl_X10019_Y10003_N0.ClkEnMux = 2'b01;
+
+alta_clkenctrl clken_ctrl_X10019_Y10003_N1(
+	.ClkIn(BCLK2_i_o),
+	.ClkEn(),
+	.ClkOut(BCLK2_i_o_X10019_Y10003_SIG_VCC));
+defparam clken_ctrl_X10019_Y10003_N1.coord_x = 20;
+defparam clken_ctrl_X10019_Y10003_N1.coord_y = 7;
+defparam clken_ctrl_X10019_Y10003_N1.coord_z = 1;
+defparam clken_ctrl_X10019_Y10003_N1.ClkMux = 2'b10;
+defparam clken_ctrl_X10019_Y10003_N1.ClkEnMux = 2'b01;
+
+alta_clkenctrl clken_ctrl_X10020_Y10001_N0(
+	.ClkIn(CLKOSC_i_o),
+	.ClkEn(\i2c_device|stop_B_0_Y_B_Y_A_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10020_Y10001_SIG_SIG ));
+defparam clken_ctrl_X10020_Y10001_N0.coord_x = 10;
+defparam clken_ctrl_X10020_Y10001_N0.coord_y = 2;
 defparam clken_ctrl_X10020_Y10001_N0.coord_z = 0;
 defparam clken_ctrl_X10020_Y10001_N0.ClkMux = 2'b10;
-defparam clken_ctrl_X10020_Y10001_N0.ClkEnMux = 2'b01;
+defparam clken_ctrl_X10020_Y10001_N0.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10020_Y10002_N0(
 	.ClkIn(CLKOSC_i_o),
 	.ClkEn(\i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y ),
 	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10020_Y10002_SIG_SIG ));
-defparam clken_ctrl_X10020_Y10002_N0.coord_x = 14;
-defparam clken_ctrl_X10020_Y10002_N0.coord_y = 5;
+defparam clken_ctrl_X10020_Y10002_N0.coord_x = 16;
+defparam clken_ctrl_X10020_Y10002_N0.coord_y = 1;
 defparam clken_ctrl_X10020_Y10002_N0.coord_z = 0;
 defparam clken_ctrl_X10020_Y10002_N0.ClkMux = 2'b10;
 defparam clken_ctrl_X10020_Y10002_N0.ClkEnMux = 2'b10;
@@ -5711,21 +5744,21 @@ alta_clkenctrl clken_ctrl_X10020_Y10002_N1(
 	.ClkIn(CLKOSC_i_o),
 	.ClkEn(\i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y ),
 	.ClkOut(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10020_Y10002_SIG_SIG ));
-defparam clken_ctrl_X10020_Y10002_N1.coord_x = 14;
-defparam clken_ctrl_X10020_Y10002_N1.coord_y = 5;
+defparam clken_ctrl_X10020_Y10002_N1.coord_x = 16;
+defparam clken_ctrl_X10020_Y10002_N1.coord_y = 1;
 defparam clken_ctrl_X10020_Y10002_N1.coord_z = 1;
 defparam clken_ctrl_X10020_Y10002_N1.ClkMux = 2'b10;
 defparam clken_ctrl_X10020_Y10002_N1.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X10020_Y10003_N0(
-	.ClkIn(BCLK2_i_o),
-	.ClkEn(),
-	.ClkOut(BCLK2_i_o_X10020_Y10003_SIG_VCC));
-defparam clken_ctrl_X10020_Y10003_N0.coord_x = 20;
-defparam clken_ctrl_X10020_Y10003_N0.coord_y = 9;
+	.ClkIn(CLKOSC_i_o),
+	.ClkEn(\i2c_device|stop_B_0_Y_B_Y_A_Y ),
+	.ClkOut(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10020_Y10003_SIG_SIG ));
+defparam clken_ctrl_X10020_Y10003_N0.coord_x = 9;
+defparam clken_ctrl_X10020_Y10003_N0.coord_y = 3;
 defparam clken_ctrl_X10020_Y10003_N0.coord_z = 0;
 defparam clken_ctrl_X10020_Y10003_N0.ClkMux = 2'b10;
-defparam clken_ctrl_X10020_Y10003_N0.ClkEnMux = 2'b01;
+defparam clken_ctrl_X10020_Y10003_N0.ClkEnMux = 2'b10;
 
 alta_clkenctrl clken_ctrl_X5017_Y5012_N0(
 	.ClkIn(\i2s_osd_select_1|BCLKD ),
@@ -5875,8 +5908,8 @@ alta_slice \gnd~I (
 	.LutOut(\gnd~I_int ),
 	.Cout(),
 	.Q());
-defparam \gnd~I .coord_x = 18;
-defparam \gnd~I .coord_y = 9;
+defparam \gnd~I .coord_x = 17;
+defparam \gnd~I .coord_y = 2;
 defparam \gnd~I .coord_z = 15;
 defparam \gnd~I .mask = 16'h0000;
 defparam \gnd~I .modeMux = 1'b1;
@@ -5886,10 +5919,10 @@ defparam \gnd~I .BypassEn = 1'b0;
 defparam \gnd~I .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|OFFSET_PRIMARY_dataa_0 (
-	.A(CSEL2_q_1[3]),
+	.A(CSEL2_q_1[2]),
 	.B(CSEL2_q_1[1]),
-	.C(CSEL2_q_1[2]),
-	.D(\i2c_device|OFFSET_PRIMARY [0]),
+	.C(\i2c_device|OFFSET_PRIMARY [0]),
+	.D(CSEL2_q_1[3]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -5900,10 +5933,10 @@ alta_slice \i2c_device|OFFSET_PRIMARY_dataa_0 (
 	.LutOut(\i2c_device|sda_d_0_12_q_dataa_combout [2]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|OFFSET_PRIMARY_dataa_0 .coord_x = 16;
-defparam \i2c_device|OFFSET_PRIMARY_dataa_0 .coord_y = 5;
+defparam \i2c_device|OFFSET_PRIMARY_dataa_0 .coord_x = 17;
+defparam \i2c_device|OFFSET_PRIMARY_dataa_0 .coord_y = 2;
 defparam \i2c_device|OFFSET_PRIMARY_dataa_0 .coord_z = 11;
-defparam \i2c_device|OFFSET_PRIMARY_dataa_0 .mask = 16'h135F;
+defparam \i2c_device|OFFSET_PRIMARY_dataa_0 .mask = 16'h153F;
 defparam \i2c_device|OFFSET_PRIMARY_dataa_0 .modeMux = 1'b0;
 defparam \i2c_device|OFFSET_PRIMARY_dataa_0 .FeedbackMux = 1'b0;
 defparam \i2c_device|OFFSET_PRIMARY_dataa_0 .ShiftMux = 1'b0;
@@ -5925,8 +5958,8 @@ alta_slice \i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8 (
 	.LutOut(\i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8 .coord_x = 16;
-defparam \i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8 .coord_y = 5;
+defparam \i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8 .coord_x = 17;
+defparam \i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8 .coord_y = 2;
 defparam \i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8 .coord_z = 10;
 defparam \i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8 .mask = 16'hF0F0;
 defparam \i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8 .modeMux = 1'b1;
@@ -5938,8 +5971,8 @@ defparam \i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8 .CarryEnb = 1'b1;
 alta_slice \i2c_device|OFFSET_PRIMARY_datab_1_1 (
 	.A(CSEL2_q_1[2]),
 	.B(CSEL2_q_1[1]),
-	.C(\i2c_device|OFFSET_PRIMARY [1]),
-	.D(CSEL1_q_1[3]),
+	.C(CSEL1_q_1[3]),
+	.D(\i2c_device|OFFSET_PRIMARY [1]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -5950,10 +5983,10 @@ alta_slice \i2c_device|OFFSET_PRIMARY_datab_1_1 (
 	.LutOut(\i2c_device|OFFSET_SECONDARY_dataa_1_combout [3]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|OFFSET_PRIMARY_datab_1_1 .coord_x = 16;
-defparam \i2c_device|OFFSET_PRIMARY_datab_1_1 .coord_y = 5;
+defparam \i2c_device|OFFSET_PRIMARY_datab_1_1 .coord_x = 17;
+defparam \i2c_device|OFFSET_PRIMARY_datab_1_1 .coord_y = 2;
 defparam \i2c_device|OFFSET_PRIMARY_datab_1_1 .coord_z = 12;
-defparam \i2c_device|OFFSET_PRIMARY_datab_1_1 .mask = 16'h153F;
+defparam \i2c_device|OFFSET_PRIMARY_datab_1_1 .mask = 16'h135F;
 defparam \i2c_device|OFFSET_PRIMARY_datab_1_1 .modeMux = 1'b0;
 defparam \i2c_device|OFFSET_PRIMARY_datab_1_1 .FeedbackMux = 1'b0;
 defparam \i2c_device|OFFSET_PRIMARY_datab_1_1 .ShiftMux = 1'b0;
@@ -5962,8 +5995,8 @@ defparam \i2c_device|OFFSET_PRIMARY_datab_1_1 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|OFFSET_PRIMARY_datab_2_1 (
 	.A(CSEL2_q_1[1]),
-	.B(\i2c_device|sda_d_0_9_q_dataa_combout [1]),
-	.C(\i2c_device|OFFSET_SECONDARY [2]),
+	.B(\i2c_device|OFFSET_SECONDARY [2]),
+	.C(\i2c_device|sda_d_0_9_q_dataa_combout [1]),
 	.D(\i2c_device|OFFSET_PRIMARY [2]),
 	.Cin(),
 	.Qin(),
@@ -5975,9 +6008,9 @@ alta_slice \i2c_device|OFFSET_PRIMARY_datab_2_1 (
 	.LutOut(CLKOSC_clk_q_dataa_combout[1]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|OFFSET_PRIMARY_datab_2_1 .coord_x = 16;
-defparam \i2c_device|OFFSET_PRIMARY_datab_2_1 .coord_y = 4;
-defparam \i2c_device|OFFSET_PRIMARY_datab_2_1 .coord_z = 1;
+defparam \i2c_device|OFFSET_PRIMARY_datab_2_1 .coord_x = 15;
+defparam \i2c_device|OFFSET_PRIMARY_datab_2_1 .coord_y = 2;
+defparam \i2c_device|OFFSET_PRIMARY_datab_2_1 .coord_z = 13;
 defparam \i2c_device|OFFSET_PRIMARY_datab_2_1 .mask = 16'h153F;
 defparam \i2c_device|OFFSET_PRIMARY_datab_2_1 .modeMux = 1'b0;
 defparam \i2c_device|OFFSET_PRIMARY_datab_2_1 .FeedbackMux = 1'b0;
@@ -5985,36 +6018,11 @@ defparam \i2c_device|OFFSET_PRIMARY_datab_2_1 .ShiftMux = 1'b0;
 defparam \i2c_device|OFFSET_PRIMARY_datab_2_1 .BypassEn = 1'b0;
 defparam \i2c_device|OFFSET_PRIMARY_datab_2_1 .CarryEnb = 1'b1;
 
-alta_slice \i2c_device|OFFSET_PRIMARY_datab_3 (
-	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [3]),
-	.B(\i2c_device|OFFSET_PRIMARY [3]),
-	.C(vcc),
-	.D(vcc),
-	.Cin(\i2c_device|OFFSET_PRIMARY_datab_0_cout [3]),
-	.Qin(),
-	.Clk(),
-	.AsyncReset(),
-	.SyncReset(),
-	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2c_device|OFFSET_PRIMARY_datab_0_combout [3]),
-	.Cout(\i2c_device|OFFSET_PRIMARY_datab_0_cout [4]),
-	.Q());
-defparam \i2c_device|OFFSET_PRIMARY_datab_3 .coord_x = 16;
-defparam \i2c_device|OFFSET_PRIMARY_datab_3 .coord_y = 5;
-defparam \i2c_device|OFFSET_PRIMARY_datab_3 .coord_z = 5;
-defparam \i2c_device|OFFSET_PRIMARY_datab_3 .mask = 16'h69B2;
-defparam \i2c_device|OFFSET_PRIMARY_datab_3 .modeMux = 1'b1;
-defparam \i2c_device|OFFSET_PRIMARY_datab_3 .FeedbackMux = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_datab_3 .ShiftMux = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_datab_3 .BypassEn = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_datab_3 .CarryEnb = 1'b0;
-
 alta_slice \i2c_device|OFFSET_PRIMARY_datab_3_1 (
-	.A(CSEL2_q_1[1]),
+	.A(\i2c_device|OFFSET_SECONDARY [3]),
 	.B(\i2c_device|sda_d_0_9_q_dataa_combout [1]),
-	.C(\i2c_device|OFFSET_PRIMARY [3]),
-	.D(\i2c_device|OFFSET_SECONDARY [3]),
+	.C(CSEL2_q_1[1]),
+	.D(\i2c_device|OFFSET_PRIMARY [3]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -6025,94 +6033,19 @@ alta_slice \i2c_device|OFFSET_PRIMARY_datab_3_1 (
 	.LutOut(\i2c_device|write_value_d_3_q_datab_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|OFFSET_PRIMARY_datab_3_1 .coord_x = 16;
-defparam \i2c_device|OFFSET_PRIMARY_datab_3_1 .coord_y = 4;
-defparam \i2c_device|OFFSET_PRIMARY_datab_3_1 .coord_z = 14;
-defparam \i2c_device|OFFSET_PRIMARY_datab_3_1 .mask = 16'h135F;
+defparam \i2c_device|OFFSET_PRIMARY_datab_3_1 .coord_x = 15;
+defparam \i2c_device|OFFSET_PRIMARY_datab_3_1 .coord_y = 2;
+defparam \i2c_device|OFFSET_PRIMARY_datab_3_1 .coord_z = 12;
+defparam \i2c_device|OFFSET_PRIMARY_datab_3_1 .mask = 16'h0777;
 defparam \i2c_device|OFFSET_PRIMARY_datab_3_1 .modeMux = 1'b0;
 defparam \i2c_device|OFFSET_PRIMARY_datab_3_1 .FeedbackMux = 1'b0;
 defparam \i2c_device|OFFSET_PRIMARY_datab_3_1 .ShiftMux = 1'b0;
 defparam \i2c_device|OFFSET_PRIMARY_datab_3_1 .BypassEn = 1'b0;
 defparam \i2c_device|OFFSET_PRIMARY_datab_3_1 .CarryEnb = 1'b1;
 
-alta_slice \i2c_device|OFFSET_PRIMARY_datab_4 (
-	.A(\i2c_device|OFFSET_PRIMARY [4]),
-	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [4]),
-	.C(vcc),
-	.D(vcc),
-	.Cin(\i2c_device|OFFSET_PRIMARY_datab_0_cout [4]),
-	.Qin(),
-	.Clk(),
-	.AsyncReset(),
-	.SyncReset(),
-	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2c_device|OFFSET_PRIMARY_datab_0_combout [4]),
-	.Cout(\i2c_device|OFFSET_PRIMARY_datab_0_cout [5]),
-	.Q());
-defparam \i2c_device|OFFSET_PRIMARY_datab_4 .coord_x = 16;
-defparam \i2c_device|OFFSET_PRIMARY_datab_4 .coord_y = 5;
-defparam \i2c_device|OFFSET_PRIMARY_datab_4 .coord_z = 6;
-defparam \i2c_device|OFFSET_PRIMARY_datab_4 .mask = 16'h69D4;
-defparam \i2c_device|OFFSET_PRIMARY_datab_4 .modeMux = 1'b1;
-defparam \i2c_device|OFFSET_PRIMARY_datab_4 .FeedbackMux = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_datab_4 .ShiftMux = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_datab_4 .BypassEn = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_datab_4 .CarryEnb = 1'b0;
-
-alta_slice \i2c_device|OFFSET_PRIMARY_datab_5 (
-	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [5]),
-	.B(\i2c_device|OFFSET_PRIMARY [5]),
-	.C(vcc),
-	.D(vcc),
-	.Cin(\i2c_device|OFFSET_PRIMARY_datab_0_cout [5]),
-	.Qin(),
-	.Clk(),
-	.AsyncReset(),
-	.SyncReset(),
-	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2c_device|OFFSET_PRIMARY_datab_0_combout [5]),
-	.Cout(\i2c_device|OFFSET_PRIMARY_datab_0_cout [6]),
-	.Q());
-defparam \i2c_device|OFFSET_PRIMARY_datab_5 .coord_x = 16;
-defparam \i2c_device|OFFSET_PRIMARY_datab_5 .coord_y = 5;
-defparam \i2c_device|OFFSET_PRIMARY_datab_5 .coord_z = 7;
-defparam \i2c_device|OFFSET_PRIMARY_datab_5 .mask = 16'h69B2;
-defparam \i2c_device|OFFSET_PRIMARY_datab_5 .modeMux = 1'b1;
-defparam \i2c_device|OFFSET_PRIMARY_datab_5 .FeedbackMux = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_datab_5 .ShiftMux = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_datab_5 .BypassEn = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_datab_5 .CarryEnb = 1'b0;
-
-alta_slice \i2c_device|OFFSET_PRIMARY_datab_6 (
-	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [6]),
-	.B(\i2c_device|OFFSET_PRIMARY [6]),
-	.C(vcc),
-	.D(vcc),
-	.Cin(\i2c_device|OFFSET_PRIMARY_datab_0_cout [6]),
-	.Qin(),
-	.Clk(),
-	.AsyncReset(),
-	.SyncReset(),
-	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2c_device|OFFSET_PRIMARY_datab_0_combout [6]),
-	.Cout(\i2c_device|OFFSET_PRIMARY_datab_0_cout [7]),
-	.Q());
-defparam \i2c_device|OFFSET_PRIMARY_datab_6 .coord_x = 16;
-defparam \i2c_device|OFFSET_PRIMARY_datab_6 .coord_y = 5;
-defparam \i2c_device|OFFSET_PRIMARY_datab_6 .coord_z = 8;
-defparam \i2c_device|OFFSET_PRIMARY_datab_6 .mask = 16'h69B2;
-defparam \i2c_device|OFFSET_PRIMARY_datab_6 .modeMux = 1'b1;
-defparam \i2c_device|OFFSET_PRIMARY_datab_6 .FeedbackMux = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_datab_6 .ShiftMux = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_datab_6 .BypassEn = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_datab_6 .CarryEnb = 1'b0;
-
 alta_slice \i2c_device|OFFSET_PRIMARY_datab_7 (
-	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [7]),
-	.B(\i2c_device|OFFSET_PRIMARY [7]),
+	.A(\i2c_device|OFFSET_PRIMARY [7]),
+	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [7]),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|OFFSET_PRIMARY_datab_0_cout [7]),
@@ -6125,10 +6058,10 @@ alta_slice \i2c_device|OFFSET_PRIMARY_datab_7 (
 	.LutOut(\i2c_device|OFFSET_PRIMARY_datab_0_combout [7]),
 	.Cout(\i2c_device|OFFSET_PRIMARY_datab_0_cout [8]),
 	.Q());
-defparam \i2c_device|OFFSET_PRIMARY_datab_7 .coord_x = 16;
-defparam \i2c_device|OFFSET_PRIMARY_datab_7 .coord_y = 5;
+defparam \i2c_device|OFFSET_PRIMARY_datab_7 .coord_x = 17;
+defparam \i2c_device|OFFSET_PRIMARY_datab_7 .coord_y = 2;
 defparam \i2c_device|OFFSET_PRIMARY_datab_7 .coord_z = 9;
-defparam \i2c_device|OFFSET_PRIMARY_datab_7 .mask = 16'h69B2;
+defparam \i2c_device|OFFSET_PRIMARY_datab_7 .mask = 16'h69D4;
 defparam \i2c_device|OFFSET_PRIMARY_datab_7 .modeMux = 1'b1;
 defparam \i2c_device|OFFSET_PRIMARY_datab_7 .FeedbackMux = 1'b0;
 defparam \i2c_device|OFFSET_PRIMARY_datab_7 .ShiftMux = 1'b0;
@@ -6142,17 +6075,17 @@ alta_slice \i2c_device|OFFSET_PRIMARY_q_0 (
 	.D(\i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout ),
 	.Cin(),
 	.Qin(\i2c_device|OFFSET_PRIMARY [0]),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10017_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10017_Y10001_GND),
-	.SyncReset(SyncReset_X10017_Y10001_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10016_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10016_Y10001_GND),
+	.SyncReset(SyncReset_X10016_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10017_Y10001_VCC),
+	.SyncLoad(SyncLoad_X10016_Y10001_VCC),
 	.LutOut(\i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_datac_combout [1]),
 	.Cout(),
 	.Q(\i2c_device|OFFSET_PRIMARY [0]));
-defparam \i2c_device|OFFSET_PRIMARY_q_0 .coord_x = 16;
-defparam \i2c_device|OFFSET_PRIMARY_q_0 .coord_y = 5;
-defparam \i2c_device|OFFSET_PRIMARY_q_0 .coord_z = 1;
+defparam \i2c_device|OFFSET_PRIMARY_q_0 .coord_x = 17;
+defparam \i2c_device|OFFSET_PRIMARY_q_0 .coord_y = 2;
+defparam \i2c_device|OFFSET_PRIMARY_q_0 .coord_z = 0;
 defparam \i2c_device|OFFSET_PRIMARY_q_0 .mask = 16'hBB00;
 defparam \i2c_device|OFFSET_PRIMARY_q_0 .modeMux = 1'b0;
 defparam \i2c_device|OFFSET_PRIMARY_q_0 .FeedbackMux = 1'b0;
@@ -6161,73 +6094,73 @@ defparam \i2c_device|OFFSET_PRIMARY_q_0 .BypassEn = 1'b1;
 defparam \i2c_device|OFFSET_PRIMARY_q_0 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|OFFSET_PRIMARY_q_1 (
-	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [0]),
-	.B(\i2c_device|OFFSET_PRIMARY [0]),
+	.A(\i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout ),
+	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ),
 	.C(\i2c_device|write_value [1]),
-	.D(vcc),
+	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y ),
 	.Cin(),
 	.Qin(\i2c_device|OFFSET_PRIMARY [1]),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10017_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10017_Y10001_GND),
-	.SyncReset(SyncReset_X10017_Y10001_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10016_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10016_Y10001_GND),
+	.SyncReset(SyncReset_X10016_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10017_Y10001_VCC),
-	.LutOut(\i2c_device|OFFSET_PRIMARY_datab_0_combout [0]),
-	.Cout(\i2c_device|OFFSET_PRIMARY_datab_0_cout [1]),
+	.SyncLoad(SyncLoad_X10016_Y10001_VCC),
+	.LutOut(\i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_B_Y_B_Y ),
+	.Cout(),
 	.Q(\i2c_device|OFFSET_PRIMARY [1]));
-defparam \i2c_device|OFFSET_PRIMARY_q_1 .coord_x = 16;
-defparam \i2c_device|OFFSET_PRIMARY_q_1 .coord_y = 5;
-defparam \i2c_device|OFFSET_PRIMARY_q_1 .coord_z = 2;
-defparam \i2c_device|OFFSET_PRIMARY_q_1 .mask = 16'h66BB;
-defparam \i2c_device|OFFSET_PRIMARY_q_1 .modeMux = 1'b1;
+defparam \i2c_device|OFFSET_PRIMARY_q_1 .coord_x = 17;
+defparam \i2c_device|OFFSET_PRIMARY_q_1 .coord_y = 2;
+defparam \i2c_device|OFFSET_PRIMARY_q_1 .coord_z = 1;
+defparam \i2c_device|OFFSET_PRIMARY_q_1 .mask = 16'hDD00;
+defparam \i2c_device|OFFSET_PRIMARY_q_1 .modeMux = 1'b0;
 defparam \i2c_device|OFFSET_PRIMARY_q_1 .FeedbackMux = 1'b0;
 defparam \i2c_device|OFFSET_PRIMARY_q_1 .ShiftMux = 1'b0;
 defparam \i2c_device|OFFSET_PRIMARY_q_1 .BypassEn = 1'b1;
-defparam \i2c_device|OFFSET_PRIMARY_q_1 .CarryEnb = 1'b0;
+defparam \i2c_device|OFFSET_PRIMARY_q_1 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|OFFSET_PRIMARY_q_2 (
-	.A(\i2c_device|sda_d_0_9_q_dataa_combout [2]),
-	.B(\i2c_device|sda_d_0_9_q_dataa_combout [1]),
+	.A(\i2c_device|OFFSET_PRIMARY [0]),
+	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [0]),
 	.C(\i2c_device|write_value [2]),
-	.D(\i2c_device|OFFSET_SECONDARY [0]),
+	.D(vcc),
 	.Cin(),
 	.Qin(\i2c_device|OFFSET_PRIMARY [2]),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10018_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10001_GND),
-	.SyncReset(SyncReset_X10018_Y10001_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10016_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10016_Y10001_GND),
+	.SyncReset(SyncReset_X10016_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10018_Y10001_VCC),
-	.LutOut(\i2c_device|sda_d_0_12_q_dataa_combout [3]),
-	.Cout(),
+	.SyncLoad(SyncLoad_X10016_Y10001_VCC),
+	.LutOut(\i2c_device|OFFSET_PRIMARY_datab_0_combout [0]),
+	.Cout(\i2c_device|OFFSET_PRIMARY_datab_0_cout [1]),
 	.Q(\i2c_device|OFFSET_PRIMARY [2]));
-defparam \i2c_device|OFFSET_PRIMARY_q_2 .coord_x = 16;
-defparam \i2c_device|OFFSET_PRIMARY_q_2 .coord_y = 4;
-defparam \i2c_device|OFFSET_PRIMARY_q_2 .coord_z = 0;
-defparam \i2c_device|OFFSET_PRIMARY_q_2 .mask = 16'h1155;
-defparam \i2c_device|OFFSET_PRIMARY_q_2 .modeMux = 1'b0;
+defparam \i2c_device|OFFSET_PRIMARY_q_2 .coord_x = 17;
+defparam \i2c_device|OFFSET_PRIMARY_q_2 .coord_y = 2;
+defparam \i2c_device|OFFSET_PRIMARY_q_2 .coord_z = 2;
+defparam \i2c_device|OFFSET_PRIMARY_q_2 .mask = 16'h66DD;
+defparam \i2c_device|OFFSET_PRIMARY_q_2 .modeMux = 1'b1;
 defparam \i2c_device|OFFSET_PRIMARY_q_2 .FeedbackMux = 1'b0;
 defparam \i2c_device|OFFSET_PRIMARY_q_2 .ShiftMux = 1'b0;
 defparam \i2c_device|OFFSET_PRIMARY_q_2 .BypassEn = 1'b1;
-defparam \i2c_device|OFFSET_PRIMARY_q_2 .CarryEnb = 1'b1;
+defparam \i2c_device|OFFSET_PRIMARY_q_2 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|OFFSET_PRIMARY_q_3 (
-	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [3]),
-	.B(\i2c_device|OFFSET_SECONDARY [3]),
+	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [1]),
+	.B(\i2c_device|OFFSET_PRIMARY [1]),
 	.C(\i2c_device|write_value [3]),
 	.D(vcc),
-	.Cin(\i2c_device|OFFSET_SECONDARY_datab_0_cout [3]),
+	.Cin(\i2c_device|OFFSET_PRIMARY_datab_0_cout [1]),
 	.Qin(\i2c_device|OFFSET_PRIMARY [3]),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10018_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10001_GND),
-	.SyncReset(SyncReset_X10018_Y10001_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10016_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10016_Y10001_GND),
+	.SyncReset(SyncReset_X10016_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10018_Y10001_VCC),
-	.LutOut(\i2c_device|OFFSET_SECONDARY_datab_0_combout [3]),
-	.Cout(\i2c_device|OFFSET_SECONDARY_datab_0_cout [4]),
+	.SyncLoad(SyncLoad_X10016_Y10001_VCC),
+	.LutOut(\i2c_device|OFFSET_PRIMARY_datab_0_combout [1]),
+	.Cout(\i2c_device|OFFSET_PRIMARY_datab_0_cout [2]),
 	.Q(\i2c_device|OFFSET_PRIMARY [3]));
-defparam \i2c_device|OFFSET_PRIMARY_q_3 .coord_x = 16;
-defparam \i2c_device|OFFSET_PRIMARY_q_3 .coord_y = 4;
-defparam \i2c_device|OFFSET_PRIMARY_q_3 .coord_z = 6;
+defparam \i2c_device|OFFSET_PRIMARY_q_3 .coord_x = 17;
+defparam \i2c_device|OFFSET_PRIMARY_q_3 .coord_y = 2;
+defparam \i2c_device|OFFSET_PRIMARY_q_3 .coord_z = 3;
 defparam \i2c_device|OFFSET_PRIMARY_q_3 .mask = 16'h69B2;
 defparam \i2c_device|OFFSET_PRIMARY_q_3 .modeMux = 1'b1;
 defparam \i2c_device|OFFSET_PRIMARY_q_3 .FeedbackMux = 1'b0;
@@ -6236,104 +6169,129 @@ defparam \i2c_device|OFFSET_PRIMARY_q_3 .BypassEn = 1'b1;
 defparam \i2c_device|OFFSET_PRIMARY_q_3 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|OFFSET_PRIMARY_q_4 (
-	.A(\i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout ),
-	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y ),
-	.C(\i2c_device|write_value [4]),
-	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ),
-	.Cin(),
-	.Qin(\i2c_device|OFFSET_PRIMARY [4]),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10017_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10017_Y10001_GND),
-	.SyncReset(SyncReset_X10017_Y10001_GND),
-	.ShiftData(),
-	.SyncLoad(SyncLoad_X10017_Y10001_VCC),
-	.LutOut(\i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_B_Y_B_Y ),
-	.Cout(),
-	.Q(\i2c_device|OFFSET_PRIMARY [4]));
-defparam \i2c_device|OFFSET_PRIMARY_q_4 .coord_x = 16;
-defparam \i2c_device|OFFSET_PRIMARY_q_4 .coord_y = 5;
-defparam \i2c_device|OFFSET_PRIMARY_q_4 .coord_z = 0;
-defparam \i2c_device|OFFSET_PRIMARY_q_4 .mask = 16'hCC44;
-defparam \i2c_device|OFFSET_PRIMARY_q_4 .modeMux = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_q_4 .FeedbackMux = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_q_4 .ShiftMux = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_q_4 .BypassEn = 1'b1;
-defparam \i2c_device|OFFSET_PRIMARY_q_4 .CarryEnb = 1'b1;
-
-alta_slice \i2c_device|OFFSET_PRIMARY_q_5 (
-	.A(),
-	.B(),
-	.C(\i2c_device|write_value [5]),
-	.D(),
-	.Cin(),
-	.Qin(\i2c_device|OFFSET_PRIMARY [5]),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10019_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10001_GND),
-	.SyncReset(),
-	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2c_device|OFFSET_PRIMARY_q_5__feeder__LutOut ),
-	.Cout(),
-	.Q(\i2c_device|OFFSET_PRIMARY [5]));
-defparam \i2c_device|OFFSET_PRIMARY_q_5 .coord_x = 15;
-defparam \i2c_device|OFFSET_PRIMARY_q_5 .coord_y = 4;
-defparam \i2c_device|OFFSET_PRIMARY_q_5 .coord_z = 9;
-defparam \i2c_device|OFFSET_PRIMARY_q_5 .mask = 16'hF0F0;
-defparam \i2c_device|OFFSET_PRIMARY_q_5 .modeMux = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_q_5 .FeedbackMux = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_q_5 .ShiftMux = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_q_5 .BypassEn = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_q_5 .CarryEnb = 1'b1;
-
-alta_slice \i2c_device|OFFSET_PRIMARY_q_6 (
 	.A(),
 	.B(),
 	.C(),
-	.D(\i2c_device|write_value [6]),
+	.D(\i2c_device|write_value [4]),
 	.Cin(),
-	.Qin(\i2c_device|OFFSET_PRIMARY [6]),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10019_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10001_GND),
+	.Qin(\i2c_device|OFFSET_PRIMARY [4]),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10007_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10007_Y10002_GND),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
-	.LutOut(\i2c_device|OFFSET_PRIMARY_q_6__feeder__LutOut ),
+	.LutOut(\i2c_device|OFFSET_PRIMARY_q_4__feeder__LutOut ),
 	.Cout(),
+	.Q(\i2c_device|OFFSET_PRIMARY [4]));
+defparam \i2c_device|OFFSET_PRIMARY_q_4 .coord_x = 16;
+defparam \i2c_device|OFFSET_PRIMARY_q_4 .coord_y = 2;
+defparam \i2c_device|OFFSET_PRIMARY_q_4 .coord_z = 10;
+defparam \i2c_device|OFFSET_PRIMARY_q_4 .mask = 16'hFF00;
+defparam \i2c_device|OFFSET_PRIMARY_q_4 .modeMux = 1'b0;
+defparam \i2c_device|OFFSET_PRIMARY_q_4 .FeedbackMux = 1'b0;
+defparam \i2c_device|OFFSET_PRIMARY_q_4 .ShiftMux = 1'b0;
+defparam \i2c_device|OFFSET_PRIMARY_q_4 .BypassEn = 1'b0;
+defparam \i2c_device|OFFSET_PRIMARY_q_4 .CarryEnb = 1'b1;
+
+alta_slice \i2c_device|OFFSET_PRIMARY_q_5 (
+	.A(\i2c_device|OFFSET_PRIMARY [2]),
+	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [2]),
+	.C(\i2c_device|write_value [5]),
+	.D(vcc),
+	.Cin(\i2c_device|OFFSET_PRIMARY_datab_0_cout [2]),
+	.Qin(\i2c_device|OFFSET_PRIMARY [5]),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10016_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10016_Y10001_GND),
+	.SyncReset(SyncReset_X10016_Y10001_GND),
+	.ShiftData(),
+	.SyncLoad(SyncLoad_X10016_Y10001_VCC),
+	.LutOut(\i2c_device|OFFSET_PRIMARY_datab_0_combout [2]),
+	.Cout(\i2c_device|OFFSET_PRIMARY_datab_0_cout [3]),
+	.Q(\i2c_device|OFFSET_PRIMARY [5]));
+defparam \i2c_device|OFFSET_PRIMARY_q_5 .coord_x = 17;
+defparam \i2c_device|OFFSET_PRIMARY_q_5 .coord_y = 2;
+defparam \i2c_device|OFFSET_PRIMARY_q_5 .coord_z = 4;
+defparam \i2c_device|OFFSET_PRIMARY_q_5 .mask = 16'h69D4;
+defparam \i2c_device|OFFSET_PRIMARY_q_5 .modeMux = 1'b1;
+defparam \i2c_device|OFFSET_PRIMARY_q_5 .FeedbackMux = 1'b0;
+defparam \i2c_device|OFFSET_PRIMARY_q_5 .ShiftMux = 1'b0;
+defparam \i2c_device|OFFSET_PRIMARY_q_5 .BypassEn = 1'b1;
+defparam \i2c_device|OFFSET_PRIMARY_q_5 .CarryEnb = 1'b0;
+
+alta_slice \i2c_device|OFFSET_PRIMARY_q_6 (
+	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [3]),
+	.B(\i2c_device|OFFSET_PRIMARY [3]),
+	.C(\i2c_device|write_value [6]),
+	.D(vcc),
+	.Cin(\i2c_device|OFFSET_PRIMARY_datab_0_cout [3]),
+	.Qin(\i2c_device|OFFSET_PRIMARY [6]),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10016_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10016_Y10001_GND),
+	.SyncReset(SyncReset_X10016_Y10001_GND),
+	.ShiftData(),
+	.SyncLoad(SyncLoad_X10016_Y10001_VCC),
+	.LutOut(\i2c_device|OFFSET_PRIMARY_datab_0_combout [3]),
+	.Cout(\i2c_device|OFFSET_PRIMARY_datab_0_cout [4]),
 	.Q(\i2c_device|OFFSET_PRIMARY [6]));
-defparam \i2c_device|OFFSET_PRIMARY_q_6 .coord_x = 15;
-defparam \i2c_device|OFFSET_PRIMARY_q_6 .coord_y = 4;
-defparam \i2c_device|OFFSET_PRIMARY_q_6 .coord_z = 7;
-defparam \i2c_device|OFFSET_PRIMARY_q_6 .mask = 16'hFF00;
-defparam \i2c_device|OFFSET_PRIMARY_q_6 .modeMux = 1'b0;
+defparam \i2c_device|OFFSET_PRIMARY_q_6 .coord_x = 17;
+defparam \i2c_device|OFFSET_PRIMARY_q_6 .coord_y = 2;
+defparam \i2c_device|OFFSET_PRIMARY_q_6 .coord_z = 5;
+defparam \i2c_device|OFFSET_PRIMARY_q_6 .mask = 16'h69B2;
+defparam \i2c_device|OFFSET_PRIMARY_q_6 .modeMux = 1'b1;
 defparam \i2c_device|OFFSET_PRIMARY_q_6 .FeedbackMux = 1'b0;
 defparam \i2c_device|OFFSET_PRIMARY_q_6 .ShiftMux = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_q_6 .BypassEn = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_q_6 .CarryEnb = 1'b1;
+defparam \i2c_device|OFFSET_PRIMARY_q_6 .BypassEn = 1'b1;
+defparam \i2c_device|OFFSET_PRIMARY_q_6 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|OFFSET_PRIMARY_q_7 (
-	.A(),
-	.B(),
+	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [4]),
+	.B(\i2c_device|OFFSET_PRIMARY [4]),
 	.C(\i2c_device|write_value [7]),
-	.D(),
-	.Cin(),
+	.D(vcc),
+	.Cin(\i2c_device|OFFSET_PRIMARY_datab_0_cout [4]),
 	.Qin(\i2c_device|OFFSET_PRIMARY [7]),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10019_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10001_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_A_Y_B_Y_X10016_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10016_Y10001_GND),
+	.SyncReset(SyncReset_X10016_Y10001_GND),
+	.ShiftData(),
+	.SyncLoad(SyncLoad_X10016_Y10001_VCC),
+	.LutOut(\i2c_device|OFFSET_PRIMARY_datab_0_combout [4]),
+	.Cout(\i2c_device|OFFSET_PRIMARY_datab_0_cout [5]),
+	.Q(\i2c_device|OFFSET_PRIMARY [7]));
+defparam \i2c_device|OFFSET_PRIMARY_q_7 .coord_x = 17;
+defparam \i2c_device|OFFSET_PRIMARY_q_7 .coord_y = 2;
+defparam \i2c_device|OFFSET_PRIMARY_q_7 .coord_z = 6;
+defparam \i2c_device|OFFSET_PRIMARY_q_7 .mask = 16'h69B2;
+defparam \i2c_device|OFFSET_PRIMARY_q_7 .modeMux = 1'b1;
+defparam \i2c_device|OFFSET_PRIMARY_q_7 .FeedbackMux = 1'b0;
+defparam \i2c_device|OFFSET_PRIMARY_q_7 .ShiftMux = 1'b0;
+defparam \i2c_device|OFFSET_PRIMARY_q_7 .BypassEn = 1'b1;
+defparam \i2c_device|OFFSET_PRIMARY_q_7 .CarryEnb = 1'b0;
+
+alta_slice \i2c_device|OFFSET_SECONDARY_dataa_1 (
+	.A(vcc),
+	.B(\i2c_device|sda_d_0_9_q_dataa_1_combout [2]),
+	.C(\i2c_device|sda_d_0_9_q_dataa_combout [1]),
+	.D(\i2c_device|OFFSET_SECONDARY [1]),
+	.Cin(),
+	.Qin(),
+	.Clk(),
+	.AsyncReset(),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
-	.LutOut(\i2c_device|OFFSET_PRIMARY_q_7__feeder__LutOut ),
+	.LutOut(\i2c_device|OFFSET_SECONDARY_dataa_1_combout [2]),
 	.Cout(),
-	.Q(\i2c_device|OFFSET_PRIMARY [7]));
-defparam \i2c_device|OFFSET_PRIMARY_q_7 .coord_x = 15;
-defparam \i2c_device|OFFSET_PRIMARY_q_7 .coord_y = 4;
-defparam \i2c_device|OFFSET_PRIMARY_q_7 .coord_z = 1;
-defparam \i2c_device|OFFSET_PRIMARY_q_7 .mask = 16'hF0F0;
-defparam \i2c_device|OFFSET_PRIMARY_q_7 .modeMux = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_q_7 .FeedbackMux = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_q_7 .ShiftMux = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_q_7 .BypassEn = 1'b0;
-defparam \i2c_device|OFFSET_PRIMARY_q_7 .CarryEnb = 1'b1;
+	.Q());
+defparam \i2c_device|OFFSET_SECONDARY_dataa_1 .coord_x = 15;
+defparam \i2c_device|OFFSET_SECONDARY_dataa_1 .coord_y = 2;
+defparam \i2c_device|OFFSET_SECONDARY_dataa_1 .coord_z = 11;
+defparam \i2c_device|OFFSET_SECONDARY_dataa_1 .mask = 16'h0333;
+defparam \i2c_device|OFFSET_SECONDARY_dataa_1 .modeMux = 1'b0;
+defparam \i2c_device|OFFSET_SECONDARY_dataa_1 .FeedbackMux = 1'b0;
+defparam \i2c_device|OFFSET_SECONDARY_dataa_1 .ShiftMux = 1'b0;
+defparam \i2c_device|OFFSET_SECONDARY_dataa_1 .BypassEn = 1'b0;
+defparam \i2c_device|OFFSET_SECONDARY_dataa_1 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|OFFSET_SECONDARY_dataa_1_combout_combout_0 (
 	.A(vcc),
@@ -6350,8 +6308,8 @@ alta_slice \i2c_device|OFFSET_SECONDARY_dataa_1_combout_combout_0 (
 	.LutOut(\i2c_device|OFFSET_SECONDARY_dataa_1_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|OFFSET_SECONDARY_dataa_1_combout_combout_0 .coord_x = 17;
-defparam \i2c_device|OFFSET_SECONDARY_dataa_1_combout_combout_0 .coord_y = 6;
+defparam \i2c_device|OFFSET_SECONDARY_dataa_1_combout_combout_0 .coord_x = 18;
+defparam \i2c_device|OFFSET_SECONDARY_dataa_1_combout_combout_0 .coord_y = 10;
 defparam \i2c_device|OFFSET_SECONDARY_dataa_1_combout_combout_0 .coord_z = 4;
 defparam \i2c_device|OFFSET_SECONDARY_dataa_1_combout_combout_0 .mask = 16'hC000;
 defparam \i2c_device|OFFSET_SECONDARY_dataa_1_combout_combout_0 .modeMux = 1'b0;
@@ -6375,40 +6333,15 @@ alta_slice \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8 (
 	.LutOut(\i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8 .coord_x = 16;
-defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8 .coord_y = 4;
-defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8 .coord_z = 11;
+defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8 .coord_x = 15;
+defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8 .coord_y = 2;
+defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8 .coord_z = 10;
 defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8 .mask = 16'hF0F0;
 defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8 .modeMux = 1'b1;
 defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8 .FeedbackMux = 1'b0;
 defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8 .ShiftMux = 1'b0;
 defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8 .BypassEn = 1'b0;
 defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8 .CarryEnb = 1'b1;
-
-alta_slice \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_combout (
-	.A(vcc),
-	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ),
-	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y ),
-	.D(\i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout ),
-	.Cin(),
-	.Qin(),
-	.Clk(),
-	.AsyncReset(),
-	.SyncReset(),
-	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y ),
-	.Cout(),
-	.Q());
-defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_combout .coord_x = 16;
-defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_combout .coord_y = 4;
-defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_combout .coord_z = 13;
-defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_combout .mask = 16'hC0F0;
-defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_combout .modeMux = 1'b0;
-defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_combout .FeedbackMux = 1'b0;
-defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_combout .ShiftMux = 1'b0;
-defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_combout .BypassEn = 1'b0;
-defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_combout .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_datac (
 	.A(vcc),
@@ -6427,7 +6360,7 @@ alta_slice \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_datac (
 	.Q());
 defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_datac .coord_x = 16;
 defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_datac .coord_y = 4;
-defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_datac .coord_z = 12;
+defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_datac .coord_z = 4;
 defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_datac .mask = 16'hCF00;
 defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_datac .modeMux = 1'b0;
 defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_datac .FeedbackMux = 1'b0;
@@ -6435,100 +6368,150 @@ defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_datac .ShiftMux
 defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_datac .BypassEn = 1'b0;
 defparam \i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_datac .CarryEnb = 1'b1;
 
-alta_slice \i2c_device|OFFSET_SECONDARY_q_0 (
-	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [0]),
-	.B(\i2c_device|OFFSET_SECONDARY [0]),
-	.C(\i2c_device|write_value [0]),
+alta_slice \i2c_device|OFFSET_SECONDARY_datab_6 (
+	.A(\i2c_device|OFFSET_SECONDARY [6]),
+	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [6]),
+	.C(vcc),
 	.D(vcc),
+	.Cin(\i2c_device|OFFSET_SECONDARY_datab_0_cout [6]),
+	.Qin(),
+	.Clk(),
+	.AsyncReset(),
+	.SyncReset(),
+	.ShiftData(),
+	.SyncLoad(),
+	.LutOut(\i2c_device|OFFSET_SECONDARY_datab_0_combout [6]),
+	.Cout(\i2c_device|OFFSET_SECONDARY_datab_0_cout [7]),
+	.Q());
+defparam \i2c_device|OFFSET_SECONDARY_datab_6 .coord_x = 15;
+defparam \i2c_device|OFFSET_SECONDARY_datab_6 .coord_y = 2;
+defparam \i2c_device|OFFSET_SECONDARY_datab_6 .coord_z = 8;
+defparam \i2c_device|OFFSET_SECONDARY_datab_6 .mask = 16'h69D4;
+defparam \i2c_device|OFFSET_SECONDARY_datab_6 .modeMux = 1'b1;
+defparam \i2c_device|OFFSET_SECONDARY_datab_6 .FeedbackMux = 1'b0;
+defparam \i2c_device|OFFSET_SECONDARY_datab_6 .ShiftMux = 1'b0;
+defparam \i2c_device|OFFSET_SECONDARY_datab_6 .BypassEn = 1'b0;
+defparam \i2c_device|OFFSET_SECONDARY_datab_6 .CarryEnb = 1'b0;
+
+alta_slice \i2c_device|OFFSET_SECONDARY_datab_7 (
+	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [7]),
+	.B(\i2c_device|OFFSET_SECONDARY [7]),
+	.C(vcc),
+	.D(vcc),
+	.Cin(\i2c_device|OFFSET_SECONDARY_datab_0_cout [7]),
+	.Qin(),
+	.Clk(),
+	.AsyncReset(),
+	.SyncReset(),
+	.ShiftData(),
+	.SyncLoad(),
+	.LutOut(\i2c_device|OFFSET_SECONDARY_datab_0_combout [7]),
+	.Cout(\i2c_device|OFFSET_SECONDARY_datab_0_cout [8]),
+	.Q());
+defparam \i2c_device|OFFSET_SECONDARY_datab_7 .coord_x = 15;
+defparam \i2c_device|OFFSET_SECONDARY_datab_7 .coord_y = 2;
+defparam \i2c_device|OFFSET_SECONDARY_datab_7 .coord_z = 9;
+defparam \i2c_device|OFFSET_SECONDARY_datab_7 .mask = 16'h69B2;
+defparam \i2c_device|OFFSET_SECONDARY_datab_7 .modeMux = 1'b1;
+defparam \i2c_device|OFFSET_SECONDARY_datab_7 .FeedbackMux = 1'b0;
+defparam \i2c_device|OFFSET_SECONDARY_datab_7 .ShiftMux = 1'b0;
+defparam \i2c_device|OFFSET_SECONDARY_datab_7 .BypassEn = 1'b0;
+defparam \i2c_device|OFFSET_SECONDARY_datab_7 .CarryEnb = 1'b0;
+
+alta_slice \i2c_device|OFFSET_SECONDARY_q_0 (
+	.A(\i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout ),
+	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ),
+	.C(\i2c_device|write_value [0]),
+	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y ),
 	.Cin(),
 	.Qin(\i2c_device|OFFSET_SECONDARY [0]),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_X10018_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10001_GND),
-	.SyncReset(SyncReset_X10018_Y10001_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_X10017_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10017_Y10001_GND),
+	.SyncReset(SyncReset_X10017_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10018_Y10001_VCC),
-	.LutOut(\i2c_device|OFFSET_SECONDARY_datab_0_combout [0]),
-	.Cout(\i2c_device|OFFSET_SECONDARY_datab_0_cout [1]),
+	.SyncLoad(SyncLoad_X10017_Y10001_VCC),
+	.LutOut(\i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y ),
+	.Cout(),
 	.Q(\i2c_device|OFFSET_SECONDARY [0]));
-defparam \i2c_device|OFFSET_SECONDARY_q_0 .coord_x = 16;
-defparam \i2c_device|OFFSET_SECONDARY_q_0 .coord_y = 4;
-defparam \i2c_device|OFFSET_SECONDARY_q_0 .coord_z = 3;
-defparam \i2c_device|OFFSET_SECONDARY_q_0 .mask = 16'h66BB;
-defparam \i2c_device|OFFSET_SECONDARY_q_0 .modeMux = 1'b1;
+defparam \i2c_device|OFFSET_SECONDARY_q_0 .coord_x = 15;
+defparam \i2c_device|OFFSET_SECONDARY_q_0 .coord_y = 2;
+defparam \i2c_device|OFFSET_SECONDARY_q_0 .coord_z = 0;
+defparam \i2c_device|OFFSET_SECONDARY_q_0 .mask = 16'hDD00;
+defparam \i2c_device|OFFSET_SECONDARY_q_0 .modeMux = 1'b0;
 defparam \i2c_device|OFFSET_SECONDARY_q_0 .FeedbackMux = 1'b0;
 defparam \i2c_device|OFFSET_SECONDARY_q_0 .ShiftMux = 1'b0;
 defparam \i2c_device|OFFSET_SECONDARY_q_0 .BypassEn = 1'b1;
-defparam \i2c_device|OFFSET_SECONDARY_q_0 .CarryEnb = 1'b0;
+defparam \i2c_device|OFFSET_SECONDARY_q_0 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|OFFSET_SECONDARY_q_1 (
-	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [1]),
-	.B(\i2c_device|OFFSET_SECONDARY [1]),
+	.A(\i2c_device|OFFSET_SECONDARY [0]),
+	.B(\i2c_device|sda_d_0_9_q_dataa_combout [2]),
 	.C(\i2c_device|write_value [1]),
-	.D(vcc),
-	.Cin(\i2c_device|OFFSET_SECONDARY_datab_0_cout [1]),
+	.D(\i2c_device|sda_d_0_9_q_dataa_combout [1]),
+	.Cin(),
 	.Qin(\i2c_device|OFFSET_SECONDARY [1]),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_X10018_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10001_GND),
-	.SyncReset(SyncReset_X10018_Y10001_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_X10017_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10017_Y10001_GND),
+	.SyncReset(SyncReset_X10017_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10018_Y10001_VCC),
-	.LutOut(\i2c_device|OFFSET_SECONDARY_datab_0_combout [1]),
-	.Cout(\i2c_device|OFFSET_SECONDARY_datab_0_cout [2]),
+	.SyncLoad(SyncLoad_X10017_Y10001_VCC),
+	.LutOut(\i2c_device|sda_d_0_12_q_dataa_combout [3]),
+	.Cout(),
 	.Q(\i2c_device|OFFSET_SECONDARY [1]));
-defparam \i2c_device|OFFSET_SECONDARY_q_1 .coord_x = 16;
-defparam \i2c_device|OFFSET_SECONDARY_q_1 .coord_y = 4;
-defparam \i2c_device|OFFSET_SECONDARY_q_1 .coord_z = 4;
-defparam \i2c_device|OFFSET_SECONDARY_q_1 .mask = 16'h69B2;
-defparam \i2c_device|OFFSET_SECONDARY_q_1 .modeMux = 1'b1;
+defparam \i2c_device|OFFSET_SECONDARY_q_1 .coord_x = 15;
+defparam \i2c_device|OFFSET_SECONDARY_q_1 .coord_y = 2;
+defparam \i2c_device|OFFSET_SECONDARY_q_1 .coord_z = 1;
+defparam \i2c_device|OFFSET_SECONDARY_q_1 .mask = 16'h1133;
+defparam \i2c_device|OFFSET_SECONDARY_q_1 .modeMux = 1'b0;
 defparam \i2c_device|OFFSET_SECONDARY_q_1 .FeedbackMux = 1'b0;
 defparam \i2c_device|OFFSET_SECONDARY_q_1 .ShiftMux = 1'b0;
 defparam \i2c_device|OFFSET_SECONDARY_q_1 .BypassEn = 1'b1;
-defparam \i2c_device|OFFSET_SECONDARY_q_1 .CarryEnb = 1'b0;
+defparam \i2c_device|OFFSET_SECONDARY_q_1 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|OFFSET_SECONDARY_q_2 (
-	.A(\i2c_device|OFFSET_SECONDARY [1]),
-	.B(\i2c_device|sda_d_0_9_q_dataa_1_combout [2]),
+	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [1]),
+	.B(\i2c_device|OFFSET_SECONDARY [1]),
 	.C(\i2c_device|write_value [2]),
-	.D(\i2c_device|sda_d_0_9_q_dataa_combout [1]),
-	.Cin(),
+	.D(vcc),
+	.Cin(\i2c_device|OFFSET_SECONDARY_datab_0_cout [1]),
 	.Qin(\i2c_device|OFFSET_SECONDARY [2]),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_X10018_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10001_GND),
-	.SyncReset(SyncReset_X10018_Y10001_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_X10017_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10017_Y10001_GND),
+	.SyncReset(SyncReset_X10017_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10018_Y10001_VCC),
-	.LutOut(\i2c_device|OFFSET_SECONDARY_dataa_1_combout [2]),
-	.Cout(),
+	.SyncLoad(SyncLoad_X10017_Y10001_VCC),
+	.LutOut(\i2c_device|OFFSET_SECONDARY_datab_0_combout [1]),
+	.Cout(\i2c_device|OFFSET_SECONDARY_datab_0_cout [2]),
 	.Q(\i2c_device|OFFSET_SECONDARY [2]));
-defparam \i2c_device|OFFSET_SECONDARY_q_2 .coord_x = 16;
-defparam \i2c_device|OFFSET_SECONDARY_q_2 .coord_y = 4;
-defparam \i2c_device|OFFSET_SECONDARY_q_2 .coord_z = 2;
-defparam \i2c_device|OFFSET_SECONDARY_q_2 .mask = 16'h1133;
-defparam \i2c_device|OFFSET_SECONDARY_q_2 .modeMux = 1'b0;
+defparam \i2c_device|OFFSET_SECONDARY_q_2 .coord_x = 15;
+defparam \i2c_device|OFFSET_SECONDARY_q_2 .coord_y = 2;
+defparam \i2c_device|OFFSET_SECONDARY_q_2 .coord_z = 3;
+defparam \i2c_device|OFFSET_SECONDARY_q_2 .mask = 16'h69B2;
+defparam \i2c_device|OFFSET_SECONDARY_q_2 .modeMux = 1'b1;
 defparam \i2c_device|OFFSET_SECONDARY_q_2 .FeedbackMux = 1'b0;
 defparam \i2c_device|OFFSET_SECONDARY_q_2 .ShiftMux = 1'b0;
 defparam \i2c_device|OFFSET_SECONDARY_q_2 .BypassEn = 1'b1;
-defparam \i2c_device|OFFSET_SECONDARY_q_2 .CarryEnb = 1'b1;
+defparam \i2c_device|OFFSET_SECONDARY_q_2 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|OFFSET_SECONDARY_q_3 (
-	.A(\i2c_device|OFFSET_SECONDARY [2]),
-	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [2]),
+	.A(\i2c_device|OFFSET_SECONDARY [0]),
+	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [0]),
 	.C(\i2c_device|write_value [3]),
 	.D(vcc),
-	.Cin(\i2c_device|OFFSET_SECONDARY_datab_0_cout [2]),
+	.Cin(),
 	.Qin(\i2c_device|OFFSET_SECONDARY [3]),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_X10018_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10001_GND),
-	.SyncReset(SyncReset_X10018_Y10001_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_X10017_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10017_Y10001_GND),
+	.SyncReset(SyncReset_X10017_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10018_Y10001_VCC),
-	.LutOut(\i2c_device|OFFSET_SECONDARY_datab_0_combout [2]),
-	.Cout(\i2c_device|OFFSET_SECONDARY_datab_0_cout [3]),
+	.SyncLoad(SyncLoad_X10017_Y10001_VCC),
+	.LutOut(\i2c_device|OFFSET_SECONDARY_datab_0_combout [0]),
+	.Cout(\i2c_device|OFFSET_SECONDARY_datab_0_cout [1]),
 	.Q(\i2c_device|OFFSET_SECONDARY [3]));
-defparam \i2c_device|OFFSET_SECONDARY_q_3 .coord_x = 16;
-defparam \i2c_device|OFFSET_SECONDARY_q_3 .coord_y = 4;
-defparam \i2c_device|OFFSET_SECONDARY_q_3 .coord_z = 5;
-defparam \i2c_device|OFFSET_SECONDARY_q_3 .mask = 16'h69D4;
+defparam \i2c_device|OFFSET_SECONDARY_q_3 .coord_x = 15;
+defparam \i2c_device|OFFSET_SECONDARY_q_3 .coord_y = 2;
+defparam \i2c_device|OFFSET_SECONDARY_q_3 .coord_z = 2;
+defparam \i2c_device|OFFSET_SECONDARY_q_3 .mask = 16'h66DD;
 defparam \i2c_device|OFFSET_SECONDARY_q_3 .modeMux = 1'b1;
 defparam \i2c_device|OFFSET_SECONDARY_q_3 .FeedbackMux = 1'b0;
 defparam \i2c_device|OFFSET_SECONDARY_q_3 .ShiftMux = 1'b0;
@@ -6536,23 +6519,23 @@ defparam \i2c_device|OFFSET_SECONDARY_q_3 .BypassEn = 1'b1;
 defparam \i2c_device|OFFSET_SECONDARY_q_3 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|OFFSET_SECONDARY_q_4 (
-	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [7]),
-	.B(\i2c_device|OFFSET_SECONDARY [7]),
+	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [2]),
+	.B(\i2c_device|OFFSET_SECONDARY [2]),
 	.C(\i2c_device|write_value [4]),
 	.D(vcc),
-	.Cin(\i2c_device|OFFSET_SECONDARY_datab_0_cout [7]),
+	.Cin(\i2c_device|OFFSET_SECONDARY_datab_0_cout [2]),
 	.Qin(\i2c_device|OFFSET_SECONDARY [4]),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_X10018_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10001_GND),
-	.SyncReset(SyncReset_X10018_Y10001_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_X10017_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10017_Y10001_GND),
+	.SyncReset(SyncReset_X10017_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10018_Y10001_VCC),
-	.LutOut(\i2c_device|OFFSET_SECONDARY_datab_0_combout [7]),
-	.Cout(\i2c_device|OFFSET_SECONDARY_datab_0_cout [8]),
+	.SyncLoad(SyncLoad_X10017_Y10001_VCC),
+	.LutOut(\i2c_device|OFFSET_SECONDARY_datab_0_combout [2]),
+	.Cout(\i2c_device|OFFSET_SECONDARY_datab_0_cout [3]),
 	.Q(\i2c_device|OFFSET_SECONDARY [4]));
-defparam \i2c_device|OFFSET_SECONDARY_q_4 .coord_x = 16;
-defparam \i2c_device|OFFSET_SECONDARY_q_4 .coord_y = 4;
-defparam \i2c_device|OFFSET_SECONDARY_q_4 .coord_z = 10;
+defparam \i2c_device|OFFSET_SECONDARY_q_4 .coord_x = 15;
+defparam \i2c_device|OFFSET_SECONDARY_q_4 .coord_y = 2;
+defparam \i2c_device|OFFSET_SECONDARY_q_4 .coord_z = 4;
 defparam \i2c_device|OFFSET_SECONDARY_q_4 .mask = 16'h69B2;
 defparam \i2c_device|OFFSET_SECONDARY_q_4 .modeMux = 1'b1;
 defparam \i2c_device|OFFSET_SECONDARY_q_4 .FeedbackMux = 1'b0;
@@ -6561,24 +6544,24 @@ defparam \i2c_device|OFFSET_SECONDARY_q_4 .BypassEn = 1'b1;
 defparam \i2c_device|OFFSET_SECONDARY_q_4 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|OFFSET_SECONDARY_q_5 (
-	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [5]),
-	.B(\i2c_device|OFFSET_SECONDARY [5]),
+	.A(\i2c_device|OFFSET_SECONDARY [3]),
+	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [3]),
 	.C(\i2c_device|write_value [5]),
 	.D(vcc),
-	.Cin(\i2c_device|OFFSET_SECONDARY_datab_0_cout [5]),
+	.Cin(\i2c_device|OFFSET_SECONDARY_datab_0_cout [3]),
 	.Qin(\i2c_device|OFFSET_SECONDARY [5]),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_X10018_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10001_GND),
-	.SyncReset(SyncReset_X10018_Y10001_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_X10017_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10017_Y10001_GND),
+	.SyncReset(SyncReset_X10017_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10018_Y10001_VCC),
-	.LutOut(\i2c_device|OFFSET_SECONDARY_datab_0_combout [5]),
-	.Cout(\i2c_device|OFFSET_SECONDARY_datab_0_cout [6]),
+	.SyncLoad(SyncLoad_X10017_Y10001_VCC),
+	.LutOut(\i2c_device|OFFSET_SECONDARY_datab_0_combout [3]),
+	.Cout(\i2c_device|OFFSET_SECONDARY_datab_0_cout [4]),
 	.Q(\i2c_device|OFFSET_SECONDARY [5]));
-defparam \i2c_device|OFFSET_SECONDARY_q_5 .coord_x = 16;
-defparam \i2c_device|OFFSET_SECONDARY_q_5 .coord_y = 4;
-defparam \i2c_device|OFFSET_SECONDARY_q_5 .coord_z = 8;
-defparam \i2c_device|OFFSET_SECONDARY_q_5 .mask = 16'h69B2;
+defparam \i2c_device|OFFSET_SECONDARY_q_5 .coord_x = 15;
+defparam \i2c_device|OFFSET_SECONDARY_q_5 .coord_y = 2;
+defparam \i2c_device|OFFSET_SECONDARY_q_5 .coord_z = 5;
+defparam \i2c_device|OFFSET_SECONDARY_q_5 .mask = 16'h69D4;
 defparam \i2c_device|OFFSET_SECONDARY_q_5 .modeMux = 1'b1;
 defparam \i2c_device|OFFSET_SECONDARY_q_5 .FeedbackMux = 1'b0;
 defparam \i2c_device|OFFSET_SECONDARY_q_5 .ShiftMux = 1'b0;
@@ -6586,24 +6569,24 @@ defparam \i2c_device|OFFSET_SECONDARY_q_5 .BypassEn = 1'b1;
 defparam \i2c_device|OFFSET_SECONDARY_q_5 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|OFFSET_SECONDARY_q_6 (
-	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [6]),
-	.B(\i2c_device|OFFSET_SECONDARY [6]),
+	.A(\i2c_device|OFFSET_SECONDARY [4]),
+	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [4]),
 	.C(\i2c_device|write_value [6]),
 	.D(vcc),
-	.Cin(\i2c_device|OFFSET_SECONDARY_datab_0_cout [6]),
+	.Cin(\i2c_device|OFFSET_SECONDARY_datab_0_cout [4]),
 	.Qin(\i2c_device|OFFSET_SECONDARY [6]),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_X10018_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10001_GND),
-	.SyncReset(SyncReset_X10018_Y10001_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_X10017_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10017_Y10001_GND),
+	.SyncReset(SyncReset_X10017_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10018_Y10001_VCC),
-	.LutOut(\i2c_device|OFFSET_SECONDARY_datab_0_combout [6]),
-	.Cout(\i2c_device|OFFSET_SECONDARY_datab_0_cout [7]),
+	.SyncLoad(SyncLoad_X10017_Y10001_VCC),
+	.LutOut(\i2c_device|OFFSET_SECONDARY_datab_0_combout [4]),
+	.Cout(\i2c_device|OFFSET_SECONDARY_datab_0_cout [5]),
 	.Q(\i2c_device|OFFSET_SECONDARY [6]));
-defparam \i2c_device|OFFSET_SECONDARY_q_6 .coord_x = 16;
-defparam \i2c_device|OFFSET_SECONDARY_q_6 .coord_y = 4;
-defparam \i2c_device|OFFSET_SECONDARY_q_6 .coord_z = 9;
-defparam \i2c_device|OFFSET_SECONDARY_q_6 .mask = 16'h69B2;
+defparam \i2c_device|OFFSET_SECONDARY_q_6 .coord_x = 15;
+defparam \i2c_device|OFFSET_SECONDARY_q_6 .coord_y = 2;
+defparam \i2c_device|OFFSET_SECONDARY_q_6 .coord_z = 6;
+defparam \i2c_device|OFFSET_SECONDARY_q_6 .mask = 16'h69D4;
 defparam \i2c_device|OFFSET_SECONDARY_q_6 .modeMux = 1'b1;
 defparam \i2c_device|OFFSET_SECONDARY_q_6 .FeedbackMux = 1'b0;
 defparam \i2c_device|OFFSET_SECONDARY_q_6 .ShiftMux = 1'b0;
@@ -6611,24 +6594,24 @@ defparam \i2c_device|OFFSET_SECONDARY_q_6 .BypassEn = 1'b1;
 defparam \i2c_device|OFFSET_SECONDARY_q_6 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|OFFSET_SECONDARY_q_7 (
-	.A(\i2c_device|OFFSET_SECONDARY [4]),
-	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [4]),
+	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [5]),
+	.B(\i2c_device|OFFSET_SECONDARY [5]),
 	.C(\i2c_device|write_value [7]),
 	.D(vcc),
-	.Cin(\i2c_device|OFFSET_SECONDARY_datab_0_cout [4]),
+	.Cin(\i2c_device|OFFSET_SECONDARY_datab_0_cout [5]),
 	.Qin(\i2c_device|OFFSET_SECONDARY [7]),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_X10018_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10001_GND),
-	.SyncReset(SyncReset_X10018_Y10001_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_X10017_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10017_Y10001_GND),
+	.SyncReset(SyncReset_X10017_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10018_Y10001_VCC),
-	.LutOut(\i2c_device|OFFSET_SECONDARY_datab_0_combout [4]),
-	.Cout(\i2c_device|OFFSET_SECONDARY_datab_0_cout [5]),
+	.SyncLoad(SyncLoad_X10017_Y10001_VCC),
+	.LutOut(\i2c_device|OFFSET_SECONDARY_datab_0_combout [5]),
+	.Cout(\i2c_device|OFFSET_SECONDARY_datab_0_cout [6]),
 	.Q(\i2c_device|OFFSET_SECONDARY [7]));
-defparam \i2c_device|OFFSET_SECONDARY_q_7 .coord_x = 16;
-defparam \i2c_device|OFFSET_SECONDARY_q_7 .coord_y = 4;
+defparam \i2c_device|OFFSET_SECONDARY_q_7 .coord_x = 15;
+defparam \i2c_device|OFFSET_SECONDARY_q_7 .coord_y = 2;
 defparam \i2c_device|OFFSET_SECONDARY_q_7 .coord_z = 7;
-defparam \i2c_device|OFFSET_SECONDARY_q_7 .mask = 16'h69D4;
+defparam \i2c_device|OFFSET_SECONDARY_q_7 .mask = 16'h69B2;
 defparam \i2c_device|OFFSET_SECONDARY_q_7 .modeMux = 1'b1;
 defparam \i2c_device|OFFSET_SECONDARY_q_7 .FeedbackMux = 1'b0;
 defparam \i2c_device|OFFSET_SECONDARY_q_7 .ShiftMux = 1'b0;
@@ -6636,9 +6619,9 @@ defparam \i2c_device|OFFSET_SECONDARY_q_7 .BypassEn = 1'b1;
 defparam \i2c_device|OFFSET_SECONDARY_q_7 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|bit_pos_A_2_1_Y_combout (
-	.A(CLKOSC_clk_3_q),
-	.B(vcc),
-	.C(CLKOSC_clk_2_q),
+	.A(vcc),
+	.B(CLKOSC_clk_2_q),
+	.C(CLKOSC_clk_3_q),
 	.D(CLKOSC_clk_4_q),
 	.Cin(),
 	.Qin(),
@@ -6650,10 +6633,10 @@ alta_slice \i2c_device|bit_pos_A_2_1_Y_combout (
 	.LutOut(\i2c_device|bit_pos_A_2_1_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|bit_pos_A_2_1_Y_combout .coord_x = 9;
-defparam \i2c_device|bit_pos_A_2_1_Y_combout .coord_y = 4;
-defparam \i2c_device|bit_pos_A_2_1_Y_combout .coord_z = 9;
-defparam \i2c_device|bit_pos_A_2_1_Y_combout .mask = 16'hFFF5;
+defparam \i2c_device|bit_pos_A_2_1_Y_combout .coord_x = 11;
+defparam \i2c_device|bit_pos_A_2_1_Y_combout .coord_y = 2;
+defparam \i2c_device|bit_pos_A_2_1_Y_combout .coord_z = 3;
+defparam \i2c_device|bit_pos_A_2_1_Y_combout .mask = 16'hFFCF;
 defparam \i2c_device|bit_pos_A_2_1_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|bit_pos_A_2_1_Y_combout .FeedbackMux = 1'b0;
 defparam \i2c_device|bit_pos_A_2_1_Y_combout .ShiftMux = 1'b0;
@@ -6661,9 +6644,9 @@ defparam \i2c_device|bit_pos_A_2_1_Y_combout .BypassEn = 1'b0;
 defparam \i2c_device|bit_pos_A_2_1_Y_combout .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|bit_pos_A_2_2_Y_combout (
-	.A(CLKOSC_clk_3_q),
-	.B(vcc),
-	.C(CLKOSC_clk_2_q),
+	.A(vcc),
+	.B(CLKOSC_clk_2_q),
+	.C(CLKOSC_clk_3_q),
 	.D(CLKOSC_clk_4_q),
 	.Cin(),
 	.Qin(),
@@ -6675,10 +6658,10 @@ alta_slice \i2c_device|bit_pos_A_2_2_Y_combout (
 	.LutOut(\i2c_device|bit_pos_A_2_2_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|bit_pos_A_2_2_Y_combout .coord_x = 9;
-defparam \i2c_device|bit_pos_A_2_2_Y_combout .coord_y = 4;
-defparam \i2c_device|bit_pos_A_2_2_Y_combout .coord_z = 3;
-defparam \i2c_device|bit_pos_A_2_2_Y_combout .mask = 16'hFAFF;
+defparam \i2c_device|bit_pos_A_2_2_Y_combout .coord_x = 11;
+defparam \i2c_device|bit_pos_A_2_2_Y_combout .coord_y = 2;
+defparam \i2c_device|bit_pos_A_2_2_Y_combout .coord_z = 4;
+defparam \i2c_device|bit_pos_A_2_2_Y_combout .mask = 16'hFCFF;
 defparam \i2c_device|bit_pos_A_2_2_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|bit_pos_A_2_2_Y_combout .FeedbackMux = 1'b0;
 defparam \i2c_device|bit_pos_A_2_2_Y_combout .ShiftMux = 1'b0;
@@ -6686,9 +6669,9 @@ defparam \i2c_device|bit_pos_A_2_2_Y_combout .BypassEn = 1'b0;
 defparam \i2c_device|bit_pos_A_2_2_Y_combout .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|bit_pos_A_2_3_Y_combout (
-	.A(CLKOSC_clk_3_q),
-	.B(vcc),
-	.C(CLKOSC_clk_2_q),
+	.A(vcc),
+	.B(CLKOSC_clk_2_q),
+	.C(CLKOSC_clk_3_q),
 	.D(CLKOSC_clk_4_q),
 	.Cin(),
 	.Qin(),
@@ -6700,10 +6683,10 @@ alta_slice \i2c_device|bit_pos_A_2_3_Y_combout (
 	.LutOut(\i2c_device|bit_pos_A_2_3_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|bit_pos_A_2_3_Y_combout .coord_x = 9;
-defparam \i2c_device|bit_pos_A_2_3_Y_combout .coord_y = 4;
-defparam \i2c_device|bit_pos_A_2_3_Y_combout .coord_z = 6;
-defparam \i2c_device|bit_pos_A_2_3_Y_combout .mask = 16'hFFFA;
+defparam \i2c_device|bit_pos_A_2_3_Y_combout .coord_x = 11;
+defparam \i2c_device|bit_pos_A_2_3_Y_combout .coord_y = 2;
+defparam \i2c_device|bit_pos_A_2_3_Y_combout .coord_z = 8;
+defparam \i2c_device|bit_pos_A_2_3_Y_combout .mask = 16'hFFFC;
 defparam \i2c_device|bit_pos_A_2_3_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|bit_pos_A_2_3_Y_combout .FeedbackMux = 1'b0;
 defparam \i2c_device|bit_pos_A_2_3_Y_combout .ShiftMux = 1'b0;
@@ -6711,9 +6694,9 @@ defparam \i2c_device|bit_pos_A_2_3_Y_combout .BypassEn = 1'b0;
 defparam \i2c_device|bit_pos_A_2_3_Y_combout .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|bit_pos_A_2_Y_combout (
-	.A(CLKOSC_clk_3_q),
-	.B(vcc),
-	.C(CLKOSC_clk_2_q),
+	.A(vcc),
+	.B(CLKOSC_clk_2_q),
+	.C(CLKOSC_clk_3_q),
 	.D(CLKOSC_clk_4_q),
 	.Cin(),
 	.Qin(),
@@ -6725,10 +6708,10 @@ alta_slice \i2c_device|bit_pos_A_2_Y_combout (
 	.LutOut(\i2c_device|bit_pos_A_2_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|bit_pos_A_2_Y_combout .coord_x = 9;
-defparam \i2c_device|bit_pos_A_2_Y_combout .coord_y = 4;
-defparam \i2c_device|bit_pos_A_2_Y_combout .coord_z = 5;
-defparam \i2c_device|bit_pos_A_2_Y_combout .mask = 16'hF5FF;
+defparam \i2c_device|bit_pos_A_2_Y_combout .coord_x = 11;
+defparam \i2c_device|bit_pos_A_2_Y_combout .coord_y = 2;
+defparam \i2c_device|bit_pos_A_2_Y_combout .coord_z = 7;
+defparam \i2c_device|bit_pos_A_2_Y_combout .mask = 16'hCFFF;
 defparam \i2c_device|bit_pos_A_2_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|bit_pos_A_2_Y_combout .FeedbackMux = 1'b0;
 defparam \i2c_device|bit_pos_A_2_Y_combout .ShiftMux = 1'b0;
@@ -6750,9 +6733,9 @@ alta_slice \i2c_device|bit_pos_dataa_0 (
 	.LutOut(\i2c_device|bit_pos_dataa_0_combout ),
 	.Cout(\i2c_device|bit_pos_dataa_0_cout [1]),
 	.Q());
-defparam \i2c_device|bit_pos_dataa_0 .coord_x = 9;
-defparam \i2c_device|bit_pos_dataa_0 .coord_y = 4;
-defparam \i2c_device|bit_pos_dataa_0 .coord_z = 10;
+defparam \i2c_device|bit_pos_dataa_0 .coord_x = 11;
+defparam \i2c_device|bit_pos_dataa_0 .coord_y = 2;
+defparam \i2c_device|bit_pos_dataa_0 .coord_z = 9;
 defparam \i2c_device|bit_pos_dataa_0 .mask = 16'h9977;
 defparam \i2c_device|bit_pos_dataa_0 .modeMux = 1'b1;
 defparam \i2c_device|bit_pos_dataa_0 .FeedbackMux = 1'b0;
@@ -6775,9 +6758,9 @@ alta_slice \i2c_device|bit_pos_dataa_0_combout_A_3_Y_B_Y_A_Y_combout (
 	.LutOut(\i2c_device|bit_pos_dataa_0_combout_A_3_Y_B_Y_A_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|bit_pos_dataa_0_combout_A_3_Y_B_Y_A_Y_combout .coord_x = 10;
-defparam \i2c_device|bit_pos_dataa_0_combout_A_3_Y_B_Y_A_Y_combout .coord_y = 4;
-defparam \i2c_device|bit_pos_dataa_0_combout_A_3_Y_B_Y_A_Y_combout .coord_z = 4;
+defparam \i2c_device|bit_pos_dataa_0_combout_A_3_Y_B_Y_A_Y_combout .coord_x = 11;
+defparam \i2c_device|bit_pos_dataa_0_combout_A_3_Y_B_Y_A_Y_combout .coord_y = 3;
+defparam \i2c_device|bit_pos_dataa_0_combout_A_3_Y_B_Y_A_Y_combout .coord_z = 9;
 defparam \i2c_device|bit_pos_dataa_0_combout_A_3_Y_B_Y_A_Y_combout .mask = 16'h5545;
 defparam \i2c_device|bit_pos_dataa_0_combout_A_3_Y_B_Y_A_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|bit_pos_dataa_0_combout_A_3_Y_B_Y_A_Y_combout .FeedbackMux = 1'b0;
@@ -6787,8 +6770,8 @@ defparam \i2c_device|bit_pos_dataa_0_combout_A_3_Y_B_Y_A_Y_combout .CarryEnb = 1
 
 alta_slice \i2c_device|bit_pos_dataa_0_combout_A_Y_combout (
 	.A(\i2c_device|bit_pos_dataa_0_combout ),
-	.B(\i2c_device|bit_pos_dataa_1_combout ),
-	.C(\i2c_device|bit_pos_dataa_0_cout_cout_4_combout ),
+	.B(\i2c_device|bit_pos_dataa_0_cout_cout_4_combout ),
+	.C(\i2c_device|bit_pos_dataa_1_combout ),
 	.D(\i2c_device|bit_pos_dataa_2_combout ),
 	.Cin(),
 	.Qin(),
@@ -6800,10 +6783,10 @@ alta_slice \i2c_device|bit_pos_dataa_0_combout_A_Y_combout (
 	.LutOut(\i2c_device|bit_pos_dataa_0_combout_A_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|bit_pos_dataa_0_combout_A_Y_combout .coord_x = 9;
-defparam \i2c_device|bit_pos_dataa_0_combout_A_Y_combout .coord_y = 3;
+defparam \i2c_device|bit_pos_dataa_0_combout_A_Y_combout .coord_x = 10;
+defparam \i2c_device|bit_pos_dataa_0_combout_A_Y_combout .coord_y = 2;
 defparam \i2c_device|bit_pos_dataa_0_combout_A_Y_combout .coord_z = 7;
-defparam \i2c_device|bit_pos_dataa_0_combout_A_Y_combout .mask = 16'h0008;
+defparam \i2c_device|bit_pos_dataa_0_combout_A_Y_combout .mask = 16'h0020;
 defparam \i2c_device|bit_pos_dataa_0_combout_A_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|bit_pos_dataa_0_combout_A_Y_combout .FeedbackMux = 1'b0;
 defparam \i2c_device|bit_pos_dataa_0_combout_A_Y_combout .ShiftMux = 1'b0;
@@ -6812,8 +6795,8 @@ defparam \i2c_device|bit_pos_dataa_0_combout_A_Y_combout .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|bit_pos_dataa_0_combout_B_Y_combout (
 	.A(\i2c_device|bit_pos_dataa_0_combout ),
-	.B(\i2c_device|bit_pos_dataa_1_combout ),
-	.C(\i2c_device|bit_pos_dataa_0_cout_cout_4_combout ),
+	.B(\i2c_device|bit_pos_dataa_0_cout_cout_4_combout ),
+	.C(\i2c_device|bit_pos_dataa_1_combout ),
 	.D(\i2c_device|bit_pos_dataa_2_combout ),
 	.Cin(),
 	.Qin(),
@@ -6825,10 +6808,10 @@ alta_slice \i2c_device|bit_pos_dataa_0_combout_B_Y_combout (
 	.LutOut(\i2c_device|bit_pos_dataa_0_combout_B_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|bit_pos_dataa_0_combout_B_Y_combout .coord_x = 9;
-defparam \i2c_device|bit_pos_dataa_0_combout_B_Y_combout .coord_y = 3;
+defparam \i2c_device|bit_pos_dataa_0_combout_B_Y_combout .coord_x = 10;
+defparam \i2c_device|bit_pos_dataa_0_combout_B_Y_combout .coord_y = 2;
 defparam \i2c_device|bit_pos_dataa_0_combout_B_Y_combout .coord_z = 13;
-defparam \i2c_device|bit_pos_dataa_0_combout_B_Y_combout .mask = 16'h0004;
+defparam \i2c_device|bit_pos_dataa_0_combout_B_Y_combout .mask = 16'h0010;
 defparam \i2c_device|bit_pos_dataa_0_combout_B_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|bit_pos_dataa_0_combout_B_Y_combout .FeedbackMux = 1'b0;
 defparam \i2c_device|bit_pos_dataa_0_combout_B_Y_combout .ShiftMux = 1'b0;
@@ -6836,9 +6819,9 @@ defparam \i2c_device|bit_pos_dataa_0_combout_B_Y_combout .BypassEn = 1'b0;
 defparam \i2c_device|bit_pos_dataa_0_combout_B_Y_combout .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|bit_pos_dataa_0_combout_datab (
-	.A(\i2c_device|bit_pos_dataa_0_combout ),
+	.A(vcc),
 	.B(vcc),
-	.C(vcc),
+	.C(\i2c_device|bit_pos_dataa_0_combout ),
 	.D(CLKOSC_clk_2_q_A_3_Y),
 	.Cin(),
 	.Qin(),
@@ -6850,10 +6833,10 @@ alta_slice \i2c_device|bit_pos_dataa_0_combout_datab (
 	.LutOut(\i2c_device|bit_pos_dataa_0_combout_datab_combout [2]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|bit_pos_dataa_0_combout_datab .coord_x = 9;
-defparam \i2c_device|bit_pos_dataa_0_combout_datab .coord_y = 3;
-defparam \i2c_device|bit_pos_dataa_0_combout_datab .coord_z = 15;
-defparam \i2c_device|bit_pos_dataa_0_combout_datab .mask = 16'hAA00;
+defparam \i2c_device|bit_pos_dataa_0_combout_datab .coord_x = 10;
+defparam \i2c_device|bit_pos_dataa_0_combout_datab .coord_y = 2;
+defparam \i2c_device|bit_pos_dataa_0_combout_datab .coord_z = 10;
+defparam \i2c_device|bit_pos_dataa_0_combout_datab .mask = 16'hF000;
 defparam \i2c_device|bit_pos_dataa_0_combout_datab .modeMux = 1'b0;
 defparam \i2c_device|bit_pos_dataa_0_combout_datab .FeedbackMux = 1'b0;
 defparam \i2c_device|bit_pos_dataa_0_combout_datab .ShiftMux = 1'b0;
@@ -6875,9 +6858,9 @@ alta_slice \i2c_device|bit_pos_dataa_0_cout_cout_4 (
 	.LutOut(\i2c_device|bit_pos_dataa_0_cout_cout_4_combout ),
 	.Cout(\i2c_device|bit_pos_dataa_0_cout [4]),
 	.Q());
-defparam \i2c_device|bit_pos_dataa_0_cout_cout_4 .coord_x = 9;
-defparam \i2c_device|bit_pos_dataa_0_cout_cout_4 .coord_y = 4;
-defparam \i2c_device|bit_pos_dataa_0_cout_cout_4 .coord_z = 13;
+defparam \i2c_device|bit_pos_dataa_0_cout_cout_4 .coord_x = 11;
+defparam \i2c_device|bit_pos_dataa_0_cout_cout_4 .coord_y = 2;
+defparam \i2c_device|bit_pos_dataa_0_cout_cout_4 .coord_z = 12;
 defparam \i2c_device|bit_pos_dataa_0_cout_cout_4 .mask = 16'h69D4;
 defparam \i2c_device|bit_pos_dataa_0_cout_cout_4 .modeMux = 1'b1;
 defparam \i2c_device|bit_pos_dataa_0_cout_cout_4 .FeedbackMux = 1'b0;
@@ -6900,9 +6883,9 @@ alta_slice \i2c_device|bit_pos_dataa_1 (
 	.LutOut(\i2c_device|bit_pos_dataa_1_combout ),
 	.Cout(\i2c_device|bit_pos_dataa_0_cout [2]),
 	.Q());
-defparam \i2c_device|bit_pos_dataa_1 .coord_x = 9;
-defparam \i2c_device|bit_pos_dataa_1 .coord_y = 4;
-defparam \i2c_device|bit_pos_dataa_1 .coord_z = 11;
+defparam \i2c_device|bit_pos_dataa_1 .coord_x = 11;
+defparam \i2c_device|bit_pos_dataa_1 .coord_y = 2;
+defparam \i2c_device|bit_pos_dataa_1 .coord_z = 10;
 defparam \i2c_device|bit_pos_dataa_1 .mask = 16'h69D4;
 defparam \i2c_device|bit_pos_dataa_1 .modeMux = 1'b1;
 defparam \i2c_device|bit_pos_dataa_1 .FeedbackMux = 1'b0;
@@ -6912,8 +6895,8 @@ defparam \i2c_device|bit_pos_dataa_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|bit_pos_dataa_1_combout_A_Y_combout (
 	.A(\i2c_device|bit_pos_dataa_0_combout ),
-	.B(\i2c_device|bit_pos_dataa_1_combout ),
-	.C(\i2c_device|bit_pos_dataa_0_cout_cout_4_combout ),
+	.B(\i2c_device|bit_pos_dataa_0_cout_cout_4_combout ),
+	.C(\i2c_device|bit_pos_dataa_1_combout ),
 	.D(\i2c_device|bit_pos_dataa_2_combout ),
 	.Cin(),
 	.Qin(),
@@ -6925,10 +6908,10 @@ alta_slice \i2c_device|bit_pos_dataa_1_combout_A_Y_combout (
 	.LutOut(\i2c_device|bit_pos_dataa_1_combout_A_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|bit_pos_dataa_1_combout_A_Y_combout .coord_x = 9;
-defparam \i2c_device|bit_pos_dataa_1_combout_A_Y_combout .coord_y = 3;
-defparam \i2c_device|bit_pos_dataa_1_combout_A_Y_combout .coord_z = 6;
-defparam \i2c_device|bit_pos_dataa_1_combout_A_Y_combout .mask = 16'hFBFF;
+defparam \i2c_device|bit_pos_dataa_1_combout_A_Y_combout .coord_x = 10;
+defparam \i2c_device|bit_pos_dataa_1_combout_A_Y_combout .coord_y = 2;
+defparam \i2c_device|bit_pos_dataa_1_combout_A_Y_combout .coord_z = 5;
+defparam \i2c_device|bit_pos_dataa_1_combout_A_Y_combout .mask = 16'hEFFF;
 defparam \i2c_device|bit_pos_dataa_1_combout_A_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|bit_pos_dataa_1_combout_A_Y_combout .FeedbackMux = 1'b0;
 defparam \i2c_device|bit_pos_dataa_1_combout_A_Y_combout .ShiftMux = 1'b0;
@@ -6936,9 +6919,9 @@ defparam \i2c_device|bit_pos_dataa_1_combout_A_Y_combout .BypassEn = 1'b0;
 defparam \i2c_device|bit_pos_dataa_1_combout_A_Y_combout .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|bit_pos_dataa_1_combout_B_Y_combout (
-	.A(\i2c_device|bit_pos_dataa_0_combout ),
-	.B(\i2c_device|bit_pos_dataa_1_combout ),
-	.C(\i2c_device|bit_pos_dataa_0_cout_cout_4_combout ),
+	.A(\i2c_device|bit_pos_dataa_1_combout ),
+	.B(\i2c_device|bit_pos_dataa_0_cout_cout_4_combout ),
+	.C(\i2c_device|bit_pos_dataa_0_combout ),
 	.D(\i2c_device|bit_pos_dataa_2_combout ),
 	.Cin(),
 	.Qin(),
@@ -6950,9 +6933,9 @@ alta_slice \i2c_device|bit_pos_dataa_1_combout_B_Y_combout (
 	.LutOut(\i2c_device|bit_pos_dataa_1_combout_B_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|bit_pos_dataa_1_combout_B_Y_combout .coord_x = 9;
-defparam \i2c_device|bit_pos_dataa_1_combout_B_Y_combout .coord_y = 3;
-defparam \i2c_device|bit_pos_dataa_1_combout_B_Y_combout .coord_z = 9;
+defparam \i2c_device|bit_pos_dataa_1_combout_B_Y_combout .coord_x = 10;
+defparam \i2c_device|bit_pos_dataa_1_combout_B_Y_combout .coord_y = 2;
+defparam \i2c_device|bit_pos_dataa_1_combout_B_Y_combout .coord_z = 6;
 defparam \i2c_device|bit_pos_dataa_1_combout_B_Y_combout .mask = 16'h0100;
 defparam \i2c_device|bit_pos_dataa_1_combout_B_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|bit_pos_dataa_1_combout_B_Y_combout .FeedbackMux = 1'b0;
@@ -6962,8 +6945,8 @@ defparam \i2c_device|bit_pos_dataa_1_combout_B_Y_combout .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|bit_pos_dataa_1_combout_datab (
 	.A(vcc),
-	.B(\i2c_device|bit_pos_dataa_1_combout ),
-	.C(vcc),
+	.B(vcc),
+	.C(\i2c_device|bit_pos_dataa_1_combout ),
 	.D(CLKOSC_clk_2_q_A_3_Y),
 	.Cin(),
 	.Qin(),
@@ -6975,10 +6958,10 @@ alta_slice \i2c_device|bit_pos_dataa_1_combout_datab (
 	.LutOut(\i2c_device|bit_pos_dataa_1_combout_datab_combout [2]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|bit_pos_dataa_1_combout_datab .coord_x = 9;
-defparam \i2c_device|bit_pos_dataa_1_combout_datab .coord_y = 4;
-defparam \i2c_device|bit_pos_dataa_1_combout_datab .coord_z = 0;
-defparam \i2c_device|bit_pos_dataa_1_combout_datab .mask = 16'hCC00;
+defparam \i2c_device|bit_pos_dataa_1_combout_datab .coord_x = 10;
+defparam \i2c_device|bit_pos_dataa_1_combout_datab .coord_y = 2;
+defparam \i2c_device|bit_pos_dataa_1_combout_datab .coord_z = 4;
+defparam \i2c_device|bit_pos_dataa_1_combout_datab .mask = 16'hF000;
 defparam \i2c_device|bit_pos_dataa_1_combout_datab .modeMux = 1'b0;
 defparam \i2c_device|bit_pos_dataa_1_combout_datab .FeedbackMux = 1'b0;
 defparam \i2c_device|bit_pos_dataa_1_combout_datab .ShiftMux = 1'b0;
@@ -7002,7 +6985,7 @@ alta_slice \i2c_device|bit_pos_dataa_1_combout_datab_combout_combout_3 (
 	.Q());
 defparam \i2c_device|bit_pos_dataa_1_combout_datab_combout_combout_3 .coord_x = 11;
 defparam \i2c_device|bit_pos_dataa_1_combout_datab_combout_combout_3 .coord_y = 4;
-defparam \i2c_device|bit_pos_dataa_1_combout_datab_combout_combout_3 .coord_z = 13;
+defparam \i2c_device|bit_pos_dataa_1_combout_datab_combout_combout_3 .coord_z = 9;
 defparam \i2c_device|bit_pos_dataa_1_combout_datab_combout_combout_3 .mask = 16'h000F;
 defparam \i2c_device|bit_pos_dataa_1_combout_datab_combout_combout_3 .modeMux = 1'b0;
 defparam \i2c_device|bit_pos_dataa_1_combout_datab_combout_combout_3 .FeedbackMux = 1'b0;
@@ -7011,8 +6994,8 @@ defparam \i2c_device|bit_pos_dataa_1_combout_datab_combout_combout_3 .BypassEn =
 defparam \i2c_device|bit_pos_dataa_1_combout_datab_combout_combout_3 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|bit_pos_dataa_2 (
-	.A(CLKOSC_clk_2_q),
-	.B(vcc),
+	.A(vcc),
+	.B(CLKOSC_clk_2_q),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|bit_pos_dataa_0_cout [2]),
@@ -7025,10 +7008,10 @@ alta_slice \i2c_device|bit_pos_dataa_2 (
 	.LutOut(\i2c_device|bit_pos_dataa_2_combout ),
 	.Cout(\i2c_device|bit_pos_dataa_0_cout [3]),
 	.Q());
-defparam \i2c_device|bit_pos_dataa_2 .coord_x = 9;
-defparam \i2c_device|bit_pos_dataa_2 .coord_y = 4;
-defparam \i2c_device|bit_pos_dataa_2 .coord_z = 12;
-defparam \i2c_device|bit_pos_dataa_2 .mask = 16'h69D4;
+defparam \i2c_device|bit_pos_dataa_2 .coord_x = 11;
+defparam \i2c_device|bit_pos_dataa_2 .coord_y = 2;
+defparam \i2c_device|bit_pos_dataa_2 .coord_z = 11;
+defparam \i2c_device|bit_pos_dataa_2 .mask = 16'h69B2;
 defparam \i2c_device|bit_pos_dataa_2 .modeMux = 1'b1;
 defparam \i2c_device|bit_pos_dataa_2 .FeedbackMux = 1'b0;
 defparam \i2c_device|bit_pos_dataa_2 .ShiftMux = 1'b0;
@@ -7037,8 +7020,8 @@ defparam \i2c_device|bit_pos_dataa_2 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|bit_pos_dataa_2_combout_A_1_Y_B_Y_combout (
 	.A(\i2c_device|bit_pos_dataa_0_combout ),
-	.B(\i2c_device|bit_pos_dataa_1_combout ),
-	.C(\i2c_device|bit_pos_dataa_0_cout_cout_4_combout ),
+	.B(\i2c_device|bit_pos_dataa_0_cout_cout_4_combout ),
+	.C(\i2c_device|bit_pos_dataa_1_combout ),
 	.D(\i2c_device|bit_pos_dataa_2_combout ),
 	.Cin(),
 	.Qin(),
@@ -7050,9 +7033,9 @@ alta_slice \i2c_device|bit_pos_dataa_2_combout_A_1_Y_B_Y_combout (
 	.LutOut(\i2c_device|bit_pos_dataa_2_combout_A_1_Y_B_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|bit_pos_dataa_2_combout_A_1_Y_B_Y_combout .coord_x = 9;
-defparam \i2c_device|bit_pos_dataa_2_combout_A_1_Y_B_Y_combout .coord_y = 3;
-defparam \i2c_device|bit_pos_dataa_2_combout_A_1_Y_B_Y_combout .coord_z = 2;
+defparam \i2c_device|bit_pos_dataa_2_combout_A_1_Y_B_Y_combout .coord_x = 10;
+defparam \i2c_device|bit_pos_dataa_2_combout_A_1_Y_B_Y_combout .coord_y = 2;
+defparam \i2c_device|bit_pos_dataa_2_combout_A_1_Y_B_Y_combout .coord_z = 3;
 defparam \i2c_device|bit_pos_dataa_2_combout_A_1_Y_B_Y_combout .mask = 16'h0200;
 defparam \i2c_device|bit_pos_dataa_2_combout_A_1_Y_B_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|bit_pos_dataa_2_combout_A_1_Y_B_Y_combout .FeedbackMux = 1'b0;
@@ -7075,9 +7058,9 @@ alta_slice \i2c_device|bit_pos_dataa_2_combout_A_3_Y_B_Y_A_Y_combout (
 	.LutOut(\i2c_device|bit_pos_dataa_2_combout_A_3_Y_B_Y_A_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|bit_pos_dataa_2_combout_A_3_Y_B_Y_A_Y_combout .coord_x = 10;
-defparam \i2c_device|bit_pos_dataa_2_combout_A_3_Y_B_Y_A_Y_combout .coord_y = 4;
-defparam \i2c_device|bit_pos_dataa_2_combout_A_3_Y_B_Y_A_Y_combout .coord_z = 0;
+defparam \i2c_device|bit_pos_dataa_2_combout_A_3_Y_B_Y_A_Y_combout .coord_x = 11;
+defparam \i2c_device|bit_pos_dataa_2_combout_A_3_Y_B_Y_A_Y_combout .coord_y = 3;
+defparam \i2c_device|bit_pos_dataa_2_combout_A_3_Y_B_Y_A_Y_combout .coord_z = 6;
 defparam \i2c_device|bit_pos_dataa_2_combout_A_3_Y_B_Y_A_Y_combout .mask = 16'h5545;
 defparam \i2c_device|bit_pos_dataa_2_combout_A_3_Y_B_Y_A_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|bit_pos_dataa_2_combout_A_3_Y_B_Y_A_Y_combout .FeedbackMux = 1'b0;
@@ -7087,9 +7070,9 @@ defparam \i2c_device|bit_pos_dataa_2_combout_A_3_Y_B_Y_A_Y_combout .CarryEnb = 1
 
 alta_slice \i2c_device|bit_pos_dataa_2_combout_A_Y_B_1_Y_combout (
 	.A(\i2c_device|bit_pos_dataa_0_combout ),
-	.B(\i2c_device|bit_pos_dataa_1_combout ),
-	.C(\i2c_device|bit_pos_dataa_0_cout_cout_4_combout ),
-	.D(\i2c_device|bit_pos_dataa_2_combout ),
+	.B(\i2c_device|bit_pos_dataa_2_combout ),
+	.C(\i2c_device|bit_pos_dataa_1_combout ),
+	.D(\i2c_device|bit_pos_dataa_0_cout_cout_4_combout ),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -7100,9 +7083,9 @@ alta_slice \i2c_device|bit_pos_dataa_2_combout_A_Y_B_1_Y_combout (
 	.LutOut(\i2c_device|bit_pos_dataa_2_combout_A_Y_B_1_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|bit_pos_dataa_2_combout_A_Y_B_1_Y_combout .coord_x = 9;
-defparam \i2c_device|bit_pos_dataa_2_combout_A_Y_B_1_Y_combout .coord_y = 3;
-defparam \i2c_device|bit_pos_dataa_2_combout_A_Y_B_1_Y_combout .coord_z = 11;
+defparam \i2c_device|bit_pos_dataa_2_combout_A_Y_B_1_Y_combout .coord_x = 10;
+defparam \i2c_device|bit_pos_dataa_2_combout_A_Y_B_1_Y_combout .coord_y = 2;
+defparam \i2c_device|bit_pos_dataa_2_combout_A_Y_B_1_Y_combout .coord_z = 9;
 defparam \i2c_device|bit_pos_dataa_2_combout_A_Y_B_1_Y_combout .mask = 16'hFFFD;
 defparam \i2c_device|bit_pos_dataa_2_combout_A_Y_B_1_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|bit_pos_dataa_2_combout_A_Y_B_1_Y_combout .FeedbackMux = 1'b0;
@@ -7111,9 +7094,9 @@ defparam \i2c_device|bit_pos_dataa_2_combout_A_Y_B_1_Y_combout .BypassEn = 1'b0;
 defparam \i2c_device|bit_pos_dataa_2_combout_A_Y_B_1_Y_combout .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|bit_pos_dataa_2_combout_A_Y_B_Y_combout (
-	.A(\i2c_device|bit_pos_dataa_0_combout ),
-	.B(\i2c_device|bit_pos_dataa_1_combout ),
-	.C(\i2c_device|bit_pos_dataa_0_cout_cout_4_combout ),
+	.A(\i2c_device|bit_pos_dataa_1_combout ),
+	.B(\i2c_device|bit_pos_dataa_0_cout_cout_4_combout ),
+	.C(\i2c_device|bit_pos_dataa_0_combout ),
 	.D(\i2c_device|bit_pos_dataa_2_combout ),
 	.Cin(),
 	.Qin(),
@@ -7125,9 +7108,9 @@ alta_slice \i2c_device|bit_pos_dataa_2_combout_A_Y_B_Y_combout (
 	.LutOut(\i2c_device|bit_pos_dataa_2_combout_A_Y_B_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|bit_pos_dataa_2_combout_A_Y_B_Y_combout .coord_x = 9;
-defparam \i2c_device|bit_pos_dataa_2_combout_A_Y_B_Y_combout .coord_y = 3;
-defparam \i2c_device|bit_pos_dataa_2_combout_A_Y_B_Y_combout .coord_z = 0;
+defparam \i2c_device|bit_pos_dataa_2_combout_A_Y_B_Y_combout .coord_x = 10;
+defparam \i2c_device|bit_pos_dataa_2_combout_A_Y_B_Y_combout .coord_y = 2;
+defparam \i2c_device|bit_pos_dataa_2_combout_A_Y_B_Y_combout .coord_z = 8;
 defparam \i2c_device|bit_pos_dataa_2_combout_A_Y_B_Y_combout .mask = 16'hFFFE;
 defparam \i2c_device|bit_pos_dataa_2_combout_A_Y_B_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|bit_pos_dataa_2_combout_A_Y_B_Y_combout .FeedbackMux = 1'b0;
@@ -7150,9 +7133,9 @@ alta_slice \i2c_device|bit_pos_dataa_2_combout_datab (
 	.LutOut(\i2c_device|bit_pos_dataa_2_combout_datab_combout [2]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|bit_pos_dataa_2_combout_datab .coord_x = 9;
-defparam \i2c_device|bit_pos_dataa_2_combout_datab .coord_y = 3;
-defparam \i2c_device|bit_pos_dataa_2_combout_datab .coord_z = 10;
+defparam \i2c_device|bit_pos_dataa_2_combout_datab .coord_x = 10;
+defparam \i2c_device|bit_pos_dataa_2_combout_datab .coord_y = 2;
+defparam \i2c_device|bit_pos_dataa_2_combout_datab .coord_z = 14;
 defparam \i2c_device|bit_pos_dataa_2_combout_datab .mask = 16'hCC00;
 defparam \i2c_device|bit_pos_dataa_2_combout_datab .modeMux = 1'b0;
 defparam \i2c_device|bit_pos_dataa_2_combout_datab .FeedbackMux = 1'b0;
@@ -7167,17 +7150,17 @@ alta_slice \i2c_device|brin_cnt[10]_reg (
 	.D(\i2c_device|brin_cnt_dataa_10_combout [10]),
 	.Cin(),
 	.Qin(\i2c_device|brin_cnt [10]),
-	.Clk(\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10015_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10015_Y10002_GND),
-	.SyncReset(SyncReset_X10015_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10011_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10011_Y10003_GND),
+	.SyncReset(SyncReset_X10011_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|brin_rec_A_0_Y__SyncLoad_X10015_Y10002_SIG ),
+	.SyncLoad(\i2c_device|brin_rec_A_0_Y__SyncLoad_X10011_Y10003_SIG ),
 	.LutOut(\i2c_device|brin_cnt[10]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|brin_cnt [10]));
-defparam \i2c_device|brin_cnt[10]_reg .coord_x = 19;
-defparam \i2c_device|brin_cnt[10]_reg .coord_y = 5;
-defparam \i2c_device|brin_cnt[10]_reg .coord_z = 6;
+defparam \i2c_device|brin_cnt[10]_reg .coord_x = 17;
+defparam \i2c_device|brin_cnt[10]_reg .coord_y = 6;
+defparam \i2c_device|brin_cnt[10]_reg .coord_z = 3;
 defparam \i2c_device|brin_cnt[10]_reg .mask = 16'hFF00;
 defparam \i2c_device|brin_cnt[10]_reg .modeMux = 1'b0;
 defparam \i2c_device|brin_cnt[10]_reg .FeedbackMux = 1'b0;
@@ -7192,17 +7175,17 @@ alta_slice \i2c_device|brin_cnt[13]_reg (
 	.D(\i2c_device|brin_cnt_dataa_10_combout [13]),
 	.Cin(),
 	.Qin(\i2c_device|brin_cnt [13]),
-	.Clk(\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10015_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10015_Y10002_GND),
-	.SyncReset(SyncReset_X10015_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10011_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10011_Y10003_GND),
+	.SyncReset(SyncReset_X10011_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|brin_rec_A_0_Y__SyncLoad_X10015_Y10002_SIG ),
+	.SyncLoad(\i2c_device|brin_rec_A_0_Y__SyncLoad_X10011_Y10003_SIG ),
 	.LutOut(\i2c_device|brin_cnt[13]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|brin_cnt [13]));
-defparam \i2c_device|brin_cnt[13]_reg .coord_x = 19;
-defparam \i2c_device|brin_cnt[13]_reg .coord_y = 5;
-defparam \i2c_device|brin_cnt[13]_reg .coord_z = 7;
+defparam \i2c_device|brin_cnt[13]_reg .coord_x = 17;
+defparam \i2c_device|brin_cnt[13]_reg .coord_y = 6;
+defparam \i2c_device|brin_cnt[13]_reg .coord_z = 4;
 defparam \i2c_device|brin_cnt[13]_reg .mask = 16'hFF00;
 defparam \i2c_device|brin_cnt[13]_reg .modeMux = 1'b0;
 defparam \i2c_device|brin_cnt[13]_reg .FeedbackMux = 1'b0;
@@ -7217,17 +7200,17 @@ alta_slice \i2c_device|brin_cnt[18]_reg (
 	.D(\i2c_device|brin_cnt_dataa_10_combout [18]),
 	.Cin(),
 	.Qin(\i2c_device|brin_cnt [18]),
-	.Clk(\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10015_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10015_Y10002_GND),
-	.SyncReset(SyncReset_X10015_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10011_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10011_Y10003_GND),
+	.SyncReset(SyncReset_X10011_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|brin_rec_A_0_Y__SyncLoad_X10015_Y10002_SIG ),
+	.SyncLoad(\i2c_device|brin_rec_A_0_Y__SyncLoad_X10011_Y10003_SIG ),
 	.LutOut(\i2c_device|brin_cnt[18]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|brin_cnt [18]));
-defparam \i2c_device|brin_cnt[18]_reg .coord_x = 19;
-defparam \i2c_device|brin_cnt[18]_reg .coord_y = 5;
-defparam \i2c_device|brin_cnt[18]_reg .coord_z = 10;
+defparam \i2c_device|brin_cnt[18]_reg .coord_x = 17;
+defparam \i2c_device|brin_cnt[18]_reg .coord_y = 6;
+defparam \i2c_device|brin_cnt[18]_reg .coord_z = 0;
 defparam \i2c_device|brin_cnt[18]_reg .mask = 16'hFF00;
 defparam \i2c_device|brin_cnt[18]_reg .modeMux = 1'b0;
 defparam \i2c_device|brin_cnt[18]_reg .FeedbackMux = 1'b0;
@@ -7236,24 +7219,24 @@ defparam \i2c_device|brin_cnt[18]_reg .BypassEn = 1'b1;
 defparam \i2c_device|brin_cnt[18]_reg .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|brin_cnt[20]_reg (
-	.A(),
+	.A(\i2c_device|brin_cnt_dataa_10_combout [20]),
 	.B(),
 	.C(vcc),
-	.D(\i2c_device|brin_cnt_dataa_10_combout [20]),
+	.D(),
 	.Cin(),
 	.Qin(\i2c_device|brin_cnt [20]),
-	.Clk(\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10015_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10015_Y10002_GND),
-	.SyncReset(SyncReset_X10015_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10011_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10011_Y10003_GND),
+	.SyncReset(SyncReset_X10011_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|brin_rec_A_0_Y__SyncLoad_X10015_Y10002_SIG ),
+	.SyncLoad(\i2c_device|brin_rec_A_0_Y__SyncLoad_X10011_Y10003_SIG ),
 	.LutOut(\i2c_device|brin_cnt[20]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|brin_cnt [20]));
-defparam \i2c_device|brin_cnt[20]_reg .coord_x = 19;
-defparam \i2c_device|brin_cnt[20]_reg .coord_y = 5;
-defparam \i2c_device|brin_cnt[20]_reg .coord_z = 5;
-defparam \i2c_device|brin_cnt[20]_reg .mask = 16'hFF00;
+defparam \i2c_device|brin_cnt[20]_reg .coord_x = 17;
+defparam \i2c_device|brin_cnt[20]_reg .coord_y = 6;
+defparam \i2c_device|brin_cnt[20]_reg .coord_z = 1;
+defparam \i2c_device|brin_cnt[20]_reg .mask = 16'hAAAA;
 defparam \i2c_device|brin_cnt[20]_reg .modeMux = 1'b0;
 defparam \i2c_device|brin_cnt[20]_reg .FeedbackMux = 1'b0;
 defparam \i2c_device|brin_cnt[20]_reg .ShiftMux = 1'b0;
@@ -7267,17 +7250,17 @@ alta_slice \i2c_device|brin_cnt[21]_reg (
 	.D(\i2c_device|brin_cnt_dataa_10_combout [21]),
 	.Cin(),
 	.Qin(\i2c_device|brin_cnt [21]),
-	.Clk(\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10015_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10015_Y10002_GND),
-	.SyncReset(SyncReset_X10015_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10011_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10011_Y10003_GND),
+	.SyncReset(SyncReset_X10011_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|brin_rec_A_0_Y__SyncLoad_X10015_Y10002_SIG ),
+	.SyncLoad(\i2c_device|brin_rec_A_0_Y__SyncLoad_X10011_Y10003_SIG ),
 	.LutOut(\i2c_device|brin_cnt[21]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|brin_cnt [21]));
-defparam \i2c_device|brin_cnt[21]_reg .coord_x = 19;
-defparam \i2c_device|brin_cnt[21]_reg .coord_y = 5;
-defparam \i2c_device|brin_cnt[21]_reg .coord_z = 9;
+defparam \i2c_device|brin_cnt[21]_reg .coord_x = 17;
+defparam \i2c_device|brin_cnt[21]_reg .coord_y = 6;
+defparam \i2c_device|brin_cnt[21]_reg .coord_z = 2;
 defparam \i2c_device|brin_cnt[21]_reg .mask = 16'hFF00;
 defparam \i2c_device|brin_cnt[21]_reg .modeMux = 1'b0;
 defparam \i2c_device|brin_cnt[21]_reg .FeedbackMux = 1'b0;
@@ -7292,17 +7275,17 @@ alta_slice \i2c_device|brin_cnt[22]_reg (
 	.D(\i2c_device|brin_cnt_dataa_10_combout [22]),
 	.Cin(),
 	.Qin(\i2c_device|brin_cnt [22]),
-	.Clk(\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10015_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10015_Y10002_GND),
-	.SyncReset(SyncReset_X10015_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10001_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10001_Y10001_GND),
+	.SyncReset(SyncReset_X10001_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|brin_rec_A_0_Y__SyncLoad_X10015_Y10002_SIG ),
+	.SyncLoad(\i2c_device|brin_rec_A_0_Y__SyncLoad_X10001_Y10001_SIG ),
 	.LutOut(\i2c_device|brin_cnt[22]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|brin_cnt [22]));
-defparam \i2c_device|brin_cnt[22]_reg .coord_x = 19;
-defparam \i2c_device|brin_cnt[22]_reg .coord_y = 5;
-defparam \i2c_device|brin_cnt[22]_reg .coord_z = 8;
+defparam \i2c_device|brin_cnt[22]_reg .coord_x = 20;
+defparam \i2c_device|brin_cnt[22]_reg .coord_y = 9;
+defparam \i2c_device|brin_cnt[22]_reg .coord_z = 15;
 defparam \i2c_device|brin_cnt[22]_reg .mask = 16'hFF00;
 defparam \i2c_device|brin_cnt[22]_reg .modeMux = 1'b0;
 defparam \i2c_device|brin_cnt[22]_reg .FeedbackMux = 1'b0;
@@ -7325,8 +7308,8 @@ alta_slice \i2c_device|brin_cnt_dataa_10 (
 	.LutOut(\i2c_device|brin_cnt_dataa_10_combout [10]),
 	.Cout(\i2c_device|brin_cnt_dataa_0_cout [11]),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_10 .coord_x = 20;
-defparam \i2c_device|brin_cnt_dataa_10 .coord_y = 6;
+defparam \i2c_device|brin_cnt_dataa_10 .coord_x = 18;
+defparam \i2c_device|brin_cnt_dataa_10 .coord_y = 7;
 defparam \i2c_device|brin_cnt_dataa_10 .coord_z = 10;
 defparam \i2c_device|brin_cnt_dataa_10 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_dataa_10 .modeMux = 1'b1;
@@ -7350,8 +7333,8 @@ alta_slice \i2c_device|brin_cnt_dataa_10_1 (
 	.LutOut(\i2c_device|brin_cnt_dataa_8_1_combout [2]),
 	.Cout(\i2c_device|brin_cnt_dataa_8_1_cout [3]),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_10_1 .coord_x = 19;
-defparam \i2c_device|brin_cnt_dataa_10_1 .coord_y = 6;
+defparam \i2c_device|brin_cnt_dataa_10_1 .coord_x = 17;
+defparam \i2c_device|brin_cnt_dataa_10_1 .coord_y = 7;
 defparam \i2c_device|brin_cnt_dataa_10_1 .coord_z = 2;
 defparam \i2c_device|brin_cnt_dataa_10_1 .mask = 16'h69D4;
 defparam \i2c_device|brin_cnt_dataa_10_1 .modeMux = 1'b1;
@@ -7363,8 +7346,8 @@ defparam \i2c_device|brin_cnt_dataa_10_1 .CarryEnb = 1'b0;
 alta_slice \i2c_device|brin_cnt_dataa_10_2 (
 	.A(\i2c_device|brin_cnt [10]),
 	.B(\i2c_device|brin_cnt [13]),
-	.C(\i2c_device|brin_cnt [11]),
-	.D(\i2c_device|brin_cnt [18]),
+	.C(\i2c_device|brin_cnt [18]),
+	.D(\i2c_device|brin_cnt [11]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -7375,9 +7358,9 @@ alta_slice \i2c_device|brin_cnt_dataa_10_2 (
 	.LutOut(\i2c_device|brin_cnt_dataa_8_2_combout [1]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_10_2 .coord_x = 20;
-defparam \i2c_device|brin_cnt_dataa_10_2 .coord_y = 5;
-defparam \i2c_device|brin_cnt_dataa_10_2 .coord_z = 7;
+defparam \i2c_device|brin_cnt_dataa_10_2 .coord_x = 17;
+defparam \i2c_device|brin_cnt_dataa_10_2 .coord_y = 4;
+defparam \i2c_device|brin_cnt_dataa_10_2 .coord_z = 13;
 defparam \i2c_device|brin_cnt_dataa_10_2 .mask = 16'h0001;
 defparam \i2c_device|brin_cnt_dataa_10_2 .modeMux = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_10_2 .FeedbackMux = 1'b0;
@@ -7400,8 +7383,8 @@ alta_slice \i2c_device|brin_cnt_dataa_11_1 (
 	.LutOut(\i2c_device|brin_cnt_dataa_8_1_combout [3]),
 	.Cout(\i2c_device|brin_cnt_dataa_8_1_cout [4]),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_11_1 .coord_x = 19;
-defparam \i2c_device|brin_cnt_dataa_11_1 .coord_y = 6;
+defparam \i2c_device|brin_cnt_dataa_11_1 .coord_x = 17;
+defparam \i2c_device|brin_cnt_dataa_11_1 .coord_y = 7;
 defparam \i2c_device|brin_cnt_dataa_11_1 .coord_z = 3;
 defparam \i2c_device|brin_cnt_dataa_11_1 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_dataa_11_1 .modeMux = 1'b1;
@@ -7413,8 +7396,8 @@ defparam \i2c_device|brin_cnt_dataa_11_1 .CarryEnb = 1'b0;
 alta_slice \i2c_device|brin_cnt_dataa_11_2 (
 	.A(\i2c_device|brin_cnt [10]),
 	.B(\i2c_device|brin_cnt [13]),
-	.C(\i2c_device|brin_cnt [11]),
-	.D(\i2c_device|brin_cnt [18]),
+	.C(\i2c_device|brin_cnt [18]),
+	.D(\i2c_device|brin_cnt [11]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -7425,10 +7408,10 @@ alta_slice \i2c_device|brin_cnt_dataa_11_2 (
 	.LutOut(\i2c_device|brin_cnt_dataa_9_2_combout [2]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_11_2 .coord_x = 20;
-defparam \i2c_device|brin_cnt_dataa_11_2 .coord_y = 5;
-defparam \i2c_device|brin_cnt_dataa_11_2 .coord_z = 11;
-defparam \i2c_device|brin_cnt_dataa_11_2 .mask = 16'h0800;
+defparam \i2c_device|brin_cnt_dataa_11_2 .coord_x = 17;
+defparam \i2c_device|brin_cnt_dataa_11_2 .coord_y = 4;
+defparam \i2c_device|brin_cnt_dataa_11_2 .coord_z = 14;
+defparam \i2c_device|brin_cnt_dataa_11_2 .mask = 16'h0080;
 defparam \i2c_device|brin_cnt_dataa_11_2 .modeMux = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_11_2 .FeedbackMux = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_11_2 .ShiftMux = 1'b0;
@@ -7450,8 +7433,8 @@ alta_slice \i2c_device|brin_cnt_dataa_12_1 (
 	.LutOut(\i2c_device|brin_cnt_dataa_8_1_combout [4]),
 	.Cout(\i2c_device|brin_cnt_dataa_8_1_cout [5]),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_12_1 .coord_x = 19;
-defparam \i2c_device|brin_cnt_dataa_12_1 .coord_y = 6;
+defparam \i2c_device|brin_cnt_dataa_12_1 .coord_x = 17;
+defparam \i2c_device|brin_cnt_dataa_12_1 .coord_y = 7;
 defparam \i2c_device|brin_cnt_dataa_12_1 .coord_z = 4;
 defparam \i2c_device|brin_cnt_dataa_12_1 .mask = 16'h69D4;
 defparam \i2c_device|brin_cnt_dataa_12_1 .modeMux = 1'b1;
@@ -7475,8 +7458,8 @@ alta_slice \i2c_device|brin_cnt_dataa_13 (
 	.LutOut(\i2c_device|brin_cnt_dataa_10_combout [13]),
 	.Cout(\i2c_device|brin_cnt_dataa_0_cout [14]),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_13 .coord_x = 20;
-defparam \i2c_device|brin_cnt_dataa_13 .coord_y = 6;
+defparam \i2c_device|brin_cnt_dataa_13 .coord_x = 18;
+defparam \i2c_device|brin_cnt_dataa_13 .coord_y = 7;
 defparam \i2c_device|brin_cnt_dataa_13 .coord_z = 13;
 defparam \i2c_device|brin_cnt_dataa_13 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_dataa_13 .modeMux = 1'b1;
@@ -7500,8 +7483,8 @@ alta_slice \i2c_device|brin_cnt_dataa_13_1 (
 	.LutOut(\i2c_device|brin_cnt_dataa_8_1_combout [5]),
 	.Cout(\i2c_device|brin_cnt_dataa_8_1_cout [6]),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_13_1 .coord_x = 19;
-defparam \i2c_device|brin_cnt_dataa_13_1 .coord_y = 6;
+defparam \i2c_device|brin_cnt_dataa_13_1 .coord_x = 17;
+defparam \i2c_device|brin_cnt_dataa_13_1 .coord_y = 7;
 defparam \i2c_device|brin_cnt_dataa_13_1 .coord_z = 5;
 defparam \i2c_device|brin_cnt_dataa_13_1 .mask = 16'h69D4;
 defparam \i2c_device|brin_cnt_dataa_13_1 .modeMux = 1'b1;
@@ -7525,8 +7508,8 @@ alta_slice \i2c_device|brin_cnt_dataa_14_1 (
 	.LutOut(\i2c_device|brin_cnt_dataa_8_1_combout [6]),
 	.Cout(\i2c_device|brin_cnt_dataa_8_1_cout [7]),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_14_1 .coord_x = 19;
-defparam \i2c_device|brin_cnt_dataa_14_1 .coord_y = 6;
+defparam \i2c_device|brin_cnt_dataa_14_1 .coord_x = 17;
+defparam \i2c_device|brin_cnt_dataa_14_1 .coord_y = 7;
 defparam \i2c_device|brin_cnt_dataa_14_1 .coord_z = 6;
 defparam \i2c_device|brin_cnt_dataa_14_1 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_dataa_14_1 .modeMux = 1'b1;
@@ -7536,10 +7519,10 @@ defparam \i2c_device|brin_cnt_dataa_14_1 .BypassEn = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_14_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|brin_cnt_dataa_14_2 (
-	.A(\i2c_device|brin_cnt [14]),
+	.A(\i2c_device|brin_cnt [20]),
 	.B(\i2c_device|brin_cnt [21]),
 	.C(\i2c_device|brin_cnt [22]),
-	.D(\i2c_device|brin_cnt [20]),
+	.D(\i2c_device|brin_cnt [14]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -7550,9 +7533,9 @@ alta_slice \i2c_device|brin_cnt_dataa_14_2 (
 	.LutOut(\i2c_device|brin_cnt_datad_6_combout [1]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_14_2 .coord_x = 19;
-defparam \i2c_device|brin_cnt_dataa_14_2 .coord_y = 5;
-defparam \i2c_device|brin_cnt_dataa_14_2 .coord_z = 1;
+defparam \i2c_device|brin_cnt_dataa_14_2 .coord_x = 18;
+defparam \i2c_device|brin_cnt_dataa_14_2 .coord_y = 6;
+defparam \i2c_device|brin_cnt_dataa_14_2 .coord_z = 9;
 defparam \i2c_device|brin_cnt_dataa_14_2 .mask = 16'h0001;
 defparam \i2c_device|brin_cnt_dataa_14_2 .modeMux = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_14_2 .FeedbackMux = 1'b0;
@@ -7575,8 +7558,8 @@ alta_slice \i2c_device|brin_cnt_dataa_15_1 (
 	.LutOut(\i2c_device|brin_cnt_dataa_8_1_combout [7]),
 	.Cout(\i2c_device|brin_cnt_dataa_8_1_cout [8]),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_15_1 .coord_x = 19;
-defparam \i2c_device|brin_cnt_dataa_15_1 .coord_y = 6;
+defparam \i2c_device|brin_cnt_dataa_15_1 .coord_x = 17;
+defparam \i2c_device|brin_cnt_dataa_15_1 .coord_y = 7;
 defparam \i2c_device|brin_cnt_dataa_15_1 .coord_z = 7;
 defparam \i2c_device|brin_cnt_dataa_15_1 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_dataa_15_1 .modeMux = 1'b1;
@@ -7600,8 +7583,8 @@ alta_slice \i2c_device|brin_cnt_dataa_16_1 (
 	.LutOut(\i2c_device|brin_cnt_dataa_8_1_combout [8]),
 	.Cout(\i2c_device|brin_cnt_dataa_8_1_cout [9]),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_16_1 .coord_x = 19;
-defparam \i2c_device|brin_cnt_dataa_16_1 .coord_y = 6;
+defparam \i2c_device|brin_cnt_dataa_16_1 .coord_x = 17;
+defparam \i2c_device|brin_cnt_dataa_16_1 .coord_y = 7;
 defparam \i2c_device|brin_cnt_dataa_16_1 .coord_z = 8;
 defparam \i2c_device|brin_cnt_dataa_16_1 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_dataa_16_1 .modeMux = 1'b1;
@@ -7611,8 +7594,8 @@ defparam \i2c_device|brin_cnt_dataa_16_1 .BypassEn = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_16_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|brin_cnt_dataa_17_1 (
-	.A(\i2c_device|brin_cnt [17]),
-	.B(vcc),
+	.A(vcc),
+	.B(\i2c_device|brin_cnt [17]),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|brin_cnt_dataa_8_1_cout [9]),
@@ -7625,8 +7608,8 @@ alta_slice \i2c_device|brin_cnt_dataa_17_1 (
 	.LutOut(\i2c_device|brin_cnt_dataa_8_1_combout [9]),
 	.Cout(\i2c_device|brin_cnt_dataa_8_1_cout [10]),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_17_1 .coord_x = 19;
-defparam \i2c_device|brin_cnt_dataa_17_1 .coord_y = 6;
+defparam \i2c_device|brin_cnt_dataa_17_1 .coord_x = 17;
+defparam \i2c_device|brin_cnt_dataa_17_1 .coord_y = 7;
 defparam \i2c_device|brin_cnt_dataa_17_1 .coord_z = 9;
 defparam \i2c_device|brin_cnt_dataa_17_1 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_dataa_17_1 .modeMux = 1'b1;
@@ -7650,8 +7633,8 @@ alta_slice \i2c_device|brin_cnt_dataa_18 (
 	.LutOut(\i2c_device|brin_cnt_dataa_10_combout [18]),
 	.Cout(\i2c_device|brin_cnt_dataa_0_cout [19]),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_18 .coord_x = 20;
-defparam \i2c_device|brin_cnt_dataa_18 .coord_y = 5;
+defparam \i2c_device|brin_cnt_dataa_18 .coord_x = 18;
+defparam \i2c_device|brin_cnt_dataa_18 .coord_y = 6;
 defparam \i2c_device|brin_cnt_dataa_18 .coord_z = 2;
 defparam \i2c_device|brin_cnt_dataa_18 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_dataa_18 .modeMux = 1'b1;
@@ -7675,8 +7658,8 @@ alta_slice \i2c_device|brin_cnt_dataa_18_1 (
 	.LutOut(\i2c_device|brin_cnt_dataa_8_1_combout [10]),
 	.Cout(\i2c_device|brin_cnt_dataa_8_1_cout [11]),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_18_1 .coord_x = 19;
-defparam \i2c_device|brin_cnt_dataa_18_1 .coord_y = 6;
+defparam \i2c_device|brin_cnt_dataa_18_1 .coord_x = 17;
+defparam \i2c_device|brin_cnt_dataa_18_1 .coord_y = 7;
 defparam \i2c_device|brin_cnt_dataa_18_1 .coord_z = 10;
 defparam \i2c_device|brin_cnt_dataa_18_1 .mask = 16'h69D4;
 defparam \i2c_device|brin_cnt_dataa_18_1 .modeMux = 1'b1;
@@ -7700,8 +7683,8 @@ alta_slice \i2c_device|brin_cnt_dataa_19_1 (
 	.LutOut(\i2c_device|brin_cnt_dataa_8_1_combout [11]),
 	.Cout(\i2c_device|brin_cnt_dataa_8_1_cout [12]),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_19_1 .coord_x = 19;
-defparam \i2c_device|brin_cnt_dataa_19_1 .coord_y = 6;
+defparam \i2c_device|brin_cnt_dataa_19_1 .coord_x = 17;
+defparam \i2c_device|brin_cnt_dataa_19_1 .coord_y = 7;
 defparam \i2c_device|brin_cnt_dataa_19_1 .coord_z = 11;
 defparam \i2c_device|brin_cnt_dataa_19_1 .mask = 16'h69D4;
 defparam \i2c_device|brin_cnt_dataa_19_1 .modeMux = 1'b1;
@@ -7711,8 +7694,8 @@ defparam \i2c_device|brin_cnt_dataa_19_1 .BypassEn = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_19_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|brin_cnt_dataa_20 (
-	.A(vcc),
-	.B(\i2c_device|brin_cnt [20]),
+	.A(\i2c_device|brin_cnt [20]),
+	.B(vcc),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|brin_cnt_dataa_0_cout [20]),
@@ -7725,8 +7708,8 @@ alta_slice \i2c_device|brin_cnt_dataa_20 (
 	.LutOut(\i2c_device|brin_cnt_dataa_10_combout [20]),
 	.Cout(\i2c_device|brin_cnt_dataa_0_cout [21]),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_20 .coord_x = 20;
-defparam \i2c_device|brin_cnt_dataa_20 .coord_y = 5;
+defparam \i2c_device|brin_cnt_dataa_20 .coord_x = 18;
+defparam \i2c_device|brin_cnt_dataa_20 .coord_y = 6;
 defparam \i2c_device|brin_cnt_dataa_20 .coord_z = 4;
 defparam \i2c_device|brin_cnt_dataa_20 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_dataa_20 .modeMux = 1'b1;
@@ -7736,8 +7719,8 @@ defparam \i2c_device|brin_cnt_dataa_20 .BypassEn = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_20 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|brin_cnt_dataa_20_1 (
-	.A(vcc),
-	.B(\i2c_device|brin_cnt [20]),
+	.A(\i2c_device|brin_cnt [20]),
+	.B(vcc),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|brin_cnt_dataa_8_1_cout [12]),
@@ -7750,8 +7733,8 @@ alta_slice \i2c_device|brin_cnt_dataa_20_1 (
 	.LutOut(\i2c_device|brin_cnt_dataa_8_1_combout [12]),
 	.Cout(\i2c_device|brin_cnt_dataa_8_1_cout [13]),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_20_1 .coord_x = 19;
-defparam \i2c_device|brin_cnt_dataa_20_1 .coord_y = 6;
+defparam \i2c_device|brin_cnt_dataa_20_1 .coord_x = 17;
+defparam \i2c_device|brin_cnt_dataa_20_1 .coord_y = 7;
 defparam \i2c_device|brin_cnt_dataa_20_1 .coord_z = 12;
 defparam \i2c_device|brin_cnt_dataa_20_1 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_dataa_20_1 .modeMux = 1'b1;
@@ -7775,8 +7758,8 @@ alta_slice \i2c_device|brin_cnt_dataa_21 (
 	.LutOut(\i2c_device|brin_cnt_dataa_10_combout [21]),
 	.Cout(\i2c_device|brin_cnt_dataa_0_cout [22]),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_21 .coord_x = 20;
-defparam \i2c_device|brin_cnt_dataa_21 .coord_y = 5;
+defparam \i2c_device|brin_cnt_dataa_21 .coord_x = 18;
+defparam \i2c_device|brin_cnt_dataa_21 .coord_y = 6;
 defparam \i2c_device|brin_cnt_dataa_21 .coord_z = 5;
 defparam \i2c_device|brin_cnt_dataa_21 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_dataa_21 .modeMux = 1'b1;
@@ -7786,8 +7769,8 @@ defparam \i2c_device|brin_cnt_dataa_21 .BypassEn = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_21 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|brin_cnt_dataa_21_1 (
-	.A(\i2c_device|brin_cnt [21]),
-	.B(vcc),
+	.A(vcc),
+	.B(\i2c_device|brin_cnt [21]),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|brin_cnt_dataa_8_1_cout [13]),
@@ -7800,8 +7783,8 @@ alta_slice \i2c_device|brin_cnt_dataa_21_1 (
 	.LutOut(\i2c_device|brin_cnt_dataa_8_1_combout [13]),
 	.Cout(\i2c_device|brin_cnt_dataa_8_1_cout [14]),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_21_1 .coord_x = 19;
-defparam \i2c_device|brin_cnt_dataa_21_1 .coord_y = 6;
+defparam \i2c_device|brin_cnt_dataa_21_1 .coord_x = 17;
+defparam \i2c_device|brin_cnt_dataa_21_1 .coord_y = 7;
 defparam \i2c_device|brin_cnt_dataa_21_1 .coord_z = 13;
 defparam \i2c_device|brin_cnt_dataa_21_1 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_dataa_21_1 .modeMux = 1'b1;
@@ -7811,8 +7794,8 @@ defparam \i2c_device|brin_cnt_dataa_21_1 .BypassEn = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_21_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|brin_cnt_dataa_22 (
-	.A(vcc),
-	.B(\i2c_device|brin_cnt [22]),
+	.A(\i2c_device|brin_cnt [22]),
+	.B(vcc),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|brin_cnt_dataa_0_cout [22]),
@@ -7825,8 +7808,8 @@ alta_slice \i2c_device|brin_cnt_dataa_22 (
 	.LutOut(\i2c_device|brin_cnt_dataa_10_combout [22]),
 	.Cout(\i2c_device|brin_cnt_dataa_0_cout [23]),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_22 .coord_x = 20;
-defparam \i2c_device|brin_cnt_dataa_22 .coord_y = 5;
+defparam \i2c_device|brin_cnt_dataa_22 .coord_x = 18;
+defparam \i2c_device|brin_cnt_dataa_22 .coord_y = 6;
 defparam \i2c_device|brin_cnt_dataa_22 .coord_z = 6;
 defparam \i2c_device|brin_cnt_dataa_22 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_dataa_22 .modeMux = 1'b1;
@@ -7836,8 +7819,8 @@ defparam \i2c_device|brin_cnt_dataa_22 .BypassEn = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_22 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|brin_cnt_dataa_22_1 (
-	.A(\i2c_device|brin_cnt [22]),
-	.B(vcc),
+	.A(vcc),
+	.B(\i2c_device|brin_cnt [22]),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|brin_cnt_dataa_8_1_cout [14]),
@@ -7850,8 +7833,8 @@ alta_slice \i2c_device|brin_cnt_dataa_22_1 (
 	.LutOut(\i2c_device|brin_cnt_dataa_8_1_combout [14]),
 	.Cout(\i2c_device|brin_cnt_dataa_8_1_cout [15]),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_22_1 .coord_x = 19;
-defparam \i2c_device|brin_cnt_dataa_22_1 .coord_y = 6;
+defparam \i2c_device|brin_cnt_dataa_22_1 .coord_x = 17;
+defparam \i2c_device|brin_cnt_dataa_22_1 .coord_y = 7;
 defparam \i2c_device|brin_cnt_dataa_22_1 .coord_z = 14;
 defparam \i2c_device|brin_cnt_dataa_22_1 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_dataa_22_1 .modeMux = 1'b1;
@@ -7861,10 +7844,10 @@ defparam \i2c_device|brin_cnt_dataa_22_1 .BypassEn = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_22_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|brin_cnt_dataa_3_1 (
-	.A(\i2c_device|brin_cnt [1]),
+	.A(vcc),
 	.B(\i2c_device|brin_cnt [0]),
 	.C(\i2c_device|brin_cnt [3]),
-	.D(vcc),
+	.D(\i2c_device|brin_cnt [1]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -7875,10 +7858,10 @@ alta_slice \i2c_device|brin_cnt_dataa_3_1 (
 	.LutOut(\i2c_device|brin_cnt_datad_6_combout [2]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_3_1 .coord_x = 19;
-defparam \i2c_device|brin_cnt_dataa_3_1 .coord_y = 5;
-defparam \i2c_device|brin_cnt_dataa_3_1 .coord_z = 4;
-defparam \i2c_device|brin_cnt_dataa_3_1 .mask = 16'h0101;
+defparam \i2c_device|brin_cnt_dataa_3_1 .coord_x = 18;
+defparam \i2c_device|brin_cnt_dataa_3_1 .coord_y = 6;
+defparam \i2c_device|brin_cnt_dataa_3_1 .coord_z = 11;
+defparam \i2c_device|brin_cnt_dataa_3_1 .mask = 16'h0003;
 defparam \i2c_device|brin_cnt_dataa_3_1 .modeMux = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_3_1 .FeedbackMux = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_3_1 .ShiftMux = 1'b0;
@@ -7886,10 +7869,10 @@ defparam \i2c_device|brin_cnt_dataa_3_1 .BypassEn = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_3_1 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|brin_cnt_dataa_7_1 (
-	.A(\i2c_device|brin_cnt [5]),
-	.B(\i2c_device|brin_cnt [2]),
-	.C(\i2c_device|brin_cnt [7]),
-	.D(\i2c_device|brin_cnt [4]),
+	.A(\i2c_device|brin_cnt [7]),
+	.B(\i2c_device|brin_cnt [5]),
+	.C(\i2c_device|brin_cnt [4]),
+	.D(\i2c_device|brin_cnt [2]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -7900,9 +7883,9 @@ alta_slice \i2c_device|brin_cnt_dataa_7_1 (
 	.LutOut(\i2c_device|brin_cnt_datad_6_combout [3]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_7_1 .coord_x = 19;
-defparam \i2c_device|brin_cnt_dataa_7_1 .coord_y = 5;
-defparam \i2c_device|brin_cnt_dataa_7_1 .coord_z = 3;
+defparam \i2c_device|brin_cnt_dataa_7_1 .coord_x = 18;
+defparam \i2c_device|brin_cnt_dataa_7_1 .coord_y = 6;
+defparam \i2c_device|brin_cnt_dataa_7_1 .coord_z = 10;
 defparam \i2c_device|brin_cnt_dataa_7_1 .mask = 16'h0001;
 defparam \i2c_device|brin_cnt_dataa_7_1 .modeMux = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_7_1 .FeedbackMux = 1'b0;
@@ -7911,8 +7894,8 @@ defparam \i2c_device|brin_cnt_dataa_7_1 .BypassEn = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_7_1 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|brin_cnt_dataa_8_1 (
-	.A(vcc),
-	.B(\i2c_device|brin_cnt [8]),
+	.A(\i2c_device|brin_cnt [8]),
+	.B(vcc),
 	.C(vcc),
 	.D(vcc),
 	.Cin(),
@@ -7925,10 +7908,10 @@ alta_slice \i2c_device|brin_cnt_dataa_8_1 (
 	.LutOut(\i2c_device|brin_cnt_dataa_8_1_combout [0]),
 	.Cout(\i2c_device|brin_cnt_dataa_8_1_cout [1]),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_8_1 .coord_x = 19;
-defparam \i2c_device|brin_cnt_dataa_8_1 .coord_y = 6;
+defparam \i2c_device|brin_cnt_dataa_8_1 .coord_x = 17;
+defparam \i2c_device|brin_cnt_dataa_8_1 .coord_y = 7;
 defparam \i2c_device|brin_cnt_dataa_8_1 .coord_z = 0;
-defparam \i2c_device|brin_cnt_dataa_8_1 .mask = 16'h66DD;
+defparam \i2c_device|brin_cnt_dataa_8_1 .mask = 16'h66BB;
 defparam \i2c_device|brin_cnt_dataa_8_1 .modeMux = 1'b1;
 defparam \i2c_device|brin_cnt_dataa_8_1 .FeedbackMux = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_8_1 .ShiftMux = 1'b0;
@@ -7950,8 +7933,8 @@ alta_slice \i2c_device|brin_cnt_dataa_8_1_cout_cin_15 (
 	.LutOut(\i2c_device|brin_cnt_dataa_8_1_cout_cin_15_combout ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_8_1_cout_cin_15 .coord_x = 19;
-defparam \i2c_device|brin_cnt_dataa_8_1_cout_cin_15 .coord_y = 6;
+defparam \i2c_device|brin_cnt_dataa_8_1_cout_cin_15 .coord_x = 17;
+defparam \i2c_device|brin_cnt_dataa_8_1_cout_cin_15 .coord_y = 7;
 defparam \i2c_device|brin_cnt_dataa_8_1_cout_cin_15 .coord_z = 15;
 defparam \i2c_device|brin_cnt_dataa_8_1_cout_cin_15 .mask = 16'hF0F0;
 defparam \i2c_device|brin_cnt_dataa_8_1_cout_cin_15 .modeMux = 1'b1;
@@ -7961,8 +7944,8 @@ defparam \i2c_device|brin_cnt_dataa_8_1_cout_cin_15 .BypassEn = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_8_1_cout_cin_15 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|brin_cnt_dataa_8_1_cout_cin_15_combout_A_Y_combout (
-	.A(\i2c_device|brin_cnt_dataa_9_2_combout [1]),
-	.B(\i2c_device|brin_cnt_dataa_9_2_combout [2]),
+	.A(\i2c_device|brin_cnt_dataa_9_2_combout [2]),
+	.B(\i2c_device|brin_cnt_dataa_9_2_combout [1]),
 	.C(\i2c_device|brin_cnt_dataa_8_1_cout_cin_15_combout ),
 	.D(\i2c_device|brin_cnt_dataa_8_2_combout [0]),
 	.Cin(),
@@ -7975,8 +7958,8 @@ alta_slice \i2c_device|brin_cnt_dataa_8_1_cout_cin_15_combout_A_Y_combout (
 	.LutOut(\i2c_device|brin_cnt_dataa_8_1_cout_cin_15_combout_A_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_8_1_cout_cin_15_combout_A_Y_combout .coord_x = 20;
-defparam \i2c_device|brin_cnt_dataa_8_1_cout_cin_15_combout_A_Y_combout .coord_y = 5;
+defparam \i2c_device|brin_cnt_dataa_8_1_cout_cin_15_combout_A_Y_combout .coord_x = 17;
+defparam \i2c_device|brin_cnt_dataa_8_1_cout_cin_15_combout_A_Y_combout .coord_y = 4;
 defparam \i2c_device|brin_cnt_dataa_8_1_cout_cin_15_combout_A_Y_combout .coord_z = 12;
 defparam \i2c_device|brin_cnt_dataa_8_1_cout_cin_15_combout_A_Y_combout .mask = 16'h70F0;
 defparam \i2c_device|brin_cnt_dataa_8_1_cout_cin_15_combout_A_Y_combout .modeMux = 1'b0;
@@ -7987,9 +7970,9 @@ defparam \i2c_device|brin_cnt_dataa_8_1_cout_cin_15_combout_A_Y_combout .CarryEn
 
 alta_slice \i2c_device|brin_cnt_dataa_8_2 (
 	.A(\i2c_device|brin_cnt [8]),
-	.B(\i2c_device|brin_cnt [9]),
-	.C(\i2c_device|brin_cnt [12]),
-	.D(\i2c_device|brin_cnt [19]),
+	.B(\i2c_device|brin_cnt [19]),
+	.C(\i2c_device|brin_cnt [9]),
+	.D(\i2c_device|brin_cnt [12]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -8000,9 +7983,9 @@ alta_slice \i2c_device|brin_cnt_dataa_8_2 (
 	.LutOut(\i2c_device|brin_cnt_dataa_8_2_combout [2]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_8_2 .coord_x = 20;
-defparam \i2c_device|brin_cnt_dataa_8_2 .coord_y = 5;
-defparam \i2c_device|brin_cnt_dataa_8_2 .coord_z = 9;
+defparam \i2c_device|brin_cnt_dataa_8_2 .coord_x = 17;
+defparam \i2c_device|brin_cnt_dataa_8_2 .coord_y = 4;
+defparam \i2c_device|brin_cnt_dataa_8_2 .coord_z = 10;
 defparam \i2c_device|brin_cnt_dataa_8_2 .mask = 16'h0001;
 defparam \i2c_device|brin_cnt_dataa_8_2 .modeMux = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_8_2 .FeedbackMux = 1'b0;
@@ -8011,10 +7994,10 @@ defparam \i2c_device|brin_cnt_dataa_8_2 .BypassEn = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_8_2 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|brin_cnt_dataa_8_2_combout_combout_0 (
-	.A(\i2c_device|brin_cnt_datad_6_combout [0]),
-	.B(\i2c_device|brin_cnt_datad_6_combout [3]),
-	.C(\i2c_device|brin_cnt_datad_6_combout [2]),
-	.D(\i2c_device|brin_cnt_datad_6_combout [1]),
+	.A(\i2c_device|brin_cnt_datad_6_combout [1]),
+	.B(\i2c_device|brin_cnt_datad_6_combout [0]),
+	.C(\i2c_device|brin_cnt_datad_6_combout [3]),
+	.D(\i2c_device|brin_cnt_datad_6_combout [2]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -8025,9 +8008,9 @@ alta_slice \i2c_device|brin_cnt_dataa_8_2_combout_combout_0 (
 	.LutOut(\i2c_device|brin_cnt_dataa_8_2_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_8_2_combout_combout_0 .coord_x = 19;
-defparam \i2c_device|brin_cnt_dataa_8_2_combout_combout_0 .coord_y = 5;
-defparam \i2c_device|brin_cnt_dataa_8_2_combout_combout_0 .coord_z = 0;
+defparam \i2c_device|brin_cnt_dataa_8_2_combout_combout_0 .coord_x = 18;
+defparam \i2c_device|brin_cnt_dataa_8_2_combout_combout_0 .coord_y = 6;
+defparam \i2c_device|brin_cnt_dataa_8_2_combout_combout_0 .coord_z = 8;
 defparam \i2c_device|brin_cnt_dataa_8_2_combout_combout_0 .mask = 16'h8000;
 defparam \i2c_device|brin_cnt_dataa_8_2_combout_combout_0 .modeMux = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_8_2_combout_combout_0 .FeedbackMux = 1'b0;
@@ -8050,8 +8033,8 @@ alta_slice \i2c_device|brin_cnt_dataa_9_1 (
 	.LutOut(\i2c_device|brin_cnt_dataa_8_1_combout [1]),
 	.Cout(\i2c_device|brin_cnt_dataa_8_1_cout [2]),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_9_1 .coord_x = 19;
-defparam \i2c_device|brin_cnt_dataa_9_1 .coord_y = 6;
+defparam \i2c_device|brin_cnt_dataa_9_1 .coord_x = 17;
+defparam \i2c_device|brin_cnt_dataa_9_1 .coord_y = 7;
 defparam \i2c_device|brin_cnt_dataa_9_1 .coord_z = 1;
 defparam \i2c_device|brin_cnt_dataa_9_1 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_dataa_9_1 .modeMux = 1'b1;
@@ -8062,8 +8045,8 @@ defparam \i2c_device|brin_cnt_dataa_9_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|brin_cnt_dataa_9_2 (
 	.A(\i2c_device|brin_cnt [8]),
-	.B(\i2c_device|brin_cnt [9]),
-	.C(\i2c_device|brin_cnt [12]),
+	.B(\i2c_device|brin_cnt [12]),
+	.C(\i2c_device|brin_cnt [9]),
 	.D(\i2c_device|brin_cnt [19]),
 	.Cin(),
 	.Qin(),
@@ -8075,10 +8058,10 @@ alta_slice \i2c_device|brin_cnt_dataa_9_2 (
 	.LutOut(\i2c_device|brin_cnt_dataa_9_2_combout [1]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|brin_cnt_dataa_9_2 .coord_x = 20;
-defparam \i2c_device|brin_cnt_dataa_9_2 .coord_y = 5;
-defparam \i2c_device|brin_cnt_dataa_9_2 .coord_z = 10;
-defparam \i2c_device|brin_cnt_dataa_9_2 .mask = 16'h2000;
+defparam \i2c_device|brin_cnt_dataa_9_2 .coord_x = 17;
+defparam \i2c_device|brin_cnt_dataa_9_2 .coord_y = 4;
+defparam \i2c_device|brin_cnt_dataa_9_2 .coord_z = 11;
+defparam \i2c_device|brin_cnt_dataa_9_2 .mask = 16'h0800;
 defparam \i2c_device|brin_cnt_dataa_9_2 .modeMux = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_9_2 .FeedbackMux = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_9_2 .ShiftMux = 1'b0;
@@ -8086,9 +8069,9 @@ defparam \i2c_device|brin_cnt_dataa_9_2 .BypassEn = 1'b0;
 defparam \i2c_device|brin_cnt_dataa_9_2 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|brin_cnt_datad_6 (
-	.A(\i2c_device|brin_cnt [16]),
+	.A(\i2c_device|brin_cnt [6]),
 	.B(\i2c_device|brin_cnt [17]),
-	.C(\i2c_device|brin_cnt [6]),
+	.C(\i2c_device|brin_cnt [16]),
 	.D(\i2c_device|brin_cnt [15]),
 	.Cin(),
 	.Qin(),
@@ -8100,9 +8083,9 @@ alta_slice \i2c_device|brin_cnt_datad_6 (
 	.LutOut(\i2c_device|brin_cnt_datad_6_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|brin_cnt_datad_6 .coord_x = 19;
-defparam \i2c_device|brin_cnt_datad_6 .coord_y = 5;
-defparam \i2c_device|brin_cnt_datad_6 .coord_z = 2;
+defparam \i2c_device|brin_cnt_datad_6 .coord_x = 18;
+defparam \i2c_device|brin_cnt_datad_6 .coord_y = 6;
+defparam \i2c_device|brin_cnt_datad_6 .coord_z = 7;
 defparam \i2c_device|brin_cnt_datad_6 .mask = 16'h0001;
 defparam \i2c_device|brin_cnt_datad_6 .modeMux = 1'b0;
 defparam \i2c_device|brin_cnt_datad_6 .FeedbackMux = 1'b0;
@@ -8125,8 +8108,8 @@ alta_slice \i2c_device|brin_cnt_q_0 (
 	.LutOut(\i2c_device|brin_cnt_dataa_0_combout ),
 	.Cout(\i2c_device|brin_cnt_dataa_0_cout [1]),
 	.Q(\i2c_device|brin_cnt [0]));
-defparam \i2c_device|brin_cnt_q_0 .coord_x = 20;
-defparam \i2c_device|brin_cnt_q_0 .coord_y = 6;
+defparam \i2c_device|brin_cnt_q_0 .coord_x = 18;
+defparam \i2c_device|brin_cnt_q_0 .coord_y = 7;
 defparam \i2c_device|brin_cnt_q_0 .coord_z = 0;
 defparam \i2c_device|brin_cnt_q_0 .mask = 16'h66DD;
 defparam \i2c_device|brin_cnt_q_0 .modeMux = 1'b1;
@@ -8150,8 +8133,8 @@ alta_slice \i2c_device|brin_cnt_q_1 (
 	.LutOut(\i2c_device|brin_cnt_dataa_1_combout ),
 	.Cout(\i2c_device|brin_cnt_dataa_0_cout [2]),
 	.Q(\i2c_device|brin_cnt [1]));
-defparam \i2c_device|brin_cnt_q_1 .coord_x = 20;
-defparam \i2c_device|brin_cnt_q_1 .coord_y = 6;
+defparam \i2c_device|brin_cnt_q_1 .coord_x = 18;
+defparam \i2c_device|brin_cnt_q_1 .coord_y = 7;
 defparam \i2c_device|brin_cnt_q_1 .coord_z = 1;
 defparam \i2c_device|brin_cnt_q_1 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_q_1 .modeMux = 1'b1;
@@ -8175,8 +8158,8 @@ alta_slice \i2c_device|brin_cnt_q_11 (
 	.LutOut(\i2c_device|brin_cnt_dataa_11_combout ),
 	.Cout(\i2c_device|brin_cnt_dataa_0_cout [12]),
 	.Q(\i2c_device|brin_cnt [11]));
-defparam \i2c_device|brin_cnt_q_11 .coord_x = 20;
-defparam \i2c_device|brin_cnt_q_11 .coord_y = 6;
+defparam \i2c_device|brin_cnt_q_11 .coord_x = 18;
+defparam \i2c_device|brin_cnt_q_11 .coord_y = 7;
 defparam \i2c_device|brin_cnt_q_11 .coord_z = 11;
 defparam \i2c_device|brin_cnt_q_11 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_q_11 .modeMux = 1'b1;
@@ -8200,8 +8183,8 @@ alta_slice \i2c_device|brin_cnt_q_12 (
 	.LutOut(\i2c_device|brin_cnt_dataa_12_combout ),
 	.Cout(\i2c_device|brin_cnt_dataa_0_cout [13]),
 	.Q(\i2c_device|brin_cnt [12]));
-defparam \i2c_device|brin_cnt_q_12 .coord_x = 20;
-defparam \i2c_device|brin_cnt_q_12 .coord_y = 6;
+defparam \i2c_device|brin_cnt_q_12 .coord_x = 18;
+defparam \i2c_device|brin_cnt_q_12 .coord_y = 7;
 defparam \i2c_device|brin_cnt_q_12 .coord_z = 12;
 defparam \i2c_device|brin_cnt_q_12 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_q_12 .modeMux = 1'b1;
@@ -8225,8 +8208,8 @@ alta_slice \i2c_device|brin_cnt_q_14 (
 	.LutOut(\i2c_device|brin_cnt_dataa_14_combout ),
 	.Cout(\i2c_device|brin_cnt_dataa_0_cout [15]),
 	.Q(\i2c_device|brin_cnt [14]));
-defparam \i2c_device|brin_cnt_q_14 .coord_x = 20;
-defparam \i2c_device|brin_cnt_q_14 .coord_y = 6;
+defparam \i2c_device|brin_cnt_q_14 .coord_x = 18;
+defparam \i2c_device|brin_cnt_q_14 .coord_y = 7;
 defparam \i2c_device|brin_cnt_q_14 .coord_z = 14;
 defparam \i2c_device|brin_cnt_q_14 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_q_14 .modeMux = 1'b1;
@@ -8250,8 +8233,8 @@ alta_slice \i2c_device|brin_cnt_q_15 (
 	.LutOut(\i2c_device|brin_cnt_dataa_15_combout ),
 	.Cout(\i2c_device|brin_cnt_dataa_0_cout [16]),
 	.Q(\i2c_device|brin_cnt [15]));
-defparam \i2c_device|brin_cnt_q_15 .coord_x = 20;
-defparam \i2c_device|brin_cnt_q_15 .coord_y = 6;
+defparam \i2c_device|brin_cnt_q_15 .coord_x = 18;
+defparam \i2c_device|brin_cnt_q_15 .coord_y = 7;
 defparam \i2c_device|brin_cnt_q_15 .coord_z = 15;
 defparam \i2c_device|brin_cnt_q_15 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_q_15 .modeMux = 1'b1;
@@ -8267,16 +8250,16 @@ alta_slice \i2c_device|brin_cnt_q_16 (
 	.D(vcc),
 	.Cin(\i2c_device|brin_cnt_dataa_0_cout [16]),
 	.Qin(\i2c_device|brin_cnt [16]),
-	.Clk(\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10004_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10004_Y10001_GND),
-	.SyncReset(\i2c_device|brin_rec_A_0_Y__SyncReset_X10004_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10006_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10006_Y10001_GND),
+	.SyncReset(\i2c_device|brin_rec_A_0_Y__SyncReset_X10006_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10004_Y10001_GND),
+	.SyncLoad(SyncLoad_X10006_Y10001_GND),
 	.LutOut(\i2c_device|brin_cnt_dataa_16_combout ),
 	.Cout(\i2c_device|brin_cnt_dataa_0_cout [17]),
 	.Q(\i2c_device|brin_cnt [16]));
-defparam \i2c_device|brin_cnt_q_16 .coord_x = 20;
-defparam \i2c_device|brin_cnt_q_16 .coord_y = 5;
+defparam \i2c_device|brin_cnt_q_16 .coord_x = 18;
+defparam \i2c_device|brin_cnt_q_16 .coord_y = 6;
 defparam \i2c_device|brin_cnt_q_16 .coord_z = 0;
 defparam \i2c_device|brin_cnt_q_16 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_q_16 .modeMux = 1'b1;
@@ -8292,16 +8275,16 @@ alta_slice \i2c_device|brin_cnt_q_17 (
 	.D(vcc),
 	.Cin(\i2c_device|brin_cnt_dataa_0_cout [17]),
 	.Qin(\i2c_device|brin_cnt [17]),
-	.Clk(\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10004_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10004_Y10001_GND),
-	.SyncReset(\i2c_device|brin_rec_A_0_Y__SyncReset_X10004_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10006_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10006_Y10001_GND),
+	.SyncReset(\i2c_device|brin_rec_A_0_Y__SyncReset_X10006_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10004_Y10001_GND),
+	.SyncLoad(SyncLoad_X10006_Y10001_GND),
 	.LutOut(\i2c_device|brin_cnt_dataa_17_combout ),
 	.Cout(\i2c_device|brin_cnt_dataa_0_cout [18]),
 	.Q(\i2c_device|brin_cnt [17]));
-defparam \i2c_device|brin_cnt_q_17 .coord_x = 20;
-defparam \i2c_device|brin_cnt_q_17 .coord_y = 5;
+defparam \i2c_device|brin_cnt_q_17 .coord_x = 18;
+defparam \i2c_device|brin_cnt_q_17 .coord_y = 6;
 defparam \i2c_device|brin_cnt_q_17 .coord_z = 1;
 defparam \i2c_device|brin_cnt_q_17 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_q_17 .modeMux = 1'b1;
@@ -8317,16 +8300,16 @@ alta_slice \i2c_device|brin_cnt_q_19 (
 	.D(vcc),
 	.Cin(\i2c_device|brin_cnt_dataa_0_cout [19]),
 	.Qin(\i2c_device|brin_cnt [19]),
-	.Clk(\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10004_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10004_Y10001_GND),
-	.SyncReset(\i2c_device|brin_rec_A_0_Y__SyncReset_X10004_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|brin_rec_A_0_Y_B_Y_X10006_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10006_Y10001_GND),
+	.SyncReset(\i2c_device|brin_rec_A_0_Y__SyncReset_X10006_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10004_Y10001_GND),
+	.SyncLoad(SyncLoad_X10006_Y10001_GND),
 	.LutOut(\i2c_device|brin_cnt_dataa_19_combout ),
 	.Cout(\i2c_device|brin_cnt_dataa_0_cout [20]),
 	.Q(\i2c_device|brin_cnt [19]));
-defparam \i2c_device|brin_cnt_q_19 .coord_x = 20;
-defparam \i2c_device|brin_cnt_q_19 .coord_y = 5;
+defparam \i2c_device|brin_cnt_q_19 .coord_x = 18;
+defparam \i2c_device|brin_cnt_q_19 .coord_y = 6;
 defparam \i2c_device|brin_cnt_q_19 .coord_z = 3;
 defparam \i2c_device|brin_cnt_q_19 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_q_19 .modeMux = 1'b1;
@@ -8350,8 +8333,8 @@ alta_slice \i2c_device|brin_cnt_q_2 (
 	.LutOut(\i2c_device|brin_cnt_dataa_2_combout ),
 	.Cout(\i2c_device|brin_cnt_dataa_0_cout [3]),
 	.Q(\i2c_device|brin_cnt [2]));
-defparam \i2c_device|brin_cnt_q_2 .coord_x = 20;
-defparam \i2c_device|brin_cnt_q_2 .coord_y = 6;
+defparam \i2c_device|brin_cnt_q_2 .coord_x = 18;
+defparam \i2c_device|brin_cnt_q_2 .coord_y = 7;
 defparam \i2c_device|brin_cnt_q_2 .coord_z = 2;
 defparam \i2c_device|brin_cnt_q_2 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_q_2 .modeMux = 1'b1;
@@ -8375,8 +8358,8 @@ alta_slice \i2c_device|brin_cnt_q_3 (
 	.LutOut(\i2c_device|brin_cnt_dataa_3_combout ),
 	.Cout(\i2c_device|brin_cnt_dataa_0_cout [4]),
 	.Q(\i2c_device|brin_cnt [3]));
-defparam \i2c_device|brin_cnt_q_3 .coord_x = 20;
-defparam \i2c_device|brin_cnt_q_3 .coord_y = 6;
+defparam \i2c_device|brin_cnt_q_3 .coord_x = 18;
+defparam \i2c_device|brin_cnt_q_3 .coord_y = 7;
 defparam \i2c_device|brin_cnt_q_3 .coord_z = 3;
 defparam \i2c_device|brin_cnt_q_3 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_q_3 .modeMux = 1'b1;
@@ -8400,8 +8383,8 @@ alta_slice \i2c_device|brin_cnt_q_4 (
 	.LutOut(\i2c_device|brin_cnt_dataa_4_combout ),
 	.Cout(\i2c_device|brin_cnt_dataa_0_cout [5]),
 	.Q(\i2c_device|brin_cnt [4]));
-defparam \i2c_device|brin_cnt_q_4 .coord_x = 20;
-defparam \i2c_device|brin_cnt_q_4 .coord_y = 6;
+defparam \i2c_device|brin_cnt_q_4 .coord_x = 18;
+defparam \i2c_device|brin_cnt_q_4 .coord_y = 7;
 defparam \i2c_device|brin_cnt_q_4 .coord_z = 4;
 defparam \i2c_device|brin_cnt_q_4 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_q_4 .modeMux = 1'b1;
@@ -8425,8 +8408,8 @@ alta_slice \i2c_device|brin_cnt_q_5 (
 	.LutOut(\i2c_device|brin_cnt_dataa_5_combout ),
 	.Cout(\i2c_device|brin_cnt_dataa_0_cout [6]),
 	.Q(\i2c_device|brin_cnt [5]));
-defparam \i2c_device|brin_cnt_q_5 .coord_x = 20;
-defparam \i2c_device|brin_cnt_q_5 .coord_y = 6;
+defparam \i2c_device|brin_cnt_q_5 .coord_x = 18;
+defparam \i2c_device|brin_cnt_q_5 .coord_y = 7;
 defparam \i2c_device|brin_cnt_q_5 .coord_z = 5;
 defparam \i2c_device|brin_cnt_q_5 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_q_5 .modeMux = 1'b1;
@@ -8450,8 +8433,8 @@ alta_slice \i2c_device|brin_cnt_q_6 (
 	.LutOut(\i2c_device|brin_cnt_dataa_6_combout ),
 	.Cout(\i2c_device|brin_cnt_dataa_0_cout [7]),
 	.Q(\i2c_device|brin_cnt [6]));
-defparam \i2c_device|brin_cnt_q_6 .coord_x = 20;
-defparam \i2c_device|brin_cnt_q_6 .coord_y = 6;
+defparam \i2c_device|brin_cnt_q_6 .coord_x = 18;
+defparam \i2c_device|brin_cnt_q_6 .coord_y = 7;
 defparam \i2c_device|brin_cnt_q_6 .coord_z = 6;
 defparam \i2c_device|brin_cnt_q_6 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_q_6 .modeMux = 1'b1;
@@ -8475,8 +8458,8 @@ alta_slice \i2c_device|brin_cnt_q_7 (
 	.LutOut(\i2c_device|brin_cnt_dataa_7_combout ),
 	.Cout(\i2c_device|brin_cnt_dataa_0_cout [8]),
 	.Q(\i2c_device|brin_cnt [7]));
-defparam \i2c_device|brin_cnt_q_7 .coord_x = 20;
-defparam \i2c_device|brin_cnt_q_7 .coord_y = 6;
+defparam \i2c_device|brin_cnt_q_7 .coord_x = 18;
+defparam \i2c_device|brin_cnt_q_7 .coord_y = 7;
 defparam \i2c_device|brin_cnt_q_7 .coord_z = 7;
 defparam \i2c_device|brin_cnt_q_7 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_q_7 .modeMux = 1'b1;
@@ -8500,8 +8483,8 @@ alta_slice \i2c_device|brin_cnt_q_8 (
 	.LutOut(\i2c_device|brin_cnt_dataa_8_combout ),
 	.Cout(\i2c_device|brin_cnt_dataa_0_cout [9]),
 	.Q(\i2c_device|brin_cnt [8]));
-defparam \i2c_device|brin_cnt_q_8 .coord_x = 20;
-defparam \i2c_device|brin_cnt_q_8 .coord_y = 6;
+defparam \i2c_device|brin_cnt_q_8 .coord_x = 18;
+defparam \i2c_device|brin_cnt_q_8 .coord_y = 7;
 defparam \i2c_device|brin_cnt_q_8 .coord_z = 8;
 defparam \i2c_device|brin_cnt_q_8 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_q_8 .modeMux = 1'b1;
@@ -8525,8 +8508,8 @@ alta_slice \i2c_device|brin_cnt_q_9 (
 	.LutOut(\i2c_device|brin_cnt_dataa_9_combout ),
 	.Cout(\i2c_device|brin_cnt_dataa_0_cout [10]),
 	.Q(\i2c_device|brin_cnt [9]));
-defparam \i2c_device|brin_cnt_q_9 .coord_x = 20;
-defparam \i2c_device|brin_cnt_q_9 .coord_y = 6;
+defparam \i2c_device|brin_cnt_q_9 .coord_x = 18;
+defparam \i2c_device|brin_cnt_q_9 .coord_y = 7;
 defparam \i2c_device|brin_cnt_q_9 .coord_z = 9;
 defparam \i2c_device|brin_cnt_q_9 .mask = 16'h96E8;
 defparam \i2c_device|brin_cnt_q_9 .modeMux = 1'b1;
@@ -8550,9 +8533,9 @@ alta_slice \i2c_device|brin_rec_A_0_Y_B_Y_combout (
 	.LutOut(\i2c_device|brin_rec_A_0_Y_B_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|brin_rec_A_0_Y_B_Y_combout .coord_x = 20;
-defparam \i2c_device|brin_rec_A_0_Y_B_Y_combout .coord_y = 5;
-defparam \i2c_device|brin_rec_A_0_Y_B_Y_combout .coord_z = 13;
+defparam \i2c_device|brin_rec_A_0_Y_B_Y_combout .coord_x = 17;
+defparam \i2c_device|brin_rec_A_0_Y_B_Y_combout .coord_y = 4;
+defparam \i2c_device|brin_rec_A_0_Y_B_Y_combout .coord_z = 8;
 defparam \i2c_device|brin_rec_A_0_Y_B_Y_combout .mask = 16'hFF0F;
 defparam \i2c_device|brin_rec_A_0_Y_B_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|brin_rec_A_0_Y_B_Y_combout .FeedbackMux = 1'b0;
@@ -8561,24 +8544,24 @@ defparam \i2c_device|brin_rec_A_0_Y_B_Y_combout .BypassEn = 1'b0;
 defparam \i2c_device|brin_rec_A_0_Y_B_Y_combout .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|brin_rec_d_0 (
-	.A(vcc),
+	.A(\i2c_device|brin_rec [0]),
 	.B(vcc),
 	.C(\i2c_device|brin_rec [0]),
-	.D(\i2c_device|brin_rec [0]),
+	.D(vcc),
 	.Cin(),
 	.Qin(\i2c_device|brin_rec_d_0_q ),
-	.Clk(CLKOSC_i_o_X10001_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10001_Y10002_GND),
-	.SyncReset(SyncReset_X10001_Y10002_GND),
+	.Clk(CLKOSC_i_o_X10018_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10018_Y10001_GND),
+	.SyncReset(SyncReset_X10018_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10001_Y10002_VCC),
+	.SyncLoad(SyncLoad_X10018_Y10001_VCC),
 	.LutOut(\i2c_device|brin_rec_A_0_Y ),
 	.Cout(),
 	.Q(\i2c_device|brin_rec_d_0_q ));
-defparam \i2c_device|brin_rec_d_0 .coord_x = 15;
-defparam \i2c_device|brin_rec_d_0 .coord_y = 5;
-defparam \i2c_device|brin_rec_d_0 .coord_z = 0;
-defparam \i2c_device|brin_rec_d_0 .mask = 16'h0FF0;
+defparam \i2c_device|brin_rec_d_0 .coord_x = 10;
+defparam \i2c_device|brin_rec_d_0 .coord_y = 4;
+defparam \i2c_device|brin_rec_d_0 .coord_z = 15;
+defparam \i2c_device|brin_rec_d_0 .mask = 16'h5A5A;
 defparam \i2c_device|brin_rec_d_0 .modeMux = 1'b0;
 defparam \i2c_device|brin_rec_d_0 .FeedbackMux = 1'b1;
 defparam \i2c_device|brin_rec_d_0 .ShiftMux = 1'b0;
@@ -8592,17 +8575,17 @@ alta_slice \i2c_device|brin_rec_q_0 (
 	.D(\i2c_device|write_value [0]),
 	.Cin(),
 	.Qin(\i2c_device|brin_rec [0]),
-	.Clk(CLKOSC_i_o_X10001_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10001_Y10002_GND),
+	.Clk(CLKOSC_i_o_X10018_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10018_Y10001_GND),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
 	.LutOut(\i2c_device|brin_rec_A_0_1_Y ),
 	.Cout(),
 	.Q(\i2c_device|brin_rec [0]));
-defparam \i2c_device|brin_rec_q_0 .coord_x = 15;
-defparam \i2c_device|brin_rec_q_0 .coord_y = 5;
-defparam \i2c_device|brin_rec_q_0 .coord_z = 1;
+defparam \i2c_device|brin_rec_q_0 .coord_x = 10;
+defparam \i2c_device|brin_rec_q_0 .coord_y = 4;
+defparam \i2c_device|brin_rec_q_0 .coord_z = 12;
 defparam \i2c_device|brin_rec_q_0 .mask = 16'h78F0;
 defparam \i2c_device|brin_rec_q_0 .modeMux = 1'b0;
 defparam \i2c_device|brin_rec_q_0 .FeedbackMux = 1'b1;
@@ -8617,17 +8600,17 @@ alta_slice \i2c_device|brip_cnt[10]_reg (
 	.D(\i2c_device|brip_cnt_dataa_10_combout [10]),
 	.Cin(),
 	.Qin(\i2c_device|brip_cnt [10]),
-	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10019_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10002_GND),
-	.SyncReset(SyncReset_X10019_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10010_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10010_Y10002_GND),
+	.SyncReset(SyncReset_X10010_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|brip_rec_A_0_Y__SyncLoad_X10019_Y10002_SIG ),
+	.SyncLoad(\i2c_device|brip_rec_A_0_Y__SyncLoad_X10010_Y10002_SIG ),
 	.LutOut(\i2c_device|brip_cnt[10]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|brip_cnt [10]));
-defparam \i2c_device|brip_cnt[10]_reg .coord_x = 17;
-defparam \i2c_device|brip_cnt[10]_reg .coord_y = 6;
-defparam \i2c_device|brip_cnt[10]_reg .coord_z = 7;
+defparam \i2c_device|brip_cnt[10]_reg .coord_x = 18;
+defparam \i2c_device|brip_cnt[10]_reg .coord_y = 10;
+defparam \i2c_device|brip_cnt[10]_reg .coord_z = 1;
 defparam \i2c_device|brip_cnt[10]_reg .mask = 16'hFF00;
 defparam \i2c_device|brip_cnt[10]_reg .modeMux = 1'b0;
 defparam \i2c_device|brip_cnt[10]_reg .FeedbackMux = 1'b0;
@@ -8642,17 +8625,17 @@ alta_slice \i2c_device|brip_cnt[13]_reg (
 	.D(\i2c_device|brip_cnt_dataa_10_combout [13]),
 	.Cin(),
 	.Qin(\i2c_device|brip_cnt [13]),
-	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10019_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10002_GND),
-	.SyncReset(SyncReset_X10019_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10010_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10010_Y10002_GND),
+	.SyncReset(SyncReset_X10010_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|brip_rec_A_0_Y__SyncLoad_X10019_Y10002_SIG ),
+	.SyncLoad(\i2c_device|brip_rec_A_0_Y__SyncLoad_X10010_Y10002_SIG ),
 	.LutOut(\i2c_device|brip_cnt[13]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|brip_cnt [13]));
-defparam \i2c_device|brip_cnt[13]_reg .coord_x = 17;
-defparam \i2c_device|brip_cnt[13]_reg .coord_y = 6;
-defparam \i2c_device|brip_cnt[13]_reg .coord_z = 1;
+defparam \i2c_device|brip_cnt[13]_reg .coord_x = 18;
+defparam \i2c_device|brip_cnt[13]_reg .coord_y = 10;
+defparam \i2c_device|brip_cnt[13]_reg .coord_z = 11;
 defparam \i2c_device|brip_cnt[13]_reg .mask = 16'hFF00;
 defparam \i2c_device|brip_cnt[13]_reg .modeMux = 1'b0;
 defparam \i2c_device|brip_cnt[13]_reg .FeedbackMux = 1'b0;
@@ -8667,16 +8650,16 @@ alta_slice \i2c_device|brip_cnt[18]_reg (
 	.D(\i2c_device|brip_cnt_dataa_10_combout [18]),
 	.Cin(),
 	.Qin(\i2c_device|brip_cnt [18]),
-	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10019_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10002_GND),
-	.SyncReset(SyncReset_X10019_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10010_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10010_Y10002_GND),
+	.SyncReset(SyncReset_X10010_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|brip_rec_A_0_Y__SyncLoad_X10019_Y10002_SIG ),
+	.SyncLoad(\i2c_device|brip_rec_A_0_Y__SyncLoad_X10010_Y10002_SIG ),
 	.LutOut(\i2c_device|brip_cnt[18]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|brip_cnt [18]));
-defparam \i2c_device|brip_cnt[18]_reg .coord_x = 17;
-defparam \i2c_device|brip_cnt[18]_reg .coord_y = 6;
+defparam \i2c_device|brip_cnt[18]_reg .coord_x = 18;
+defparam \i2c_device|brip_cnt[18]_reg .coord_y = 10;
 defparam \i2c_device|brip_cnt[18]_reg .coord_z = 8;
 defparam \i2c_device|brip_cnt[18]_reg .mask = 16'hFF00;
 defparam \i2c_device|brip_cnt[18]_reg .modeMux = 1'b0;
@@ -8686,24 +8669,24 @@ defparam \i2c_device|brip_cnt[18]_reg .BypassEn = 1'b1;
 defparam \i2c_device|brip_cnt[18]_reg .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|brip_cnt[20]_reg (
-	.A(),
+	.A(\i2c_device|brip_cnt_dataa_10_combout [20]),
 	.B(),
 	.C(vcc),
-	.D(\i2c_device|brip_cnt_dataa_10_combout [20]),
+	.D(),
 	.Cin(),
 	.Qin(\i2c_device|brip_cnt [20]),
-	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10019_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10002_GND),
-	.SyncReset(SyncReset_X10019_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10010_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10010_Y10002_GND),
+	.SyncReset(SyncReset_X10010_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|brip_rec_A_0_Y__SyncLoad_X10019_Y10002_SIG ),
+	.SyncLoad(\i2c_device|brip_rec_A_0_Y__SyncLoad_X10010_Y10002_SIG ),
 	.LutOut(\i2c_device|brip_cnt[20]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|brip_cnt [20]));
-defparam \i2c_device|brip_cnt[20]_reg .coord_x = 17;
-defparam \i2c_device|brip_cnt[20]_reg .coord_y = 6;
+defparam \i2c_device|brip_cnt[20]_reg .coord_x = 18;
+defparam \i2c_device|brip_cnt[20]_reg .coord_y = 10;
 defparam \i2c_device|brip_cnt[20]_reg .coord_z = 10;
-defparam \i2c_device|brip_cnt[20]_reg .mask = 16'hFF00;
+defparam \i2c_device|brip_cnt[20]_reg .mask = 16'hAAAA;
 defparam \i2c_device|brip_cnt[20]_reg .modeMux = 1'b0;
 defparam \i2c_device|brip_cnt[20]_reg .FeedbackMux = 1'b0;
 defparam \i2c_device|brip_cnt[20]_reg .ShiftMux = 1'b0;
@@ -8717,17 +8700,17 @@ alta_slice \i2c_device|brip_cnt[21]_reg (
 	.D(\i2c_device|brip_cnt_dataa_10_combout [21]),
 	.Cin(),
 	.Qin(\i2c_device|brip_cnt [21]),
-	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10019_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10002_GND),
-	.SyncReset(SyncReset_X10019_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10010_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10010_Y10002_GND),
+	.SyncReset(SyncReset_X10010_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|brip_rec_A_0_Y__SyncLoad_X10019_Y10002_SIG ),
+	.SyncLoad(\i2c_device|brip_rec_A_0_Y__SyncLoad_X10010_Y10002_SIG ),
 	.LutOut(\i2c_device|brip_cnt[21]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|brip_cnt [21]));
-defparam \i2c_device|brip_cnt[21]_reg .coord_x = 17;
-defparam \i2c_device|brip_cnt[21]_reg .coord_y = 6;
-defparam \i2c_device|brip_cnt[21]_reg .coord_z = 9;
+defparam \i2c_device|brip_cnt[21]_reg .coord_x = 18;
+defparam \i2c_device|brip_cnt[21]_reg .coord_y = 10;
+defparam \i2c_device|brip_cnt[21]_reg .coord_z = 6;
 defparam \i2c_device|brip_cnt[21]_reg .mask = 16'hFF00;
 defparam \i2c_device|brip_cnt[21]_reg .modeMux = 1'b0;
 defparam \i2c_device|brip_cnt[21]_reg .FeedbackMux = 1'b0;
@@ -8742,17 +8725,17 @@ alta_slice \i2c_device|brip_cnt[22]_reg (
 	.D(\i2c_device|brip_cnt_dataa_10_combout [22]),
 	.Cin(),
 	.Qin(\i2c_device|brip_cnt [22]),
-	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10019_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10002_GND),
-	.SyncReset(SyncReset_X10019_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10010_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10010_Y10002_GND),
+	.SyncReset(SyncReset_X10010_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|brip_rec_A_0_Y__SyncLoad_X10019_Y10002_SIG ),
+	.SyncLoad(\i2c_device|brip_rec_A_0_Y__SyncLoad_X10010_Y10002_SIG ),
 	.LutOut(\i2c_device|brip_cnt[22]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|brip_cnt [22]));
-defparam \i2c_device|brip_cnt[22]_reg .coord_x = 17;
-defparam \i2c_device|brip_cnt[22]_reg .coord_y = 6;
-defparam \i2c_device|brip_cnt[22]_reg .coord_z = 11;
+defparam \i2c_device|brip_cnt[22]_reg .coord_x = 18;
+defparam \i2c_device|brip_cnt[22]_reg .coord_y = 10;
+defparam \i2c_device|brip_cnt[22]_reg .coord_z = 9;
 defparam \i2c_device|brip_cnt[22]_reg .mask = 16'hFF00;
 defparam \i2c_device|brip_cnt[22]_reg .modeMux = 1'b0;
 defparam \i2c_device|brip_cnt[22]_reg .FeedbackMux = 1'b0;
@@ -8775,8 +8758,8 @@ alta_slice \i2c_device|brip_cnt_dataa_10 (
 	.LutOut(\i2c_device|brip_cnt_dataa_10_combout [10]),
 	.Cout(\i2c_device|brip_cnt_dataa_0_cout [11]),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_10 .coord_x = 16;
-defparam \i2c_device|brip_cnt_dataa_10 .coord_y = 7;
+defparam \i2c_device|brip_cnt_dataa_10 .coord_x = 17;
+defparam \i2c_device|brip_cnt_dataa_10 .coord_y = 11;
 defparam \i2c_device|brip_cnt_dataa_10 .coord_z = 10;
 defparam \i2c_device|brip_cnt_dataa_10 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_dataa_10 .modeMux = 1'b1;
@@ -8800,8 +8783,8 @@ alta_slice \i2c_device|brip_cnt_dataa_10_1 (
 	.LutOut(\i2c_device|brip_cnt_dataa_8_1_combout [2]),
 	.Cout(\i2c_device|brip_cnt_dataa_8_1_cout [3]),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_10_1 .coord_x = 17;
-defparam \i2c_device|brip_cnt_dataa_10_1 .coord_y = 7;
+defparam \i2c_device|brip_cnt_dataa_10_1 .coord_x = 18;
+defparam \i2c_device|brip_cnt_dataa_10_1 .coord_y = 11;
 defparam \i2c_device|brip_cnt_dataa_10_1 .coord_z = 2;
 defparam \i2c_device|brip_cnt_dataa_10_1 .mask = 16'h69D4;
 defparam \i2c_device|brip_cnt_dataa_10_1 .modeMux = 1'b1;
@@ -8811,9 +8794,9 @@ defparam \i2c_device|brip_cnt_dataa_10_1 .BypassEn = 1'b0;
 defparam \i2c_device|brip_cnt_dataa_10_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|brip_cnt_dataa_10_2 (
-	.A(\i2c_device|brip_cnt [10]),
-	.B(\i2c_device|brip_cnt [11]),
-	.C(\i2c_device|brip_cnt [18]),
+	.A(\i2c_device|brip_cnt [18]),
+	.B(\i2c_device|brip_cnt [10]),
+	.C(\i2c_device|brip_cnt [11]),
 	.D(\i2c_device|brip_cnt [13]),
 	.Cin(),
 	.Qin(),
@@ -8825,9 +8808,9 @@ alta_slice \i2c_device|brip_cnt_dataa_10_2 (
 	.LutOut(\i2c_device|brip_cnt_dataa_9_3_combout [2]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_10_2 .coord_x = 17;
-defparam \i2c_device|brip_cnt_dataa_10_2 .coord_y = 6;
-defparam \i2c_device|brip_cnt_dataa_10_2 .coord_z = 6;
+defparam \i2c_device|brip_cnt_dataa_10_2 .coord_x = 18;
+defparam \i2c_device|brip_cnt_dataa_10_2 .coord_y = 10;
+defparam \i2c_device|brip_cnt_dataa_10_2 .coord_z = 0;
 defparam \i2c_device|brip_cnt_dataa_10_2 .mask = 16'h0001;
 defparam \i2c_device|brip_cnt_dataa_10_2 .modeMux = 1'b0;
 defparam \i2c_device|brip_cnt_dataa_10_2 .FeedbackMux = 1'b0;
@@ -8850,8 +8833,8 @@ alta_slice \i2c_device|brip_cnt_dataa_11_1 (
 	.LutOut(\i2c_device|brip_cnt_dataa_8_1_combout [3]),
 	.Cout(\i2c_device|brip_cnt_dataa_8_1_cout [4]),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_11_1 .coord_x = 17;
-defparam \i2c_device|brip_cnt_dataa_11_1 .coord_y = 7;
+defparam \i2c_device|brip_cnt_dataa_11_1 .coord_x = 18;
+defparam \i2c_device|brip_cnt_dataa_11_1 .coord_y = 11;
 defparam \i2c_device|brip_cnt_dataa_11_1 .coord_z = 3;
 defparam \i2c_device|brip_cnt_dataa_11_1 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_dataa_11_1 .modeMux = 1'b1;
@@ -8861,9 +8844,9 @@ defparam \i2c_device|brip_cnt_dataa_11_1 .BypassEn = 1'b0;
 defparam \i2c_device|brip_cnt_dataa_11_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|brip_cnt_dataa_11_2 (
-	.A(\i2c_device|brip_cnt [11]),
+	.A(\i2c_device|brip_cnt [18]),
 	.B(\i2c_device|brip_cnt [10]),
-	.C(\i2c_device|brip_cnt [18]),
+	.C(\i2c_device|brip_cnt [11]),
 	.D(\i2c_device|brip_cnt [13]),
 	.Cin(),
 	.Qin(),
@@ -8875,10 +8858,10 @@ alta_slice \i2c_device|brip_cnt_dataa_11_2 (
 	.LutOut(\i2c_device|brip_cnt_dataa_9_2_combout [1]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_11_2 .coord_x = 17;
-defparam \i2c_device|brip_cnt_dataa_11_2 .coord_y = 6;
-defparam \i2c_device|brip_cnt_dataa_11_2 .coord_z = 5;
-defparam \i2c_device|brip_cnt_dataa_11_2 .mask = 16'h4000;
+defparam \i2c_device|brip_cnt_dataa_11_2 .coord_x = 18;
+defparam \i2c_device|brip_cnt_dataa_11_2 .coord_y = 10;
+defparam \i2c_device|brip_cnt_dataa_11_2 .coord_z = 7;
+defparam \i2c_device|brip_cnt_dataa_11_2 .mask = 16'h0800;
 defparam \i2c_device|brip_cnt_dataa_11_2 .modeMux = 1'b0;
 defparam \i2c_device|brip_cnt_dataa_11_2 .FeedbackMux = 1'b0;
 defparam \i2c_device|brip_cnt_dataa_11_2 .ShiftMux = 1'b0;
@@ -8900,8 +8883,8 @@ alta_slice \i2c_device|brip_cnt_dataa_12_1 (
 	.LutOut(\i2c_device|brip_cnt_dataa_8_1_combout [4]),
 	.Cout(\i2c_device|brip_cnt_dataa_8_1_cout [5]),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_12_1 .coord_x = 17;
-defparam \i2c_device|brip_cnt_dataa_12_1 .coord_y = 7;
+defparam \i2c_device|brip_cnt_dataa_12_1 .coord_x = 18;
+defparam \i2c_device|brip_cnt_dataa_12_1 .coord_y = 11;
 defparam \i2c_device|brip_cnt_dataa_12_1 .coord_z = 4;
 defparam \i2c_device|brip_cnt_dataa_12_1 .mask = 16'h69D4;
 defparam \i2c_device|brip_cnt_dataa_12_1 .modeMux = 1'b1;
@@ -8911,8 +8894,8 @@ defparam \i2c_device|brip_cnt_dataa_12_1 .BypassEn = 1'b0;
 defparam \i2c_device|brip_cnt_dataa_12_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|brip_cnt_dataa_13 (
-	.A(\i2c_device|brip_cnt [13]),
-	.B(vcc),
+	.A(vcc),
+	.B(\i2c_device|brip_cnt [13]),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|brip_cnt_dataa_0_cout [13]),
@@ -8925,8 +8908,8 @@ alta_slice \i2c_device|brip_cnt_dataa_13 (
 	.LutOut(\i2c_device|brip_cnt_dataa_10_combout [13]),
 	.Cout(\i2c_device|brip_cnt_dataa_0_cout [14]),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_13 .coord_x = 16;
-defparam \i2c_device|brip_cnt_dataa_13 .coord_y = 7;
+defparam \i2c_device|brip_cnt_dataa_13 .coord_x = 17;
+defparam \i2c_device|brip_cnt_dataa_13 .coord_y = 11;
 defparam \i2c_device|brip_cnt_dataa_13 .coord_z = 13;
 defparam \i2c_device|brip_cnt_dataa_13 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_dataa_13 .modeMux = 1'b1;
@@ -8936,8 +8919,8 @@ defparam \i2c_device|brip_cnt_dataa_13 .BypassEn = 1'b0;
 defparam \i2c_device|brip_cnt_dataa_13 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|brip_cnt_dataa_13_1 (
-	.A(vcc),
-	.B(\i2c_device|brip_cnt [13]),
+	.A(\i2c_device|brip_cnt [13]),
+	.B(vcc),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|brip_cnt_dataa_8_1_cout [5]),
@@ -8950,10 +8933,10 @@ alta_slice \i2c_device|brip_cnt_dataa_13_1 (
 	.LutOut(\i2c_device|brip_cnt_dataa_8_1_combout [5]),
 	.Cout(\i2c_device|brip_cnt_dataa_8_1_cout [6]),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_13_1 .coord_x = 17;
-defparam \i2c_device|brip_cnt_dataa_13_1 .coord_y = 7;
+defparam \i2c_device|brip_cnt_dataa_13_1 .coord_x = 18;
+defparam \i2c_device|brip_cnt_dataa_13_1 .coord_y = 11;
 defparam \i2c_device|brip_cnt_dataa_13_1 .coord_z = 5;
-defparam \i2c_device|brip_cnt_dataa_13_1 .mask = 16'h69D4;
+defparam \i2c_device|brip_cnt_dataa_13_1 .mask = 16'h69B2;
 defparam \i2c_device|brip_cnt_dataa_13_1 .modeMux = 1'b1;
 defparam \i2c_device|brip_cnt_dataa_13_1 .FeedbackMux = 1'b0;
 defparam \i2c_device|brip_cnt_dataa_13_1 .ShiftMux = 1'b0;
@@ -8961,8 +8944,8 @@ defparam \i2c_device|brip_cnt_dataa_13_1 .BypassEn = 1'b0;
 defparam \i2c_device|brip_cnt_dataa_13_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|brip_cnt_dataa_14_1 (
-	.A(vcc),
-	.B(\i2c_device|brip_cnt [14]),
+	.A(\i2c_device|brip_cnt [14]),
+	.B(vcc),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|brip_cnt_dataa_8_1_cout [6]),
@@ -8975,8 +8958,8 @@ alta_slice \i2c_device|brip_cnt_dataa_14_1 (
 	.LutOut(\i2c_device|brip_cnt_dataa_8_1_combout [6]),
 	.Cout(\i2c_device|brip_cnt_dataa_8_1_cout [7]),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_14_1 .coord_x = 17;
-defparam \i2c_device|brip_cnt_dataa_14_1 .coord_y = 7;
+defparam \i2c_device|brip_cnt_dataa_14_1 .coord_x = 18;
+defparam \i2c_device|brip_cnt_dataa_14_1 .coord_y = 11;
 defparam \i2c_device|brip_cnt_dataa_14_1 .coord_z = 6;
 defparam \i2c_device|brip_cnt_dataa_14_1 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_dataa_14_1 .modeMux = 1'b1;
@@ -9000,8 +8983,8 @@ alta_slice \i2c_device|brip_cnt_dataa_15_1 (
 	.LutOut(\i2c_device|brip_cnt_dataa_8_1_combout [7]),
 	.Cout(\i2c_device|brip_cnt_dataa_8_1_cout [8]),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_15_1 .coord_x = 17;
-defparam \i2c_device|brip_cnt_dataa_15_1 .coord_y = 7;
+defparam \i2c_device|brip_cnt_dataa_15_1 .coord_x = 18;
+defparam \i2c_device|brip_cnt_dataa_15_1 .coord_y = 11;
 defparam \i2c_device|brip_cnt_dataa_15_1 .coord_z = 7;
 defparam \i2c_device|brip_cnt_dataa_15_1 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_dataa_15_1 .modeMux = 1'b1;
@@ -9025,8 +9008,8 @@ alta_slice \i2c_device|brip_cnt_dataa_16_1 (
 	.LutOut(\i2c_device|brip_cnt_dataa_8_1_combout [8]),
 	.Cout(\i2c_device|brip_cnt_dataa_8_1_cout [9]),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_16_1 .coord_x = 17;
-defparam \i2c_device|brip_cnt_dataa_16_1 .coord_y = 7;
+defparam \i2c_device|brip_cnt_dataa_16_1 .coord_x = 18;
+defparam \i2c_device|brip_cnt_dataa_16_1 .coord_y = 11;
 defparam \i2c_device|brip_cnt_dataa_16_1 .coord_z = 8;
 defparam \i2c_device|brip_cnt_dataa_16_1 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_dataa_16_1 .modeMux = 1'b1;
@@ -9050,8 +9033,8 @@ alta_slice \i2c_device|brip_cnt_dataa_17_1 (
 	.LutOut(\i2c_device|brip_cnt_dataa_8_1_combout [9]),
 	.Cout(\i2c_device|brip_cnt_dataa_8_1_cout [10]),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_17_1 .coord_x = 17;
-defparam \i2c_device|brip_cnt_dataa_17_1 .coord_y = 7;
+defparam \i2c_device|brip_cnt_dataa_17_1 .coord_x = 18;
+defparam \i2c_device|brip_cnt_dataa_17_1 .coord_y = 11;
 defparam \i2c_device|brip_cnt_dataa_17_1 .coord_z = 9;
 defparam \i2c_device|brip_cnt_dataa_17_1 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_dataa_17_1 .modeMux = 1'b1;
@@ -9075,9 +9058,9 @@ alta_slice \i2c_device|brip_cnt_dataa_17_2 (
 	.LutOut(\i2c_device|brip_cnt_datad_6_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_17_2 .coord_x = 16;
-defparam \i2c_device|brip_cnt_dataa_17_2 .coord_y = 6;
-defparam \i2c_device|brip_cnt_dataa_17_2 .coord_z = 7;
+defparam \i2c_device|brip_cnt_dataa_17_2 .coord_x = 17;
+defparam \i2c_device|brip_cnt_dataa_17_2 .coord_y = 10;
+defparam \i2c_device|brip_cnt_dataa_17_2 .coord_z = 9;
 defparam \i2c_device|brip_cnt_dataa_17_2 .mask = 16'h0001;
 defparam \i2c_device|brip_cnt_dataa_17_2 .modeMux = 1'b0;
 defparam \i2c_device|brip_cnt_dataa_17_2 .FeedbackMux = 1'b0;
@@ -9100,8 +9083,8 @@ alta_slice \i2c_device|brip_cnt_dataa_18 (
 	.LutOut(\i2c_device|brip_cnt_dataa_10_combout [18]),
 	.Cout(\i2c_device|brip_cnt_dataa_0_cout [19]),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_18 .coord_x = 16;
-defparam \i2c_device|brip_cnt_dataa_18 .coord_y = 6;
+defparam \i2c_device|brip_cnt_dataa_18 .coord_x = 17;
+defparam \i2c_device|brip_cnt_dataa_18 .coord_y = 10;
 defparam \i2c_device|brip_cnt_dataa_18 .coord_z = 2;
 defparam \i2c_device|brip_cnt_dataa_18 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_dataa_18 .modeMux = 1'b1;
@@ -9125,8 +9108,8 @@ alta_slice \i2c_device|brip_cnt_dataa_18_1 (
 	.LutOut(\i2c_device|brip_cnt_dataa_8_1_combout [10]),
 	.Cout(\i2c_device|brip_cnt_dataa_8_1_cout [11]),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_18_1 .coord_x = 17;
-defparam \i2c_device|brip_cnt_dataa_18_1 .coord_y = 7;
+defparam \i2c_device|brip_cnt_dataa_18_1 .coord_x = 18;
+defparam \i2c_device|brip_cnt_dataa_18_1 .coord_y = 11;
 defparam \i2c_device|brip_cnt_dataa_18_1 .coord_z = 10;
 defparam \i2c_device|brip_cnt_dataa_18_1 .mask = 16'h69D4;
 defparam \i2c_device|brip_cnt_dataa_18_1 .modeMux = 1'b1;
@@ -9150,8 +9133,8 @@ alta_slice \i2c_device|brip_cnt_dataa_19_1 (
 	.LutOut(\i2c_device|brip_cnt_dataa_8_1_combout [11]),
 	.Cout(\i2c_device|brip_cnt_dataa_8_1_cout [12]),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_19_1 .coord_x = 17;
-defparam \i2c_device|brip_cnt_dataa_19_1 .coord_y = 7;
+defparam \i2c_device|brip_cnt_dataa_19_1 .coord_x = 18;
+defparam \i2c_device|brip_cnt_dataa_19_1 .coord_y = 11;
 defparam \i2c_device|brip_cnt_dataa_19_1 .coord_z = 11;
 defparam \i2c_device|brip_cnt_dataa_19_1 .mask = 16'h69D4;
 defparam \i2c_device|brip_cnt_dataa_19_1 .modeMux = 1'b1;
@@ -9175,8 +9158,8 @@ alta_slice \i2c_device|brip_cnt_dataa_20 (
 	.LutOut(\i2c_device|brip_cnt_dataa_10_combout [20]),
 	.Cout(\i2c_device|brip_cnt_dataa_0_cout [21]),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_20 .coord_x = 16;
-defparam \i2c_device|brip_cnt_dataa_20 .coord_y = 6;
+defparam \i2c_device|brip_cnt_dataa_20 .coord_x = 17;
+defparam \i2c_device|brip_cnt_dataa_20 .coord_y = 10;
 defparam \i2c_device|brip_cnt_dataa_20 .coord_z = 4;
 defparam \i2c_device|brip_cnt_dataa_20 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_dataa_20 .modeMux = 1'b1;
@@ -9186,8 +9169,8 @@ defparam \i2c_device|brip_cnt_dataa_20 .BypassEn = 1'b0;
 defparam \i2c_device|brip_cnt_dataa_20 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|brip_cnt_dataa_20_1 (
-	.A(\i2c_device|brip_cnt [20]),
-	.B(vcc),
+	.A(vcc),
+	.B(\i2c_device|brip_cnt [20]),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|brip_cnt_dataa_8_1_cout [12]),
@@ -9200,8 +9183,8 @@ alta_slice \i2c_device|brip_cnt_dataa_20_1 (
 	.LutOut(\i2c_device|brip_cnt_dataa_8_1_combout [12]),
 	.Cout(\i2c_device|brip_cnt_dataa_8_1_cout [13]),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_20_1 .coord_x = 17;
-defparam \i2c_device|brip_cnt_dataa_20_1 .coord_y = 7;
+defparam \i2c_device|brip_cnt_dataa_20_1 .coord_x = 18;
+defparam \i2c_device|brip_cnt_dataa_20_1 .coord_y = 11;
 defparam \i2c_device|brip_cnt_dataa_20_1 .coord_z = 12;
 defparam \i2c_device|brip_cnt_dataa_20_1 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_dataa_20_1 .modeMux = 1'b1;
@@ -9211,8 +9194,8 @@ defparam \i2c_device|brip_cnt_dataa_20_1 .BypassEn = 1'b0;
 defparam \i2c_device|brip_cnt_dataa_20_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|brip_cnt_dataa_21 (
-	.A(vcc),
-	.B(\i2c_device|brip_cnt [21]),
+	.A(\i2c_device|brip_cnt [21]),
+	.B(vcc),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|brip_cnt_dataa_0_cout [21]),
@@ -9225,8 +9208,8 @@ alta_slice \i2c_device|brip_cnt_dataa_21 (
 	.LutOut(\i2c_device|brip_cnt_dataa_10_combout [21]),
 	.Cout(\i2c_device|brip_cnt_dataa_0_cout [22]),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_21 .coord_x = 16;
-defparam \i2c_device|brip_cnt_dataa_21 .coord_y = 6;
+defparam \i2c_device|brip_cnt_dataa_21 .coord_x = 17;
+defparam \i2c_device|brip_cnt_dataa_21 .coord_y = 10;
 defparam \i2c_device|brip_cnt_dataa_21 .coord_z = 5;
 defparam \i2c_device|brip_cnt_dataa_21 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_dataa_21 .modeMux = 1'b1;
@@ -9236,8 +9219,8 @@ defparam \i2c_device|brip_cnt_dataa_21 .BypassEn = 1'b0;
 defparam \i2c_device|brip_cnt_dataa_21 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|brip_cnt_dataa_21_1 (
-	.A(\i2c_device|brip_cnt [21]),
-	.B(vcc),
+	.A(vcc),
+	.B(\i2c_device|brip_cnt [21]),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|brip_cnt_dataa_8_1_cout [13]),
@@ -9250,8 +9233,8 @@ alta_slice \i2c_device|brip_cnt_dataa_21_1 (
 	.LutOut(\i2c_device|brip_cnt_dataa_8_1_combout [13]),
 	.Cout(\i2c_device|brip_cnt_dataa_8_1_cout [14]),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_21_1 .coord_x = 17;
-defparam \i2c_device|brip_cnt_dataa_21_1 .coord_y = 7;
+defparam \i2c_device|brip_cnt_dataa_21_1 .coord_x = 18;
+defparam \i2c_device|brip_cnt_dataa_21_1 .coord_y = 11;
 defparam \i2c_device|brip_cnt_dataa_21_1 .coord_z = 13;
 defparam \i2c_device|brip_cnt_dataa_21_1 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_dataa_21_1 .modeMux = 1'b1;
@@ -9275,8 +9258,8 @@ alta_slice \i2c_device|brip_cnt_dataa_22 (
 	.LutOut(\i2c_device|brip_cnt_dataa_10_combout [22]),
 	.Cout(\i2c_device|brip_cnt_dataa_0_cout [23]),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_22 .coord_x = 16;
-defparam \i2c_device|brip_cnt_dataa_22 .coord_y = 6;
+defparam \i2c_device|brip_cnt_dataa_22 .coord_x = 17;
+defparam \i2c_device|brip_cnt_dataa_22 .coord_y = 10;
 defparam \i2c_device|brip_cnt_dataa_22 .coord_z = 6;
 defparam \i2c_device|brip_cnt_dataa_22 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_dataa_22 .modeMux = 1'b1;
@@ -9300,8 +9283,8 @@ alta_slice \i2c_device|brip_cnt_dataa_22_1 (
 	.LutOut(\i2c_device|brip_cnt_dataa_8_1_combout [14]),
 	.Cout(\i2c_device|brip_cnt_dataa_8_1_cout [15]),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_22_1 .coord_x = 17;
-defparam \i2c_device|brip_cnt_dataa_22_1 .coord_y = 7;
+defparam \i2c_device|brip_cnt_dataa_22_1 .coord_x = 18;
+defparam \i2c_device|brip_cnt_dataa_22_1 .coord_y = 11;
 defparam \i2c_device|brip_cnt_dataa_22_1 .coord_z = 14;
 defparam \i2c_device|brip_cnt_dataa_22_1 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_dataa_22_1 .modeMux = 1'b1;
@@ -9312,9 +9295,9 @@ defparam \i2c_device|brip_cnt_dataa_22_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|brip_cnt_dataa_5_1 (
 	.A(vcc),
-	.B(\i2c_device|brip_cnt [2]),
-	.C(\i2c_device|brip_cnt [5]),
-	.D(\i2c_device|brip_cnt [1]),
+	.B(\i2c_device|brip_cnt [1]),
+	.C(\i2c_device|brip_cnt [2]),
+	.D(\i2c_device|brip_cnt [5]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -9325,9 +9308,9 @@ alta_slice \i2c_device|brip_cnt_dataa_5_1 (
 	.LutOut(\i2c_device|brip_cnt_datad_6_combout [2]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_5_1 .coord_x = 16;
-defparam \i2c_device|brip_cnt_dataa_5_1 .coord_y = 6;
-defparam \i2c_device|brip_cnt_dataa_5_1 .coord_z = 10;
+defparam \i2c_device|brip_cnt_dataa_5_1 .coord_x = 17;
+defparam \i2c_device|brip_cnt_dataa_5_1 .coord_y = 10;
+defparam \i2c_device|brip_cnt_dataa_5_1 .coord_z = 11;
 defparam \i2c_device|brip_cnt_dataa_5_1 .mask = 16'h0003;
 defparam \i2c_device|brip_cnt_dataa_5_1 .modeMux = 1'b0;
 defparam \i2c_device|brip_cnt_dataa_5_1 .FeedbackMux = 1'b0;
@@ -9338,8 +9321,8 @@ defparam \i2c_device|brip_cnt_dataa_5_1 .CarryEnb = 1'b1;
 alta_slice \i2c_device|brip_cnt_dataa_7_1 (
 	.A(\i2c_device|brip_cnt [0]),
 	.B(\i2c_device|brip_cnt [3]),
-	.C(\i2c_device|brip_cnt [7]),
-	.D(\i2c_device|brip_cnt [4]),
+	.C(\i2c_device|brip_cnt [4]),
+	.D(\i2c_device|brip_cnt [7]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -9350,9 +9333,9 @@ alta_slice \i2c_device|brip_cnt_dataa_7_1 (
 	.LutOut(\i2c_device|brip_cnt_datad_6_combout [1]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_7_1 .coord_x = 16;
-defparam \i2c_device|brip_cnt_dataa_7_1 .coord_y = 6;
-defparam \i2c_device|brip_cnt_dataa_7_1 .coord_z = 11;
+defparam \i2c_device|brip_cnt_dataa_7_1 .coord_x = 17;
+defparam \i2c_device|brip_cnt_dataa_7_1 .coord_y = 10;
+defparam \i2c_device|brip_cnt_dataa_7_1 .coord_z = 12;
 defparam \i2c_device|brip_cnt_dataa_7_1 .mask = 16'h0001;
 defparam \i2c_device|brip_cnt_dataa_7_1 .modeMux = 1'b0;
 defparam \i2c_device|brip_cnt_dataa_7_1 .FeedbackMux = 1'b0;
@@ -9375,8 +9358,8 @@ alta_slice \i2c_device|brip_cnt_dataa_8_1 (
 	.LutOut(\i2c_device|brip_cnt_dataa_8_1_combout [0]),
 	.Cout(\i2c_device|brip_cnt_dataa_8_1_cout [1]),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_8_1 .coord_x = 17;
-defparam \i2c_device|brip_cnt_dataa_8_1 .coord_y = 7;
+defparam \i2c_device|brip_cnt_dataa_8_1 .coord_x = 18;
+defparam \i2c_device|brip_cnt_dataa_8_1 .coord_y = 11;
 defparam \i2c_device|brip_cnt_dataa_8_1 .coord_z = 0;
 defparam \i2c_device|brip_cnt_dataa_8_1 .mask = 16'h66DD;
 defparam \i2c_device|brip_cnt_dataa_8_1 .modeMux = 1'b1;
@@ -9400,8 +9383,8 @@ alta_slice \i2c_device|brip_cnt_dataa_8_1_cout_cin_15 (
 	.LutOut(\i2c_device|brip_cnt_dataa_8_1_cout_cin_15_combout ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_8_1_cout_cin_15 .coord_x = 17;
-defparam \i2c_device|brip_cnt_dataa_8_1_cout_cin_15 .coord_y = 7;
+defparam \i2c_device|brip_cnt_dataa_8_1_cout_cin_15 .coord_x = 18;
+defparam \i2c_device|brip_cnt_dataa_8_1_cout_cin_15 .coord_y = 11;
 defparam \i2c_device|brip_cnt_dataa_8_1_cout_cin_15 .coord_z = 15;
 defparam \i2c_device|brip_cnt_dataa_8_1_cout_cin_15 .mask = 16'hF0F0;
 defparam \i2c_device|brip_cnt_dataa_8_1_cout_cin_15 .modeMux = 1'b1;
@@ -9412,9 +9395,9 @@ defparam \i2c_device|brip_cnt_dataa_8_1_cout_cin_15 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|brip_cnt_dataa_8_1_cout_cin_15_combout_A_Y_combout (
 	.A(\i2c_device|brip_cnt_dataa_9_2_combout [2]),
-	.B(\i2c_device|brip_cnt_dataa_9_2_combout [1]),
+	.B(\i2c_device|brip_cnt_dataa_9_3_combout [0]),
 	.C(\i2c_device|brip_cnt_dataa_8_1_cout_cin_15_combout ),
-	.D(\i2c_device|brip_cnt_dataa_9_3_combout [0]),
+	.D(\i2c_device|brip_cnt_dataa_9_2_combout [1]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -9425,9 +9408,9 @@ alta_slice \i2c_device|brip_cnt_dataa_8_1_cout_cin_15_combout_A_Y_combout (
 	.LutOut(\i2c_device|brip_cnt_dataa_8_1_cout_cin_15_combout_A_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_8_1_cout_cin_15_combout_A_Y_combout .coord_x = 17;
-defparam \i2c_device|brip_cnt_dataa_8_1_cout_cin_15_combout_A_Y_combout .coord_y = 6;
-defparam \i2c_device|brip_cnt_dataa_8_1_cout_cin_15_combout_A_Y_combout .coord_z = 0;
+defparam \i2c_device|brip_cnt_dataa_8_1_cout_cin_15_combout_A_Y_combout .coord_x = 18;
+defparam \i2c_device|brip_cnt_dataa_8_1_cout_cin_15_combout_A_Y_combout .coord_y = 10;
+defparam \i2c_device|brip_cnt_dataa_8_1_cout_cin_15_combout_A_Y_combout .coord_z = 3;
 defparam \i2c_device|brip_cnt_dataa_8_1_cout_cin_15_combout_A_Y_combout .mask = 16'h70F0;
 defparam \i2c_device|brip_cnt_dataa_8_1_cout_cin_15_combout_A_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|brip_cnt_dataa_8_1_cout_cin_15_combout_A_Y_combout .FeedbackMux = 1'b0;
@@ -9450,8 +9433,8 @@ alta_slice \i2c_device|brip_cnt_dataa_9_1 (
 	.LutOut(\i2c_device|brip_cnt_dataa_8_1_combout [1]),
 	.Cout(\i2c_device|brip_cnt_dataa_8_1_cout [2]),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_9_1 .coord_x = 17;
-defparam \i2c_device|brip_cnt_dataa_9_1 .coord_y = 7;
+defparam \i2c_device|brip_cnt_dataa_9_1 .coord_x = 18;
+defparam \i2c_device|brip_cnt_dataa_9_1 .coord_y = 11;
 defparam \i2c_device|brip_cnt_dataa_9_1 .coord_z = 1;
 defparam \i2c_device|brip_cnt_dataa_9_1 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_dataa_9_1 .modeMux = 1'b1;
@@ -9461,10 +9444,10 @@ defparam \i2c_device|brip_cnt_dataa_9_1 .BypassEn = 1'b0;
 defparam \i2c_device|brip_cnt_dataa_9_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|brip_cnt_dataa_9_2 (
-	.A(\i2c_device|brip_cnt [8]),
-	.B(\i2c_device|brip_cnt [19]),
-	.C(\i2c_device|brip_cnt [12]),
-	.D(\i2c_device|brip_cnt [9]),
+	.A(\i2c_device|brip_cnt [19]),
+	.B(\i2c_device|brip_cnt [12]),
+	.C(\i2c_device|brip_cnt [9]),
+	.D(\i2c_device|brip_cnt [8]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -9475,10 +9458,10 @@ alta_slice \i2c_device|brip_cnt_dataa_9_2 (
 	.LutOut(\i2c_device|brip_cnt_dataa_9_2_combout [2]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_9_2 .coord_x = 17;
-defparam \i2c_device|brip_cnt_dataa_9_2 .coord_y = 6;
+defparam \i2c_device|brip_cnt_dataa_9_2 .coord_x = 18;
+defparam \i2c_device|brip_cnt_dataa_9_2 .coord_y = 10;
 defparam \i2c_device|brip_cnt_dataa_9_2 .coord_z = 2;
-defparam \i2c_device|brip_cnt_dataa_9_2 .mask = 16'h0080;
+defparam \i2c_device|brip_cnt_dataa_9_2 .mask = 16'h0800;
 defparam \i2c_device|brip_cnt_dataa_9_2 .modeMux = 1'b0;
 defparam \i2c_device|brip_cnt_dataa_9_2 .FeedbackMux = 1'b0;
 defparam \i2c_device|brip_cnt_dataa_9_2 .ShiftMux = 1'b0;
@@ -9486,10 +9469,10 @@ defparam \i2c_device|brip_cnt_dataa_9_2 .BypassEn = 1'b0;
 defparam \i2c_device|brip_cnt_dataa_9_2 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|brip_cnt_dataa_9_3 (
-	.A(\i2c_device|brip_cnt [8]),
-	.B(\i2c_device|brip_cnt [19]),
-	.C(\i2c_device|brip_cnt [12]),
-	.D(\i2c_device|brip_cnt [9]),
+	.A(\i2c_device|brip_cnt [19]),
+	.B(\i2c_device|brip_cnt [12]),
+	.C(\i2c_device|brip_cnt [9]),
+	.D(\i2c_device|brip_cnt [8]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -9500,9 +9483,9 @@ alta_slice \i2c_device|brip_cnt_dataa_9_3 (
 	.LutOut(\i2c_device|brip_cnt_dataa_9_3_combout [1]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_9_3 .coord_x = 17;
-defparam \i2c_device|brip_cnt_dataa_9_3 .coord_y = 6;
-defparam \i2c_device|brip_cnt_dataa_9_3 .coord_z = 3;
+defparam \i2c_device|brip_cnt_dataa_9_3 .coord_x = 18;
+defparam \i2c_device|brip_cnt_dataa_9_3 .coord_y = 10;
+defparam \i2c_device|brip_cnt_dataa_9_3 .coord_z = 5;
 defparam \i2c_device|brip_cnt_dataa_9_3 .mask = 16'h0001;
 defparam \i2c_device|brip_cnt_dataa_9_3 .modeMux = 1'b0;
 defparam \i2c_device|brip_cnt_dataa_9_3 .FeedbackMux = 1'b0;
@@ -9511,9 +9494,9 @@ defparam \i2c_device|brip_cnt_dataa_9_3 .BypassEn = 1'b0;
 defparam \i2c_device|brip_cnt_dataa_9_3 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|brip_cnt_dataa_9_3_combout_combout_0 (
-	.A(\i2c_device|brip_cnt_datad_6_combout [2]),
-	.B(\i2c_device|brip_cnt_datad_6_combout [1]),
-	.C(\i2c_device|brip_cnt_datad_6_combout [3]),
+	.A(\i2c_device|brip_cnt_datad_6_combout [1]),
+	.B(\i2c_device|brip_cnt_datad_6_combout [3]),
+	.C(\i2c_device|brip_cnt_datad_6_combout [2]),
 	.D(\i2c_device|brip_cnt_datad_6_combout [0]),
 	.Cin(),
 	.Qin(),
@@ -9525,9 +9508,9 @@ alta_slice \i2c_device|brip_cnt_dataa_9_3_combout_combout_0 (
 	.LutOut(\i2c_device|brip_cnt_dataa_9_3_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|brip_cnt_dataa_9_3_combout_combout_0 .coord_x = 16;
-defparam \i2c_device|brip_cnt_dataa_9_3_combout_combout_0 .coord_y = 6;
-defparam \i2c_device|brip_cnt_dataa_9_3_combout_combout_0 .coord_z = 9;
+defparam \i2c_device|brip_cnt_dataa_9_3_combout_combout_0 .coord_x = 17;
+defparam \i2c_device|brip_cnt_dataa_9_3_combout_combout_0 .coord_y = 10;
+defparam \i2c_device|brip_cnt_dataa_9_3_combout_combout_0 .coord_z = 10;
 defparam \i2c_device|brip_cnt_dataa_9_3_combout_combout_0 .mask = 16'h8000;
 defparam \i2c_device|brip_cnt_dataa_9_3_combout_combout_0 .modeMux = 1'b0;
 defparam \i2c_device|brip_cnt_dataa_9_3_combout_combout_0 .FeedbackMux = 1'b0;
@@ -9536,10 +9519,10 @@ defparam \i2c_device|brip_cnt_dataa_9_3_combout_combout_0 .BypassEn = 1'b0;
 defparam \i2c_device|brip_cnt_dataa_9_3_combout_combout_0 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|brip_cnt_datad_6 (
-	.A(\i2c_device|brip_cnt [20]),
+	.A(\i2c_device|brip_cnt [21]),
 	.B(\i2c_device|brip_cnt [6]),
 	.C(\i2c_device|brip_cnt [16]),
-	.D(\i2c_device|brip_cnt [21]),
+	.D(\i2c_device|brip_cnt [20]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -9550,9 +9533,9 @@ alta_slice \i2c_device|brip_cnt_datad_6 (
 	.LutOut(\i2c_device|brip_cnt_datad_6_combout [3]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|brip_cnt_datad_6 .coord_x = 16;
-defparam \i2c_device|brip_cnt_datad_6 .coord_y = 6;
-defparam \i2c_device|brip_cnt_datad_6 .coord_z = 8;
+defparam \i2c_device|brip_cnt_datad_6 .coord_x = 17;
+defparam \i2c_device|brip_cnt_datad_6 .coord_y = 10;
+defparam \i2c_device|brip_cnt_datad_6 .coord_z = 7;
 defparam \i2c_device|brip_cnt_datad_6 .mask = 16'h0001;
 defparam \i2c_device|brip_cnt_datad_6 .modeMux = 1'b0;
 defparam \i2c_device|brip_cnt_datad_6 .FeedbackMux = 1'b0;
@@ -9567,16 +9550,16 @@ alta_slice \i2c_device|brip_cnt_q_0 (
 	.D(vcc),
 	.Cin(),
 	.Qin(\i2c_device|brip_cnt [0]),
-	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10011_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10011_Y10001_GND),
-	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10011_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10008_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10008_Y10001_GND),
+	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10008_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10011_Y10001_GND),
+	.SyncLoad(SyncLoad_X10008_Y10001_GND),
 	.LutOut(\i2c_device|brip_cnt_dataa_0_combout ),
 	.Cout(\i2c_device|brip_cnt_dataa_0_cout [1]),
 	.Q(\i2c_device|brip_cnt [0]));
-defparam \i2c_device|brip_cnt_q_0 .coord_x = 16;
-defparam \i2c_device|brip_cnt_q_0 .coord_y = 7;
+defparam \i2c_device|brip_cnt_q_0 .coord_x = 17;
+defparam \i2c_device|brip_cnt_q_0 .coord_y = 11;
 defparam \i2c_device|brip_cnt_q_0 .coord_z = 0;
 defparam \i2c_device|brip_cnt_q_0 .mask = 16'h66DD;
 defparam \i2c_device|brip_cnt_q_0 .modeMux = 1'b1;
@@ -9592,16 +9575,16 @@ alta_slice \i2c_device|brip_cnt_q_1 (
 	.D(vcc),
 	.Cin(\i2c_device|brip_cnt_dataa_0_cout [1]),
 	.Qin(\i2c_device|brip_cnt [1]),
-	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10011_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10011_Y10001_GND),
-	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10011_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10008_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10008_Y10001_GND),
+	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10008_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10011_Y10001_GND),
+	.SyncLoad(SyncLoad_X10008_Y10001_GND),
 	.LutOut(\i2c_device|brip_cnt_dataa_1_combout ),
 	.Cout(\i2c_device|brip_cnt_dataa_0_cout [2]),
 	.Q(\i2c_device|brip_cnt [1]));
-defparam \i2c_device|brip_cnt_q_1 .coord_x = 16;
-defparam \i2c_device|brip_cnt_q_1 .coord_y = 7;
+defparam \i2c_device|brip_cnt_q_1 .coord_x = 17;
+defparam \i2c_device|brip_cnt_q_1 .coord_y = 11;
 defparam \i2c_device|brip_cnt_q_1 .coord_z = 1;
 defparam \i2c_device|brip_cnt_q_1 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_q_1 .modeMux = 1'b1;
@@ -9617,16 +9600,16 @@ alta_slice \i2c_device|brip_cnt_q_11 (
 	.D(vcc),
 	.Cin(\i2c_device|brip_cnt_dataa_0_cout [11]),
 	.Qin(\i2c_device|brip_cnt [11]),
-	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10011_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10011_Y10001_GND),
-	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10011_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10008_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10008_Y10001_GND),
+	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10008_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10011_Y10001_GND),
+	.SyncLoad(SyncLoad_X10008_Y10001_GND),
 	.LutOut(\i2c_device|brip_cnt_dataa_11_combout ),
 	.Cout(\i2c_device|brip_cnt_dataa_0_cout [12]),
 	.Q(\i2c_device|brip_cnt [11]));
-defparam \i2c_device|brip_cnt_q_11 .coord_x = 16;
-defparam \i2c_device|brip_cnt_q_11 .coord_y = 7;
+defparam \i2c_device|brip_cnt_q_11 .coord_x = 17;
+defparam \i2c_device|brip_cnt_q_11 .coord_y = 11;
 defparam \i2c_device|brip_cnt_q_11 .coord_z = 11;
 defparam \i2c_device|brip_cnt_q_11 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_q_11 .modeMux = 1'b1;
@@ -9642,16 +9625,16 @@ alta_slice \i2c_device|brip_cnt_q_12 (
 	.D(vcc),
 	.Cin(\i2c_device|brip_cnt_dataa_0_cout [12]),
 	.Qin(\i2c_device|brip_cnt [12]),
-	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10011_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10011_Y10001_GND),
-	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10011_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10008_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10008_Y10001_GND),
+	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10008_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10011_Y10001_GND),
+	.SyncLoad(SyncLoad_X10008_Y10001_GND),
 	.LutOut(\i2c_device|brip_cnt_dataa_12_combout ),
 	.Cout(\i2c_device|brip_cnt_dataa_0_cout [13]),
 	.Q(\i2c_device|brip_cnt [12]));
-defparam \i2c_device|brip_cnt_q_12 .coord_x = 16;
-defparam \i2c_device|brip_cnt_q_12 .coord_y = 7;
+defparam \i2c_device|brip_cnt_q_12 .coord_x = 17;
+defparam \i2c_device|brip_cnt_q_12 .coord_y = 11;
 defparam \i2c_device|brip_cnt_q_12 .coord_z = 12;
 defparam \i2c_device|brip_cnt_q_12 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_q_12 .modeMux = 1'b1;
@@ -9667,16 +9650,16 @@ alta_slice \i2c_device|brip_cnt_q_14 (
 	.D(vcc),
 	.Cin(\i2c_device|brip_cnt_dataa_0_cout [14]),
 	.Qin(\i2c_device|brip_cnt [14]),
-	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10011_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10011_Y10001_GND),
-	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10011_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10008_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10008_Y10001_GND),
+	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10008_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10011_Y10001_GND),
+	.SyncLoad(SyncLoad_X10008_Y10001_GND),
 	.LutOut(\i2c_device|brip_cnt_dataa_14_combout ),
 	.Cout(\i2c_device|brip_cnt_dataa_0_cout [15]),
 	.Q(\i2c_device|brip_cnt [14]));
-defparam \i2c_device|brip_cnt_q_14 .coord_x = 16;
-defparam \i2c_device|brip_cnt_q_14 .coord_y = 7;
+defparam \i2c_device|brip_cnt_q_14 .coord_x = 17;
+defparam \i2c_device|brip_cnt_q_14 .coord_y = 11;
 defparam \i2c_device|brip_cnt_q_14 .coord_z = 14;
 defparam \i2c_device|brip_cnt_q_14 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_q_14 .modeMux = 1'b1;
@@ -9692,16 +9675,16 @@ alta_slice \i2c_device|brip_cnt_q_15 (
 	.D(vcc),
 	.Cin(\i2c_device|brip_cnt_dataa_0_cout [15]),
 	.Qin(\i2c_device|brip_cnt [15]),
-	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10011_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10011_Y10001_GND),
-	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10011_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10008_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10008_Y10001_GND),
+	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10008_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10011_Y10001_GND),
+	.SyncLoad(SyncLoad_X10008_Y10001_GND),
 	.LutOut(\i2c_device|brip_cnt_dataa_15_combout ),
 	.Cout(\i2c_device|brip_cnt_dataa_0_cout [16]),
 	.Q(\i2c_device|brip_cnt [15]));
-defparam \i2c_device|brip_cnt_q_15 .coord_x = 16;
-defparam \i2c_device|brip_cnt_q_15 .coord_y = 7;
+defparam \i2c_device|brip_cnt_q_15 .coord_x = 17;
+defparam \i2c_device|brip_cnt_q_15 .coord_y = 11;
 defparam \i2c_device|brip_cnt_q_15 .coord_z = 15;
 defparam \i2c_device|brip_cnt_q_15 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_q_15 .modeMux = 1'b1;
@@ -9717,16 +9700,16 @@ alta_slice \i2c_device|brip_cnt_q_16 (
 	.D(vcc),
 	.Cin(\i2c_device|brip_cnt_dataa_0_cout [16]),
 	.Qin(\i2c_device|brip_cnt [16]),
-	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10001_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10001_Y10001_GND),
-	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10001_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10009_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10009_Y10001_GND),
+	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10009_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10001_Y10001_GND),
+	.SyncLoad(SyncLoad_X10009_Y10001_GND),
 	.LutOut(\i2c_device|brip_cnt_dataa_16_combout ),
 	.Cout(\i2c_device|brip_cnt_dataa_0_cout [17]),
 	.Q(\i2c_device|brip_cnt [16]));
-defparam \i2c_device|brip_cnt_q_16 .coord_x = 16;
-defparam \i2c_device|brip_cnt_q_16 .coord_y = 6;
+defparam \i2c_device|brip_cnt_q_16 .coord_x = 17;
+defparam \i2c_device|brip_cnt_q_16 .coord_y = 10;
 defparam \i2c_device|brip_cnt_q_16 .coord_z = 0;
 defparam \i2c_device|brip_cnt_q_16 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_q_16 .modeMux = 1'b1;
@@ -9742,16 +9725,16 @@ alta_slice \i2c_device|brip_cnt_q_17 (
 	.D(vcc),
 	.Cin(\i2c_device|brip_cnt_dataa_0_cout [17]),
 	.Qin(\i2c_device|brip_cnt [17]),
-	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10001_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10001_Y10001_GND),
-	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10001_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10009_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10009_Y10001_GND),
+	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10009_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10001_Y10001_GND),
+	.SyncLoad(SyncLoad_X10009_Y10001_GND),
 	.LutOut(\i2c_device|brip_cnt_dataa_17_combout ),
 	.Cout(\i2c_device|brip_cnt_dataa_0_cout [18]),
 	.Q(\i2c_device|brip_cnt [17]));
-defparam \i2c_device|brip_cnt_q_17 .coord_x = 16;
-defparam \i2c_device|brip_cnt_q_17 .coord_y = 6;
+defparam \i2c_device|brip_cnt_q_17 .coord_x = 17;
+defparam \i2c_device|brip_cnt_q_17 .coord_y = 10;
 defparam \i2c_device|brip_cnt_q_17 .coord_z = 1;
 defparam \i2c_device|brip_cnt_q_17 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_q_17 .modeMux = 1'b1;
@@ -9767,16 +9750,16 @@ alta_slice \i2c_device|brip_cnt_q_19 (
 	.D(vcc),
 	.Cin(\i2c_device|brip_cnt_dataa_0_cout [19]),
 	.Qin(\i2c_device|brip_cnt [19]),
-	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10001_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10001_Y10001_GND),
-	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10001_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10009_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10009_Y10001_GND),
+	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10009_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10001_Y10001_GND),
+	.SyncLoad(SyncLoad_X10009_Y10001_GND),
 	.LutOut(\i2c_device|brip_cnt_dataa_19_combout ),
 	.Cout(\i2c_device|brip_cnt_dataa_0_cout [20]),
 	.Q(\i2c_device|brip_cnt [19]));
-defparam \i2c_device|brip_cnt_q_19 .coord_x = 16;
-defparam \i2c_device|brip_cnt_q_19 .coord_y = 6;
+defparam \i2c_device|brip_cnt_q_19 .coord_x = 17;
+defparam \i2c_device|brip_cnt_q_19 .coord_y = 10;
 defparam \i2c_device|brip_cnt_q_19 .coord_z = 3;
 defparam \i2c_device|brip_cnt_q_19 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_q_19 .modeMux = 1'b1;
@@ -9792,16 +9775,16 @@ alta_slice \i2c_device|brip_cnt_q_2 (
 	.D(vcc),
 	.Cin(\i2c_device|brip_cnt_dataa_0_cout [2]),
 	.Qin(\i2c_device|brip_cnt [2]),
-	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10011_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10011_Y10001_GND),
-	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10011_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10008_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10008_Y10001_GND),
+	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10008_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10011_Y10001_GND),
+	.SyncLoad(SyncLoad_X10008_Y10001_GND),
 	.LutOut(\i2c_device|brip_cnt_dataa_2_combout ),
 	.Cout(\i2c_device|brip_cnt_dataa_0_cout [3]),
 	.Q(\i2c_device|brip_cnt [2]));
-defparam \i2c_device|brip_cnt_q_2 .coord_x = 16;
-defparam \i2c_device|brip_cnt_q_2 .coord_y = 7;
+defparam \i2c_device|brip_cnt_q_2 .coord_x = 17;
+defparam \i2c_device|brip_cnt_q_2 .coord_y = 11;
 defparam \i2c_device|brip_cnt_q_2 .coord_z = 2;
 defparam \i2c_device|brip_cnt_q_2 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_q_2 .modeMux = 1'b1;
@@ -9817,16 +9800,16 @@ alta_slice \i2c_device|brip_cnt_q_3 (
 	.D(vcc),
 	.Cin(\i2c_device|brip_cnt_dataa_0_cout [3]),
 	.Qin(\i2c_device|brip_cnt [3]),
-	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10011_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10011_Y10001_GND),
-	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10011_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10008_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10008_Y10001_GND),
+	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10008_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10011_Y10001_GND),
+	.SyncLoad(SyncLoad_X10008_Y10001_GND),
 	.LutOut(\i2c_device|brip_cnt_dataa_3_combout ),
 	.Cout(\i2c_device|brip_cnt_dataa_0_cout [4]),
 	.Q(\i2c_device|brip_cnt [3]));
-defparam \i2c_device|brip_cnt_q_3 .coord_x = 16;
-defparam \i2c_device|brip_cnt_q_3 .coord_y = 7;
+defparam \i2c_device|brip_cnt_q_3 .coord_x = 17;
+defparam \i2c_device|brip_cnt_q_3 .coord_y = 11;
 defparam \i2c_device|brip_cnt_q_3 .coord_z = 3;
 defparam \i2c_device|brip_cnt_q_3 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_q_3 .modeMux = 1'b1;
@@ -9842,16 +9825,16 @@ alta_slice \i2c_device|brip_cnt_q_4 (
 	.D(vcc),
 	.Cin(\i2c_device|brip_cnt_dataa_0_cout [4]),
 	.Qin(\i2c_device|brip_cnt [4]),
-	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10011_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10011_Y10001_GND),
-	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10011_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10008_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10008_Y10001_GND),
+	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10008_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10011_Y10001_GND),
+	.SyncLoad(SyncLoad_X10008_Y10001_GND),
 	.LutOut(\i2c_device|brip_cnt_dataa_4_combout ),
 	.Cout(\i2c_device|brip_cnt_dataa_0_cout [5]),
 	.Q(\i2c_device|brip_cnt [4]));
-defparam \i2c_device|brip_cnt_q_4 .coord_x = 16;
-defparam \i2c_device|brip_cnt_q_4 .coord_y = 7;
+defparam \i2c_device|brip_cnt_q_4 .coord_x = 17;
+defparam \i2c_device|brip_cnt_q_4 .coord_y = 11;
 defparam \i2c_device|brip_cnt_q_4 .coord_z = 4;
 defparam \i2c_device|brip_cnt_q_4 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_q_4 .modeMux = 1'b1;
@@ -9867,16 +9850,16 @@ alta_slice \i2c_device|brip_cnt_q_5 (
 	.D(vcc),
 	.Cin(\i2c_device|brip_cnt_dataa_0_cout [5]),
 	.Qin(\i2c_device|brip_cnt [5]),
-	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10011_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10011_Y10001_GND),
-	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10011_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10008_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10008_Y10001_GND),
+	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10008_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10011_Y10001_GND),
+	.SyncLoad(SyncLoad_X10008_Y10001_GND),
 	.LutOut(\i2c_device|brip_cnt_dataa_5_combout ),
 	.Cout(\i2c_device|brip_cnt_dataa_0_cout [6]),
 	.Q(\i2c_device|brip_cnt [5]));
-defparam \i2c_device|brip_cnt_q_5 .coord_x = 16;
-defparam \i2c_device|brip_cnt_q_5 .coord_y = 7;
+defparam \i2c_device|brip_cnt_q_5 .coord_x = 17;
+defparam \i2c_device|brip_cnt_q_5 .coord_y = 11;
 defparam \i2c_device|brip_cnt_q_5 .coord_z = 5;
 defparam \i2c_device|brip_cnt_q_5 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_q_5 .modeMux = 1'b1;
@@ -9892,16 +9875,16 @@ alta_slice \i2c_device|brip_cnt_q_6 (
 	.D(vcc),
 	.Cin(\i2c_device|brip_cnt_dataa_0_cout [6]),
 	.Qin(\i2c_device|brip_cnt [6]),
-	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10011_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10011_Y10001_GND),
-	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10011_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10008_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10008_Y10001_GND),
+	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10008_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10011_Y10001_GND),
+	.SyncLoad(SyncLoad_X10008_Y10001_GND),
 	.LutOut(\i2c_device|brip_cnt_dataa_6_combout ),
 	.Cout(\i2c_device|brip_cnt_dataa_0_cout [7]),
 	.Q(\i2c_device|brip_cnt [6]));
-defparam \i2c_device|brip_cnt_q_6 .coord_x = 16;
-defparam \i2c_device|brip_cnt_q_6 .coord_y = 7;
+defparam \i2c_device|brip_cnt_q_6 .coord_x = 17;
+defparam \i2c_device|brip_cnt_q_6 .coord_y = 11;
 defparam \i2c_device|brip_cnt_q_6 .coord_z = 6;
 defparam \i2c_device|brip_cnt_q_6 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_q_6 .modeMux = 1'b1;
@@ -9917,16 +9900,16 @@ alta_slice \i2c_device|brip_cnt_q_7 (
 	.D(vcc),
 	.Cin(\i2c_device|brip_cnt_dataa_0_cout [7]),
 	.Qin(\i2c_device|brip_cnt [7]),
-	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10011_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10011_Y10001_GND),
-	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10011_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10008_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10008_Y10001_GND),
+	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10008_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10011_Y10001_GND),
+	.SyncLoad(SyncLoad_X10008_Y10001_GND),
 	.LutOut(\i2c_device|brip_cnt_dataa_7_combout ),
 	.Cout(\i2c_device|brip_cnt_dataa_0_cout [8]),
 	.Q(\i2c_device|brip_cnt [7]));
-defparam \i2c_device|brip_cnt_q_7 .coord_x = 16;
-defparam \i2c_device|brip_cnt_q_7 .coord_y = 7;
+defparam \i2c_device|brip_cnt_q_7 .coord_x = 17;
+defparam \i2c_device|brip_cnt_q_7 .coord_y = 11;
 defparam \i2c_device|brip_cnt_q_7 .coord_z = 7;
 defparam \i2c_device|brip_cnt_q_7 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_q_7 .modeMux = 1'b1;
@@ -9942,16 +9925,16 @@ alta_slice \i2c_device|brip_cnt_q_8 (
 	.D(vcc),
 	.Cin(\i2c_device|brip_cnt_dataa_0_cout [8]),
 	.Qin(\i2c_device|brip_cnt [8]),
-	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10011_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10011_Y10001_GND),
-	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10011_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10008_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10008_Y10001_GND),
+	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10008_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10011_Y10001_GND),
+	.SyncLoad(SyncLoad_X10008_Y10001_GND),
 	.LutOut(\i2c_device|brip_cnt_dataa_8_combout ),
 	.Cout(\i2c_device|brip_cnt_dataa_0_cout [9]),
 	.Q(\i2c_device|brip_cnt [8]));
-defparam \i2c_device|brip_cnt_q_8 .coord_x = 16;
-defparam \i2c_device|brip_cnt_q_8 .coord_y = 7;
+defparam \i2c_device|brip_cnt_q_8 .coord_x = 17;
+defparam \i2c_device|brip_cnt_q_8 .coord_y = 11;
 defparam \i2c_device|brip_cnt_q_8 .coord_z = 8;
 defparam \i2c_device|brip_cnt_q_8 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_q_8 .modeMux = 1'b1;
@@ -9967,16 +9950,16 @@ alta_slice \i2c_device|brip_cnt_q_9 (
 	.D(vcc),
 	.Cin(\i2c_device|brip_cnt_dataa_0_cout [9]),
 	.Qin(\i2c_device|brip_cnt [9]),
-	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10011_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10011_Y10001_GND),
-	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10011_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|brip_rec_A_0_Y_B_Y_X10008_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10008_Y10001_GND),
+	.SyncReset(\i2c_device|brip_rec_A_0_Y__SyncReset_X10008_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10011_Y10001_GND),
+	.SyncLoad(SyncLoad_X10008_Y10001_GND),
 	.LutOut(\i2c_device|brip_cnt_dataa_9_combout ),
 	.Cout(\i2c_device|brip_cnt_dataa_0_cout [10]),
 	.Q(\i2c_device|brip_cnt [9]));
-defparam \i2c_device|brip_cnt_q_9 .coord_x = 16;
-defparam \i2c_device|brip_cnt_q_9 .coord_y = 7;
+defparam \i2c_device|brip_cnt_q_9 .coord_x = 17;
+defparam \i2c_device|brip_cnt_q_9 .coord_y = 11;
 defparam \i2c_device|brip_cnt_q_9 .coord_z = 9;
 defparam \i2c_device|brip_cnt_q_9 .mask = 16'h96E8;
 defparam \i2c_device|brip_cnt_q_9 .modeMux = 1'b1;
@@ -9988,8 +9971,8 @@ defparam \i2c_device|brip_cnt_q_9 .CarryEnb = 1'b0;
 alta_slice \i2c_device|brip_rec_A_0_Y_B_Y_combout (
 	.A(vcc),
 	.B(vcc),
-	.C(\i2c_device|brip_rec_A_0_Y ),
-	.D(\i2c_device|OFFSET_SECONDARY_dataa_1_combout [0]),
+	.C(\i2c_device|OFFSET_SECONDARY_dataa_1_combout [0]),
+	.D(\i2c_device|brip_rec_A_0_Y ),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -10000,10 +9983,10 @@ alta_slice \i2c_device|brip_rec_A_0_Y_B_Y_combout (
 	.LutOut(\i2c_device|brip_rec_A_0_Y_B_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|brip_rec_A_0_Y_B_Y_combout .coord_x = 15;
-defparam \i2c_device|brip_rec_A_0_Y_B_Y_combout .coord_y = 5;
-defparam \i2c_device|brip_rec_A_0_Y_B_Y_combout .coord_z = 15;
-defparam \i2c_device|brip_rec_A_0_Y_B_Y_combout .mask = 16'hF0FF;
+defparam \i2c_device|brip_rec_A_0_Y_B_Y_combout .coord_x = 17;
+defparam \i2c_device|brip_rec_A_0_Y_B_Y_combout .coord_y = 10;
+defparam \i2c_device|brip_rec_A_0_Y_B_Y_combout .coord_z = 8;
+defparam \i2c_device|brip_rec_A_0_Y_B_Y_combout .mask = 16'hFF0F;
 defparam \i2c_device|brip_rec_A_0_Y_B_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|brip_rec_A_0_Y_B_Y_combout .FeedbackMux = 1'b0;
 defparam \i2c_device|brip_rec_A_0_Y_B_Y_combout .ShiftMux = 1'b0;
@@ -10011,24 +9994,24 @@ defparam \i2c_device|brip_rec_A_0_Y_B_Y_combout .BypassEn = 1'b0;
 defparam \i2c_device|brip_rec_A_0_Y_B_Y_combout .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|brip_rec_d_0 (
-	.A(vcc),
+	.A(\i2c_device|brip_rec [0]),
 	.B(vcc),
 	.C(\i2c_device|brip_rec [0]),
-	.D(\i2c_device|brip_rec [0]),
+	.D(vcc),
 	.Cin(),
 	.Qin(\i2c_device|brip_rec_d_0_q ),
-	.Clk(CLKOSC_i_o_X10001_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10001_Y10002_GND),
-	.SyncReset(SyncReset_X10001_Y10002_GND),
+	.Clk(CLKOSC_i_o_X10018_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10018_Y10001_GND),
+	.SyncReset(SyncReset_X10018_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10001_Y10002_VCC),
+	.SyncLoad(SyncLoad_X10018_Y10001_VCC),
 	.LutOut(\i2c_device|brip_rec_A_0_Y ),
 	.Cout(),
 	.Q(\i2c_device|brip_rec_d_0_q ));
-defparam \i2c_device|brip_rec_d_0 .coord_x = 15;
-defparam \i2c_device|brip_rec_d_0 .coord_y = 5;
-defparam \i2c_device|brip_rec_d_0 .coord_z = 2;
-defparam \i2c_device|brip_rec_d_0 .mask = 16'h0FF0;
+defparam \i2c_device|brip_rec_d_0 .coord_x = 10;
+defparam \i2c_device|brip_rec_d_0 .coord_y = 4;
+defparam \i2c_device|brip_rec_d_0 .coord_z = 13;
+defparam \i2c_device|brip_rec_d_0 .mask = 16'h5A5A;
 defparam \i2c_device|brip_rec_d_0 .modeMux = 1'b0;
 defparam \i2c_device|brip_rec_d_0 .FeedbackMux = 1'b1;
 defparam \i2c_device|brip_rec_d_0 .ShiftMux = 1'b0;
@@ -10042,17 +10025,17 @@ alta_slice \i2c_device|brip_rec_q_0 (
 	.D(\i2c_device|write_value [1]),
 	.Cin(),
 	.Qin(\i2c_device|brip_rec [0]),
-	.Clk(CLKOSC_i_o_X10001_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10001_Y10002_GND),
+	.Clk(CLKOSC_i_o_X10018_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10018_Y10001_GND),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
 	.LutOut(\i2c_device|brip_rec_A_0_1_Y ),
 	.Cout(),
 	.Q(\i2c_device|brip_rec [0]));
-defparam \i2c_device|brip_rec_q_0 .coord_x = 15;
-defparam \i2c_device|brip_rec_q_0 .coord_y = 5;
-defparam \i2c_device|brip_rec_q_0 .coord_z = 3;
+defparam \i2c_device|brip_rec_q_0 .coord_x = 10;
+defparam \i2c_device|brip_rec_q_0 .coord_y = 4;
+defparam \i2c_device|brip_rec_q_0 .coord_z = 2;
 defparam \i2c_device|brip_rec_q_0 .mask = 16'h78F0;
 defparam \i2c_device|brip_rec_q_0 .modeMux = 1'b0;
 defparam \i2c_device|brip_rec_q_0 .FeedbackMux = 1'b1;
@@ -10061,14 +10044,14 @@ defparam \i2c_device|brip_rec_q_0 .BypassEn = 1'b0;
 defparam \i2c_device|brip_rec_q_0 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|i2c_state[0]_reg (
-	.A(CLKOSC_clk_9_q_dataa_combout_datac_2_combout[3]),
-	.B(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
+	.A(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
+	.B(CLKOSC_clk_9_q_dataa_combout_datac_2_combout[3]),
 	.C(vcc),
 	.D(\i2c_device|start_B_0_Y ),
 	.Cin(),
 	.Qin(\i2c_device|i2c_state [0]),
-	.Clk(CLKOSC_i_o_X10012_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10012_Y10002_GND),
+	.Clk(CLKOSC_i_o_X10018_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10018_Y10001_GND),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
@@ -10076,9 +10059,9 @@ alta_slice \i2c_device|i2c_state[0]_reg (
 	.Cout(),
 	.Q(\i2c_device|i2c_state [0]));
 defparam \i2c_device|i2c_state[0]_reg .coord_x = 10;
-defparam \i2c_device|i2c_state[0]_reg .coord_y = 3;
-defparam \i2c_device|i2c_state[0]_reg .coord_z = 9;
-defparam \i2c_device|i2c_state[0]_reg .mask = 16'h12FF;
+defparam \i2c_device|i2c_state[0]_reg .coord_y = 4;
+defparam \i2c_device|i2c_state[0]_reg .coord_z = 6;
+defparam \i2c_device|i2c_state[0]_reg .mask = 16'h14FF;
 defparam \i2c_device|i2c_state[0]_reg .modeMux = 1'b0;
 defparam \i2c_device|i2c_state[0]_reg .FeedbackMux = 1'b1;
 defparam \i2c_device|i2c_state[0]_reg .ShiftMux = 1'b0;
@@ -10100,9 +10083,9 @@ alta_slice \i2c_device|i2c_state_A_0_1_Y_A_1_Y_A_1_Y_B_Y_combout (
 	.LutOut(\i2c_device|i2c_state_A_0_1_Y_A_1_Y_A_1_Y_B_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|i2c_state_A_0_1_Y_A_1_Y_A_1_Y_B_Y_combout .coord_x = 10;
-defparam \i2c_device|i2c_state_A_0_1_Y_A_1_Y_A_1_Y_B_Y_combout .coord_y = 3;
-defparam \i2c_device|i2c_state_A_0_1_Y_A_1_Y_A_1_Y_B_Y_combout .coord_z = 6;
+defparam \i2c_device|i2c_state_A_0_1_Y_A_1_Y_A_1_Y_B_Y_combout .coord_x = 11;
+defparam \i2c_device|i2c_state_A_0_1_Y_A_1_Y_A_1_Y_B_Y_combout .coord_y = 4;
+defparam \i2c_device|i2c_state_A_0_1_Y_A_1_Y_A_1_Y_B_Y_combout .coord_z = 8;
 defparam \i2c_device|i2c_state_A_0_1_Y_A_1_Y_A_1_Y_B_Y_combout .mask = 16'hFF3F;
 defparam \i2c_device|i2c_state_A_0_1_Y_A_1_Y_A_1_Y_B_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|i2c_state_A_0_1_Y_A_1_Y_A_1_Y_B_Y_combout .FeedbackMux = 1'b0;
@@ -10112,8 +10095,8 @@ defparam \i2c_device|i2c_state_A_0_1_Y_A_1_Y_A_1_Y_B_Y_combout .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y_combout (
 	.A(CLKOSC_clk_11_q_dataa_combout[2]),
-	.B(\i2c_device|i2c_state_datac_0_1_combout [2]),
-	.C(CLKOSC_clk_8_q_datac_combout[1]),
+	.B(CLKOSC_clk_8_q_datac_combout[1]),
+	.C(\i2c_device|i2c_state_datac_0_1_combout [2]),
 	.D(\i2c_device|scl_asdata_0_q_dataa_combout [1]),
 	.Cin(),
 	.Qin(),
@@ -10125,10 +10108,10 @@ alta_slice \i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y_combout (
 	.LutOut(\i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y_combout .coord_x = 11;
-defparam \i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y_combout .coord_y = 4;
-defparam \i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y_combout .coord_z = 4;
-defparam \i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y_combout .mask = 16'h0311;
+defparam \i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y_combout .coord_x = 10;
+defparam \i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y_combout .coord_y = 3;
+defparam \i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y_combout .coord_z = 15;
+defparam \i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y_combout .mask = 16'h0305;
 defparam \i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y_combout .FeedbackMux = 1'b0;
 defparam \i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y_combout .ShiftMux = 1'b0;
@@ -10150,9 +10133,9 @@ alta_slice \i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_combout (
 	.LutOut(\i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_combout .coord_x = 10;
-defparam \i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_combout .coord_y = 3;
-defparam \i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_combout .coord_z = 12;
+defparam \i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_combout .coord_x = 11;
+defparam \i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_combout .coord_y = 4;
+defparam \i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_combout .coord_z = 6;
 defparam \i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_combout .mask = 16'hCC00;
 defparam \i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_combout .FeedbackMux = 1'b0;
@@ -10175,9 +10158,9 @@ alta_slice \i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_combout (
 	.LutOut(\i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_combout .coord_x = 10;
-defparam \i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_combout .coord_y = 3;
-defparam \i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_combout .coord_z = 4;
+defparam \i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_combout .coord_x = 11;
+defparam \i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_combout .coord_y = 4;
+defparam \i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_combout .coord_z = 12;
 defparam \i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_combout .mask = 16'h0800;
 defparam \i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_combout .FeedbackMux = 1'b0;
@@ -10188,8 +10171,8 @@ defparam \i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_combout .CarryEnb = 1'b1;
 alta_slice \i2c_device|i2c_state_dataa_0 (
 	.A(vcc),
 	.B(vcc),
-	.C(\i2c_device|i2c_state [0]),
-	.D(CLKOSC_clk_10_q),
+	.C(CLKOSC_clk_10_q),
+	.D(\i2c_device|i2c_state [0]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -10200,10 +10183,10 @@ alta_slice \i2c_device|i2c_state_dataa_0 (
 	.LutOut(\i2c_device|i2c_state_dataa_0_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|i2c_state_dataa_0 .coord_x = 9;
+defparam \i2c_device|i2c_state_dataa_0 .coord_x = 10;
 defparam \i2c_device|i2c_state_dataa_0 .coord_y = 3;
-defparam \i2c_device|i2c_state_dataa_0 .coord_z = 5;
-defparam \i2c_device|i2c_state_dataa_0 .mask = 16'h0F00;
+defparam \i2c_device|i2c_state_dataa_0 .coord_z = 12;
+defparam \i2c_device|i2c_state_dataa_0 .mask = 16'h00F0;
 defparam \i2c_device|i2c_state_dataa_0 .modeMux = 1'b0;
 defparam \i2c_device|i2c_state_dataa_0 .FeedbackMux = 1'b0;
 defparam \i2c_device|i2c_state_dataa_0 .ShiftMux = 1'b0;
@@ -10213,8 +10196,8 @@ defparam \i2c_device|i2c_state_dataa_0 .CarryEnb = 1'b1;
 alta_slice \i2c_device|i2c_state_dataa_0_1 (
 	.A(vcc),
 	.B(\i2c_device|i2c_state [0]),
-	.C(CLKOSC_clk_9_q),
-	.D(CLKOSC_clk_10_q),
+	.C(CLKOSC_clk_10_q),
+	.D(CLKOSC_clk_9_q),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -10227,7 +10210,7 @@ alta_slice \i2c_device|i2c_state_dataa_0_1 (
 	.Q());
 defparam \i2c_device|i2c_state_dataa_0_1 .coord_x = 10;
 defparam \i2c_device|i2c_state_dataa_0_1 .coord_y = 3;
-defparam \i2c_device|i2c_state_dataa_0_1 .coord_z = 15;
+defparam \i2c_device|i2c_state_dataa_0_1 .coord_z = 2;
 defparam \i2c_device|i2c_state_dataa_0_1 .mask = 16'hC000;
 defparam \i2c_device|i2c_state_dataa_0_1 .modeMux = 1'b0;
 defparam \i2c_device|i2c_state_dataa_0_1 .FeedbackMux = 1'b0;
@@ -10236,10 +10219,10 @@ defparam \i2c_device|i2c_state_dataa_0_1 .BypassEn = 1'b0;
 defparam \i2c_device|i2c_state_dataa_0_1 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|i2c_state_datab_0 (
-	.A(vcc),
-	.B(\i2c_device|i2c_state [0]),
-	.C(CLKOSC_clk_10_q),
-	.D(CLKOSC_clk_9_q),
+	.A(CLKOSC_clk_9_q),
+	.B(vcc),
+	.C(\i2c_device|i2c_state [0]),
+	.D(CLKOSC_clk_10_q),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -10250,10 +10233,10 @@ alta_slice \i2c_device|i2c_state_datab_0 (
 	.LutOut(\i2c_device|i2c_state_dataa_0_combout [1]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|i2c_state_datab_0 .coord_x = 10;
-defparam \i2c_device|i2c_state_datab_0 .coord_y = 4;
-defparam \i2c_device|i2c_state_datab_0 .coord_z = 7;
-defparam \i2c_device|i2c_state_datab_0 .mask = 16'hF300;
+defparam \i2c_device|i2c_state_datab_0 .coord_x = 11;
+defparam \i2c_device|i2c_state_datab_0 .coord_y = 3;
+defparam \i2c_device|i2c_state_datab_0 .coord_z = 13;
+defparam \i2c_device|i2c_state_datab_0 .mask = 16'hAA0A;
 defparam \i2c_device|i2c_state_datab_0 .modeMux = 1'b0;
 defparam \i2c_device|i2c_state_datab_0 .FeedbackMux = 1'b0;
 defparam \i2c_device|i2c_state_datab_0 .ShiftMux = 1'b0;
@@ -10275,9 +10258,9 @@ alta_slice \i2c_device|i2c_state_datab_0_1 (
 	.LutOut(\i2c_device|i2c_state_datab_0_1_combout [1]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|i2c_state_datab_0_1 .coord_x = 10;
-defparam \i2c_device|i2c_state_datab_0_1 .coord_y = 3;
-defparam \i2c_device|i2c_state_datab_0_1 .coord_z = 5;
+defparam \i2c_device|i2c_state_datab_0_1 .coord_x = 11;
+defparam \i2c_device|i2c_state_datab_0_1 .coord_y = 4;
+defparam \i2c_device|i2c_state_datab_0_1 .coord_z = 1;
 defparam \i2c_device|i2c_state_datab_0_1 .mask = 16'h5000;
 defparam \i2c_device|i2c_state_datab_0_1 .modeMux = 1'b0;
 defparam \i2c_device|i2c_state_datab_0_1 .FeedbackMux = 1'b0;
@@ -10286,10 +10269,10 @@ defparam \i2c_device|i2c_state_datab_0_1 .BypassEn = 1'b0;
 defparam \i2c_device|i2c_state_datab_0_1 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|i2c_state_datac_0 (
-	.A(CLKOSC_clk_10_q),
-	.B(vcc),
-	.C(CLKOSC_clk_9_q),
-	.D(\i2c_device|i2c_state [0]),
+	.A(vcc),
+	.B(\i2c_device|i2c_state [0]),
+	.C(CLKOSC_clk_10_q),
+	.D(CLKOSC_clk_9_q),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -10300,10 +10283,10 @@ alta_slice \i2c_device|i2c_state_datac_0 (
 	.LutOut(CLKOSC_clk_8_q_datac_combout[1]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|i2c_state_datac_0 .coord_x = 11;
-defparam \i2c_device|i2c_state_datac_0 .coord_y = 4;
-defparam \i2c_device|i2c_state_datac_0 .coord_z = 5;
-defparam \i2c_device|i2c_state_datac_0 .mask = 16'hA0FF;
+defparam \i2c_device|i2c_state_datac_0 .coord_x = 10;
+defparam \i2c_device|i2c_state_datac_0 .coord_y = 3;
+defparam \i2c_device|i2c_state_datac_0 .coord_z = 7;
+defparam \i2c_device|i2c_state_datac_0 .mask = 16'hF333;
 defparam \i2c_device|i2c_state_datac_0 .modeMux = 1'b0;
 defparam \i2c_device|i2c_state_datac_0 .FeedbackMux = 1'b0;
 defparam \i2c_device|i2c_state_datac_0 .ShiftMux = 1'b0;
@@ -10325,9 +10308,9 @@ alta_slice \i2c_device|i2c_state_datac_0_1 (
 	.LutOut(\i2c_device|i2c_state_datac_0_1_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|i2c_state_datac_0_1 .coord_x = 11;
-defparam \i2c_device|i2c_state_datac_0_1 .coord_y = 4;
-defparam \i2c_device|i2c_state_datac_0_1 .coord_z = 8;
+defparam \i2c_device|i2c_state_datac_0_1 .coord_x = 10;
+defparam \i2c_device|i2c_state_datac_0_1 .coord_y = 3;
+defparam \i2c_device|i2c_state_datac_0_1 .coord_z = 0;
 defparam \i2c_device|i2c_state_datac_0_1 .mask = 16'h00CD;
 defparam \i2c_device|i2c_state_datac_0_1 .modeMux = 1'b0;
 defparam \i2c_device|i2c_state_datac_0_1 .FeedbackMux = 1'b0;
@@ -10336,10 +10319,10 @@ defparam \i2c_device|i2c_state_datac_0_1 .BypassEn = 1'b0;
 defparam \i2c_device|i2c_state_datac_0_1 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|i2c_state_datac_0_2 (
-	.A(\i2c_device|i2c_state [0]),
+	.A(CLKOSC_clk_10_q),
 	.B(vcc),
-	.C(CLKOSC_clk_10_q),
-	.D(CLKOSC_clk_9_q),
+	.C(CLKOSC_clk_9_q),
+	.D(\i2c_device|i2c_state [0]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -10350,10 +10333,10 @@ alta_slice \i2c_device|i2c_state_datac_0_2 (
 	.LutOut(CLKOSC_clk_8_q_datac_combout[3]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|i2c_state_datac_0_2 .coord_x = 9;
-defparam \i2c_device|i2c_state_datac_0_2 .coord_y = 3;
-defparam \i2c_device|i2c_state_datac_0_2 .coord_z = 4;
-defparam \i2c_device|i2c_state_datac_0_2 .mask = 16'h000A;
+defparam \i2c_device|i2c_state_datac_0_2 .coord_x = 11;
+defparam \i2c_device|i2c_state_datac_0_2 .coord_y = 4;
+defparam \i2c_device|i2c_state_datac_0_2 .coord_z = 10;
+defparam \i2c_device|i2c_state_datac_0_2 .mask = 16'h0500;
 defparam \i2c_device|i2c_state_datac_0_2 .modeMux = 1'b0;
 defparam \i2c_device|i2c_state_datac_0_2 .FeedbackMux = 1'b0;
 defparam \i2c_device|i2c_state_datac_0_2 .ShiftMux = 1'b0;
@@ -10361,24 +10344,24 @@ defparam \i2c_device|i2c_state_datac_0_2 .BypassEn = 1'b0;
 defparam \i2c_device|i2c_state_datac_0_2 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|locka_cnt[12]_reg (
-	.A(\i2c_device|locka_cnt_dataa_9_combout [12]),
+	.A(),
 	.B(),
 	.C(vcc),
-	.D(),
+	.D(\i2c_device|locka_cnt_dataa_9_combout [12]),
 	.Cin(),
 	.Qin(\i2c_device|locka_cnt [12]),
-	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10003_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10003_Y10001_GND),
-	.SyncReset(SyncReset_X10003_Y10001_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10018_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10018_Y10003_GND),
+	.SyncReset(SyncReset_X10018_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|locka_rec_A_0_Y__SyncLoad_X10003_Y10001_SIG ),
+	.SyncLoad(\i2c_device|locka_rec_A_0_Y__SyncLoad_X10018_Y10003_SIG ),
 	.LutOut(\i2c_device|locka_cnt[12]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|locka_cnt [12]));
-defparam \i2c_device|locka_cnt[12]_reg .coord_x = 19;
-defparam \i2c_device|locka_cnt[12]_reg .coord_y = 9;
-defparam \i2c_device|locka_cnt[12]_reg .coord_z = 9;
-defparam \i2c_device|locka_cnt[12]_reg .mask = 16'hAAAA;
+defparam \i2c_device|locka_cnt[12]_reg .coord_x = 20;
+defparam \i2c_device|locka_cnt[12]_reg .coord_y = 8;
+defparam \i2c_device|locka_cnt[12]_reg .coord_z = 0;
+defparam \i2c_device|locka_cnt[12]_reg .mask = 16'hFF00;
 defparam \i2c_device|locka_cnt[12]_reg .modeMux = 1'b0;
 defparam \i2c_device|locka_cnt[12]_reg .FeedbackMux = 1'b0;
 defparam \i2c_device|locka_cnt[12]_reg .ShiftMux = 1'b0;
@@ -10392,17 +10375,17 @@ alta_slice \i2c_device|locka_cnt[17]_reg (
 	.D(\i2c_device|locka_cnt_dataa_9_combout [17]),
 	.Cin(),
 	.Qin(\i2c_device|locka_cnt [17]),
-	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10003_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10003_Y10001_GND),
-	.SyncReset(SyncReset_X10003_Y10001_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10018_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10018_Y10003_GND),
+	.SyncReset(SyncReset_X10018_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|locka_rec_A_0_Y__SyncLoad_X10003_Y10001_SIG ),
+	.SyncLoad(\i2c_device|locka_rec_A_0_Y__SyncLoad_X10018_Y10003_SIG ),
 	.LutOut(\i2c_device|locka_cnt[17]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|locka_cnt [17]));
-defparam \i2c_device|locka_cnt[17]_reg .coord_x = 19;
-defparam \i2c_device|locka_cnt[17]_reg .coord_y = 9;
-defparam \i2c_device|locka_cnt[17]_reg .coord_z = 12;
+defparam \i2c_device|locka_cnt[17]_reg .coord_x = 20;
+defparam \i2c_device|locka_cnt[17]_reg .coord_y = 8;
+defparam \i2c_device|locka_cnt[17]_reg .coord_z = 2;
 defparam \i2c_device|locka_cnt[17]_reg .mask = 16'hFF00;
 defparam \i2c_device|locka_cnt[17]_reg .modeMux = 1'b0;
 defparam \i2c_device|locka_cnt[17]_reg .FeedbackMux = 1'b0;
@@ -10417,17 +10400,17 @@ alta_slice \i2c_device|locka_cnt[19]_reg (
 	.D(\i2c_device|locka_cnt_dataa_9_combout [19]),
 	.Cin(),
 	.Qin(\i2c_device|locka_cnt [19]),
-	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10003_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10003_Y10001_GND),
-	.SyncReset(SyncReset_X10003_Y10001_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10018_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10018_Y10003_GND),
+	.SyncReset(SyncReset_X10018_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|locka_rec_A_0_Y__SyncLoad_X10003_Y10001_SIG ),
+	.SyncLoad(\i2c_device|locka_rec_A_0_Y__SyncLoad_X10018_Y10003_SIG ),
 	.LutOut(\i2c_device|locka_cnt[19]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|locka_cnt [19]));
-defparam \i2c_device|locka_cnt[19]_reg .coord_x = 19;
-defparam \i2c_device|locka_cnt[19]_reg .coord_y = 9;
-defparam \i2c_device|locka_cnt[19]_reg .coord_z = 11;
+defparam \i2c_device|locka_cnt[19]_reg .coord_x = 20;
+defparam \i2c_device|locka_cnt[19]_reg .coord_y = 8;
+defparam \i2c_device|locka_cnt[19]_reg .coord_z = 4;
 defparam \i2c_device|locka_cnt[19]_reg .mask = 16'hFF00;
 defparam \i2c_device|locka_cnt[19]_reg .modeMux = 1'b0;
 defparam \i2c_device|locka_cnt[19]_reg .FeedbackMux = 1'b0;
@@ -10442,17 +10425,17 @@ alta_slice \i2c_device|locka_cnt[20]_reg (
 	.D(\i2c_device|locka_cnt_dataa_9_combout [20]),
 	.Cin(),
 	.Qin(\i2c_device|locka_cnt [20]),
-	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10003_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10003_Y10001_GND),
-	.SyncReset(SyncReset_X10003_Y10001_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10018_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10018_Y10003_GND),
+	.SyncReset(SyncReset_X10018_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|locka_rec_A_0_Y__SyncLoad_X10003_Y10001_SIG ),
+	.SyncLoad(\i2c_device|locka_rec_A_0_Y__SyncLoad_X10018_Y10003_SIG ),
 	.LutOut(\i2c_device|locka_cnt[20]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|locka_cnt [20]));
-defparam \i2c_device|locka_cnt[20]_reg .coord_x = 19;
-defparam \i2c_device|locka_cnt[20]_reg .coord_y = 9;
-defparam \i2c_device|locka_cnt[20]_reg .coord_z = 13;
+defparam \i2c_device|locka_cnt[20]_reg .coord_x = 20;
+defparam \i2c_device|locka_cnt[20]_reg .coord_y = 8;
+defparam \i2c_device|locka_cnt[20]_reg .coord_z = 5;
 defparam \i2c_device|locka_cnt[20]_reg .mask = 16'hFF00;
 defparam \i2c_device|locka_cnt[20]_reg .modeMux = 1'b0;
 defparam \i2c_device|locka_cnt[20]_reg .FeedbackMux = 1'b0;
@@ -10461,24 +10444,24 @@ defparam \i2c_device|locka_cnt[20]_reg .BypassEn = 1'b1;
 defparam \i2c_device|locka_cnt[20]_reg .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|locka_cnt[21]_reg (
-	.A(\i2c_device|locka_cnt_dataa_9_combout [21]),
+	.A(),
 	.B(),
 	.C(vcc),
-	.D(),
+	.D(\i2c_device|locka_cnt_dataa_9_combout [21]),
 	.Cin(),
 	.Qin(\i2c_device|locka_cnt [21]),
-	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10003_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10003_Y10001_GND),
-	.SyncReset(SyncReset_X10003_Y10001_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10018_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10018_Y10003_GND),
+	.SyncReset(SyncReset_X10018_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|locka_rec_A_0_Y__SyncLoad_X10003_Y10001_SIG ),
+	.SyncLoad(\i2c_device|locka_rec_A_0_Y__SyncLoad_X10018_Y10003_SIG ),
 	.LutOut(\i2c_device|locka_cnt[21]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|locka_cnt [21]));
-defparam \i2c_device|locka_cnt[21]_reg .coord_x = 19;
-defparam \i2c_device|locka_cnt[21]_reg .coord_y = 9;
-defparam \i2c_device|locka_cnt[21]_reg .coord_z = 14;
-defparam \i2c_device|locka_cnt[21]_reg .mask = 16'hAAAA;
+defparam \i2c_device|locka_cnt[21]_reg .coord_x = 20;
+defparam \i2c_device|locka_cnt[21]_reg .coord_y = 8;
+defparam \i2c_device|locka_cnt[21]_reg .coord_z = 3;
+defparam \i2c_device|locka_cnt[21]_reg .mask = 16'hFF00;
 defparam \i2c_device|locka_cnt[21]_reg .modeMux = 1'b0;
 defparam \i2c_device|locka_cnt[21]_reg .FeedbackMux = 1'b0;
 defparam \i2c_device|locka_cnt[21]_reg .ShiftMux = 1'b0;
@@ -10492,17 +10475,17 @@ alta_slice \i2c_device|locka_cnt[22]_reg (
 	.D(\i2c_device|locka_cnt_dataa_9_combout [22]),
 	.Cin(),
 	.Qin(\i2c_device|locka_cnt [22]),
-	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10003_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10003_Y10001_GND),
-	.SyncReset(SyncReset_X10003_Y10001_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10018_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10018_Y10003_GND),
+	.SyncReset(SyncReset_X10018_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|locka_rec_A_0_Y__SyncLoad_X10003_Y10001_SIG ),
+	.SyncLoad(\i2c_device|locka_rec_A_0_Y__SyncLoad_X10018_Y10003_SIG ),
 	.LutOut(\i2c_device|locka_cnt[22]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|locka_cnt [22]));
-defparam \i2c_device|locka_cnt[22]_reg .coord_x = 19;
-defparam \i2c_device|locka_cnt[22]_reg .coord_y = 9;
-defparam \i2c_device|locka_cnt[22]_reg .coord_z = 7;
+defparam \i2c_device|locka_cnt[22]_reg .coord_x = 20;
+defparam \i2c_device|locka_cnt[22]_reg .coord_y = 8;
+defparam \i2c_device|locka_cnt[22]_reg .coord_z = 6;
 defparam \i2c_device|locka_cnt[22]_reg .mask = 16'hFF00;
 defparam \i2c_device|locka_cnt[22]_reg .modeMux = 1'b0;
 defparam \i2c_device|locka_cnt[22]_reg .FeedbackMux = 1'b0;
@@ -10517,17 +10500,17 @@ alta_slice \i2c_device|locka_cnt[9]_reg (
 	.D(),
 	.Cin(),
 	.Qin(\i2c_device|locka_cnt [9]),
-	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10003_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10003_Y10001_GND),
-	.SyncReset(SyncReset_X10003_Y10001_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10018_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10018_Y10003_GND),
+	.SyncReset(SyncReset_X10018_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|locka_rec_A_0_Y__SyncLoad_X10003_Y10001_SIG ),
+	.SyncLoad(\i2c_device|locka_rec_A_0_Y__SyncLoad_X10018_Y10003_SIG ),
 	.LutOut(\i2c_device|locka_cnt[9]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|locka_cnt [9]));
-defparam \i2c_device|locka_cnt[9]_reg .coord_x = 19;
-defparam \i2c_device|locka_cnt[9]_reg .coord_y = 9;
-defparam \i2c_device|locka_cnt[9]_reg .coord_z = 6;
+defparam \i2c_device|locka_cnt[9]_reg .coord_x = 20;
+defparam \i2c_device|locka_cnt[9]_reg .coord_y = 8;
+defparam \i2c_device|locka_cnt[9]_reg .coord_z = 1;
 defparam \i2c_device|locka_cnt[9]_reg .mask = 16'hAAAA;
 defparam \i2c_device|locka_cnt[9]_reg .modeMux = 1'b0;
 defparam \i2c_device|locka_cnt[9]_reg .FeedbackMux = 1'b0;
@@ -10550,7 +10533,7 @@ alta_slice \i2c_device|locka_cnt_dataa_10_1 (
 	.LutOut(\i2c_device|locka_cnt_dataa_6_1_combout [4]),
 	.Cout(\i2c_device|locka_cnt_dataa_6_1_cout [5]),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_10_1 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_10_1 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_10_1 .coord_y = 10;
 defparam \i2c_device|locka_cnt_dataa_10_1 .coord_z = 4;
 defparam \i2c_device|locka_cnt_dataa_10_1 .mask = 16'h69D4;
@@ -10561,8 +10544,8 @@ defparam \i2c_device|locka_cnt_dataa_10_1 .BypassEn = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_10_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|locka_cnt_dataa_11_1 (
-	.A(\i2c_device|locka_cnt [11]),
-	.B(vcc),
+	.A(vcc),
+	.B(\i2c_device|locka_cnt [11]),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|locka_cnt_dataa_6_1_cout [5]),
@@ -10575,7 +10558,7 @@ alta_slice \i2c_device|locka_cnt_dataa_11_1 (
 	.LutOut(\i2c_device|locka_cnt_dataa_6_1_combout [5]),
 	.Cout(\i2c_device|locka_cnt_dataa_6_1_cout [6]),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_11_1 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_11_1 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_11_1 .coord_y = 10;
 defparam \i2c_device|locka_cnt_dataa_11_1 .coord_z = 5;
 defparam \i2c_device|locka_cnt_dataa_11_1 .mask = 16'h96E8;
@@ -10586,8 +10569,8 @@ defparam \i2c_device|locka_cnt_dataa_11_1 .BypassEn = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_11_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|locka_cnt_dataa_12 (
-	.A(vcc),
-	.B(\i2c_device|locka_cnt [12]),
+	.A(\i2c_device|locka_cnt [12]),
+	.B(vcc),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|locka_cnt_dataa_0_cout [12]),
@@ -10600,8 +10583,8 @@ alta_slice \i2c_device|locka_cnt_dataa_12 (
 	.LutOut(\i2c_device|locka_cnt_dataa_9_combout [12]),
 	.Cout(\i2c_device|locka_cnt_dataa_0_cout [13]),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_12 .coord_x = 18;
-defparam \i2c_device|locka_cnt_dataa_12 .coord_y = 10;
+defparam \i2c_device|locka_cnt_dataa_12 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_12 .coord_y = 9;
 defparam \i2c_device|locka_cnt_dataa_12 .coord_z = 12;
 defparam \i2c_device|locka_cnt_dataa_12 .mask = 16'h96E8;
 defparam \i2c_device|locka_cnt_dataa_12 .modeMux = 1'b1;
@@ -10625,7 +10608,7 @@ alta_slice \i2c_device|locka_cnt_dataa_12_1 (
 	.LutOut(\i2c_device|locka_cnt_dataa_6_1_combout [6]),
 	.Cout(\i2c_device|locka_cnt_dataa_6_1_cout [7]),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_12_1 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_12_1 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_12_1 .coord_y = 10;
 defparam \i2c_device|locka_cnt_dataa_12_1 .coord_z = 6;
 defparam \i2c_device|locka_cnt_dataa_12_1 .mask = 16'h96E8;
@@ -10650,7 +10633,7 @@ alta_slice \i2c_device|locka_cnt_dataa_13_1 (
 	.LutOut(\i2c_device|locka_cnt_dataa_6_1_combout [7]),
 	.Cout(\i2c_device|locka_cnt_dataa_6_1_cout [8]),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_13_1 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_13_1 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_13_1 .coord_y = 10;
 defparam \i2c_device|locka_cnt_dataa_13_1 .coord_z = 7;
 defparam \i2c_device|locka_cnt_dataa_13_1 .mask = 16'h96E8;
@@ -10675,7 +10658,7 @@ alta_slice \i2c_device|locka_cnt_dataa_14_1 (
 	.LutOut(\i2c_device|locka_cnt_dataa_6_1_combout [8]),
 	.Cout(\i2c_device|locka_cnt_dataa_6_1_cout [9]),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_14_1 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_14_1 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_14_1 .coord_y = 10;
 defparam \i2c_device|locka_cnt_dataa_14_1 .coord_z = 8;
 defparam \i2c_device|locka_cnt_dataa_14_1 .mask = 16'h69D4;
@@ -10686,8 +10669,8 @@ defparam \i2c_device|locka_cnt_dataa_14_1 .BypassEn = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_14_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|locka_cnt_dataa_15_1 (
-	.A(\i2c_device|locka_cnt [15]),
-	.B(vcc),
+	.A(vcc),
+	.B(\i2c_device|locka_cnt [15]),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|locka_cnt_dataa_6_1_cout [9]),
@@ -10700,10 +10683,10 @@ alta_slice \i2c_device|locka_cnt_dataa_15_1 (
 	.LutOut(\i2c_device|locka_cnt_dataa_6_1_combout [9]),
 	.Cout(\i2c_device|locka_cnt_dataa_6_1_cout [10]),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_15_1 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_15_1 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_15_1 .coord_y = 10;
 defparam \i2c_device|locka_cnt_dataa_15_1 .coord_z = 9;
-defparam \i2c_device|locka_cnt_dataa_15_1 .mask = 16'h69B2;
+defparam \i2c_device|locka_cnt_dataa_15_1 .mask = 16'h69D4;
 defparam \i2c_device|locka_cnt_dataa_15_1 .modeMux = 1'b1;
 defparam \i2c_device|locka_cnt_dataa_15_1 .FeedbackMux = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_15_1 .ShiftMux = 1'b0;
@@ -10711,8 +10694,8 @@ defparam \i2c_device|locka_cnt_dataa_15_1 .BypassEn = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_15_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|locka_cnt_dataa_16_1 (
-	.A(vcc),
-	.B(\i2c_device|locka_cnt [16]),
+	.A(\i2c_device|locka_cnt [16]),
+	.B(vcc),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|locka_cnt_dataa_6_1_cout [10]),
@@ -10725,10 +10708,10 @@ alta_slice \i2c_device|locka_cnt_dataa_16_1 (
 	.LutOut(\i2c_device|locka_cnt_dataa_6_1_combout [10]),
 	.Cout(\i2c_device|locka_cnt_dataa_6_1_cout [11]),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_16_1 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_16_1 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_16_1 .coord_y = 10;
 defparam \i2c_device|locka_cnt_dataa_16_1 .coord_z = 10;
-defparam \i2c_device|locka_cnt_dataa_16_1 .mask = 16'h69D4;
+defparam \i2c_device|locka_cnt_dataa_16_1 .mask = 16'h69B2;
 defparam \i2c_device|locka_cnt_dataa_16_1 .modeMux = 1'b1;
 defparam \i2c_device|locka_cnt_dataa_16_1 .FeedbackMux = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_16_1 .ShiftMux = 1'b0;
@@ -10736,10 +10719,10 @@ defparam \i2c_device|locka_cnt_dataa_16_1 .BypassEn = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_16_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|locka_cnt_dataa_16_2 (
-	.A(\i2c_device|locka_cnt [18]),
-	.B(\i2c_device|locka_cnt [15]),
-	.C(\i2c_device|locka_cnt [16]),
-	.D(\i2c_device|locka_cnt [14]),
+	.A(\i2c_device|locka_cnt [15]),
+	.B(\i2c_device|locka_cnt [16]),
+	.C(\i2c_device|locka_cnt [14]),
+	.D(\i2c_device|locka_cnt [18]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -10750,9 +10733,9 @@ alta_slice \i2c_device|locka_cnt_dataa_16_2 (
 	.LutOut(\i2c_device|locka_cnt_datab_21_combout [2]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_16_2 .coord_x = 18;
+defparam \i2c_device|locka_cnt_dataa_16_2 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_16_2 .coord_y = 9;
-defparam \i2c_device|locka_cnt_dataa_16_2 .coord_z = 8;
+defparam \i2c_device|locka_cnt_dataa_16_2 .coord_z = 4;
 defparam \i2c_device|locka_cnt_dataa_16_2 .mask = 16'h8000;
 defparam \i2c_device|locka_cnt_dataa_16_2 .modeMux = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_16_2 .FeedbackMux = 1'b0;
@@ -10761,10 +10744,10 @@ defparam \i2c_device|locka_cnt_dataa_16_2 .BypassEn = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_16_2 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|locka_cnt_dataa_16_3 (
-	.A(\i2c_device|locka_cnt [18]),
-	.B(\i2c_device|locka_cnt [15]),
-	.C(\i2c_device|locka_cnt [16]),
-	.D(\i2c_device|locka_cnt [14]),
+	.A(\i2c_device|locka_cnt [14]),
+	.B(\i2c_device|locka_cnt [16]),
+	.C(\i2c_device|locka_cnt [15]),
+	.D(\i2c_device|locka_cnt [18]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -10775,9 +10758,9 @@ alta_slice \i2c_device|locka_cnt_dataa_16_3 (
 	.LutOut(\i2c_device|locka_cnt_dataa_8_3_combout [2]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_16_3 .coord_x = 18;
+defparam \i2c_device|locka_cnt_dataa_16_3 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_16_3 .coord_y = 9;
-defparam \i2c_device|locka_cnt_dataa_16_3 .coord_z = 9;
+defparam \i2c_device|locka_cnt_dataa_16_3 .coord_z = 8;
 defparam \i2c_device|locka_cnt_dataa_16_3 .mask = 16'h0001;
 defparam \i2c_device|locka_cnt_dataa_16_3 .modeMux = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_16_3 .FeedbackMux = 1'b0;
@@ -10800,8 +10783,8 @@ alta_slice \i2c_device|locka_cnt_dataa_17 (
 	.LutOut(\i2c_device|locka_cnt_dataa_9_combout [17]),
 	.Cout(\i2c_device|locka_cnt_dataa_0_cout [18]),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_17 .coord_x = 18;
-defparam \i2c_device|locka_cnt_dataa_17 .coord_y = 9;
+defparam \i2c_device|locka_cnt_dataa_17 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_17 .coord_y = 8;
 defparam \i2c_device|locka_cnt_dataa_17 .coord_z = 1;
 defparam \i2c_device|locka_cnt_dataa_17 .mask = 16'h96E8;
 defparam \i2c_device|locka_cnt_dataa_17 .modeMux = 1'b1;
@@ -10825,7 +10808,7 @@ alta_slice \i2c_device|locka_cnt_dataa_17_1 (
 	.LutOut(\i2c_device|locka_cnt_dataa_6_1_combout [11]),
 	.Cout(\i2c_device|locka_cnt_dataa_6_1_cout [12]),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_17_1 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_17_1 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_17_1 .coord_y = 10;
 defparam \i2c_device|locka_cnt_dataa_17_1 .coord_z = 11;
 defparam \i2c_device|locka_cnt_dataa_17_1 .mask = 16'h96E8;
@@ -10850,7 +10833,7 @@ alta_slice \i2c_device|locka_cnt_dataa_18_1 (
 	.LutOut(\i2c_device|locka_cnt_dataa_6_1_combout [12]),
 	.Cout(\i2c_device|locka_cnt_dataa_6_1_cout [13]),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_18_1 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_18_1 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_18_1 .coord_y = 10;
 defparam \i2c_device|locka_cnt_dataa_18_1 .coord_z = 12;
 defparam \i2c_device|locka_cnt_dataa_18_1 .mask = 16'h69D4;
@@ -10861,8 +10844,8 @@ defparam \i2c_device|locka_cnt_dataa_18_1 .BypassEn = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_18_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|locka_cnt_dataa_19 (
-	.A(\i2c_device|locka_cnt [19]),
-	.B(vcc),
+	.A(vcc),
+	.B(\i2c_device|locka_cnt [19]),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|locka_cnt_dataa_0_cout [19]),
@@ -10875,8 +10858,8 @@ alta_slice \i2c_device|locka_cnt_dataa_19 (
 	.LutOut(\i2c_device|locka_cnt_dataa_9_combout [19]),
 	.Cout(\i2c_device|locka_cnt_dataa_0_cout [20]),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_19 .coord_x = 18;
-defparam \i2c_device|locka_cnt_dataa_19 .coord_y = 9;
+defparam \i2c_device|locka_cnt_dataa_19 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_19 .coord_y = 8;
 defparam \i2c_device|locka_cnt_dataa_19 .coord_z = 3;
 defparam \i2c_device|locka_cnt_dataa_19 .mask = 16'h96E8;
 defparam \i2c_device|locka_cnt_dataa_19 .modeMux = 1'b1;
@@ -10886,8 +10869,8 @@ defparam \i2c_device|locka_cnt_dataa_19 .BypassEn = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_19 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|locka_cnt_dataa_19_1 (
-	.A(\i2c_device|locka_cnt [19]),
-	.B(vcc),
+	.A(vcc),
+	.B(\i2c_device|locka_cnt [19]),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|locka_cnt_dataa_6_1_cout [13]),
@@ -10900,10 +10883,10 @@ alta_slice \i2c_device|locka_cnt_dataa_19_1 (
 	.LutOut(\i2c_device|locka_cnt_dataa_6_1_combout [13]),
 	.Cout(\i2c_device|locka_cnt_dataa_6_1_cout [14]),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_19_1 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_19_1 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_19_1 .coord_y = 10;
 defparam \i2c_device|locka_cnt_dataa_19_1 .coord_z = 13;
-defparam \i2c_device|locka_cnt_dataa_19_1 .mask = 16'h69B2;
+defparam \i2c_device|locka_cnt_dataa_19_1 .mask = 16'h69D4;
 defparam \i2c_device|locka_cnt_dataa_19_1 .modeMux = 1'b1;
 defparam \i2c_device|locka_cnt_dataa_19_1 .FeedbackMux = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_19_1 .ShiftMux = 1'b0;
@@ -10925,8 +10908,8 @@ alta_slice \i2c_device|locka_cnt_dataa_20 (
 	.LutOut(\i2c_device|locka_cnt_dataa_9_combout [20]),
 	.Cout(\i2c_device|locka_cnt_dataa_0_cout [21]),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_20 .coord_x = 18;
-defparam \i2c_device|locka_cnt_dataa_20 .coord_y = 9;
+defparam \i2c_device|locka_cnt_dataa_20 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_20 .coord_y = 8;
 defparam \i2c_device|locka_cnt_dataa_20 .coord_z = 4;
 defparam \i2c_device|locka_cnt_dataa_20 .mask = 16'h96E8;
 defparam \i2c_device|locka_cnt_dataa_20 .modeMux = 1'b1;
@@ -10950,7 +10933,7 @@ alta_slice \i2c_device|locka_cnt_dataa_20_1 (
 	.LutOut(\i2c_device|locka_cnt_dataa_6_1_combout [14]),
 	.Cout(\i2c_device|locka_cnt_dataa_6_1_cout [15]),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_20_1 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_20_1 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_20_1 .coord_y = 10;
 defparam \i2c_device|locka_cnt_dataa_20_1 .coord_z = 14;
 defparam \i2c_device|locka_cnt_dataa_20_1 .mask = 16'h96E8;
@@ -10975,8 +10958,8 @@ alta_slice \i2c_device|locka_cnt_dataa_21 (
 	.LutOut(\i2c_device|locka_cnt_dataa_9_combout [21]),
 	.Cout(\i2c_device|locka_cnt_dataa_0_cout [22]),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_21 .coord_x = 18;
-defparam \i2c_device|locka_cnt_dataa_21 .coord_y = 9;
+defparam \i2c_device|locka_cnt_dataa_21 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_21 .coord_y = 8;
 defparam \i2c_device|locka_cnt_dataa_21 .coord_z = 5;
 defparam \i2c_device|locka_cnt_dataa_21 .mask = 16'h96E8;
 defparam \i2c_device|locka_cnt_dataa_21 .modeMux = 1'b1;
@@ -10986,8 +10969,8 @@ defparam \i2c_device|locka_cnt_dataa_21 .BypassEn = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_21 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|locka_cnt_dataa_21_1 (
-	.A(vcc),
-	.B(\i2c_device|locka_cnt [21]),
+	.A(\i2c_device|locka_cnt [21]),
+	.B(vcc),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|locka_cnt_dataa_6_1_cout [15]),
@@ -11000,10 +10983,10 @@ alta_slice \i2c_device|locka_cnt_dataa_21_1 (
 	.LutOut(\i2c_device|locka_cnt_dataa_6_1_combout [15]),
 	.Cout(\i2c_device|locka_cnt_dataa_6_1_cout [16]),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_21_1 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_21_1 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_21_1 .coord_y = 10;
 defparam \i2c_device|locka_cnt_dataa_21_1 .coord_z = 15;
-defparam \i2c_device|locka_cnt_dataa_21_1 .mask = 16'h69D4;
+defparam \i2c_device|locka_cnt_dataa_21_1 .mask = 16'h69B2;
 defparam \i2c_device|locka_cnt_dataa_21_1 .modeMux = 1'b1;
 defparam \i2c_device|locka_cnt_dataa_21_1 .FeedbackMux = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_21_1 .ShiftMux = 1'b0;
@@ -11011,10 +10994,10 @@ defparam \i2c_device|locka_cnt_dataa_21_1 .BypassEn = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_21_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|locka_cnt_dataa_21_2 (
-	.A(\i2c_device|locka_cnt_dataa_22_2_combout [3]),
+	.A(\i2c_device|locka_cnt [10]),
 	.B(\i2c_device|locka_cnt [21]),
 	.C(\i2c_device|locka_cnt [19]),
-	.D(\i2c_device|locka_cnt [10]),
+	.D(\i2c_device|locka_cnt_dataa_22_2_combout [3]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -11025,10 +11008,10 @@ alta_slice \i2c_device|locka_cnt_dataa_21_2 (
 	.LutOut(\i2c_device|locka_cnt_dataa_8_3_combout [1]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_21_2 .coord_x = 18;
+defparam \i2c_device|locka_cnt_dataa_21_2 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_21_2 .coord_y = 9;
-defparam \i2c_device|locka_cnt_dataa_21_2 .coord_z = 10;
-defparam \i2c_device|locka_cnt_dataa_21_2 .mask = 16'h0002;
+defparam \i2c_device|locka_cnt_dataa_21_2 .coord_z = 9;
+defparam \i2c_device|locka_cnt_dataa_21_2 .mask = 16'h0100;
 defparam \i2c_device|locka_cnt_dataa_21_2 .modeMux = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_21_2 .FeedbackMux = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_21_2 .ShiftMux = 1'b0;
@@ -11036,8 +11019,8 @@ defparam \i2c_device|locka_cnt_dataa_21_2 .BypassEn = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_21_2 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|locka_cnt_dataa_22 (
-	.A(\i2c_device|locka_cnt [22]),
-	.B(vcc),
+	.A(vcc),
+	.B(\i2c_device|locka_cnt [22]),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|locka_cnt_dataa_0_cout [22]),
@@ -11050,8 +11033,8 @@ alta_slice \i2c_device|locka_cnt_dataa_22 (
 	.LutOut(\i2c_device|locka_cnt_dataa_9_combout [22]),
 	.Cout(\i2c_device|locka_cnt_dataa_0_cout [23]),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_22 .coord_x = 18;
-defparam \i2c_device|locka_cnt_dataa_22 .coord_y = 9;
+defparam \i2c_device|locka_cnt_dataa_22 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_22 .coord_y = 8;
 defparam \i2c_device|locka_cnt_dataa_22 .coord_z = 6;
 defparam \i2c_device|locka_cnt_dataa_22 .mask = 16'h96E8;
 defparam \i2c_device|locka_cnt_dataa_22 .modeMux = 1'b1;
@@ -11075,7 +11058,7 @@ alta_slice \i2c_device|locka_cnt_dataa_22_1 (
 	.LutOut(\i2c_device|locka_cnt_dataa_6_1_combout [16]),
 	.Cout(\i2c_device|locka_cnt_dataa_6_1_cout [17]),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_22_1 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_22_1 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_22_1 .coord_y = 9;
 defparam \i2c_device|locka_cnt_dataa_22_1 .coord_z = 0;
 defparam \i2c_device|locka_cnt_dataa_22_1 .mask = 16'h96E8;
@@ -11086,10 +11069,10 @@ defparam \i2c_device|locka_cnt_dataa_22_1 .BypassEn = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_22_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|locka_cnt_dataa_22_2 (
-	.A(\i2c_device|locka_cnt [22]),
-	.B(\i2c_device|locka_cnt [17]),
-	.C(\i2c_device|locka_cnt [11]),
-	.D(\i2c_device|locka_cnt [20]),
+	.A(\i2c_device|locka_cnt [20]),
+	.B(\i2c_device|locka_cnt [11]),
+	.C(\i2c_device|locka_cnt [17]),
+	.D(\i2c_device|locka_cnt [22]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -11100,9 +11083,9 @@ alta_slice \i2c_device|locka_cnt_dataa_22_2 (
 	.LutOut(\i2c_device|locka_cnt_dataa_22_2_combout [3]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_22_2 .coord_x = 18;
+defparam \i2c_device|locka_cnt_dataa_22_2 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_22_2 .coord_y = 9;
-defparam \i2c_device|locka_cnt_dataa_22_2 .coord_z = 14;
+defparam \i2c_device|locka_cnt_dataa_22_2 .coord_z = 11;
 defparam \i2c_device|locka_cnt_dataa_22_2 .mask = 16'h0001;
 defparam \i2c_device|locka_cnt_dataa_22_2 .modeMux = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_22_2 .FeedbackMux = 1'b0;
@@ -11111,8 +11094,8 @@ defparam \i2c_device|locka_cnt_dataa_22_2 .BypassEn = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_22_2 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|locka_cnt_dataa_4_1 (
-	.A(\i2c_device|locka_cnt [3]),
-	.B(\i2c_device|locka_cnt [2]),
+	.A(\i2c_device|locka_cnt [2]),
+	.B(\i2c_device|locka_cnt [3]),
 	.C(\i2c_device|locka_cnt [4]),
 	.D(\i2c_device|locka_cnt [5]),
 	.Cin(),
@@ -11125,9 +11108,9 @@ alta_slice \i2c_device|locka_cnt_dataa_4_1 (
 	.LutOut(\i2c_device|locka_cnt_datac_0_combout [1]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_4_1 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_4_1 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_4_1 .coord_y = 9;
-defparam \i2c_device|locka_cnt_dataa_4_1 .coord_z = 8;
+defparam \i2c_device|locka_cnt_dataa_4_1 .coord_z = 14;
 defparam \i2c_device|locka_cnt_dataa_4_1 .mask = 16'h0001;
 defparam \i2c_device|locka_cnt_dataa_4_1 .modeMux = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_4_1 .FeedbackMux = 1'b0;
@@ -11150,7 +11133,7 @@ alta_slice \i2c_device|locka_cnt_dataa_6_1_cout_cin_17 (
 	.LutOut(\i2c_device|locka_cnt_dataa_6_1_cout_cin_17_combout ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_6_1_cout_cin_17 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_6_1_cout_cin_17 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_6_1_cout_cin_17 .coord_y = 9;
 defparam \i2c_device|locka_cnt_dataa_6_1_cout_cin_17 .coord_z = 1;
 defparam \i2c_device|locka_cnt_dataa_6_1_cout_cin_17 .mask = 16'hF0F0;
@@ -11162,9 +11145,9 @@ defparam \i2c_device|locka_cnt_dataa_6_1_cout_cin_17 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|locka_cnt_dataa_6_1_cout_cin_17_combout_datab (
 	.A(vcc),
-	.B(vcc),
-	.C(\i2c_device|locka_cnt_datab_21_combout_datab_1_combout [0]),
-	.D(\i2c_device|locka_cnt_dataa_6_1_cout_cin_17_combout ),
+	.B(\i2c_device|locka_cnt_dataa_6_1_cout_cin_17_combout ),
+	.C(vcc),
+	.D(\i2c_device|locka_cnt_datab_21_combout_datab_1_combout [0]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -11175,10 +11158,10 @@ alta_slice \i2c_device|locka_cnt_dataa_6_1_cout_cin_17_combout_datab (
 	.LutOut(\i2c_device|locka_cnt_dataa_6_1_cout_cin_17_combout_datab_combout ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_6_1_cout_cin_17_combout_datab .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_6_1_cout_cin_17_combout_datab .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_6_1_cout_cin_17_combout_datab .coord_y = 9;
 defparam \i2c_device|locka_cnt_dataa_6_1_cout_cin_17_combout_datab .coord_z = 2;
-defparam \i2c_device|locka_cnt_dataa_6_1_cout_cin_17_combout_datab .mask = 16'h0F00;
+defparam \i2c_device|locka_cnt_dataa_6_1_cout_cin_17_combout_datab .mask = 16'h00CC;
 defparam \i2c_device|locka_cnt_dataa_6_1_cout_cin_17_combout_datab .modeMux = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_6_1_cout_cin_17_combout_datab .FeedbackMux = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_6_1_cout_cin_17_combout_datab .ShiftMux = 1'b0;
@@ -11200,7 +11183,7 @@ alta_slice \i2c_device|locka_cnt_dataa_7_1 (
 	.LutOut(\i2c_device|locka_cnt_dataa_6_1_combout [1]),
 	.Cout(\i2c_device|locka_cnt_dataa_6_1_cout [2]),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_7_1 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_7_1 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_7_1 .coord_y = 10;
 defparam \i2c_device|locka_cnt_dataa_7_1 .coord_z = 1;
 defparam \i2c_device|locka_cnt_dataa_7_1 .mask = 16'h69D4;
@@ -11225,7 +11208,7 @@ alta_slice \i2c_device|locka_cnt_dataa_8_1 (
 	.LutOut(\i2c_device|locka_cnt_dataa_6_1_combout [2]),
 	.Cout(\i2c_device|locka_cnt_dataa_6_1_cout [3]),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_8_1 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_8_1 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_8_1 .coord_y = 10;
 defparam \i2c_device|locka_cnt_dataa_8_1 .coord_z = 2;
 defparam \i2c_device|locka_cnt_dataa_8_1 .mask = 16'h96E8;
@@ -11236,10 +11219,10 @@ defparam \i2c_device|locka_cnt_dataa_8_1 .BypassEn = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_8_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|locka_cnt_dataa_8_2 (
-	.A(\i2c_device|locka_cnt [9]),
+	.A(\i2c_device|locka_cnt [8]),
 	.B(\i2c_device|locka_cnt [7]),
 	.C(\i2c_device|locka_cnt [6]),
-	.D(\i2c_device|locka_cnt [8]),
+	.D(\i2c_device|locka_cnt [9]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -11250,10 +11233,10 @@ alta_slice \i2c_device|locka_cnt_dataa_8_2 (
 	.LutOut(\i2c_device|locka_cnt_datab_21_combout [3]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_8_2 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_8_2 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_8_2 .coord_y = 9;
-defparam \i2c_device|locka_cnt_dataa_8_2 .coord_z = 4;
-defparam \i2c_device|locka_cnt_dataa_8_2 .mask = 16'h0080;
+defparam \i2c_device|locka_cnt_dataa_8_2 .coord_z = 5;
+defparam \i2c_device|locka_cnt_dataa_8_2 .mask = 16'h4000;
 defparam \i2c_device|locka_cnt_dataa_8_2 .modeMux = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_8_2 .FeedbackMux = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_8_2 .ShiftMux = 1'b0;
@@ -11261,9 +11244,9 @@ defparam \i2c_device|locka_cnt_dataa_8_2 .BypassEn = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_8_2 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|locka_cnt_dataa_8_3 (
-	.A(\i2c_device|locka_cnt [6]),
-	.B(\i2c_device|locka_cnt [8]),
-	.C(\i2c_device|locka_cnt [7]),
+	.A(\i2c_device|locka_cnt [8]),
+	.B(\i2c_device|locka_cnt [7]),
+	.C(\i2c_device|locka_cnt [6]),
 	.D(\i2c_device|locka_cnt [9]),
 	.Cin(),
 	.Qin(),
@@ -11275,9 +11258,9 @@ alta_slice \i2c_device|locka_cnt_dataa_8_3 (
 	.LutOut(\i2c_device|locka_cnt_dataa_8_3_combout [3]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_8_3 .coord_x = 18;
+defparam \i2c_device|locka_cnt_dataa_8_3 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_8_3 .coord_y = 9;
-defparam \i2c_device|locka_cnt_dataa_8_3 .coord_z = 11;
+defparam \i2c_device|locka_cnt_dataa_8_3 .coord_z = 7;
 defparam \i2c_device|locka_cnt_dataa_8_3 .mask = 16'h0001;
 defparam \i2c_device|locka_cnt_dataa_8_3 .modeMux = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_8_3 .FeedbackMux = 1'b0;
@@ -11286,10 +11269,10 @@ defparam \i2c_device|locka_cnt_dataa_8_3 .BypassEn = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_8_3 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|locka_cnt_dataa_8_3_combout_combout_0 (
-	.A(\i2c_device|locka_cnt_datac_0_combout [1]),
+	.A(vcc),
 	.B(vcc),
-	.C(\i2c_device|locka_cnt_datac_0_combout [0]),
-	.D(vcc),
+	.C(\i2c_device|locka_cnt_datac_0_combout [1]),
+	.D(\i2c_device|locka_cnt_datac_0_combout [0]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -11300,10 +11283,10 @@ alta_slice \i2c_device|locka_cnt_dataa_8_3_combout_combout_0 (
 	.LutOut(\i2c_device|locka_cnt_dataa_8_3_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_8_3_combout_combout_0 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_8_3_combout_combout_0 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_8_3_combout_combout_0 .coord_y = 9;
-defparam \i2c_device|locka_cnt_dataa_8_3_combout_combout_0 .coord_z = 5;
-defparam \i2c_device|locka_cnt_dataa_8_3_combout_combout_0 .mask = 16'hA0A0;
+defparam \i2c_device|locka_cnt_dataa_8_3_combout_combout_0 .coord_z = 12;
+defparam \i2c_device|locka_cnt_dataa_8_3_combout_combout_0 .mask = 16'hF000;
 defparam \i2c_device|locka_cnt_dataa_8_3_combout_combout_0 .modeMux = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_8_3_combout_combout_0 .FeedbackMux = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_8_3_combout_combout_0 .ShiftMux = 1'b0;
@@ -11311,10 +11294,10 @@ defparam \i2c_device|locka_cnt_dataa_8_3_combout_combout_0 .BypassEn = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_8_3_combout_combout_0 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|locka_cnt_dataa_8_3_combout_dataa_0 (
-	.A(\i2c_device|locka_cnt_dataa_8_3_combout [0]),
-	.B(\i2c_device|locka_cnt_dataa_8_3_combout [2]),
-	.C(\i2c_device|locka_cnt_dataa_8_3_combout [1]),
-	.D(\i2c_device|locka_cnt_dataa_8_3_combout [3]),
+	.A(\i2c_device|locka_cnt_dataa_8_3_combout [2]),
+	.B(\i2c_device|locka_cnt_dataa_8_3_combout [3]),
+	.C(\i2c_device|locka_cnt_dataa_8_3_combout [0]),
+	.D(\i2c_device|locka_cnt_dataa_8_3_combout [1]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -11325,9 +11308,9 @@ alta_slice \i2c_device|locka_cnt_dataa_8_3_combout_dataa_0 (
 	.LutOut(\i2c_device|locka_cnt_dataa_8_3_combout_dataa_0_combout [2]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_8_3_combout_dataa_0 .coord_x = 18;
+defparam \i2c_device|locka_cnt_dataa_8_3_combout_dataa_0 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_8_3_combout_dataa_0 .coord_y = 9;
-defparam \i2c_device|locka_cnt_dataa_8_3_combout_dataa_0 .coord_z = 12;
+defparam \i2c_device|locka_cnt_dataa_8_3_combout_dataa_0 .coord_z = 6;
 defparam \i2c_device|locka_cnt_dataa_8_3_combout_dataa_0 .mask = 16'h8000;
 defparam \i2c_device|locka_cnt_dataa_8_3_combout_dataa_0 .modeMux = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_8_3_combout_dataa_0 .FeedbackMux = 1'b0;
@@ -11350,8 +11333,8 @@ alta_slice \i2c_device|locka_cnt_dataa_9 (
 	.LutOut(\i2c_device|locka_cnt_dataa_9_combout [9]),
 	.Cout(\i2c_device|locka_cnt_dataa_0_cout [10]),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_9 .coord_x = 18;
-defparam \i2c_device|locka_cnt_dataa_9 .coord_y = 10;
+defparam \i2c_device|locka_cnt_dataa_9 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_9 .coord_y = 9;
 defparam \i2c_device|locka_cnt_dataa_9 .coord_z = 9;
 defparam \i2c_device|locka_cnt_dataa_9 .mask = 16'h96E8;
 defparam \i2c_device|locka_cnt_dataa_9 .modeMux = 1'b1;
@@ -11375,7 +11358,7 @@ alta_slice \i2c_device|locka_cnt_dataa_9_1 (
 	.LutOut(\i2c_device|locka_cnt_dataa_6_1_combout [3]),
 	.Cout(\i2c_device|locka_cnt_dataa_6_1_cout [4]),
 	.Q());
-defparam \i2c_device|locka_cnt_dataa_9_1 .coord_x = 19;
+defparam \i2c_device|locka_cnt_dataa_9_1 .coord_x = 20;
 defparam \i2c_device|locka_cnt_dataa_9_1 .coord_y = 10;
 defparam \i2c_device|locka_cnt_dataa_9_1 .coord_z = 3;
 defparam \i2c_device|locka_cnt_dataa_9_1 .mask = 16'h69D4;
@@ -11386,10 +11369,10 @@ defparam \i2c_device|locka_cnt_dataa_9_1 .BypassEn = 1'b0;
 defparam \i2c_device|locka_cnt_dataa_9_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|locka_cnt_datab_21 (
-	.A(\i2c_device|locka_cnt_dataa_22_2_combout [3]),
-	.B(\i2c_device|locka_cnt [21]),
+	.A(\i2c_device|locka_cnt [10]),
+	.B(\i2c_device|locka_cnt_dataa_22_2_combout [3]),
 	.C(\i2c_device|locka_cnt [19]),
-	.D(\i2c_device|locka_cnt [10]),
+	.D(\i2c_device|locka_cnt [21]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -11400,9 +11383,9 @@ alta_slice \i2c_device|locka_cnt_datab_21 (
 	.LutOut(\i2c_device|locka_cnt_datab_21_combout [1]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|locka_cnt_datab_21 .coord_x = 18;
+defparam \i2c_device|locka_cnt_datab_21 .coord_x = 20;
 defparam \i2c_device|locka_cnt_datab_21 .coord_y = 9;
-defparam \i2c_device|locka_cnt_datab_21 .coord_z = 13;
+defparam \i2c_device|locka_cnt_datab_21 .coord_z = 10;
 defparam \i2c_device|locka_cnt_datab_21 .mask = 16'h8000;
 defparam \i2c_device|locka_cnt_datab_21 .modeMux = 1'b0;
 defparam \i2c_device|locka_cnt_datab_21 .FeedbackMux = 1'b0;
@@ -11411,10 +11394,10 @@ defparam \i2c_device|locka_cnt_datab_21 .BypassEn = 1'b0;
 defparam \i2c_device|locka_cnt_datab_21 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|locka_cnt_datab_21_combout_datab_1 (
-	.A(\i2c_device|locka_cnt_datab_21_combout [3]),
-	.B(\i2c_device|locka_cnt_datab_21_combout [2]),
-	.C(\i2c_device|locka_cnt_datab_21_combout [1]),
-	.D(\i2c_device|locka_cnt_dataa_8_3_combout [0]),
+	.A(\i2c_device|locka_cnt_datab_21_combout [1]),
+	.B(\i2c_device|locka_cnt_dataa_8_3_combout [0]),
+	.C(\i2c_device|locka_cnt_datab_21_combout [2]),
+	.D(\i2c_device|locka_cnt_datab_21_combout [3]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -11425,7 +11408,7 @@ alta_slice \i2c_device|locka_cnt_datab_21_combout_datab_1 (
 	.LutOut(\i2c_device|locka_cnt_datab_21_combout_datab_1_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|locka_cnt_datab_21_combout_datab_1 .coord_x = 19;
+defparam \i2c_device|locka_cnt_datab_21_combout_datab_1 .coord_x = 20;
 defparam \i2c_device|locka_cnt_datab_21_combout_datab_1 .coord_y = 9;
 defparam \i2c_device|locka_cnt_datab_21_combout_datab_1 .coord_z = 3;
 defparam \i2c_device|locka_cnt_datab_21_combout_datab_1 .mask = 16'h8000;
@@ -11436,9 +11419,9 @@ defparam \i2c_device|locka_cnt_datab_21_combout_datab_1 .BypassEn = 1'b0;
 defparam \i2c_device|locka_cnt_datab_21_combout_datab_1 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|locka_cnt_datac_0 (
-	.A(\i2c_device|locka_cnt [0]),
-	.B(\i2c_device|locka_cnt [12]),
-	.C(\i2c_device|locka_cnt [1]),
+	.A(\i2c_device|locka_cnt [1]),
+	.B(\i2c_device|locka_cnt [0]),
+	.C(\i2c_device|locka_cnt [12]),
 	.D(\i2c_device|locka_cnt [13]),
 	.Cin(),
 	.Qin(),
@@ -11450,9 +11433,9 @@ alta_slice \i2c_device|locka_cnt_datac_0 (
 	.LutOut(\i2c_device|locka_cnt_datac_0_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|locka_cnt_datac_0 .coord_x = 19;
+defparam \i2c_device|locka_cnt_datac_0 .coord_x = 20;
 defparam \i2c_device|locka_cnt_datac_0 .coord_y = 9;
-defparam \i2c_device|locka_cnt_datac_0 .coord_z = 10;
+defparam \i2c_device|locka_cnt_datac_0 .coord_z = 13;
 defparam \i2c_device|locka_cnt_datac_0 .mask = 16'h0001;
 defparam \i2c_device|locka_cnt_datac_0 .modeMux = 1'b0;
 defparam \i2c_device|locka_cnt_datac_0 .FeedbackMux = 1'b0;
@@ -11467,16 +11450,16 @@ alta_slice \i2c_device|locka_cnt_q_0 (
 	.D(vcc),
 	.Cin(),
 	.Qin(\i2c_device|locka_cnt [0]),
-	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10014_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10001_GND),
-	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10014_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10012_Y10001_GND),
+	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10001_GND),
+	.SyncLoad(SyncLoad_X10012_Y10001_GND),
 	.LutOut(\i2c_device|locka_cnt_dataa_0_combout ),
 	.Cout(\i2c_device|locka_cnt_dataa_0_cout [1]),
 	.Q(\i2c_device|locka_cnt [0]));
-defparam \i2c_device|locka_cnt_q_0 .coord_x = 18;
-defparam \i2c_device|locka_cnt_q_0 .coord_y = 10;
+defparam \i2c_device|locka_cnt_q_0 .coord_x = 19;
+defparam \i2c_device|locka_cnt_q_0 .coord_y = 9;
 defparam \i2c_device|locka_cnt_q_0 .coord_z = 0;
 defparam \i2c_device|locka_cnt_q_0 .mask = 16'h66DD;
 defparam \i2c_device|locka_cnt_q_0 .modeMux = 1'b1;
@@ -11492,16 +11475,16 @@ alta_slice \i2c_device|locka_cnt_q_1 (
 	.D(vcc),
 	.Cin(\i2c_device|locka_cnt_dataa_0_cout [1]),
 	.Qin(\i2c_device|locka_cnt [1]),
-	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10014_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10001_GND),
-	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10014_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10012_Y10001_GND),
+	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10001_GND),
+	.SyncLoad(SyncLoad_X10012_Y10001_GND),
 	.LutOut(\i2c_device|locka_cnt_dataa_1_combout ),
 	.Cout(\i2c_device|locka_cnt_dataa_0_cout [2]),
 	.Q(\i2c_device|locka_cnt [1]));
-defparam \i2c_device|locka_cnt_q_1 .coord_x = 18;
-defparam \i2c_device|locka_cnt_q_1 .coord_y = 10;
+defparam \i2c_device|locka_cnt_q_1 .coord_x = 19;
+defparam \i2c_device|locka_cnt_q_1 .coord_y = 9;
 defparam \i2c_device|locka_cnt_q_1 .coord_z = 1;
 defparam \i2c_device|locka_cnt_q_1 .mask = 16'h96E8;
 defparam \i2c_device|locka_cnt_q_1 .modeMux = 1'b1;
@@ -11517,16 +11500,16 @@ alta_slice \i2c_device|locka_cnt_q_10 (
 	.D(vcc),
 	.Cin(\i2c_device|locka_cnt_dataa_0_cout [10]),
 	.Qin(\i2c_device|locka_cnt [10]),
-	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10014_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10001_GND),
-	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10014_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10012_Y10001_GND),
+	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10001_GND),
+	.SyncLoad(SyncLoad_X10012_Y10001_GND),
 	.LutOut(\i2c_device|locka_cnt_dataa_10_combout ),
 	.Cout(\i2c_device|locka_cnt_dataa_0_cout [11]),
 	.Q(\i2c_device|locka_cnt [10]));
-defparam \i2c_device|locka_cnt_q_10 .coord_x = 18;
-defparam \i2c_device|locka_cnt_q_10 .coord_y = 10;
+defparam \i2c_device|locka_cnt_q_10 .coord_x = 19;
+defparam \i2c_device|locka_cnt_q_10 .coord_y = 9;
 defparam \i2c_device|locka_cnt_q_10 .coord_z = 10;
 defparam \i2c_device|locka_cnt_q_10 .mask = 16'h96E8;
 defparam \i2c_device|locka_cnt_q_10 .modeMux = 1'b1;
@@ -11542,16 +11525,16 @@ alta_slice \i2c_device|locka_cnt_q_11 (
 	.D(vcc),
 	.Cin(\i2c_device|locka_cnt_dataa_0_cout [11]),
 	.Qin(\i2c_device|locka_cnt [11]),
-	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10014_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10001_GND),
-	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10014_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10012_Y10001_GND),
+	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10001_GND),
+	.SyncLoad(SyncLoad_X10012_Y10001_GND),
 	.LutOut(\i2c_device|locka_cnt_dataa_11_combout ),
 	.Cout(\i2c_device|locka_cnt_dataa_0_cout [12]),
 	.Q(\i2c_device|locka_cnt [11]));
-defparam \i2c_device|locka_cnt_q_11 .coord_x = 18;
-defparam \i2c_device|locka_cnt_q_11 .coord_y = 10;
+defparam \i2c_device|locka_cnt_q_11 .coord_x = 19;
+defparam \i2c_device|locka_cnt_q_11 .coord_y = 9;
 defparam \i2c_device|locka_cnt_q_11 .coord_z = 11;
 defparam \i2c_device|locka_cnt_q_11 .mask = 16'h96E8;
 defparam \i2c_device|locka_cnt_q_11 .modeMux = 1'b1;
@@ -11567,16 +11550,16 @@ alta_slice \i2c_device|locka_cnt_q_13 (
 	.D(vcc),
 	.Cin(\i2c_device|locka_cnt_dataa_0_cout [13]),
 	.Qin(\i2c_device|locka_cnt [13]),
-	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10014_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10001_GND),
-	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10014_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10012_Y10001_GND),
+	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10001_GND),
+	.SyncLoad(SyncLoad_X10012_Y10001_GND),
 	.LutOut(\i2c_device|locka_cnt_dataa_13_combout ),
 	.Cout(\i2c_device|locka_cnt_dataa_0_cout [14]),
 	.Q(\i2c_device|locka_cnt [13]));
-defparam \i2c_device|locka_cnt_q_13 .coord_x = 18;
-defparam \i2c_device|locka_cnt_q_13 .coord_y = 10;
+defparam \i2c_device|locka_cnt_q_13 .coord_x = 19;
+defparam \i2c_device|locka_cnt_q_13 .coord_y = 9;
 defparam \i2c_device|locka_cnt_q_13 .coord_z = 13;
 defparam \i2c_device|locka_cnt_q_13 .mask = 16'h96E8;
 defparam \i2c_device|locka_cnt_q_13 .modeMux = 1'b1;
@@ -11592,16 +11575,16 @@ alta_slice \i2c_device|locka_cnt_q_14 (
 	.D(vcc),
 	.Cin(\i2c_device|locka_cnt_dataa_0_cout [14]),
 	.Qin(\i2c_device|locka_cnt [14]),
-	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10014_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10001_GND),
-	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10014_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10012_Y10001_GND),
+	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10001_GND),
+	.SyncLoad(SyncLoad_X10012_Y10001_GND),
 	.LutOut(\i2c_device|locka_cnt_dataa_14_combout ),
 	.Cout(\i2c_device|locka_cnt_dataa_0_cout [15]),
 	.Q(\i2c_device|locka_cnt [14]));
-defparam \i2c_device|locka_cnt_q_14 .coord_x = 18;
-defparam \i2c_device|locka_cnt_q_14 .coord_y = 10;
+defparam \i2c_device|locka_cnt_q_14 .coord_x = 19;
+defparam \i2c_device|locka_cnt_q_14 .coord_y = 9;
 defparam \i2c_device|locka_cnt_q_14 .coord_z = 14;
 defparam \i2c_device|locka_cnt_q_14 .mask = 16'h96E8;
 defparam \i2c_device|locka_cnt_q_14 .modeMux = 1'b1;
@@ -11617,16 +11600,16 @@ alta_slice \i2c_device|locka_cnt_q_15 (
 	.D(vcc),
 	.Cin(\i2c_device|locka_cnt_dataa_0_cout [15]),
 	.Qin(\i2c_device|locka_cnt [15]),
-	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10014_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10001_GND),
-	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10014_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10012_Y10001_GND),
+	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10001_GND),
+	.SyncLoad(SyncLoad_X10012_Y10001_GND),
 	.LutOut(\i2c_device|locka_cnt_dataa_15_combout ),
 	.Cout(\i2c_device|locka_cnt_dataa_0_cout [16]),
 	.Q(\i2c_device|locka_cnt [15]));
-defparam \i2c_device|locka_cnt_q_15 .coord_x = 18;
-defparam \i2c_device|locka_cnt_q_15 .coord_y = 10;
+defparam \i2c_device|locka_cnt_q_15 .coord_x = 19;
+defparam \i2c_device|locka_cnt_q_15 .coord_y = 9;
 defparam \i2c_device|locka_cnt_q_15 .coord_z = 15;
 defparam \i2c_device|locka_cnt_q_15 .mask = 16'h96E8;
 defparam \i2c_device|locka_cnt_q_15 .modeMux = 1'b1;
@@ -11642,16 +11625,16 @@ alta_slice \i2c_device|locka_cnt_q_16 (
 	.D(vcc),
 	.Cin(\i2c_device|locka_cnt_dataa_0_cout [16]),
 	.Qin(\i2c_device|locka_cnt [16]),
-	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10002_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10002_Y10001_GND),
-	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10002_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10010_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10010_Y10001_GND),
+	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10010_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10002_Y10001_GND),
+	.SyncLoad(SyncLoad_X10010_Y10001_GND),
 	.LutOut(\i2c_device|locka_cnt_dataa_16_combout ),
 	.Cout(\i2c_device|locka_cnt_dataa_0_cout [17]),
 	.Q(\i2c_device|locka_cnt [16]));
-defparam \i2c_device|locka_cnt_q_16 .coord_x = 18;
-defparam \i2c_device|locka_cnt_q_16 .coord_y = 9;
+defparam \i2c_device|locka_cnt_q_16 .coord_x = 19;
+defparam \i2c_device|locka_cnt_q_16 .coord_y = 8;
 defparam \i2c_device|locka_cnt_q_16 .coord_z = 0;
 defparam \i2c_device|locka_cnt_q_16 .mask = 16'h96E8;
 defparam \i2c_device|locka_cnt_q_16 .modeMux = 1'b1;
@@ -11667,16 +11650,16 @@ alta_slice \i2c_device|locka_cnt_q_18 (
 	.D(vcc),
 	.Cin(\i2c_device|locka_cnt_dataa_0_cout [18]),
 	.Qin(\i2c_device|locka_cnt [18]),
-	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10002_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10002_Y10001_GND),
-	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10002_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10010_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10010_Y10001_GND),
+	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10010_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10002_Y10001_GND),
+	.SyncLoad(SyncLoad_X10010_Y10001_GND),
 	.LutOut(\i2c_device|locka_cnt_dataa_18_combout ),
 	.Cout(\i2c_device|locka_cnt_dataa_0_cout [19]),
 	.Q(\i2c_device|locka_cnt [18]));
-defparam \i2c_device|locka_cnt_q_18 .coord_x = 18;
-defparam \i2c_device|locka_cnt_q_18 .coord_y = 9;
+defparam \i2c_device|locka_cnt_q_18 .coord_x = 19;
+defparam \i2c_device|locka_cnt_q_18 .coord_y = 8;
 defparam \i2c_device|locka_cnt_q_18 .coord_z = 2;
 defparam \i2c_device|locka_cnt_q_18 .mask = 16'h96E8;
 defparam \i2c_device|locka_cnt_q_18 .modeMux = 1'b1;
@@ -11692,16 +11675,16 @@ alta_slice \i2c_device|locka_cnt_q_2 (
 	.D(vcc),
 	.Cin(\i2c_device|locka_cnt_dataa_0_cout [2]),
 	.Qin(\i2c_device|locka_cnt [2]),
-	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10014_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10001_GND),
-	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10014_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10012_Y10001_GND),
+	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10001_GND),
+	.SyncLoad(SyncLoad_X10012_Y10001_GND),
 	.LutOut(\i2c_device|locka_cnt_dataa_2_combout ),
 	.Cout(\i2c_device|locka_cnt_dataa_0_cout [3]),
 	.Q(\i2c_device|locka_cnt [2]));
-defparam \i2c_device|locka_cnt_q_2 .coord_x = 18;
-defparam \i2c_device|locka_cnt_q_2 .coord_y = 10;
+defparam \i2c_device|locka_cnt_q_2 .coord_x = 19;
+defparam \i2c_device|locka_cnt_q_2 .coord_y = 9;
 defparam \i2c_device|locka_cnt_q_2 .coord_z = 2;
 defparam \i2c_device|locka_cnt_q_2 .mask = 16'h96E8;
 defparam \i2c_device|locka_cnt_q_2 .modeMux = 1'b1;
@@ -11717,16 +11700,16 @@ alta_slice \i2c_device|locka_cnt_q_3 (
 	.D(vcc),
 	.Cin(\i2c_device|locka_cnt_dataa_0_cout [3]),
 	.Qin(\i2c_device|locka_cnt [3]),
-	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10014_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10001_GND),
-	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10014_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10012_Y10001_GND),
+	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10001_GND),
+	.SyncLoad(SyncLoad_X10012_Y10001_GND),
 	.LutOut(\i2c_device|locka_cnt_dataa_3_combout ),
 	.Cout(\i2c_device|locka_cnt_dataa_0_cout [4]),
 	.Q(\i2c_device|locka_cnt [3]));
-defparam \i2c_device|locka_cnt_q_3 .coord_x = 18;
-defparam \i2c_device|locka_cnt_q_3 .coord_y = 10;
+defparam \i2c_device|locka_cnt_q_3 .coord_x = 19;
+defparam \i2c_device|locka_cnt_q_3 .coord_y = 9;
 defparam \i2c_device|locka_cnt_q_3 .coord_z = 3;
 defparam \i2c_device|locka_cnt_q_3 .mask = 16'h96E8;
 defparam \i2c_device|locka_cnt_q_3 .modeMux = 1'b1;
@@ -11742,16 +11725,16 @@ alta_slice \i2c_device|locka_cnt_q_4 (
 	.D(vcc),
 	.Cin(\i2c_device|locka_cnt_dataa_0_cout [4]),
 	.Qin(\i2c_device|locka_cnt [4]),
-	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10014_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10001_GND),
-	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10014_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10012_Y10001_GND),
+	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10001_GND),
+	.SyncLoad(SyncLoad_X10012_Y10001_GND),
 	.LutOut(\i2c_device|locka_cnt_dataa_4_combout ),
 	.Cout(\i2c_device|locka_cnt_dataa_0_cout [5]),
 	.Q(\i2c_device|locka_cnt [4]));
-defparam \i2c_device|locka_cnt_q_4 .coord_x = 18;
-defparam \i2c_device|locka_cnt_q_4 .coord_y = 10;
+defparam \i2c_device|locka_cnt_q_4 .coord_x = 19;
+defparam \i2c_device|locka_cnt_q_4 .coord_y = 9;
 defparam \i2c_device|locka_cnt_q_4 .coord_z = 4;
 defparam \i2c_device|locka_cnt_q_4 .mask = 16'h96E8;
 defparam \i2c_device|locka_cnt_q_4 .modeMux = 1'b1;
@@ -11767,16 +11750,16 @@ alta_slice \i2c_device|locka_cnt_q_5 (
 	.D(vcc),
 	.Cin(\i2c_device|locka_cnt_dataa_0_cout [5]),
 	.Qin(\i2c_device|locka_cnt [5]),
-	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10014_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10001_GND),
-	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10014_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10012_Y10001_GND),
+	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10001_GND),
+	.SyncLoad(SyncLoad_X10012_Y10001_GND),
 	.LutOut(\i2c_device|locka_cnt_dataa_5_combout ),
 	.Cout(\i2c_device|locka_cnt_dataa_0_cout [6]),
 	.Q(\i2c_device|locka_cnt [5]));
-defparam \i2c_device|locka_cnt_q_5 .coord_x = 18;
-defparam \i2c_device|locka_cnt_q_5 .coord_y = 10;
+defparam \i2c_device|locka_cnt_q_5 .coord_x = 19;
+defparam \i2c_device|locka_cnt_q_5 .coord_y = 9;
 defparam \i2c_device|locka_cnt_q_5 .coord_z = 5;
 defparam \i2c_device|locka_cnt_q_5 .mask = 16'h96E8;
 defparam \i2c_device|locka_cnt_q_5 .modeMux = 1'b1;
@@ -11792,16 +11775,16 @@ alta_slice \i2c_device|locka_cnt_q_6 (
 	.D(vcc),
 	.Cin(\i2c_device|locka_cnt_dataa_0_cout [6]),
 	.Qin(\i2c_device|locka_cnt [6]),
-	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10014_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10001_GND),
-	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10014_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10012_Y10001_GND),
+	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10001_GND),
+	.SyncLoad(SyncLoad_X10012_Y10001_GND),
 	.LutOut(\i2c_device|locka_cnt_dataa_6_combout ),
 	.Cout(\i2c_device|locka_cnt_dataa_0_cout [7]),
 	.Q(\i2c_device|locka_cnt [6]));
-defparam \i2c_device|locka_cnt_q_6 .coord_x = 18;
-defparam \i2c_device|locka_cnt_q_6 .coord_y = 10;
+defparam \i2c_device|locka_cnt_q_6 .coord_x = 19;
+defparam \i2c_device|locka_cnt_q_6 .coord_y = 9;
 defparam \i2c_device|locka_cnt_q_6 .coord_z = 6;
 defparam \i2c_device|locka_cnt_q_6 .mask = 16'h96E8;
 defparam \i2c_device|locka_cnt_q_6 .modeMux = 1'b1;
@@ -11817,16 +11800,16 @@ alta_slice \i2c_device|locka_cnt_q_7 (
 	.D(vcc),
 	.Cin(\i2c_device|locka_cnt_dataa_0_cout [7]),
 	.Qin(\i2c_device|locka_cnt [7]),
-	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10014_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10001_GND),
-	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10014_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10012_Y10001_GND),
+	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10001_GND),
+	.SyncLoad(SyncLoad_X10012_Y10001_GND),
 	.LutOut(\i2c_device|locka_cnt_dataa_7_combout ),
 	.Cout(\i2c_device|locka_cnt_dataa_0_cout [8]),
 	.Q(\i2c_device|locka_cnt [7]));
-defparam \i2c_device|locka_cnt_q_7 .coord_x = 18;
-defparam \i2c_device|locka_cnt_q_7 .coord_y = 10;
+defparam \i2c_device|locka_cnt_q_7 .coord_x = 19;
+defparam \i2c_device|locka_cnt_q_7 .coord_y = 9;
 defparam \i2c_device|locka_cnt_q_7 .coord_z = 7;
 defparam \i2c_device|locka_cnt_q_7 .mask = 16'h96E8;
 defparam \i2c_device|locka_cnt_q_7 .modeMux = 1'b1;
@@ -11842,16 +11825,16 @@ alta_slice \i2c_device|locka_cnt_q_8 (
 	.D(vcc),
 	.Cin(\i2c_device|locka_cnt_dataa_0_cout [8]),
 	.Qin(\i2c_device|locka_cnt [8]),
-	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10014_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10001_GND),
-	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10014_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|locka_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10012_Y10001_GND),
+	.SyncReset(\i2c_device|locka_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10001_GND),
+	.SyncLoad(SyncLoad_X10012_Y10001_GND),
 	.LutOut(\i2c_device|locka_cnt_dataa_8_combout ),
 	.Cout(\i2c_device|locka_cnt_dataa_0_cout [9]),
 	.Q(\i2c_device|locka_cnt [8]));
-defparam \i2c_device|locka_cnt_q_8 .coord_x = 18;
-defparam \i2c_device|locka_cnt_q_8 .coord_y = 10;
+defparam \i2c_device|locka_cnt_q_8 .coord_x = 19;
+defparam \i2c_device|locka_cnt_q_8 .coord_y = 9;
 defparam \i2c_device|locka_cnt_q_8 .coord_z = 8;
 defparam \i2c_device|locka_cnt_q_8 .mask = 16'h96E8;
 defparam \i2c_device|locka_cnt_q_8 .modeMux = 1'b1;
@@ -11863,8 +11846,8 @@ defparam \i2c_device|locka_cnt_q_8 .CarryEnb = 1'b0;
 alta_slice \i2c_device|locka_rec_A_0_Y_B_Y_combout (
 	.A(vcc),
 	.B(vcc),
-	.C(\i2c_device|locka_cnt_dataa_8_3_combout_dataa_0_combout [2]),
-	.D(\i2c_device|locka_rec_A_0_Y ),
+	.C(\i2c_device|locka_rec_A_0_Y ),
+	.D(\i2c_device|locka_cnt_dataa_8_3_combout_dataa_0_combout [2]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -11875,59 +11858,84 @@ alta_slice \i2c_device|locka_rec_A_0_Y_B_Y_combout (
 	.LutOut(\i2c_device|locka_rec_A_0_Y_B_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|locka_rec_A_0_Y_B_Y_combout .coord_x = 18;
-defparam \i2c_device|locka_rec_A_0_Y_B_Y_combout .coord_y = 9;
+defparam \i2c_device|locka_rec_A_0_Y_B_Y_combout .coord_x = 19;
+defparam \i2c_device|locka_rec_A_0_Y_B_Y_combout .coord_y = 8;
 defparam \i2c_device|locka_rec_A_0_Y_B_Y_combout .coord_z = 7;
-defparam \i2c_device|locka_rec_A_0_Y_B_Y_combout .mask = 16'hFF0F;
+defparam \i2c_device|locka_rec_A_0_Y_B_Y_combout .mask = 16'hF0FF;
 defparam \i2c_device|locka_rec_A_0_Y_B_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|locka_rec_A_0_Y_B_Y_combout .FeedbackMux = 1'b0;
 defparam \i2c_device|locka_rec_A_0_Y_B_Y_combout .ShiftMux = 1'b0;
 defparam \i2c_device|locka_rec_A_0_Y_B_Y_combout .BypassEn = 1'b0;
 defparam \i2c_device|locka_rec_A_0_Y_B_Y_combout .CarryEnb = 1'b1;
 
+alta_slice \i2c_device|locka_rec_A_0_Y_combout (
+	.A(vcc),
+	.B(vcc),
+	.C(\i2c_device|locka_rec_d_0_q ),
+	.D(\i2c_device|locka_rec [0]),
+	.Cin(),
+	.Qin(),
+	.Clk(),
+	.AsyncReset(),
+	.SyncReset(),
+	.ShiftData(),
+	.SyncLoad(),
+	.LutOut(\i2c_device|locka_rec_A_0_Y ),
+	.Cout(),
+	.Q());
+defparam \i2c_device|locka_rec_A_0_Y_combout .coord_x = 19;
+defparam \i2c_device|locka_rec_A_0_Y_combout .coord_y = 8;
+defparam \i2c_device|locka_rec_A_0_Y_combout .coord_z = 8;
+defparam \i2c_device|locka_rec_A_0_Y_combout .mask = 16'h0FF0;
+defparam \i2c_device|locka_rec_A_0_Y_combout .modeMux = 1'b0;
+defparam \i2c_device|locka_rec_A_0_Y_combout .FeedbackMux = 1'b0;
+defparam \i2c_device|locka_rec_A_0_Y_combout .ShiftMux = 1'b0;
+defparam \i2c_device|locka_rec_A_0_Y_combout .BypassEn = 1'b0;
+defparam \i2c_device|locka_rec_A_0_Y_combout .CarryEnb = 1'b1;
+
 alta_slice \i2c_device|locka_rec_d_0 (
-	.A(\i2c_device|locka_rec [0]),
+	.A(\i2c_device|locka_cnt [6]),
 	.B(vcc),
 	.C(\i2c_device|locka_rec [0]),
 	.D(vcc),
 	.Cin(),
 	.Qin(\i2c_device|locka_rec_d_0_q ),
-	.Clk(CLKOSC_i_o_X10001_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10001_Y10002_GND),
-	.SyncReset(SyncReset_X10001_Y10002_GND),
+	.Clk(CLKOSC_i_o_X10017_Y10003_SIG_VCC),
+	.AsyncReset(AsyncReset_X10017_Y10003_GND),
+	.SyncReset(SyncReset_X10017_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10001_Y10002_VCC),
-	.LutOut(\i2c_device|locka_rec_A_0_Y ),
-	.Cout(),
+	.SyncLoad(SyncLoad_X10017_Y10003_VCC),
+	.LutOut(\i2c_device|locka_cnt_dataa_6_1_combout [0]),
+	.Cout(\i2c_device|locka_cnt_dataa_6_1_cout [1]),
 	.Q(\i2c_device|locka_rec_d_0_q ));
-defparam \i2c_device|locka_rec_d_0 .coord_x = 15;
-defparam \i2c_device|locka_rec_d_0 .coord_y = 5;
-defparam \i2c_device|locka_rec_d_0 .coord_z = 13;
-defparam \i2c_device|locka_rec_d_0 .mask = 16'h5A5A;
-defparam \i2c_device|locka_rec_d_0 .modeMux = 1'b0;
-defparam \i2c_device|locka_rec_d_0 .FeedbackMux = 1'b1;
+defparam \i2c_device|locka_rec_d_0 .coord_x = 20;
+defparam \i2c_device|locka_rec_d_0 .coord_y = 10;
+defparam \i2c_device|locka_rec_d_0 .coord_z = 0;
+defparam \i2c_device|locka_rec_d_0 .mask = 16'h66BB;
+defparam \i2c_device|locka_rec_d_0 .modeMux = 1'b1;
+defparam \i2c_device|locka_rec_d_0 .FeedbackMux = 1'b0;
 defparam \i2c_device|locka_rec_d_0 .ShiftMux = 1'b0;
 defparam \i2c_device|locka_rec_d_0 .BypassEn = 1'b1;
-defparam \i2c_device|locka_rec_d_0 .CarryEnb = 1'b1;
+defparam \i2c_device|locka_rec_d_0 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|locka_rec_q_0 (
-	.A(\i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1_combout [0]),
+	.A(\i2c_device|write_value [3]),
 	.B(\i2c_device|write_value_dataa_2_combout_datad_3_combout [1]),
 	.C(vcc),
-	.D(\i2c_device|write_value [3]),
+	.D(\i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1_combout [0]),
 	.Cin(),
 	.Qin(\i2c_device|locka_rec [0]),
-	.Clk(CLKOSC_i_o_X10001_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10001_Y10002_GND),
+	.Clk(CLKOSC_i_o_X10010_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10010_Y10001_GND),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
 	.LutOut(\i2c_device|locka_rec_A_0_1_Y ),
 	.Cout(),
 	.Q(\i2c_device|locka_rec [0]));
-defparam \i2c_device|locka_rec_q_0 .coord_x = 15;
-defparam \i2c_device|locka_rec_q_0 .coord_y = 5;
-defparam \i2c_device|locka_rec_q_0 .coord_z = 6;
+defparam \i2c_device|locka_rec_q_0 .coord_x = 19;
+defparam \i2c_device|locka_rec_q_0 .coord_y = 8;
+defparam \i2c_device|locka_rec_q_0 .coord_z = 9;
 defparam \i2c_device|locka_rec_q_0 .mask = 16'h78F0;
 defparam \i2c_device|locka_rec_q_0 .modeMux = 1'b0;
 defparam \i2c_device|locka_rec_q_0 .FeedbackMux = 1'b1;
@@ -11942,17 +11950,17 @@ alta_slice \i2c_device|lockb_cnt[12]_reg (
 	.D(\i2c_device|lockb_cnt_dataa_9_combout [12]),
 	.Cin(),
 	.Qin(\i2c_device|lockb_cnt [12]),
-	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10018_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10002_GND),
-	.SyncReset(SyncReset_X10018_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10014_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10014_Y10003_GND),
+	.SyncReset(SyncReset_X10014_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|lockb_rec_A_0_Y__SyncLoad_X10018_Y10002_SIG ),
+	.SyncLoad(\i2c_device|lockb_rec_A_0_Y__SyncLoad_X10014_Y10003_SIG ),
 	.LutOut(\i2c_device|lockb_cnt[12]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|lockb_cnt [12]));
-defparam \i2c_device|lockb_cnt[12]_reg .coord_x = 19;
-defparam \i2c_device|lockb_cnt[12]_reg .coord_y = 4;
-defparam \i2c_device|lockb_cnt[12]_reg .coord_z = 0;
+defparam \i2c_device|lockb_cnt[12]_reg .coord_x = 20;
+defparam \i2c_device|lockb_cnt[12]_reg .coord_y = 6;
+defparam \i2c_device|lockb_cnt[12]_reg .coord_z = 10;
 defparam \i2c_device|lockb_cnt[12]_reg .mask = 16'hFF00;
 defparam \i2c_device|lockb_cnt[12]_reg .modeMux = 1'b0;
 defparam \i2c_device|lockb_cnt[12]_reg .FeedbackMux = 1'b0;
@@ -11967,17 +11975,17 @@ alta_slice \i2c_device|lockb_cnt[17]_reg (
 	.D(\i2c_device|lockb_cnt_dataa_9_combout [17]),
 	.Cin(),
 	.Qin(\i2c_device|lockb_cnt [17]),
-	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10018_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10002_GND),
-	.SyncReset(SyncReset_X10018_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10014_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10014_Y10003_GND),
+	.SyncReset(SyncReset_X10014_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|lockb_rec_A_0_Y__SyncLoad_X10018_Y10002_SIG ),
+	.SyncLoad(\i2c_device|lockb_rec_A_0_Y__SyncLoad_X10014_Y10003_SIG ),
 	.LutOut(\i2c_device|lockb_cnt[17]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|lockb_cnt [17]));
-defparam \i2c_device|lockb_cnt[17]_reg .coord_x = 19;
-defparam \i2c_device|lockb_cnt[17]_reg .coord_y = 4;
-defparam \i2c_device|lockb_cnt[17]_reg .coord_z = 5;
+defparam \i2c_device|lockb_cnt[17]_reg .coord_x = 20;
+defparam \i2c_device|lockb_cnt[17]_reg .coord_y = 6;
+defparam \i2c_device|lockb_cnt[17]_reg .coord_z = 7;
 defparam \i2c_device|lockb_cnt[17]_reg .mask = 16'hFF00;
 defparam \i2c_device|lockb_cnt[17]_reg .modeMux = 1'b0;
 defparam \i2c_device|lockb_cnt[17]_reg .FeedbackMux = 1'b0;
@@ -11992,17 +12000,17 @@ alta_slice \i2c_device|lockb_cnt[19]_reg (
 	.D(\i2c_device|lockb_cnt_dataa_9_combout [19]),
 	.Cin(),
 	.Qin(\i2c_device|lockb_cnt [19]),
-	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10018_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10002_GND),
-	.SyncReset(SyncReset_X10018_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10014_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10014_Y10003_GND),
+	.SyncReset(SyncReset_X10014_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|lockb_rec_A_0_Y__SyncLoad_X10018_Y10002_SIG ),
+	.SyncLoad(\i2c_device|lockb_rec_A_0_Y__SyncLoad_X10014_Y10003_SIG ),
 	.LutOut(\i2c_device|lockb_cnt[19]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|lockb_cnt [19]));
-defparam \i2c_device|lockb_cnt[19]_reg .coord_x = 19;
-defparam \i2c_device|lockb_cnt[19]_reg .coord_y = 4;
-defparam \i2c_device|lockb_cnt[19]_reg .coord_z = 7;
+defparam \i2c_device|lockb_cnt[19]_reg .coord_x = 20;
+defparam \i2c_device|lockb_cnt[19]_reg .coord_y = 6;
+defparam \i2c_device|lockb_cnt[19]_reg .coord_z = 2;
 defparam \i2c_device|lockb_cnt[19]_reg .mask = 16'hFF00;
 defparam \i2c_device|lockb_cnt[19]_reg .modeMux = 1'b0;
 defparam \i2c_device|lockb_cnt[19]_reg .FeedbackMux = 1'b0;
@@ -12017,17 +12025,17 @@ alta_slice \i2c_device|lockb_cnt[20]_reg (
 	.D(\i2c_device|lockb_cnt_dataa_9_combout [20]),
 	.Cin(),
 	.Qin(\i2c_device|lockb_cnt [20]),
-	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10018_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10002_GND),
-	.SyncReset(SyncReset_X10018_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10014_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10014_Y10003_GND),
+	.SyncReset(SyncReset_X10014_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|lockb_rec_A_0_Y__SyncLoad_X10018_Y10002_SIG ),
+	.SyncLoad(\i2c_device|lockb_rec_A_0_Y__SyncLoad_X10014_Y10003_SIG ),
 	.LutOut(\i2c_device|lockb_cnt[20]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|lockb_cnt [20]));
-defparam \i2c_device|lockb_cnt[20]_reg .coord_x = 19;
-defparam \i2c_device|lockb_cnt[20]_reg .coord_y = 4;
-defparam \i2c_device|lockb_cnt[20]_reg .coord_z = 2;
+defparam \i2c_device|lockb_cnt[20]_reg .coord_x = 20;
+defparam \i2c_device|lockb_cnt[20]_reg .coord_y = 6;
+defparam \i2c_device|lockb_cnt[20]_reg .coord_z = 5;
 defparam \i2c_device|lockb_cnt[20]_reg .mask = 16'hFF00;
 defparam \i2c_device|lockb_cnt[20]_reg .modeMux = 1'b0;
 defparam \i2c_device|lockb_cnt[20]_reg .FeedbackMux = 1'b0;
@@ -12036,24 +12044,24 @@ defparam \i2c_device|lockb_cnt[20]_reg .BypassEn = 1'b1;
 defparam \i2c_device|lockb_cnt[20]_reg .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|lockb_cnt[21]_reg (
-	.A(\i2c_device|lockb_cnt_dataa_9_combout [21]),
+	.A(),
 	.B(),
 	.C(vcc),
-	.D(),
+	.D(\i2c_device|lockb_cnt_dataa_9_combout [21]),
 	.Cin(),
 	.Qin(\i2c_device|lockb_cnt [21]),
-	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10018_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10002_GND),
-	.SyncReset(SyncReset_X10018_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10014_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10014_Y10003_GND),
+	.SyncReset(SyncReset_X10014_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|lockb_rec_A_0_Y__SyncLoad_X10018_Y10002_SIG ),
+	.SyncLoad(\i2c_device|lockb_rec_A_0_Y__SyncLoad_X10014_Y10003_SIG ),
 	.LutOut(\i2c_device|lockb_cnt[21]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|lockb_cnt [21]));
-defparam \i2c_device|lockb_cnt[21]_reg .coord_x = 19;
-defparam \i2c_device|lockb_cnt[21]_reg .coord_y = 4;
-defparam \i2c_device|lockb_cnt[21]_reg .coord_z = 10;
-defparam \i2c_device|lockb_cnt[21]_reg .mask = 16'hAAAA;
+defparam \i2c_device|lockb_cnt[21]_reg .coord_x = 20;
+defparam \i2c_device|lockb_cnt[21]_reg .coord_y = 6;
+defparam \i2c_device|lockb_cnt[21]_reg .coord_z = 9;
+defparam \i2c_device|lockb_cnt[21]_reg .mask = 16'hFF00;
 defparam \i2c_device|lockb_cnt[21]_reg .modeMux = 1'b0;
 defparam \i2c_device|lockb_cnt[21]_reg .FeedbackMux = 1'b0;
 defparam \i2c_device|lockb_cnt[21]_reg .ShiftMux = 1'b0;
@@ -12067,17 +12075,17 @@ alta_slice \i2c_device|lockb_cnt[22]_reg (
 	.D(\i2c_device|lockb_cnt_dataa_9_combout [22]),
 	.Cin(),
 	.Qin(\i2c_device|lockb_cnt [22]),
-	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10018_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10002_GND),
-	.SyncReset(SyncReset_X10018_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10014_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10014_Y10003_GND),
+	.SyncReset(SyncReset_X10014_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|lockb_rec_A_0_Y__SyncLoad_X10018_Y10002_SIG ),
+	.SyncLoad(\i2c_device|lockb_rec_A_0_Y__SyncLoad_X10014_Y10003_SIG ),
 	.LutOut(\i2c_device|lockb_cnt[22]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|lockb_cnt [22]));
-defparam \i2c_device|lockb_cnt[22]_reg .coord_x = 19;
-defparam \i2c_device|lockb_cnt[22]_reg .coord_y = 4;
-defparam \i2c_device|lockb_cnt[22]_reg .coord_z = 12;
+defparam \i2c_device|lockb_cnt[22]_reg .coord_x = 20;
+defparam \i2c_device|lockb_cnt[22]_reg .coord_y = 6;
+defparam \i2c_device|lockb_cnt[22]_reg .coord_z = 8;
 defparam \i2c_device|lockb_cnt[22]_reg .mask = 16'hFF00;
 defparam \i2c_device|lockb_cnt[22]_reg .modeMux = 1'b0;
 defparam \i2c_device|lockb_cnt[22]_reg .FeedbackMux = 1'b0;
@@ -12086,84 +12094,34 @@ defparam \i2c_device|lockb_cnt[22]_reg .BypassEn = 1'b1;
 defparam \i2c_device|lockb_cnt[22]_reg .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|lockb_cnt[9]_reg (
-	.A(),
+	.A(\i2c_device|lockb_cnt_dataa_9_combout [9]),
 	.B(),
 	.C(vcc),
-	.D(\i2c_device|lockb_cnt_dataa_9_combout [9]),
+	.D(),
 	.Cin(),
 	.Qin(\i2c_device|lockb_cnt [9]),
-	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10018_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10002_GND),
-	.SyncReset(SyncReset_X10018_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10014_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10014_Y10003_GND),
+	.SyncReset(SyncReset_X10014_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|lockb_rec_A_0_Y__SyncLoad_X10018_Y10002_SIG ),
+	.SyncLoad(\i2c_device|lockb_rec_A_0_Y__SyncLoad_X10014_Y10003_SIG ),
 	.LutOut(\i2c_device|lockb_cnt[9]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|lockb_cnt [9]));
-defparam \i2c_device|lockb_cnt[9]_reg .coord_x = 19;
-defparam \i2c_device|lockb_cnt[9]_reg .coord_y = 4;
-defparam \i2c_device|lockb_cnt[9]_reg .coord_z = 4;
-defparam \i2c_device|lockb_cnt[9]_reg .mask = 16'hFF00;
+defparam \i2c_device|lockb_cnt[9]_reg .coord_x = 20;
+defparam \i2c_device|lockb_cnt[9]_reg .coord_y = 6;
+defparam \i2c_device|lockb_cnt[9]_reg .coord_z = 6;
+defparam \i2c_device|lockb_cnt[9]_reg .mask = 16'hAAAA;
 defparam \i2c_device|lockb_cnt[9]_reg .modeMux = 1'b0;
 defparam \i2c_device|lockb_cnt[9]_reg .FeedbackMux = 1'b0;
 defparam \i2c_device|lockb_cnt[9]_reg .ShiftMux = 1'b0;
 defparam \i2c_device|lockb_cnt[9]_reg .BypassEn = 1'b1;
 defparam \i2c_device|lockb_cnt[9]_reg .CarryEnb = 1'b1;
 
-alta_slice \i2c_device|lockb_cnt_dataa_10_1 (
-	.A(vcc),
-	.B(\i2c_device|lockb_cnt [10]),
-	.C(vcc),
-	.D(vcc),
-	.Cin(\i2c_device|lockb_cnt_dataa_8_1_cout [2]),
-	.Qin(),
-	.Clk(),
-	.AsyncReset(),
-	.SyncReset(),
-	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2c_device|lockb_cnt_dataa_8_1_combout [2]),
-	.Cout(\i2c_device|lockb_cnt_dataa_8_1_cout [3]),
-	.Q());
-defparam \i2c_device|lockb_cnt_dataa_10_1 .coord_x = 17;
-defparam \i2c_device|lockb_cnt_dataa_10_1 .coord_y = 3;
-defparam \i2c_device|lockb_cnt_dataa_10_1 .coord_z = 2;
-defparam \i2c_device|lockb_cnt_dataa_10_1 .mask = 16'h96E8;
-defparam \i2c_device|lockb_cnt_dataa_10_1 .modeMux = 1'b1;
-defparam \i2c_device|lockb_cnt_dataa_10_1 .FeedbackMux = 1'b0;
-defparam \i2c_device|lockb_cnt_dataa_10_1 .ShiftMux = 1'b0;
-defparam \i2c_device|lockb_cnt_dataa_10_1 .BypassEn = 1'b0;
-defparam \i2c_device|lockb_cnt_dataa_10_1 .CarryEnb = 1'b0;
-
-alta_slice \i2c_device|lockb_cnt_dataa_11_1 (
-	.A(vcc),
-	.B(\i2c_device|lockb_cnt [11]),
-	.C(vcc),
-	.D(vcc),
-	.Cin(\i2c_device|lockb_cnt_dataa_8_1_cout [3]),
-	.Qin(),
-	.Clk(),
-	.AsyncReset(),
-	.SyncReset(),
-	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2c_device|lockb_cnt_dataa_8_1_combout [3]),
-	.Cout(\i2c_device|lockb_cnt_dataa_8_1_cout [4]),
-	.Q());
-defparam \i2c_device|lockb_cnt_dataa_11_1 .coord_x = 17;
-defparam \i2c_device|lockb_cnt_dataa_11_1 .coord_y = 3;
-defparam \i2c_device|lockb_cnt_dataa_11_1 .coord_z = 3;
-defparam \i2c_device|lockb_cnt_dataa_11_1 .mask = 16'h69D4;
-defparam \i2c_device|lockb_cnt_dataa_11_1 .modeMux = 1'b1;
-defparam \i2c_device|lockb_cnt_dataa_11_1 .FeedbackMux = 1'b0;
-defparam \i2c_device|lockb_cnt_dataa_11_1 .ShiftMux = 1'b0;
-defparam \i2c_device|lockb_cnt_dataa_11_1 .BypassEn = 1'b0;
-defparam \i2c_device|lockb_cnt_dataa_11_1 .CarryEnb = 1'b0;
-
 alta_slice \i2c_device|lockb_cnt_dataa_11_2 (
-	.A(\i2c_device|lockb_cnt [11]),
+	.A(\i2c_device|lockb_cnt [20]),
 	.B(\i2c_device|lockb_cnt [21]),
-	.C(\i2c_device|lockb_cnt [20]),
+	.C(\i2c_device|lockb_cnt [11]),
 	.D(\i2c_device|lockb_cnt_dataa_8_3_combout [3]),
 	.Cin(),
 	.Qin(),
@@ -12175,8 +12133,8 @@ alta_slice \i2c_device|lockb_cnt_dataa_11_2 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_11_2_combout [1]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_11_2 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_dataa_11_2 .coord_y = 3;
+defparam \i2c_device|lockb_cnt_dataa_11_2 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_dataa_11_2 .coord_y = 5;
 defparam \i2c_device|lockb_cnt_dataa_11_2 .coord_z = 10;
 defparam \i2c_device|lockb_cnt_dataa_11_2 .mask = 16'h0100;
 defparam \i2c_device|lockb_cnt_dataa_11_2 .modeMux = 1'b0;
@@ -12186,9 +12144,9 @@ defparam \i2c_device|lockb_cnt_dataa_11_2 .BypassEn = 1'b0;
 defparam \i2c_device|lockb_cnt_dataa_11_2 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|lockb_cnt_dataa_11_2_combout_combout_0 (
-	.A(\i2c_device|lockb_cnt_dataa_9_2_combout [0]),
+	.A(\i2c_device|lockb_cnt_dataa_9_2_combout [2]),
 	.B(\i2c_device|lockb_cnt_dataa_9_2_combout [3]),
-	.C(\i2c_device|lockb_cnt_dataa_9_2_combout [2]),
+	.C(\i2c_device|lockb_cnt_dataa_9_2_combout [0]),
 	.D(\i2c_device|lockb_cnt_dataa_9_2_combout [1]),
 	.Cin(),
 	.Qin(),
@@ -12200,9 +12158,9 @@ alta_slice \i2c_device|lockb_cnt_dataa_11_2_combout_combout_0 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_11_2_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_11_2_combout_combout_0 .coord_x = 19;
-defparam \i2c_device|lockb_cnt_dataa_11_2_combout_combout_0 .coord_y = 4;
-defparam \i2c_device|lockb_cnt_dataa_11_2_combout_combout_0 .coord_z = 1;
+defparam \i2c_device|lockb_cnt_dataa_11_2_combout_combout_0 .coord_x = 20;
+defparam \i2c_device|lockb_cnt_dataa_11_2_combout_combout_0 .coord_y = 6;
+defparam \i2c_device|lockb_cnt_dataa_11_2_combout_combout_0 .coord_z = 0;
 defparam \i2c_device|lockb_cnt_dataa_11_2_combout_combout_0 .mask = 16'h8000;
 defparam \i2c_device|lockb_cnt_dataa_11_2_combout_combout_0 .modeMux = 1'b0;
 defparam \i2c_device|lockb_cnt_dataa_11_2_combout_combout_0 .FeedbackMux = 1'b0;
@@ -12225,9 +12183,9 @@ alta_slice \i2c_device|lockb_cnt_dataa_11_2_combout_dataa_0 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_11_2_combout_dataa_0_combout [2]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_11_2_combout_dataa_0 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_dataa_11_2_combout_dataa_0 .coord_y = 3;
-defparam \i2c_device|lockb_cnt_dataa_11_2_combout_dataa_0 .coord_z = 11;
+defparam \i2c_device|lockb_cnt_dataa_11_2_combout_dataa_0 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_dataa_11_2_combout_dataa_0 .coord_y = 5;
+defparam \i2c_device|lockb_cnt_dataa_11_2_combout_dataa_0 .coord_z = 12;
 defparam \i2c_device|lockb_cnt_dataa_11_2_combout_dataa_0 .mask = 16'hF000;
 defparam \i2c_device|lockb_cnt_dataa_11_2_combout_dataa_0 .modeMux = 1'b0;
 defparam \i2c_device|lockb_cnt_dataa_11_2_combout_dataa_0 .FeedbackMux = 1'b0;
@@ -12250,8 +12208,8 @@ alta_slice \i2c_device|lockb_cnt_dataa_12 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_9_combout [12]),
 	.Cout(\i2c_device|lockb_cnt_dataa_0_cout [13]),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_12 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_dataa_12 .coord_y = 4;
+defparam \i2c_device|lockb_cnt_dataa_12 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_dataa_12 .coord_y = 6;
 defparam \i2c_device|lockb_cnt_dataa_12 .coord_z = 12;
 defparam \i2c_device|lockb_cnt_dataa_12 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_dataa_12 .modeMux = 1'b1;
@@ -12275,8 +12233,8 @@ alta_slice \i2c_device|lockb_cnt_dataa_12_1 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_8_1_combout [4]),
 	.Cout(\i2c_device|lockb_cnt_dataa_8_1_cout [5]),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_12_1 .coord_x = 17;
-defparam \i2c_device|lockb_cnt_dataa_12_1 .coord_y = 3;
+defparam \i2c_device|lockb_cnt_dataa_12_1 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_dataa_12_1 .coord_y = 7;
 defparam \i2c_device|lockb_cnt_dataa_12_1 .coord_z = 4;
 defparam \i2c_device|lockb_cnt_dataa_12_1 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_dataa_12_1 .modeMux = 1'b1;
@@ -12288,8 +12246,8 @@ defparam \i2c_device|lockb_cnt_dataa_12_1 .CarryEnb = 1'b0;
 alta_slice \i2c_device|lockb_cnt_dataa_12_2 (
 	.A(\i2c_device|lockb_cnt [12]),
 	.B(\i2c_device|lockb_cnt [13]),
-	.C(\i2c_device|lockb_cnt [15]),
-	.D(\i2c_device|lockb_cnt [14]),
+	.C(\i2c_device|lockb_cnt [14]),
+	.D(\i2c_device|lockb_cnt [15]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -12300,9 +12258,9 @@ alta_slice \i2c_device|lockb_cnt_dataa_12_2 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_9_2_combout [1]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_12_2 .coord_x = 19;
-defparam \i2c_device|lockb_cnt_dataa_12_2 .coord_y = 4;
-defparam \i2c_device|lockb_cnt_dataa_12_2 .coord_z = 3;
+defparam \i2c_device|lockb_cnt_dataa_12_2 .coord_x = 20;
+defparam \i2c_device|lockb_cnt_dataa_12_2 .coord_y = 6;
+defparam \i2c_device|lockb_cnt_dataa_12_2 .coord_z = 11;
 defparam \i2c_device|lockb_cnt_dataa_12_2 .mask = 16'h0001;
 defparam \i2c_device|lockb_cnt_dataa_12_2 .modeMux = 1'b0;
 defparam \i2c_device|lockb_cnt_dataa_12_2 .FeedbackMux = 1'b0;
@@ -12325,8 +12283,8 @@ alta_slice \i2c_device|lockb_cnt_dataa_13_1 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_8_1_combout [5]),
 	.Cout(\i2c_device|lockb_cnt_dataa_8_1_cout [6]),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_13_1 .coord_x = 17;
-defparam \i2c_device|lockb_cnt_dataa_13_1 .coord_y = 3;
+defparam \i2c_device|lockb_cnt_dataa_13_1 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_dataa_13_1 .coord_y = 7;
 defparam \i2c_device|lockb_cnt_dataa_13_1 .coord_z = 5;
 defparam \i2c_device|lockb_cnt_dataa_13_1 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_dataa_13_1 .modeMux = 1'b1;
@@ -12350,8 +12308,8 @@ alta_slice \i2c_device|lockb_cnt_dataa_14_1 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_8_1_combout [6]),
 	.Cout(\i2c_device|lockb_cnt_dataa_8_1_cout [7]),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_14_1 .coord_x = 17;
-defparam \i2c_device|lockb_cnt_dataa_14_1 .coord_y = 3;
+defparam \i2c_device|lockb_cnt_dataa_14_1 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_dataa_14_1 .coord_y = 7;
 defparam \i2c_device|lockb_cnt_dataa_14_1 .coord_z = 6;
 defparam \i2c_device|lockb_cnt_dataa_14_1 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_dataa_14_1 .modeMux = 1'b1;
@@ -12375,8 +12333,8 @@ alta_slice \i2c_device|lockb_cnt_dataa_15_1 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_8_1_combout [7]),
 	.Cout(\i2c_device|lockb_cnt_dataa_8_1_cout [8]),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_15_1 .coord_x = 17;
-defparam \i2c_device|lockb_cnt_dataa_15_1 .coord_y = 3;
+defparam \i2c_device|lockb_cnt_dataa_15_1 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_dataa_15_1 .coord_y = 7;
 defparam \i2c_device|lockb_cnt_dataa_15_1 .coord_z = 7;
 defparam \i2c_device|lockb_cnt_dataa_15_1 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_dataa_15_1 .modeMux = 1'b1;
@@ -12386,8 +12344,8 @@ defparam \i2c_device|lockb_cnt_dataa_15_1 .BypassEn = 1'b0;
 defparam \i2c_device|lockb_cnt_dataa_15_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|lockb_cnt_dataa_16_1 (
-	.A(\i2c_device|lockb_cnt [16]),
-	.B(vcc),
+	.A(vcc),
+	.B(\i2c_device|lockb_cnt [16]),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|lockb_cnt_dataa_8_1_cout [8]),
@@ -12400,10 +12358,10 @@ alta_slice \i2c_device|lockb_cnt_dataa_16_1 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_8_1_combout [8]),
 	.Cout(\i2c_device|lockb_cnt_dataa_8_1_cout [9]),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_16_1 .coord_x = 17;
-defparam \i2c_device|lockb_cnt_dataa_16_1 .coord_y = 3;
+defparam \i2c_device|lockb_cnt_dataa_16_1 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_dataa_16_1 .coord_y = 7;
 defparam \i2c_device|lockb_cnt_dataa_16_1 .coord_z = 8;
-defparam \i2c_device|lockb_cnt_dataa_16_1 .mask = 16'h69B2;
+defparam \i2c_device|lockb_cnt_dataa_16_1 .mask = 16'h69D4;
 defparam \i2c_device|lockb_cnt_dataa_16_1 .modeMux = 1'b1;
 defparam \i2c_device|lockb_cnt_dataa_16_1 .FeedbackMux = 1'b0;
 defparam \i2c_device|lockb_cnt_dataa_16_1 .ShiftMux = 1'b0;
@@ -12425,8 +12383,8 @@ alta_slice \i2c_device|lockb_cnt_dataa_17 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_9_combout [17]),
 	.Cout(\i2c_device|lockb_cnt_dataa_0_cout [18]),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_17 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_dataa_17 .coord_y = 3;
+defparam \i2c_device|lockb_cnt_dataa_17 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_dataa_17 .coord_y = 5;
 defparam \i2c_device|lockb_cnt_dataa_17 .coord_z = 1;
 defparam \i2c_device|lockb_cnt_dataa_17 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_dataa_17 .modeMux = 1'b1;
@@ -12450,8 +12408,8 @@ alta_slice \i2c_device|lockb_cnt_dataa_17_1 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_8_1_combout [9]),
 	.Cout(\i2c_device|lockb_cnt_dataa_8_1_cout [10]),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_17_1 .coord_x = 17;
-defparam \i2c_device|lockb_cnt_dataa_17_1 .coord_y = 3;
+defparam \i2c_device|lockb_cnt_dataa_17_1 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_dataa_17_1 .coord_y = 7;
 defparam \i2c_device|lockb_cnt_dataa_17_1 .coord_z = 9;
 defparam \i2c_device|lockb_cnt_dataa_17_1 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_dataa_17_1 .modeMux = 1'b1;
@@ -12475,8 +12433,8 @@ alta_slice \i2c_device|lockb_cnt_dataa_18_1 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_8_1_combout [10]),
 	.Cout(\i2c_device|lockb_cnt_dataa_8_1_cout [11]),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_18_1 .coord_x = 17;
-defparam \i2c_device|lockb_cnt_dataa_18_1 .coord_y = 3;
+defparam \i2c_device|lockb_cnt_dataa_18_1 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_dataa_18_1 .coord_y = 7;
 defparam \i2c_device|lockb_cnt_dataa_18_1 .coord_z = 10;
 defparam \i2c_device|lockb_cnt_dataa_18_1 .mask = 16'h69D4;
 defparam \i2c_device|lockb_cnt_dataa_18_1 .modeMux = 1'b1;
@@ -12500,8 +12458,8 @@ alta_slice \i2c_device|lockb_cnt_dataa_19 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_9_combout [19]),
 	.Cout(\i2c_device|lockb_cnt_dataa_0_cout [20]),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_19 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_dataa_19 .coord_y = 3;
+defparam \i2c_device|lockb_cnt_dataa_19 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_dataa_19 .coord_y = 5;
 defparam \i2c_device|lockb_cnt_dataa_19 .coord_z = 3;
 defparam \i2c_device|lockb_cnt_dataa_19 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_dataa_19 .modeMux = 1'b1;
@@ -12525,8 +12483,8 @@ alta_slice \i2c_device|lockb_cnt_dataa_19_1 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_8_1_combout [11]),
 	.Cout(\i2c_device|lockb_cnt_dataa_8_1_cout [12]),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_19_1 .coord_x = 17;
-defparam \i2c_device|lockb_cnt_dataa_19_1 .coord_y = 3;
+defparam \i2c_device|lockb_cnt_dataa_19_1 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_dataa_19_1 .coord_y = 7;
 defparam \i2c_device|lockb_cnt_dataa_19_1 .coord_z = 11;
 defparam \i2c_device|lockb_cnt_dataa_19_1 .mask = 16'h69D4;
 defparam \i2c_device|lockb_cnt_dataa_19_1 .modeMux = 1'b1;
@@ -12536,8 +12494,8 @@ defparam \i2c_device|lockb_cnt_dataa_19_1 .BypassEn = 1'b0;
 defparam \i2c_device|lockb_cnt_dataa_19_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|lockb_cnt_dataa_20 (
-	.A(vcc),
-	.B(\i2c_device|lockb_cnt [20]),
+	.A(\i2c_device|lockb_cnt [20]),
+	.B(vcc),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|lockb_cnt_dataa_0_cout [20]),
@@ -12550,8 +12508,8 @@ alta_slice \i2c_device|lockb_cnt_dataa_20 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_9_combout [20]),
 	.Cout(\i2c_device|lockb_cnt_dataa_0_cout [21]),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_20 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_dataa_20 .coord_y = 3;
+defparam \i2c_device|lockb_cnt_dataa_20 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_dataa_20 .coord_y = 5;
 defparam \i2c_device|lockb_cnt_dataa_20 .coord_z = 4;
 defparam \i2c_device|lockb_cnt_dataa_20 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_dataa_20 .modeMux = 1'b1;
@@ -12575,8 +12533,8 @@ alta_slice \i2c_device|lockb_cnt_dataa_20_1 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_8_1_combout [12]),
 	.Cout(\i2c_device|lockb_cnt_dataa_8_1_cout [13]),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_20_1 .coord_x = 17;
-defparam \i2c_device|lockb_cnt_dataa_20_1 .coord_y = 3;
+defparam \i2c_device|lockb_cnt_dataa_20_1 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_dataa_20_1 .coord_y = 7;
 defparam \i2c_device|lockb_cnt_dataa_20_1 .coord_z = 12;
 defparam \i2c_device|lockb_cnt_dataa_20_1 .mask = 16'h69D4;
 defparam \i2c_device|lockb_cnt_dataa_20_1 .modeMux = 1'b1;
@@ -12600,8 +12558,8 @@ alta_slice \i2c_device|lockb_cnt_dataa_21 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_9_combout [21]),
 	.Cout(\i2c_device|lockb_cnt_dataa_0_cout [22]),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_21 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_dataa_21 .coord_y = 3;
+defparam \i2c_device|lockb_cnt_dataa_21 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_dataa_21 .coord_y = 5;
 defparam \i2c_device|lockb_cnt_dataa_21 .coord_z = 5;
 defparam \i2c_device|lockb_cnt_dataa_21 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_dataa_21 .modeMux = 1'b1;
@@ -12611,8 +12569,8 @@ defparam \i2c_device|lockb_cnt_dataa_21 .BypassEn = 1'b0;
 defparam \i2c_device|lockb_cnt_dataa_21 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|lockb_cnt_dataa_21_1 (
-	.A(vcc),
-	.B(\i2c_device|lockb_cnt [21]),
+	.A(\i2c_device|lockb_cnt [21]),
+	.B(vcc),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|lockb_cnt_dataa_8_1_cout [13]),
@@ -12625,10 +12583,10 @@ alta_slice \i2c_device|lockb_cnt_dataa_21_1 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_8_1_combout [13]),
 	.Cout(\i2c_device|lockb_cnt_dataa_8_1_cout [14]),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_21_1 .coord_x = 17;
-defparam \i2c_device|lockb_cnt_dataa_21_1 .coord_y = 3;
+defparam \i2c_device|lockb_cnt_dataa_21_1 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_dataa_21_1 .coord_y = 7;
 defparam \i2c_device|lockb_cnt_dataa_21_1 .coord_z = 13;
-defparam \i2c_device|lockb_cnt_dataa_21_1 .mask = 16'h69D4;
+defparam \i2c_device|lockb_cnt_dataa_21_1 .mask = 16'h69B2;
 defparam \i2c_device|lockb_cnt_dataa_21_1 .modeMux = 1'b1;
 defparam \i2c_device|lockb_cnt_dataa_21_1 .FeedbackMux = 1'b0;
 defparam \i2c_device|lockb_cnt_dataa_21_1 .ShiftMux = 1'b0;
@@ -12650,8 +12608,8 @@ alta_slice \i2c_device|lockb_cnt_dataa_22 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_9_combout [22]),
 	.Cout(\i2c_device|lockb_cnt_dataa_0_cout [23]),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_22 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_dataa_22 .coord_y = 3;
+defparam \i2c_device|lockb_cnt_dataa_22 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_dataa_22 .coord_y = 5;
 defparam \i2c_device|lockb_cnt_dataa_22 .coord_z = 6;
 defparam \i2c_device|lockb_cnt_dataa_22 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_dataa_22 .modeMux = 1'b1;
@@ -12675,8 +12633,8 @@ alta_slice \i2c_device|lockb_cnt_dataa_22_1 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_8_1_combout [14]),
 	.Cout(\i2c_device|lockb_cnt_dataa_8_1_cout [15]),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_22_1 .coord_x = 17;
-defparam \i2c_device|lockb_cnt_dataa_22_1 .coord_y = 3;
+defparam \i2c_device|lockb_cnt_dataa_22_1 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_dataa_22_1 .coord_y = 7;
 defparam \i2c_device|lockb_cnt_dataa_22_1 .coord_z = 14;
 defparam \i2c_device|lockb_cnt_dataa_22_1 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_dataa_22_1 .modeMux = 1'b1;
@@ -12686,10 +12644,10 @@ defparam \i2c_device|lockb_cnt_dataa_22_1 .BypassEn = 1'b0;
 defparam \i2c_device|lockb_cnt_dataa_22_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|lockb_cnt_dataa_2_1 (
-	.A(\i2c_device|lockb_cnt [2]),
-	.B(\i2c_device|lockb_cnt [1]),
+	.A(\i2c_device|lockb_cnt [0]),
+	.B(\i2c_device|lockb_cnt [2]),
 	.C(\i2c_device|lockb_cnt [3]),
-	.D(\i2c_device|lockb_cnt [0]),
+	.D(\i2c_device|lockb_cnt [1]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -12700,9 +12658,9 @@ alta_slice \i2c_device|lockb_cnt_dataa_2_1 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_9_2_combout [2]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_2_1 .coord_x = 19;
-defparam \i2c_device|lockb_cnt_dataa_2_1 .coord_y = 4;
-defparam \i2c_device|lockb_cnt_dataa_2_1 .coord_z = 8;
+defparam \i2c_device|lockb_cnt_dataa_2_1 .coord_x = 20;
+defparam \i2c_device|lockb_cnt_dataa_2_1 .coord_y = 6;
+defparam \i2c_device|lockb_cnt_dataa_2_1 .coord_z = 4;
 defparam \i2c_device|lockb_cnt_dataa_2_1 .mask = 16'h0001;
 defparam \i2c_device|lockb_cnt_dataa_2_1 .modeMux = 1'b0;
 defparam \i2c_device|lockb_cnt_dataa_2_1 .FeedbackMux = 1'b0;
@@ -12713,8 +12671,8 @@ defparam \i2c_device|lockb_cnt_dataa_2_1 .CarryEnb = 1'b1;
 alta_slice \i2c_device|lockb_cnt_dataa_6_1 (
 	.A(\i2c_device|lockb_cnt [5]),
 	.B(\i2c_device|lockb_cnt [6]),
-	.C(\i2c_device|lockb_cnt [4]),
-	.D(\i2c_device|lockb_cnt [7]),
+	.C(\i2c_device|lockb_cnt [7]),
+	.D(\i2c_device|lockb_cnt [4]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -12725,40 +12683,15 @@ alta_slice \i2c_device|lockb_cnt_dataa_6_1 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_9_2_combout [3]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_6_1 .coord_x = 19;
-defparam \i2c_device|lockb_cnt_dataa_6_1 .coord_y = 4;
-defparam \i2c_device|lockb_cnt_dataa_6_1 .coord_z = 11;
+defparam \i2c_device|lockb_cnt_dataa_6_1 .coord_x = 20;
+defparam \i2c_device|lockb_cnt_dataa_6_1 .coord_y = 6;
+defparam \i2c_device|lockb_cnt_dataa_6_1 .coord_z = 3;
 defparam \i2c_device|lockb_cnt_dataa_6_1 .mask = 16'h0001;
 defparam \i2c_device|lockb_cnt_dataa_6_1 .modeMux = 1'b0;
 defparam \i2c_device|lockb_cnt_dataa_6_1 .FeedbackMux = 1'b0;
 defparam \i2c_device|lockb_cnt_dataa_6_1 .ShiftMux = 1'b0;
 defparam \i2c_device|lockb_cnt_dataa_6_1 .BypassEn = 1'b0;
 defparam \i2c_device|lockb_cnt_dataa_6_1 .CarryEnb = 1'b1;
-
-alta_slice \i2c_device|lockb_cnt_dataa_8_1 (
-	.A(vcc),
-	.B(\i2c_device|lockb_cnt [8]),
-	.C(vcc),
-	.D(vcc),
-	.Cin(),
-	.Qin(),
-	.Clk(),
-	.AsyncReset(),
-	.SyncReset(),
-	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2c_device|lockb_cnt_dataa_8_1_combout [0]),
-	.Cout(\i2c_device|lockb_cnt_dataa_8_1_cout [1]),
-	.Q());
-defparam \i2c_device|lockb_cnt_dataa_8_1 .coord_x = 17;
-defparam \i2c_device|lockb_cnt_dataa_8_1 .coord_y = 3;
-defparam \i2c_device|lockb_cnt_dataa_8_1 .coord_z = 0;
-defparam \i2c_device|lockb_cnt_dataa_8_1 .mask = 16'h66DD;
-defparam \i2c_device|lockb_cnt_dataa_8_1 .modeMux = 1'b1;
-defparam \i2c_device|lockb_cnt_dataa_8_1 .FeedbackMux = 1'b0;
-defparam \i2c_device|lockb_cnt_dataa_8_1 .ShiftMux = 1'b0;
-defparam \i2c_device|lockb_cnt_dataa_8_1 .BypassEn = 1'b0;
-defparam \i2c_device|lockb_cnt_dataa_8_1 .CarryEnb = 1'b0;
 
 alta_slice \i2c_device|lockb_cnt_dataa_8_1_cout_cin_15 (
 	.A(vcc),
@@ -12775,8 +12708,8 @@ alta_slice \i2c_device|lockb_cnt_dataa_8_1_cout_cin_15 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_8_1_cout_cin_15_combout ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_8_1_cout_cin_15 .coord_x = 17;
-defparam \i2c_device|lockb_cnt_dataa_8_1_cout_cin_15 .coord_y = 3;
+defparam \i2c_device|lockb_cnt_dataa_8_1_cout_cin_15 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_dataa_8_1_cout_cin_15 .coord_y = 7;
 defparam \i2c_device|lockb_cnt_dataa_8_1_cout_cin_15 .coord_z = 15;
 defparam \i2c_device|lockb_cnt_dataa_8_1_cout_cin_15 .mask = 16'hF0F0;
 defparam \i2c_device|lockb_cnt_dataa_8_1_cout_cin_15 .modeMux = 1'b1;
@@ -12800,9 +12733,9 @@ alta_slice \i2c_device|lockb_cnt_dataa_8_1_cout_cin_15_combout_datac (
 	.LutOut(\i2c_device|lockb_cnt_dataa_8_1_cout_cin_15_combout_datac_combout ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_8_1_cout_cin_15_combout_datac .coord_x = 18;
-defparam \i2c_device|lockb_cnt_dataa_8_1_cout_cin_15_combout_datac .coord_y = 3;
-defparam \i2c_device|lockb_cnt_dataa_8_1_cout_cin_15_combout_datac .coord_z = 12;
+defparam \i2c_device|lockb_cnt_dataa_8_1_cout_cin_15_combout_datac .coord_x = 19;
+defparam \i2c_device|lockb_cnt_dataa_8_1_cout_cin_15_combout_datac .coord_y = 5;
+defparam \i2c_device|lockb_cnt_dataa_8_1_cout_cin_15_combout_datac .coord_z = 11;
 defparam \i2c_device|lockb_cnt_dataa_8_1_cout_cin_15_combout_datac .mask = 16'h30F0;
 defparam \i2c_device|lockb_cnt_dataa_8_1_cout_cin_15_combout_datac .modeMux = 1'b0;
 defparam \i2c_device|lockb_cnt_dataa_8_1_cout_cin_15_combout_datac .FeedbackMux = 1'b0;
@@ -12811,9 +12744,9 @@ defparam \i2c_device|lockb_cnt_dataa_8_1_cout_cin_15_combout_datac .BypassEn = 1
 defparam \i2c_device|lockb_cnt_dataa_8_1_cout_cin_15_combout_datac .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|lockb_cnt_dataa_8_2 (
-	.A(\i2c_device|lockb_cnt [16]),
+	.A(\i2c_device|lockb_cnt [18]),
 	.B(\i2c_device|lockb_cnt [19]),
-	.C(\i2c_device|lockb_cnt [18]),
+	.C(\i2c_device|lockb_cnt [16]),
 	.D(\i2c_device|lockb_cnt [8]),
 	.Cin(),
 	.Qin(),
@@ -12825,8 +12758,8 @@ alta_slice \i2c_device|lockb_cnt_dataa_8_2 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_8_2_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_8_2 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_dataa_8_2 .coord_y = 3;
+defparam \i2c_device|lockb_cnt_dataa_8_2 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_dataa_8_2 .coord_y = 5;
 defparam \i2c_device|lockb_cnt_dataa_8_2 .coord_z = 8;
 defparam \i2c_device|lockb_cnt_dataa_8_2 .mask = 16'h8000;
 defparam \i2c_device|lockb_cnt_dataa_8_2 .modeMux = 1'b0;
@@ -12836,9 +12769,9 @@ defparam \i2c_device|lockb_cnt_dataa_8_2 .BypassEn = 1'b0;
 defparam \i2c_device|lockb_cnt_dataa_8_2 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|lockb_cnt_dataa_8_3 (
-	.A(\i2c_device|lockb_cnt [16]),
+	.A(\i2c_device|lockb_cnt [18]),
 	.B(\i2c_device|lockb_cnt [19]),
-	.C(\i2c_device|lockb_cnt [18]),
+	.C(\i2c_device|lockb_cnt [16]),
 	.D(\i2c_device|lockb_cnt [8]),
 	.Cin(),
 	.Qin(),
@@ -12850,8 +12783,8 @@ alta_slice \i2c_device|lockb_cnt_dataa_8_3 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_8_3_combout [3]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_8_3 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_dataa_8_3 .coord_y = 3;
+defparam \i2c_device|lockb_cnt_dataa_8_3 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_dataa_8_3 .coord_y = 5;
 defparam \i2c_device|lockb_cnt_dataa_8_3 .coord_z = 9;
 defparam \i2c_device|lockb_cnt_dataa_8_3 .mask = 16'h0001;
 defparam \i2c_device|lockb_cnt_dataa_8_3 .modeMux = 1'b0;
@@ -12861,8 +12794,8 @@ defparam \i2c_device|lockb_cnt_dataa_8_3 .BypassEn = 1'b0;
 defparam \i2c_device|lockb_cnt_dataa_8_3 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|lockb_cnt_dataa_9 (
-	.A(\i2c_device|lockb_cnt [9]),
-	.B(vcc),
+	.A(vcc),
+	.B(\i2c_device|lockb_cnt [9]),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2c_device|lockb_cnt_dataa_0_cout [9]),
@@ -12875,8 +12808,8 @@ alta_slice \i2c_device|lockb_cnt_dataa_9 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_9_combout [9]),
 	.Cout(\i2c_device|lockb_cnt_dataa_0_cout [10]),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_9 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_dataa_9 .coord_y = 4;
+defparam \i2c_device|lockb_cnt_dataa_9 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_dataa_9 .coord_y = 6;
 defparam \i2c_device|lockb_cnt_dataa_9 .coord_z = 9;
 defparam \i2c_device|lockb_cnt_dataa_9 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_dataa_9 .modeMux = 1'b1;
@@ -12885,35 +12818,10 @@ defparam \i2c_device|lockb_cnt_dataa_9 .ShiftMux = 1'b0;
 defparam \i2c_device|lockb_cnt_dataa_9 .BypassEn = 1'b0;
 defparam \i2c_device|lockb_cnt_dataa_9 .CarryEnb = 1'b0;
 
-alta_slice \i2c_device|lockb_cnt_dataa_9_1 (
-	.A(vcc),
-	.B(\i2c_device|lockb_cnt [9]),
-	.C(vcc),
-	.D(vcc),
-	.Cin(\i2c_device|lockb_cnt_dataa_8_1_cout [1]),
-	.Qin(),
-	.Clk(),
-	.AsyncReset(),
-	.SyncReset(),
-	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2c_device|lockb_cnt_dataa_8_1_combout [1]),
-	.Cout(\i2c_device|lockb_cnt_dataa_8_1_cout [2]),
-	.Q());
-defparam \i2c_device|lockb_cnt_dataa_9_1 .coord_x = 17;
-defparam \i2c_device|lockb_cnt_dataa_9_1 .coord_y = 3;
-defparam \i2c_device|lockb_cnt_dataa_9_1 .coord_z = 1;
-defparam \i2c_device|lockb_cnt_dataa_9_1 .mask = 16'h96E8;
-defparam \i2c_device|lockb_cnt_dataa_9_1 .modeMux = 1'b1;
-defparam \i2c_device|lockb_cnt_dataa_9_1 .FeedbackMux = 1'b0;
-defparam \i2c_device|lockb_cnt_dataa_9_1 .ShiftMux = 1'b0;
-defparam \i2c_device|lockb_cnt_dataa_9_1 .BypassEn = 1'b0;
-defparam \i2c_device|lockb_cnt_dataa_9_1 .CarryEnb = 1'b0;
-
 alta_slice \i2c_device|lockb_cnt_dataa_9_2 (
-	.A(\i2c_device|lockb_cnt [22]),
+	.A(\i2c_device|lockb_cnt [9]),
 	.B(\i2c_device|lockb_cnt [10]),
-	.C(\i2c_device|lockb_cnt [9]),
+	.C(\i2c_device|lockb_cnt [22]),
 	.D(\i2c_device|lockb_cnt [17]),
 	.Cin(),
 	.Qin(),
@@ -12925,9 +12833,9 @@ alta_slice \i2c_device|lockb_cnt_dataa_9_2 (
 	.LutOut(\i2c_device|lockb_cnt_dataa_9_2_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|lockb_cnt_dataa_9_2 .coord_x = 19;
-defparam \i2c_device|lockb_cnt_dataa_9_2 .coord_y = 4;
-defparam \i2c_device|lockb_cnt_dataa_9_2 .coord_z = 6;
+defparam \i2c_device|lockb_cnt_dataa_9_2 .coord_x = 20;
+defparam \i2c_device|lockb_cnt_dataa_9_2 .coord_y = 6;
+defparam \i2c_device|lockb_cnt_dataa_9_2 .coord_z = 1;
 defparam \i2c_device|lockb_cnt_dataa_9_2 .mask = 16'h0001;
 defparam \i2c_device|lockb_cnt_dataa_9_2 .modeMux = 1'b0;
 defparam \i2c_device|lockb_cnt_dataa_9_2 .FeedbackMux = 1'b0;
@@ -12936,10 +12844,10 @@ defparam \i2c_device|lockb_cnt_dataa_9_2 .BypassEn = 1'b0;
 defparam \i2c_device|lockb_cnt_dataa_9_2 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|lockb_cnt_datab_11 (
-	.A(\i2c_device|lockb_cnt [11]),
-	.B(\i2c_device|lockb_cnt [20]),
-	.C(\i2c_device|lockb_cnt_dataa_8_2_combout [0]),
-	.D(\i2c_device|lockb_cnt [21]),
+	.A(\i2c_device|lockb_cnt_dataa_8_2_combout [0]),
+	.B(\i2c_device|lockb_cnt [21]),
+	.C(\i2c_device|lockb_cnt [11]),
+	.D(\i2c_device|lockb_cnt [20]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -12950,8 +12858,8 @@ alta_slice \i2c_device|lockb_cnt_datab_11 (
 	.LutOut(\i2c_device|lockb_cnt_datab_11_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|lockb_cnt_datab_11 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_datab_11 .coord_y = 3;
+defparam \i2c_device|lockb_cnt_datab_11 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_datab_11 .coord_y = 5;
 defparam \i2c_device|lockb_cnt_datab_11 .coord_z = 7;
 defparam \i2c_device|lockb_cnt_datab_11 .mask = 16'h8000;
 defparam \i2c_device|lockb_cnt_datab_11 .modeMux = 1'b0;
@@ -12967,16 +12875,16 @@ alta_slice \i2c_device|lockb_cnt_q_0 (
 	.D(vcc),
 	.Cin(),
 	.Qin(\i2c_device|lockb_cnt [0]),
-	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10012_Y10001_GND),
-	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10002_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10002_Y10001_GND),
+	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10002_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10012_Y10001_GND),
+	.SyncLoad(SyncLoad_X10002_Y10001_GND),
 	.LutOut(\i2c_device|lockb_cnt_dataa_0_combout ),
 	.Cout(\i2c_device|lockb_cnt_dataa_0_cout [1]),
 	.Q(\i2c_device|lockb_cnt [0]));
-defparam \i2c_device|lockb_cnt_q_0 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_q_0 .coord_y = 4;
+defparam \i2c_device|lockb_cnt_q_0 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_q_0 .coord_y = 6;
 defparam \i2c_device|lockb_cnt_q_0 .coord_z = 0;
 defparam \i2c_device|lockb_cnt_q_0 .mask = 16'h66DD;
 defparam \i2c_device|lockb_cnt_q_0 .modeMux = 1'b1;
@@ -12992,16 +12900,16 @@ alta_slice \i2c_device|lockb_cnt_q_1 (
 	.D(vcc),
 	.Cin(\i2c_device|lockb_cnt_dataa_0_cout [1]),
 	.Qin(\i2c_device|lockb_cnt [1]),
-	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10012_Y10001_GND),
-	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10002_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10002_Y10001_GND),
+	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10002_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10012_Y10001_GND),
+	.SyncLoad(SyncLoad_X10002_Y10001_GND),
 	.LutOut(\i2c_device|lockb_cnt_dataa_1_combout ),
 	.Cout(\i2c_device|lockb_cnt_dataa_0_cout [2]),
 	.Q(\i2c_device|lockb_cnt [1]));
-defparam \i2c_device|lockb_cnt_q_1 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_q_1 .coord_y = 4;
+defparam \i2c_device|lockb_cnt_q_1 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_q_1 .coord_y = 6;
 defparam \i2c_device|lockb_cnt_q_1 .coord_z = 1;
 defparam \i2c_device|lockb_cnt_q_1 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_q_1 .modeMux = 1'b1;
@@ -13017,16 +12925,16 @@ alta_slice \i2c_device|lockb_cnt_q_10 (
 	.D(vcc),
 	.Cin(\i2c_device|lockb_cnt_dataa_0_cout [10]),
 	.Qin(\i2c_device|lockb_cnt [10]),
-	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10012_Y10001_GND),
-	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10002_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10002_Y10001_GND),
+	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10002_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10012_Y10001_GND),
+	.SyncLoad(SyncLoad_X10002_Y10001_GND),
 	.LutOut(\i2c_device|lockb_cnt_dataa_10_combout ),
 	.Cout(\i2c_device|lockb_cnt_dataa_0_cout [11]),
 	.Q(\i2c_device|lockb_cnt [10]));
-defparam \i2c_device|lockb_cnt_q_10 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_q_10 .coord_y = 4;
+defparam \i2c_device|lockb_cnt_q_10 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_q_10 .coord_y = 6;
 defparam \i2c_device|lockb_cnt_q_10 .coord_z = 10;
 defparam \i2c_device|lockb_cnt_q_10 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_q_10 .modeMux = 1'b1;
@@ -13042,16 +12950,16 @@ alta_slice \i2c_device|lockb_cnt_q_11 (
 	.D(vcc),
 	.Cin(\i2c_device|lockb_cnt_dataa_0_cout [11]),
 	.Qin(\i2c_device|lockb_cnt [11]),
-	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10012_Y10001_GND),
-	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10002_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10002_Y10001_GND),
+	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10002_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10012_Y10001_GND),
+	.SyncLoad(SyncLoad_X10002_Y10001_GND),
 	.LutOut(\i2c_device|lockb_cnt_dataa_11_combout ),
 	.Cout(\i2c_device|lockb_cnt_dataa_0_cout [12]),
 	.Q(\i2c_device|lockb_cnt [11]));
-defparam \i2c_device|lockb_cnt_q_11 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_q_11 .coord_y = 4;
+defparam \i2c_device|lockb_cnt_q_11 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_q_11 .coord_y = 6;
 defparam \i2c_device|lockb_cnt_q_11 .coord_z = 11;
 defparam \i2c_device|lockb_cnt_q_11 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_q_11 .modeMux = 1'b1;
@@ -13067,16 +12975,16 @@ alta_slice \i2c_device|lockb_cnt_q_13 (
 	.D(vcc),
 	.Cin(\i2c_device|lockb_cnt_dataa_0_cout [13]),
 	.Qin(\i2c_device|lockb_cnt [13]),
-	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10012_Y10001_GND),
-	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10002_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10002_Y10001_GND),
+	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10002_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10012_Y10001_GND),
+	.SyncLoad(SyncLoad_X10002_Y10001_GND),
 	.LutOut(\i2c_device|lockb_cnt_dataa_13_combout ),
 	.Cout(\i2c_device|lockb_cnt_dataa_0_cout [14]),
 	.Q(\i2c_device|lockb_cnt [13]));
-defparam \i2c_device|lockb_cnt_q_13 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_q_13 .coord_y = 4;
+defparam \i2c_device|lockb_cnt_q_13 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_q_13 .coord_y = 6;
 defparam \i2c_device|lockb_cnt_q_13 .coord_z = 13;
 defparam \i2c_device|lockb_cnt_q_13 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_q_13 .modeMux = 1'b1;
@@ -13092,16 +13000,16 @@ alta_slice \i2c_device|lockb_cnt_q_14 (
 	.D(vcc),
 	.Cin(\i2c_device|lockb_cnt_dataa_0_cout [14]),
 	.Qin(\i2c_device|lockb_cnt [14]),
-	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10012_Y10001_GND),
-	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10002_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10002_Y10001_GND),
+	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10002_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10012_Y10001_GND),
+	.SyncLoad(SyncLoad_X10002_Y10001_GND),
 	.LutOut(\i2c_device|lockb_cnt_dataa_14_combout ),
 	.Cout(\i2c_device|lockb_cnt_dataa_0_cout [15]),
 	.Q(\i2c_device|lockb_cnt [14]));
-defparam \i2c_device|lockb_cnt_q_14 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_q_14 .coord_y = 4;
+defparam \i2c_device|lockb_cnt_q_14 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_q_14 .coord_y = 6;
 defparam \i2c_device|lockb_cnt_q_14 .coord_z = 14;
 defparam \i2c_device|lockb_cnt_q_14 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_q_14 .modeMux = 1'b1;
@@ -13117,16 +13025,16 @@ alta_slice \i2c_device|lockb_cnt_q_15 (
 	.D(vcc),
 	.Cin(\i2c_device|lockb_cnt_dataa_0_cout [15]),
 	.Qin(\i2c_device|lockb_cnt [15]),
-	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10012_Y10001_GND),
-	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10002_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10002_Y10001_GND),
+	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10002_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10012_Y10001_GND),
+	.SyncLoad(SyncLoad_X10002_Y10001_GND),
 	.LutOut(\i2c_device|lockb_cnt_dataa_15_combout ),
 	.Cout(\i2c_device|lockb_cnt_dataa_0_cout [16]),
 	.Q(\i2c_device|lockb_cnt [15]));
-defparam \i2c_device|lockb_cnt_q_15 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_q_15 .coord_y = 4;
+defparam \i2c_device|lockb_cnt_q_15 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_q_15 .coord_y = 6;
 defparam \i2c_device|lockb_cnt_q_15 .coord_z = 15;
 defparam \i2c_device|lockb_cnt_q_15 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_q_15 .modeMux = 1'b1;
@@ -13142,16 +13050,16 @@ alta_slice \i2c_device|lockb_cnt_q_16 (
 	.D(vcc),
 	.Cin(\i2c_device|lockb_cnt_dataa_0_cout [16]),
 	.Qin(\i2c_device|lockb_cnt [16]),
-	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10008_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10008_Y10001_GND),
-	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10008_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10005_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10005_Y10001_GND),
+	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10005_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10008_Y10001_GND),
+	.SyncLoad(SyncLoad_X10005_Y10001_GND),
 	.LutOut(\i2c_device|lockb_cnt_dataa_16_combout ),
 	.Cout(\i2c_device|lockb_cnt_dataa_0_cout [17]),
 	.Q(\i2c_device|lockb_cnt [16]));
-defparam \i2c_device|lockb_cnt_q_16 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_q_16 .coord_y = 3;
+defparam \i2c_device|lockb_cnt_q_16 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_q_16 .coord_y = 5;
 defparam \i2c_device|lockb_cnt_q_16 .coord_z = 0;
 defparam \i2c_device|lockb_cnt_q_16 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_q_16 .modeMux = 1'b1;
@@ -13167,16 +13075,16 @@ alta_slice \i2c_device|lockb_cnt_q_18 (
 	.D(vcc),
 	.Cin(\i2c_device|lockb_cnt_dataa_0_cout [18]),
 	.Qin(\i2c_device|lockb_cnt [18]),
-	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10008_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10008_Y10001_GND),
-	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10008_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10005_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10005_Y10001_GND),
+	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10005_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10008_Y10001_GND),
+	.SyncLoad(SyncLoad_X10005_Y10001_GND),
 	.LutOut(\i2c_device|lockb_cnt_dataa_18_combout ),
 	.Cout(\i2c_device|lockb_cnt_dataa_0_cout [19]),
 	.Q(\i2c_device|lockb_cnt [18]));
-defparam \i2c_device|lockb_cnt_q_18 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_q_18 .coord_y = 3;
+defparam \i2c_device|lockb_cnt_q_18 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_q_18 .coord_y = 5;
 defparam \i2c_device|lockb_cnt_q_18 .coord_z = 2;
 defparam \i2c_device|lockb_cnt_q_18 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_q_18 .modeMux = 1'b1;
@@ -13192,16 +13100,16 @@ alta_slice \i2c_device|lockb_cnt_q_2 (
 	.D(vcc),
 	.Cin(\i2c_device|lockb_cnt_dataa_0_cout [2]),
 	.Qin(\i2c_device|lockb_cnt [2]),
-	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10012_Y10001_GND),
-	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10002_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10002_Y10001_GND),
+	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10002_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10012_Y10001_GND),
+	.SyncLoad(SyncLoad_X10002_Y10001_GND),
 	.LutOut(\i2c_device|lockb_cnt_dataa_2_combout ),
 	.Cout(\i2c_device|lockb_cnt_dataa_0_cout [3]),
 	.Q(\i2c_device|lockb_cnt [2]));
-defparam \i2c_device|lockb_cnt_q_2 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_q_2 .coord_y = 4;
+defparam \i2c_device|lockb_cnt_q_2 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_q_2 .coord_y = 6;
 defparam \i2c_device|lockb_cnt_q_2 .coord_z = 2;
 defparam \i2c_device|lockb_cnt_q_2 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_q_2 .modeMux = 1'b1;
@@ -13217,16 +13125,16 @@ alta_slice \i2c_device|lockb_cnt_q_3 (
 	.D(vcc),
 	.Cin(\i2c_device|lockb_cnt_dataa_0_cout [3]),
 	.Qin(\i2c_device|lockb_cnt [3]),
-	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10012_Y10001_GND),
-	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10002_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10002_Y10001_GND),
+	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10002_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10012_Y10001_GND),
+	.SyncLoad(SyncLoad_X10002_Y10001_GND),
 	.LutOut(\i2c_device|lockb_cnt_dataa_3_combout ),
 	.Cout(\i2c_device|lockb_cnt_dataa_0_cout [4]),
 	.Q(\i2c_device|lockb_cnt [3]));
-defparam \i2c_device|lockb_cnt_q_3 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_q_3 .coord_y = 4;
+defparam \i2c_device|lockb_cnt_q_3 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_q_3 .coord_y = 6;
 defparam \i2c_device|lockb_cnt_q_3 .coord_z = 3;
 defparam \i2c_device|lockb_cnt_q_3 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_q_3 .modeMux = 1'b1;
@@ -13242,16 +13150,16 @@ alta_slice \i2c_device|lockb_cnt_q_4 (
 	.D(vcc),
 	.Cin(\i2c_device|lockb_cnt_dataa_0_cout [4]),
 	.Qin(\i2c_device|lockb_cnt [4]),
-	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10012_Y10001_GND),
-	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10002_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10002_Y10001_GND),
+	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10002_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10012_Y10001_GND),
+	.SyncLoad(SyncLoad_X10002_Y10001_GND),
 	.LutOut(\i2c_device|lockb_cnt_dataa_4_combout ),
 	.Cout(\i2c_device|lockb_cnt_dataa_0_cout [5]),
 	.Q(\i2c_device|lockb_cnt [4]));
-defparam \i2c_device|lockb_cnt_q_4 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_q_4 .coord_y = 4;
+defparam \i2c_device|lockb_cnt_q_4 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_q_4 .coord_y = 6;
 defparam \i2c_device|lockb_cnt_q_4 .coord_z = 4;
 defparam \i2c_device|lockb_cnt_q_4 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_q_4 .modeMux = 1'b1;
@@ -13267,16 +13175,16 @@ alta_slice \i2c_device|lockb_cnt_q_5 (
 	.D(vcc),
 	.Cin(\i2c_device|lockb_cnt_dataa_0_cout [5]),
 	.Qin(\i2c_device|lockb_cnt [5]),
-	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10012_Y10001_GND),
-	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10002_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10002_Y10001_GND),
+	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10002_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10012_Y10001_GND),
+	.SyncLoad(SyncLoad_X10002_Y10001_GND),
 	.LutOut(\i2c_device|lockb_cnt_dataa_5_combout ),
 	.Cout(\i2c_device|lockb_cnt_dataa_0_cout [6]),
 	.Q(\i2c_device|lockb_cnt [5]));
-defparam \i2c_device|lockb_cnt_q_5 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_q_5 .coord_y = 4;
+defparam \i2c_device|lockb_cnt_q_5 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_q_5 .coord_y = 6;
 defparam \i2c_device|lockb_cnt_q_5 .coord_z = 5;
 defparam \i2c_device|lockb_cnt_q_5 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_q_5 .modeMux = 1'b1;
@@ -13292,16 +13200,16 @@ alta_slice \i2c_device|lockb_cnt_q_6 (
 	.D(vcc),
 	.Cin(\i2c_device|lockb_cnt_dataa_0_cout [6]),
 	.Qin(\i2c_device|lockb_cnt [6]),
-	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10012_Y10001_GND),
-	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10002_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10002_Y10001_GND),
+	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10002_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10012_Y10001_GND),
+	.SyncLoad(SyncLoad_X10002_Y10001_GND),
 	.LutOut(\i2c_device|lockb_cnt_dataa_6_combout ),
 	.Cout(\i2c_device|lockb_cnt_dataa_0_cout [7]),
 	.Q(\i2c_device|lockb_cnt [6]));
-defparam \i2c_device|lockb_cnt_q_6 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_q_6 .coord_y = 4;
+defparam \i2c_device|lockb_cnt_q_6 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_q_6 .coord_y = 6;
 defparam \i2c_device|lockb_cnt_q_6 .coord_z = 6;
 defparam \i2c_device|lockb_cnt_q_6 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_q_6 .modeMux = 1'b1;
@@ -13317,16 +13225,16 @@ alta_slice \i2c_device|lockb_cnt_q_7 (
 	.D(vcc),
 	.Cin(\i2c_device|lockb_cnt_dataa_0_cout [7]),
 	.Qin(\i2c_device|lockb_cnt [7]),
-	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10012_Y10001_GND),
-	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10002_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10002_Y10001_GND),
+	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10002_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10012_Y10001_GND),
+	.SyncLoad(SyncLoad_X10002_Y10001_GND),
 	.LutOut(\i2c_device|lockb_cnt_dataa_7_combout ),
 	.Cout(\i2c_device|lockb_cnt_dataa_0_cout [8]),
 	.Q(\i2c_device|lockb_cnt [7]));
-defparam \i2c_device|lockb_cnt_q_7 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_q_7 .coord_y = 4;
+defparam \i2c_device|lockb_cnt_q_7 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_q_7 .coord_y = 6;
 defparam \i2c_device|lockb_cnt_q_7 .coord_z = 7;
 defparam \i2c_device|lockb_cnt_q_7 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_q_7 .modeMux = 1'b1;
@@ -13342,16 +13250,16 @@ alta_slice \i2c_device|lockb_cnt_q_8 (
 	.D(vcc),
 	.Cin(\i2c_device|lockb_cnt_dataa_0_cout [8]),
 	.Qin(\i2c_device|lockb_cnt [8]),
-	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10012_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10012_Y10001_GND),
-	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|lockb_rec_A_0_Y_B_Y_X10002_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10002_Y10001_GND),
+	.SyncReset(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10002_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10012_Y10001_GND),
+	.SyncLoad(SyncLoad_X10002_Y10001_GND),
 	.LutOut(\i2c_device|lockb_cnt_dataa_8_combout ),
 	.Cout(\i2c_device|lockb_cnt_dataa_0_cout [9]),
 	.Q(\i2c_device|lockb_cnt [8]));
-defparam \i2c_device|lockb_cnt_q_8 .coord_x = 18;
-defparam \i2c_device|lockb_cnt_q_8 .coord_y = 4;
+defparam \i2c_device|lockb_cnt_q_8 .coord_x = 19;
+defparam \i2c_device|lockb_cnt_q_8 .coord_y = 6;
 defparam \i2c_device|lockb_cnt_q_8 .coord_z = 8;
 defparam \i2c_device|lockb_cnt_q_8 .mask = 16'h96E8;
 defparam \i2c_device|lockb_cnt_q_8 .modeMux = 1'b1;
@@ -13375,9 +13283,9 @@ alta_slice \i2c_device|lockb_rec_A_0_Y_B_Y_combout (
 	.LutOut(\i2c_device|lockb_rec_A_0_Y_B_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|lockb_rec_A_0_Y_B_Y_combout .coord_x = 15;
+defparam \i2c_device|lockb_rec_A_0_Y_B_Y_combout .coord_x = 19;
 defparam \i2c_device|lockb_rec_A_0_Y_B_Y_combout .coord_y = 5;
-defparam \i2c_device|lockb_rec_A_0_Y_B_Y_combout .coord_z = 11;
+defparam \i2c_device|lockb_rec_A_0_Y_B_Y_combout .coord_z = 14;
 defparam \i2c_device|lockb_rec_A_0_Y_B_Y_combout .mask = 16'hFF0F;
 defparam \i2c_device|lockb_rec_A_0_Y_B_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|lockb_rec_A_0_Y_B_Y_combout .FeedbackMux = 1'b0;
@@ -13385,49 +13293,74 @@ defparam \i2c_device|lockb_rec_A_0_Y_B_Y_combout .ShiftMux = 1'b0;
 defparam \i2c_device|lockb_rec_A_0_Y_B_Y_combout .BypassEn = 1'b0;
 defparam \i2c_device|lockb_rec_A_0_Y_B_Y_combout .CarryEnb = 1'b1;
 
-alta_slice \i2c_device|lockb_rec_d_0 (
-	.A(\i2c_device|lockb_rec [0]),
-	.B(vcc),
-	.C(\i2c_device|lockb_rec [0]),
-	.D(vcc),
+alta_slice \i2c_device|lockb_rec_A_0_Y_combout (
+	.A(vcc),
+	.B(\i2c_device|lockb_rec_d_0_q ),
+	.C(vcc),
+	.D(\i2c_device|lockb_rec [0]),
 	.Cin(),
-	.Qin(\i2c_device|lockb_rec_d_0_q ),
-	.Clk(CLKOSC_i_o_X10001_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10001_Y10002_GND),
-	.SyncReset(SyncReset_X10001_Y10002_GND),
+	.Qin(),
+	.Clk(),
+	.AsyncReset(),
+	.SyncReset(),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10001_Y10002_VCC),
+	.SyncLoad(),
 	.LutOut(\i2c_device|lockb_rec_A_0_Y ),
 	.Cout(),
+	.Q());
+defparam \i2c_device|lockb_rec_A_0_Y_combout .coord_x = 19;
+defparam \i2c_device|lockb_rec_A_0_Y_combout .coord_y = 5;
+defparam \i2c_device|lockb_rec_A_0_Y_combout .coord_z = 13;
+defparam \i2c_device|lockb_rec_A_0_Y_combout .mask = 16'h33CC;
+defparam \i2c_device|lockb_rec_A_0_Y_combout .modeMux = 1'b0;
+defparam \i2c_device|lockb_rec_A_0_Y_combout .FeedbackMux = 1'b0;
+defparam \i2c_device|lockb_rec_A_0_Y_combout .ShiftMux = 1'b0;
+defparam \i2c_device|lockb_rec_A_0_Y_combout .BypassEn = 1'b0;
+defparam \i2c_device|lockb_rec_A_0_Y_combout .CarryEnb = 1'b1;
+
+alta_slice \i2c_device|lockb_rec_d_0 (
+	.A(),
+	.B(),
+	.C(),
+	.D(\i2c_device|lockb_rec [0]),
+	.Cin(),
+	.Qin(\i2c_device|lockb_rec_d_0_q ),
+	.Clk(CLKOSC_i_o_X10005_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10005_Y10001_GND),
+	.SyncReset(),
+	.ShiftData(),
+	.SyncLoad(),
+	.LutOut(\i2c_device|lockb_rec_d_0__feeder__LutOut ),
+	.Cout(),
 	.Q(\i2c_device|lockb_rec_d_0_q ));
-defparam \i2c_device|lockb_rec_d_0 .coord_x = 15;
+defparam \i2c_device|lockb_rec_d_0 .coord_x = 19;
 defparam \i2c_device|lockb_rec_d_0 .coord_y = 5;
-defparam \i2c_device|lockb_rec_d_0 .coord_z = 10;
-defparam \i2c_device|lockb_rec_d_0 .mask = 16'h5A5A;
+defparam \i2c_device|lockb_rec_d_0 .coord_z = 15;
+defparam \i2c_device|lockb_rec_d_0 .mask = 16'hFF00;
 defparam \i2c_device|lockb_rec_d_0 .modeMux = 1'b0;
-defparam \i2c_device|lockb_rec_d_0 .FeedbackMux = 1'b1;
+defparam \i2c_device|lockb_rec_d_0 .FeedbackMux = 1'b0;
 defparam \i2c_device|lockb_rec_d_0 .ShiftMux = 1'b0;
-defparam \i2c_device|lockb_rec_d_0 .BypassEn = 1'b1;
+defparam \i2c_device|lockb_rec_d_0 .BypassEn = 1'b0;
 defparam \i2c_device|lockb_rec_d_0 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|lockb_rec_q_0 (
-	.A(\i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1_combout [0]),
-	.B(\i2c_device|write_value_dataa_2_combout_datad_3_combout [1]),
+	.A(\i2c_device|write_value_dataa_2_combout_datad_3_combout [1]),
+	.B(\i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1_combout [0]),
 	.C(vcc),
 	.D(\i2c_device|write_value [2]),
 	.Cin(),
 	.Qin(\i2c_device|lockb_rec [0]),
-	.Clk(CLKOSC_i_o_X10001_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10001_Y10002_GND),
+	.Clk(CLKOSC_i_o_X10010_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10010_Y10001_GND),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
 	.LutOut(\i2c_device|lockb_rec_A_0_1_Y ),
 	.Cout(),
 	.Q(\i2c_device|lockb_rec [0]));
-defparam \i2c_device|lockb_rec_q_0 .coord_x = 15;
-defparam \i2c_device|lockb_rec_q_0 .coord_y = 5;
-defparam \i2c_device|lockb_rec_q_0 .coord_z = 8;
+defparam \i2c_device|lockb_rec_q_0 .coord_x = 19;
+defparam \i2c_device|lockb_rec_q_0 .coord_y = 8;
+defparam \i2c_device|lockb_rec_q_0 .coord_z = 10;
 defparam \i2c_device|lockb_rec_q_0 .mask = 16'h78F0;
 defparam \i2c_device|lockb_rec_q_0 .modeMux = 1'b0;
 defparam \i2c_device|lockb_rec_q_0 .FeedbackMux = 1'b1;
@@ -13442,17 +13375,17 @@ alta_slice \i2c_device|scl_asdata_0 (
 	.D(),
 	.Cin(),
 	.Qin(\i2c_device|scl_asdata_0_q ),
-	.Clk(CLKOSC_i_o_X10016_Y10003_SIG_VCC),
-	.AsyncReset(AsyncReset_X10016_Y10003_GND),
-	.SyncReset(SyncReset_X10016_Y10003_GND),
+	.Clk(CLKOSC_i_o_X10011_Y10002_SIG_VCC),
+	.AsyncReset(AsyncReset_X10011_Y10002_GND),
+	.SyncReset(SyncReset_X10011_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|sda_A_0_1_Y_B_Y_B_Y__SyncLoad_X10016_Y10003_SIG ),
+	.SyncLoad(\i2c_device|sda_A_0_1_Y_B_Y_B_Y__SyncLoad_X10011_Y10002_SIG ),
 	.LutOut(\i2c_device|scl_asdata_0__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|scl_asdata_0_q ));
-defparam \i2c_device|scl_asdata_0 .coord_x = 11;
-defparam \i2c_device|scl_asdata_0 .coord_y = 2;
-defparam \i2c_device|scl_asdata_0 .coord_z = 0;
+defparam \i2c_device|scl_asdata_0 .coord_x = 10;
+defparam \i2c_device|scl_asdata_0 .coord_y = 3;
+defparam \i2c_device|scl_asdata_0 .coord_z = 1;
 defparam \i2c_device|scl_asdata_0 .mask = 16'hF0F0;
 defparam \i2c_device|scl_asdata_0 .modeMux = 1'b0;
 defparam \i2c_device|scl_asdata_0 .FeedbackMux = 1'b1;
@@ -13476,8 +13409,8 @@ alta_slice \i2c_device|scl_asdata_0_q_dataa (
 	.Cout(),
 	.Q());
 defparam \i2c_device|scl_asdata_0_q_dataa .coord_x = 10;
-defparam \i2c_device|scl_asdata_0_q_dataa .coord_y = 2;
-defparam \i2c_device|scl_asdata_0_q_dataa .coord_z = 11;
+defparam \i2c_device|scl_asdata_0_q_dataa .coord_y = 3;
+defparam \i2c_device|scl_asdata_0_q_dataa .coord_z = 9;
 defparam \i2c_device|scl_asdata_0_q_dataa .mask = 16'h3000;
 defparam \i2c_device|scl_asdata_0_q_dataa .modeMux = 1'b0;
 defparam \i2c_device|scl_asdata_0_q_dataa .FeedbackMux = 1'b0;
@@ -13501,8 +13434,8 @@ alta_slice \i2c_device|scl_asdata_0_q_datab (
 	.Cout(),
 	.Q());
 defparam \i2c_device|scl_asdata_0_q_datab .coord_x = 10;
-defparam \i2c_device|scl_asdata_0_q_datab .coord_y = 2;
-defparam \i2c_device|scl_asdata_0_q_datab .coord_z = 12;
+defparam \i2c_device|scl_asdata_0_q_datab .coord_y = 3;
+defparam \i2c_device|scl_asdata_0_q_datab .coord_z = 6;
 defparam \i2c_device|scl_asdata_0_q_datab .mask = 16'hCF3F;
 defparam \i2c_device|scl_asdata_0_q_datab .modeMux = 1'b0;
 defparam \i2c_device|scl_asdata_0_q_datab .FeedbackMux = 1'b0;
@@ -13511,10 +13444,10 @@ defparam \i2c_device|scl_asdata_0_q_datab .BypassEn = 1'b0;
 defparam \i2c_device|scl_asdata_0_q_datab .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|scl_asdata_0_q_datad (
-	.A(\i2c_device|sda_A_0_1_Y_B_Y_B_Y ),
-	.B(\i2c_device|scl_asdata_0_q ),
-	.C(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
-	.D(\i2c_device|scl [0]),
+	.A(\i2c_device|scl_asdata_0_q ),
+	.B(\i2c_device|sda_A_0_1_Y_B_Y_B_Y ),
+	.C(\i2c_device|scl [0]),
+	.D(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -13525,9 +13458,9 @@ alta_slice \i2c_device|scl_asdata_0_q_datad (
 	.LutOut(CLKOSC_clk_11_q_dataa_combout[3]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|scl_asdata_0_q_datad .coord_x = 10;
-defparam \i2c_device|scl_asdata_0_q_datad .coord_y = 2;
-defparam \i2c_device|scl_asdata_0_q_datad .coord_z = 15;
+defparam \i2c_device|scl_asdata_0_q_datad .coord_x = 11;
+defparam \i2c_device|scl_asdata_0_q_datad .coord_y = 3;
+defparam \i2c_device|scl_asdata_0_q_datad .coord_z = 2;
 defparam \i2c_device|scl_asdata_0_q_datad .mask = 16'h0008;
 defparam \i2c_device|scl_asdata_0_q_datad .modeMux = 1'b0;
 defparam \i2c_device|scl_asdata_0_q_datad .FeedbackMux = 1'b0;
@@ -13537,9 +13470,9 @@ defparam \i2c_device|scl_asdata_0_q_datad .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|scl_asdata_0_q_datad_1 (
 	.A(CLKOSC_clk_1_q_dataa_3_combout[2]),
-	.B(\i2c_device|scl [0]),
-	.C(\i2c_device|scl_asdata_0_q ),
-	.D(\i2c_device|sda_A_0_1_Y_B_Y_B_Y ),
+	.B(\i2c_device|scl_asdata_0_q ),
+	.C(\i2c_device|sda_A_0_1_Y_B_Y_B_Y ),
+	.D(\i2c_device|scl [0]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -13550,10 +13483,10 @@ alta_slice \i2c_device|scl_asdata_0_q_datad_1 (
 	.LutOut(\i2c_device|scl_asdata_0_q_datad_1_combout [1]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|scl_asdata_0_q_datad_1 .coord_x = 15;
-defparam \i2c_device|scl_asdata_0_q_datad_1 .coord_y = 5;
-defparam \i2c_device|scl_asdata_0_q_datad_1 .coord_z = 7;
-defparam \i2c_device|scl_asdata_0_q_datad_1 .mask = 16'h2000;
+defparam \i2c_device|scl_asdata_0_q_datad_1 .coord_x = 10;
+defparam \i2c_device|scl_asdata_0_q_datad_1 .coord_y = 3;
+defparam \i2c_device|scl_asdata_0_q_datad_1 .coord_z = 4;
+defparam \i2c_device|scl_asdata_0_q_datad_1 .mask = 16'h0080;
 defparam \i2c_device|scl_asdata_0_q_datad_1 .modeMux = 1'b0;
 defparam \i2c_device|scl_asdata_0_q_datad_1 .FeedbackMux = 1'b0;
 defparam \i2c_device|scl_asdata_0_q_datad_1 .ShiftMux = 1'b0;
@@ -13561,109 +13494,59 @@ defparam \i2c_device|scl_asdata_0_q_datad_1 .BypassEn = 1'b0;
 defparam \i2c_device|scl_asdata_0_q_datad_1 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|scl_d_0 (
-	.A(),
-	.B(),
-	.C(),
-	.D(\i2c_device|scl [0]),
+	.A(\i2c_device|scl [0]),
+	.B(\i2c_device|sda_d_0_q ),
+	.C(\i2c_device|scl [0]),
+	.D(\i2c_device|sda [0]),
 	.Cin(),
 	.Qin(\i2c_device|scl_d_0_q ),
-	.Clk(CLKOSC_i_o_X10004_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10004_Y10002_GND),
-	.SyncReset(),
+	.Clk(CLKOSC_i_o_X10018_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10018_Y10001_GND),
+	.SyncReset(SyncReset_X10018_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2c_device|scl_d_0__feeder__LutOut ),
+	.SyncLoad(SyncLoad_X10018_Y10001_VCC),
+	.LutOut(\i2c_device|scl_d_0_q_datab_combout [1]),
 	.Cout(),
 	.Q(\i2c_device|scl_d_0_q ));
 defparam \i2c_device|scl_d_0 .coord_x = 10;
-defparam \i2c_device|scl_d_0 .coord_y = 2;
-defparam \i2c_device|scl_d_0 .coord_z = 7;
-defparam \i2c_device|scl_d_0 .mask = 16'hFF00;
+defparam \i2c_device|scl_d_0 .coord_y = 4;
+defparam \i2c_device|scl_d_0 .coord_z = 5;
+defparam \i2c_device|scl_d_0 .mask = 16'h8400;
 defparam \i2c_device|scl_d_0 .modeMux = 1'b0;
-defparam \i2c_device|scl_d_0 .FeedbackMux = 1'b0;
+defparam \i2c_device|scl_d_0 .FeedbackMux = 1'b1;
 defparam \i2c_device|scl_d_0 .ShiftMux = 1'b0;
-defparam \i2c_device|scl_d_0 .BypassEn = 1'b0;
+defparam \i2c_device|scl_d_0 .BypassEn = 1'b1;
 defparam \i2c_device|scl_d_0 .CarryEnb = 1'b1;
 
-alta_slice \i2c_device|scl_d_0_q_datab (
-	.A(\i2c_device|scl_d_0_q ),
-	.B(\i2c_device|scl [0]),
-	.C(\i2c_device|sda [0]),
+alta_slice \i2c_device|scl_q_0 (
+	.A(\i2c_device|sda [0]),
+	.B(\i2c_device|scl_d_0_q ),
+	.C(SCL_i_o),
 	.D(\i2c_device|sda_d_0_q ),
 	.Cin(),
-	.Qin(),
-	.Clk(),
-	.AsyncReset(),
-	.SyncReset(),
-	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2c_device|scl_d_0_q_datab_combout [1]),
-	.Cout(),
-	.Q());
-defparam \i2c_device|scl_d_0_q_datab .coord_x = 10;
-defparam \i2c_device|scl_d_0_q_datab .coord_y = 2;
-defparam \i2c_device|scl_d_0_q_datab .coord_z = 9;
-defparam \i2c_device|scl_d_0_q_datab .mask = 16'h9000;
-defparam \i2c_device|scl_d_0_q_datab .modeMux = 1'b0;
-defparam \i2c_device|scl_d_0_q_datab .FeedbackMux = 1'b0;
-defparam \i2c_device|scl_d_0_q_datab .ShiftMux = 1'b0;
-defparam \i2c_device|scl_d_0_q_datab .BypassEn = 1'b0;
-defparam \i2c_device|scl_d_0_q_datab .CarryEnb = 1'b1;
-
-alta_slice \i2c_device|scl_q_0 (
-	.A(),
-	.B(),
-	.C(),
-	.D(SCL_i_o),
-	.Cin(),
 	.Qin(\i2c_device|scl [0]),
-	.Clk(CLKOSC_i_o_X10004_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10004_Y10002_GND),
-	.SyncReset(),
+	.Clk(CLKOSC_i_o_X10018_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10018_Y10001_GND),
+	.SyncReset(SyncReset_X10018_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2c_device|scl_q_0__feeder__LutOut ),
+	.SyncLoad(SyncLoad_X10018_Y10001_VCC),
+	.LutOut(\i2c_device|sda_d_0_q_datab_combout [0]),
 	.Cout(),
 	.Q(\i2c_device|scl [0]));
 defparam \i2c_device|scl_q_0 .coord_x = 10;
-defparam \i2c_device|scl_q_0 .coord_y = 2;
-defparam \i2c_device|scl_q_0 .coord_z = 13;
-defparam \i2c_device|scl_q_0 .mask = 16'hFF00;
+defparam \i2c_device|scl_q_0 .coord_y = 4;
+defparam \i2c_device|scl_q_0 .coord_z = 0;
+defparam \i2c_device|scl_q_0 .mask = 16'h0041;
 defparam \i2c_device|scl_q_0 .modeMux = 1'b0;
-defparam \i2c_device|scl_q_0 .FeedbackMux = 1'b0;
+defparam \i2c_device|scl_q_0 .FeedbackMux = 1'b1;
 defparam \i2c_device|scl_q_0 .ShiftMux = 1'b0;
-defparam \i2c_device|scl_q_0 .BypassEn = 1'b0;
+defparam \i2c_device|scl_q_0 .BypassEn = 1'b1;
 defparam \i2c_device|scl_q_0 .CarryEnb = 1'b1;
-
-alta_slice \i2c_device|sda_A_0_1_Y_B_Y_B_Y_combout (
-	.A(\i2c_device|scl_d_0_q ),
-	.B(\i2c_device|sda_d_0_q ),
-	.C(\i2c_device|sda [0]),
-	.D(\i2c_device|scl [0]),
-	.Cin(),
-	.Qin(),
-	.Clk(),
-	.AsyncReset(),
-	.SyncReset(),
-	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2c_device|sda_A_0_1_Y_B_Y_B_Y ),
-	.Cout(),
-	.Q());
-defparam \i2c_device|sda_A_0_1_Y_B_Y_B_Y_combout .coord_x = 10;
-defparam \i2c_device|sda_A_0_1_Y_B_Y_B_Y_combout .coord_y = 2;
-defparam \i2c_device|sda_A_0_1_Y_B_Y_B_Y_combout .coord_z = 14;
-defparam \i2c_device|sda_A_0_1_Y_B_Y_B_Y_combout .mask = 16'h8241;
-defparam \i2c_device|sda_A_0_1_Y_B_Y_B_Y_combout .modeMux = 1'b0;
-defparam \i2c_device|sda_A_0_1_Y_B_Y_B_Y_combout .FeedbackMux = 1'b0;
-defparam \i2c_device|sda_A_0_1_Y_B_Y_B_Y_combout .ShiftMux = 1'b0;
-defparam \i2c_device|sda_A_0_1_Y_B_Y_B_Y_combout .BypassEn = 1'b0;
-defparam \i2c_device|sda_A_0_1_Y_B_Y_B_Y_combout .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|sda_A_0_Y_combout (
 	.A(vcc),
-	.B(vcc),
-	.C(\i2c_device|bit_pos_dataa_0_cout_cout_4_combout ),
+	.B(\i2c_device|bit_pos_dataa_0_cout_cout_4_combout ),
+	.C(vcc),
 	.D(\i2c_device|sda [0]),
 	.Cin(),
 	.Qin(),
@@ -13675,10 +13558,10 @@ alta_slice \i2c_device|sda_A_0_Y_combout (
 	.LutOut(\i2c_device|sda_A_0_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|sda_A_0_Y_combout .coord_x = 9;
-defparam \i2c_device|sda_A_0_Y_combout .coord_y = 3;
-defparam \i2c_device|sda_A_0_Y_combout .coord_z = 12;
-defparam \i2c_device|sda_A_0_Y_combout .mask = 16'h0F00;
+defparam \i2c_device|sda_A_0_Y_combout .coord_x = 10;
+defparam \i2c_device|sda_A_0_Y_combout .coord_y = 2;
+defparam \i2c_device|sda_A_0_Y_combout .coord_z = 2;
+defparam \i2c_device|sda_A_0_Y_combout .mask = 16'h3300;
 defparam \i2c_device|sda_A_0_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|sda_A_0_Y_combout .FeedbackMux = 1'b0;
 defparam \i2c_device|sda_A_0_Y_combout .ShiftMux = 1'b0;
@@ -13686,28 +13569,28 @@ defparam \i2c_device|sda_A_0_Y_combout .BypassEn = 1'b0;
 defparam \i2c_device|sda_A_0_Y_combout .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|sda_d_0 (
-	.A(),
-	.B(),
+	.A(\i2c_device|stop_asdata_0_q ),
+	.B(\i2c_device|stop [0]),
 	.C(\i2c_device|sda [0]),
-	.D(),
+	.D(\i2c_device|start_B_0_Y ),
 	.Cin(),
 	.Qin(\i2c_device|sda_d_0_q ),
-	.Clk(CLKOSC_i_o_X10004_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10004_Y10002_GND),
-	.SyncReset(),
+	.Clk(CLKOSC_i_o_X10018_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10018_Y10001_GND),
+	.SyncReset(SyncReset_X10018_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2c_device|sda_d_0__feeder__LutOut ),
+	.SyncLoad(SyncLoad_X10018_Y10001_VCC),
+	.LutOut(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
 	.Cout(),
 	.Q(\i2c_device|sda_d_0_q ));
 defparam \i2c_device|sda_d_0 .coord_x = 10;
-defparam \i2c_device|sda_d_0 .coord_y = 2;
-defparam \i2c_device|sda_d_0 .coord_z = 5;
-defparam \i2c_device|sda_d_0 .mask = 16'hF0F0;
+defparam \i2c_device|sda_d_0 .coord_y = 4;
+defparam \i2c_device|sda_d_0 .coord_z = 11;
+defparam \i2c_device|sda_d_0 .mask = 16'h66FF;
 defparam \i2c_device|sda_d_0 .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0 .FeedbackMux = 1'b0;
 defparam \i2c_device|sda_d_0 .ShiftMux = 1'b0;
-defparam \i2c_device|sda_d_0 .BypassEn = 1'b0;
+defparam \i2c_device|sda_d_0 .BypassEn = 1'b1;
 defparam \i2c_device|sda_d_0 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|sda_d_0_1 (
@@ -13717,17 +13600,17 @@ alta_slice \i2c_device|sda_d_0_1 (
 	.D(\i2c_device|sda [0]),
 	.Cin(),
 	.Qin(\i2c_device|sda_d_0_1_q ),
-	.Clk(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10012_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10012_Y10002_GND),
-	.SyncReset(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10012_Y10002_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10012_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10012_Y10003_GND),
+	.SyncReset(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10012_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|bit_pos_dataa_1_combout_A_Y__SyncLoad_X10012_Y10002_SIG ),
+	.SyncLoad(\i2c_device|bit_pos_dataa_1_combout_A_Y__SyncLoad_X10012_Y10003_SIG ),
 	.LutOut(\i2c_device|sda_d_0_1__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|sda_d_0_1_q ));
-defparam \i2c_device|sda_d_0_1 .coord_x = 10;
-defparam \i2c_device|sda_d_0_1 .coord_y = 3;
-defparam \i2c_device|sda_d_0_1 .coord_z = 11;
+defparam \i2c_device|sda_d_0_1 .coord_x = 14;
+defparam \i2c_device|sda_d_0_1 .coord_y = 1;
+defparam \i2c_device|sda_d_0_1 .coord_z = 4;
 defparam \i2c_device|sda_d_0_1 .mask = 16'hFF00;
 defparam \i2c_device|sda_d_0_1 .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_1 .FeedbackMux = 1'b0;
@@ -13742,17 +13625,17 @@ alta_slice \i2c_device|sda_d_0_10 (
 	.D(\i2c_device|sda [0]),
 	.Cin(),
 	.Qin(\i2c_device|sda_d_0_10_q ),
-	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10017_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10017_Y10003_GND),
-	.SyncReset(SyncReset_X10017_Y10003_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10019_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10019_Y10002_GND),
+	.SyncReset(SyncReset_X10019_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(CLKOSC_clk_2_q_A_1_Y__SyncLoad_X10017_Y10003_SIG),
+	.SyncLoad(CLKOSC_clk_2_q_A_1_Y__SyncLoad_X10019_Y10002_SIG),
 	.LutOut(\i2c_device|sda_d_0_10__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|sda_d_0_10_q ));
-defparam \i2c_device|sda_d_0_10 .coord_x = 9;
+defparam \i2c_device|sda_d_0_10 .coord_x = 15;
 defparam \i2c_device|sda_d_0_10 .coord_y = 1;
-defparam \i2c_device|sda_d_0_10 .coord_z = 0;
+defparam \i2c_device|sda_d_0_10 .coord_z = 5;
 defparam \i2c_device|sda_d_0_10 .mask = 16'hFF00;
 defparam \i2c_device|sda_d_0_10 .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_10 .FeedbackMux = 1'b0;
@@ -13767,17 +13650,17 @@ alta_slice \i2c_device|sda_d_0_11 (
 	.D(\i2c_device|sda [0]),
 	.Cin(),
 	.Qin(\i2c_device|sda_d_0_11_q ),
-	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10020_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10020_Y10002_GND),
-	.SyncReset(SyncReset_X10020_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10015_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10015_Y10002_GND),
+	.SyncReset(SyncReset_X10015_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(CLKOSC_clk_2_q_A_Y__SyncLoad_X10020_Y10002_SIG),
+	.SyncLoad(CLKOSC_clk_2_q_A_Y__SyncLoad_X10015_Y10002_SIG),
 	.LutOut(\i2c_device|sda_d_0_11__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|sda_d_0_11_q ));
-defparam \i2c_device|sda_d_0_11 .coord_x = 14;
-defparam \i2c_device|sda_d_0_11 .coord_y = 5;
-defparam \i2c_device|sda_d_0_11 .coord_z = 1;
+defparam \i2c_device|sda_d_0_11 .coord_x = 12;
+defparam \i2c_device|sda_d_0_11 .coord_y = 4;
+defparam \i2c_device|sda_d_0_11 .coord_z = 12;
 defparam \i2c_device|sda_d_0_11 .mask = 16'hFF00;
 defparam \i2c_device|sda_d_0_11 .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_11 .FeedbackMux = 1'b0;
@@ -13800,8 +13683,8 @@ alta_slice \i2c_device|sda_d_0_11_q_A_Y_B_Y_combout (
 	.LutOut(\i2c_device|sda_d_0_11_q_A_Y_B_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|sda_d_0_11_q_A_Y_B_Y_combout .coord_x = 16;
-defparam \i2c_device|sda_d_0_11_q_A_Y_B_Y_combout .coord_y = 5;
+defparam \i2c_device|sda_d_0_11_q_A_Y_B_Y_combout .coord_x = 17;
+defparam \i2c_device|sda_d_0_11_q_A_Y_B_Y_combout .coord_y = 2;
 defparam \i2c_device|sda_d_0_11_q_A_Y_B_Y_combout .coord_z = 14;
 defparam \i2c_device|sda_d_0_11_q_A_Y_B_Y_combout .mask = 16'hCC00;
 defparam \i2c_device|sda_d_0_11_q_A_Y_B_Y_combout .modeMux = 1'b0;
@@ -13813,8 +13696,8 @@ defparam \i2c_device|sda_d_0_11_q_A_Y_B_Y_combout .CarryEnb = 1'b1;
 alta_slice \i2c_device|sda_d_0_11_q_B_Y_A_Y_combout (
 	.A(vcc),
 	.B(vcc),
-	.C(CSEL2_q_1[2]),
-	.D(\i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1_combout [0]),
+	.C(\i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1_combout [0]),
+	.D(CSEL2_q_1[2]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -13825,9 +13708,9 @@ alta_slice \i2c_device|sda_d_0_11_q_B_Y_A_Y_combout (
 	.LutOut(\i2c_device|sda_d_0_11_q_B_Y_A_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|sda_d_0_11_q_B_Y_A_Y_combout .coord_x = 16;
-defparam \i2c_device|sda_d_0_11_q_B_Y_A_Y_combout .coord_y = 5;
-defparam \i2c_device|sda_d_0_11_q_B_Y_A_Y_combout .coord_z = 15;
+defparam \i2c_device|sda_d_0_11_q_B_Y_A_Y_combout .coord_x = 15;
+defparam \i2c_device|sda_d_0_11_q_B_Y_A_Y_combout .coord_y = 4;
+defparam \i2c_device|sda_d_0_11_q_B_Y_A_Y_combout .coord_z = 5;
 defparam \i2c_device|sda_d_0_11_q_B_Y_A_Y_combout .mask = 16'hF000;
 defparam \i2c_device|sda_d_0_11_q_B_Y_A_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_11_q_B_Y_A_Y_combout .FeedbackMux = 1'b0;
@@ -13850,9 +13733,9 @@ alta_slice \i2c_device|sda_d_0_11_q_dataa (
 	.LutOut(CSEL2_q_1[2]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|sda_d_0_11_q_dataa .coord_x = 14;
+defparam \i2c_device|sda_d_0_11_q_dataa .coord_x = 15;
 defparam \i2c_device|sda_d_0_11_q_dataa .coord_y = 4;
-defparam \i2c_device|sda_d_0_11_q_dataa .coord_z = 5;
+defparam \i2c_device|sda_d_0_11_q_dataa .coord_z = 9;
 defparam \i2c_device|sda_d_0_11_q_dataa .mask = 16'h00C0;
 defparam \i2c_device|sda_d_0_11_q_dataa .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_11_q_dataa .FeedbackMux = 1'b0;
@@ -13875,9 +13758,9 @@ alta_slice \i2c_device|sda_d_0_11_q_dataa_1 (
 	.LutOut(CHRG_i_o[2]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|sda_d_0_11_q_dataa_1 .coord_x = 14;
+defparam \i2c_device|sda_d_0_11_q_dataa_1 .coord_x = 15;
 defparam \i2c_device|sda_d_0_11_q_dataa_1 .coord_y = 4;
-defparam \i2c_device|sda_d_0_11_q_dataa_1 .coord_z = 8;
+defparam \i2c_device|sda_d_0_11_q_dataa_1 .coord_z = 2;
 defparam \i2c_device|sda_d_0_11_q_dataa_1 .mask = 16'h000A;
 defparam \i2c_device|sda_d_0_11_q_dataa_1 .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_11_q_dataa_1 .FeedbackMux = 1'b0;
@@ -13900,7 +13783,7 @@ alta_slice \i2c_device|sda_d_0_11_q_datab (
 	.LutOut(CSEL2_q_1[1]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|sda_d_0_11_q_datab .coord_x = 14;
+defparam \i2c_device|sda_d_0_11_q_datab .coord_x = 15;
 defparam \i2c_device|sda_d_0_11_q_datab .coord_y = 4;
 defparam \i2c_device|sda_d_0_11_q_datab .coord_z = 10;
 defparam \i2c_device|sda_d_0_11_q_datab .mask = 16'hA000;
@@ -13917,17 +13800,17 @@ alta_slice \i2c_device|sda_d_0_12 (
 	.D(\i2c_device|sda [0]),
 	.Cin(),
 	.Qin(\i2c_device|sda_d_0_12_q ),
-	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10016_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10016_Y10002_GND),
-	.SyncReset(SyncReset_X10016_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10009_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10009_Y10002_GND),
+	.SyncReset(SyncReset_X10009_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(CLKOSC_clk_2_q_A_3_Y__SyncLoad_X10016_Y10002_SIG),
+	.SyncLoad(CLKOSC_clk_2_q_A_3_Y__SyncLoad_X10009_Y10002_SIG),
 	.LutOut(\i2c_device|sda_d_0_12__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|sda_d_0_12_q ));
-defparam \i2c_device|sda_d_0_12 .coord_x = 9;
+defparam \i2c_device|sda_d_0_12 .coord_x = 11;
 defparam \i2c_device|sda_d_0_12 .coord_y = 4;
-defparam \i2c_device|sda_d_0_12 .coord_z = 15;
+defparam \i2c_device|sda_d_0_12 .coord_z = 4;
 defparam \i2c_device|sda_d_0_12 .mask = 16'hFF00;
 defparam \i2c_device|sda_d_0_12 .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_12 .FeedbackMux = 1'b0;
@@ -13950,9 +13833,9 @@ alta_slice \i2c_device|sda_d_0_12_q_dataa (
 	.LutOut(\i2c_device|sda_d_0_12_q_dataa_combout [1]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|sda_d_0_12_q_dataa .coord_x = 14;
+defparam \i2c_device|sda_d_0_12_q_dataa .coord_x = 15;
 defparam \i2c_device|sda_d_0_12_q_dataa .coord_y = 4;
-defparam \i2c_device|sda_d_0_12_q_dataa .coord_z = 11;
+defparam \i2c_device|sda_d_0_12_q_dataa .coord_z = 3;
 defparam \i2c_device|sda_d_0_12_q_dataa .mask = 16'h0A00;
 defparam \i2c_device|sda_d_0_12_q_dataa .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_12_q_dataa .FeedbackMux = 1'b0;
@@ -13962,9 +13845,9 @@ defparam \i2c_device|sda_d_0_12_q_dataa .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|sda_d_0_12_q_dataa_combout_combout_0 (
 	.A(vcc),
-	.B(\i2c_device|brin_cnt_dataa_8_2_combout [1]),
+	.B(\i2c_device|brin_cnt_dataa_8_2_combout [0]),
 	.C(\i2c_device|brin_cnt_dataa_8_2_combout [2]),
-	.D(\i2c_device|brin_cnt_dataa_8_2_combout [0]),
+	.D(\i2c_device|brin_cnt_dataa_8_2_combout [1]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -13975,9 +13858,9 @@ alta_slice \i2c_device|sda_d_0_12_q_dataa_combout_combout_0 (
 	.LutOut(\i2c_device|sda_d_0_12_q_dataa_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|sda_d_0_12_q_dataa_combout_combout_0 .coord_x = 20;
-defparam \i2c_device|sda_d_0_12_q_dataa_combout_combout_0 .coord_y = 5;
-defparam \i2c_device|sda_d_0_12_q_dataa_combout_combout_0 .coord_z = 8;
+defparam \i2c_device|sda_d_0_12_q_dataa_combout_combout_0 .coord_x = 17;
+defparam \i2c_device|sda_d_0_12_q_dataa_combout_combout_0 .coord_y = 4;
+defparam \i2c_device|sda_d_0_12_q_dataa_combout_combout_0 .coord_z = 9;
 defparam \i2c_device|sda_d_0_12_q_dataa_combout_combout_0 .mask = 16'hC000;
 defparam \i2c_device|sda_d_0_12_q_dataa_combout_combout_0 .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_12_q_dataa_combout_combout_0 .FeedbackMux = 1'b0;
@@ -13992,17 +13875,17 @@ alta_slice \i2c_device|sda_d_0_2 (
 	.D(\i2c_device|sda [0]),
 	.Cin(),
 	.Qin(\i2c_device|sda_d_0_2_q ),
-	.Clk(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10005_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10005_Y10002_GND),
-	.SyncReset(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10005_Y10002_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10005_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10005_Y10003_GND),
+	.SyncReset(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10005_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|bit_pos_dataa_2_combout_A_Y_B_1_Y__SyncLoad_X10005_Y10002_SIG ),
+	.SyncLoad(\i2c_device|bit_pos_dataa_2_combout_A_Y_B_1_Y__SyncLoad_X10005_Y10003_SIG ),
 	.LutOut(\i2c_device|sda_d_0_2__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|sda_d_0_2_q ));
 defparam \i2c_device|sda_d_0_2 .coord_x = 9;
-defparam \i2c_device|sda_d_0_2 .coord_y = 3;
-defparam \i2c_device|sda_d_0_2 .coord_z = 1;
+defparam \i2c_device|sda_d_0_2 .coord_y = 1;
+defparam \i2c_device|sda_d_0_2 .coord_z = 0;
 defparam \i2c_device|sda_d_0_2 .mask = 16'hFF00;
 defparam \i2c_device|sda_d_0_2 .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_2 .FeedbackMux = 1'b0;
@@ -14017,16 +13900,16 @@ alta_slice \i2c_device|sda_d_0_3 (
 	.D(\i2c_device|sda [0]),
 	.Cin(),
 	.Qin(\i2c_device|sda_d_0_3_q ),
-	.Clk(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10006_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10006_Y10003_GND),
-	.SyncReset(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10006_Y10003_SIG ),
+	.Clk(\CLKOSC_i_o__i2c_device|stop_B_0_Y_B_Y_A_Y_X10015_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10015_Y10003_GND),
+	.SyncReset(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10015_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|bit_pos_dataa_2_combout_A_Y_B_Y__SyncLoad_X10006_Y10003_SIG ),
+	.SyncLoad(\i2c_device|bit_pos_dataa_2_combout_A_Y_B_Y__SyncLoad_X10015_Y10003_SIG ),
 	.LutOut(\i2c_device|sda_d_0_3__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|sda_d_0_3_q ));
-defparam \i2c_device|sda_d_0_3 .coord_x = 9;
-defparam \i2c_device|sda_d_0_3 .coord_y = 2;
+defparam \i2c_device|sda_d_0_3 .coord_x = 10;
+defparam \i2c_device|sda_d_0_3 .coord_y = 1;
 defparam \i2c_device|sda_d_0_3 .coord_z = 0;
 defparam \i2c_device|sda_d_0_3 .mask = 16'hFF00;
 defparam \i2c_device|sda_d_0_3 .modeMux = 1'b0;
@@ -14042,16 +13925,16 @@ alta_slice \i2c_device|sda_d_0_4 (
 	.D(\i2c_device|sda [0]),
 	.Cin(),
 	.Qin(\i2c_device|sda_d_0_4_q ),
-	.Clk(CLKOSC_i_o_X10010_Y10003_SIG_VCC),
-	.AsyncReset(AsyncReset_X10010_Y10003_GND),
-	.SyncReset(SyncReset_X10010_Y10003_GND),
+	.Clk(CLKOSC_i_o_X10006_Y10003_SIG_VCC),
+	.AsyncReset(AsyncReset_X10006_Y10003_GND),
+	.SyncReset(SyncReset_X10006_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|i2c_state_A_0_1_Y_A_1_Y_A_1_Y_B_Y__SyncLoad_X10010_Y10003_SIG ),
+	.SyncLoad(\i2c_device|i2c_state_A_0_1_Y_A_1_Y_A_1_Y_B_Y__SyncLoad_X10006_Y10003_SIG ),
 	.LutOut(\i2c_device|sda_d_0_4__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|sda_d_0_4_q ));
 defparam \i2c_device|sda_d_0_4 .coord_x = 11;
-defparam \i2c_device|sda_d_0_4 .coord_y = 3;
+defparam \i2c_device|sda_d_0_4 .coord_y = 2;
 defparam \i2c_device|sda_d_0_4 .coord_z = 0;
 defparam \i2c_device|sda_d_0_4 .mask = 16'hFF00;
 defparam \i2c_device|sda_d_0_4 .modeMux = 1'b0;
@@ -14076,8 +13959,8 @@ alta_slice \i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_combout (
 	.Cout(),
 	.Q());
 defparam \i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_combout .coord_x = 15;
-defparam \i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_combout .coord_y = 1;
-defparam \i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_combout .coord_z = 5;
+defparam \i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_combout .coord_y = 4;
+defparam \i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_combout .coord_z = 12;
 defparam \i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_combout .mask = 16'hF0FF;
 defparam \i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_combout .FeedbackMux = 1'b0;
@@ -14086,10 +13969,10 @@ defparam \i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_combout .BypassEn = 1'b0;
 defparam \i2c_device|sda_d_0_4_q_A_1_Y_B_Y_A_Y_combout .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|sda_d_0_4_q_dataa (
-	.A(CLKOSC_clk_10_q),
-	.B(\i2c_device|sda_d_0_4_q ),
-	.C(CLKOSC_clk_9_q),
-	.D(\i2c_device|i2c_state [0]),
+	.A(\i2c_device|i2c_state [0]),
+	.B(CLKOSC_clk_9_q),
+	.C(\i2c_device|sda_d_0_4_q ),
+	.D(CLKOSC_clk_10_q),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -14101,9 +13984,9 @@ alta_slice \i2c_device|sda_d_0_4_q_dataa (
 	.Cout(),
 	.Q());
 defparam \i2c_device|sda_d_0_4_q_dataa .coord_x = 11;
-defparam \i2c_device|sda_d_0_4_q_dataa .coord_y = 4;
-defparam \i2c_device|sda_d_0_4_q_dataa .coord_z = 2;
-defparam \i2c_device|sda_d_0_4_q_dataa .mask = 16'hFF0D;
+defparam \i2c_device|sda_d_0_4_q_dataa .coord_y = 3;
+defparam \i2c_device|sda_d_0_4_q_dataa .coord_z = 14;
+defparam \i2c_device|sda_d_0_4_q_dataa .mask = 16'hBABB;
 defparam \i2c_device|sda_d_0_4_q_dataa .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_4_q_dataa .FeedbackMux = 1'b0;
 defparam \i2c_device|sda_d_0_4_q_dataa .ShiftMux = 1'b0;
@@ -14112,9 +13995,9 @@ defparam \i2c_device|sda_d_0_4_q_dataa .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|sda_d_0_4_q_datac (
 	.A(\i2c_device|sda_d_0_4_q ),
-	.B(\i2c_device|i2c_state_datab_0_1_combout [1]),
-	.C(CLKOSC_clk_9_q_dataa_combout[2]),
-	.D(CLKOSC_clk_9_q_dataa_combout[3]),
+	.B(CLKOSC_clk_9_q_dataa_combout[3]),
+	.C(\i2c_device|i2c_state_datab_0_1_combout [1]),
+	.D(CLKOSC_clk_9_q_dataa_combout[2]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -14125,10 +14008,10 @@ alta_slice \i2c_device|sda_d_0_4_q_datac (
 	.LutOut(\i2c_device|sda_d_0_4_q_datac_combout [1]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|sda_d_0_4_q_datac .coord_x = 10;
-defparam \i2c_device|sda_d_0_4_q_datac .coord_y = 3;
-defparam \i2c_device|sda_d_0_4_q_datac .coord_z = 1;
-defparam \i2c_device|sda_d_0_4_q_datac .mask = 16'h8ACF;
+defparam \i2c_device|sda_d_0_4_q_datac .coord_x = 11;
+defparam \i2c_device|sda_d_0_4_q_datac .coord_y = 4;
+defparam \i2c_device|sda_d_0_4_q_datac .coord_z = 0;
+defparam \i2c_device|sda_d_0_4_q_datac .mask = 16'hB0BB;
 defparam \i2c_device|sda_d_0_4_q_datac .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_4_q_datac .FeedbackMux = 1'b0;
 defparam \i2c_device|sda_d_0_4_q_datac .ShiftMux = 1'b0;
@@ -14137,8 +14020,8 @@ defparam \i2c_device|sda_d_0_4_q_datac .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|sda_d_0_4_q_datad (
 	.A(CLKOSC_clk_11_q_dataa_combout[3]),
-	.B(\i2c_device|i2c_state_dataa_0_combout [0]),
-	.C(\i2c_device|sda_d_0_4_q ),
+	.B(\i2c_device|sda_d_0_4_q ),
+	.C(\i2c_device|i2c_state_dataa_0_combout [0]),
 	.D(CLKOSC_clk_9_q),
 	.Cin(),
 	.Qin(),
@@ -14150,9 +14033,9 @@ alta_slice \i2c_device|sda_d_0_4_q_datad (
 	.LutOut(\i2c_device|sda_d_0_4_q_datad_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|sda_d_0_4_q_datad .coord_x = 10;
-defparam \i2c_device|sda_d_0_4_q_datad .coord_y = 4;
-defparam \i2c_device|sda_d_0_4_q_datad .coord_z = 12;
+defparam \i2c_device|sda_d_0_4_q_datad .coord_x = 11;
+defparam \i2c_device|sda_d_0_4_q_datad .coord_y = 3;
+defparam \i2c_device|sda_d_0_4_q_datad .coord_z = 4;
 defparam \i2c_device|sda_d_0_4_q_datad .mask = 16'h0080;
 defparam \i2c_device|sda_d_0_4_q_datad .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_4_q_datad .FeedbackMux = 1'b0;
@@ -14162,23 +14045,23 @@ defparam \i2c_device|sda_d_0_4_q_datad .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|sda_d_0_5 (
 	.A(),
-	.B(\i2c_device|sda [0]),
+	.B(),
 	.C(\i2c_device|sda_d_0_5_q ),
-	.D(),
+	.D(\i2c_device|sda [0]),
 	.Cin(),
 	.Qin(\i2c_device|sda_d_0_5_q ),
-	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10008_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10008_Y10003_GND),
-	.SyncReset(SyncReset_X10008_Y10003_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10002_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10002_Y10002_GND),
+	.SyncReset(SyncReset_X10002_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|bit_pos_A_2_3_Y__SyncLoad_X10008_Y10003_SIG ),
+	.SyncLoad(\i2c_device|bit_pos_A_2_3_Y__SyncLoad_X10002_Y10002_SIG ),
 	.LutOut(\i2c_device|sda_d_0_5__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|sda_d_0_5_q ));
-defparam \i2c_device|sda_d_0_5 .coord_x = 8;
+defparam \i2c_device|sda_d_0_5 .coord_x = 15;
 defparam \i2c_device|sda_d_0_5 .coord_y = 4;
-defparam \i2c_device|sda_d_0_5 .coord_z = 0;
-defparam \i2c_device|sda_d_0_5 .mask = 16'hCCCC;
+defparam \i2c_device|sda_d_0_5 .coord_z = 1;
+defparam \i2c_device|sda_d_0_5 .mask = 16'hFF00;
 defparam \i2c_device|sda_d_0_5 .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_5 .FeedbackMux = 1'b0;
 defparam \i2c_device|sda_d_0_5 .ShiftMux = 1'b0;
@@ -14186,10 +14069,10 @@ defparam \i2c_device|sda_d_0_5 .BypassEn = 1'b1;
 defparam \i2c_device|sda_d_0_5 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|sda_d_0_5_q_dataa (
-	.A(\i2c_device|sda_d_0_7_q ),
-	.B(\i2c_device|sda_d_0_5_q ),
-	.C(\i2c_device|sda_d_0_8_q ),
-	.D(\i2c_device|sda_d_0_6_q ),
+	.A(\i2c_device|sda_d_0_5_q ),
+	.B(\i2c_device|sda_d_0_8_q ),
+	.C(\i2c_device|sda_d_0_6_q ),
+	.D(\i2c_device|sda_d_0_7_q ),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -14200,7 +14083,7 @@ alta_slice \i2c_device|sda_d_0_5_q_dataa (
 	.LutOut(\i2c_device|sda_d_0_5_q_dataa_combout [2]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|sda_d_0_5_q_dataa .coord_x = 14;
+defparam \i2c_device|sda_d_0_5_q_dataa .coord_x = 15;
 defparam \i2c_device|sda_d_0_5_q_dataa .coord_y = 4;
 defparam \i2c_device|sda_d_0_5_q_dataa .coord_z = 0;
 defparam \i2c_device|sda_d_0_5_q_dataa .mask = 16'h0001;
@@ -14217,17 +14100,17 @@ alta_slice \i2c_device|sda_d_0_6 (
 	.D(\i2c_device|sda [0]),
 	.Cin(),
 	.Qin(\i2c_device|sda_d_0_6_q ),
-	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10005_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10005_Y10003_GND),
-	.SyncReset(SyncReset_X10005_Y10003_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10020_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10020_Y10002_GND),
+	.SyncReset(SyncReset_X10020_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|bit_pos_A_2_2_Y__SyncLoad_X10005_Y10003_SIG ),
+	.SyncLoad(\i2c_device|bit_pos_A_2_2_Y__SyncLoad_X10020_Y10002_SIG ),
 	.LutOut(\i2c_device|sda_d_0_6__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|sda_d_0_6_q ));
-defparam \i2c_device|sda_d_0_6 .coord_x = 14;
-defparam \i2c_device|sda_d_0_6 .coord_y = 3;
-defparam \i2c_device|sda_d_0_6 .coord_z = 0;
+defparam \i2c_device|sda_d_0_6 .coord_x = 16;
+defparam \i2c_device|sda_d_0_6 .coord_y = 1;
+defparam \i2c_device|sda_d_0_6 .coord_z = 1;
 defparam \i2c_device|sda_d_0_6 .mask = 16'hFF00;
 defparam \i2c_device|sda_d_0_6 .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_6 .FeedbackMux = 1'b0;
@@ -14242,17 +14125,17 @@ alta_slice \i2c_device|sda_d_0_7 (
 	.D(\i2c_device|sda [0]),
 	.Cin(),
 	.Qin(\i2c_device|sda_d_0_7_q ),
-	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10003_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10003_Y10002_GND),
-	.SyncReset(SyncReset_X10003_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10014_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10014_Y10002_GND),
+	.SyncReset(SyncReset_X10014_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|bit_pos_A_2_1_Y__SyncLoad_X10003_Y10002_SIG ),
+	.SyncLoad(\i2c_device|bit_pos_A_2_1_Y__SyncLoad_X10014_Y10002_SIG ),
 	.LutOut(\i2c_device|sda_d_0_7__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|sda_d_0_7_q ));
-defparam \i2c_device|sda_d_0_7 .coord_x = 14;
-defparam \i2c_device|sda_d_0_7 .coord_y = 4;
-defparam \i2c_device|sda_d_0_7 .coord_z = 1;
+defparam \i2c_device|sda_d_0_7 .coord_x = 12;
+defparam \i2c_device|sda_d_0_7 .coord_y = 2;
+defparam \i2c_device|sda_d_0_7 .coord_z = 5;
 defparam \i2c_device|sda_d_0_7 .mask = 16'hFF00;
 defparam \i2c_device|sda_d_0_7 .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_7 .FeedbackMux = 1'b0;
@@ -14267,17 +14150,17 @@ alta_slice \i2c_device|sda_d_0_8 (
 	.D(\i2c_device|sda [0]),
 	.Cin(),
 	.Qin(\i2c_device|sda_d_0_8_q ),
-	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10007_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10007_Y10003_GND),
-	.SyncReset(SyncReset_X10007_Y10003_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10001_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10001_Y10003_GND),
+	.SyncReset(SyncReset_X10001_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|bit_pos_A_2_Y__SyncLoad_X10007_Y10003_SIG ),
+	.SyncLoad(\i2c_device|bit_pos_A_2_Y__SyncLoad_X10001_Y10003_SIG ),
 	.LutOut(\i2c_device|sda_d_0_8__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|sda_d_0_8_q ));
-defparam \i2c_device|sda_d_0_8 .coord_x = 10;
+defparam \i2c_device|sda_d_0_8 .coord_x = 12;
 defparam \i2c_device|sda_d_0_8 .coord_y = 1;
-defparam \i2c_device|sda_d_0_8 .coord_z = 12;
+defparam \i2c_device|sda_d_0_8 .coord_z = 4;
 defparam \i2c_device|sda_d_0_8 .mask = 16'hFF00;
 defparam \i2c_device|sda_d_0_8 .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_8 .FeedbackMux = 1'b0;
@@ -14292,17 +14175,17 @@ alta_slice \i2c_device|sda_d_0_9 (
 	.D(\i2c_device|sda [0]),
 	.Cin(),
 	.Qin(\i2c_device|sda_d_0_9_q ),
-	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10001_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10001_Y10003_GND),
-	.SyncReset(SyncReset_X10001_Y10003_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_4_Y_B_Y_A_1_Y_A_Y_X10016_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10016_Y10002_GND),
+	.SyncReset(SyncReset_X10016_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(CLKOSC_clk_2_q_A_2_Y__SyncLoad_X10001_Y10003_SIG),
+	.SyncLoad(CLKOSC_clk_2_q_A_2_Y__SyncLoad_X10016_Y10002_SIG),
 	.LutOut(\i2c_device|sda_d_0_9__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|sda_d_0_9_q ));
-defparam \i2c_device|sda_d_0_9 .coord_x = 14;
-defparam \i2c_device|sda_d_0_9 .coord_y = 6;
-defparam \i2c_device|sda_d_0_9 .coord_z = 0;
+defparam \i2c_device|sda_d_0_9 .coord_x = 12;
+defparam \i2c_device|sda_d_0_9 .coord_y = 3;
+defparam \i2c_device|sda_d_0_9 .coord_z = 5;
 defparam \i2c_device|sda_d_0_9 .mask = 16'hFF00;
 defparam \i2c_device|sda_d_0_9 .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_9 .FeedbackMux = 1'b0;
@@ -14311,10 +14194,10 @@ defparam \i2c_device|sda_d_0_9 .BypassEn = 1'b1;
 defparam \i2c_device|sda_d_0_9 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y_combout (
-	.A(vcc),
+	.A(\i2c_device|sda_d_0_9_q_dataa_3_combout [0]),
 	.B(vcc),
-	.C(\i2c_device|sda_d_0_9_q_dataa_3_combout [0]),
-	.D(\i2c_device|sda_d_0_9_q_dataa_combout [1]),
+	.C(\i2c_device|sda_d_0_9_q_dataa_combout [1]),
+	.D(vcc),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -14325,10 +14208,10 @@ alta_slice \i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y_combout (
 	.LutOut(\i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y_combout .coord_x = 16;
+defparam \i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y_combout .coord_x = 15;
 defparam \i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y_combout .coord_y = 4;
-defparam \i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y_combout .coord_z = 15;
-defparam \i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y_combout .mask = 16'hFFF0;
+defparam \i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y_combout .coord_z = 13;
+defparam \i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y_combout .mask = 16'hFAFA;
 defparam \i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y_combout .FeedbackMux = 1'b0;
 defparam \i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y_combout .ShiftMux = 1'b0;
@@ -14337,9 +14220,9 @@ defparam \i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y_combout .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_combout (
 	.A(vcc),
-	.B(vcc),
-	.C(\i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1_combout [0]),
-	.D(\i2c_device|sda_d_0_9_q_dataa_combout [1]),
+	.B(\i2c_device|sda_d_0_9_q_dataa_combout [1]),
+	.C(vcc),
+	.D(\i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1_combout [0]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -14350,10 +14233,10 @@ alta_slice \i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_combout (
 	.LutOut(\i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_combout .coord_x = 14;
-defparam \i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_combout .coord_y = 4;
-defparam \i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_combout .coord_z = 7;
-defparam \i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_combout .mask = 16'hF000;
+defparam \i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_combout .coord_x = 15;
+defparam \i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_combout .coord_y = 2;
+defparam \i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_combout .coord_z = 15;
+defparam \i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_combout .mask = 16'hCC00;
 defparam \i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_combout .FeedbackMux = 1'b0;
 defparam \i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_combout .ShiftMux = 1'b0;
@@ -14363,8 +14246,8 @@ defparam \i2c_device|sda_d_0_9_q_B_Y_B_Y_A_Y_combout .CarryEnb = 1'b1;
 alta_slice \i2c_device|sda_d_0_9_q_dataa (
 	.A(CHRG_i_o[2]),
 	.B(CHRG_i_o[3]),
-	.C(\i2c_device|sda_d_0_9_q ),
-	.D(\i2c_device|sda_d_0_10_q ),
+	.C(\i2c_device|sda_d_0_10_q ),
+	.D(\i2c_device|sda_d_0_9_q ),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -14375,9 +14258,9 @@ alta_slice \i2c_device|sda_d_0_9_q_dataa (
 	.LutOut(\i2c_device|sda_d_0_9_q_dataa_combout [2]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|sda_d_0_9_q_dataa .coord_x = 14;
+defparam \i2c_device|sda_d_0_9_q_dataa .coord_x = 15;
 defparam \i2c_device|sda_d_0_9_q_dataa .coord_y = 4;
-defparam \i2c_device|sda_d_0_9_q_dataa .coord_z = 13;
+defparam \i2c_device|sda_d_0_9_q_dataa .coord_z = 6;
 defparam \i2c_device|sda_d_0_9_q_dataa .mask = 16'h0008;
 defparam \i2c_device|sda_d_0_9_q_dataa .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_9_q_dataa .FeedbackMux = 1'b0;
@@ -14388,8 +14271,8 @@ defparam \i2c_device|sda_d_0_9_q_dataa .CarryEnb = 1'b1;
 alta_slice \i2c_device|sda_d_0_9_q_dataa_1 (
 	.A(CHRG_i_o[2]),
 	.B(STDBY_i_o[3]),
-	.C(\i2c_device|sda_d_0_9_q ),
-	.D(\i2c_device|sda_d_0_10_q ),
+	.C(\i2c_device|sda_d_0_10_q ),
+	.D(\i2c_device|sda_d_0_9_q ),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -14400,9 +14283,9 @@ alta_slice \i2c_device|sda_d_0_9_q_dataa_1 (
 	.LutOut(\i2c_device|sda_d_0_9_q_dataa_1_combout [2]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|sda_d_0_9_q_dataa_1 .coord_x = 14;
+defparam \i2c_device|sda_d_0_9_q_dataa_1 .coord_x = 15;
 defparam \i2c_device|sda_d_0_9_q_dataa_1 .coord_y = 4;
-defparam \i2c_device|sda_d_0_9_q_dataa_1 .coord_z = 12;
+defparam \i2c_device|sda_d_0_9_q_dataa_1 .coord_z = 7;
 defparam \i2c_device|sda_d_0_9_q_dataa_1 .mask = 16'h0008;
 defparam \i2c_device|sda_d_0_9_q_dataa_1 .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_9_q_dataa_1 .FeedbackMux = 1'b0;
@@ -14413,8 +14296,8 @@ defparam \i2c_device|sda_d_0_9_q_dataa_1 .CarryEnb = 1'b1;
 alta_slice \i2c_device|sda_d_0_9_q_dataa_2 (
 	.A(CHRG_i_o[2]),
 	.B(vcc),
-	.C(\i2c_device|sda_d_0_9_q ),
-	.D(\i2c_device|sda_d_0_10_q ),
+	.C(\i2c_device|sda_d_0_10_q ),
+	.D(\i2c_device|sda_d_0_9_q ),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -14425,10 +14308,10 @@ alta_slice \i2c_device|sda_d_0_9_q_dataa_2 (
 	.LutOut(\i2c_device|sda_d_0_9_q_dataa_combout [1]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|sda_d_0_9_q_dataa_2 .coord_x = 14;
+defparam \i2c_device|sda_d_0_9_q_dataa_2 .coord_x = 15;
 defparam \i2c_device|sda_d_0_9_q_dataa_2 .coord_y = 4;
-defparam \i2c_device|sda_d_0_9_q_dataa_2 .coord_z = 6;
-defparam \i2c_device|sda_d_0_9_q_dataa_2 .mask = 16'h0A00;
+defparam \i2c_device|sda_d_0_9_q_dataa_2 .coord_z = 14;
+defparam \i2c_device|sda_d_0_9_q_dataa_2 .mask = 16'h00A0;
 defparam \i2c_device|sda_d_0_9_q_dataa_2 .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_9_q_dataa_2 .FeedbackMux = 1'b0;
 defparam \i2c_device|sda_d_0_9_q_dataa_2 .ShiftMux = 1'b0;
@@ -14438,8 +14321,8 @@ defparam \i2c_device|sda_d_0_9_q_dataa_2 .CarryEnb = 1'b1;
 alta_slice \i2c_device|sda_d_0_9_q_dataa_3 (
 	.A(\i2c_device|sda_d_0_5_q_dataa_combout [2]),
 	.B(vcc),
-	.C(\i2c_device|sda_d_0_9_q ),
-	.D(\i2c_device|sda_d_0_10_q ),
+	.C(\i2c_device|sda_d_0_10_q ),
+	.D(\i2c_device|sda_d_0_9_q ),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -14450,9 +14333,9 @@ alta_slice \i2c_device|sda_d_0_9_q_dataa_3 (
 	.LutOut(\i2c_device|sda_d_0_9_q_dataa_3_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|sda_d_0_9_q_dataa_3 .coord_x = 14;
+defparam \i2c_device|sda_d_0_9_q_dataa_3 .coord_x = 15;
 defparam \i2c_device|sda_d_0_9_q_dataa_3 .coord_y = 4;
-defparam \i2c_device|sda_d_0_9_q_dataa_3 .coord_z = 4;
+defparam \i2c_device|sda_d_0_9_q_dataa_3 .coord_z = 8;
 defparam \i2c_device|sda_d_0_9_q_dataa_3 .mask = 16'h000A;
 defparam \i2c_device|sda_d_0_9_q_dataa_3 .modeMux = 1'b0;
 defparam \i2c_device|sda_d_0_9_q_dataa_3 .FeedbackMux = 1'b0;
@@ -14460,115 +14343,65 @@ defparam \i2c_device|sda_d_0_9_q_dataa_3 .ShiftMux = 1'b0;
 defparam \i2c_device|sda_d_0_9_q_dataa_3 .BypassEn = 1'b0;
 defparam \i2c_device|sda_d_0_9_q_dataa_3 .CarryEnb = 1'b1;
 
-alta_slice \i2c_device|sda_d_0_q_datab (
-	.A(\i2c_device|scl_d_0_q ),
-	.B(\i2c_device|scl [0]),
-	.C(\i2c_device|sda [0]),
+alta_slice \i2c_device|sda_q_0 (
+	.A(\i2c_device|scl [0]),
+	.B(\i2c_device|scl_d_0_q ),
+	.C(SDA_i_o),
 	.D(\i2c_device|sda_d_0_q ),
 	.Cin(),
-	.Qin(),
-	.Clk(),
-	.AsyncReset(),
-	.SyncReset(),
-	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2c_device|sda_d_0_q_datab_combout [0]),
-	.Cout(),
-	.Q());
-defparam \i2c_device|sda_d_0_q_datab .coord_x = 10;
-defparam \i2c_device|sda_d_0_q_datab .coord_y = 2;
-defparam \i2c_device|sda_d_0_q_datab .coord_z = 10;
-defparam \i2c_device|sda_d_0_q_datab .mask = 16'h0009;
-defparam \i2c_device|sda_d_0_q_datab .modeMux = 1'b0;
-defparam \i2c_device|sda_d_0_q_datab .FeedbackMux = 1'b0;
-defparam \i2c_device|sda_d_0_q_datab .ShiftMux = 1'b0;
-defparam \i2c_device|sda_d_0_q_datab .BypassEn = 1'b0;
-defparam \i2c_device|sda_d_0_q_datab .CarryEnb = 1'b1;
-
-alta_slice \i2c_device|sda_q_0 (
-	.A(),
-	.B(),
-	.C(),
-	.D(SDA_i_o),
-	.Cin(),
 	.Qin(\i2c_device|sda [0]),
-	.Clk(CLKOSC_i_o_X10012_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10012_Y10002_GND),
-	.SyncReset(),
+	.Clk(CLKOSC_i_o_X10018_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10018_Y10001_GND),
+	.SyncReset(SyncReset_X10018_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2c_device|sda_q_0__feeder__LutOut ),
+	.SyncLoad(SyncLoad_X10018_Y10001_VCC),
+	.LutOut(\i2c_device|sda_A_0_1_Y_B_Y_B_Y ),
 	.Cout(),
 	.Q(\i2c_device|sda [0]));
 defparam \i2c_device|sda_q_0 .coord_x = 10;
-defparam \i2c_device|sda_q_0 .coord_y = 3;
-defparam \i2c_device|sda_q_0 .coord_z = 10;
-defparam \i2c_device|sda_q_0 .mask = 16'hFF00;
+defparam \i2c_device|sda_q_0 .coord_y = 4;
+defparam \i2c_device|sda_q_0 .coord_z = 4;
+defparam \i2c_device|sda_q_0 .mask = 16'h9009;
 defparam \i2c_device|sda_q_0 .modeMux = 1'b0;
-defparam \i2c_device|sda_q_0 .FeedbackMux = 1'b0;
+defparam \i2c_device|sda_q_0 .FeedbackMux = 1'b1;
 defparam \i2c_device|sda_q_0 .ShiftMux = 1'b0;
-defparam \i2c_device|sda_q_0 .BypassEn = 1'b0;
+defparam \i2c_device|sda_q_0 .BypassEn = 1'b1;
 defparam \i2c_device|sda_q_0 .CarryEnb = 1'b1;
 
-alta_slice \i2c_device|start_B_0_Y_combout (
+alta_slice \i2c_device|start_d_0 (
 	.A(vcc),
 	.B(vcc),
-	.C(\i2c_device|start_d_0_q ),
-	.D(\i2c_device|start [0]),
-	.Cin(),
-	.Qin(),
-	.Clk(),
-	.AsyncReset(),
-	.SyncReset(),
-	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2c_device|start_B_0_Y ),
-	.Cout(),
-	.Q());
-defparam \i2c_device|start_B_0_Y_combout .coord_x = 10;
-defparam \i2c_device|start_B_0_Y_combout .coord_y = 2;
-defparam \i2c_device|start_B_0_Y_combout .coord_z = 8;
-defparam \i2c_device|start_B_0_Y_combout .mask = 16'hF00F;
-defparam \i2c_device|start_B_0_Y_combout .modeMux = 1'b0;
-defparam \i2c_device|start_B_0_Y_combout .FeedbackMux = 1'b0;
-defparam \i2c_device|start_B_0_Y_combout .ShiftMux = 1'b0;
-defparam \i2c_device|start_B_0_Y_combout .BypassEn = 1'b0;
-defparam \i2c_device|start_B_0_Y_combout .CarryEnb = 1'b1;
-
-alta_slice \i2c_device|start_d_0 (
-	.A(),
-	.B(),
-	.C(),
+	.C(\i2c_device|start [0]),
 	.D(\i2c_device|start [0]),
 	.Cin(),
 	.Qin(\i2c_device|start_d_0_q ),
-	.Clk(CLKOSC_i_o_X10004_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10004_Y10002_GND),
-	.SyncReset(),
+	.Clk(CLKOSC_i_o_X10018_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10018_Y10001_GND),
+	.SyncReset(SyncReset_X10018_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2c_device|start_d_0__feeder__LutOut ),
+	.SyncLoad(SyncLoad_X10018_Y10001_VCC),
+	.LutOut(\i2c_device|start_B_0_Y ),
 	.Cout(),
 	.Q(\i2c_device|start_d_0_q ));
 defparam \i2c_device|start_d_0 .coord_x = 10;
-defparam \i2c_device|start_d_0 .coord_y = 2;
-defparam \i2c_device|start_d_0 .coord_z = 0;
-defparam \i2c_device|start_d_0 .mask = 16'hFF00;
+defparam \i2c_device|start_d_0 .coord_y = 4;
+defparam \i2c_device|start_d_0 .coord_z = 9;
+defparam \i2c_device|start_d_0 .mask = 16'hF00F;
 defparam \i2c_device|start_d_0 .modeMux = 1'b0;
-defparam \i2c_device|start_d_0 .FeedbackMux = 1'b0;
+defparam \i2c_device|start_d_0 .FeedbackMux = 1'b1;
 defparam \i2c_device|start_d_0 .ShiftMux = 1'b0;
-defparam \i2c_device|start_d_0 .BypassEn = 1'b0;
+defparam \i2c_device|start_d_0 .BypassEn = 1'b1;
 defparam \i2c_device|start_d_0 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|start_q_0 (
 	.A(\i2c_device|sda_d_0_q_datab_combout [0]),
-	.B(CLKOSC_clk_20_q),
+	.B(\i2c_device|scl [0]),
 	.C(vcc),
-	.D(\i2c_device|scl [0]),
+	.D(CLKOSC_clk_20_q),
 	.Cin(),
 	.Qin(\i2c_device|start [0]),
-	.Clk(CLKOSC_i_o_X10004_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10004_Y10002_GND),
+	.Clk(CLKOSC_i_o_X10018_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10018_Y10001_GND),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
@@ -14576,8 +14409,8 @@ alta_slice \i2c_device|start_q_0 (
 	.Cout(),
 	.Q(\i2c_device|start [0]));
 defparam \i2c_device|start_q_0 .coord_x = 10;
-defparam \i2c_device|start_q_0 .coord_y = 2;
-defparam \i2c_device|start_q_0 .coord_z = 1;
+defparam \i2c_device|start_q_0 .coord_y = 4;
+defparam \i2c_device|start_q_0 .coord_z = 8;
 defparam \i2c_device|start_q_0 .mask = 16'h78F0;
 defparam \i2c_device|start_q_0 .modeMux = 1'b0;
 defparam \i2c_device|start_q_0 .FeedbackMux = 1'b1;
@@ -14585,36 +14418,11 @@ defparam \i2c_device|start_q_0 .ShiftMux = 1'b0;
 defparam \i2c_device|start_q_0 .BypassEn = 1'b0;
 defparam \i2c_device|start_q_0 .CarryEnb = 1'b1;
 
-alta_slice \i2c_device|stop_B_0_Y_B_Y_A_4_Y_combout (
-	.A(\i2c_device|start_B_0_Y ),
-	.B(vcc),
-	.C(\i2c_device|stop [0]),
-	.D(\i2c_device|stop_asdata_0_q ),
-	.Cin(),
-	.Qin(),
-	.Clk(),
-	.AsyncReset(),
-	.SyncReset(),
-	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
-	.Cout(),
-	.Q());
-defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_combout .coord_x = 10;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_combout .coord_y = 2;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_combout .coord_z = 4;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_combout .mask = 16'h5FF5;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_combout .modeMux = 1'b0;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_combout .FeedbackMux = 1'b0;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_combout .ShiftMux = 1'b0;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_combout .BypassEn = 1'b0;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_combout .CarryEnb = 1'b1;
-
 alta_slice \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa (
 	.A(vcc),
-	.B(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
+	.B(\i2c_device|scl_asdata_0_q_dataa_combout [1]),
 	.C(vcc),
-	.D(\i2c_device|scl_asdata_0_q_dataa_combout [1]),
+	.D(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -14625,10 +14433,10 @@ alta_slice \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa (
 	.LutOut(\i2c_device|i2c_state_datab_0_1_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa .coord_x = 10;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa .coord_y = 3;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa .coord_z = 13;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa .mask = 16'h3300;
+defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa .coord_x = 11;
+defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa .coord_y = 4;
+defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa .coord_z = 7;
+defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa .mask = 16'h00CC;
 defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa .modeMux = 1'b0;
 defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa .FeedbackMux = 1'b0;
 defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa .ShiftMux = 1'b0;
@@ -14638,8 +14446,8 @@ defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa .CarryEnb = 1'b1;
 alta_slice \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1 (
 	.A(vcc),
 	.B(vcc),
-	.C(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
-	.D(\i2c_device|scl_asdata_0_q_datad_1_combout [1]),
+	.C(\i2c_device|scl_asdata_0_q_datad_1_combout [1]),
+	.D(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -14650,10 +14458,10 @@ alta_slice \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1 (
 	.LutOut(\i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1 .coord_x = 15;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1 .coord_y = 5;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1 .coord_z = 14;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1 .mask = 16'h0F00;
+defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1 .coord_x = 10;
+defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1 .coord_y = 3;
+defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1 .coord_z = 5;
+defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1 .mask = 16'h00F0;
 defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1 .modeMux = 1'b0;
 defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1 .FeedbackMux = 1'b0;
 defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1 .ShiftMux = 1'b0;
@@ -14662,8 +14470,8 @@ defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_dataa_1 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab (
 	.A(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
-	.B(\i2c_device|write_value_dataa_1_combout [0]),
-	.C(\i2c_device|sda_d_0_12_q_dataa_combout [0]),
+	.B(\i2c_device|sda_d_0_12_q_dataa_combout [0]),
+	.C(\i2c_device|write_value_dataa_1_combout [0]),
 	.D(\i2c_device|OFFSET_SECONDARY_dataa_1_combout [0]),
 	.Cin(),
 	.Qin(),
@@ -14675,10 +14483,10 @@ alta_slice \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab (
 	.LutOut(\i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab .coord_x = 15;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab .coord_y = 5;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab .coord_z = 4;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab .mask = 16'h1000;
+defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab .coord_x = 10;
+defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab .coord_y = 4;
+defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab .coord_z = 14;
+defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab .mask = 16'h0400;
 defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab .modeMux = 1'b0;
 defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab .FeedbackMux = 1'b0;
 defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab .ShiftMux = 1'b0;
@@ -14687,8 +14495,8 @@ defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab_combout_combout_1 (
 	.A(vcc),
-	.B(\i2c_device|scl_asdata_0_q_datad_1_combout [1]),
-	.C(vcc),
+	.B(vcc),
+	.C(\i2c_device|scl_asdata_0_q_datad_1_combout [1]),
 	.D(\i2c_device|sda_d_0_12_q_dataa_combout [1]),
 	.Cin(),
 	.Qin(),
@@ -14701,9 +14509,9 @@ alta_slice \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab_combout_combout_1 (
 	.Cout(),
 	.Q());
 defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab_combout_combout_1 .coord_x = 15;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab_combout_combout_1 .coord_y = 5;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab_combout_combout_1 .coord_z = 9;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab_combout_combout_1 .mask = 16'hCC00;
+defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab_combout_combout_1 .coord_y = 4;
+defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab_combout_combout_1 .coord_z = 11;
+defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab_combout_combout_1 .mask = 16'hF000;
 defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab_combout_combout_1 .modeMux = 1'b0;
 defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab_combout_combout_1 .FeedbackMux = 1'b0;
 defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab_combout_combout_1 .ShiftMux = 1'b0;
@@ -14711,10 +14519,10 @@ defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab_combout_combout_1 .BypassEn = 1'
 defparam \i2c_device|stop_B_0_Y_B_Y_A_4_Y_datab_combout_combout_1 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|stop_B_0_Y_B_Y_A_Y_combout (
-	.A(CLKOSC_clk_8_q_datac_combout[3]),
-	.B(CLKOSC_clk_2_q_A_3_Y),
-	.C(\i2c_device|scl_asdata_0_q_dataa_combout [1]),
-	.D(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
+	.A(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
+	.B(\i2c_device|scl_asdata_0_q_dataa_combout [1]),
+	.C(CLKOSC_clk_8_q_datac_combout[3]),
+	.D(CLKOSC_clk_2_q_A_3_Y),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -14725,10 +14533,10 @@ alta_slice \i2c_device|stop_B_0_Y_B_Y_A_Y_combout (
 	.LutOut(\i2c_device|stop_B_0_Y_B_Y_A_Y ),
 	.Cout(),
 	.Q());
-defparam \i2c_device|stop_B_0_Y_B_Y_A_Y_combout .coord_x = 9;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_Y_combout .coord_y = 3;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_Y_combout .coord_z = 8;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_Y_combout .mask = 16'hFF80;
+defparam \i2c_device|stop_B_0_Y_B_Y_A_Y_combout .coord_x = 11;
+defparam \i2c_device|stop_B_0_Y_B_Y_A_Y_combout .coord_y = 4;
+defparam \i2c_device|stop_B_0_Y_B_Y_A_Y_combout .coord_z = 5;
+defparam \i2c_device|stop_B_0_Y_B_Y_A_Y_combout .mask = 16'hEAAA;
 defparam \i2c_device|stop_B_0_Y_B_Y_A_Y_combout .modeMux = 1'b0;
 defparam \i2c_device|stop_B_0_Y_B_Y_A_Y_combout .FeedbackMux = 1'b0;
 defparam \i2c_device|stop_B_0_Y_B_Y_A_Y_combout .ShiftMux = 1'b0;
@@ -14737,8 +14545,8 @@ defparam \i2c_device|stop_B_0_Y_B_Y_A_Y_combout .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|stop_B_0_Y_B_Y_A_Y_datab (
 	.A(vcc),
-	.B(\i2c_device|i2c_state_datac_0_1_combout [0]),
-	.C(\i2c_device|i2c_state_datac_0_1_combout [2]),
+	.B(\i2c_device|i2c_state_datac_0_1_combout [2]),
+	.C(\i2c_device|i2c_state_datac_0_1_combout [0]),
 	.D(\i2c_device|stop_B_0_Y_B_Y_A_Y ),
 	.Cin(),
 	.Qin(),
@@ -14751,8 +14559,8 @@ alta_slice \i2c_device|stop_B_0_Y_B_Y_A_Y_datab (
 	.Cout(),
 	.Q());
 defparam \i2c_device|stop_B_0_Y_B_Y_A_Y_datab .coord_x = 10;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_Y_datab .coord_y = 4;
-defparam \i2c_device|stop_B_0_Y_B_Y_A_Y_datab .coord_z = 15;
+defparam \i2c_device|stop_B_0_Y_B_Y_A_Y_datab .coord_y = 3;
+defparam \i2c_device|stop_B_0_Y_B_Y_A_Y_datab .coord_z = 11;
 defparam \i2c_device|stop_B_0_Y_B_Y_A_Y_datab .mask = 16'h0003;
 defparam \i2c_device|stop_B_0_Y_B_Y_A_Y_datab .modeMux = 1'b0;
 defparam \i2c_device|stop_B_0_Y_B_Y_A_Y_datab .FeedbackMux = 1'b0;
@@ -14767,17 +14575,17 @@ alta_slice \i2c_device|stop_asdata_0 (
 	.D(),
 	.Cin(),
 	.Qin(\i2c_device|stop_asdata_0_q ),
-	.Clk(CLKOSC_i_o_X10004_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10004_Y10002_GND),
-	.SyncReset(SyncReset_X10004_Y10002_GND),
+	.Clk(CLKOSC_i_o_X10010_Y10003_SIG_VCC),
+	.AsyncReset(AsyncReset_X10010_Y10003_GND),
+	.SyncReset(SyncReset_X10010_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|start_B_0_Y__SyncLoad_X10004_Y10002_SIG ),
+	.SyncLoad(\i2c_device|start_B_0_Y__SyncLoad_X10010_Y10003_SIG ),
 	.LutOut(\i2c_device|stop_asdata_0__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|stop_asdata_0_q ));
-defparam \i2c_device|stop_asdata_0 .coord_x = 10;
-defparam \i2c_device|stop_asdata_0 .coord_y = 2;
-defparam \i2c_device|stop_asdata_0 .coord_z = 6;
+defparam \i2c_device|stop_asdata_0 .coord_x = 9;
+defparam \i2c_device|stop_asdata_0 .coord_y = 4;
+defparam \i2c_device|stop_asdata_0 .coord_z = 13;
 defparam \i2c_device|stop_asdata_0 .mask = 16'hF0F0;
 defparam \i2c_device|stop_asdata_0 .modeMux = 1'b0;
 defparam \i2c_device|stop_asdata_0 .FeedbackMux = 1'b1;
@@ -14786,14 +14594,14 @@ defparam \i2c_device|stop_asdata_0 .BypassEn = 1'b1;
 defparam \i2c_device|stop_asdata_0 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|stop_q_0 (
-	.A(CLKOSC_clk_20_q),
+	.A(\i2c_device|scl [0]),
 	.B(\i2c_device|scl_d_0_q_datab_combout [1]),
 	.C(vcc),
-	.D(\i2c_device|scl [0]),
+	.D(CLKOSC_clk_20_q),
 	.Cin(),
 	.Qin(\i2c_device|stop [0]),
-	.Clk(CLKOSC_i_o_X10004_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10004_Y10002_GND),
+	.Clk(CLKOSC_i_o_X10018_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10018_Y10001_GND),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
@@ -14801,9 +14609,9 @@ alta_slice \i2c_device|stop_q_0 (
 	.Cout(),
 	.Q(\i2c_device|stop [0]));
 defparam \i2c_device|stop_q_0 .coord_x = 10;
-defparam \i2c_device|stop_q_0 .coord_y = 2;
-defparam \i2c_device|stop_q_0 .coord_z = 2;
-defparam \i2c_device|stop_q_0 .mask = 16'hB4F0;
+defparam \i2c_device|stop_q_0 .coord_y = 4;
+defparam \i2c_device|stop_q_0 .coord_z = 1;
+defparam \i2c_device|stop_q_0 .mask = 16'hF078;
 defparam \i2c_device|stop_q_0 .modeMux = 1'b0;
 defparam \i2c_device|stop_q_0 .FeedbackMux = 1'b1;
 defparam \i2c_device|stop_q_0 .ShiftMux = 1'b0;
@@ -14817,17 +14625,17 @@ alta_slice \i2c_device|write_value_d_3 (
 	.D(\i2c_device|write_value [3]),
 	.Cin(),
 	.Qin(\i2c_device|write_value_d_3_q ),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_B_Y_A_Y_X10016_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10016_Y10001_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_B_Y_A_Y_X10015_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10015_Y10001_GND),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
 	.LutOut(\i2c_device|write_value_d_3__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|write_value_d_3_q ));
-defparam \i2c_device|write_value_d_3 .coord_x = 17;
-defparam \i2c_device|write_value_d_3 .coord_y = 1;
-defparam \i2c_device|write_value_d_3 .coord_z = 8;
+defparam \i2c_device|write_value_d_3 .coord_x = 16;
+defparam \i2c_device|write_value_d_3 .coord_y = 4;
+defparam \i2c_device|write_value_d_3 .coord_z = 7;
 defparam \i2c_device|write_value_d_3 .mask = 16'hFF00;
 defparam \i2c_device|write_value_d_3 .modeMux = 1'b0;
 defparam \i2c_device|write_value_d_3 .FeedbackMux = 1'b0;
@@ -14837,8 +14645,8 @@ defparam \i2c_device|write_value_d_3 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|write_value_d_3_q_datab (
 	.A(\i2c_device|locka_cnt_dataa_8_3_combout_dataa_0_combout [2]),
-	.B(\i2c_device|sda_d_0_12_q_dataa_combout [1]),
-	.C(CSEL2_q_1[2]),
+	.B(CSEL2_q_1[2]),
+	.C(\i2c_device|sda_d_0_12_q_dataa_combout [1]),
 	.D(\i2c_device|write_value_d_3_q ),
 	.Cin(),
 	.Qin(),
@@ -14850,10 +14658,10 @@ alta_slice \i2c_device|write_value_d_3_q_datab (
 	.LutOut(\i2c_device|write_value_d_3_q_datab_combout [1]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|write_value_d_3_q_datab .coord_x = 17;
-defparam \i2c_device|write_value_d_3_q_datab .coord_y = 1;
-defparam \i2c_device|write_value_d_3_q_datab .coord_z = 9;
-defparam \i2c_device|write_value_d_3_q_datab .mask = 16'h0BBB;
+defparam \i2c_device|write_value_d_3_q_datab .coord_x = 16;
+defparam \i2c_device|write_value_d_3_q_datab .coord_y = 4;
+defparam \i2c_device|write_value_d_3_q_datab .coord_z = 10;
+defparam \i2c_device|write_value_d_3_q_datab .mask = 16'h23AF;
 defparam \i2c_device|write_value_d_3_q_datab .modeMux = 1'b0;
 defparam \i2c_device|write_value_d_3_q_datab .FeedbackMux = 1'b0;
 defparam \i2c_device|write_value_d_3_q_datab .ShiftMux = 1'b0;
@@ -14861,35 +14669,35 @@ defparam \i2c_device|write_value_d_3_q_datab .BypassEn = 1'b0;
 defparam \i2c_device|write_value_d_3_q_datab .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|write_value_d_4 (
-	.A(CO1_i_o[0]),
-	.B(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW ),
+	.A(),
+	.B(),
 	.C(\i2c_device|write_value [4]),
-	.D(CO1_i_o[1]),
+	.D(),
 	.Cin(),
 	.Qin(\i2c_device|write_value_d_4_q ),
-	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_B_Y_A_Y_X10017_Y10001_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10017_Y10001_GND),
-	.SyncReset(SyncReset_X10017_Y10001_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|sda_d_0_11_q_B_Y_A_Y_X10016_Y10001_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10016_Y10001_GND),
+	.SyncReset(SyncReset_X10016_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10017_Y10001_VCC),
-	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW_datad_combout [3]),
+	.SyncLoad(SyncLoad_X10016_Y10001_VCC),
+	.LutOut(),
 	.Cout(),
 	.Q(\i2c_device|write_value_d_4_q ));
-defparam \i2c_device|write_value_d_4 .coord_x = 16;
-defparam \i2c_device|write_value_d_4 .coord_y = 5;
+defparam \i2c_device|write_value_d_4 .coord_x = 17;
+defparam \i2c_device|write_value_d_4 .coord_y = 2;
 defparam \i2c_device|write_value_d_4 .coord_z = 13;
-defparam \i2c_device|write_value_d_4 .mask = 16'h8000;
-defparam \i2c_device|write_value_d_4 .modeMux = 1'b0;
-defparam \i2c_device|write_value_d_4 .FeedbackMux = 1'b1;
+defparam \i2c_device|write_value_d_4 .mask = 16'hFFFF;
+defparam \i2c_device|write_value_d_4 .modeMux = 1'b1;
+defparam \i2c_device|write_value_d_4 .FeedbackMux = 1'b0;
 defparam \i2c_device|write_value_d_4 .ShiftMux = 1'b0;
 defparam \i2c_device|write_value_d_4 .BypassEn = 1'b1;
 defparam \i2c_device|write_value_d_4 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|write_value_d_4_q_dataa (
 	.A(\i2c_device|write_value_d_4_q ),
-	.B(\i2c_device|OFFSET_SECONDARY [4]),
-	.C(\i2c_device|sda_d_0_9_q_dataa_combout [1]),
-	.D(CSEL2_q_1[2]),
+	.B(CSEL2_q_1[2]),
+	.C(\i2c_device|OFFSET_SECONDARY [4]),
+	.D(\i2c_device|sda_d_0_9_q_dataa_combout [1]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -14900,10 +14708,10 @@ alta_slice \i2c_device|write_value_d_4_q_dataa (
 	.LutOut(\i2c_device|write_value_d_4_q_dataa_combout [2]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|write_value_d_4_q_dataa .coord_x = 14;
-defparam \i2c_device|write_value_d_4_q_dataa .coord_y = 4;
-defparam \i2c_device|write_value_d_4_q_dataa .coord_z = 3;
-defparam \i2c_device|write_value_d_4_q_dataa .mask = 16'h153F;
+defparam \i2c_device|write_value_d_4_q_dataa .coord_x = 15;
+defparam \i2c_device|write_value_d_4_q_dataa .coord_y = 2;
+defparam \i2c_device|write_value_d_4_q_dataa .coord_z = 14;
+defparam \i2c_device|write_value_d_4_q_dataa .mask = 16'h0777;
 defparam \i2c_device|write_value_d_4_q_dataa .modeMux = 1'b0;
 defparam \i2c_device|write_value_d_4_q_dataa .FeedbackMux = 1'b0;
 defparam \i2c_device|write_value_d_4_q_dataa .ShiftMux = 1'b0;
@@ -14912,9 +14720,9 @@ defparam \i2c_device|write_value_d_4_q_dataa .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|write_value_dataa_1 (
 	.A(vcc),
-	.B(\i2c_device|write_value [1]),
+	.B(\i2c_device|write_value [0]),
 	.C(vcc),
-	.D(\i2c_device|write_value [0]),
+	.D(\i2c_device|write_value [1]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -14925,9 +14733,9 @@ alta_slice \i2c_device|write_value_dataa_1 (
 	.LutOut(\i2c_device|write_value_dataa_1_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|write_value_dataa_1 .coord_x = 15;
-defparam \i2c_device|write_value_dataa_1 .coord_y = 5;
-defparam \i2c_device|write_value_dataa_1 .coord_z = 5;
+defparam \i2c_device|write_value_dataa_1 .coord_x = 11;
+defparam \i2c_device|write_value_dataa_1 .coord_y = 4;
+defparam \i2c_device|write_value_dataa_1 .coord_z = 14;
 defparam \i2c_device|write_value_dataa_1 .mask = 16'hCC33;
 defparam \i2c_device|write_value_dataa_1 .modeMux = 1'b0;
 defparam \i2c_device|write_value_dataa_1 .FeedbackMux = 1'b0;
@@ -14936,9 +14744,9 @@ defparam \i2c_device|write_value_dataa_1 .BypassEn = 1'b0;
 defparam \i2c_device|write_value_dataa_1 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|write_value_dataa_2 (
-	.A(\i2c_device|write_value [3]),
+	.A(vcc),
 	.B(vcc),
-	.C(vcc),
+	.C(\i2c_device|write_value [3]),
 	.D(\i2c_device|write_value [2]),
 	.Cin(),
 	.Qin(),
@@ -14950,10 +14758,10 @@ alta_slice \i2c_device|write_value_dataa_2 (
 	.LutOut(\i2c_device|write_value_dataa_2_combout [3]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|write_value_dataa_2 .coord_x = 15;
-defparam \i2c_device|write_value_dataa_2 .coord_y = 1;
-defparam \i2c_device|write_value_dataa_2 .coord_z = 3;
-defparam \i2c_device|write_value_dataa_2 .mask = 16'h55AA;
+defparam \i2c_device|write_value_dataa_2 .coord_x = 19;
+defparam \i2c_device|write_value_dataa_2 .coord_y = 8;
+defparam \i2c_device|write_value_dataa_2 .coord_z = 12;
+defparam \i2c_device|write_value_dataa_2 .mask = 16'h0FF0;
 defparam \i2c_device|write_value_dataa_2 .modeMux = 1'b0;
 defparam \i2c_device|write_value_dataa_2 .FeedbackMux = 1'b0;
 defparam \i2c_device|write_value_dataa_2 .ShiftMux = 1'b0;
@@ -14961,10 +14769,10 @@ defparam \i2c_device|write_value_dataa_2 .BypassEn = 1'b0;
 defparam \i2c_device|write_value_dataa_2 .CarryEnb = 1'b1;
 
 alta_slice \i2c_device|write_value_dataa_2_combout_datad_3 (
-	.A(\i2c_device|locka_cnt_dataa_8_3_combout_dataa_0_combout [2]),
-	.B(\i2c_device|write_value_dataa_2_combout [3]),
+	.A(\i2c_device|write_value_dataa_2_combout [3]),
+	.B(\i2c_device|lockb_cnt_dataa_11_2_combout_dataa_0_combout [2]),
 	.C(\i2c_device|sda_d_0_12_q_dataa_combout [1]),
-	.D(\i2c_device|lockb_cnt_dataa_11_2_combout_dataa_0_combout [2]),
+	.D(\i2c_device|locka_cnt_dataa_8_3_combout_dataa_0_combout [2]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -14975,9 +14783,9 @@ alta_slice \i2c_device|write_value_dataa_2_combout_datad_3 (
 	.LutOut(\i2c_device|write_value_dataa_2_combout_datad_3_combout [1]),
 	.Cout(),
 	.Q());
-defparam \i2c_device|write_value_dataa_2_combout_datad_3 .coord_x = 15;
-defparam \i2c_device|write_value_dataa_2_combout_datad_3 .coord_y = 1;
-defparam \i2c_device|write_value_dataa_2_combout_datad_3 .coord_z = 4;
+defparam \i2c_device|write_value_dataa_2_combout_datad_3 .coord_x = 19;
+defparam \i2c_device|write_value_dataa_2_combout_datad_3 .coord_y = 8;
+defparam \i2c_device|write_value_dataa_2_combout_datad_3 .coord_z = 11;
 defparam \i2c_device|write_value_dataa_2_combout_datad_3 .mask = 16'h8000;
 defparam \i2c_device|write_value_dataa_2_combout_datad_3 .modeMux = 1'b0;
 defparam \i2c_device|write_value_dataa_2_combout_datad_3 .FeedbackMux = 1'b0;
@@ -14992,17 +14800,17 @@ alta_slice \i2c_device|write_value_q_0 (
 	.D(\i2c_device|sda [0]),
 	.Cin(),
 	.Qin(\i2c_device|write_value [0]),
-	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10017_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10017_Y10002_GND),
-	.SyncReset(SyncReset_X10017_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10009_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10009_Y10002_GND),
+	.SyncReset(SyncReset_X10009_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(CLKOSC_clk_2_q_A_3_Y__SyncLoad_X10017_Y10002_SIG),
+	.SyncLoad(CLKOSC_clk_2_q_A_3_Y__SyncLoad_X10009_Y10002_SIG),
 	.LutOut(\i2c_device|write_value_q_0__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|write_value [0]));
 defparam \i2c_device|write_value_q_0 .coord_x = 11;
 defparam \i2c_device|write_value_q_0 .coord_y = 4;
-defparam \i2c_device|write_value_q_0 .coord_z = 10;
+defparam \i2c_device|write_value_q_0 .coord_z = 11;
 defparam \i2c_device|write_value_q_0 .mask = 16'hFF00;
 defparam \i2c_device|write_value_q_0 .modeMux = 1'b0;
 defparam \i2c_device|write_value_q_0 .FeedbackMux = 1'b0;
@@ -15017,16 +14825,16 @@ alta_slice \i2c_device|write_value_q_1 (
 	.D(\i2c_device|sda [0]),
 	.Cin(),
 	.Qin(\i2c_device|write_value [1]),
-	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10020_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10020_Y10002_GND),
-	.SyncReset(SyncReset_X10020_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10015_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10015_Y10002_GND),
+	.SyncReset(SyncReset_X10015_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(CLKOSC_clk_2_q_A_Y__SyncLoad_X10020_Y10002_SIG),
+	.SyncLoad(CLKOSC_clk_2_q_A_Y__SyncLoad_X10015_Y10002_SIG),
 	.LutOut(\i2c_device|write_value_q_1__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|write_value [1]));
-defparam \i2c_device|write_value_q_1 .coord_x = 14;
-defparam \i2c_device|write_value_q_1 .coord_y = 5;
+defparam \i2c_device|write_value_q_1 .coord_x = 12;
+defparam \i2c_device|write_value_q_1 .coord_y = 4;
 defparam \i2c_device|write_value_q_1 .coord_z = 13;
 defparam \i2c_device|write_value_q_1 .mask = 16'hFF00;
 defparam \i2c_device|write_value_q_1 .modeMux = 1'b0;
@@ -15042,17 +14850,17 @@ alta_slice \i2c_device|write_value_q_2 (
 	.D(\i2c_device|sda [0]),
 	.Cin(),
 	.Qin(\i2c_device|write_value [2]),
-	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10011_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10011_Y10003_GND),
-	.SyncReset(SyncReset_X10011_Y10003_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10016_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10016_Y10003_GND),
+	.SyncReset(SyncReset_X10016_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(CLKOSC_clk_2_q_A_1_Y__SyncLoad_X10011_Y10003_SIG),
+	.SyncLoad(CLKOSC_clk_2_q_A_1_Y__SyncLoad_X10016_Y10003_SIG),
 	.LutOut(\i2c_device|write_value_q_2__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|write_value [2]));
-defparam \i2c_device|write_value_q_2 .coord_x = 15;
+defparam \i2c_device|write_value_q_2 .coord_x = 18;
 defparam \i2c_device|write_value_q_2 .coord_y = 1;
-defparam \i2c_device|write_value_q_2 .coord_z = 2;
+defparam \i2c_device|write_value_q_2 .coord_z = 5;
 defparam \i2c_device|write_value_q_2 .mask = 16'hFF00;
 defparam \i2c_device|write_value_q_2 .modeMux = 1'b0;
 defparam \i2c_device|write_value_q_2 .FeedbackMux = 1'b0;
@@ -15067,17 +14875,17 @@ alta_slice \i2c_device|write_value_q_3 (
 	.D(\i2c_device|sda [0]),
 	.Cin(),
 	.Qin(\i2c_device|write_value [3]),
-	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10001_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10001_Y10003_GND),
-	.SyncReset(SyncReset_X10001_Y10003_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10016_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10016_Y10002_GND),
+	.SyncReset(SyncReset_X10016_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(CLKOSC_clk_2_q_A_2_Y__SyncLoad_X10001_Y10003_SIG),
+	.SyncLoad(CLKOSC_clk_2_q_A_2_Y__SyncLoad_X10016_Y10002_SIG),
 	.LutOut(\i2c_device|write_value_q_3__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|write_value [3]));
-defparam \i2c_device|write_value_q_3 .coord_x = 14;
-defparam \i2c_device|write_value_q_3 .coord_y = 6;
-defparam \i2c_device|write_value_q_3 .coord_z = 7;
+defparam \i2c_device|write_value_q_3 .coord_x = 12;
+defparam \i2c_device|write_value_q_3 .coord_y = 3;
+defparam \i2c_device|write_value_q_3 .coord_z = 4;
 defparam \i2c_device|write_value_q_3 .mask = 16'hFF00;
 defparam \i2c_device|write_value_q_3 .modeMux = 1'b0;
 defparam \i2c_device|write_value_q_3 .FeedbackMux = 1'b0;
@@ -15092,15 +14900,15 @@ alta_slice \i2c_device|write_value_q_4 (
 	.D(\i2c_device|sda [0]),
 	.Cin(),
 	.Qin(\i2c_device|write_value [4]),
-	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10007_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10007_Y10003_GND),
-	.SyncReset(SyncReset_X10007_Y10003_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10001_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10001_Y10003_GND),
+	.SyncReset(SyncReset_X10001_Y10003_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|bit_pos_A_2_Y__SyncLoad_X10007_Y10003_SIG ),
+	.SyncLoad(\i2c_device|bit_pos_A_2_Y__SyncLoad_X10001_Y10003_SIG ),
 	.LutOut(\i2c_device|write_value_q_4__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|write_value [4]));
-defparam \i2c_device|write_value_q_4 .coord_x = 10;
+defparam \i2c_device|write_value_q_4 .coord_x = 12;
 defparam \i2c_device|write_value_q_4 .coord_y = 1;
 defparam \i2c_device|write_value_q_4 .coord_z = 5;
 defparam \i2c_device|write_value_q_4 .mask = 16'hFF00;
@@ -15117,17 +14925,17 @@ alta_slice \i2c_device|write_value_q_5 (
 	.D(\i2c_device|sda [0]),
 	.Cin(),
 	.Qin(\i2c_device|write_value [5]),
-	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10003_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10003_Y10002_GND),
-	.SyncReset(SyncReset_X10003_Y10002_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10014_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10014_Y10002_GND),
+	.SyncReset(SyncReset_X10014_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|bit_pos_A_2_1_Y__SyncLoad_X10003_Y10002_SIG ),
+	.SyncLoad(\i2c_device|bit_pos_A_2_1_Y__SyncLoad_X10014_Y10002_SIG ),
 	.LutOut(\i2c_device|write_value_q_5__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|write_value [5]));
-defparam \i2c_device|write_value_q_5 .coord_x = 14;
-defparam \i2c_device|write_value_q_5 .coord_y = 4;
-defparam \i2c_device|write_value_q_5 .coord_z = 2;
+defparam \i2c_device|write_value_q_5 .coord_x = 12;
+defparam \i2c_device|write_value_q_5 .coord_y = 2;
+defparam \i2c_device|write_value_q_5 .coord_z = 12;
 defparam \i2c_device|write_value_q_5 .mask = 16'hFF00;
 defparam \i2c_device|write_value_q_5 .modeMux = 1'b0;
 defparam \i2c_device|write_value_q_5 .FeedbackMux = 1'b0;
@@ -15142,17 +14950,17 @@ alta_slice \i2c_device|write_value_q_6 (
 	.D(\i2c_device|sda [0]),
 	.Cin(),
 	.Qin(\i2c_device|write_value [6]),
-	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10005_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10005_Y10003_GND),
-	.SyncReset(SyncReset_X10005_Y10003_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10020_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10020_Y10002_GND),
+	.SyncReset(SyncReset_X10020_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|bit_pos_A_2_2_Y__SyncLoad_X10005_Y10003_SIG ),
+	.SyncLoad(\i2c_device|bit_pos_A_2_2_Y__SyncLoad_X10020_Y10002_SIG ),
 	.LutOut(\i2c_device|write_value_q_6__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|write_value [6]));
-defparam \i2c_device|write_value_q_6 .coord_x = 14;
-defparam \i2c_device|write_value_q_6 .coord_y = 3;
-defparam \i2c_device|write_value_q_6 .coord_z = 4;
+defparam \i2c_device|write_value_q_6 .coord_x = 16;
+defparam \i2c_device|write_value_q_6 .coord_y = 1;
+defparam \i2c_device|write_value_q_6 .coord_z = 0;
 defparam \i2c_device|write_value_q_6 .mask = 16'hFF00;
 defparam \i2c_device|write_value_q_6 .modeMux = 1'b0;
 defparam \i2c_device|write_value_q_6 .FeedbackMux = 1'b0;
@@ -15167,17 +14975,17 @@ alta_slice \i2c_device|write_value_q_7 (
 	.D(\i2c_device|sda [0]),
 	.Cin(),
 	.Qin(\i2c_device|write_value [7]),
-	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10008_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10008_Y10003_GND),
-	.SyncReset(SyncReset_X10008_Y10003_GND),
+	.Clk(\CLKOSC_i_o__i2c_device|i2c_state_A_0_1_Y_B_Y_A_Y_X10002_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10002_Y10002_GND),
+	.SyncReset(SyncReset_X10002_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(\i2c_device|bit_pos_A_2_3_Y__SyncLoad_X10008_Y10003_SIG ),
+	.SyncLoad(\i2c_device|bit_pos_A_2_3_Y__SyncLoad_X10002_Y10002_SIG ),
 	.LutOut(\i2c_device|write_value_q_7__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2c_device|write_value [7]));
-defparam \i2c_device|write_value_q_7 .coord_x = 8;
+defparam \i2c_device|write_value_q_7 .coord_x = 15;
 defparam \i2c_device|write_value_q_7 .coord_y = 4;
-defparam \i2c_device|write_value_q_7 .coord_z = 1;
+defparam \i2c_device|write_value_q_7 .coord_z = 4;
 defparam \i2c_device|write_value_q_7 .mask = 16'hFF00;
 defparam \i2c_device|write_value_q_7 .modeMux = 1'b0;
 defparam \i2c_device|write_value_q_7 .FeedbackMux = 1'b0;
@@ -15186,14 +14994,14 @@ defparam \i2c_device|write_value_q_7 .BypassEn = 1'b1;
 defparam \i2c_device|write_value_q_7 .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_1|BCLKD_q (
-	.A(BCLK1_clk_q_dataa_combout[0]),
+	.A(vcc),
 	.B(vcc),
 	.C(vcc),
-	.D(vcc),
+	.D(BCLK1_clk_q_dataa_combout[0]),
 	.Cin(),
 	.Qin(\i2s_osd_select_1|BCLKD_int ),
-	.Clk(BCLK1_i_o_X10020_Y10001_SIG_VCC),
-	.AsyncReset(AsyncReset_X10020_Y10001_GND),
+	.Clk(BCLK1_i_o_X10019_Y10003_SIG_VCC),
+	.AsyncReset(AsyncReset_X10019_Y10003_GND),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
@@ -15201,9 +15009,9 @@ alta_slice \i2s_osd_select_1|BCLKD_q (
 	.Cout(),
 	.Q(\i2s_osd_select_1|BCLKD_int ));
 defparam \i2s_osd_select_1|BCLKD_q .coord_x = 20;
-defparam \i2s_osd_select_1|BCLKD_q .coord_y = 4;
-defparam \i2s_osd_select_1|BCLKD_q .coord_z = 3;
-defparam \i2s_osd_select_1|BCLKD_q .mask = 16'h0505;
+defparam \i2s_osd_select_1|BCLKD_q .coord_y = 7;
+defparam \i2s_osd_select_1|BCLKD_q .coord_z = 0;
+defparam \i2s_osd_select_1|BCLKD_q .mask = 16'h000F;
 defparam \i2s_osd_select_1|BCLKD_q .modeMux = 1'b0;
 defparam \i2s_osd_select_1|BCLKD_q .FeedbackMux = 1'b1;
 defparam \i2s_osd_select_1|BCLKD_q .ShiftMux = 1'b0;
@@ -15218,8 +15026,8 @@ defparam \i2s_osd_select_1|BCLKD_q|q~ALTA_GCLK .coord_y = 4;
 defparam \i2s_osd_select_1|BCLKD_q|q~ALTA_GCLK .coord_z = 3;
 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_datac (
-	.A(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW_datad_combout [3]),
-	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I ),
+	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I ),
+	.B(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW_datad_combout [3]),
 	.C(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW_datad_combout [0]),
 	.D(\i2c_device|write_value_d_4_q ),
 	.Cin(),
@@ -15232,10 +15040,10 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_datac (
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_datac_combout ),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_datac .coord_x = 15;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_datac .coord_y = 2;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_datac .coord_z = 3;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_datac .mask = 16'hAAAE;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_datac .coord_x = 18;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_datac .coord_y = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_datac .coord_z = 4;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_datac .mask = 16'hCCCE;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_datac .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_datac .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_datac .ShiftMux = 1'b0;
@@ -15249,17 +15057,17 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_reg (
 	.D(),
 	.Cin(),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I ),
-	.Clk(GCLK_X10016_Y10001_SIG_VCC),
-	.AsyncReset(AsyncReset_X10016_Y10001_GND),
-	.SyncReset(SyncReset_X10016_Y10001_GND),
+	.Clk(GCLK_X10014_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10014_Y10001_GND),
+	.SyncReset(SyncReset_X10014_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y__SyncLoad_X10016_Y10001_SIG ),
+	.SyncLoad(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y__SyncLoad_X10014_Y10001_SIG ),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I ));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_reg .coord_x = 17;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_reg .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_reg .coord_z = 6;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_reg .coord_x = 18;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_reg .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_reg .coord_z = 3;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_reg .mask = 16'hF0F0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_reg .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_reg .FeedbackMux = 1'b1;
@@ -15270,8 +15078,8 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q1I_reg .CarryEnb = 1'b1;
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|Q2I_datac (
 	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|Q2I ),
 	.B(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_dataa_combout [3]),
-	.C(\i2c_device|write_value_d_4_q ),
-	.D(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW_datad_combout [0]),
+	.C(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW_datad_combout [0]),
+	.D(\i2c_device|write_value_d_4_q ),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -15282,8 +15090,8 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|Q2I_datac (
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|Q2I_datac_combout ),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q2I_datac .coord_x = 17;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q2I_datac .coord_y = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q2I_datac .coord_x = 18;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q2I_datac .coord_y = 3;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q2I_datac .coord_z = 1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q2I_datac .mask = 16'hCCCE;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q2I_datac .modeMux = 1'b0;
@@ -15299,17 +15107,17 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|Q2I_reg (
 	.D(),
 	.Cin(),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|Q2I ),
-	.Clk(GCLK_X10016_Y10001_SIG_VCC),
-	.AsyncReset(AsyncReset_X10016_Y10001_GND),
-	.SyncReset(SyncReset_X10016_Y10001_GND),
+	.Clk(GCLK_X10014_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10014_Y10001_GND),
+	.SyncReset(SyncReset_X10014_Y10001_GND),
 	.ShiftData(),
-	.SyncLoad(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y__SyncLoad_X10016_Y10001_SIG ),
+	.SyncLoad(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y__SyncLoad_X10014_Y10001_SIG ),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|Q2I_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|Q2I ));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q2I_reg .coord_x = 17;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q2I_reg .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q2I_reg .coord_z = 2;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q2I_reg .coord_x = 18;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q2I_reg .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q2I_reg .coord_z = 10;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q2I_reg .mask = 16'hF0F0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q2I_reg .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|Q2I_reg .FeedbackMux = 1'b1;
@@ -15324,17 +15132,17 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[0]_reg (
 	.D(vcc),
 	.Cin(),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in [0]),
-	.Clk(\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10014_Y10002_INV_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10014_Y10002_SIG ),
+	.Clk(\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10017_Y10002_INV_SIG ),
+	.AsyncReset(AsyncReset_X10017_Y10002_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10017_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10002_GND),
+	.SyncLoad(SyncLoad_X10017_Y10002_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_combout [0]),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_cout [1]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in [0]));
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[0]_reg .coord_x = 14;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[0]_reg .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[0]_reg .coord_z = 2;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[0]_reg .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[0]_reg .coord_z = 0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[0]_reg .mask = 16'h6688;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[0]_reg .modeMux = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[0]_reg .FeedbackMux = 1'b0;
@@ -15349,17 +15157,17 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[1]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_cout [1]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in [1]),
-	.Clk(\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10014_Y10002_INV_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10014_Y10002_SIG ),
+	.Clk(\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10017_Y10002_INV_SIG ),
+	.AsyncReset(AsyncReset_X10017_Y10002_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10017_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10002_GND),
+	.SyncLoad(SyncLoad_X10017_Y10002_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_combout [1]),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_cout [2]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in [1]));
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[1]_reg .coord_x = 14;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[1]_reg .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[1]_reg .coord_z = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[1]_reg .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[1]_reg .coord_z = 1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[1]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[1]_reg .modeMux = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[1]_reg .FeedbackMux = 1'b0;
@@ -15374,17 +15182,17 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[2]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_cout [2]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in [2]),
-	.Clk(\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10014_Y10002_INV_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10014_Y10002_SIG ),
+	.Clk(\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10017_Y10002_INV_SIG ),
+	.AsyncReset(AsyncReset_X10017_Y10002_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10017_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10002_GND),
+	.SyncLoad(SyncLoad_X10017_Y10002_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_combout [2]),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_cout [3]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in [2]));
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[2]_reg .coord_x = 14;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[2]_reg .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[2]_reg .coord_z = 4;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[2]_reg .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[2]_reg .coord_z = 2;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[2]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[2]_reg .modeMux = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[2]_reg .FeedbackMux = 1'b0;
@@ -15399,17 +15207,17 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[3]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_cout [3]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in [3]),
-	.Clk(\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10014_Y10002_INV_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10014_Y10002_SIG ),
+	.Clk(\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10017_Y10002_INV_SIG ),
+	.AsyncReset(AsyncReset_X10017_Y10002_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10017_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10002_GND),
+	.SyncLoad(SyncLoad_X10017_Y10002_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_combout [3]),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_cout [4]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in [3]));
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[3]_reg .coord_x = 14;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[3]_reg .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[3]_reg .coord_z = 5;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[3]_reg .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[3]_reg .coord_z = 3;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[3]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[3]_reg .modeMux = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[3]_reg .FeedbackMux = 1'b0;
@@ -15424,17 +15232,17 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[4]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_cout [4]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in [4]),
-	.Clk(\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10014_Y10002_INV_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10014_Y10002_SIG ),
+	.Clk(\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10017_Y10002_INV_SIG ),
+	.AsyncReset(AsyncReset_X10017_Y10002_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10017_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10002_GND),
+	.SyncLoad(SyncLoad_X10017_Y10002_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_combout [4]),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_cout [5]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in [4]));
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[4]_reg .coord_x = 14;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[4]_reg .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[4]_reg .coord_z = 6;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[4]_reg .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[4]_reg .coord_z = 4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[4]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[4]_reg .modeMux = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[4]_reg .FeedbackMux = 1'b0;
@@ -15449,17 +15257,17 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[5]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_cout [5]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in [5]),
-	.Clk(\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10014_Y10002_INV_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10014_Y10002_SIG ),
+	.Clk(\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10017_Y10002_INV_SIG ),
+	.AsyncReset(AsyncReset_X10017_Y10002_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10017_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10002_GND),
+	.SyncLoad(SyncLoad_X10017_Y10002_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_combout [5]),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_cout [6]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in [5]));
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[5]_reg .coord_x = 14;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[5]_reg .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[5]_reg .coord_z = 7;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[5]_reg .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[5]_reg .coord_z = 5;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[5]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[5]_reg .modeMux = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[5]_reg .FeedbackMux = 1'b0;
@@ -15474,17 +15282,17 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[6]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_cout [6]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in [6]),
-	.Clk(\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10014_Y10002_INV_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10014_Y10002_SIG ),
+	.Clk(\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10017_Y10002_INV_SIG ),
+	.AsyncReset(AsyncReset_X10017_Y10002_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10017_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10002_GND),
+	.SyncLoad(SyncLoad_X10017_Y10002_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_combout [6]),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_cout [7]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in [6]));
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[6]_reg .coord_x = 14;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[6]_reg .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[6]_reg .coord_z = 8;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[6]_reg .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[6]_reg .coord_z = 6;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[6]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[6]_reg .modeMux = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[6]_reg .FeedbackMux = 1'b0;
@@ -15499,17 +15307,17 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[7]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_cout [7]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in [7]),
-	.Clk(\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10014_Y10002_INV_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10014_Y10002_SIG ),
+	.Clk(\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10017_Y10002_INV_SIG ),
+	.AsyncReset(AsyncReset_X10017_Y10002_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10017_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10002_GND),
+	.SyncLoad(SyncLoad_X10017_Y10002_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_combout [7]),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_cout [8]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in [7]));
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[7]_reg .coord_x = 14;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[7]_reg .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[7]_reg .coord_z = 9;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[7]_reg .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[7]_reg .coord_z = 7;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[7]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[7]_reg .modeMux = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[7]_reg .FeedbackMux = 1'b0;
@@ -15524,17 +15332,17 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[8]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_cout [8]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in [8]),
-	.Clk(\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10014_Y10002_INV_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10014_Y10002_SIG ),
+	.Clk(\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10017_Y10002_INV_SIG ),
+	.AsyncReset(AsyncReset_X10017_Y10002_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10017_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10002_GND),
+	.SyncLoad(SyncLoad_X10017_Y10002_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_combout [8]),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in_datab_0_cout [9]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in [8]));
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[8]_reg .coord_x = 14;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[8]_reg .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[8]_reg .coord_z = 10;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[8]_reg .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[8]_reg .coord_z = 8;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[8]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[8]_reg .modeMux = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_in[8]_reg .FeedbackMux = 1'b0;
@@ -15549,16 +15357,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[0]_reg (
 	.D(vcc),
 	.Cin(),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out [0]),
-	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10019_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10003_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10019_Y10003_SIG ),
+	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10004_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10004_Y10003_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10004_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10019_Y10003_GND),
+	.SyncLoad(SyncLoad_X10004_Y10003_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_combout [0]),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_cout [1]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out [0]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[0]_reg .coord_x = 12;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[0]_reg .coord_y = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[0]_reg .coord_x = 17;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[0]_reg .coord_y = 3;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[0]_reg .coord_z = 0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[0]_reg .mask = 16'h6688;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[0]_reg .modeMux = 1'b1;
@@ -15574,16 +15382,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[1]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_cout [1]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out [1]),
-	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10019_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10003_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10019_Y10003_SIG ),
+	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10004_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10004_Y10003_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10004_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10019_Y10003_GND),
+	.SyncLoad(SyncLoad_X10004_Y10003_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_combout [1]),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_cout [2]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out [1]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[1]_reg .coord_x = 12;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[1]_reg .coord_y = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[1]_reg .coord_x = 17;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[1]_reg .coord_y = 3;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[1]_reg .coord_z = 1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[1]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[1]_reg .modeMux = 1'b1;
@@ -15599,16 +15407,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[2]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_cout [2]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out [2]),
-	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10019_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10003_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10019_Y10003_SIG ),
+	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10004_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10004_Y10003_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10004_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10019_Y10003_GND),
+	.SyncLoad(SyncLoad_X10004_Y10003_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_combout [2]),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_cout [3]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out [2]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[2]_reg .coord_x = 12;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[2]_reg .coord_y = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[2]_reg .coord_x = 17;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[2]_reg .coord_y = 3;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[2]_reg .coord_z = 2;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[2]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[2]_reg .modeMux = 1'b1;
@@ -15624,16 +15432,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[3]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_cout [3]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out [3]),
-	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10019_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10003_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10019_Y10003_SIG ),
+	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10004_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10004_Y10003_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10004_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10019_Y10003_GND),
+	.SyncLoad(SyncLoad_X10004_Y10003_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_combout [3]),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_cout [4]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out [3]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[3]_reg .coord_x = 12;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[3]_reg .coord_y = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[3]_reg .coord_x = 17;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[3]_reg .coord_y = 3;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[3]_reg .coord_z = 3;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[3]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[3]_reg .modeMux = 1'b1;
@@ -15649,16 +15457,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[4]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_cout [4]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out [4]),
-	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10019_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10003_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10019_Y10003_SIG ),
+	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10004_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10004_Y10003_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10004_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10019_Y10003_GND),
+	.SyncLoad(SyncLoad_X10004_Y10003_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_combout [4]),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_cout [5]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out [4]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[4]_reg .coord_x = 12;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[4]_reg .coord_y = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[4]_reg .coord_x = 17;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[4]_reg .coord_y = 3;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[4]_reg .coord_z = 4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[4]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[4]_reg .modeMux = 1'b1;
@@ -15674,16 +15482,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[5]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_cout [5]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out [5]),
-	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10019_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10003_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10019_Y10003_SIG ),
+	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10004_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10004_Y10003_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10004_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10019_Y10003_GND),
+	.SyncLoad(SyncLoad_X10004_Y10003_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_combout [5]),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_cout [6]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out [5]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[5]_reg .coord_x = 12;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[5]_reg .coord_y = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[5]_reg .coord_x = 17;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[5]_reg .coord_y = 3;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[5]_reg .coord_z = 5;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[5]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[5]_reg .modeMux = 1'b1;
@@ -15699,16 +15507,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[6]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_cout [6]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out [6]),
-	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10019_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10003_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10019_Y10003_SIG ),
+	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10004_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10004_Y10003_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10004_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10019_Y10003_GND),
+	.SyncLoad(SyncLoad_X10004_Y10003_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_combout [6]),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_cout [7]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out [6]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[6]_reg .coord_x = 12;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[6]_reg .coord_y = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[6]_reg .coord_x = 17;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[6]_reg .coord_y = 3;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[6]_reg .coord_z = 6;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[6]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[6]_reg .modeMux = 1'b1;
@@ -15724,16 +15532,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[7]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_cout [7]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out [7]),
-	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10019_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10003_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10019_Y10003_SIG ),
+	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10004_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10004_Y10003_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10004_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10019_Y10003_GND),
+	.SyncLoad(SyncLoad_X10004_Y10003_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_combout [7]),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_cout [8]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out [7]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[7]_reg .coord_x = 12;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[7]_reg .coord_y = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[7]_reg .coord_x = 17;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[7]_reg .coord_y = 3;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[7]_reg .coord_z = 7;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[7]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[7]_reg .modeMux = 1'b1;
@@ -15749,16 +15557,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[8]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_cout [8]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out [8]),
-	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10019_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10019_Y10003_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10019_Y10003_SIG ),
+	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10004_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10004_Y10003_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10004_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10019_Y10003_GND),
+	.SyncLoad(SyncLoad_X10004_Y10003_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_combout [8]),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out_datab_0_cout [9]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out [8]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[8]_reg .coord_x = 12;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[8]_reg .coord_y = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[8]_reg .coord_x = 17;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[8]_reg .coord_y = 3;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[8]_reg .coord_z = 8;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[8]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[8]_reg .modeMux = 1'b1;
@@ -15767,35 +15575,10 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[8]_reg .ShiftMux
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[8]_reg .BypassEn = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|address_out[8]_reg .CarryEnb = 1'b0;
 
-alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y_combout (
-	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo [1]),
-	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo [2]),
-	.C(\i2c_device|write_value_d_3_q ),
-	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo [0]),
-	.Cin(),
-	.Qin(),
-	.Clk(),
-	.AsyncReset(),
-	.SyncReset(),
-	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ),
-	.Cout(),
-	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y_combout .coord_x = 17;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y_combout .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y_combout .coord_z = 10;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y_combout .mask = 16'h0240;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y_combout .modeMux = 1'b0;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y_combout .FeedbackMux = 1'b0;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y_combout .ShiftMux = 1'b0;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y_combout .BypassEn = 1'b0;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y_combout .CarryEnb = 1'b1;
-
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout (
-	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y ),
-	.B(vcc),
-	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ),
+	.A(vcc),
+	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ),
+	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y ),
 	.D(\i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_datac_combout [1]),
 	.Cin(),
 	.Qin(),
@@ -15807,10 +15590,10 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout 
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y ),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout .coord_x = 17;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout .coord_z = 13;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout .mask = 16'hAAA0;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout .coord_x = 18;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout .coord_z = 6;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout .mask = 16'hF0C0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout .ShiftMux = 1'b0;
@@ -15819,8 +15602,8 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout .C
 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout (
 	.A(vcc),
-	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0_combout [0]),
-	.C(vcc),
+	.B(vcc),
+	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0_combout [0]),
 	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ),
 	.Cin(),
 	.Qin(),
@@ -15833,109 +15616,84 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout 
 	.Cout(),
 	.Q());
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .coord_x = 18;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .coord_z = 13;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .mask = 16'h00CC;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .coord_z = 9;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .mask = 16'h00F0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .ShiftMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .BypassEn = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .CarryEnb = 1'b1;
 
-alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_dataa_2 (
-	.A(vcc),
-	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo [2]),
-	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo [1]),
-	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo [0]),
-	.Cin(),
-	.Qin(),
-	.Clk(),
-	.AsyncReset(),
-	.SyncReset(),
-	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_dataa_2_combout [1]),
-	.Cout(),
-	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_dataa_2 .coord_x = 17;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_dataa_2 .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_dataa_2 .coord_z = 14;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_dataa_2 .mask = 16'h3000;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_dataa_2 .modeMux = 1'b0;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_dataa_2 .FeedbackMux = 1'b0;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_dataa_2 .ShiftMux = 1'b0;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_dataa_2 .BypassEn = 1'b0;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_dataa_2 .CarryEnb = 1'b1;
-
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_0 (
-	.A(),
-	.B(),
+	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo [2]),
+	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo [1]),
 	.C(CO1_i_o[0]),
-	.D(),
+	.D(\i2c_device|write_value_d_3_q ),
 	.Cin(),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo [0]),
-	.Clk(GCLK_X10016_Y10001_SIG_VCC),
-	.AsyncReset(AsyncReset_X10016_Y10001_GND),
-	.SyncReset(),
+	.Clk(GCLK_X10012_Y10002_SIG_VCC),
+	.AsyncReset(AsyncReset_X10012_Y10002_GND),
+	.SyncReset(SyncReset_X10012_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_0__feeder__LutOut ),
+	.SyncLoad(SyncLoad_X10012_Y10002_VCC),
+	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ),
 	.Cout(),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo [0]));
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_0 .coord_x = 17;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_0 .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_0 .coord_z = 11;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_0 .mask = 16'hF0F0;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_0 .coord_y = 4;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_0 .coord_z = 2;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_0 .mask = 16'h0240;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_0 .modeMux = 1'b0;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_0 .FeedbackMux = 1'b0;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_0 .FeedbackMux = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_0 .ShiftMux = 1'b0;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_0 .BypassEn = 1'b0;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_0 .BypassEn = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_0 .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_1 (
-	.A(),
-	.B(),
-	.C(),
+	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo [2]),
+	.B(vcc),
+	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo [0]),
 	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo [0]),
 	.Cin(),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo [1]),
-	.Clk(GCLK_X10016_Y10001_SIG_VCC),
-	.AsyncReset(AsyncReset_X10016_Y10001_GND),
-	.SyncReset(),
+	.Clk(GCLK_X10012_Y10002_SIG_VCC),
+	.AsyncReset(AsyncReset_X10012_Y10002_GND),
+	.SyncReset(SyncReset_X10012_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_1__feeder__LutOut ),
+	.SyncLoad(SyncLoad_X10012_Y10002_VCC),
+	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_dataa_2_combout [1]),
 	.Cout(),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo [1]));
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_1 .coord_x = 17;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_1 .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_1 .coord_z = 0;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_1 .mask = 16'hFF00;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_1 .coord_y = 4;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_1 .coord_z = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_1 .mask = 16'h5000;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_1 .modeMux = 1'b0;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_1 .FeedbackMux = 1'b0;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_1 .FeedbackMux = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_1 .ShiftMux = 1'b0;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_1 .BypassEn = 1'b0;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_1 .BypassEn = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_1 .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_2 (
-	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo [1]),
-	.B(vcc),
+	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo [0]),
+	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo [1]),
 	.C(vcc),
-	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo [0]),
+	.D(vcc),
 	.Cin(),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo [2]),
-	.Clk(GCLK_X10016_Y10001_SIG_VCC),
-	.AsyncReset(AsyncReset_X10016_Y10001_GND),
+	.Clk(GCLK_X10015_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10015_Y10001_GND),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_1_Y_B_Y ),
 	.Cout(),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo [2]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_2 .coord_x = 17;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_2 .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_2 .coord_z = 15;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_2 .mask = 16'hFAA0;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_2 .coord_x = 16;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_2 .coord_y = 4;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_2 .coord_z = 6;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_2 .mask = 16'hE8E8;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_2 .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_2 .FeedbackMux = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_q_2 .ShiftMux = 1'b0;
@@ -15957,9 +15715,9 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|po
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_1_Y ),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_1_Y_combout .coord_x = 17;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_1_Y_combout .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_1_Y_combout .coord_z = 7;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_1_Y_combout .coord_x = 18;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_1_Y_combout .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_1_Y_combout .coord_z = 2;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_1_Y_combout .mask = 16'h8000;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_1_Y_combout .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_1_Y_combout .FeedbackMux = 1'b0;
@@ -15982,9 +15740,9 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|po
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_2_Y ),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_2_Y_combout .coord_x = 17;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_2_Y_combout .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_2_Y_combout .coord_z = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_2_Y_combout .coord_x = 18;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_2_Y_combout .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_2_Y_combout .coord_z = 0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_2_Y_combout .mask = 16'h8000;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_2_Y_combout .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_2_Y_combout .FeedbackMux = 1'b0;
@@ -16014,7 +15772,7 @@ alta_bram9k \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|r
 	.AddressStallA(gnd),
 	.AddressStallB(gnd));
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|ram_inst .coord_x = 13;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|ram_inst .coord_y = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|ram_inst .coord_y = 3;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|ram_inst .coord_z = 0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|ram_inst .CLKMODE = 2'b10;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|ram_inst .PACKEDMODE = 1'b0;
@@ -16039,33 +15797,33 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|ram_
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg (
 	.A(),
 	.B(),
-	.C(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_inv ),
-	.D(),
+	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg_q ),
+	.D(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE ),
 	.Cin(),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg_q ),
-	.Clk(\i2s_osd_select_1|BCLKD_X10009_Y10002_INV_VCC ),
-	.AsyncReset(AsyncReset_X10009_Y10002_GND),
-	.SyncReset(SyncReset_X10009_Y10002_GND),
+	.Clk(\i2s_osd_select_1|BCLKD_X10008_Y10002_INV_VCC ),
+	.AsyncReset(AsyncReset_X10008_Y10002_GND),
+	.SyncReset(SyncReset_X10008_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_B_Y__SyncLoad_X10009_Y10002_SIG ),
-	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg__feeder__LutOut ),
+	.SyncLoad(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_B_Y__SyncLoad_X10008_Y10002_INV ),
+	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_inv ),
 	.Cout(),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg_q ));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg .coord_x = 16;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg .coord_z = 4;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg .mask = 16'hF0F0;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg .coord_x = 15;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg .coord_z = 0;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg .mask = 16'h00FF;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg .modeMux = 1'b0;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg .FeedbackMux = 1'b1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg .ShiftMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg .BypassEn = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datac (
-	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [4]),
-	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_dataa_5_combout [3]),
-	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [0]),
-	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg_q ),
+	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg_q ),
+	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [0]),
+	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_dataa_5_combout [3]),
+	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [4]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -16076,10 +15834,10 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datac (
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datac .coord_x = 18;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datac .coord_y = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datac .coord_x = 16;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datac .coord_y = 3;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datac .coord_z = 9;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datac .mask = 16'h4004;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datac .mask = 16'h0090;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datac .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datac .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datac .ShiftMux = 1'b0;
@@ -16088,8 +15846,8 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datac .Carr
 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y_combout (
 	.A(vcc),
-	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0_combout [0]),
-	.C(vcc),
+	.B(vcc),
+	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0_combout [0]),
 	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ),
 	.Cin(),
 	.Qin(),
@@ -16102,9 +15860,9 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_
 	.Cout(),
 	.Q());
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y_combout .coord_x = 18;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y_combout .coord_y = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y_combout .coord_y = 3;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y_combout .coord_z = 12;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y_combout .mask = 16'hFFCC;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y_combout .mask = 16'hFFF0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y_combout .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y_combout .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y_combout .ShiftMux = 1'b0;
@@ -16112,10 +15870,10 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y_combout .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_dataa_5 (
-	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [7]),
-	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [3]),
-	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [6]),
-	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [5]),
+	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [5]),
+	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [7]),
+	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [3]),
+	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [6]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -16126,9 +15884,9 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_dataa_5 (
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_dataa_5_combout [3]),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_dataa_5 .coord_x = 18;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_dataa_5 .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_dataa_5 .coord_z = 8;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_dataa_5 .coord_x = 16;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_dataa_5 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_dataa_5 .coord_z = 0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_dataa_5 .mask = 16'h0001;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_dataa_5 .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_dataa_5 .FeedbackMux = 1'b0;
@@ -16143,17 +15901,17 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_0 (
 	.D(vcc),
 	.Cin(),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [0]),
-	.Clk(GCLK_X10002_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10002_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y__SyncReset_X10002_Y10002_SIG ),
+	.Clk(GCLK_X10019_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10019_Y10001_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y__SyncReset_X10019_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10002_Y10002_GND),
+	.SyncLoad(SyncLoad_X10019_Y10001_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_datab_0_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [1]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [0]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_0 .coord_x = 18;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_0 .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_0 .coord_z = 0;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_0 .coord_x = 16;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_0 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_0 .coord_z = 1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_0 .mask = 16'h6688;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_0 .modeMux = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_0 .FeedbackMux = 1'b0;
@@ -16168,17 +15926,17 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_1 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [1]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [1]),
-	.Clk(GCLK_X10002_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10002_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y__SyncReset_X10002_Y10002_SIG ),
+	.Clk(GCLK_X10019_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10019_Y10001_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y__SyncReset_X10019_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10002_Y10002_GND),
+	.SyncLoad(SyncLoad_X10019_Y10001_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_datab_1_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [2]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [1]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_1 .coord_x = 18;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_1 .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_1 .coord_z = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_1 .coord_x = 16;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_1 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_1 .coord_z = 2;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_1 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_1 .modeMux = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_1 .FeedbackMux = 1'b0;
@@ -16193,17 +15951,17 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_2 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [2]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [2]),
-	.Clk(GCLK_X10002_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10002_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y__SyncReset_X10002_Y10002_SIG ),
+	.Clk(GCLK_X10019_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10019_Y10001_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y__SyncReset_X10019_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10002_Y10002_GND),
+	.SyncLoad(SyncLoad_X10019_Y10001_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_datab_2_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [3]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [2]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_2 .coord_x = 18;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_2 .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_2 .coord_z = 2;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_2 .coord_x = 16;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_2 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_2 .coord_z = 3;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_2 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_2 .modeMux = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_2 .FeedbackMux = 1'b0;
@@ -16218,17 +15976,17 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_3 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [3]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [3]),
-	.Clk(GCLK_X10002_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10002_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y__SyncReset_X10002_Y10002_SIG ),
+	.Clk(GCLK_X10019_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10019_Y10001_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y__SyncReset_X10019_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10002_Y10002_GND),
+	.SyncLoad(SyncLoad_X10019_Y10001_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_datab_3_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [4]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [3]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_3 .coord_x = 18;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_3 .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_3 .coord_z = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_3 .coord_x = 16;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_3 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_3 .coord_z = 4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_3 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_3 .modeMux = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_3 .FeedbackMux = 1'b0;
@@ -16243,17 +16001,17 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_4 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [4]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [4]),
-	.Clk(GCLK_X10002_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10002_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y__SyncReset_X10002_Y10002_SIG ),
+	.Clk(GCLK_X10019_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10019_Y10001_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y__SyncReset_X10019_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10002_Y10002_GND),
+	.SyncLoad(SyncLoad_X10019_Y10001_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_datab_4_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [5]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [4]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_4 .coord_x = 18;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_4 .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_4 .coord_z = 4;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_4 .coord_x = 16;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_4 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_4 .coord_z = 5;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_4 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_4 .modeMux = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_4 .FeedbackMux = 1'b0;
@@ -16268,17 +16026,17 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_5 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [5]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [5]),
-	.Clk(GCLK_X10002_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10002_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y__SyncReset_X10002_Y10002_SIG ),
+	.Clk(GCLK_X10019_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10019_Y10001_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y__SyncReset_X10019_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10002_Y10002_GND),
+	.SyncLoad(SyncLoad_X10019_Y10001_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_datab_5_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [6]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [5]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_5 .coord_x = 18;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_5 .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_5 .coord_z = 5;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_5 .coord_x = 16;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_5 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_5 .coord_z = 6;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_5 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_5 .modeMux = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_5 .FeedbackMux = 1'b0;
@@ -16293,17 +16051,17 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_6 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [6]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [6]),
-	.Clk(GCLK_X10002_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10002_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y__SyncReset_X10002_Y10002_SIG ),
+	.Clk(GCLK_X10019_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10019_Y10001_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y__SyncReset_X10019_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10002_Y10002_GND),
+	.SyncLoad(SyncLoad_X10019_Y10001_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_datab_6_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [7]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [6]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_6 .coord_x = 18;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_6 .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_6 .coord_z = 6;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_6 .coord_x = 16;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_6 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_6 .coord_z = 7;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_6 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_6 .modeMux = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_6 .FeedbackMux = 1'b0;
@@ -16312,24 +16070,24 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_6 .BypassEn 
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_6 .CarryEnb = 1'b0;
 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_7 (
-	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [7]),
-	.B(vcc),
+	.A(vcc),
+	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [7]),
 	.C(vcc),
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [7]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [7]),
-	.Clk(GCLK_X10002_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10002_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y__SyncReset_X10002_Y10002_SIG ),
+	.Clk(GCLK_X10019_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10019_Y10001_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y__SyncReset_X10019_Y10001_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10002_Y10002_GND),
+	.SyncLoad(SyncLoad_X10019_Y10001_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_datab_7_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [8]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [7]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_7 .coord_x = 18;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_7 .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_7 .coord_z = 7;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_7 .mask = 16'h69B2;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_7 .coord_x = 16;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_7 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_7 .coord_z = 8;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_7 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_7 .modeMux = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_7 .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_7 .ShiftMux = 1'b0;
@@ -16337,10 +16095,10 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_7 .BypassEn 
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_q_7 .CarryEnb = 1'b0;
 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1 (
-	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [2]),
-	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [1]),
-	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div [1]),
-	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg_q ),
+	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [1]),
+	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count [2]),
+	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg_q ),
+	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div [1]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -16351,10 +16109,10 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1 (
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1_combout [1]),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1 .coord_x = 18;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1 .coord_y = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1 .coord_x = 16;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1 .coord_y = 3;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1 .coord_z = 10;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1 .mask = 16'h2482;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1 .mask = 16'h4824;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1 .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1 .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1 .ShiftMux = 1'b0;
@@ -16377,8 +16135,8 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1_combout_da
 	.Cout(),
 	.Q());
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0 .coord_x = 18;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0 .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0 .coord_z = 11;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0 .coord_z = 8;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0 .mask = 16'hF000;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0 .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0 .FeedbackMux = 1'b0;
@@ -16387,10 +16145,10 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1_combout_data
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0 .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1 (
-	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in [6]),
-	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in [7]),
-	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div [1]),
-	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg_q ),
+	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in [7]),
+	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in [6]),
+	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg_q ),
+	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div [1]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -16401,10 +16159,10 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1 (
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1 .coord_x = 14;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1 .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1 .coord_z = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1 .mask = 16'h1073;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1 .coord_x = 15;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1 .coord_z = 6;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1 .mask = 16'h1705;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1 .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1 .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1 .ShiftMux = 1'b0;
@@ -16412,10 +16170,10 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1 .BypassEn = 
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1 .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1_1 (
-	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out [7]),
-	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div [1]),
+	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out [6]),
+	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out [7]),
 	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div[0]_reg_q ),
-	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_out [6]),
+	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div [1]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -16426,10 +16184,10 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1_1 (
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1_1_combout [1]),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1_1 .coord_x = 16;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1_1 .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1_1 .coord_z = 9;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1_1 .mask = 16'h054D;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1_1 .coord_x = 15;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1_1 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1_1 .coord_z = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1_1 .mask = 16'h1703;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1_1 .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1_1 .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1_1 .ShiftMux = 1'b0;
@@ -16443,16 +16201,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_0 (
 	.D(vcc),
 	.Cin(),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [0]),
-	.Clk(\GCLK__i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_B_Y_B_Y_X10018_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10003_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10018_Y10003_SIG ),
+	.Clk(\GCLK__i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_B_Y_B_Y_X10007_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10007_Y10003_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10007_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10018_Y10003_GND),
+	.SyncLoad(SyncLoad_X10007_Y10003_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_datab_0_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_datab_0_cout [1]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [0]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_0 .coord_x = 17;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_0 .coord_y = 5;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_0 .coord_x = 18;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_0 .coord_y = 2;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_0 .coord_z = 0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_0 .mask = 16'h6688;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_0 .modeMux = 1'b1;
@@ -16468,16 +16226,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_1 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_datab_0_cout [1]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [1]),
-	.Clk(\GCLK__i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_B_Y_B_Y_X10018_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10003_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10018_Y10003_SIG ),
+	.Clk(\GCLK__i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_B_Y_B_Y_X10007_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10007_Y10003_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10007_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10018_Y10003_GND),
+	.SyncLoad(SyncLoad_X10007_Y10003_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_datab_1_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_datab_0_cout [2]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [1]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_1 .coord_x = 17;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_1 .coord_y = 5;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_1 .coord_x = 18;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_1 .coord_y = 2;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_1 .coord_z = 1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_1 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_1 .modeMux = 1'b1;
@@ -16493,16 +16251,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_2 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_datab_0_cout [2]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [2]),
-	.Clk(\GCLK__i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_B_Y_B_Y_X10018_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10003_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10018_Y10003_SIG ),
+	.Clk(\GCLK__i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_B_Y_B_Y_X10007_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10007_Y10003_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10007_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10018_Y10003_GND),
+	.SyncLoad(SyncLoad_X10007_Y10003_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_datab_2_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_datab_0_cout [3]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [2]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_2 .coord_x = 17;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_2 .coord_y = 5;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_2 .coord_x = 18;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_2 .coord_y = 2;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_2 .coord_z = 2;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_2 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_2 .modeMux = 1'b1;
@@ -16518,16 +16276,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_3 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_datab_0_cout [3]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [3]),
-	.Clk(\GCLK__i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_B_Y_B_Y_X10018_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10003_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10018_Y10003_SIG ),
+	.Clk(\GCLK__i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_B_Y_B_Y_X10007_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10007_Y10003_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10007_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10018_Y10003_GND),
+	.SyncLoad(SyncLoad_X10007_Y10003_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_datab_3_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_datab_0_cout [4]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [3]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_3 .coord_x = 17;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_3 .coord_y = 5;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_3 .coord_x = 18;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_3 .coord_y = 2;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_3 .coord_z = 3;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_3 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_3 .modeMux = 1'b1;
@@ -16543,16 +16301,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_4 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_datab_0_cout [4]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [4]),
-	.Clk(\GCLK__i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_B_Y_B_Y_X10018_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10003_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10018_Y10003_SIG ),
+	.Clk(\GCLK__i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_B_Y_B_Y_X10007_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10007_Y10003_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10007_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10018_Y10003_GND),
+	.SyncLoad(SyncLoad_X10007_Y10003_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_datab_4_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_datab_0_cout [5]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [4]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_4 .coord_x = 17;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_4 .coord_y = 5;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_4 .coord_x = 18;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_4 .coord_y = 2;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_4 .coord_z = 4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_4 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_4 .modeMux = 1'b1;
@@ -16568,16 +16326,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_5 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_datab_0_cout [5]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [5]),
-	.Clk(\GCLK__i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_B_Y_B_Y_X10018_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10003_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10018_Y10003_SIG ),
+	.Clk(\GCLK__i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_B_Y_B_Y_X10007_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10007_Y10003_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10007_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10018_Y10003_GND),
+	.SyncLoad(SyncLoad_X10007_Y10003_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_datab_5_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_datab_0_cout [6]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [5]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_5 .coord_x = 17;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_5 .coord_y = 5;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_5 .coord_x = 18;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_5 .coord_y = 2;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_5 .coord_z = 5;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_5 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_5 .modeMux = 1'b1;
@@ -16593,16 +16351,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_6 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_datab_0_cout [6]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [6]),
-	.Clk(\GCLK__i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_B_Y_B_Y_X10018_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10003_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10018_Y10003_SIG ),
+	.Clk(\GCLK__i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_B_Y_B_Y_X10007_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10007_Y10003_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10007_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10018_Y10003_GND),
+	.SyncLoad(SyncLoad_X10007_Y10003_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_datab_6_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_datab_0_cout [7]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [6]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_6 .coord_x = 17;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_6 .coord_y = 5;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_6 .coord_x = 18;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_6 .coord_y = 2;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_6 .coord_z = 6;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_6 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_6 .modeMux = 1'b1;
@@ -16618,16 +16376,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_7 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_datab_0_cout [7]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [7]),
-	.Clk(\GCLK__i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_B_Y_B_Y_X10018_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10018_Y10003_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10018_Y10003_SIG ),
+	.Clk(\GCLK__i2c_device|OFFSET_PRIMARY_datab_0_cout_cin_8_combout_B_Y_B_Y_X10007_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10007_Y10003_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10007_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10018_Y10003_GND),
+	.SyncLoad(SyncLoad_X10007_Y10003_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_datab_7_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_datab_0_cout [8]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset [7]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_7 .coord_x = 17;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_7 .coord_y = 5;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_7 .coord_x = 18;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_7 .coord_y = 2;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_7 .coord_z = 7;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_7 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_7 .modeMux = 1'b1;
@@ -16638,23 +16396,23 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|current_offset_q_7 .CarryEnb
 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|data_in[0]_reg (
 	.A(),
-	.B(),
+	.B(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE ),
 	.C(),
-	.D(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE ),
+	.D(),
 	.Cin(),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|DataInA [0]),
-	.Clk(\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10014_Y10002_INV_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10014_Y10002_SIG ),
+	.Clk(\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10017_Y10002_INV_SIG ),
+	.AsyncReset(AsyncReset_X10017_Y10002_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10017_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10002_GND),
+	.SyncLoad(SyncLoad_X10017_Y10002_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|data_in[0]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|DataInA [0]));
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|data_in[0]_reg .coord_x = 14;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|data_in[0]_reg .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|data_in[0]_reg .coord_z = 12;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|data_in[0]_reg .mask = 16'hFF00;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|data_in[0]_reg .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|data_in[0]_reg .coord_z = 10;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|data_in[0]_reg .mask = 16'hCCCC;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|data_in[0]_reg .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|data_in[0]_reg .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|data_in[0]_reg .ShiftMux = 1'b0;
@@ -16668,17 +16426,17 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|data_in[1]_reg (
 	.D(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW ),
 	.Cin(),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|DataInA [1]),
-	.Clk(\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10014_Y10002_INV_SIG ),
-	.AsyncReset(AsyncReset_X10014_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10014_Y10002_SIG ),
+	.Clk(\i2s_osd_select_1|BCLKD__i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10017_Y10002_INV_SIG ),
+	.AsyncReset(AsyncReset_X10017_Y10002_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10017_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10014_Y10002_GND),
+	.SyncLoad(SyncLoad_X10017_Y10002_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|data_in[1]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|buffer|DataInA [1]));
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|data_in[1]_reg .coord_x = 14;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|data_in[1]_reg .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|data_in[1]_reg .coord_z = 11;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|data_in[1]_reg .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|data_in[1]_reg .coord_z = 9;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|data_in[1]_reg .mask = 16'hFF00;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|data_in[1]_reg .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|data_in[1]_reg .FeedbackMux = 1'b0;
@@ -16689,24 +16447,24 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|data_in[1]_reg .CarryEnb = 1
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|image_width[6]_reg (
 	.A(),
 	.B(),
-	.C(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_inv ),
-	.D(),
+	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div [1]),
+	.D(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_inv ),
 	.Cin(),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div [1]),
-	.Clk(\i2s_osd_select_1|BCLKD_X10009_Y10002_INV_VCC ),
-	.AsyncReset(AsyncReset_X10009_Y10002_GND),
-	.SyncReset(SyncReset_X10009_Y10002_GND),
+	.Clk(\i2s_osd_select_1|BCLKD_X10008_Y10002_INV_VCC ),
+	.AsyncReset(AsyncReset_X10008_Y10002_GND),
+	.SyncReset(SyncReset_X10008_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_B_Y__SyncLoad_X10009_Y10002_SIG ),
+	.SyncLoad(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_B_Y__SyncLoad_X10008_Y10002_INV ),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|image_width[6]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div [1]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|image_width[6]_reg .coord_x = 16;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|image_width[6]_reg .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|image_width[6]_reg .coord_z = 13;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|image_width[6]_reg .mask = 16'hF0F0;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|image_width[6]_reg .coord_x = 15;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|image_width[6]_reg .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|image_width[6]_reg .coord_z = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|image_width[6]_reg .mask = 16'hFF00;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|image_width[6]_reg .modeMux = 1'b0;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|image_width[6]_reg .FeedbackMux = 1'b1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|image_width[6]_reg .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|image_width[6]_reg .ShiftMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|image_width[6]_reg .BypassEn = 1'b1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|image_width[6]_reg .CarryEnb = 1'b1;
@@ -16714,21 +16472,21 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|image_width[6]_reg .CarryEnb
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de[0]_reg (
 	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_dataa_2_combout [1]),
 	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_combout ),
-	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_dataa_2_combout [0]),
-	.D(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW_datad_combout [0]),
+	.C(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW_datad_combout [0]),
+	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_dataa_2_combout [0]),
 	.Cin(),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [0]),
-	.Clk(GCLK_X10008_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10008_Y10002_GND),
+	.Clk(GCLK_X10016_Y10003_SIG_VCC),
+	.AsyncReset(AsyncReset_X10016_Y10003_GND),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_2_Y_A_1_Y ),
 	.Cout(),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [0]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de[0]_reg .coord_x = 16;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de[0]_reg .coord_y = 3;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de[0]_reg .coord_z = 14;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de[0]_reg .coord_x = 18;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de[0]_reg .coord_y = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de[0]_reg .coord_z = 3;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de[0]_reg .mask = 16'hAAAE;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de[0]_reg .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de[0]_reg .FeedbackMux = 1'b0;
@@ -16737,10 +16495,10 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de[0]_reg .BypassEn =
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de[0]_reg .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y_combout (
-	.A(vcc),
+	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_dataa_2_combout [1]),
 	.B(vcc),
-	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_dataa_2_combout [1]),
-	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_dataa_2_combout [0]),
+	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_dataa_2_combout [0]),
+	.D(vcc),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -16751,10 +16509,10 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y_co
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y ),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y_combout .coord_x = 15;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y_combout .coord_y = 3;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y_combout .coord_z = 2;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y_combout .mask = 16'hFFF0;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y_combout .coord_x = 18;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y_combout .coord_y = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y_combout .coord_z = 0;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y_combout .mask = 16'hFAFA;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y_combout .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y_combout .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y_combout .ShiftMux = 1'b0;
@@ -16776,9 +16534,9 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_co
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y ),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_combout .coord_x = 15;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_combout .coord_y = 3;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_combout .coord_z = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_combout .coord_x = 18;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_combout .coord_y = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_combout .coord_z = 7;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_combout .mask = 16'hF0FF;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_combout .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_combout .FeedbackMux = 1'b0;
@@ -16787,9 +16545,9 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_comb
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_combout .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_2 (
-	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [0]),
-	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [3]),
-	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [1]),
+	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [1]),
+	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [0]),
+	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [3]),
 	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [2]),
 	.Cin(),
 	.Qin(),
@@ -16801,8 +16559,8 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_2 (
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_2_combout [3]),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_2 .coord_x = 16;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_2 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_2 .coord_x = 19;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_2 .coord_y = 1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_2 .coord_z = 0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_2 .mask = 16'h0001;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_2 .modeMux = 1'b0;
@@ -16814,8 +16572,8 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_2 .CarryEnb 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6 (
 	.A(vcc),
 	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [10]),
-	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [6]),
-	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [7]),
+	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [7]),
+	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [6]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -16826,9 +16584,9 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6 (
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_combout [3]),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6 .coord_x = 15;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6 .coord_y = 2;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6 .coord_z = 6;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6 .coord_x = 19;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6 .coord_y = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6 .coord_z = 14;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6 .mask = 16'h0003;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6 .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6 .FeedbackMux = 1'b0;
@@ -16837,10 +16595,10 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6 .BypassEn 
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6 .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_1 (
-	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [7]),
-	.B(vcc),
-	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [6]),
-	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [10]),
+	.A(vcc),
+	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [10]),
+	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [7]),
+	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [6]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -16851,10 +16609,10 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_1 (
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_1_combout [1]),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_1 .coord_x = 15;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_1 .coord_y = 3;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_1 .coord_z = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_1 .mask = 16'h0A00;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_1 .coord_x = 19;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_1 .coord_y = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_1 .coord_z = 15;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_1 .mask = 16'h00C0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_1 .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_1 .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_1 .ShiftMux = 1'b0;
@@ -16862,10 +16620,10 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_1 .BypassE
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_1 .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_8 (
-	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_combout [2]),
+	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [8]),
 	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_combout [3]),
-	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [9]),
-	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [8]),
+	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_combout [2]),
+	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [9]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -16876,10 +16634,10 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_8 (
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW_datad_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_8 .coord_x = 15;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_8 .coord_y = 3;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_8 .coord_z = 5;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_8 .mask = 16'h0008;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_8 .coord_x = 18;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_8 .coord_y = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_8 .coord_z = 6;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_8 .mask = 16'h0040;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_8 .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_8 .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_8 .ShiftMux = 1'b0;
@@ -16887,8 +16645,8 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_8 .BypassEn 
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_8 .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0 (
-	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [0]),
-	.B(vcc),
+	.A(vcc),
+	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [0]),
 	.C(vcc),
 	.D(vcc),
 	.Cin(),
@@ -16901,8 +16659,8 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0 (
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_cout [1]),
 	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0 .coord_x = 16;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0 .coord_x = 19;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0 .coord_y = 1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0 .coord_z = 1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0 .mask = 16'h6688;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0 .modeMux = 1'b1;
@@ -16913,9 +16671,9 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0 .CarryEnb 
 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_4_1 (
 	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_2_combout [3]),
-	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [11]),
+	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [4]),
 	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [5]),
-	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [4]),
+	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [11]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -16926,8 +16684,8 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_4_1 (
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_combout [2]),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_4_1 .coord_x = 16;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_4_1 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_4_1 .coord_x = 19;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_4_1 .coord_y = 1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_4_1 .coord_z = 13;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_4_1 .mask = 16'h0002;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_4_1 .modeMux = 1'b0;
@@ -16937,10 +16695,10 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_4_1 .BypassE
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_4_1 .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datac_8 (
-	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_1_combout [1]),
-	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [8]),
-	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [9]),
-	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_combout [2]),
+	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [8]),
+	.B(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_1_combout [1]),
+	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_dataa_6_combout [2]),
+	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [9]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -16951,9 +16709,9 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datac_8 (
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_dataa_2_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datac_8 .coord_x = 16;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datac_8 .coord_y = 3;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datac_8 .coord_z = 15;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datac_8 .coord_x = 18;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datac_8 .coord_y = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datac_8 .coord_z = 2;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datac_8 .mask = 16'h8000;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datac_8 .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datac_8 .FeedbackMux = 1'b0;
@@ -16968,16 +16726,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_1 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_cout [1]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [1]),
-	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10008_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10008_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10008_Y10002_SIG ),
+	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10004_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10004_Y10002_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10004_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10008_Y10002_GND),
+	.SyncLoad(SyncLoad_X10004_Y10002_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_1_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_cout [2]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [1]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_1 .coord_x = 16;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_1 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_1 .coord_x = 19;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_1 .coord_y = 1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_1 .coord_z = 2;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_1 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_1 .modeMux = 1'b1;
@@ -16993,16 +16751,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_10 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_cout [10]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [10]),
-	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10008_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10008_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10008_Y10002_SIG ),
+	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10004_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10004_Y10002_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10004_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10008_Y10002_GND),
+	.SyncLoad(SyncLoad_X10004_Y10002_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_10_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_cout [11]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [10]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_10 .coord_x = 16;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_10 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_10 .coord_x = 19;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_10 .coord_y = 1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_10 .coord_z = 11;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_10 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_10 .modeMux = 1'b1;
@@ -17018,16 +16776,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_11 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_cout [11]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [11]),
-	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10008_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10008_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10008_Y10002_SIG ),
+	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10004_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10004_Y10002_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10004_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10008_Y10002_GND),
+	.SyncLoad(SyncLoad_X10004_Y10002_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_11_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_cout [12]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [11]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_11 .coord_x = 16;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_11 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_11 .coord_x = 19;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_11 .coord_y = 1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_11 .coord_z = 12;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_11 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_11 .modeMux = 1'b1;
@@ -17043,16 +16801,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_2 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_cout [2]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [2]),
-	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10008_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10008_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10008_Y10002_SIG ),
+	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10004_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10004_Y10002_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10004_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10008_Y10002_GND),
+	.SyncLoad(SyncLoad_X10004_Y10002_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_2_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_cout [3]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [2]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_2 .coord_x = 16;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_2 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_2 .coord_x = 19;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_2 .coord_y = 1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_2 .coord_z = 3;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_2 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_2 .modeMux = 1'b1;
@@ -17068,16 +16826,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_3 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_cout [3]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [3]),
-	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10008_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10008_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10008_Y10002_SIG ),
+	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10004_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10004_Y10002_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10004_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10008_Y10002_GND),
+	.SyncLoad(SyncLoad_X10004_Y10002_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_3_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_cout [4]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [3]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_3 .coord_x = 16;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_3 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_3 .coord_x = 19;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_3 .coord_y = 1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_3 .coord_z = 4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_3 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_3 .modeMux = 1'b1;
@@ -17093,16 +16851,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_4 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_cout [4]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [4]),
-	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10008_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10008_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10008_Y10002_SIG ),
+	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10004_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10004_Y10002_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10004_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10008_Y10002_GND),
+	.SyncLoad(SyncLoad_X10004_Y10002_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_4_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_cout [5]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [4]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_4 .coord_x = 16;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_4 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_4 .coord_x = 19;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_4 .coord_y = 1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_4 .coord_z = 5;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_4 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_4 .modeMux = 1'b1;
@@ -17118,16 +16876,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_5 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_cout [5]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [5]),
-	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10008_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10008_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10008_Y10002_SIG ),
+	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10004_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10004_Y10002_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10004_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10008_Y10002_GND),
+	.SyncLoad(SyncLoad_X10004_Y10002_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_5_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_cout [6]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [5]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_5 .coord_x = 16;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_5 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_5 .coord_x = 19;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_5 .coord_y = 1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_5 .coord_z = 6;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_5 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_5 .modeMux = 1'b1;
@@ -17143,16 +16901,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_6 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_cout [6]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [6]),
-	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10008_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10008_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10008_Y10002_SIG ),
+	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10004_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10004_Y10002_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10004_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10008_Y10002_GND),
+	.SyncLoad(SyncLoad_X10004_Y10002_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_6_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_cout [7]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [6]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_6 .coord_x = 16;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_6 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_6 .coord_x = 19;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_6 .coord_y = 1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_6 .coord_z = 7;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_6 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_6 .modeMux = 1'b1;
@@ -17168,16 +16926,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_7 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_cout [7]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [7]),
-	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10008_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10008_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10008_Y10002_SIG ),
+	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10004_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10004_Y10002_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10004_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10008_Y10002_GND),
+	.SyncLoad(SyncLoad_X10004_Y10002_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_7_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_cout [8]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [7]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_7 .coord_x = 16;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_7 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_7 .coord_x = 19;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_7 .coord_y = 1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_7 .coord_z = 8;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_7 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_7 .modeMux = 1'b1;
@@ -17193,16 +16951,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_8 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_cout [8]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [8]),
-	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10008_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10008_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10008_Y10002_SIG ),
+	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10004_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10004_Y10002_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10004_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10008_Y10002_GND),
+	.SyncLoad(SyncLoad_X10004_Y10002_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_8_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_cout [9]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [8]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_8 .coord_x = 16;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_8 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_8 .coord_x = 19;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_8 .coord_y = 1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_8 .coord_z = 9;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_8 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_8 .modeMux = 1'b1;
@@ -17218,16 +16976,16 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_9 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_cout [9]),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [9]),
-	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10008_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10008_Y10002_GND),
-	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10008_Y10002_SIG ),
+	.Clk(\GCLK__i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10004_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10004_Y10002_GND),
+	.SyncReset(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10004_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10008_Y10002_GND),
+	.SyncLoad(SyncLoad_X10004_Y10002_GND),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_9_combout ),
 	.Cout(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_datab_0_cout [10]),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de [9]));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_9 .coord_x = 16;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_9 .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_9 .coord_x = 19;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_9 .coord_y = 1;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_9 .coord_z = 10;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_9 .mask = 16'h69D4;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_9 .modeMux = 1'b1;
@@ -17238,9 +16996,9 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_q_9 .CarryEnb = 1'
 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout (
 	.A(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_datad_1_combout [0]),
-	.B(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d_q ),
-	.C(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in [8]),
-	.D(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y ),
+	.B(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y ),
+	.C(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d_q ),
+	.D(\i2s_osd_select_1|pcm_to_pdm_select|normal|address_in [8]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -17251,10 +17009,10 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout (
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y ),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout .coord_x = 14;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout .coord_z = 0;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout .mask = 16'hFF23;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout .coord_x = 15;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout .coord_z = 9;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout .mask = 16'hCECF;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout .ShiftMux = 1'b0;
@@ -17263,53 +17021,28 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout .Car
 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d (
 	.A(vcc),
-	.B(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW ),
+	.B(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE ),
 	.C(vcc),
-	.D(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE ),
+	.D(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW ),
 	.Cin(),
 	.Qin(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d_q ),
-	.Clk(\i2s_osd_select_1|BCLKD_X10009_Y10002_INV_VCC ),
-	.AsyncReset(AsyncReset_X10009_Y10002_GND),
+	.Clk(\i2s_osd_select_1|BCLKD_X10008_Y10002_INV_VCC ),
+	.AsyncReset(AsyncReset_X10008_Y10002_GND),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y ),
 	.Cout(),
 	.Q(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d_q ));
-defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d .coord_x = 16;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d .coord_z = 12;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d .coord_x = 15;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d .coord_z = 8;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d .mask = 16'h0033;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d .ShiftMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d .BypassEn = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d .CarryEnb = 1'b1;
-
-alta_slice \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_inv~I (
-	.A(),
-	.B(),
-	.C(),
-	.D(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE ),
-	.Cin(),
-	.Qin(),
-	.Clk(),
-	.AsyncReset(),
-	.SyncReset(),
-	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_inv ),
-	.Cout(),
-	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_inv~I .coord_x = 16;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_inv~I .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_inv~I .coord_z = 2;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_inv~I .mask = 16'h00FF;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_inv~I .modeMux = 1'b0;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_inv~I .FeedbackMux = 1'b0;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_inv~I .ShiftMux = 1'b0;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_inv~I .BypassEn = 1'b0;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_inv~I .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_reg (
 	.A(),
@@ -17335,6 +17068,31 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_reg .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_reg .ShiftMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_reg .BypassEn = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_reg .CarryEnb = 1'b1;
+
+alta_slice \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW_datad (
+	.A(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW ),
+	.B(CO1_i_o[1]),
+	.C(CO1_i_o[0]),
+	.D(\i2c_device|write_value_d_4_q ),
+	.Cin(),
+	.Qin(),
+	.Clk(),
+	.AsyncReset(),
+	.SyncReset(),
+	.ShiftData(),
+	.SyncLoad(),
+	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW_datad_combout [3]),
+	.Cout(),
+	.Q());
+defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW_datad .coord_x = 18;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW_datad .coord_y = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW_datad .coord_z = 1;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW_datad .mask = 16'h8000;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW_datad .modeMux = 1'b0;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW_datad .FeedbackMux = 1'b0;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW_datad .ShiftMux = 1'b0;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW_datad .BypassEn = 1'b0;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW_datad .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_RAW_reg (
 	.A(),
@@ -17376,9 +17134,9 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_B_Y_combout (
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_B_Y ),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_B_Y_combout .coord_x = 16;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_B_Y_combout .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_B_Y_combout .coord_z = 7;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_B_Y_combout .coord_x = 15;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_B_Y_combout .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_B_Y_combout .coord_z = 5;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_B_Y_combout .mask = 16'hF000;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_B_Y_combout .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_B_Y_combout .FeedbackMux = 1'b0;
@@ -17387,9 +17145,9 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_B_Y_combout .BypassEn = 
 defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_B_Y_combout .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_dataa (
-	.A(CO1_i_o[0]),
-	.B(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW ),
-	.C(CO1_i_o[1]),
+	.A(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW ),
+	.B(CO1_i_o[1]),
+	.C(CO1_i_o[0]),
 	.D(\i2c_device|write_value_d_4_q ),
 	.Cin(),
 	.Qin(),
@@ -17401,9 +17159,9 @@ alta_slice \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_dataa (
 	.LutOut(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_dataa_combout [3]),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_dataa .coord_x = 16;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_dataa .coord_y = 1;
-defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_dataa .coord_z = 8;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_dataa .coord_x = 18;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_dataa .coord_y = 3;
+defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_dataa .coord_z = 11;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_dataa .mask = 16'h8000;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_dataa .modeMux = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_dataa .FeedbackMux = 1'b0;
@@ -17437,14 +17195,14 @@ defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_reg .BypassEn = 1'b0;
 defparam \i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_reg .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_2|BCLKD_q (
-	.A(vcc),
+	.A(BCLK2_clk_q_dataa_combout[0]),
 	.B(vcc),
 	.C(vcc),
-	.D(BCLK2_clk_q_dataa_combout[0]),
+	.D(vcc),
 	.Cin(),
 	.Qin(\i2s_osd_select_2|BCLKD_int ),
-	.Clk(BCLK2_i_o_X10004_Y10001_SIG_VCC),
-	.AsyncReset(AsyncReset_X10004_Y10001_GND),
+	.Clk(BCLK2_i_o_X10014_Y10003_SIG_VCC),
+	.AsyncReset(AsyncReset_X10014_Y10003_GND),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
@@ -17452,9 +17210,9 @@ alta_slice \i2s_osd_select_2|BCLKD_q (
 	.Cout(),
 	.Q(\i2s_osd_select_2|BCLKD_int ));
 defparam \i2s_osd_select_2|BCLKD_q .coord_x = 20;
-defparam \i2s_osd_select_2|BCLKD_q .coord_y = 5;
-defparam \i2s_osd_select_2|BCLKD_q .coord_z = 14;
-defparam \i2s_osd_select_2|BCLKD_q .mask = 16'h000F;
+defparam \i2s_osd_select_2|BCLKD_q .coord_y = 6;
+defparam \i2s_osd_select_2|BCLKD_q .coord_z = 12;
+defparam \i2s_osd_select_2|BCLKD_q .mask = 16'h0505;
 defparam \i2s_osd_select_2|BCLKD_q .modeMux = 1'b0;
 defparam \i2s_osd_select_2|BCLKD_q .FeedbackMux = 1'b1;
 defparam \i2s_osd_select_2|BCLKD_q .ShiftMux = 1'b0;
@@ -17470,9 +17228,9 @@ defparam \i2s_osd_select_2|BCLKD_q|q~ALTA_GCLK .coord_z = 4;
 
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_datac (
 	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I ),
-	.B(\i2c_device|write_value_d_4_q ),
+	.B(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_RAW_datad_combout [3]),
 	.C(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_RAW_datad_combout [0]),
-	.D(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_RAW_datad_combout [3]),
+	.D(\i2c_device|write_value_d_4_q ),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -17483,10 +17241,10 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_datac (
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_datac_combout ),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_datac .coord_x = 15;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_datac .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_datac .coord_z = 7;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_datac .mask = 16'hFF02;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_datac .coord_x = 16;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_datac .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_datac .coord_z = 11;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_datac .mask = 16'hCCCE;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_datac .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_datac .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_datac .ShiftMux = 1'b0;
@@ -17508,8 +17266,8 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_reg (
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I ));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_reg .coord_x = 17;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_reg .coord_y = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_reg .coord_x = 16;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_reg .coord_y = 4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_reg .coord_z = 12;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_reg .mask = 16'hF0F0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_reg .modeMux = 1'b0;
@@ -17520,9 +17278,9 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q1I_reg .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_datac (
 	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I ),
-	.B(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_dataa_combout [3]),
+	.B(\i2c_device|write_value_d_4_q ),
 	.C(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_RAW_datad_combout [0]),
-	.D(\i2c_device|write_value_d_4_q ),
+	.D(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_dataa_combout [3]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -17533,10 +17291,10 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_datac (
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_datac_combout ),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_datac .coord_x = 17;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_datac .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_datac .coord_z = 6;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_datac .mask = 16'hCCCE;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_datac .coord_x = 18;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_datac .coord_y = 3;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_datac .coord_z = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_datac .mask = 16'hFF02;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_datac .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_datac .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_datac .ShiftMux = 1'b0;
@@ -17558,9 +17316,9 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_reg (
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I ));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_reg .coord_x = 17;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_reg .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_reg .coord_z = 0;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_reg .coord_x = 16;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_reg .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_reg .coord_z = 3;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_reg .mask = 16'hF0F0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_reg .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|Q2I_reg .FeedbackMux = 1'b1;
@@ -17575,16 +17333,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[0]_reg (
 	.D(vcc),
 	.Cin(),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in [0]),
-	.Clk(\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10002_Y10003_INV_SIG ),
-	.AsyncReset(AsyncReset_X10002_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10002_Y10003_SIG ),
+	.Clk(\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10018_Y10002_INV_SIG ),
+	.AsyncReset(AsyncReset_X10018_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10018_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10002_Y10003_GND),
+	.SyncLoad(SyncLoad_X10018_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_combout [0]),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_cout [1]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in [0]));
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[0]_reg .coord_x = 14;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[0]_reg .coord_y = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[0]_reg .coord_y = 6;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[0]_reg .coord_z = 2;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[0]_reg .mask = 16'h6688;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[0]_reg .modeMux = 1'b1;
@@ -17600,16 +17358,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[1]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_cout [1]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in [1]),
-	.Clk(\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10002_Y10003_INV_SIG ),
-	.AsyncReset(AsyncReset_X10002_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10002_Y10003_SIG ),
+	.Clk(\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10018_Y10002_INV_SIG ),
+	.AsyncReset(AsyncReset_X10018_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10018_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10002_Y10003_GND),
+	.SyncLoad(SyncLoad_X10018_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_combout [1]),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_cout [2]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in [1]));
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[1]_reg .coord_x = 14;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[1]_reg .coord_y = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[1]_reg .coord_y = 6;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[1]_reg .coord_z = 3;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[1]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[1]_reg .modeMux = 1'b1;
@@ -17625,16 +17383,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[2]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_cout [2]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in [2]),
-	.Clk(\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10002_Y10003_INV_SIG ),
-	.AsyncReset(AsyncReset_X10002_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10002_Y10003_SIG ),
+	.Clk(\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10018_Y10002_INV_SIG ),
+	.AsyncReset(AsyncReset_X10018_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10018_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10002_Y10003_GND),
+	.SyncLoad(SyncLoad_X10018_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_combout [2]),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_cout [3]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in [2]));
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[2]_reg .coord_x = 14;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[2]_reg .coord_y = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[2]_reg .coord_y = 6;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[2]_reg .coord_z = 4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[2]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[2]_reg .modeMux = 1'b1;
@@ -17650,16 +17408,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[3]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_cout [3]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in [3]),
-	.Clk(\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10002_Y10003_INV_SIG ),
-	.AsyncReset(AsyncReset_X10002_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10002_Y10003_SIG ),
+	.Clk(\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10018_Y10002_INV_SIG ),
+	.AsyncReset(AsyncReset_X10018_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10018_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10002_Y10003_GND),
+	.SyncLoad(SyncLoad_X10018_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_combout [3]),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_cout [4]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in [3]));
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[3]_reg .coord_x = 14;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[3]_reg .coord_y = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[3]_reg .coord_y = 6;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[3]_reg .coord_z = 5;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[3]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[3]_reg .modeMux = 1'b1;
@@ -17675,16 +17433,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[4]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_cout [4]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in [4]),
-	.Clk(\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10002_Y10003_INV_SIG ),
-	.AsyncReset(AsyncReset_X10002_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10002_Y10003_SIG ),
+	.Clk(\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10018_Y10002_INV_SIG ),
+	.AsyncReset(AsyncReset_X10018_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10018_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10002_Y10003_GND),
+	.SyncLoad(SyncLoad_X10018_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_combout [4]),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_cout [5]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in [4]));
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[4]_reg .coord_x = 14;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[4]_reg .coord_y = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[4]_reg .coord_y = 6;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[4]_reg .coord_z = 6;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[4]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[4]_reg .modeMux = 1'b1;
@@ -17700,16 +17458,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[5]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_cout [5]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in [5]),
-	.Clk(\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10002_Y10003_INV_SIG ),
-	.AsyncReset(AsyncReset_X10002_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10002_Y10003_SIG ),
+	.Clk(\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10018_Y10002_INV_SIG ),
+	.AsyncReset(AsyncReset_X10018_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10018_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10002_Y10003_GND),
+	.SyncLoad(SyncLoad_X10018_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_combout [5]),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_cout [6]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in [5]));
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[5]_reg .coord_x = 14;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[5]_reg .coord_y = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[5]_reg .coord_y = 6;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[5]_reg .coord_z = 7;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[5]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[5]_reg .modeMux = 1'b1;
@@ -17725,16 +17483,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[6]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_cout [6]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in [6]),
-	.Clk(\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10002_Y10003_INV_SIG ),
-	.AsyncReset(AsyncReset_X10002_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10002_Y10003_SIG ),
+	.Clk(\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10018_Y10002_INV_SIG ),
+	.AsyncReset(AsyncReset_X10018_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10018_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10002_Y10003_GND),
+	.SyncLoad(SyncLoad_X10018_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_combout [6]),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_cout [7]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in [6]));
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[6]_reg .coord_x = 14;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[6]_reg .coord_y = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[6]_reg .coord_y = 6;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[6]_reg .coord_z = 8;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[6]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[6]_reg .modeMux = 1'b1;
@@ -17750,16 +17508,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[7]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_cout [7]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in [7]),
-	.Clk(\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10002_Y10003_INV_SIG ),
-	.AsyncReset(AsyncReset_X10002_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10002_Y10003_SIG ),
+	.Clk(\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10018_Y10002_INV_SIG ),
+	.AsyncReset(AsyncReset_X10018_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10018_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10002_Y10003_GND),
+	.SyncLoad(SyncLoad_X10018_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_combout [7]),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_cout [8]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in [7]));
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[7]_reg .coord_x = 14;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[7]_reg .coord_y = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[7]_reg .coord_y = 6;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[7]_reg .coord_z = 9;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[7]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[7]_reg .modeMux = 1'b1;
@@ -17775,16 +17533,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[8]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_cout [8]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in [8]),
-	.Clk(\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10002_Y10003_INV_SIG ),
-	.AsyncReset(AsyncReset_X10002_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10002_Y10003_SIG ),
+	.Clk(\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10018_Y10002_INV_SIG ),
+	.AsyncReset(AsyncReset_X10018_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10018_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10002_Y10003_GND),
+	.SyncLoad(SyncLoad_X10018_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_combout [8]),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in_datab_0_cout [9]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in [8]));
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[8]_reg .coord_x = 14;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[8]_reg .coord_y = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[8]_reg .coord_y = 6;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[8]_reg .coord_z = 10;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[8]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_in[8]_reg .modeMux = 1'b1;
@@ -17800,16 +17558,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[0]_reg (
 	.D(vcc),
 	.Cin(),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out [0]),
-	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10015_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10015_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10015_Y10003_SIG ),
+	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10009_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10009_Y10003_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10009_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10015_Y10003_GND),
+	.SyncLoad(SyncLoad_X10009_Y10003_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_combout [0]),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_cout [1]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out [0]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[0]_reg .coord_x = 12;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[0]_reg .coord_y = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[0]_reg .coord_x = 14;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[0]_reg .coord_y = 4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[0]_reg .coord_z = 0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[0]_reg .mask = 16'h6688;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[0]_reg .modeMux = 1'b1;
@@ -17825,16 +17583,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[1]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_cout [1]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out [1]),
-	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10015_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10015_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10015_Y10003_SIG ),
+	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10009_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10009_Y10003_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10009_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10015_Y10003_GND),
+	.SyncLoad(SyncLoad_X10009_Y10003_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_combout [1]),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_cout [2]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out [1]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[1]_reg .coord_x = 12;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[1]_reg .coord_y = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[1]_reg .coord_x = 14;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[1]_reg .coord_y = 4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[1]_reg .coord_z = 1;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[1]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[1]_reg .modeMux = 1'b1;
@@ -17850,16 +17608,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[2]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_cout [2]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out [2]),
-	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10015_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10015_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10015_Y10003_SIG ),
+	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10009_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10009_Y10003_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10009_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10015_Y10003_GND),
+	.SyncLoad(SyncLoad_X10009_Y10003_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_combout [2]),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_cout [3]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out [2]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[2]_reg .coord_x = 12;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[2]_reg .coord_y = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[2]_reg .coord_x = 14;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[2]_reg .coord_y = 4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[2]_reg .coord_z = 2;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[2]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[2]_reg .modeMux = 1'b1;
@@ -17875,16 +17633,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[3]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_cout [3]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out [3]),
-	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10015_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10015_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10015_Y10003_SIG ),
+	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10009_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10009_Y10003_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10009_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10015_Y10003_GND),
+	.SyncLoad(SyncLoad_X10009_Y10003_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_combout [3]),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_cout [4]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out [3]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[3]_reg .coord_x = 12;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[3]_reg .coord_y = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[3]_reg .coord_x = 14;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[3]_reg .coord_y = 4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[3]_reg .coord_z = 3;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[3]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[3]_reg .modeMux = 1'b1;
@@ -17900,16 +17658,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[4]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_cout [4]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out [4]),
-	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10015_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10015_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10015_Y10003_SIG ),
+	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10009_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10009_Y10003_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10009_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10015_Y10003_GND),
+	.SyncLoad(SyncLoad_X10009_Y10003_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_combout [4]),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_cout [5]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out [4]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[4]_reg .coord_x = 12;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[4]_reg .coord_y = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[4]_reg .coord_x = 14;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[4]_reg .coord_y = 4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[4]_reg .coord_z = 4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[4]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[4]_reg .modeMux = 1'b1;
@@ -17925,16 +17683,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[5]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_cout [5]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out [5]),
-	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10015_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10015_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10015_Y10003_SIG ),
+	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10009_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10009_Y10003_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10009_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10015_Y10003_GND),
+	.SyncLoad(SyncLoad_X10009_Y10003_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_combout [5]),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_cout [6]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out [5]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[5]_reg .coord_x = 12;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[5]_reg .coord_y = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[5]_reg .coord_x = 14;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[5]_reg .coord_y = 4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[5]_reg .coord_z = 5;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[5]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[5]_reg .modeMux = 1'b1;
@@ -17950,16 +17708,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[6]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_cout [6]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out [6]),
-	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10015_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10015_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10015_Y10003_SIG ),
+	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10009_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10009_Y10003_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10009_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10015_Y10003_GND),
+	.SyncLoad(SyncLoad_X10009_Y10003_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_combout [6]),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_cout [7]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out [6]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[6]_reg .coord_x = 12;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[6]_reg .coord_y = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[6]_reg .coord_x = 14;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[6]_reg .coord_y = 4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[6]_reg .coord_z = 6;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[6]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[6]_reg .modeMux = 1'b1;
@@ -17975,16 +17733,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[7]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_cout [7]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out [7]),
-	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10015_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10015_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10015_Y10003_SIG ),
+	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10009_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10009_Y10003_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10009_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10015_Y10003_GND),
+	.SyncLoad(SyncLoad_X10009_Y10003_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_combout [7]),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_cout [8]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out [7]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[7]_reg .coord_x = 12;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[7]_reg .coord_y = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[7]_reg .coord_x = 14;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[7]_reg .coord_y = 4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[7]_reg .coord_z = 7;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[7]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[7]_reg .modeMux = 1'b1;
@@ -18000,16 +17758,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[8]_reg (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_cout [8]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out [8]),
-	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10015_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10015_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10015_Y10003_SIG ),
+	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_X10009_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10009_Y10003_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10009_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10015_Y10003_GND),
+	.SyncLoad(SyncLoad_X10009_Y10003_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_combout [8]),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out_datab_0_cout [9]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out [8]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[8]_reg .coord_x = 12;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[8]_reg .coord_y = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[8]_reg .coord_x = 14;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[8]_reg .coord_y = 4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[8]_reg .coord_z = 8;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[8]_reg .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[8]_reg .modeMux = 1'b1;
@@ -18018,36 +17776,11 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[8]_reg .ShiftMux
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[8]_reg .BypassEn = 1'b1;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|address_out[8]_reg .CarryEnb = 1'b0;
 
-alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y_combout (
-	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo [0]),
-	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo [2]),
-	.C(\i2c_device|write_value_d_3_q ),
-	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo [1]),
-	.Cin(),
-	.Qin(),
-	.Clk(),
-	.AsyncReset(),
-	.SyncReset(),
-	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ),
-	.Cout(),
-	.Q());
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y_combout .coord_x = 17;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y_combout .coord_y = 1;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y_combout .coord_z = 12;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y_combout .mask = 16'h0240;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y_combout .modeMux = 1'b0;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y_combout .FeedbackMux = 1'b0;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y_combout .ShiftMux = 1'b0;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y_combout .BypassEn = 1'b0;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y_combout .CarryEnb = 1'b1;
-
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout (
 	.A(vcc),
-	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ),
-	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y ),
-	.D(\i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_datac_combout [1]),
+	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y ),
+	.C(\i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_datac_combout [1]),
+	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -18058,10 +17791,10 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout 
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y ),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout .coord_x = 17;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout .coord_z = 4;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout .mask = 16'hF0C0;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout .coord_x = 16;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout .coord_z = 5;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout .mask = 16'hCCC0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout .ShiftMux = 1'b0;
@@ -18070,9 +17803,9 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_Y_combout .C
 
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout (
 	.A(vcc),
-	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0_combout [0]),
-	.C(vcc),
-	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ),
+	.B(vcc),
+	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ),
+	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0_combout [0]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -18083,110 +17816,85 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout 
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y ),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .coord_x = 16;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .coord_z = 14;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .mask = 16'h00CC;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .coord_x = 17;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .coord_z = 7;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .mask = 16'h0F00;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .ShiftMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .BypassEn = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y_combout .CarryEnb = 1'b1;
 
-alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_dataa_2 (
-	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo [2]),
-	.B(vcc),
-	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo [1]),
-	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo [0]),
-	.Cin(),
-	.Qin(),
-	.Clk(),
-	.AsyncReset(),
-	.SyncReset(),
-	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_dataa_2_combout [1]),
-	.Cout(),
-	.Q());
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_dataa_2 .coord_x = 19;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_dataa_2 .coord_y = 5;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_dataa_2 .coord_z = 11;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_dataa_2 .mask = 16'h5000;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_dataa_2 .modeMux = 1'b0;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_dataa_2 .FeedbackMux = 1'b0;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_dataa_2 .ShiftMux = 1'b0;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_dataa_2 .BypassEn = 1'b0;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_dataa_2 .CarryEnb = 1'b1;
-
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_0 (
-	.A(),
-	.B(),
-	.C(),
-	.D(CO2_i_o[0]),
+	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo [2]),
+	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo [1]),
+	.C(CO2_i_o[0]),
+	.D(\i2c_device|write_value_d_3_q ),
 	.Cin(),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo [0]),
-	.Clk(GCLK_X10016_Y10001_SIG_VCC),
-	.AsyncReset(AsyncReset_X10016_Y10001_GND),
-	.SyncReset(),
+	.Clk(GCLK_X10012_Y10002_SIG_VCC),
+	.AsyncReset(AsyncReset_X10012_Y10002_GND),
+	.SyncReset(SyncReset_X10012_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_0__feeder__LutOut ),
+	.SyncLoad(SyncLoad_X10012_Y10002_VCC),
+	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ),
 	.Cout(),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo [0]));
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_0 .coord_x = 17;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_0 .coord_y = 1;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_0 .coord_z = 4;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_0 .mask = 16'hFF00;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_0 .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_0 .coord_z = 0;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_0 .mask = 16'h0240;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_0 .modeMux = 1'b0;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_0 .FeedbackMux = 1'b0;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_0 .FeedbackMux = 1'b1;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_0 .ShiftMux = 1'b0;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_0 .BypassEn = 1'b0;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_0 .BypassEn = 1'b1;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_0 .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_1 (
-	.A(),
-	.B(),
-	.C(),
+	.A(vcc),
+	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo [2]),
+	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo [0]),
 	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo [0]),
 	.Cin(),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo [1]),
-	.Clk(GCLK_X10002_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10002_Y10002_GND),
-	.SyncReset(),
+	.Clk(GCLK_X10012_Y10002_SIG_VCC),
+	.AsyncReset(AsyncReset_X10012_Y10002_GND),
+	.SyncReset(SyncReset_X10012_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(),
-	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_1__feeder__LutOut ),
+	.SyncLoad(SyncLoad_X10012_Y10002_VCC),
+	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_dataa_2_combout [1]),
 	.Cout(),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo [1]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_1 .coord_x = 18;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_1 .coord_y = 1;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_1 .coord_z = 14;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_1 .mask = 16'hFF00;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_1 .coord_x = 17;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_1 .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_1 .coord_z = 5;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_1 .mask = 16'h3000;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_1 .modeMux = 1'b0;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_1 .FeedbackMux = 1'b0;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_1 .FeedbackMux = 1'b1;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_1 .ShiftMux = 1'b0;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_1 .BypassEn = 1'b0;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_1 .BypassEn = 1'b1;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_1 .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_2 (
-	.A(vcc),
-	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo [1]),
+	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo [0]),
+	.B(vcc),
 	.C(vcc),
-	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo [0]),
+	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo [1]),
 	.Cin(),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo [2]),
-	.Clk(GCLK_X10016_Y10001_SIG_VCC),
-	.AsyncReset(AsyncReset_X10016_Y10001_GND),
+	.Clk(GCLK_X10015_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10015_Y10001_GND),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_1_Y_B_Y ),
 	.Cout(),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo [2]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_2 .coord_x = 17;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_2 .coord_y = 1;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_2 .coord_z = 5;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_2 .mask = 16'hFCC0;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_2 .coord_x = 16;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_2 .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_2 .coord_z = 8;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_2 .mask = 16'hFAA0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_2 .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_2 .FeedbackMux = 1'b1;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_2 .ShiftMux = 1'b0;
@@ -18196,8 +17904,8 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_q_2 .CarryEnb = 1'b1;
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_1_Y_combout (
 	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB [1]),
 	.B(CO2_i_o[1]),
-	.C(CO2_i_o[0]),
-	.D(\i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_datac_combout [1]),
+	.C(\i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_datac_combout [1]),
+	.D(CO2_i_o[0]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -18208,9 +17916,9 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|po
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_1_Y ),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_1_Y_combout .coord_x = 17;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_1_Y_combout .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_1_Y_combout .coord_z = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_1_Y_combout .coord_x = 16;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_1_Y_combout .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_1_Y_combout .coord_z = 0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_1_Y_combout .mask = 16'h8000;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_1_Y_combout .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_1_Y_combout .FeedbackMux = 1'b0;
@@ -18221,8 +17929,8 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|port
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_2_Y_combout (
 	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB [2]),
 	.B(CO2_i_o[1]),
-	.C(CO2_i_o[0]),
-	.D(\i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_datac_combout [1]),
+	.C(\i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_datac_combout [1]),
+	.D(CO2_i_o[0]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -18233,9 +17941,9 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|po
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_2_Y ),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_2_Y_combout .coord_x = 17;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_2_Y_combout .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_2_Y_combout .coord_z = 1;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_2_Y_combout .coord_x = 16;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_2_Y_combout .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_2_Y_combout .coord_z = 2;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_2_Y_combout .mask = 16'h8000;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_2_Y_combout .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|portDataOutB_A_2_Y_combout .FeedbackMux = 1'b0;
@@ -18265,7 +17973,7 @@ alta_bram9k \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|r
 	.AddressStallA(gnd),
 	.AddressStallB(gnd));
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|ram_inst .coord_x = 13;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|ram_inst .coord_y = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|ram_inst .coord_y = 4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|ram_inst .coord_z = 0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|ram_inst .CLKMODE = 2'b10;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|ram_inst .PACKEDMODE = 1'b0;
@@ -18290,32 +17998,32 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|i2s_osd_buffer_0|ram_
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg (
 	.A(),
 	.B(),
-	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q ),
-	.D(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE ),
+	.C(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_inv ),
+	.D(),
 	.Cin(),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q ),
-	.Clk(\i2s_osd_select_2|BCLKD_X10011_Y10002_INV_VCC ),
-	.AsyncReset(AsyncReset_X10011_Y10002_GND),
-	.SyncReset(SyncReset_X10011_Y10002_GND),
+	.Clk(\i2s_osd_select_2|BCLKD_X10006_Y10002_INV_VCC ),
+	.AsyncReset(AsyncReset_X10006_Y10002_GND),
+	.SyncReset(SyncReset_X10006_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_B_Y__SyncLoad_X10011_Y10002_INV ),
-	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_inv ),
+	.SyncLoad(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_B_Y__SyncLoad_X10006_Y10002_SIG ),
+	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q ));
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg .coord_x = 15;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg .coord_z = 11;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg .mask = 16'h00FF;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg .coord_y = 6;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg .coord_z = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg .mask = 16'hF0F0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg .modeMux = 1'b0;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg .FeedbackMux = 1'b0;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg .FeedbackMux = 1'b1;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg .ShiftMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg .BypassEn = 1'b1;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y_combout (
 	.A(vcc),
-	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0_combout [0]),
-	.C(vcc),
+	.B(vcc),
+	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0_combout [0]),
 	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ),
 	.Cin(),
 	.Qin(),
@@ -18327,10 +18035,10 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y ),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y_combout .coord_x = 16;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y_combout .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y_combout .coord_z = 13;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y_combout .mask = 16'hFFCC;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y_combout .coord_x = 17;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y_combout .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y_combout .coord_z = 1;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y_combout .mask = 16'hFFF0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y_combout .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y_combout .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y_combout .ShiftMux = 1'b0;
@@ -18338,10 +18046,10 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y_combout .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa (
-	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q ),
+	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in [6]),
 	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in [7]),
-	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div [1]),
-	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in [6]),
+	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q ),
+	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div [1]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -18353,9 +18061,9 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa (
 	.Cout(),
 	.Q());
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa .coord_x = 15;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa .coord_z = 0;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa .mask = 16'h1171;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa .coord_y = 6;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa .coord_z = 9;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa .mask = 16'h1703;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa .ShiftMux = 1'b0;
@@ -18363,9 +18071,9 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa .Bypa
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa_1 (
-	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q ),
+	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out [6]),
 	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out [7]),
-	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_out [6]),
+	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q ),
 	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div [1]),
 	.Cin(),
 	.Qin(),
@@ -18377,10 +18085,10 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa_1 (
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa_1_combout [1]),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa_1 .coord_x = 15;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa_1 .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa_1 .coord_z = 10;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa_1 .mask = 16'h1711;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa_1 .coord_x = 16;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa_1 .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa_1 .coord_z = 9;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa_1 .mask = 16'h1703;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa_1 .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa_1 .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa_1 .ShiftMux = 1'b0;
@@ -18388,10 +18096,10 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa_1 .By
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa_1 .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datab (
-	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q ),
+	.A(vcc),
 	.B(vcc),
-	.C(vcc),
-	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_1_combout [0]),
+	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_1_combout [0]),
+	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q ),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -18402,10 +18110,10 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datab (
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datab .coord_x = 15;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datab .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datab .coord_z = 12;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datab .mask = 16'h00AA;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datab .coord_x = 17;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datab .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datab .coord_z = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datab .mask = 16'h0F00;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datab .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datab .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datab .ShiftMux = 1'b0;
@@ -18413,8 +18121,8 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datab .Bypa
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datab .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datad (
-	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [1]),
-	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [0]),
+	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [0]),
+	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [1]),
 	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q ),
 	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div [1]),
 	.Cin(),
@@ -18427,10 +18135,10 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datad (
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout [1]),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datad .coord_x = 16;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datad .coord_y = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datad .coord_x = 18;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datad .coord_y = 4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datad .coord_z = 12;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datad .mask = 16'h0D0E;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datad .mask = 16'h0B0E;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datad .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datad .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datad .ShiftMux = 1'b0;
@@ -18438,10 +18146,10 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datad .Bypa
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_datad .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_5 (
-	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_7_combout [2]),
-	.B(vcc),
-	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [5]),
-	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [6]),
+	.A(vcc),
+	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [5]),
+	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [6]),
+	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_7_combout [2]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -18452,10 +18160,10 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_5 (
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout [3]),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_5 .coord_x = 16;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_5 .coord_y = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_5 .coord_x = 18;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_5 .coord_y = 4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_5 .coord_z = 9;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_5 .mask = 16'h000A;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_5 .mask = 16'h0300;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_5 .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_5 .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_5 .ShiftMux = 1'b0;
@@ -18463,10 +18171,10 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_5 .Bypas
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_5 .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_7 (
-	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [7]),
-	.B(vcc),
-	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [3]),
-	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [4]),
+	.A(vcc),
+	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [3]),
+	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [4]),
+	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [7]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -18477,10 +18185,10 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_7 (
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_7_combout [2]),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_7 .coord_x = 16;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_7 .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_7 .coord_z = 0;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_7 .mask = 16'h0005;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_7 .coord_x = 18;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_7 .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_7 .coord_z = 8;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_7 .mask = 16'h0003;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_7 .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_7 .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_dataa_7 .ShiftMux = 1'b0;
@@ -18494,17 +18202,17 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_0 (
 	.D(vcc),
 	.Cin(),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [0]),
-	.Clk(GCLK_X10006_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10006_Y10002_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y__SyncReset_X10006_Y10002_SIG ),
+	.Clk(GCLK_X10001_Y10002_SIG_VCC),
+	.AsyncReset(AsyncReset_X10001_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y__SyncReset_X10001_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10006_Y10002_GND),
+	.SyncLoad(SyncLoad_X10001_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_datab_0_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [1]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [0]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_0 .coord_x = 16;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_0 .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_0 .coord_z = 1;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_0 .coord_x = 18;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_0 .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_0 .coord_z = 0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_0 .mask = 16'h6688;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_0 .modeMux = 1'b1;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_0 .FeedbackMux = 1'b0;
@@ -18519,17 +18227,17 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_1 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [1]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [1]),
-	.Clk(GCLK_X10006_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10006_Y10002_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y__SyncReset_X10006_Y10002_SIG ),
+	.Clk(GCLK_X10001_Y10002_SIG_VCC),
+	.AsyncReset(AsyncReset_X10001_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y__SyncReset_X10001_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10006_Y10002_GND),
+	.SyncLoad(SyncLoad_X10001_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_datab_1_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [2]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [1]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_1 .coord_x = 16;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_1 .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_1 .coord_z = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_1 .coord_x = 18;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_1 .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_1 .coord_z = 1;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_1 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_1 .modeMux = 1'b1;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_1 .FeedbackMux = 1'b0;
@@ -18544,17 +18252,17 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_2 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [2]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [2]),
-	.Clk(GCLK_X10006_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10006_Y10002_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y__SyncReset_X10006_Y10002_SIG ),
+	.Clk(GCLK_X10001_Y10002_SIG_VCC),
+	.AsyncReset(AsyncReset_X10001_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y__SyncReset_X10001_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10006_Y10002_GND),
+	.SyncLoad(SyncLoad_X10001_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_datab_2_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [3]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [2]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_2 .coord_x = 16;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_2 .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_2 .coord_z = 3;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_2 .coord_x = 18;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_2 .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_2 .coord_z = 2;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_2 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_2 .modeMux = 1'b1;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_2 .FeedbackMux = 1'b0;
@@ -18569,17 +18277,17 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_3 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [3]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [3]),
-	.Clk(GCLK_X10006_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10006_Y10002_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y__SyncReset_X10006_Y10002_SIG ),
+	.Clk(GCLK_X10001_Y10002_SIG_VCC),
+	.AsyncReset(AsyncReset_X10001_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y__SyncReset_X10001_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10006_Y10002_GND),
+	.SyncLoad(SyncLoad_X10001_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_datab_3_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [4]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [3]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_3 .coord_x = 16;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_3 .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_3 .coord_z = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_3 .coord_x = 18;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_3 .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_3 .coord_z = 3;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_3 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_3 .modeMux = 1'b1;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_3 .FeedbackMux = 1'b0;
@@ -18594,17 +18302,17 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_4 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [4]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [4]),
-	.Clk(GCLK_X10006_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10006_Y10002_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y__SyncReset_X10006_Y10002_SIG ),
+	.Clk(GCLK_X10001_Y10002_SIG_VCC),
+	.AsyncReset(AsyncReset_X10001_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y__SyncReset_X10001_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10006_Y10002_GND),
+	.SyncLoad(SyncLoad_X10001_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_datab_4_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [5]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [4]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_4 .coord_x = 16;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_4 .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_4 .coord_z = 5;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_4 .coord_x = 18;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_4 .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_4 .coord_z = 4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_4 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_4 .modeMux = 1'b1;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_4 .FeedbackMux = 1'b0;
@@ -18619,17 +18327,17 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_5 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [5]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [5]),
-	.Clk(GCLK_X10006_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10006_Y10002_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y__SyncReset_X10006_Y10002_SIG ),
+	.Clk(GCLK_X10001_Y10002_SIG_VCC),
+	.AsyncReset(AsyncReset_X10001_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y__SyncReset_X10001_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10006_Y10002_GND),
+	.SyncLoad(SyncLoad_X10001_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_datab_5_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [6]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [5]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_5 .coord_x = 16;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_5 .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_5 .coord_z = 6;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_5 .coord_x = 18;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_5 .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_5 .coord_z = 5;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_5 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_5 .modeMux = 1'b1;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_5 .FeedbackMux = 1'b0;
@@ -18644,17 +18352,17 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_6 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [6]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [6]),
-	.Clk(GCLK_X10006_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10006_Y10002_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y__SyncReset_X10006_Y10002_SIG ),
+	.Clk(GCLK_X10001_Y10002_SIG_VCC),
+	.AsyncReset(AsyncReset_X10001_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y__SyncReset_X10001_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10006_Y10002_GND),
+	.SyncLoad(SyncLoad_X10001_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_datab_6_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [7]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [6]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_6 .coord_x = 16;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_6 .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_6 .coord_z = 7;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_6 .coord_x = 18;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_6 .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_6 .coord_z = 6;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_6 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_6 .modeMux = 1'b1;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_6 .FeedbackMux = 1'b0;
@@ -18669,17 +18377,17 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_7 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [7]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [7]),
-	.Clk(GCLK_X10006_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10006_Y10002_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y__SyncReset_X10006_Y10002_SIG ),
+	.Clk(GCLK_X10001_Y10002_SIG_VCC),
+	.AsyncReset(AsyncReset_X10001_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y__SyncReset_X10001_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10006_Y10002_GND),
+	.SyncLoad(SyncLoad_X10001_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_datab_7_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_datab_0_cout [8]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [7]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_7 .coord_x = 16;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_7 .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_7 .coord_z = 8;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_7 .coord_x = 18;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_7 .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_7 .coord_z = 7;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_7 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_7 .modeMux = 1'b1;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_7 .FeedbackMux = 1'b0;
@@ -18689,8 +18397,8 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count_q_7 .CarryEnb 
 
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1 (
 	.A(vcc),
-	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [2]),
-	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [1]),
+	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [1]),
+	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_count [2]),
 	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div [1]),
 	.Cin(),
 	.Qin(),
@@ -18702,10 +18410,10 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1 (
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout [2]),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1 .coord_x = 16;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1 .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1 .coord_z = 10;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1 .mask = 16'h3303;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1 .coord_x = 18;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1 .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1 .coord_z = 11;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1 .mask = 16'h0F03;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1 .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1 .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1 .ShiftMux = 1'b0;
@@ -18727,9 +18435,9 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_1 (
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_1_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_1 .coord_x = 15;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_1 .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_1 .coord_z = 13;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_1 .coord_x = 18;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_1 .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_1 .coord_z = 10;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_1 .mask = 16'h7050;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_1 .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_1 .FeedbackMux = 1'b0;
@@ -18738,10 +18446,10 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_1 .BypassEn 
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_1 .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0 (
-	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout [2]),
+	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout [1]),
 	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout [3]),
-	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout [1]),
-	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout [0]),
+	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout [0]),
+	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout [2]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -18752,9 +18460,9 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout_da
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0_combout [0]),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0 .coord_x = 16;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0 .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0 .coord_z = 11;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0 .coord_x = 17;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0 .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0 .coord_z = 6;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0 .mask = 16'h0004;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0 .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div_datab_1_combout_dataa_0 .FeedbackMux = 1'b0;
@@ -18769,16 +18477,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_0 (
 	.D(vcc),
 	.Cin(),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [0]),
-	.Clk(\GCLK__i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_X10009_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10009_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10009_Y10003_SIG ),
+	.Clk(\GCLK__i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_X10002_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10002_Y10003_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10002_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10009_Y10003_GND),
+	.SyncLoad(SyncLoad_X10002_Y10003_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_datab_0_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_datab_0_cout [1]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [0]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_0 .coord_x = 17;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_0 .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_0 .coord_x = 14;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_0 .coord_y = 2;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_0 .coord_z = 0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_0 .mask = 16'h6688;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_0 .modeMux = 1'b1;
@@ -18794,16 +18502,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_1 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_datab_0_cout [1]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [1]),
-	.Clk(\GCLK__i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_X10009_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10009_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10009_Y10003_SIG ),
+	.Clk(\GCLK__i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_X10002_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10002_Y10003_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10002_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10009_Y10003_GND),
+	.SyncLoad(SyncLoad_X10002_Y10003_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_datab_1_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_datab_0_cout [2]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [1]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_1 .coord_x = 17;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_1 .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_1 .coord_x = 14;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_1 .coord_y = 2;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_1 .coord_z = 1;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_1 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_1 .modeMux = 1'b1;
@@ -18819,16 +18527,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_2 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_datab_0_cout [2]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [2]),
-	.Clk(\GCLK__i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_X10009_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10009_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10009_Y10003_SIG ),
+	.Clk(\GCLK__i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_X10002_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10002_Y10003_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10002_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10009_Y10003_GND),
+	.SyncLoad(SyncLoad_X10002_Y10003_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_datab_2_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_datab_0_cout [3]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [2]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_2 .coord_x = 17;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_2 .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_2 .coord_x = 14;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_2 .coord_y = 2;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_2 .coord_z = 2;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_2 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_2 .modeMux = 1'b1;
@@ -18844,16 +18552,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_3 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_datab_0_cout [3]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [3]),
-	.Clk(\GCLK__i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_X10009_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10009_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10009_Y10003_SIG ),
+	.Clk(\GCLK__i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_X10002_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10002_Y10003_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10002_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10009_Y10003_GND),
+	.SyncLoad(SyncLoad_X10002_Y10003_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_datab_3_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_datab_0_cout [4]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [3]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_3 .coord_x = 17;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_3 .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_3 .coord_x = 14;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_3 .coord_y = 2;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_3 .coord_z = 3;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_3 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_3 .modeMux = 1'b1;
@@ -18869,16 +18577,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_4 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_datab_0_cout [4]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [4]),
-	.Clk(\GCLK__i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_X10009_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10009_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10009_Y10003_SIG ),
+	.Clk(\GCLK__i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_X10002_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10002_Y10003_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10002_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10009_Y10003_GND),
+	.SyncLoad(SyncLoad_X10002_Y10003_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_datab_4_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_datab_0_cout [5]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [4]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_4 .coord_x = 17;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_4 .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_4 .coord_x = 14;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_4 .coord_y = 2;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_4 .coord_z = 4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_4 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_4 .modeMux = 1'b1;
@@ -18894,16 +18602,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_5 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_datab_0_cout [5]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [5]),
-	.Clk(\GCLK__i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_X10009_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10009_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10009_Y10003_SIG ),
+	.Clk(\GCLK__i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_X10002_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10002_Y10003_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10002_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10009_Y10003_GND),
+	.SyncLoad(SyncLoad_X10002_Y10003_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_datab_5_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_datab_0_cout [6]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [5]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_5 .coord_x = 17;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_5 .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_5 .coord_x = 14;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_5 .coord_y = 2;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_5 .coord_z = 5;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_5 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_5 .modeMux = 1'b1;
@@ -18919,16 +18627,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_6 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_datab_0_cout [6]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [6]),
-	.Clk(\GCLK__i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_X10009_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10009_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10009_Y10003_SIG ),
+	.Clk(\GCLK__i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_X10002_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10002_Y10003_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10002_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10009_Y10003_GND),
+	.SyncLoad(SyncLoad_X10002_Y10003_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_datab_6_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_datab_0_cout [7]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [6]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_6 .coord_x = 17;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_6 .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_6 .coord_x = 14;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_6 .coord_y = 2;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_6 .coord_z = 6;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_6 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_6 .modeMux = 1'b1;
@@ -18944,16 +18652,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_7 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_datab_0_cout [7]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [7]),
-	.Clk(\GCLK__i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_X10009_Y10003_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10009_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10009_Y10003_SIG ),
+	.Clk(\GCLK__i2c_device|OFFSET_SECONDARY_datab_0_cout_cin_8_combout_A_Y_B_Y_X10002_Y10003_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10002_Y10003_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10002_Y10003_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10009_Y10003_GND),
+	.SyncLoad(SyncLoad_X10002_Y10003_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_datab_7_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_datab_0_cout [8]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset [7]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_7 .coord_x = 17;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_7 .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_7 .coord_x = 14;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_7 .coord_y = 2;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_7 .coord_z = 7;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_7 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|current_offset_q_7 .modeMux = 1'b1;
@@ -18969,16 +18677,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|data_in[0]_reg (
 	.D(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE ),
 	.Cin(),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|DataInA [0]),
-	.Clk(\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10002_Y10003_INV_SIG ),
-	.AsyncReset(AsyncReset_X10002_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10002_Y10003_SIG ),
+	.Clk(\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10018_Y10002_INV_SIG ),
+	.AsyncReset(AsyncReset_X10018_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10018_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10002_Y10003_GND),
+	.SyncLoad(SyncLoad_X10018_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|data_in[0]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|DataInA [0]));
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|data_in[0]_reg .coord_x = 14;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|data_in[0]_reg .coord_y = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|data_in[0]_reg .coord_y = 6;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|data_in[0]_reg .coord_z = 0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|data_in[0]_reg .mask = 16'hFF00;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|data_in[0]_reg .modeMux = 1'b0;
@@ -18994,16 +18702,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|data_in[1]_reg (
 	.D(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW ),
 	.Cin(),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|DataInA [1]),
-	.Clk(\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10002_Y10003_INV_SIG ),
-	.AsyncReset(AsyncReset_X10002_Y10003_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10002_Y10003_SIG ),
+	.Clk(\i2s_osd_select_2|BCLKD__i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_X10018_Y10002_INV_SIG ),
+	.AsyncReset(AsyncReset_X10018_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10018_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10002_Y10003_GND),
+	.SyncLoad(SyncLoad_X10018_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|data_in[1]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|buffer|DataInA [1]));
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|data_in[1]_reg .coord_x = 14;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|data_in[1]_reg .coord_y = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|data_in[1]_reg .coord_y = 6;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|data_in[1]_reg .coord_z = 1;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|data_in[1]_reg .mask = 16'hFF00;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|data_in[1]_reg .modeMux = 1'b0;
@@ -19015,24 +18723,24 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|data_in[1]_reg .CarryEnb = 1
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|image_width[6]_reg (
 	.A(),
 	.B(),
-	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div [1]),
-	.D(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_inv ),
+	.C(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_inv ),
+	.D(),
 	.Cin(),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div [1]),
-	.Clk(\i2s_osd_select_2|BCLKD_X10011_Y10002_INV_VCC ),
-	.AsyncReset(AsyncReset_X10011_Y10002_GND),
-	.SyncReset(SyncReset_X10011_Y10002_GND),
+	.Clk(\i2s_osd_select_2|BCLKD_X10006_Y10002_INV_VCC ),
+	.AsyncReset(AsyncReset_X10006_Y10002_GND),
+	.SyncReset(SyncReset_X10006_Y10002_GND),
 	.ShiftData(),
-	.SyncLoad(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_B_Y__SyncLoad_X10011_Y10002_INV ),
+	.SyncLoad(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_B_Y__SyncLoad_X10006_Y10002_SIG ),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|image_width[6]_reg__feeder__LutOut ),
 	.Cout(),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div [1]));
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|image_width[6]_reg .coord_x = 15;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|image_width[6]_reg .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|image_width[6]_reg .coord_z = 1;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|image_width[6]_reg .mask = 16'hFF00;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|image_width[6]_reg .coord_y = 6;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|image_width[6]_reg .coord_z = 5;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|image_width[6]_reg .mask = 16'hF0F0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|image_width[6]_reg .modeMux = 1'b0;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|image_width[6]_reg .FeedbackMux = 1'b0;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|image_width[6]_reg .FeedbackMux = 1'b1;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|image_width[6]_reg .ShiftMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|image_width[6]_reg .BypassEn = 1'b1;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|image_width[6]_reg .CarryEnb = 1'b1;
@@ -19040,12 +18748,12 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|image_width[6]_reg .CarryEnb
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de[0]_reg (
 	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_combout ),
 	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_dataa_2_combout [1]),
-	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_dataa_2_combout [0]),
-	.D(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_RAW_datad_combout [0]),
+	.C(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_RAW_datad_combout [0]),
+	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_dataa_2_combout [0]),
 	.Cin(),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [0]),
-	.Clk(GCLK_X10002_Y10002_SIG_VCC),
-	.AsyncReset(AsyncReset_X10002_Y10002_GND),
+	.Clk(GCLK_X10014_Y10001_SIG_VCC),
+	.AsyncReset(AsyncReset_X10014_Y10001_GND),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
@@ -19053,8 +18761,8 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de[0]_reg (
 	.Cout(),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [0]));
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de[0]_reg .coord_x = 18;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de[0]_reg .coord_y = 1;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de[0]_reg .coord_z = 15;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de[0]_reg .coord_y = 3;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de[0]_reg .coord_z = 7;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de[0]_reg .mask = 16'hCCCE;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de[0]_reg .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de[0]_reg .FeedbackMux = 1'b0;
@@ -19077,9 +18785,9 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y_co
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y ),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y_combout .coord_x = 19;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y_combout .coord_y = 5;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y_combout .coord_z = 12;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y_combout .coord_x = 18;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y_combout .coord_y = 3;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y_combout .coord_z = 5;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y_combout .mask = 16'hFFCC;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y_combout .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y_combout .FeedbackMux = 1'b0;
@@ -19090,8 +18798,8 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y_comb
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_combout (
 	.A(vcc),
 	.B(vcc),
-	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y ),
-	.D(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_RAW_datad_combout [0]),
+	.C(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_RAW_datad_combout [0]),
+	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y ),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -19102,10 +18810,10 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_co
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y ),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_combout .coord_x = 19;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_combout .coord_x = 16;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_combout .coord_y = 4;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_combout .coord_z = 9;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_combout .mask = 16'hF0FF;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_combout .coord_z = 13;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_combout .mask = 16'hFF0F;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_combout .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_combout .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_combout .ShiftMux = 1'b0;
@@ -19114,9 +18822,9 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_comb
 
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_2 (
 	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [1]),
-	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [2]),
+	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [0]),
 	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [3]),
-	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [0]),
+	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [2]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -19127,8 +18835,8 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_2 (
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_2_combout [3]),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_2 .coord_x = 18;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_2 .coord_y = 5;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_2 .coord_x = 19;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_2 .coord_y = 3;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_2 .coord_z = 0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_2 .mask = 16'h0001;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_2 .modeMux = 1'b0;
@@ -19139,9 +18847,9 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_2 .CarryEnb 
 
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6 (
 	.A(vcc),
-	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [10]),
-	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [7]),
-	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [6]),
+	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [7]),
+	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [6]),
+	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [10]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -19153,8 +18861,8 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6 (
 	.Cout(),
 	.Q());
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6 .coord_x = 18;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6 .coord_y = 5;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6 .coord_z = 15;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6 .coord_y = 3;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6 .coord_z = 14;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6 .mask = 16'h0003;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6 .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6 .FeedbackMux = 1'b0;
@@ -19164,9 +18872,9 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6 .CarryEnb 
 
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6_1 (
 	.A(vcc),
-	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [10]),
-	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [7]),
-	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [6]),
+	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [7]),
+	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [6]),
+	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [10]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -19178,9 +18886,9 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6_1 (
 	.Cout(),
 	.Q());
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6_1 .coord_x = 18;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6_1 .coord_y = 5;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6_1 .coord_z = 14;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6_1 .mask = 16'h00C0;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6_1 .coord_y = 3;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6_1 .coord_z = 15;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6_1 .mask = 16'h0C00;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6_1 .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6_1 .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6_1 .ShiftMux = 1'b0;
@@ -19188,9 +18896,9 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6_1 .BypassE
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6_1 .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_8 (
-	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [8]),
-	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [9]),
-	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6_combout [3]),
+	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6_combout [3]),
+	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [8]),
+	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [9]),
 	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6_combout [2]),
 	.Cin(),
 	.Qin(),
@@ -19203,9 +18911,9 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_8 (
 	.Cout(),
 	.Q());
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_8 .coord_x = 19;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_8 .coord_y = 4;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_8 .coord_z = 13;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_8 .mask = 16'h1000;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_8 .coord_y = 3;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_8 .coord_z = 14;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_8 .mask = 16'h0200;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_8 .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_8 .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_8 .ShiftMux = 1'b0;
@@ -19227,8 +18935,8 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0 (
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_cout [1]),
 	.Q());
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0 .coord_x = 18;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0 .coord_y = 5;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0 .coord_x = 19;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0 .coord_y = 3;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0 .coord_z = 1;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0 .mask = 16'h6688;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0 .modeMux = 1'b1;
@@ -19252,8 +18960,8 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_4_1 (
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6_combout [2]),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_4_1 .coord_x = 18;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_4_1 .coord_y = 5;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_4_1 .coord_x = 19;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_4_1 .coord_y = 3;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_4_1 .coord_z = 13;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_4_1 .mask = 16'h0002;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_4_1 .modeMux = 1'b0;
@@ -19263,9 +18971,9 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_4_1 .BypassE
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_4_1 .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datac_8 (
-	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [8]),
-	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [9]),
-	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6_1_combout [1]),
+	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6_1_combout [1]),
+	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [8]),
+	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [9]),
 	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_dataa_6_combout [2]),
 	.Cin(),
 	.Qin(),
@@ -19278,8 +18986,8 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datac_8 (
 	.Cout(),
 	.Q());
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datac_8 .coord_x = 19;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datac_8 .coord_y = 5;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datac_8 .coord_z = 13;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datac_8 .coord_y = 3;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datac_8 .coord_z = 15;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datac_8 .mask = 16'h8000;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datac_8 .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datac_8 .FeedbackMux = 1'b0;
@@ -19294,16 +19002,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_1 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_cout [1]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [1]),
-	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10007_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10007_Y10002_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10007_Y10002_SIG ),
+	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10003_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10003_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10003_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10007_Y10002_GND),
+	.SyncLoad(SyncLoad_X10003_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_1_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_cout [2]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [1]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_1 .coord_x = 18;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_1 .coord_y = 5;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_1 .coord_x = 19;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_1 .coord_y = 3;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_1 .coord_z = 2;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_1 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_1 .modeMux = 1'b1;
@@ -19319,16 +19027,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_10 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_cout [10]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [10]),
-	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10007_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10007_Y10002_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10007_Y10002_SIG ),
+	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10003_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10003_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10003_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10007_Y10002_GND),
+	.SyncLoad(SyncLoad_X10003_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_10_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_cout [11]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [10]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_10 .coord_x = 18;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_10 .coord_y = 5;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_10 .coord_x = 19;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_10 .coord_y = 3;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_10 .coord_z = 11;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_10 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_10 .modeMux = 1'b1;
@@ -19344,16 +19052,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_11 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_cout [11]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [11]),
-	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10007_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10007_Y10002_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10007_Y10002_SIG ),
+	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10003_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10003_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10003_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10007_Y10002_GND),
+	.SyncLoad(SyncLoad_X10003_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_11_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_cout [12]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [11]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_11 .coord_x = 18;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_11 .coord_y = 5;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_11 .coord_x = 19;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_11 .coord_y = 3;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_11 .coord_z = 12;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_11 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_11 .modeMux = 1'b1;
@@ -19369,16 +19077,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_2 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_cout [2]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [2]),
-	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10007_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10007_Y10002_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10007_Y10002_SIG ),
+	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10003_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10003_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10003_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10007_Y10002_GND),
+	.SyncLoad(SyncLoad_X10003_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_2_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_cout [3]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [2]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_2 .coord_x = 18;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_2 .coord_y = 5;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_2 .coord_x = 19;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_2 .coord_y = 3;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_2 .coord_z = 3;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_2 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_2 .modeMux = 1'b1;
@@ -19394,16 +19102,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_3 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_cout [3]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [3]),
-	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10007_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10007_Y10002_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10007_Y10002_SIG ),
+	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10003_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10003_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10003_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10007_Y10002_GND),
+	.SyncLoad(SyncLoad_X10003_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_3_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_cout [4]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [3]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_3 .coord_x = 18;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_3 .coord_y = 5;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_3 .coord_x = 19;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_3 .coord_y = 3;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_3 .coord_z = 4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_3 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_3 .modeMux = 1'b1;
@@ -19419,16 +19127,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_4 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_cout [4]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [4]),
-	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10007_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10007_Y10002_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10007_Y10002_SIG ),
+	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10003_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10003_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10003_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10007_Y10002_GND),
+	.SyncLoad(SyncLoad_X10003_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_4_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_cout [5]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [4]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_4 .coord_x = 18;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_4 .coord_y = 5;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_4 .coord_x = 19;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_4 .coord_y = 3;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_4 .coord_z = 5;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_4 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_4 .modeMux = 1'b1;
@@ -19444,16 +19152,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_5 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_cout [5]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [5]),
-	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10007_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10007_Y10002_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10007_Y10002_SIG ),
+	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10003_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10003_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10003_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10007_Y10002_GND),
+	.SyncLoad(SyncLoad_X10003_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_5_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_cout [6]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [5]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_5 .coord_x = 18;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_5 .coord_y = 5;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_5 .coord_x = 19;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_5 .coord_y = 3;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_5 .coord_z = 6;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_5 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_5 .modeMux = 1'b1;
@@ -19469,16 +19177,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_6 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_cout [6]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [6]),
-	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10007_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10007_Y10002_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10007_Y10002_SIG ),
+	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10003_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10003_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10003_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10007_Y10002_GND),
+	.SyncLoad(SyncLoad_X10003_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_6_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_cout [7]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [6]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_6 .coord_x = 18;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_6 .coord_y = 5;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_6 .coord_x = 19;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_6 .coord_y = 3;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_6 .coord_z = 7;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_6 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_6 .modeMux = 1'b1;
@@ -19494,16 +19202,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_7 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_cout [7]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [7]),
-	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10007_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10007_Y10002_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10007_Y10002_SIG ),
+	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10003_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10003_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10003_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10007_Y10002_GND),
+	.SyncLoad(SyncLoad_X10003_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_7_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_cout [8]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [7]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_7 .coord_x = 18;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_7 .coord_y = 5;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_7 .coord_x = 19;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_7 .coord_y = 3;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_7 .coord_z = 8;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_7 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_7 .modeMux = 1'b1;
@@ -19519,16 +19227,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_8 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_cout [8]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [8]),
-	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10007_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10007_Y10002_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10007_Y10002_SIG ),
+	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10003_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10003_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10003_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10007_Y10002_GND),
+	.SyncLoad(SyncLoad_X10003_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_8_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_cout [9]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [8]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_8 .coord_x = 18;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_8 .coord_y = 5;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_8 .coord_x = 19;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_8 .coord_y = 3;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_8 .coord_z = 9;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_8 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_8 .modeMux = 1'b1;
@@ -19544,16 +19252,16 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_9 (
 	.D(vcc),
 	.Cin(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_cout [9]),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [9]),
-	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10007_Y10002_SIG_SIG ),
-	.AsyncReset(AsyncReset_X10007_Y10002_GND),
-	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10007_Y10002_SIG ),
+	.Clk(\GCLK__i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_B_Y_X10003_Y10002_SIG_SIG ),
+	.AsyncReset(AsyncReset_X10003_Y10002_GND),
+	.SyncReset(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10003_Y10002_SIG ),
 	.ShiftData(),
-	.SyncLoad(SyncLoad_X10007_Y10002_GND),
+	.SyncLoad(SyncLoad_X10003_Y10002_GND),
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_9_combout ),
 	.Cout(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_datab_0_cout [10]),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de [9]));
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_9 .coord_x = 18;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_9 .coord_y = 5;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_9 .coord_x = 19;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_9 .coord_y = 3;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_9 .coord_z = 10;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_9 .mask = 16'h69D4;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_9 .modeMux = 1'b1;
@@ -19563,10 +19271,10 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_9 .BypassEn = 1'
 defparam \i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_q_9 .CarryEnb = 1'b0;
 
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout (
-	.A(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa_combout [0]),
-	.B(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y ),
-	.C(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in [8]),
-	.D(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d_q ),
+	.A(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y ),
+	.B(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_dataa_combout [0]),
+	.C(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d_q ),
+	.D(\i2s_osd_select_2|pcm_to_pdm_select|normal|address_in [8]),
 	.Cin(),
 	.Qin(),
 	.Clk(),
@@ -19578,9 +19286,9 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout (
 	.Cout(),
 	.Q());
 defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout .coord_x = 15;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout .coord_z = 9;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout .mask = 16'hCCEF;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout .coord_y = 6;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout .coord_z = 8;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout .mask = 16'hAEAF;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_A_Y_A_Y_combout .ShiftMux = 1'b0;
@@ -19594,8 +19302,8 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d (
 	.D(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE ),
 	.Cin(),
 	.Qin(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d_q ),
-	.Clk(\i2s_osd_select_2|BCLKD_X10011_Y10002_INV_VCC ),
-	.AsyncReset(AsyncReset_X10011_Y10002_GND),
+	.Clk(\i2s_osd_select_2|BCLKD_X10006_Y10002_INV_VCC ),
+	.AsyncReset(AsyncReset_X10006_Y10002_GND),
 	.SyncReset(),
 	.ShiftData(),
 	.SyncLoad(),
@@ -19603,14 +19311,39 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d (
 	.Cout(),
 	.Q(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d_q ));
 defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d .coord_x = 15;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d .coord_z = 8;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d .coord_y = 6;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d .coord_z = 0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d .mask = 16'h000F;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d .FeedbackMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d .ShiftMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d .BypassEn = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d .CarryEnb = 1'b1;
+
+alta_slice \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_inv~I (
+	.A(),
+	.B(),
+	.C(),
+	.D(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE ),
+	.Cin(),
+	.Qin(),
+	.Clk(),
+	.AsyncReset(),
+	.SyncReset(),
+	.ShiftData(),
+	.SyncLoad(),
+	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_inv ),
+	.Cout(),
+	.Q());
+defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_inv~I .coord_x = 15;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_inv~I .coord_y = 6;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_inv~I .coord_z = 2;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_inv~I .mask = 16'h00FF;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_inv~I .modeMux = 1'b0;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_inv~I .FeedbackMux = 1'b0;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_inv~I .ShiftMux = 1'b0;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_inv~I .BypassEn = 1'b0;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_inv~I .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_reg (
 	.A(),
@@ -19652,9 +19385,9 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_RAW_datad (
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_RAW_datad_combout [3]),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_RAW_datad .coord_x = 15;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_RAW_datad .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_RAW_datad .coord_z = 15;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_RAW_datad .coord_x = 16;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_RAW_datad .coord_y = 4;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_RAW_datad .coord_z = 1;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_RAW_datad .mask = 16'h8000;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_RAW_datad .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_RAW_datad .FeedbackMux = 1'b0;
@@ -19688,9 +19421,9 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_RAW_reg .BypassEn = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_RAW_reg .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_B_Y_combout (
-	.A(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d_q ),
+	.A(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW ),
 	.B(vcc),
-	.C(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW ),
+	.C(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y_d_q ),
 	.D(vcc),
 	.Cin(),
 	.Qin(),
@@ -19703,8 +19436,8 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_B_Y_combout (
 	.Cout(),
 	.Q());
 defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_B_Y_combout .coord_x = 15;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_B_Y_combout .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_B_Y_combout .coord_z = 14;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_B_Y_combout .coord_y = 6;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_B_Y_combout .coord_z = 7;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_B_Y_combout .mask = 16'hA0A0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_B_Y_combout .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_B_Y_combout .FeedbackMux = 1'b0;
@@ -19713,8 +19446,8 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_B_Y_combout .BypassEn = 
 defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_B_Y_combout .CarryEnb = 1'b1;
 
 alta_slice \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_dataa (
-	.A(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW ),
-	.B(CO2_i_o[1]),
+	.A(CO2_i_o[1]),
+	.B(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW ),
 	.C(CO2_i_o[0]),
 	.D(\i2c_device|write_value_d_4_q ),
 	.Cin(),
@@ -19727,9 +19460,9 @@ alta_slice \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_dataa (
 	.LutOut(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_dataa_combout [3]),
 	.Cout(),
 	.Q());
-defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_dataa .coord_x = 17;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_dataa .coord_y = 2;
-defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_dataa .coord_z = 5;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_dataa .coord_x = 18;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_dataa .coord_y = 3;
+defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_dataa .coord_z = 13;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_dataa .mask = 16'h8000;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_dataa .modeMux = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_dataa .FeedbackMux = 1'b0;
@@ -19763,44 +19496,44 @@ defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_reg .BypassEn = 1'b0;
 defparam \i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_reg .CarryEnb = 1'b1;
 
 alta_syncctrl syncload_ctrl_X10001_Y10001(
-	.Din(),
-	.Dout(SyncLoad_X10001_Y10001_GND));
-defparam syncload_ctrl_X10001_Y10001.coord_x = 16;
-defparam syncload_ctrl_X10001_Y10001.coord_y = 6;
+	.Din(\i2c_device|brin_rec_A_0_Y ),
+	.Dout(\i2c_device|brin_rec_A_0_Y__SyncLoad_X10001_Y10001_SIG ));
+defparam syncload_ctrl_X10001_Y10001.coord_x = 20;
+defparam syncload_ctrl_X10001_Y10001.coord_y = 9;
 defparam syncload_ctrl_X10001_Y10001.coord_z = 1;
-defparam syncload_ctrl_X10001_Y10001.SyncCtrlMux = 2'b00;
+defparam syncload_ctrl_X10001_Y10001.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncload_ctrl_X10001_Y10002(
 	.Din(),
-	.Dout(SyncLoad_X10001_Y10002_VCC));
-defparam syncload_ctrl_X10001_Y10002.coord_x = 15;
-defparam syncload_ctrl_X10001_Y10002.coord_y = 5;
+	.Dout(SyncLoad_X10001_Y10002_GND));
+defparam syncload_ctrl_X10001_Y10002.coord_x = 18;
+defparam syncload_ctrl_X10001_Y10002.coord_y = 4;
 defparam syncload_ctrl_X10001_Y10002.coord_z = 1;
-defparam syncload_ctrl_X10001_Y10002.SyncCtrlMux = 2'b01;
+defparam syncload_ctrl_X10001_Y10002.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncload_ctrl_X10001_Y10003(
-	.Din(CLKOSC_clk_2_q_A_2_Y),
-	.Dout(CLKOSC_clk_2_q_A_2_Y__SyncLoad_X10001_Y10003_SIG));
-defparam syncload_ctrl_X10001_Y10003.coord_x = 14;
-defparam syncload_ctrl_X10001_Y10003.coord_y = 6;
+	.Din(\i2c_device|bit_pos_A_2_Y ),
+	.Dout(\i2c_device|bit_pos_A_2_Y__SyncLoad_X10001_Y10003_SIG ));
+defparam syncload_ctrl_X10001_Y10003.coord_x = 12;
+defparam syncload_ctrl_X10001_Y10003.coord_y = 1;
 defparam syncload_ctrl_X10001_Y10003.coord_z = 1;
 defparam syncload_ctrl_X10001_Y10003.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncload_ctrl_X10002_Y10001(
 	.Din(),
 	.Dout(SyncLoad_X10002_Y10001_GND));
-defparam syncload_ctrl_X10002_Y10001.coord_x = 18;
-defparam syncload_ctrl_X10002_Y10001.coord_y = 9;
+defparam syncload_ctrl_X10002_Y10001.coord_x = 19;
+defparam syncload_ctrl_X10002_Y10001.coord_y = 6;
 defparam syncload_ctrl_X10002_Y10001.coord_z = 1;
 defparam syncload_ctrl_X10002_Y10001.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncload_ctrl_X10002_Y10002(
-	.Din(),
-	.Dout(SyncLoad_X10002_Y10002_GND));
-defparam syncload_ctrl_X10002_Y10002.coord_x = 18;
-defparam syncload_ctrl_X10002_Y10002.coord_y = 1;
+	.Din(\i2c_device|bit_pos_A_2_3_Y ),
+	.Dout(\i2c_device|bit_pos_A_2_3_Y__SyncLoad_X10002_Y10002_SIG ));
+defparam syncload_ctrl_X10002_Y10002.coord_x = 15;
+defparam syncload_ctrl_X10002_Y10002.coord_y = 4;
 defparam syncload_ctrl_X10002_Y10002.coord_z = 1;
-defparam syncload_ctrl_X10002_Y10002.SyncCtrlMux = 2'b00;
+defparam syncload_ctrl_X10002_Y10002.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncload_ctrl_X10002_Y10003(
 	.Din(),
@@ -19810,82 +19543,90 @@ defparam syncload_ctrl_X10002_Y10003.coord_y = 2;
 defparam syncload_ctrl_X10002_Y10003.coord_z = 1;
 defparam syncload_ctrl_X10002_Y10003.SyncCtrlMux = 2'b00;
 
-alta_syncctrl syncload_ctrl_X10003_Y10001(
-	.Din(\i2c_device|locka_rec_A_0_Y ),
-	.Dout(\i2c_device|locka_rec_A_0_Y__SyncLoad_X10003_Y10001_SIG ));
-defparam syncload_ctrl_X10003_Y10001.coord_x = 19;
-defparam syncload_ctrl_X10003_Y10001.coord_y = 9;
-defparam syncload_ctrl_X10003_Y10001.coord_z = 1;
-defparam syncload_ctrl_X10003_Y10001.SyncCtrlMux = 2'b10;
-
 alta_syncctrl syncload_ctrl_X10003_Y10002(
-	.Din(\i2c_device|bit_pos_A_2_1_Y ),
-	.Dout(\i2c_device|bit_pos_A_2_1_Y__SyncLoad_X10003_Y10002_SIG ));
-defparam syncload_ctrl_X10003_Y10002.coord_x = 14;
-defparam syncload_ctrl_X10003_Y10002.coord_y = 4;
+	.Din(),
+	.Dout(SyncLoad_X10003_Y10002_GND));
+defparam syncload_ctrl_X10003_Y10002.coord_x = 19;
+defparam syncload_ctrl_X10003_Y10002.coord_y = 3;
 defparam syncload_ctrl_X10003_Y10002.coord_z = 1;
-defparam syncload_ctrl_X10003_Y10002.SyncCtrlMux = 2'b10;
+defparam syncload_ctrl_X10003_Y10002.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncload_ctrl_X10003_Y10003(
-	.Din(\i2c_device|bit_pos_dataa_0_combout_B_Y ),
-	.Dout(\i2c_device|bit_pos_dataa_0_combout_B_Y__SyncLoad_X10003_Y10003_SIG ));
-defparam syncload_ctrl_X10003_Y10003.coord_x = 12;
-defparam syncload_ctrl_X10003_Y10003.coord_y = 3;
+	.Din(\i2c_device|bit_pos_dataa_1_combout_B_Y ),
+	.Dout(\i2c_device|bit_pos_dataa_1_combout_B_Y__SyncLoad_X10003_Y10003_SIG ));
+defparam syncload_ctrl_X10003_Y10003.coord_x = 9;
+defparam syncload_ctrl_X10003_Y10003.coord_y = 2;
 defparam syncload_ctrl_X10003_Y10003.coord_z = 1;
 defparam syncload_ctrl_X10003_Y10003.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncload_ctrl_X10004_Y10001(
 	.Din(),
-	.Dout(SyncLoad_X10004_Y10001_GND));
-defparam syncload_ctrl_X10004_Y10001.coord_x = 20;
-defparam syncload_ctrl_X10004_Y10001.coord_y = 5;
+	.Dout(SyncLoad_X10004_Y10001_VCC));
+defparam syncload_ctrl_X10004_Y10001.coord_x = 19;
+defparam syncload_ctrl_X10004_Y10001.coord_y = 7;
 defparam syncload_ctrl_X10004_Y10001.coord_z = 1;
-defparam syncload_ctrl_X10004_Y10001.SyncCtrlMux = 2'b00;
+defparam syncload_ctrl_X10004_Y10001.SyncCtrlMux = 2'b01;
 
 alta_syncctrl syncload_ctrl_X10004_Y10002(
-	.Din(\i2c_device|start_B_0_Y ),
-	.Dout(\i2c_device|start_B_0_Y__SyncLoad_X10004_Y10002_SIG ));
-defparam syncload_ctrl_X10004_Y10002.coord_x = 10;
-defparam syncload_ctrl_X10004_Y10002.coord_y = 2;
+	.Din(),
+	.Dout(SyncLoad_X10004_Y10002_GND));
+defparam syncload_ctrl_X10004_Y10002.coord_x = 19;
+defparam syncload_ctrl_X10004_Y10002.coord_y = 1;
 defparam syncload_ctrl_X10004_Y10002.coord_z = 1;
-defparam syncload_ctrl_X10004_Y10002.SyncCtrlMux = 2'b10;
+defparam syncload_ctrl_X10004_Y10002.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncload_ctrl_X10004_Y10003(
-	.Din(\i2c_device|bit_pos_dataa_2_combout_A_1_Y_B_Y ),
-	.Dout(\i2c_device|bit_pos_dataa_2_combout_A_1_Y_B_Y__SyncLoad_X10004_Y10003_SIG ));
-defparam syncload_ctrl_X10004_Y10003.coord_x = 8;
-defparam syncload_ctrl_X10004_Y10003.coord_y = 2;
+	.Din(),
+	.Dout(SyncLoad_X10004_Y10003_GND));
+defparam syncload_ctrl_X10004_Y10003.coord_x = 17;
+defparam syncload_ctrl_X10004_Y10003.coord_y = 3;
 defparam syncload_ctrl_X10004_Y10003.coord_z = 1;
-defparam syncload_ctrl_X10004_Y10003.SyncCtrlMux = 2'b10;
+defparam syncload_ctrl_X10004_Y10003.SyncCtrlMux = 2'b00;
+
+alta_syncctrl syncload_ctrl_X10005_Y10001(
+	.Din(),
+	.Dout(SyncLoad_X10005_Y10001_GND));
+defparam syncload_ctrl_X10005_Y10001.coord_x = 19;
+defparam syncload_ctrl_X10005_Y10001.coord_y = 5;
+defparam syncload_ctrl_X10005_Y10001.coord_z = 1;
+defparam syncload_ctrl_X10005_Y10001.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncload_ctrl_X10005_Y10002(
-	.Din(\i2c_device|bit_pos_dataa_2_combout_A_Y_B_1_Y ),
-	.Dout(\i2c_device|bit_pos_dataa_2_combout_A_Y_B_1_Y__SyncLoad_X10005_Y10002_SIG ));
-defparam syncload_ctrl_X10005_Y10002.coord_x = 9;
+	.Din(\i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y ),
+	.Dout(\i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y__SyncLoad_X10005_Y10002_SIG ));
+defparam syncload_ctrl_X10005_Y10002.coord_x = 11;
 defparam syncload_ctrl_X10005_Y10002.coord_y = 3;
 defparam syncload_ctrl_X10005_Y10002.coord_z = 1;
 defparam syncload_ctrl_X10005_Y10002.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncload_ctrl_X10005_Y10003(
-	.Din(\i2c_device|bit_pos_A_2_2_Y ),
-	.Dout(\i2c_device|bit_pos_A_2_2_Y__SyncLoad_X10005_Y10003_SIG ));
-defparam syncload_ctrl_X10005_Y10003.coord_x = 14;
-defparam syncload_ctrl_X10005_Y10003.coord_y = 3;
+	.Din(\i2c_device|bit_pos_dataa_2_combout_A_Y_B_1_Y ),
+	.Dout(\i2c_device|bit_pos_dataa_2_combout_A_Y_B_1_Y__SyncLoad_X10005_Y10003_SIG ));
+defparam syncload_ctrl_X10005_Y10003.coord_x = 9;
+defparam syncload_ctrl_X10005_Y10003.coord_y = 1;
 defparam syncload_ctrl_X10005_Y10003.coord_z = 1;
 defparam syncload_ctrl_X10005_Y10003.SyncCtrlMux = 2'b10;
 
-alta_syncctrl syncload_ctrl_X10006_Y10002(
+alta_syncctrl syncload_ctrl_X10006_Y10001(
 	.Din(),
-	.Dout(SyncLoad_X10006_Y10002_GND));
-defparam syncload_ctrl_X10006_Y10002.coord_x = 16;
-defparam syncload_ctrl_X10006_Y10002.coord_y = 2;
+	.Dout(SyncLoad_X10006_Y10001_GND));
+defparam syncload_ctrl_X10006_Y10001.coord_x = 18;
+defparam syncload_ctrl_X10006_Y10001.coord_y = 6;
+defparam syncload_ctrl_X10006_Y10001.coord_z = 1;
+defparam syncload_ctrl_X10006_Y10001.SyncCtrlMux = 2'b00;
+
+alta_syncctrl syncload_ctrl_X10006_Y10002(
+	.Din(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_B_Y ),
+	.Dout(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_B_Y__SyncLoad_X10006_Y10002_SIG ));
+defparam syncload_ctrl_X10006_Y10002.coord_x = 15;
+defparam syncload_ctrl_X10006_Y10002.coord_y = 6;
 defparam syncload_ctrl_X10006_Y10002.coord_z = 1;
-defparam syncload_ctrl_X10006_Y10002.SyncCtrlMux = 2'b00;
+defparam syncload_ctrl_X10006_Y10002.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncload_ctrl_X10006_Y10003(
-	.Din(\i2c_device|bit_pos_dataa_2_combout_A_Y_B_Y ),
-	.Dout(\i2c_device|bit_pos_dataa_2_combout_A_Y_B_Y__SyncLoad_X10006_Y10003_SIG ));
-defparam syncload_ctrl_X10006_Y10003.coord_x = 9;
+	.Din(\i2c_device|i2c_state_A_0_1_Y_A_1_Y_A_1_Y_B_Y ),
+	.Dout(\i2c_device|i2c_state_A_0_1_Y_A_1_Y_A_1_Y_B_Y__SyncLoad_X10006_Y10003_SIG ));
+defparam syncload_ctrl_X10006_Y10003.coord_x = 11;
 defparam syncload_ctrl_X10006_Y10003.coord_y = 2;
 defparam syncload_ctrl_X10006_Y10003.coord_z = 1;
 defparam syncload_ctrl_X10006_Y10003.SyncCtrlMux = 2'b10;
@@ -19893,616 +19634,624 @@ defparam syncload_ctrl_X10006_Y10003.SyncCtrlMux = 2'b10;
 alta_syncctrl syncload_ctrl_X10007_Y10001(
 	.Din(),
 	.Dout(SyncLoad_X10007_Y10001_GND));
-defparam syncload_ctrl_X10007_Y10001.coord_x = 20;
-defparam syncload_ctrl_X10007_Y10001.coord_y = 6;
+defparam syncload_ctrl_X10007_Y10001.coord_x = 18;
+defparam syncload_ctrl_X10007_Y10001.coord_y = 7;
 defparam syncload_ctrl_X10007_Y10001.coord_z = 1;
 defparam syncload_ctrl_X10007_Y10001.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncload_ctrl_X10007_Y10002(
 	.Din(),
 	.Dout(SyncLoad_X10007_Y10002_GND));
-defparam syncload_ctrl_X10007_Y10002.coord_x = 18;
-defparam syncload_ctrl_X10007_Y10002.coord_y = 5;
+defparam syncload_ctrl_X10007_Y10002.coord_x = 16;
+defparam syncload_ctrl_X10007_Y10002.coord_y = 2;
 defparam syncload_ctrl_X10007_Y10002.coord_z = 1;
 defparam syncload_ctrl_X10007_Y10002.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncload_ctrl_X10007_Y10003(
-	.Din(\i2c_device|bit_pos_A_2_Y ),
-	.Dout(\i2c_device|bit_pos_A_2_Y__SyncLoad_X10007_Y10003_SIG ));
-defparam syncload_ctrl_X10007_Y10003.coord_x = 10;
-defparam syncload_ctrl_X10007_Y10003.coord_y = 1;
+	.Din(),
+	.Dout(SyncLoad_X10007_Y10003_GND));
+defparam syncload_ctrl_X10007_Y10003.coord_x = 18;
+defparam syncload_ctrl_X10007_Y10003.coord_y = 2;
 defparam syncload_ctrl_X10007_Y10003.coord_z = 1;
-defparam syncload_ctrl_X10007_Y10003.SyncCtrlMux = 2'b10;
+defparam syncload_ctrl_X10007_Y10003.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncload_ctrl_X10008_Y10001(
 	.Din(),
 	.Dout(SyncLoad_X10008_Y10001_GND));
-defparam syncload_ctrl_X10008_Y10001.coord_x = 18;
-defparam syncload_ctrl_X10008_Y10001.coord_y = 3;
+defparam syncload_ctrl_X10008_Y10001.coord_x = 17;
+defparam syncload_ctrl_X10008_Y10001.coord_y = 11;
 defparam syncload_ctrl_X10008_Y10001.coord_z = 1;
 defparam syncload_ctrl_X10008_Y10001.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncload_ctrl_X10008_Y10002(
-	.Din(),
-	.Dout(SyncLoad_X10008_Y10002_GND));
-defparam syncload_ctrl_X10008_Y10002.coord_x = 16;
+	.Din(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_B_Y ),
+	.Dout(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_B_Y__SyncLoad_X10008_Y10002_INV ));
+defparam syncload_ctrl_X10008_Y10002.coord_x = 15;
 defparam syncload_ctrl_X10008_Y10002.coord_y = 3;
 defparam syncload_ctrl_X10008_Y10002.coord_z = 1;
-defparam syncload_ctrl_X10008_Y10002.SyncCtrlMux = 2'b00;
+defparam syncload_ctrl_X10008_Y10002.SyncCtrlMux = 2'b11;
 
 alta_syncctrl syncload_ctrl_X10008_Y10003(
-	.Din(\i2c_device|bit_pos_A_2_3_Y ),
-	.Dout(\i2c_device|bit_pos_A_2_3_Y__SyncLoad_X10008_Y10003_SIG ));
-defparam syncload_ctrl_X10008_Y10003.coord_x = 8;
-defparam syncload_ctrl_X10008_Y10003.coord_y = 4;
+	.Din(\i2c_device|bit_pos_dataa_0_combout_B_Y ),
+	.Dout(\i2c_device|bit_pos_dataa_0_combout_B_Y__SyncLoad_X10008_Y10003_SIG ));
+defparam syncload_ctrl_X10008_Y10003.coord_x = 11;
+defparam syncload_ctrl_X10008_Y10003.coord_y = 1;
 defparam syncload_ctrl_X10008_Y10003.coord_z = 1;
 defparam syncload_ctrl_X10008_Y10003.SyncCtrlMux = 2'b10;
 
+alta_syncctrl syncload_ctrl_X10009_Y10001(
+	.Din(),
+	.Dout(SyncLoad_X10009_Y10001_GND));
+defparam syncload_ctrl_X10009_Y10001.coord_x = 17;
+defparam syncload_ctrl_X10009_Y10001.coord_y = 10;
+defparam syncload_ctrl_X10009_Y10001.coord_z = 1;
+defparam syncload_ctrl_X10009_Y10001.SyncCtrlMux = 2'b00;
+
 alta_syncctrl syncload_ctrl_X10009_Y10002(
-	.Din(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_B_Y ),
-	.Dout(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q2_RAW_B_Y__SyncLoad_X10009_Y10002_SIG ));
-defparam syncload_ctrl_X10009_Y10002.coord_x = 16;
-defparam syncload_ctrl_X10009_Y10002.coord_y = 1;
+	.Din(CLKOSC_clk_2_q_A_3_Y),
+	.Dout(CLKOSC_clk_2_q_A_3_Y__SyncLoad_X10009_Y10002_SIG));
+defparam syncload_ctrl_X10009_Y10002.coord_x = 11;
+defparam syncload_ctrl_X10009_Y10002.coord_y = 4;
 defparam syncload_ctrl_X10009_Y10002.coord_z = 1;
 defparam syncload_ctrl_X10009_Y10002.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncload_ctrl_X10009_Y10003(
 	.Din(),
 	.Dout(SyncLoad_X10009_Y10003_GND));
-defparam syncload_ctrl_X10009_Y10003.coord_x = 17;
+defparam syncload_ctrl_X10009_Y10003.coord_x = 14;
 defparam syncload_ctrl_X10009_Y10003.coord_y = 4;
 defparam syncload_ctrl_X10009_Y10003.coord_z = 1;
 defparam syncload_ctrl_X10009_Y10003.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncload_ctrl_X10010_Y10001(
 	.Din(),
-	.Dout(SyncLoad_X10010_Y10001_VCC));
+	.Dout(SyncLoad_X10010_Y10001_GND));
 defparam syncload_ctrl_X10010_Y10001.coord_x = 19;
-defparam syncload_ctrl_X10010_Y10001.coord_y = 10;
+defparam syncload_ctrl_X10010_Y10001.coord_y = 8;
 defparam syncload_ctrl_X10010_Y10001.coord_z = 1;
-defparam syncload_ctrl_X10010_Y10001.SyncCtrlMux = 2'b01;
+defparam syncload_ctrl_X10010_Y10001.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncload_ctrl_X10010_Y10002(
-	.Din(\i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y ),
-	.Dout(\i2c_device|i2c_state_A_0_1_Y_A_Y_A_Y_B_Y__SyncLoad_X10010_Y10002_SIG ));
-defparam syncload_ctrl_X10010_Y10002.coord_x = 10;
-defparam syncload_ctrl_X10010_Y10002.coord_y = 4;
+	.Din(\i2c_device|brip_rec_A_0_Y ),
+	.Dout(\i2c_device|brip_rec_A_0_Y__SyncLoad_X10010_Y10002_SIG ));
+defparam syncload_ctrl_X10010_Y10002.coord_x = 18;
+defparam syncload_ctrl_X10010_Y10002.coord_y = 10;
 defparam syncload_ctrl_X10010_Y10002.coord_z = 1;
 defparam syncload_ctrl_X10010_Y10002.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncload_ctrl_X10010_Y10003(
-	.Din(\i2c_device|i2c_state_A_0_1_Y_A_1_Y_A_1_Y_B_Y ),
-	.Dout(\i2c_device|i2c_state_A_0_1_Y_A_1_Y_A_1_Y_B_Y__SyncLoad_X10010_Y10003_SIG ));
-defparam syncload_ctrl_X10010_Y10003.coord_x = 11;
-defparam syncload_ctrl_X10010_Y10003.coord_y = 3;
+	.Din(\i2c_device|start_B_0_Y ),
+	.Dout(\i2c_device|start_B_0_Y__SyncLoad_X10010_Y10003_SIG ));
+defparam syncload_ctrl_X10010_Y10003.coord_x = 9;
+defparam syncload_ctrl_X10010_Y10003.coord_y = 4;
 defparam syncload_ctrl_X10010_Y10003.coord_z = 1;
 defparam syncload_ctrl_X10010_Y10003.SyncCtrlMux = 2'b10;
 
-alta_syncctrl syncload_ctrl_X10011_Y10001(
-	.Din(),
-	.Dout(SyncLoad_X10011_Y10001_GND));
-defparam syncload_ctrl_X10011_Y10001.coord_x = 16;
-defparam syncload_ctrl_X10011_Y10001.coord_y = 7;
-defparam syncload_ctrl_X10011_Y10001.coord_z = 1;
-defparam syncload_ctrl_X10011_Y10001.SyncCtrlMux = 2'b00;
-
 alta_syncctrl syncload_ctrl_X10011_Y10002(
-	.Din(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_B_Y ),
-	.Dout(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q2_RAW_B_Y__SyncLoad_X10011_Y10002_INV ));
-defparam syncload_ctrl_X10011_Y10002.coord_x = 15;
-defparam syncload_ctrl_X10011_Y10002.coord_y = 2;
+	.Din(\i2c_device|sda_A_0_1_Y_B_Y_B_Y ),
+	.Dout(\i2c_device|sda_A_0_1_Y_B_Y_B_Y__SyncLoad_X10011_Y10002_SIG ));
+defparam syncload_ctrl_X10011_Y10002.coord_x = 10;
+defparam syncload_ctrl_X10011_Y10002.coord_y = 3;
 defparam syncload_ctrl_X10011_Y10002.coord_z = 1;
-defparam syncload_ctrl_X10011_Y10002.SyncCtrlMux = 2'b11;
+defparam syncload_ctrl_X10011_Y10002.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncload_ctrl_X10011_Y10003(
-	.Din(CLKOSC_clk_2_q_A_1_Y),
-	.Dout(CLKOSC_clk_2_q_A_1_Y__SyncLoad_X10011_Y10003_SIG));
-defparam syncload_ctrl_X10011_Y10003.coord_x = 15;
-defparam syncload_ctrl_X10011_Y10003.coord_y = 1;
+	.Din(\i2c_device|brin_rec_A_0_Y ),
+	.Dout(\i2c_device|brin_rec_A_0_Y__SyncLoad_X10011_Y10003_SIG ));
+defparam syncload_ctrl_X10011_Y10003.coord_x = 17;
+defparam syncload_ctrl_X10011_Y10003.coord_y = 6;
 defparam syncload_ctrl_X10011_Y10003.coord_z = 1;
 defparam syncload_ctrl_X10011_Y10003.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncload_ctrl_X10012_Y10001(
 	.Din(),
 	.Dout(SyncLoad_X10012_Y10001_GND));
-defparam syncload_ctrl_X10012_Y10001.coord_x = 18;
-defparam syncload_ctrl_X10012_Y10001.coord_y = 4;
+defparam syncload_ctrl_X10012_Y10001.coord_x = 19;
+defparam syncload_ctrl_X10012_Y10001.coord_y = 9;
 defparam syncload_ctrl_X10012_Y10001.coord_z = 1;
 defparam syncload_ctrl_X10012_Y10001.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncload_ctrl_X10012_Y10002(
-	.Din(\i2c_device|bit_pos_dataa_1_combout_A_Y ),
-	.Dout(\i2c_device|bit_pos_dataa_1_combout_A_Y__SyncLoad_X10012_Y10002_SIG ));
-defparam syncload_ctrl_X10012_Y10002.coord_x = 10;
-defparam syncload_ctrl_X10012_Y10002.coord_y = 3;
+	.Din(),
+	.Dout(SyncLoad_X10012_Y10002_VCC));
+defparam syncload_ctrl_X10012_Y10002.coord_x = 17;
+defparam syncload_ctrl_X10012_Y10002.coord_y = 4;
 defparam syncload_ctrl_X10012_Y10002.coord_z = 1;
-defparam syncload_ctrl_X10012_Y10002.SyncCtrlMux = 2'b10;
+defparam syncload_ctrl_X10012_Y10002.SyncCtrlMux = 2'b01;
 
 alta_syncctrl syncload_ctrl_X10012_Y10003(
-	.Din(\i2c_device|bit_pos_dataa_0_combout_A_Y ),
-	.Dout(\i2c_device|bit_pos_dataa_0_combout_A_Y__SyncLoad_X10012_Y10003_SIG ));
-defparam syncload_ctrl_X10012_Y10003.coord_x = 8;
-defparam syncload_ctrl_X10012_Y10003.coord_y = 3;
+	.Din(\i2c_device|bit_pos_dataa_1_combout_A_Y ),
+	.Dout(\i2c_device|bit_pos_dataa_1_combout_A_Y__SyncLoad_X10012_Y10003_SIG ));
+defparam syncload_ctrl_X10012_Y10003.coord_x = 14;
+defparam syncload_ctrl_X10012_Y10003.coord_y = 1;
 defparam syncload_ctrl_X10012_Y10003.coord_z = 1;
 defparam syncload_ctrl_X10012_Y10003.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncload_ctrl_X10014_Y10001(
-	.Din(),
-	.Dout(SyncLoad_X10014_Y10001_GND));
+	.Din(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y ),
+	.Dout(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y__SyncLoad_X10014_Y10001_SIG ));
 defparam syncload_ctrl_X10014_Y10001.coord_x = 18;
-defparam syncload_ctrl_X10014_Y10001.coord_y = 10;
+defparam syncload_ctrl_X10014_Y10001.coord_y = 3;
 defparam syncload_ctrl_X10014_Y10001.coord_z = 1;
-defparam syncload_ctrl_X10014_Y10001.SyncCtrlMux = 2'b00;
+defparam syncload_ctrl_X10014_Y10001.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncload_ctrl_X10014_Y10002(
-	.Din(),
-	.Dout(SyncLoad_X10014_Y10002_GND));
-defparam syncload_ctrl_X10014_Y10002.coord_x = 14;
-defparam syncload_ctrl_X10014_Y10002.coord_y = 1;
+	.Din(\i2c_device|bit_pos_A_2_1_Y ),
+	.Dout(\i2c_device|bit_pos_A_2_1_Y__SyncLoad_X10014_Y10002_SIG ));
+defparam syncload_ctrl_X10014_Y10002.coord_x = 12;
+defparam syncload_ctrl_X10014_Y10002.coord_y = 2;
 defparam syncload_ctrl_X10014_Y10002.coord_z = 1;
-defparam syncload_ctrl_X10014_Y10002.SyncCtrlMux = 2'b00;
+defparam syncload_ctrl_X10014_Y10002.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncload_ctrl_X10014_Y10003(
-	.Din(\i2c_device|bit_pos_dataa_1_combout_B_Y ),
-	.Dout(\i2c_device|bit_pos_dataa_1_combout_B_Y__SyncLoad_X10014_Y10003_SIG ));
-defparam syncload_ctrl_X10014_Y10003.coord_x = 15;
-defparam syncload_ctrl_X10014_Y10003.coord_y = 3;
+	.Din(\i2c_device|lockb_rec_A_0_Y ),
+	.Dout(\i2c_device|lockb_rec_A_0_Y__SyncLoad_X10014_Y10003_SIG ));
+defparam syncload_ctrl_X10014_Y10003.coord_x = 20;
+defparam syncload_ctrl_X10014_Y10003.coord_y = 6;
 defparam syncload_ctrl_X10014_Y10003.coord_z = 1;
 defparam syncload_ctrl_X10014_Y10003.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncload_ctrl_X10015_Y10001(
 	.Din(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y ),
 	.Dout(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y__SyncLoad_X10015_Y10001_SIG ));
-defparam syncload_ctrl_X10015_Y10001.coord_x = 17;
-defparam syncload_ctrl_X10015_Y10001.coord_y = 2;
+defparam syncload_ctrl_X10015_Y10001.coord_x = 16;
+defparam syncload_ctrl_X10015_Y10001.coord_y = 4;
 defparam syncload_ctrl_X10015_Y10001.coord_z = 1;
 defparam syncload_ctrl_X10015_Y10001.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncload_ctrl_X10015_Y10002(
-	.Din(\i2c_device|brin_rec_A_0_Y ),
-	.Dout(\i2c_device|brin_rec_A_0_Y__SyncLoad_X10015_Y10002_SIG ));
-defparam syncload_ctrl_X10015_Y10002.coord_x = 19;
-defparam syncload_ctrl_X10015_Y10002.coord_y = 5;
+	.Din(CLKOSC_clk_2_q_A_Y),
+	.Dout(CLKOSC_clk_2_q_A_Y__SyncLoad_X10015_Y10002_SIG));
+defparam syncload_ctrl_X10015_Y10002.coord_x = 12;
+defparam syncload_ctrl_X10015_Y10002.coord_y = 4;
 defparam syncload_ctrl_X10015_Y10002.coord_z = 1;
 defparam syncload_ctrl_X10015_Y10002.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncload_ctrl_X10015_Y10003(
-	.Din(),
-	.Dout(SyncLoad_X10015_Y10003_GND));
-defparam syncload_ctrl_X10015_Y10003.coord_x = 12;
-defparam syncload_ctrl_X10015_Y10003.coord_y = 2;
+	.Din(\i2c_device|bit_pos_dataa_2_combout_A_Y_B_Y ),
+	.Dout(\i2c_device|bit_pos_dataa_2_combout_A_Y_B_Y__SyncLoad_X10015_Y10003_SIG ));
+defparam syncload_ctrl_X10015_Y10003.coord_x = 10;
+defparam syncload_ctrl_X10015_Y10003.coord_y = 1;
 defparam syncload_ctrl_X10015_Y10003.coord_z = 1;
-defparam syncload_ctrl_X10015_Y10003.SyncCtrlMux = 2'b00;
+defparam syncload_ctrl_X10015_Y10003.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncload_ctrl_X10016_Y10001(
-	.Din(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y ),
-	.Dout(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_B_Y__SyncLoad_X10016_Y10001_SIG ));
+	.Din(),
+	.Dout(SyncLoad_X10016_Y10001_VCC));
 defparam syncload_ctrl_X10016_Y10001.coord_x = 17;
-defparam syncload_ctrl_X10016_Y10001.coord_y = 1;
+defparam syncload_ctrl_X10016_Y10001.coord_y = 2;
 defparam syncload_ctrl_X10016_Y10001.coord_z = 1;
-defparam syncload_ctrl_X10016_Y10001.SyncCtrlMux = 2'b10;
+defparam syncload_ctrl_X10016_Y10001.SyncCtrlMux = 2'b01;
 
 alta_syncctrl syncload_ctrl_X10016_Y10002(
-	.Din(CLKOSC_clk_2_q_A_3_Y),
-	.Dout(CLKOSC_clk_2_q_A_3_Y__SyncLoad_X10016_Y10002_SIG));
-defparam syncload_ctrl_X10016_Y10002.coord_x = 9;
-defparam syncload_ctrl_X10016_Y10002.coord_y = 4;
+	.Din(CLKOSC_clk_2_q_A_2_Y),
+	.Dout(CLKOSC_clk_2_q_A_2_Y__SyncLoad_X10016_Y10002_SIG));
+defparam syncload_ctrl_X10016_Y10002.coord_x = 12;
+defparam syncload_ctrl_X10016_Y10002.coord_y = 3;
 defparam syncload_ctrl_X10016_Y10002.coord_z = 1;
 defparam syncload_ctrl_X10016_Y10002.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncload_ctrl_X10016_Y10003(
-	.Din(\i2c_device|sda_A_0_1_Y_B_Y_B_Y ),
-	.Dout(\i2c_device|sda_A_0_1_Y_B_Y_B_Y__SyncLoad_X10016_Y10003_SIG ));
-defparam syncload_ctrl_X10016_Y10003.coord_x = 11;
-defparam syncload_ctrl_X10016_Y10003.coord_y = 2;
+	.Din(CLKOSC_clk_2_q_A_1_Y),
+	.Dout(CLKOSC_clk_2_q_A_1_Y__SyncLoad_X10016_Y10003_SIG));
+defparam syncload_ctrl_X10016_Y10003.coord_x = 18;
+defparam syncload_ctrl_X10016_Y10003.coord_y = 1;
 defparam syncload_ctrl_X10016_Y10003.coord_z = 1;
 defparam syncload_ctrl_X10016_Y10003.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncload_ctrl_X10017_Y10001(
 	.Din(),
 	.Dout(SyncLoad_X10017_Y10001_VCC));
-defparam syncload_ctrl_X10017_Y10001.coord_x = 16;
-defparam syncload_ctrl_X10017_Y10001.coord_y = 5;
+defparam syncload_ctrl_X10017_Y10001.coord_x = 15;
+defparam syncload_ctrl_X10017_Y10001.coord_y = 2;
 defparam syncload_ctrl_X10017_Y10001.coord_z = 1;
 defparam syncload_ctrl_X10017_Y10001.SyncCtrlMux = 2'b01;
 
 alta_syncctrl syncload_ctrl_X10017_Y10002(
-	.Din(CLKOSC_clk_2_q_A_3_Y),
-	.Dout(CLKOSC_clk_2_q_A_3_Y__SyncLoad_X10017_Y10002_SIG));
-defparam syncload_ctrl_X10017_Y10002.coord_x = 11;
-defparam syncload_ctrl_X10017_Y10002.coord_y = 4;
+	.Din(),
+	.Dout(SyncLoad_X10017_Y10002_GND));
+defparam syncload_ctrl_X10017_Y10002.coord_x = 14;
+defparam syncload_ctrl_X10017_Y10002.coord_y = 3;
 defparam syncload_ctrl_X10017_Y10002.coord_z = 1;
-defparam syncload_ctrl_X10017_Y10002.SyncCtrlMux = 2'b10;
+defparam syncload_ctrl_X10017_Y10002.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncload_ctrl_X10017_Y10003(
-	.Din(CLKOSC_clk_2_q_A_1_Y),
-	.Dout(CLKOSC_clk_2_q_A_1_Y__SyncLoad_X10017_Y10003_SIG));
-defparam syncload_ctrl_X10017_Y10003.coord_x = 9;
-defparam syncload_ctrl_X10017_Y10003.coord_y = 1;
+	.Din(),
+	.Dout(SyncLoad_X10017_Y10003_VCC));
+defparam syncload_ctrl_X10017_Y10003.coord_x = 20;
+defparam syncload_ctrl_X10017_Y10003.coord_y = 10;
 defparam syncload_ctrl_X10017_Y10003.coord_z = 1;
-defparam syncload_ctrl_X10017_Y10003.SyncCtrlMux = 2'b10;
+defparam syncload_ctrl_X10017_Y10003.SyncCtrlMux = 2'b01;
 
 alta_syncctrl syncload_ctrl_X10018_Y10001(
 	.Din(),
 	.Dout(SyncLoad_X10018_Y10001_VCC));
-defparam syncload_ctrl_X10018_Y10001.coord_x = 16;
+defparam syncload_ctrl_X10018_Y10001.coord_x = 10;
 defparam syncload_ctrl_X10018_Y10001.coord_y = 4;
 defparam syncload_ctrl_X10018_Y10001.coord_z = 1;
 defparam syncload_ctrl_X10018_Y10001.SyncCtrlMux = 2'b01;
 
 alta_syncctrl syncload_ctrl_X10018_Y10002(
-	.Din(\i2c_device|lockb_rec_A_0_Y ),
-	.Dout(\i2c_device|lockb_rec_A_0_Y__SyncLoad_X10018_Y10002_SIG ));
-defparam syncload_ctrl_X10018_Y10002.coord_x = 19;
-defparam syncload_ctrl_X10018_Y10002.coord_y = 4;
+	.Din(),
+	.Dout(SyncLoad_X10018_Y10002_GND));
+defparam syncload_ctrl_X10018_Y10002.coord_x = 14;
+defparam syncload_ctrl_X10018_Y10002.coord_y = 6;
 defparam syncload_ctrl_X10018_Y10002.coord_z = 1;
-defparam syncload_ctrl_X10018_Y10002.SyncCtrlMux = 2'b10;
+defparam syncload_ctrl_X10018_Y10002.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncload_ctrl_X10018_Y10003(
-	.Din(),
-	.Dout(SyncLoad_X10018_Y10003_GND));
-defparam syncload_ctrl_X10018_Y10003.coord_x = 17;
-defparam syncload_ctrl_X10018_Y10003.coord_y = 5;
+	.Din(\i2c_device|locka_rec_A_0_Y ),
+	.Dout(\i2c_device|locka_rec_A_0_Y__SyncLoad_X10018_Y10003_SIG ));
+defparam syncload_ctrl_X10018_Y10003.coord_x = 20;
+defparam syncload_ctrl_X10018_Y10003.coord_y = 8;
 defparam syncload_ctrl_X10018_Y10003.coord_z = 1;
-defparam syncload_ctrl_X10018_Y10003.SyncCtrlMux = 2'b00;
+defparam syncload_ctrl_X10018_Y10003.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncload_ctrl_X10019_Y10001(
 	.Din(),
 	.Dout(SyncLoad_X10019_Y10001_GND));
-defparam syncload_ctrl_X10019_Y10001.coord_x = 15;
-defparam syncload_ctrl_X10019_Y10001.coord_y = 4;
+defparam syncload_ctrl_X10019_Y10001.coord_x = 16;
+defparam syncload_ctrl_X10019_Y10001.coord_y = 3;
 defparam syncload_ctrl_X10019_Y10001.coord_z = 1;
 defparam syncload_ctrl_X10019_Y10001.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncload_ctrl_X10019_Y10002(
-	.Din(\i2c_device|brip_rec_A_0_Y ),
-	.Dout(\i2c_device|brip_rec_A_0_Y__SyncLoad_X10019_Y10002_SIG ));
-defparam syncload_ctrl_X10019_Y10002.coord_x = 17;
-defparam syncload_ctrl_X10019_Y10002.coord_y = 6;
+	.Din(CLKOSC_clk_2_q_A_1_Y),
+	.Dout(CLKOSC_clk_2_q_A_1_Y__SyncLoad_X10019_Y10002_SIG));
+defparam syncload_ctrl_X10019_Y10002.coord_x = 15;
+defparam syncload_ctrl_X10019_Y10002.coord_y = 1;
 defparam syncload_ctrl_X10019_Y10002.coord_z = 1;
 defparam syncload_ctrl_X10019_Y10002.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncload_ctrl_X10019_Y10003(
 	.Din(),
-	.Dout(SyncLoad_X10019_Y10003_GND));
-defparam syncload_ctrl_X10019_Y10003.coord_x = 12;
-defparam syncload_ctrl_X10019_Y10003.coord_y = 1;
+	.Dout(SyncLoad_X10019_Y10003_VCC));
+defparam syncload_ctrl_X10019_Y10003.coord_x = 20;
+defparam syncload_ctrl_X10019_Y10003.coord_y = 7;
 defparam syncload_ctrl_X10019_Y10003.coord_z = 1;
-defparam syncload_ctrl_X10019_Y10003.SyncCtrlMux = 2'b00;
+defparam syncload_ctrl_X10019_Y10003.SyncCtrlMux = 2'b01;
 
 alta_syncctrl syncload_ctrl_X10020_Y10001(
-	.Din(),
-	.Dout(SyncLoad_X10020_Y10001_VCC));
-defparam syncload_ctrl_X10020_Y10001.coord_x = 20;
-defparam syncload_ctrl_X10020_Y10001.coord_y = 4;
+	.Din(\i2c_device|bit_pos_dataa_0_combout_A_Y ),
+	.Dout(\i2c_device|bit_pos_dataa_0_combout_A_Y__SyncLoad_X10020_Y10001_SIG ));
+defparam syncload_ctrl_X10020_Y10001.coord_x = 10;
+defparam syncload_ctrl_X10020_Y10001.coord_y = 2;
 defparam syncload_ctrl_X10020_Y10001.coord_z = 1;
-defparam syncload_ctrl_X10020_Y10001.SyncCtrlMux = 2'b01;
+defparam syncload_ctrl_X10020_Y10001.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncload_ctrl_X10020_Y10002(
-	.Din(CLKOSC_clk_2_q_A_Y),
-	.Dout(CLKOSC_clk_2_q_A_Y__SyncLoad_X10020_Y10002_SIG));
-defparam syncload_ctrl_X10020_Y10002.coord_x = 14;
-defparam syncload_ctrl_X10020_Y10002.coord_y = 5;
+	.Din(\i2c_device|bit_pos_A_2_2_Y ),
+	.Dout(\i2c_device|bit_pos_A_2_2_Y__SyncLoad_X10020_Y10002_SIG ));
+defparam syncload_ctrl_X10020_Y10002.coord_x = 16;
+defparam syncload_ctrl_X10020_Y10002.coord_y = 1;
 defparam syncload_ctrl_X10020_Y10002.coord_z = 1;
 defparam syncload_ctrl_X10020_Y10002.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncload_ctrl_X10020_Y10003(
-	.Din(),
-	.Dout(SyncLoad_X10020_Y10003_VCC));
-defparam syncload_ctrl_X10020_Y10003.coord_x = 20;
-defparam syncload_ctrl_X10020_Y10003.coord_y = 9;
+	.Din(\i2c_device|bit_pos_dataa_2_combout_A_1_Y_B_Y ),
+	.Dout(\i2c_device|bit_pos_dataa_2_combout_A_1_Y_B_Y__SyncLoad_X10020_Y10003_SIG ));
+defparam syncload_ctrl_X10020_Y10003.coord_x = 9;
+defparam syncload_ctrl_X10020_Y10003.coord_y = 3;
 defparam syncload_ctrl_X10020_Y10003.coord_z = 1;
-defparam syncload_ctrl_X10020_Y10003.SyncCtrlMux = 2'b01;
+defparam syncload_ctrl_X10020_Y10003.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncreset_ctrl_X10001_Y10001(
-	.Din(\i2c_device|brip_rec_A_0_Y ),
-	.Dout(\i2c_device|brip_rec_A_0_Y__SyncReset_X10001_Y10001_SIG ));
-defparam syncreset_ctrl_X10001_Y10001.coord_x = 16;
-defparam syncreset_ctrl_X10001_Y10001.coord_y = 6;
+	.Din(),
+	.Dout(SyncReset_X10001_Y10001_GND));
+defparam syncreset_ctrl_X10001_Y10001.coord_x = 20;
+defparam syncreset_ctrl_X10001_Y10001.coord_y = 9;
 defparam syncreset_ctrl_X10001_Y10001.coord_z = 0;
-defparam syncreset_ctrl_X10001_Y10001.SyncCtrlMux = 2'b10;
+defparam syncreset_ctrl_X10001_Y10001.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10001_Y10002(
-	.Din(),
-	.Dout(SyncReset_X10001_Y10002_GND));
-defparam syncreset_ctrl_X10001_Y10002.coord_x = 15;
-defparam syncreset_ctrl_X10001_Y10002.coord_y = 5;
+	.Din(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y ),
+	.Dout(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y__SyncReset_X10001_Y10002_SIG ));
+defparam syncreset_ctrl_X10001_Y10002.coord_x = 18;
+defparam syncreset_ctrl_X10001_Y10002.coord_y = 4;
 defparam syncreset_ctrl_X10001_Y10002.coord_z = 0;
-defparam syncreset_ctrl_X10001_Y10002.SyncCtrlMux = 2'b00;
+defparam syncreset_ctrl_X10001_Y10002.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncreset_ctrl_X10001_Y10003(
 	.Din(),
 	.Dout(SyncReset_X10001_Y10003_GND));
-defparam syncreset_ctrl_X10001_Y10003.coord_x = 14;
-defparam syncreset_ctrl_X10001_Y10003.coord_y = 6;
+defparam syncreset_ctrl_X10001_Y10003.coord_x = 12;
+defparam syncreset_ctrl_X10001_Y10003.coord_y = 1;
 defparam syncreset_ctrl_X10001_Y10003.coord_z = 0;
 defparam syncreset_ctrl_X10001_Y10003.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10002_Y10001(
-	.Din(\i2c_device|locka_rec_A_0_Y ),
-	.Dout(\i2c_device|locka_rec_A_0_Y__SyncReset_X10002_Y10001_SIG ));
-defparam syncreset_ctrl_X10002_Y10001.coord_x = 18;
-defparam syncreset_ctrl_X10002_Y10001.coord_y = 9;
+	.Din(\i2c_device|lockb_rec_A_0_Y ),
+	.Dout(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10002_Y10001_SIG ));
+defparam syncreset_ctrl_X10002_Y10001.coord_x = 19;
+defparam syncreset_ctrl_X10002_Y10001.coord_y = 6;
 defparam syncreset_ctrl_X10002_Y10001.coord_z = 0;
 defparam syncreset_ctrl_X10002_Y10001.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncreset_ctrl_X10002_Y10002(
-	.Din(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y ),
-	.Dout(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y__SyncReset_X10002_Y10002_SIG ));
-defparam syncreset_ctrl_X10002_Y10002.coord_x = 18;
-defparam syncreset_ctrl_X10002_Y10002.coord_y = 1;
+	.Din(),
+	.Dout(SyncReset_X10002_Y10002_GND));
+defparam syncreset_ctrl_X10002_Y10002.coord_x = 15;
+defparam syncreset_ctrl_X10002_Y10002.coord_y = 4;
 defparam syncreset_ctrl_X10002_Y10002.coord_z = 0;
-defparam syncreset_ctrl_X10002_Y10002.SyncCtrlMux = 2'b10;
+defparam syncreset_ctrl_X10002_Y10002.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10002_Y10003(
-	.Din(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y ),
-	.Dout(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10002_Y10003_SIG ));
+	.Din(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ),
+	.Dout(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10002_Y10003_SIG ));
 defparam syncreset_ctrl_X10002_Y10003.coord_x = 14;
 defparam syncreset_ctrl_X10002_Y10003.coord_y = 2;
 defparam syncreset_ctrl_X10002_Y10003.coord_z = 0;
 defparam syncreset_ctrl_X10002_Y10003.SyncCtrlMux = 2'b10;
 
-alta_syncctrl syncreset_ctrl_X10003_Y10001(
-	.Din(),
-	.Dout(SyncReset_X10003_Y10001_GND));
-defparam syncreset_ctrl_X10003_Y10001.coord_x = 19;
-defparam syncreset_ctrl_X10003_Y10001.coord_y = 9;
-defparam syncreset_ctrl_X10003_Y10001.coord_z = 0;
-defparam syncreset_ctrl_X10003_Y10001.SyncCtrlMux = 2'b00;
-
 alta_syncctrl syncreset_ctrl_X10003_Y10002(
-	.Din(),
-	.Dout(SyncReset_X10003_Y10002_GND));
-defparam syncreset_ctrl_X10003_Y10002.coord_x = 14;
-defparam syncreset_ctrl_X10003_Y10002.coord_y = 4;
+	.Din(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y ),
+	.Dout(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10003_Y10002_SIG ));
+defparam syncreset_ctrl_X10003_Y10002.coord_x = 19;
+defparam syncreset_ctrl_X10003_Y10002.coord_y = 3;
 defparam syncreset_ctrl_X10003_Y10002.coord_z = 0;
-defparam syncreset_ctrl_X10003_Y10002.SyncCtrlMux = 2'b00;
+defparam syncreset_ctrl_X10003_Y10002.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncreset_ctrl_X10003_Y10003(
 	.Din(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
 	.Dout(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10003_Y10003_SIG ));
-defparam syncreset_ctrl_X10003_Y10003.coord_x = 12;
-defparam syncreset_ctrl_X10003_Y10003.coord_y = 3;
+defparam syncreset_ctrl_X10003_Y10003.coord_x = 9;
+defparam syncreset_ctrl_X10003_Y10003.coord_y = 2;
 defparam syncreset_ctrl_X10003_Y10003.coord_z = 0;
 defparam syncreset_ctrl_X10003_Y10003.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncreset_ctrl_X10004_Y10001(
-	.Din(\i2c_device|brin_rec_A_0_Y ),
-	.Dout(\i2c_device|brin_rec_A_0_Y__SyncReset_X10004_Y10001_SIG ));
-defparam syncreset_ctrl_X10004_Y10001.coord_x = 20;
-defparam syncreset_ctrl_X10004_Y10001.coord_y = 5;
+	.Din(),
+	.Dout(SyncReset_X10004_Y10001_GND));
+defparam syncreset_ctrl_X10004_Y10001.coord_x = 19;
+defparam syncreset_ctrl_X10004_Y10001.coord_y = 7;
 defparam syncreset_ctrl_X10004_Y10001.coord_z = 0;
-defparam syncreset_ctrl_X10004_Y10001.SyncCtrlMux = 2'b10;
+defparam syncreset_ctrl_X10004_Y10001.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10004_Y10002(
-	.Din(),
-	.Dout(SyncReset_X10004_Y10002_GND));
-defparam syncreset_ctrl_X10004_Y10002.coord_x = 10;
-defparam syncreset_ctrl_X10004_Y10002.coord_y = 2;
+	.Din(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y ),
+	.Dout(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10004_Y10002_SIG ));
+defparam syncreset_ctrl_X10004_Y10002.coord_x = 19;
+defparam syncreset_ctrl_X10004_Y10002.coord_y = 1;
 defparam syncreset_ctrl_X10004_Y10002.coord_z = 0;
-defparam syncreset_ctrl_X10004_Y10002.SyncCtrlMux = 2'b00;
+defparam syncreset_ctrl_X10004_Y10002.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncreset_ctrl_X10004_Y10003(
-	.Din(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
-	.Dout(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10004_Y10003_SIG ));
-defparam syncreset_ctrl_X10004_Y10003.coord_x = 8;
-defparam syncreset_ctrl_X10004_Y10003.coord_y = 2;
+	.Din(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ),
+	.Dout(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10004_Y10003_SIG ));
+defparam syncreset_ctrl_X10004_Y10003.coord_x = 17;
+defparam syncreset_ctrl_X10004_Y10003.coord_y = 3;
 defparam syncreset_ctrl_X10004_Y10003.coord_z = 0;
 defparam syncreset_ctrl_X10004_Y10003.SyncCtrlMux = 2'b10;
+
+alta_syncctrl syncreset_ctrl_X10005_Y10001(
+	.Din(\i2c_device|lockb_rec_A_0_Y ),
+	.Dout(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10005_Y10001_SIG ));
+defparam syncreset_ctrl_X10005_Y10001.coord_x = 19;
+defparam syncreset_ctrl_X10005_Y10001.coord_y = 5;
+defparam syncreset_ctrl_X10005_Y10001.coord_z = 0;
+defparam syncreset_ctrl_X10005_Y10001.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncreset_ctrl_X10005_Y10002(
 	.Din(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
 	.Dout(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10005_Y10002_SIG ));
-defparam syncreset_ctrl_X10005_Y10002.coord_x = 9;
+defparam syncreset_ctrl_X10005_Y10002.coord_x = 11;
 defparam syncreset_ctrl_X10005_Y10002.coord_y = 3;
 defparam syncreset_ctrl_X10005_Y10002.coord_z = 0;
 defparam syncreset_ctrl_X10005_Y10002.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncreset_ctrl_X10005_Y10003(
-	.Din(),
-	.Dout(SyncReset_X10005_Y10003_GND));
-defparam syncreset_ctrl_X10005_Y10003.coord_x = 14;
-defparam syncreset_ctrl_X10005_Y10003.coord_y = 3;
+	.Din(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
+	.Dout(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10005_Y10003_SIG ));
+defparam syncreset_ctrl_X10005_Y10003.coord_x = 9;
+defparam syncreset_ctrl_X10005_Y10003.coord_y = 1;
 defparam syncreset_ctrl_X10005_Y10003.coord_z = 0;
-defparam syncreset_ctrl_X10005_Y10003.SyncCtrlMux = 2'b00;
+defparam syncreset_ctrl_X10005_Y10003.SyncCtrlMux = 2'b10;
+
+alta_syncctrl syncreset_ctrl_X10006_Y10001(
+	.Din(\i2c_device|brin_rec_A_0_Y ),
+	.Dout(\i2c_device|brin_rec_A_0_Y__SyncReset_X10006_Y10001_SIG ));
+defparam syncreset_ctrl_X10006_Y10001.coord_x = 18;
+defparam syncreset_ctrl_X10006_Y10001.coord_y = 6;
+defparam syncreset_ctrl_X10006_Y10001.coord_z = 0;
+defparam syncreset_ctrl_X10006_Y10001.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncreset_ctrl_X10006_Y10002(
-	.Din(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y ),
-	.Dout(\i2s_osd_select_2|pcm_to_pdm_select|normal|clk_div[0]_reg_q_A_1_Y_A_Y_A_Y__SyncReset_X10006_Y10002_SIG ));
-defparam syncreset_ctrl_X10006_Y10002.coord_x = 16;
-defparam syncreset_ctrl_X10006_Y10002.coord_y = 2;
+	.Din(),
+	.Dout(SyncReset_X10006_Y10002_GND));
+defparam syncreset_ctrl_X10006_Y10002.coord_x = 15;
+defparam syncreset_ctrl_X10006_Y10002.coord_y = 6;
 defparam syncreset_ctrl_X10006_Y10002.coord_z = 0;
-defparam syncreset_ctrl_X10006_Y10002.SyncCtrlMux = 2'b10;
+defparam syncreset_ctrl_X10006_Y10002.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10006_Y10003(
-	.Din(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
-	.Dout(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10006_Y10003_SIG ));
-defparam syncreset_ctrl_X10006_Y10003.coord_x = 9;
+	.Din(),
+	.Dout(SyncReset_X10006_Y10003_GND));
+defparam syncreset_ctrl_X10006_Y10003.coord_x = 11;
 defparam syncreset_ctrl_X10006_Y10003.coord_y = 2;
 defparam syncreset_ctrl_X10006_Y10003.coord_z = 0;
-defparam syncreset_ctrl_X10006_Y10003.SyncCtrlMux = 2'b10;
+defparam syncreset_ctrl_X10006_Y10003.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10007_Y10001(
 	.Din(\i2c_device|brin_rec_A_0_Y ),
 	.Dout(\i2c_device|brin_rec_A_0_Y__SyncReset_X10007_Y10001_SIG ));
-defparam syncreset_ctrl_X10007_Y10001.coord_x = 20;
-defparam syncreset_ctrl_X10007_Y10001.coord_y = 6;
+defparam syncreset_ctrl_X10007_Y10001.coord_x = 18;
+defparam syncreset_ctrl_X10007_Y10001.coord_y = 7;
 defparam syncreset_ctrl_X10007_Y10001.coord_z = 0;
 defparam syncreset_ctrl_X10007_Y10001.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncreset_ctrl_X10007_Y10002(
-	.Din(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y ),
-	.Dout(\i2s_osd_select_2|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10007_Y10002_SIG ));
-defparam syncreset_ctrl_X10007_Y10002.coord_x = 18;
-defparam syncreset_ctrl_X10007_Y10002.coord_y = 5;
+	.Din(\i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y ),
+	.Dout(\i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y__SyncReset_X10007_Y10002_INV ));
+defparam syncreset_ctrl_X10007_Y10002.coord_x = 16;
+defparam syncreset_ctrl_X10007_Y10002.coord_y = 2;
 defparam syncreset_ctrl_X10007_Y10002.coord_z = 0;
-defparam syncreset_ctrl_X10007_Y10002.SyncCtrlMux = 2'b10;
+defparam syncreset_ctrl_X10007_Y10002.SyncCtrlMux = 2'b11;
 
 alta_syncctrl syncreset_ctrl_X10007_Y10003(
-	.Din(),
-	.Dout(SyncReset_X10007_Y10003_GND));
-defparam syncreset_ctrl_X10007_Y10003.coord_x = 10;
-defparam syncreset_ctrl_X10007_Y10003.coord_y = 1;
+	.Din(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ),
+	.Dout(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10007_Y10003_SIG ));
+defparam syncreset_ctrl_X10007_Y10003.coord_x = 18;
+defparam syncreset_ctrl_X10007_Y10003.coord_y = 2;
 defparam syncreset_ctrl_X10007_Y10003.coord_z = 0;
-defparam syncreset_ctrl_X10007_Y10003.SyncCtrlMux = 2'b00;
+defparam syncreset_ctrl_X10007_Y10003.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncreset_ctrl_X10008_Y10001(
-	.Din(\i2c_device|lockb_rec_A_0_Y ),
-	.Dout(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10008_Y10001_SIG ));
-defparam syncreset_ctrl_X10008_Y10001.coord_x = 18;
-defparam syncreset_ctrl_X10008_Y10001.coord_y = 3;
+	.Din(\i2c_device|brip_rec_A_0_Y ),
+	.Dout(\i2c_device|brip_rec_A_0_Y__SyncReset_X10008_Y10001_SIG ));
+defparam syncreset_ctrl_X10008_Y10001.coord_x = 17;
+defparam syncreset_ctrl_X10008_Y10001.coord_y = 11;
 defparam syncreset_ctrl_X10008_Y10001.coord_z = 0;
 defparam syncreset_ctrl_X10008_Y10001.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncreset_ctrl_X10008_Y10002(
-	.Din(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y ),
-	.Dout(\i2s_osd_select_1|pcm_to_pdm_select|normal|output_de_A_8_Y_B_Y_A_Y__SyncReset_X10008_Y10002_SIG ));
-defparam syncreset_ctrl_X10008_Y10002.coord_x = 16;
+	.Din(),
+	.Dout(SyncReset_X10008_Y10002_GND));
+defparam syncreset_ctrl_X10008_Y10002.coord_x = 15;
 defparam syncreset_ctrl_X10008_Y10002.coord_y = 3;
 defparam syncreset_ctrl_X10008_Y10002.coord_z = 0;
-defparam syncreset_ctrl_X10008_Y10002.SyncCtrlMux = 2'b10;
+defparam syncreset_ctrl_X10008_Y10002.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10008_Y10003(
-	.Din(),
-	.Dout(SyncReset_X10008_Y10003_GND));
-defparam syncreset_ctrl_X10008_Y10003.coord_x = 8;
-defparam syncreset_ctrl_X10008_Y10003.coord_y = 4;
+	.Din(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
+	.Dout(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10008_Y10003_SIG ));
+defparam syncreset_ctrl_X10008_Y10003.coord_x = 11;
+defparam syncreset_ctrl_X10008_Y10003.coord_y = 1;
 defparam syncreset_ctrl_X10008_Y10003.coord_z = 0;
-defparam syncreset_ctrl_X10008_Y10003.SyncCtrlMux = 2'b00;
+defparam syncreset_ctrl_X10008_Y10003.SyncCtrlMux = 2'b10;
+
+alta_syncctrl syncreset_ctrl_X10009_Y10001(
+	.Din(\i2c_device|brip_rec_A_0_Y ),
+	.Dout(\i2c_device|brip_rec_A_0_Y__SyncReset_X10009_Y10001_SIG ));
+defparam syncreset_ctrl_X10009_Y10001.coord_x = 17;
+defparam syncreset_ctrl_X10009_Y10001.coord_y = 10;
+defparam syncreset_ctrl_X10009_Y10001.coord_z = 0;
+defparam syncreset_ctrl_X10009_Y10001.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncreset_ctrl_X10009_Y10002(
 	.Din(),
 	.Dout(SyncReset_X10009_Y10002_GND));
-defparam syncreset_ctrl_X10009_Y10002.coord_x = 16;
-defparam syncreset_ctrl_X10009_Y10002.coord_y = 1;
+defparam syncreset_ctrl_X10009_Y10002.coord_x = 11;
+defparam syncreset_ctrl_X10009_Y10002.coord_y = 4;
 defparam syncreset_ctrl_X10009_Y10002.coord_z = 0;
 defparam syncreset_ctrl_X10009_Y10002.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10009_Y10003(
 	.Din(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ),
 	.Dout(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10009_Y10003_SIG ));
-defparam syncreset_ctrl_X10009_Y10003.coord_x = 17;
+defparam syncreset_ctrl_X10009_Y10003.coord_x = 14;
 defparam syncreset_ctrl_X10009_Y10003.coord_y = 4;
 defparam syncreset_ctrl_X10009_Y10003.coord_z = 0;
 defparam syncreset_ctrl_X10009_Y10003.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncreset_ctrl_X10010_Y10001(
-	.Din(),
-	.Dout(SyncReset_X10010_Y10001_GND));
+	.Din(\i2c_device|locka_rec_A_0_Y ),
+	.Dout(\i2c_device|locka_rec_A_0_Y__SyncReset_X10010_Y10001_SIG ));
 defparam syncreset_ctrl_X10010_Y10001.coord_x = 19;
-defparam syncreset_ctrl_X10010_Y10001.coord_y = 10;
+defparam syncreset_ctrl_X10010_Y10001.coord_y = 8;
 defparam syncreset_ctrl_X10010_Y10001.coord_z = 0;
-defparam syncreset_ctrl_X10010_Y10001.SyncCtrlMux = 2'b00;
+defparam syncreset_ctrl_X10010_Y10001.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncreset_ctrl_X10010_Y10002(
-	.Din(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
-	.Dout(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10010_Y10002_SIG ));
-defparam syncreset_ctrl_X10010_Y10002.coord_x = 10;
-defparam syncreset_ctrl_X10010_Y10002.coord_y = 4;
+	.Din(),
+	.Dout(SyncReset_X10010_Y10002_GND));
+defparam syncreset_ctrl_X10010_Y10002.coord_x = 18;
+defparam syncreset_ctrl_X10010_Y10002.coord_y = 10;
 defparam syncreset_ctrl_X10010_Y10002.coord_z = 0;
-defparam syncreset_ctrl_X10010_Y10002.SyncCtrlMux = 2'b10;
+defparam syncreset_ctrl_X10010_Y10002.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10010_Y10003(
 	.Din(),
 	.Dout(SyncReset_X10010_Y10003_GND));
-defparam syncreset_ctrl_X10010_Y10003.coord_x = 11;
-defparam syncreset_ctrl_X10010_Y10003.coord_y = 3;
+defparam syncreset_ctrl_X10010_Y10003.coord_x = 9;
+defparam syncreset_ctrl_X10010_Y10003.coord_y = 4;
 defparam syncreset_ctrl_X10010_Y10003.coord_z = 0;
 defparam syncreset_ctrl_X10010_Y10003.SyncCtrlMux = 2'b00;
-
-alta_syncctrl syncreset_ctrl_X10011_Y10001(
-	.Din(\i2c_device|brip_rec_A_0_Y ),
-	.Dout(\i2c_device|brip_rec_A_0_Y__SyncReset_X10011_Y10001_SIG ));
-defparam syncreset_ctrl_X10011_Y10001.coord_x = 16;
-defparam syncreset_ctrl_X10011_Y10001.coord_y = 7;
-defparam syncreset_ctrl_X10011_Y10001.coord_z = 0;
-defparam syncreset_ctrl_X10011_Y10001.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncreset_ctrl_X10011_Y10002(
 	.Din(),
 	.Dout(SyncReset_X10011_Y10002_GND));
-defparam syncreset_ctrl_X10011_Y10002.coord_x = 15;
-defparam syncreset_ctrl_X10011_Y10002.coord_y = 2;
+defparam syncreset_ctrl_X10011_Y10002.coord_x = 10;
+defparam syncreset_ctrl_X10011_Y10002.coord_y = 3;
 defparam syncreset_ctrl_X10011_Y10002.coord_z = 0;
 defparam syncreset_ctrl_X10011_Y10002.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10011_Y10003(
 	.Din(),
 	.Dout(SyncReset_X10011_Y10003_GND));
-defparam syncreset_ctrl_X10011_Y10003.coord_x = 15;
-defparam syncreset_ctrl_X10011_Y10003.coord_y = 1;
+defparam syncreset_ctrl_X10011_Y10003.coord_x = 17;
+defparam syncreset_ctrl_X10011_Y10003.coord_y = 6;
 defparam syncreset_ctrl_X10011_Y10003.coord_z = 0;
 defparam syncreset_ctrl_X10011_Y10003.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10012_Y10001(
-	.Din(\i2c_device|lockb_rec_A_0_Y ),
-	.Dout(\i2c_device|lockb_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ));
-defparam syncreset_ctrl_X10012_Y10001.coord_x = 18;
-defparam syncreset_ctrl_X10012_Y10001.coord_y = 4;
+	.Din(\i2c_device|locka_rec_A_0_Y ),
+	.Dout(\i2c_device|locka_rec_A_0_Y__SyncReset_X10012_Y10001_SIG ));
+defparam syncreset_ctrl_X10012_Y10001.coord_x = 19;
+defparam syncreset_ctrl_X10012_Y10001.coord_y = 9;
 defparam syncreset_ctrl_X10012_Y10001.coord_z = 0;
 defparam syncreset_ctrl_X10012_Y10001.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncreset_ctrl_X10012_Y10002(
-	.Din(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
-	.Dout(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10012_Y10002_SIG ));
-defparam syncreset_ctrl_X10012_Y10002.coord_x = 10;
-defparam syncreset_ctrl_X10012_Y10002.coord_y = 3;
+	.Din(),
+	.Dout(SyncReset_X10012_Y10002_GND));
+defparam syncreset_ctrl_X10012_Y10002.coord_x = 17;
+defparam syncreset_ctrl_X10012_Y10002.coord_y = 4;
 defparam syncreset_ctrl_X10012_Y10002.coord_z = 0;
-defparam syncreset_ctrl_X10012_Y10002.SyncCtrlMux = 2'b10;
+defparam syncreset_ctrl_X10012_Y10002.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10012_Y10003(
 	.Din(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
 	.Dout(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10012_Y10003_SIG ));
-defparam syncreset_ctrl_X10012_Y10003.coord_x = 8;
-defparam syncreset_ctrl_X10012_Y10003.coord_y = 3;
+defparam syncreset_ctrl_X10012_Y10003.coord_x = 14;
+defparam syncreset_ctrl_X10012_Y10003.coord_y = 1;
 defparam syncreset_ctrl_X10012_Y10003.coord_z = 0;
 defparam syncreset_ctrl_X10012_Y10003.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncreset_ctrl_X10014_Y10001(
-	.Din(\i2c_device|locka_rec_A_0_Y ),
-	.Dout(\i2c_device|locka_rec_A_0_Y__SyncReset_X10014_Y10001_SIG ));
+	.Din(),
+	.Dout(SyncReset_X10014_Y10001_GND));
 defparam syncreset_ctrl_X10014_Y10001.coord_x = 18;
-defparam syncreset_ctrl_X10014_Y10001.coord_y = 10;
+defparam syncreset_ctrl_X10014_Y10001.coord_y = 3;
 defparam syncreset_ctrl_X10014_Y10001.coord_z = 0;
-defparam syncreset_ctrl_X10014_Y10001.SyncCtrlMux = 2'b10;
+defparam syncreset_ctrl_X10014_Y10001.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10014_Y10002(
-	.Din(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y ),
-	.Dout(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10014_Y10002_SIG ));
-defparam syncreset_ctrl_X10014_Y10002.coord_x = 14;
-defparam syncreset_ctrl_X10014_Y10002.coord_y = 1;
+	.Din(),
+	.Dout(SyncReset_X10014_Y10002_GND));
+defparam syncreset_ctrl_X10014_Y10002.coord_x = 12;
+defparam syncreset_ctrl_X10014_Y10002.coord_y = 2;
 defparam syncreset_ctrl_X10014_Y10002.coord_z = 0;
-defparam syncreset_ctrl_X10014_Y10002.SyncCtrlMux = 2'b10;
+defparam syncreset_ctrl_X10014_Y10002.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10014_Y10003(
-	.Din(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
-	.Dout(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10014_Y10003_SIG ));
-defparam syncreset_ctrl_X10014_Y10003.coord_x = 15;
-defparam syncreset_ctrl_X10014_Y10003.coord_y = 3;
+	.Din(),
+	.Dout(SyncReset_X10014_Y10003_GND));
+defparam syncreset_ctrl_X10014_Y10003.coord_x = 20;
+defparam syncreset_ctrl_X10014_Y10003.coord_y = 6;
 defparam syncreset_ctrl_X10014_Y10003.coord_z = 0;
-defparam syncreset_ctrl_X10014_Y10003.SyncCtrlMux = 2'b10;
+defparam syncreset_ctrl_X10014_Y10003.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10015_Y10001(
 	.Din(),
 	.Dout(SyncReset_X10015_Y10001_GND));
-defparam syncreset_ctrl_X10015_Y10001.coord_x = 17;
-defparam syncreset_ctrl_X10015_Y10001.coord_y = 2;
+defparam syncreset_ctrl_X10015_Y10001.coord_x = 16;
+defparam syncreset_ctrl_X10015_Y10001.coord_y = 4;
 defparam syncreset_ctrl_X10015_Y10001.coord_z = 0;
 defparam syncreset_ctrl_X10015_Y10001.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10015_Y10002(
 	.Din(),
 	.Dout(SyncReset_X10015_Y10002_GND));
-defparam syncreset_ctrl_X10015_Y10002.coord_x = 19;
-defparam syncreset_ctrl_X10015_Y10002.coord_y = 5;
+defparam syncreset_ctrl_X10015_Y10002.coord_x = 12;
+defparam syncreset_ctrl_X10015_Y10002.coord_y = 4;
 defparam syncreset_ctrl_X10015_Y10002.coord_z = 0;
 defparam syncreset_ctrl_X10015_Y10002.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10015_Y10003(
-	.Din(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ),
-	.Dout(\i2s_osd_select_2|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10015_Y10003_SIG ));
-defparam syncreset_ctrl_X10015_Y10003.coord_x = 12;
-defparam syncreset_ctrl_X10015_Y10003.coord_y = 2;
+	.Din(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
+	.Dout(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10015_Y10003_SIG ));
+defparam syncreset_ctrl_X10015_Y10003.coord_x = 10;
+defparam syncreset_ctrl_X10015_Y10003.coord_y = 1;
 defparam syncreset_ctrl_X10015_Y10003.coord_z = 0;
 defparam syncreset_ctrl_X10015_Y10003.SyncCtrlMux = 2'b10;
 
@@ -20510,120 +20259,120 @@ alta_syncctrl syncreset_ctrl_X10016_Y10001(
 	.Din(),
 	.Dout(SyncReset_X10016_Y10001_GND));
 defparam syncreset_ctrl_X10016_Y10001.coord_x = 17;
-defparam syncreset_ctrl_X10016_Y10001.coord_y = 1;
+defparam syncreset_ctrl_X10016_Y10001.coord_y = 2;
 defparam syncreset_ctrl_X10016_Y10001.coord_z = 0;
 defparam syncreset_ctrl_X10016_Y10001.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10016_Y10002(
 	.Din(),
 	.Dout(SyncReset_X10016_Y10002_GND));
-defparam syncreset_ctrl_X10016_Y10002.coord_x = 9;
-defparam syncreset_ctrl_X10016_Y10002.coord_y = 4;
+defparam syncreset_ctrl_X10016_Y10002.coord_x = 12;
+defparam syncreset_ctrl_X10016_Y10002.coord_y = 3;
 defparam syncreset_ctrl_X10016_Y10002.coord_z = 0;
 defparam syncreset_ctrl_X10016_Y10002.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10016_Y10003(
 	.Din(),
 	.Dout(SyncReset_X10016_Y10003_GND));
-defparam syncreset_ctrl_X10016_Y10003.coord_x = 11;
-defparam syncreset_ctrl_X10016_Y10003.coord_y = 2;
+defparam syncreset_ctrl_X10016_Y10003.coord_x = 18;
+defparam syncreset_ctrl_X10016_Y10003.coord_y = 1;
 defparam syncreset_ctrl_X10016_Y10003.coord_z = 0;
 defparam syncreset_ctrl_X10016_Y10003.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10017_Y10001(
 	.Din(),
 	.Dout(SyncReset_X10017_Y10001_GND));
-defparam syncreset_ctrl_X10017_Y10001.coord_x = 16;
-defparam syncreset_ctrl_X10017_Y10001.coord_y = 5;
+defparam syncreset_ctrl_X10017_Y10001.coord_x = 15;
+defparam syncreset_ctrl_X10017_Y10001.coord_y = 2;
 defparam syncreset_ctrl_X10017_Y10001.coord_z = 0;
 defparam syncreset_ctrl_X10017_Y10001.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10017_Y10002(
-	.Din(),
-	.Dout(SyncReset_X10017_Y10002_GND));
-defparam syncreset_ctrl_X10017_Y10002.coord_x = 11;
-defparam syncreset_ctrl_X10017_Y10002.coord_y = 4;
+	.Din(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y ),
+	.Dout(\i2s_osd_select_1|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10017_Y10002_SIG ));
+defparam syncreset_ctrl_X10017_Y10002.coord_x = 14;
+defparam syncreset_ctrl_X10017_Y10002.coord_y = 3;
 defparam syncreset_ctrl_X10017_Y10002.coord_z = 0;
-defparam syncreset_ctrl_X10017_Y10002.SyncCtrlMux = 2'b00;
+defparam syncreset_ctrl_X10017_Y10002.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncreset_ctrl_X10017_Y10003(
 	.Din(),
 	.Dout(SyncReset_X10017_Y10003_GND));
-defparam syncreset_ctrl_X10017_Y10003.coord_x = 9;
-defparam syncreset_ctrl_X10017_Y10003.coord_y = 1;
+defparam syncreset_ctrl_X10017_Y10003.coord_x = 20;
+defparam syncreset_ctrl_X10017_Y10003.coord_y = 10;
 defparam syncreset_ctrl_X10017_Y10003.coord_z = 0;
 defparam syncreset_ctrl_X10017_Y10003.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10018_Y10001(
 	.Din(),
 	.Dout(SyncReset_X10018_Y10001_GND));
-defparam syncreset_ctrl_X10018_Y10001.coord_x = 16;
+defparam syncreset_ctrl_X10018_Y10001.coord_x = 10;
 defparam syncreset_ctrl_X10018_Y10001.coord_y = 4;
 defparam syncreset_ctrl_X10018_Y10001.coord_z = 0;
 defparam syncreset_ctrl_X10018_Y10001.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10018_Y10002(
-	.Din(),
-	.Dout(SyncReset_X10018_Y10002_GND));
-defparam syncreset_ctrl_X10018_Y10002.coord_x = 19;
-defparam syncreset_ctrl_X10018_Y10002.coord_y = 4;
+	.Din(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y ),
+	.Dout(\i2s_osd_select_2|pcm_to_pdm_select|raw|Q1_PRE_A_Y__SyncReset_X10018_Y10002_SIG ));
+defparam syncreset_ctrl_X10018_Y10002.coord_x = 14;
+defparam syncreset_ctrl_X10018_Y10002.coord_y = 6;
 defparam syncreset_ctrl_X10018_Y10002.coord_z = 0;
-defparam syncreset_ctrl_X10018_Y10002.SyncCtrlMux = 2'b00;
+defparam syncreset_ctrl_X10018_Y10002.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncreset_ctrl_X10018_Y10003(
-	.Din(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ),
-	.Dout(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10018_Y10003_SIG ));
-defparam syncreset_ctrl_X10018_Y10003.coord_x = 17;
-defparam syncreset_ctrl_X10018_Y10003.coord_y = 5;
+	.Din(),
+	.Dout(SyncReset_X10018_Y10003_GND));
+defparam syncreset_ctrl_X10018_Y10003.coord_x = 20;
+defparam syncreset_ctrl_X10018_Y10003.coord_y = 8;
 defparam syncreset_ctrl_X10018_Y10003.coord_z = 0;
-defparam syncreset_ctrl_X10018_Y10003.SyncCtrlMux = 2'b10;
+defparam syncreset_ctrl_X10018_Y10003.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10019_Y10001(
-	.Din(\i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y ),
-	.Dout(\i2c_device|sda_d_0_9_q_A_Y_B_Y_A_Y__SyncReset_X10019_Y10001_INV ));
-defparam syncreset_ctrl_X10019_Y10001.coord_x = 15;
-defparam syncreset_ctrl_X10019_Y10001.coord_y = 4;
+	.Din(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y ),
+	.Dout(\i2s_osd_select_1|pcm_to_pdm_select|normal|clk_div_count_A_2_Y_A_Y_A_Y_A_Y__SyncReset_X10019_Y10001_SIG ));
+defparam syncreset_ctrl_X10019_Y10001.coord_x = 16;
+defparam syncreset_ctrl_X10019_Y10001.coord_y = 3;
 defparam syncreset_ctrl_X10019_Y10001.coord_z = 0;
-defparam syncreset_ctrl_X10019_Y10001.SyncCtrlMux = 2'b11;
+defparam syncreset_ctrl_X10019_Y10001.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncreset_ctrl_X10019_Y10002(
 	.Din(),
 	.Dout(SyncReset_X10019_Y10002_GND));
-defparam syncreset_ctrl_X10019_Y10002.coord_x = 17;
-defparam syncreset_ctrl_X10019_Y10002.coord_y = 6;
+defparam syncreset_ctrl_X10019_Y10002.coord_x = 15;
+defparam syncreset_ctrl_X10019_Y10002.coord_y = 1;
 defparam syncreset_ctrl_X10019_Y10002.coord_z = 0;
 defparam syncreset_ctrl_X10019_Y10002.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10019_Y10003(
-	.Din(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y ),
-	.Dout(\i2s_osd_select_1|pcm_to_pdm_select|normal|bpo_A_2_Y_B_Y_A_1_Y__SyncReset_X10019_Y10003_SIG ));
-defparam syncreset_ctrl_X10019_Y10003.coord_x = 12;
-defparam syncreset_ctrl_X10019_Y10003.coord_y = 1;
+	.Din(),
+	.Dout(SyncReset_X10019_Y10003_GND));
+defparam syncreset_ctrl_X10019_Y10003.coord_x = 20;
+defparam syncreset_ctrl_X10019_Y10003.coord_y = 7;
 defparam syncreset_ctrl_X10019_Y10003.coord_z = 0;
-defparam syncreset_ctrl_X10019_Y10003.SyncCtrlMux = 2'b10;
+defparam syncreset_ctrl_X10019_Y10003.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10020_Y10001(
-	.Din(),
-	.Dout(SyncReset_X10020_Y10001_GND));
-defparam syncreset_ctrl_X10020_Y10001.coord_x = 20;
-defparam syncreset_ctrl_X10020_Y10001.coord_y = 4;
+	.Din(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
+	.Dout(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10020_Y10001_SIG ));
+defparam syncreset_ctrl_X10020_Y10001.coord_x = 10;
+defparam syncreset_ctrl_X10020_Y10001.coord_y = 2;
 defparam syncreset_ctrl_X10020_Y10001.coord_z = 0;
-defparam syncreset_ctrl_X10020_Y10001.SyncCtrlMux = 2'b00;
+defparam syncreset_ctrl_X10020_Y10001.SyncCtrlMux = 2'b10;
 
 alta_syncctrl syncreset_ctrl_X10020_Y10002(
 	.Din(),
 	.Dout(SyncReset_X10020_Y10002_GND));
-defparam syncreset_ctrl_X10020_Y10002.coord_x = 14;
-defparam syncreset_ctrl_X10020_Y10002.coord_y = 5;
+defparam syncreset_ctrl_X10020_Y10002.coord_x = 16;
+defparam syncreset_ctrl_X10020_Y10002.coord_y = 1;
 defparam syncreset_ctrl_X10020_Y10002.coord_z = 0;
 defparam syncreset_ctrl_X10020_Y10002.SyncCtrlMux = 2'b00;
 
 alta_syncctrl syncreset_ctrl_X10020_Y10003(
-	.Din(),
-	.Dout(SyncReset_X10020_Y10003_GND));
-defparam syncreset_ctrl_X10020_Y10003.coord_x = 20;
-defparam syncreset_ctrl_X10020_Y10003.coord_y = 9;
+	.Din(\i2c_device|stop_B_0_Y_B_Y_A_4_Y ),
+	.Dout(\i2c_device|stop_B_0_Y_B_Y_A_4_Y__SyncReset_X10020_Y10003_SIG ));
+defparam syncreset_ctrl_X10020_Y10003.coord_x = 9;
+defparam syncreset_ctrl_X10020_Y10003.coord_y = 3;
 defparam syncreset_ctrl_X10020_Y10003.coord_z = 0;
-defparam syncreset_ctrl_X10020_Y10003.SyncCtrlMux = 2'b00;
+defparam syncreset_ctrl_X10020_Y10003.SyncCtrlMux = 2'b10;
 
 endmodule

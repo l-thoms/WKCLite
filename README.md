@@ -23,6 +23,9 @@ An analog binocular kigurumi vision enhancemnent project based on ESP32-S3 modul
 * It's recommended to take some anti-moisture precautions to keep the circuitry stable.
 * Communication protocol does not use BLE native pairing method for the convenience of mobile phone operation. See `main/protocol`.
 
+## Known Issues
+* The accuracy of battery level detection is relatively limited, so if needed, you can measure it yourself and adjust the detection threshold.
+
 ## TODO
 - [ ] Implement camera capture
 - [ ] Improve the protocol and add support for shortcut and settings table

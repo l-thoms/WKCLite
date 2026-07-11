@@ -13,6 +13,7 @@ static int fan_level = 0;
 static bool power_changed = false;
 static bool power_down = false;
 static bool current_power_state = false;
+static bool init = false;
 
 void pwm_devices_init()
 {
@@ -47,6 +48,12 @@ void pwm_devices_init()
     channel_config.timer_sel = LEDC_TIMER_1;
     channel_config.gpio_num = FAN_GPIO;
     ledc_channel_config(&channel_config);
+    init = true;
+}
+
+bool pwm_device_is_init()
+{
+    return init;
 }
 
 void pwm_device_set_eye_level(int level)

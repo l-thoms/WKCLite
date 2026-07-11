@@ -1,5 +1,8 @@
 #pragma once
 
+#include <stdbool.h>
+
+bool pwm_device_is_init();
 void pwm_devices_init();
 void pwm_device_set_eye_level(int level);
 void pwm_device_set_fan_level(int level);

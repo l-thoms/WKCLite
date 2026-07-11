@@ -12,12 +12,16 @@
 #include "pwm.h"
 #include "lock.h"
 
-#define BATTERY_VALUE_FULL 3300
-#define BATTERY_VALUE_CHARGING_FULL 3450
-#define BATTERY_VALUE_EMPTY 2300
-#define BATTERY_VALUE_CHARGING_EMPTY 2500
+#define BATTERY_VALUE_FULL 3050
+#define BATTERY_VALUE_CHARGING_FULL 3530
+// 2350 limit
+#define BATTERY_VALUE_EMPTY 2450
+// 2750 limit
+#define BATTERY_VALUE_CHARGING_EMPTY 2850
 #define BATTERY_VALUE_LENGTH 10
+#define BATTERY_STATE_SWITCH_THRESHOLD 60
 #define BATTERY_VALID_THRESHOLD 150
+#define BATTERY_POW_COMPENSATION 2.7f
 
 #define IR_VALUE_THRESHOLD 3650
 
@@ -26,6 +30,7 @@ static adc_oneshot_unit_handle_t current_unit_handle;
 static bool current_ir_value = false;
 static bool battery_value_init = false;
 static int battery_value_storage[BATTERY_VALUE_LENGTH] = { 0 };
+static int battery_state_switch_count = BATTERY_STATE_SWITCH_THRESHOLD;
 static battery_state_t battery_state_storage[BATTERY_VALUE_LENGTH] = { 0 };
 static int current_battery_index = 0;
 static int current_battery_result = 0;
@@ -49,7 +54,7 @@ static bool battery_value_check_valid()
     return battery_value_max - battery_value_min < BATTERY_VALID_THRESHOLD;
 }
 
-static void adc_calculate_battery_percentage()
+static void adc_calculate_battery_percentage(bool recalculate)
 {
     int battery_value_average = 0;
     int battery_value_corrected[BATTERY_VALUE_LENGTH];
@@ -64,8 +69,9 @@ static void adc_calculate_battery_percentage()
         else if (battery_state_storage[i] == BATTERY_STATE_CHRG)
         {
             battery_value_corrected[i] = (int)(BATTERY_VALUE_EMPTY +
-                (float)(battery_value_corrected[i] - BATTERY_VALUE_CHARGING_EMPTY) /
-                (BATTERY_VALUE_CHARGING_FULL - BATTERY_VALUE_CHARGING_EMPTY) *
+                powf((float)(battery_value_corrected[i] - BATTERY_VALUE_CHARGING_EMPTY) /
+                (BATTERY_VALUE_CHARGING_FULL - BATTERY_VALUE_CHARGING_EMPTY),
+                BATTERY_POW_COMPENSATION) *
                 (BATTERY_VALUE_FULL - BATTERY_VALUE_EMPTY) + 0.5f);
         }
     }
@@ -82,7 +88,8 @@ static void adc_calculate_battery_percentage()
     {
         if (current_battery_index < BATTERY_VALUE_LENGTH || state == BATTERY_STATE_UNDEF ||
             state == BATTERY_STATE_NORMAL && calculated_percentage < current_battery_result ||
-            state == BATTERY_STATE_CHRG && calculated_percentage > current_battery_result)
+            state == BATTERY_STATE_CHRG && calculated_percentage > current_battery_result ||
+            recalculate)
             current_battery_result = calculated_percentage;
         if (state == BATTERY_STATE_CHRG && current_battery_result == 100)
             current_battery_result = 99;
@@ -102,6 +109,7 @@ static void adc_monitor_task(void *params)
         if (state != fetch && !init)
         {
             state = fetch;
+            battery_state_switch_count = BATTERY_STATE_SWITCH_THRESHOLD;
             goto adc_monitor_next;
         }
         if (lock_is_busy() || pwm_device_power_skip())
@@ -130,18 +138,26 @@ static void adc_monitor_task(void *params)
             }
             battery_value_init = true;
         }
-        battery_value_storage[current_battery_index++ %
+        battery_value_storage[current_battery_index %
                               BATTERY_VALUE_LENGTH] = read_battery_value;
-        battery_state_storage[current_battery_index++ %
+        battery_state_storage[current_battery_index %
                               BATTERY_VALUE_LENGTH] = fetch;
+        current_battery_index += 1;
         state = fetch;
-        adc_calculate_battery_percentage();
+        adc_calculate_battery_percentage(battery_state_switch_count > 0);
         is_battery_plugged = battery_value_check_valid();
-        pwm_device_check_power();
-        lock_check_power();
+        if (battery_state_switch_count > 0)
+            battery_state_switch_count -= 1;
+        if (pwm_device_is_init())
+        {
+            pwm_device_check_power();
+            lock_check_power();
+        }
         adc_monitor_next:
         if(!init)
+        {
             vTaskDelay(1000 / portTICK_PERIOD_MS);
+        }
     } while (!init);
 }
 
@@ -183,7 +199,7 @@ void adc_monitor_read_battery(int *value, bool *charging, bool *plugged)
     {
         *value = current_battery_result;
         //*value = battery_value_storage[current_battery_index %
-        //                                BATTERY_VALUE_LENGTH] + current_battery_result * 10000;
+        //         BATTERY_VALUE_LENGTH] + current_battery_result * 10000;
     }
     if(charging != NULL)
         *charging = state != BATTERY_STATE_NORMAL;

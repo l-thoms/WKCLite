@@ -413,6 +413,12 @@ static int ble_gap_event_handler(struct ble_gap_event *event, void *arg)
         case BLE_GAP_EVENT_ADV_COMPLETE:
             ui_home_update_from_shell(current_shell);
             break;
+        case BLE_GAP_EVENT_PARING_COMPLETE:
+            // Prevent advertise stops when executing native pairing (unused)
+            if (current_handle == BLE_HS_CONN_HANDLE_NONE ||
+                wkc_settings_get_current()->keep_advertise)
+                advertise();
+            break;
         default:
             break;
     }
@@ -487,6 +493,7 @@ void protocol_ble_init(ui_shell_t *shell)
     ESP_LOGI(TAG, "Protocol security okay");
 
     ble_hs_cfg.sm_io_cap = BLE_HS_IO_NO_INPUT_OUTPUT;
+    ble_hs_cfg.sm_bonding = 0;
     ble_hs_cfg.sm_mitm = 0;
 
     gatt_svr_init();

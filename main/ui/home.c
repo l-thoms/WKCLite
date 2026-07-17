@@ -7,12 +7,13 @@
 #include <time.h>
 #include <sys/time.h>
 #include "peripherals/lock.h"
+#include "peripherals/pwm.h"
+#include "peripherals/adc.h"
 #include "protocol/ble.h"
 #include "display/graphics.h"
 #include "host/ble_gap.h"
-#include "peripherals/adc.h"
 #include "io/io_extend.h"
-#include "peripherals/pwm.h"
+#include "profile/settings.h"
 
 typedef struct
 {
@@ -59,12 +60,12 @@ static void select_battery_icon(char *battery_icon_char, int value, bool chargin
 }
 
 static void ui_home_draw_status_icon(const char *name, display_format_t formats[],
-                                     display_orientation_t orientation, int *icon_draw_index)
+                                     display_orientation_t orientation, display_vector_t *icon_draw_index)
 {
     char icon[60] = { 0 };
     int icon_width;
     display_vector_t icon_coordinate_primary = display_coordinate_compensation(
-                                              *icon_draw_index, 12,
+                                              icon_draw_index->x, icon_draw_index->y - 2,
                                               formats[0]);
     display_get_icon(name, formats[0], false, icon, &icon_width);
     display_draw_image(0, orientation, icon_coordinate_primary.x + 1,
@@ -74,7 +75,7 @@ static void ui_home_draw_status_icon(const char *name, display_format_t formats[
     if(orientation != DISPLAY_ORIENTATION_VERTICAL_TILED)
     {
         display_vector_t icon_coordinate_secondary = display_coordinate_compensation(
-                                              *icon_draw_index, 12,
+                                              icon_draw_index->x, icon_draw_index->y - 2,
                                               formats[1]);
         display_get_icon(name, formats[1], false, icon, &icon_width);
         display_draw_image(1, orientation, icon_coordinate_secondary.x + 1,
@@ -82,7 +83,7 @@ static void ui_home_draw_status_icon(const char *name, display_format_t formats[
         display_draw_image(1, orientation, icon_coordinate_secondary.x,
                            icon_coordinate_secondary.y, icon, icon_width, DISPLAY_COLOR_WHITE);
     }
-    *icon_draw_index += 24;
+    icon_draw_index->x += 24;
 }
 
 static void ui_home_on_draw(ui_home_t *home, display_format_t *formats, display_orientation_t orientation)
@@ -95,9 +96,9 @@ static void ui_home_on_draw(ui_home_t *home, display_format_t *formats, display_
         DISPLAY_CLEAR_SCREEN(1);
         home->show = false;
     }
-
+    int global_y = wkc_settings_get_current()->homepage_status_bar_position ? 250 : 14;
     display_vector_t icon_draw_origin = {
-        .x = 16, .y = 14
+        .x = 16, .y = global_y
     };
     display_vector_t icon_draw_origin_primary = display_vector_compensation(
         &icon_draw_origin, formats[0]
@@ -134,7 +135,8 @@ static void ui_home_on_draw(ui_home_t *home, display_format_t *formats, display_
             time_char, formats[1], 0, NULL, &secondary_size);
 
         display_rect_t time_rect = {
-            .x = icon_draw_origin.x - 4, .y = 12, .width = std_size.x + 8, .height = 24
+            .x = icon_draw_origin.x - 4, .y = icon_draw_origin.y - 2,
+            .width = std_size.x + 8, .height = 24
         };
         display_rect_t time_rect_primary = display_rect_compensation(&time_rect, formats[0]);
         display_rect_t time_rect_secondary = display_rect_compensation(&time_rect, formats[1]);
@@ -191,27 +193,27 @@ static void ui_home_on_draw(ui_home_t *home, display_format_t *formats, display_
 
         if (home->last_power_save_value)
         {
-            ui_home_draw_status_icon("power_save", formats, orientation, &icon_draw_origin.x);
+            ui_home_draw_status_icon("power_save", formats, orientation, &icon_draw_origin);
         }
         if (protocol_ble_is_device_connected())
         {
-            ui_home_draw_status_icon("bluetooth", formats, orientation, &icon_draw_origin.x);
+            ui_home_draw_status_icon("bluetooth", formats, orientation, &icon_draw_origin);
         }
         if (ble_gap_adv_active())
         {
-            ui_home_draw_status_icon("advertise", formats, orientation, &icon_draw_origin.x);
+            ui_home_draw_status_icon("advertise", formats, orientation, &icon_draw_origin);
         }
         if (pwm_device_get_fan_level())
         {
-            ui_home_draw_status_icon("fan", formats, orientation, &icon_draw_origin.x);
+            ui_home_draw_status_icon("fan", formats, orientation, &icon_draw_origin);
         }
         if (pwm_device_get_eye_level())
         {
-            ui_home_draw_status_icon("eye", formats, orientation, &icon_draw_origin.x);
+            ui_home_draw_status_icon("eye", formats, orientation, &icon_draw_origin);
         }
         if (lock_get_state())
         {
-            ui_home_draw_status_icon("lock", formats, orientation, &icon_draw_origin.x);
+            ui_home_draw_status_icon("lock", formats, orientation, &icon_draw_origin);
         }
 
         display_rect_union(&total_rect_primary, &update_rect_primary);

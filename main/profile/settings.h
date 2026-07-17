@@ -19,7 +19,6 @@ typedef struct
 
 typedef struct
 {
-    int brightness;
     int orientation;
     int output_mode;
     display_position_settings_t position[2];
@@ -32,6 +31,7 @@ typedef struct
     int language;
     bool keep_advertise;
     int power_save;
+    int homepage_status_bar_position;
     display_settings_t display;
     peripheral_settings_t peripherals;
 } wkc_settings_t;

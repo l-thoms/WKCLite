@@ -1295,14 +1295,17 @@ static void ui_settings_on_draw(ui_settings_t *settings, display_format_t *forma
         if (settings->show)
         {
             ui_settings_draw_item(~settings->selected_index[settings->hirerachy_index],
-                                  true, 1, formats, orientation, items, 5);
+                                  true, 1, formats, orientation, items,
+                                  sizeof(items) / sizeof(ui_settings_item_t));
         }
         else
         {
             ui_settings_draw_item(settings->last_selected_index, false, 1, formats,
-                                  orientation, items, 5);
+                                  orientation, items,
+                                  sizeof(items) / sizeof(ui_settings_item_t));
             ui_settings_draw_item(settings->selected_index[settings->hirerachy_index],
-                                  true, 1, formats, orientation, items, 5);
+                                  true, 1, formats, orientation, items,
+                                  sizeof(items) / sizeof(ui_settings_item_t));
         }
     }
     else if (settings->menu_state == UI_SETTINGS_MISC)
@@ -1312,6 +1315,10 @@ static void ui_settings_on_draw(ui_settings_t *settings, display_format_t *forma
             wkc_translations_get_string("settings_1min"),
             wkc_translations_get_string("settings_5min"),
             wkc_translations_get_string("settings_10min"),
+        };
+        char *homepage_status_bar_position_options[] = {
+            wkc_translations_get_string("settings_top"),
+            wkc_translations_get_string("settings_bottom")
         };
         ui_settings_item_t items[] = {
             {
@@ -1330,19 +1337,29 @@ static void ui_settings_on_draw(ui_settings_t *settings, display_format_t *forma
                 .type = SETTINGS_ITEM_SWITCH,
                 .name = wkc_translations_get_string("settings_remember_peripherals"),
                 .current_value = wkc_settings_get_current()->peripherals.remember_state
+            },
+            {
+                .type = SETTINGS_ITEM_PICKER,
+                .name = wkc_translations_get_string("settings_homepage_status_bar_position"),
+                .min = 0, .max = 1,
+                .options = homepage_status_bar_position_options,
+                .current_value = wkc_settings_get_current()->homepage_status_bar_position
             }
         };
         if (settings->show)
         {
             ui_settings_draw_item(~settings->selected_index[settings->hirerachy_index],
-                                  true, 1, formats, orientation, items, 3);
+                                  true, 1, formats, orientation, items,
+                                  sizeof(items) / sizeof(ui_settings_item_t));
         }
         else
         {
             ui_settings_draw_item(settings->last_selected_index, false, 1, formats,
-                                  orientation, items, 3);
+                                  orientation, items,
+                                  sizeof(items) / sizeof(ui_settings_item_t));
             ui_settings_draw_item(settings->selected_index[settings->hirerachy_index],
-                                  true, 1, formats, orientation, items, 3);
+                                  true, 1, formats, orientation, items,
+                                  sizeof(items) / sizeof(ui_settings_item_t));
         }
     }
     else if (settings->menu_state == UI_SETTINGS_ADVANCED)
@@ -1360,14 +1377,17 @@ static void ui_settings_on_draw(ui_settings_t *settings, display_format_t *forma
         if (settings->show)
         {
             ui_settings_draw_item(~settings->selected_index[settings->hirerachy_index],
-                                  true, 1, formats, orientation, items, 2);
+                                  true, 1, formats, orientation, items,
+                                  sizeof(items) / sizeof(ui_settings_item_t));
         }
         else
         {
             ui_settings_draw_item(settings->last_selected_index, false, 1, formats,
-                                  orientation, items, 2);
+                                  orientation, items,
+                                  sizeof(items) / sizeof(ui_settings_item_t));
             ui_settings_draw_item(settings->selected_index[settings->hirerachy_index],
-                                  true, 1, formats, orientation, items, 2);
+                                  true, 1, formats, orientation, items,
+                                  sizeof(items) / sizeof(ui_settings_item_t));
         }
     }
     else if (settings->menu_state == UI_SETTINGS_DISPLAY_POSITION)
@@ -1601,7 +1621,7 @@ static void ui_settings_on_key_event(ui_settings_t *settings, int key_code)
                 }
                 else if (key_code == UI_KEY_CODE_UP)
                 {
-                    *current_index += 2;
+                    *current_index += 3;
                     refresh = true;
                 }
                 else if (*current_index == 0 &&
@@ -1627,7 +1647,15 @@ static void ui_settings_on_key_event(ui_settings_t *settings, int key_code)
                     refresh = true;
                     wkc_settings_save();
                 }
-                *current_index %= 3;
+                else if (*current_index == 3 &&
+                        (key_code == UI_KEY_CODE_LEFT) || key_code == UI_KEY_CODE_RIGHT)
+                {
+                    current_settings->homepage_status_bar_position =
+                        !current_settings->homepage_status_bar_position;
+                    refresh = true;
+                    wkc_settings_save();
+                }
+                *current_index %= 4;
             }
             break;
             case UI_SETTINGS_ADVANCED:

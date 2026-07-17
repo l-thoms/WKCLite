@@ -67,7 +67,8 @@ static void settings_parse()
           *keep_advertise = cJSON_GetObjectItem(settings_json, "keep_advertise"),
           *power_save = cJSON_GetObjectItem(settings_json, "power_save"),
           *display = cJSON_GetObjectItem(settings_json, "display"),
-          *peripherals = cJSON_GetObjectItem(settings_json, "peripherals");
+          *peripherals = cJSON_GetObjectItem(settings_json, "peripherals"),
+          *homepage_status_bar_position = cJSON_GetObjectItem(settings_json, "homepage_status_bar_position");
 
     if (language)
         current_settings.language = (int)cJSON_GetNumberValue(language);
@@ -84,8 +85,6 @@ static void settings_parse()
               *capture_index = cJSON_GetObjectItem(display, "capture_index"),
               *capture_osd = cJSON_GetObjectItem(display, "capture_osd");
 
-        if (brightness)
-            current_settings.display.brightness = (int)cJSON_GetNumberValue(brightness);
         if (orientation)
             current_settings.display.orientation = (int)cJSON_GetNumberValue(orientation);
         if (output_mode)
@@ -94,6 +93,8 @@ static void settings_parse()
             current_settings.display.capture_index = (int)cJSON_GetNumberValue(capture_index);
         if (output_mode)
             current_settings.display.capture_osd = (int)cJSON_IsTrue(capture_osd);
+        if (homepage_status_bar_position)
+            current_settings.homepage_status_bar_position = !!(int)cJSON_GetNumberValue(homepage_status_bar_position);
 
         if (position && cJSON_GetArraySize(position) >= 2)
         {
@@ -116,10 +117,6 @@ static void settings_parse()
                         clamp((int)cJSON_GetNumberValue(output_timing), -15, 15);
             }
         }
-    }
-    else
-    {
-        current_settings.display.brightness = 3;
     }
     if (peripherals)
     {
@@ -181,8 +178,8 @@ char* wkc_settings_write()
     cJSON_AddNumberToObject(settings_json, "language", current_settings.language);
     cJSON_AddBoolToObject(settings_json, "keep_advertise", current_settings.keep_advertise);
     cJSON_AddNumberToObject(settings_json, "power_save", current_settings.power_save);
+    cJSON_AddNumberToObject(settings_json, "homepage_status_bar_position", current_settings.homepage_status_bar_position);
     cJSON *display = cJSON_AddObjectToObject(settings_json, "display");
-    cJSON_AddNumberToObject(display, "brightness", current_settings.display.brightness);
     cJSON_AddNumberToObject(display, "orientation", current_settings.display.orientation);
     cJSON_AddNumberToObject(display, "output_mode", current_settings.display.output_mode);
     cJSON *position = cJSON_AddArrayToObject(display, "position");

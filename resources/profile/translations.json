@@ -265,6 +265,21 @@
         "zh_cn": "记忆外设状态",
         "zh_tw": "記住週邊狀態"
     },
+    "settings_homepage_status_bar_position": {
+        "en_us": "Status Bar Position",
+        "zh_cn": "主页状态栏位置",
+        "zh_tw": "主頁状態欄位置"
+    },
+    "settings_top": {
+        "en_us": "Top",
+        "zh_cn": "居上",
+        "zh_tw": "居上"
+    },
+    "settings_bottom": {
+        "en_us": "Bottom",
+        "zh_cn": "居下",
+        "zh_tw": "居下"
+    },
     "settings_clear_paired_devices": {
         "en_us": "Clear Paired Devices",
         "zh_cn": "清除连接设备",

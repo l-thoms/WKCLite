@@ -2,8 +2,8 @@
     "language": 0,
     "keep_advertise": false,
     "power_save": 0,
+    "homepage_status_bar_position": 0,
     "display": {
-        "brightness": 3,
         "direction": 0,
         "output_mode": 0,
         "capture_index": 0,

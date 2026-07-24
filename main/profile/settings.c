@@ -78,8 +78,7 @@ static void settings_parse()
         current_settings.power_save = clamp((int)cJSON_GetNumberValue(power_save), 0, 3);
     if (display)
     {
-        cJSON *brightness = cJSON_GetObjectItem(display, "brightness"),
-              *orientation = cJSON_GetObjectItem(display, "orientation"),
+        cJSON *orientation = cJSON_GetObjectItem(display, "orientation"),
               *output_mode = cJSON_GetObjectItem(display, "output_mode"),
               *position = cJSON_GetObjectItem(display, "position"),
               *capture_index = cJSON_GetObjectItem(display, "capture_index"),

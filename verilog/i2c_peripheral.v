@@ -23,7 +23,8 @@ module i2c_peripheral (
     STDBY, CHRG,
     DISP, PWDN, OUTPUT_MODE,
     CSEL1, CSEL2,
-    OFFSET_PRIMARY, OFFSET_SECONDARY
+    OFFSET_PRIMARY, OFFSET_SECONDARY,
+    F1, F2
 );
     input SCL;
     inout SDA;
@@ -33,14 +34,16 @@ module i2c_peripheral (
     //                     RO    RO
     input STDBY, CHRG;
 
-    // Reg 1: Display control, OUTPUT_MODE INTR_EDGE PWDN CSEL1 CSEL2
-    //                         RW          RW        RW   RW    RW
+    // Reg 1: Display control, F1, F2 OUTPUT_MODE INTR_EDGE PWDN CSEL1 CSEL2
+    //                         RW, RW,RW          RW        RW   RW    RW
     input DISP;
     output PWDN;
     output reg OUTPUT_MODE = 0;
     output reg INTR_EDGE = 0;
     output reg CSEL1 = 0;
     output reg CSEL2 = 0;
+    output reg F1 = 0;
+    output reg F2 = 0;
     reg pwdn_val = 1;
     // Automatically power down when DISP lows
     assign PWDN = pwdn_val & DISP;
@@ -218,7 +221,9 @@ module i2c_peripheral (
                                               CHRG;
                             end
                             `I2C_REG_DISP_CTRL: begin
-                                read_value <= (OUTPUT_MODE << 4) |
+                                read_value <= (F1 << 6) |
+                                              (F2 << 5) |
+                                              (OUTPUT_MODE << 4) |
                                               (INTR_EDGE << 3) |
                                               (pwdn_val << 2) |
                                               (CSEL1 << 1) |
@@ -269,6 +274,8 @@ module i2c_peripheral (
                         ack <= 0;
                         case (reg_address)
                             `I2C_REG_DISP_CTRL: begin
+                                F1 <= write_value[6];
+                                F2 <= write_value[5];
                                 OUTPUT_MODE <= write_value[4];
                                 INTR_EDGE <= write_value[3];
                                 pwdn_val <= write_value[2];

@@ -1,34 +1,38 @@
-`define CLK_DIV_PAL 5          // 7.2MHz
-`define CLK_DIV_NTSC 6         // 6MHz
+`define CLK_DIV_PAL 10          // 7.2MHz
+`define CLK_DIV_NTSC 12         // 6MHz
 `define IMAGE_WIDTH_PAL 384
 `define IMAGE_WIDTH_NTSC 320
-`define MAX_OUTPUT_RANGE 1920
+`define MAX_OUTPUT_RANGE 3840
+`define MAX_OUTPUT_RANGE_RAW 400
 
 module i2s_osd_pdm (
     BPO, CO,
     WS, I2S,
     Q1, Q2,
-    GCLK, OFFSET, INTR_EDGE
+    GCLK, OFFSET, INTR_EDGE,
+    FORMAT
 );
     input BPO, CO, GCLK, INTR_EDGE;
     input WS, I2S;
     output Q1 = Q1I && (output_de != 0);
     output Q2 = Q2I && (output_de != 0);
-    reg Q1I, Q2I;
+    reg Q1I = 0, Q2I = 0;
     input [7:0] OFFSET;
     wire WS_INV = !WS;
+    input FORMAT;
 
-    reg [7:0] clk_div = `CLK_DIV_PAL;
-    reg [7:0] clk_div_count = 0;
-    reg [11:0] output_de = 0;
+    //reg clk_div_id = 0;
+    wire [3:0] clk_div = FORMAT ? `CLK_DIV_PAL : `CLK_DIV_NTSC;
+    reg [8:0] clk_div_count = 0;
+    reg [12:0] output_de = 0;
 
-    reg [1:0] data_in;
-    reg [8:0] address_in;
-    reg [8:0] address_out;
+    reg [1:0] data_in = 0;
+    reg [8:0] address_in = 0;
+    reg [8:0] address_out = 0;
     wire [1:0] data_out;
 
-    reg [1:0] current_pixel;
-    reg [8:0] image_width = `IMAGE_WIDTH_PAL;
+    reg [1:0] current_pixel = 0;
+    wire [8:0] image_width = FORMAT ? `IMAGE_WIDTH_PAL : `IMAGE_WIDTH_NTSC;
     reg reset = 0;
     reg [7:0] current_offset = 0;
 
@@ -47,14 +51,11 @@ module i2s_osd_pdm (
             address_in <= 0;
             data_in <= 0;
         end else if (reset == 1) begin
-            if (current_pixel == 2'b10) begin
-                image_width <= `IMAGE_WIDTH_NTSC;
-                clk_div <= `CLK_DIV_NTSC;
-            end
-            else if (current_pixel == 2'b11) begin
-                image_width <= `IMAGE_WIDTH_PAL;
-                clk_div <= `CLK_DIV_PAL;
-            end
+            //if (current_pixel == 2'b10) begin
+            //    clk_div_id <= 0;
+            //end else if (current_pixel == 2'b11) begin
+            //    clk_div_id <= 1;
+            //end
             reset <= 0;
         end else if (address_in < image_width) begin
             data_in <= current_pixel;
@@ -85,19 +86,19 @@ module i2s_osd_pdm (
             current_offset <= 0;
         end
         else if (clk_div_count == clk_div - 1) begin
-                if (current_offset < OFFSET) begin
-                    current_offset <= current_offset + 1;
-                    Q1I <= 0;
-                    Q2I <= 0;
-                end else if (address_out < image_width) begin
-                    Q1I <= data_out[0] && BPO && CO;
-                    Q2I <= data_out[1] && BPO && CO;
-                    address_out <= address_out + 1;
-                end else begin
-                    Q1I <= 0;
-                    Q2I <= 0;
-                end
-                clk_div_count <= 0;
+            if (current_offset < OFFSET) begin
+                current_offset <= current_offset + 1;
+                Q1I <= 0;
+                Q2I <= 0;
+            end else if (address_out < image_width) begin
+                Q1I <= data_out[0] && BPO && CO;
+                Q2I <= data_out[1] && BPO && CO;
+                address_out <= address_out + 1;
+            end else begin
+                Q1I <= 0;
+                Q2I <= 0;
+            end
+            clk_div_count <= 0;
         end else begin
             clk_div_count <= clk_div_count + 1;
         end
@@ -118,24 +119,30 @@ module i2s_osd_pdm_raw (
     input BPO, CO;
     input WS, I2S;
     reg Q1_PRE, Q1_RAW, Q2_RAW;
-    output reg Q1, Q2;
+    reg [9:0] output_de = 0;
+    reg [2:0] bpo = 0;
+    output Q1 = Q1_RAW && BPO && CO && (output_de != 0);
+    output Q2 = Q2_RAW && BPO && CO && (output_de != 0);
 
     always @(negedge WS) begin
+        if (bpo == 'b011) begin
+            output_de <= 1;
+        end else if (output_de == `MAX_OUTPUT_RANGE_RAW) begin
+            output_de <= 0;
+        end else if (output_de != 0) begin
+            output_de <= output_de + 1;
+        end
+
         Q1_PRE <= I2S;
+
+        if (bpo[1] == bpo[0])
+            bpo[2] <= bpo[1];
+        bpo[1] <= bpo[0];
+        bpo[0] <= BPO;
     end
     always @(posedge WS) begin
         Q1_RAW <= Q1_PRE;
         Q2_RAW <= I2S;
-    end
-
-    always @(*) begin
-        if (BPO && CO) begin
-            Q1 = Q1_RAW;
-            Q2 = Q2_RAW;
-        end else begin
-            Q1 = 0;
-            Q2 = 0;
-        end
     end
 endmodule
 
@@ -144,7 +151,8 @@ module i2s_osd_pdm_select (
     WS, I2S,
     Q1, Q2,
     GCLK, MODE,
-    OFFSET, INTR_EDGE
+    OFFSET, INTR_EDGE,
+    FORMAT
 );
     input BPO, CO, GCLK, MODE, INTR_EDGE;
     input WS, I2S;
@@ -152,12 +160,14 @@ module i2s_osd_pdm_select (
     wire Q1_NORMAL, Q2_NORMAL;
     wire Q1_RAW, Q2_RAW;
     input [7:0] OFFSET;
+    input FORMAT;
 
     i2s_osd_pdm normal (
         .BPO(BPO), .CO(CO),
         .WS(WS), .I2S(I2S),
         .Q1(Q1_NORMAL), .Q2(Q2_NORMAL),
-        .GCLK(GCLK), .OFFSET(OFFSET), .INTR_EDGE(INTR_EDGE)
+        .GCLK(GCLK), .OFFSET(OFFSET), .INTR_EDGE(INTR_EDGE),
+        .FORMAT(FORMAT)
     );
 
     i2s_osd_pdm_raw raw (
@@ -176,7 +186,8 @@ module i2s_osd_pcm_select (
     BCLK, I2S,
     Q1, Q2,
     GCLK, MODE,
-    OFFSET, INTR_EDGE
+    OFFSET, INTR_EDGE,
+    FORMAT
 );
     input BPO, CO, GCLK, MODE, INTR_EDGE;
     input BCLK, I2S;
@@ -184,6 +195,7 @@ module i2s_osd_pcm_select (
     reg BCLKD = 0;
     reg [2:0] i2s_record = 0;
     input [7:0] OFFSET;
+    input FORMAT;
 
     always @(posedge BCLK) begin
         if (i2s_record == 0 && I2S == 1) begin
@@ -200,7 +212,8 @@ module i2s_osd_pcm_select (
         .WS(BCLKD), .I2S(I2S),
         .Q1(Q1), .Q2(Q2),
         .GCLK(GCLK), .MODE(MODE),
-        .OFFSET(OFFSET), .INTR_EDGE(INTR_EDGE)
+        .OFFSET(OFFSET), .INTR_EDGE(INTR_EDGE),
+        .FORMAT(FORMAT)
     );
 endmodule
 
@@ -229,7 +242,7 @@ module main (
     input DISP;
     output LOCKA, LOCKB, BRIP, BRIN;
     output CSEL1, CSEL2;
-    wire GCLK, CLKFB, MODE, INTR_EDGE;
+    wire GCLK, CLKFB, MODE, INTR_EDGE, F1, F2;
     wire [7:0] OFFSET_PRIMARY, OFFSET_SECONDARY;
 
     i2c_peripheral i2c_device (
@@ -239,7 +252,8 @@ module main (
         .STDBY(STDBY), .CHRG(CHRG),
         .DISP(DISP), .PWDN(PWDN), .OUTPUT_MODE(MODE),
         .CSEL1(CSEL1), .CSEL2(CSEL2),
-        .OFFSET_PRIMARY(OFFSET_PRIMARY), .OFFSET_SECONDARY(OFFSET_SECONDARY)
+        .OFFSET_PRIMARY(OFFSET_PRIMARY), .OFFSET_SECONDARY(OFFSET_SECONDARY),
+        .F1(F1), .F2(F2)
     );
 
     global_clock gclk (
@@ -255,7 +269,8 @@ module main (
         .BCLK(BCLK1), .I2S(I2S1),
         .Q1(Q11), .Q2(Q12),
         .GCLK(GCLK), .MODE(MODE), .INTR_EDGE(INTR_EDGE),
-        .OFFSET(OFFSET_PRIMARY)
+        .OFFSET(OFFSET_PRIMARY),
+        .FORMAT(F1)
     );
 
     i2s_osd_pcm_select i2s_osd_select_2 (
@@ -263,7 +278,8 @@ module main (
         .BCLK(BCLK2), .I2S(I2S2),
         .Q1(Q21), .Q2(Q22),
         .GCLK(GCLK), .MODE(MODE), .INTR_EDGE(INTR_EDGE),
-        .OFFSET(OFFSET_SECONDARY)
+        .OFFSET(OFFSET_SECONDARY),
+        .FORMAT(F2)
     );
 
 endmodule

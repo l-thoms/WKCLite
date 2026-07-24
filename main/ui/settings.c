@@ -4,6 +4,7 @@
 #include "display/graphics.h"
 #include "display/display_control.h"
 #include "ui_common.h"
+#include "camera/camera_control.h"
 #include "page.h"
 #include "shell.h"
 #include "math.h"
@@ -20,25 +21,7 @@ typedef enum
     UI_SETTINGS_ADVANCED_CONFIRM
 } ui_settings_menu_state_t;
 
-typedef enum
-{
-    SETTINGS_ITEM_LABEL,
-    SETTINGS_ITEM_SWITCH,
-    SETTINGS_ITEM_PICKER,
-    SETTINGS_ITEM_BAR
-} ui_settings_item_type_t;
-
 // For render only, events are implemented in key_event
-typedef struct
-{
-    ui_settings_item_type_t type;
-    char *name;
-    char **options;
-    int current_value;
-    int min;
-    int max;
-} ui_settings_item_t;
-
 
 typedef struct
 {
@@ -60,608 +43,6 @@ static void ui_settings_on_show(ui_settings_t *settings)
     settings->last_selected_index = 0;
     settings->selected_index[0] = 0;
     settings->menu_state = UI_SETTINGS_MAIN;
-}
-
-static void ui_settings_draw_item(int item_index, bool active, int prefer_side,
-                                  display_format_t formats[], display_orientation_t orientation,
-                                  ui_settings_item_t *items, int item_count)
-{
-    if (!items) return;
-    prefer_side = !!prefer_side;
-    // Get center coordinate
-    display_vector_t center = {
-        .x = orientation == DISPLAY_ORIENTATION_HORIZONTAL ?
-                          DISPLAY_WIDTH_PAL / 2 : DISPLAY_HEIGHT_PAL / 2,
-        .y = orientation == DISPLAY_ORIENTATION_HORIZONTAL ? DISPLAY_HEIGHT_PAL / 2 :
-                          DISPLAY_WIDTH_PAL / 2
-    };
-    // Calculate total size
-    int item_width = 240;
-    int item_height = 24;
-    int inner_height = item_height * item_count;
-    display_vector_t draw_origin = {
-        .x = center.x - item_width / 2,
-        .y = center.y - inner_height / 2
-    };
-    // Clear background and redraw when item_index is complement
-    if (item_index < 0)
-    {
-        if (orientation != DISPLAY_ORIENTATION_VERTICAL_TILED)
-        {
-            DISPLAY_CLEAR_SCREEN(0);
-            DISPLAY_CLEAR_SCREEN(1);
-        }
-        else
-        {
-            DISPLAY_CLEAR_SCREEN(prefer_side);
-        }
-        // Draw border
-        display_rect_t border_rect = {
-            .x = draw_origin.x,
-            .y = draw_origin.y,
-            .width = item_width,
-            .height = inner_height
-        };
-        display_rect_expand(&border_rect, 6, 6);
-        int corner_radius_primary = display_coordinate_compensation(6, 0, formats[0]).x;
-        int corner_radius_secondary = display_coordinate_compensation(6, 0, formats[1]).x;
-        display_rect_t border_rect_primary = display_rect_compensation(&border_rect,
-                                             formats[0]);
-        display_rect_t border_rect_secondary = display_rect_compensation(&border_rect,
-                                               formats[1]);
-        display_rect_translate(&border_rect_primary, 1, 1);
-        display_rect_translate(&border_rect_secondary, 1, 1);
-        if (orientation == DISPLAY_ORIENTATION_VERTICAL_TILED)
-        {
-            display_draw_rounded_rect(prefer_side, orientation,
-                                      prefer_side ? &border_rect_secondary : &border_rect_primary,
-                                      DISPLAY_COLOR_BLACK,
-                                      prefer_side ? corner_radius_secondary : corner_radius_primary,
-                                      2);
-            display_rect_translate(&border_rect_primary, -1, -1);
-            display_rect_translate(&border_rect_secondary, -1, -1);
-            display_draw_rounded_rect(prefer_side, orientation,
-                                      prefer_side ? &border_rect_secondary : &border_rect_primary,
-                                      DISPLAY_COLOR_WHITE,
-                                      prefer_side ? corner_radius_secondary : corner_radius_primary,
-                                      2);
-        }
-        else
-        {
-            display_draw_rounded_rect(0, orientation, &border_rect_primary, DISPLAY_COLOR_BLACK,
-                                      corner_radius_primary, 2);
-            display_draw_rounded_rect(1, orientation, &border_rect_secondary, DISPLAY_COLOR_BLACK,
-                                      corner_radius_secondary, 2);
-            display_rect_translate(&border_rect_primary, -1, -1);
-            display_rect_translate(&border_rect_secondary, -1, -1);
-            display_draw_rounded_rect(0, orientation, &border_rect_primary, DISPLAY_COLOR_WHITE,
-                                      corner_radius_primary, 2);
-            display_draw_rounded_rect(1, orientation, &border_rect_secondary, DISPLAY_COLOR_WHITE,
-                                      corner_radius_secondary, 2);
-        }
-        display_rect_expand(&border_rect_primary, 2, 2);
-        display_rect_expand(&border_rect_secondary, 2, 2);
-        display_update(0, orientation, &border_rect_primary);
-        display_update(1, orientation, &border_rect_secondary);
-        int selected_index = ~item_index;
-        for (int i = 0; i < item_count; i++)
-        {
-            ui_settings_draw_item(i, i == selected_index, prefer_side, formats, orientation,
-                                  items, item_count);
-        }
-        return;
-    }
-
-    // Calculate item position
-    display_vector_t item_origin = {
-        .x = draw_origin.x + 6,
-        .y = draw_origin.y + item_index * item_height + 3
-    };
-    display_vector_t item_origin_primary = display_vector_compensation(&item_origin,
-                                           formats[0]);
-    display_vector_t item_origin_secondary = display_vector_compensation(&item_origin,
-                                             formats[1]);
-
-    // Draw highlight
-    display_rect_t item_rect = {
-        .x = item_origin.x - 6,
-        .y = item_origin.y,
-        .width = item_width,
-        .height = item_height - 6
-    };
-    display_rect_t item_rect_primary = display_rect_compensation(&item_rect,
-                                            formats[0]);
-    display_rect_t item_rect_secondary = display_rect_compensation(&item_rect,
-                                              formats[1]);
-    if (active)
-    {
-        display_rect_translate(&item_rect_primary, 1, 1);
-        display_rect_translate(&item_rect_secondary, 1, 1);
-        if (orientation == DISPLAY_ORIENTATION_VERTICAL_TILED)
-        {
-            display_fill_rounded_rect(prefer_side, orientation, prefer_side ?
-                                      &item_rect_secondary : &item_rect_primary,
-                                      DISPLAY_COLOR_BLACK, 2);
-            display_rect_translate(&item_rect_primary, -1, -1);
-            display_rect_translate(&item_rect_secondary, -1, -1);
-            display_fill_rounded_rect(prefer_side, orientation, prefer_side ?
-                                      &item_rect_secondary : &item_rect_primary,
-                                      DISPLAY_COLOR_WHITE, 2);
-        }
-        else
-        {
-            display_fill_rounded_rect(0, orientation, &item_rect_primary,
-                DISPLAY_COLOR_BLACK, 2);
-            display_fill_rounded_rect(1, orientation, &item_rect_secondary,
-                DISPLAY_COLOR_BLACK, 2);
-            display_rect_translate(&item_rect_primary, -1, -1);
-            display_rect_translate(&item_rect_secondary, -1, -1);
-            display_fill_rounded_rect(0, orientation, &item_rect_primary,
-                DISPLAY_COLOR_WHITE, 2);
-            display_fill_rounded_rect(1, orientation, &item_rect_secondary,
-                DISPLAY_COLOR_WHITE, 2);
-        }
-    }
-    else
-    {
-        display_rect_expand(&item_rect_primary, 1, 1);
-        display_rect_expand(&item_rect_secondary, 1, 1);
-        if (orientation == DISPLAY_ORIENTATION_VERTICAL_TILED)
-        {
-            display_fill_rect(prefer_side, orientation, prefer_side ?
-                              &item_rect_secondary : &item_rect_primary,
-                              DISPLAY_COLOR_TRANSPARENT);
-        }
-        else
-        {
-            display_fill_rect(0, orientation, &item_rect_primary,
-                DISPLAY_COLOR_TRANSPARENT);
-            display_fill_rect(1, orientation, &item_rect_secondary,
-                DISPLAY_COLOR_TRANSPARENT);
-        }
-    }
-
-    // Draw content
-    display_vector_t measure_size_raw;
-    int measure_length;
-    text_position_descriptor_t *measure_result_raw = font_measure_text(items[item_index].name,
-        DISPLAY_FORMAT_PAL, 0, &measure_length, &measure_size_raw);
-    text_position_descriptor_t *measure_result_primary = font_measure_text(
-        items[item_index].name, formats[0], 0, NULL, NULL
-    );
-    text_position_descriptor_t *measure_result_secondary = font_measure_text(
-        items[item_index].name, formats[1], 0, NULL, NULL
-    );
-    if (!active)
-    {
-        display_vector_translate(&item_origin_primary, 1, 1);
-        display_vector_translate(&item_origin_secondary, 1, 1);
-        if (orientation == DISPLAY_ORIENTATION_VERTICAL_TILED)
-        {
-            display_draw_text(prefer_side, orientation, prefer_side ? item_origin_secondary.x :
-                              item_origin_primary.x, prefer_side ? item_origin_secondary.y :
-                              item_origin_primary.y, prefer_side ? measure_result_secondary :
-                              measure_result_primary, measure_length, DISPLAY_COLOR_BLACK,
-                              formats[prefer_side]);
-        }
-        else
-        {
-            display_draw_text(0, orientation, item_origin_primary.x, item_origin_primary.y,
-                              measure_result_primary, measure_length, DISPLAY_COLOR_BLACK,
-                              formats[0]);
-            display_draw_text(1, orientation, item_origin_secondary.x, item_origin_secondary.y,
-                              measure_result_secondary, measure_length, DISPLAY_COLOR_BLACK,
-                              formats[1]);
-        }
-        display_vector_translate(&item_origin_primary, -1, -1);
-        display_vector_translate(&item_origin_secondary, -1, -1);
-    }
-    if (orientation == DISPLAY_ORIENTATION_VERTICAL_TILED)
-    {
-        display_draw_text(prefer_side, orientation, prefer_side ? item_origin_secondary.x :
-                          item_origin_primary.x, prefer_side ? item_origin_secondary.y :
-                          item_origin_primary.y, prefer_side ? measure_result_secondary :
-                          measure_result_primary, measure_length, active ?
-                          DISPLAY_COLOR_BLACK : DISPLAY_COLOR_WHITE, formats[prefer_side]);
-    }
-    else
-    {
-        display_draw_text(0, orientation, item_origin_primary.x, item_origin_primary.y,
-                          measure_result_primary, measure_length, active ?
-                          DISPLAY_COLOR_BLACK : DISPLAY_COLOR_WHITE, formats[0]);
-        display_draw_text(1, orientation, item_origin_secondary.x, item_origin_secondary.y,
-                          measure_result_secondary, measure_length, active ?
-                          DISPLAY_COLOR_BLACK : DISPLAY_COLOR_WHITE, formats[1]);
-    }
-    free(measure_result_raw);
-    free(measure_result_primary);
-    free(measure_result_secondary);
-
-    // Draw sub controls
-    display_vector_t subcontrol_origin = {
-        .x = draw_origin.x + item_width,
-        .y = draw_origin.y + item_index * item_height
-    }, subcontrol_origin_primary, subcontrol_origin_secondary;
-    switch (items[item_index].type)
-    {
-        case SETTINGS_ITEM_PICKER:
-        {
-            // Get arrow icons
-            char icon_left_primary[50], icon_left_secondary[50];
-            char icon_right_primary[50], icon_right_secondary[50];
-            int icon_size_raw, icon_size_primary, icon_size_secondary;
-            display_get_icon("arrow_drop_left", DISPLAY_FORMAT_PAL, false, NULL, &icon_size_raw);
-            display_get_icon("arrow_drop_left", formats[0], false, icon_left_primary,
-                             &icon_size_primary);
-            display_get_icon("arrow_drop_left", formats[1], false, icon_left_secondary,
-                             &icon_size_secondary);
-            display_get_icon("arrow_drop_right", formats[0], false, icon_right_primary, NULL);
-            display_get_icon("arrow_drop_right", formats[1], false, icon_right_secondary, NULL);
-
-            // Draw content
-            subcontrol_origin.x -= icon_size_raw;
-            subcontrol_origin_primary = display_vector_compensation(
-                &subcontrol_origin, formats[0]
-            );
-            subcontrol_origin_secondary = display_vector_compensation(
-                &subcontrol_origin, formats[1]
-            );
-            if (orientation == DISPLAY_ORIENTATION_VERTICAL_TILED)
-            {
-                if (!active)
-                {
-                    display_draw_image(prefer_side, orientation, (prefer_side ?
-                        subcontrol_origin_secondary.x : subcontrol_origin_primary.x) + 1,
-                        (prefer_side ? subcontrol_origin_secondary.y :
-                        subcontrol_origin_primary.y) + 1, prefer_side ? icon_right_secondary :
-                        icon_right_primary, prefer_side ? icon_size_secondary :
-                        icon_size_primary, DISPLAY_COLOR_BLACK);
-                }
-                display_draw_image(prefer_side, orientation, prefer_side ?
-                    subcontrol_origin_secondary.x : subcontrol_origin_primary.x,
-                    prefer_side ? subcontrol_origin_secondary.y :
-                    subcontrol_origin_primary.y, prefer_side ? icon_right_secondary :
-                    icon_right_primary, prefer_side ? icon_size_secondary :
-                    icon_size_primary, active ? DISPLAY_COLOR_BLACK : DISPLAY_COLOR_WHITE);
-            }
-            else
-            {
-                if (!active)
-                {
-                    display_draw_image(0, orientation, subcontrol_origin_primary.x + 1,
-                        subcontrol_origin_primary.y + 1, icon_right_primary, icon_size_primary,
-                        DISPLAY_COLOR_BLACK);
-                    display_draw_image(1, orientation, subcontrol_origin_secondary.x + 1,
-                        subcontrol_origin_secondary.y + 1, icon_right_secondary,
-                        icon_size_secondary, DISPLAY_COLOR_BLACK);
-                }
-                display_draw_image(0, orientation, subcontrol_origin_primary.x,
-                    subcontrol_origin_primary.y, icon_right_primary, icon_size_primary,
-                    active ? DISPLAY_COLOR_BLACK : DISPLAY_COLOR_WHITE);
-                display_draw_image(1, orientation, subcontrol_origin_secondary.x,
-                    subcontrol_origin_secondary.y, icon_right_secondary, icon_size_secondary,
-                    active ? DISPLAY_COLOR_BLACK : DISPLAY_COLOR_WHITE);
-            }
-
-            int item_text_length;
-            display_vector_t item_text_size;
-            text_position_descriptor_t *content_measure_result = font_measure_text(items[
-                item_index].options[items[item_index].current_value], DISPLAY_FORMAT_PAL, 0,
-                &item_text_length, &item_text_size);
-            text_position_descriptor_t *content_measure_primary = font_measure_text(items[
-                item_index].options[items[item_index].current_value], formats[0], 0,
-                NULL, NULL);
-            text_position_descriptor_t *content_measure_secondary = font_measure_text(items[
-                item_index].options[items[item_index].current_value], formats[1], 0,
-                NULL, NULL);
-            subcontrol_origin.x -= item_text_size.x;
-            subcontrol_origin.y += 3;
-            subcontrol_origin_primary = display_vector_compensation(
-                &subcontrol_origin, formats[0]
-            );
-            subcontrol_origin_secondary = display_vector_compensation(
-                &subcontrol_origin, formats[1]
-            );
-            if (orientation == DISPLAY_ORIENTATION_VERTICAL_TILED)
-            {
-                if (!active)
-                {
-                    display_draw_text(prefer_side, orientation, (prefer_side ?
-                        subcontrol_origin_secondary.x : subcontrol_origin_primary.x) + 1,
-                        (prefer_side ? subcontrol_origin_secondary.y :
-                        subcontrol_origin_primary.y) + 1, prefer_side ?
-                        content_measure_secondary : content_measure_primary, item_text_length,
-                        DISPLAY_COLOR_BLACK, formats[prefer_side]);
-                }
-                display_draw_text(prefer_side, orientation, prefer_side ?
-                    subcontrol_origin_secondary.x : subcontrol_origin_primary.x,
-                    prefer_side ? subcontrol_origin_secondary.y :
-                    subcontrol_origin_primary.y, prefer_side ?
-                    content_measure_secondary : content_measure_primary, item_text_length,
-                    active ? DISPLAY_COLOR_BLACK : DISPLAY_COLOR_WHITE, formats[prefer_side]);
-
-            }
-            else
-            {
-                if (!active)
-                {
-                    display_draw_text(0, orientation, subcontrol_origin_primary.x + 1,
-                        subcontrol_origin_primary.y + 1, content_measure_primary,
-                        item_text_length, DISPLAY_COLOR_BLACK, formats[0]);
-                    display_draw_text(1, orientation, subcontrol_origin_secondary.x + 1,
-                        subcontrol_origin_secondary.y + 1, content_measure_secondary,
-                        item_text_length, DISPLAY_COLOR_BLACK, formats[1]);
-                }
-                display_draw_text(0, orientation, subcontrol_origin_primary.x,
-                    subcontrol_origin_primary.y, content_measure_primary,
-                    item_text_length, active ? DISPLAY_COLOR_BLACK : DISPLAY_COLOR_WHITE,
-                    formats[0]);
-                display_draw_text(1, orientation, subcontrol_origin_secondary.x,
-                    subcontrol_origin_secondary.y, content_measure_secondary,
-                    item_text_length, active ? DISPLAY_COLOR_BLACK : DISPLAY_COLOR_WHITE,
-                    formats[1]);
-            }
-            free(content_measure_result);
-            free(content_measure_primary);
-            free(content_measure_secondary);
-
-            subcontrol_origin.x -= icon_size_raw;
-            subcontrol_origin.y -= 3;
-            subcontrol_origin_primary = display_vector_compensation(
-                &subcontrol_origin, formats[0]
-            );
-            subcontrol_origin_secondary = display_vector_compensation(
-                &subcontrol_origin, formats[1]
-            );
-            if (orientation == DISPLAY_ORIENTATION_VERTICAL_TILED)
-            {
-                if (!active)
-                {
-                    display_draw_image(prefer_side, orientation, (prefer_side ?
-                        subcontrol_origin_secondary.x : subcontrol_origin_primary.x) + 1,
-                        (prefer_side ? subcontrol_origin_secondary.y :
-                        subcontrol_origin_primary.y) + 1, prefer_side ? icon_left_secondary :
-                        icon_left_primary, prefer_side ? icon_size_secondary :
-                        icon_size_primary, DISPLAY_COLOR_BLACK);
-                }
-                display_draw_image(prefer_side, orientation, prefer_side ?
-                    subcontrol_origin_secondary.x : subcontrol_origin_primary.x,
-                    prefer_side ? subcontrol_origin_secondary.y :
-                    subcontrol_origin_primary.y, prefer_side ? icon_left_secondary :
-                    icon_left_primary, prefer_side ? icon_size_secondary :
-                    icon_size_primary, active ? DISPLAY_COLOR_BLACK : DISPLAY_COLOR_WHITE);
-            }
-            else
-            {
-                if (!active)
-                {
-                    display_draw_image(0, orientation, subcontrol_origin_primary.x + 1,
-                        subcontrol_origin_primary.y + 1, icon_left_primary, icon_size_primary,
-                        DISPLAY_COLOR_BLACK);
-                    display_draw_image(1, orientation, subcontrol_origin_secondary.x + 1,
-                        subcontrol_origin_secondary.y + 1, icon_left_secondary,
-                        icon_size_secondary, DISPLAY_COLOR_BLACK);
-                }
-                display_draw_image(0, orientation, subcontrol_origin_primary.x,
-                    subcontrol_origin_primary.y, icon_left_primary, icon_size_primary,
-                    active ? DISPLAY_COLOR_BLACK : DISPLAY_COLOR_WHITE);
-                display_draw_image(1, orientation, subcontrol_origin_secondary.x,
-                    subcontrol_origin_secondary.y, icon_left_secondary, icon_size_secondary,
-                    active ? DISPLAY_COLOR_BLACK : DISPLAY_COLOR_WHITE);
-            }
-        }
-        break;
-        case SETTINGS_ITEM_BAR:
-        {
-            char value_text_min[12] = { 0 }, value_text_max[12] = { 0 };
-            display_vector_t value_size_min, value_size_max;
-            sprintf(value_text_min, "%d", items[item_index].min);
-            sprintf(value_text_max, "%d", items[item_index].max);
-            free(font_measure_text(value_text_min, DISPLAY_FORMAT_PAL, 0, NULL,
-                                   &value_size_min));
-            free(font_measure_text(value_text_max, DISPLAY_FORMAT_PAL, 0, NULL,
-                                   &value_size_max));
-            int desired_size = value_size_min.x > value_size_max.x ? value_size_min.x :
-                               value_size_max.x;
-            subcontrol_origin.x -= desired_size - 6;
-            subcontrol_origin.y += 3;
-            subcontrol_origin_primary = display_vector_compensation(
-                &subcontrol_origin, formats[0]
-            );
-            subcontrol_origin_secondary = display_vector_compensation(
-                &subcontrol_origin, formats[1]
-            );
-            int item_text_length;
-            char item_text[12];
-            display_vector_t value_size_primary, value_size_secondary;
-            sprintf(item_text, "%d", items[item_index].current_value);
-            text_position_descriptor_t *content_measure_primary = font_measure_text(item_text,
-                formats[0], 0, &item_text_length, &value_size_primary);
-            text_position_descriptor_t *content_measure_secondary = font_measure_text(item_text,
-                formats[1], 0, NULL, &value_size_secondary);
-            if (orientation == DISPLAY_ORIENTATION_VERTICAL_TILED)
-            {
-                if (!active)
-                {
-                    display_draw_text(prefer_side, orientation, (prefer_side ?
-                        subcontrol_origin_secondary.x : subcontrol_origin_primary.x) + 1,
-                        (prefer_side ? subcontrol_origin_secondary.y :
-                        subcontrol_origin_primary.y) + 1, prefer_side ?
-                        content_measure_secondary : content_measure_primary, item_text_length,
-                        DISPLAY_COLOR_BLACK, formats[prefer_side]);
-                }
-                display_draw_text(prefer_side, orientation, prefer_side ?
-                    subcontrol_origin_secondary.x : subcontrol_origin_primary.x,
-                    prefer_side ? subcontrol_origin_secondary.y :
-                    subcontrol_origin_primary.y, prefer_side ?
-                    content_measure_secondary : content_measure_primary, item_text_length,
-                    active ? DISPLAY_COLOR_BLACK : DISPLAY_COLOR_WHITE, formats[prefer_side]);
-            }
-            else
-            {
-                if (!active)
-                {
-                    display_draw_text(0, orientation, subcontrol_origin_primary.x + 1,
-                        subcontrol_origin_primary.y + 1, content_measure_primary,
-                        item_text_length, DISPLAY_COLOR_BLACK, formats[0]);
-                    display_draw_text(1, orientation, subcontrol_origin_secondary.x + 1,
-                        subcontrol_origin_secondary.y + 1, content_measure_secondary,
-                        item_text_length, DISPLAY_COLOR_BLACK, formats[1]);
-                }
-                display_draw_text(0, orientation, subcontrol_origin_primary.x,
-                    subcontrol_origin_primary.y, content_measure_primary,
-                    item_text_length, active ? DISPLAY_COLOR_BLACK : DISPLAY_COLOR_WHITE,
-                    formats[0]);
-                display_draw_text(1, orientation, subcontrol_origin_secondary.x,
-                    subcontrol_origin_secondary.y, content_measure_secondary,
-                    item_text_length, active ? DISPLAY_COLOR_BLACK : DISPLAY_COLOR_WHITE,
-                    formats[1]);
-            }
-            free(content_measure_primary);
-            free(content_measure_secondary);
-
-            // Draw bar
-            display_vector_t bar_size = {
-                .x = subcontrol_origin.x - 6 - (item_origin.x + measure_size_raw.x + 6),
-                .y = 6
-            };
-            subcontrol_origin.x = item_origin.x + measure_size_raw.x + 6;
-            subcontrol_origin.y += 3;
-            display_rect_t bar_rect = {
-                .x = subcontrol_origin.x, .y = subcontrol_origin.y, .height = bar_size.y,
-                .width = bar_size.x,
-            };
-            display_rect_t bar_rect_primary = display_rect_compensation(&bar_rect, formats[0]);
-            display_rect_t bar_rect_secondary = display_rect_compensation(&bar_rect, formats[1]);
-            display_rect_t bar_value_primary = bar_rect_primary;
-            display_rect_t bar_value_secondary = bar_rect_secondary;
-            if (items[item_index].max != items[item_index].min)
-            {
-                bar_value_primary.width = (int)((float)bar_value_primary.width /
-                (items[item_index].max - items[item_index].min) *
-                (items[item_index].current_value - items[item_index].min));
-                bar_value_secondary.width = (int)((float)bar_value_secondary.width /
-                (items[item_index].max - items[item_index].min) *
-                (items[item_index].current_value - items[item_index].min));
-            }
-            if (orientation == DISPLAY_ORIENTATION_VERTICAL_TILED)
-            {
-                if (!active)
-                {
-                    display_rect_translate(&bar_rect_primary, 1, 1);
-                    display_rect_translate(&bar_rect_secondary, 1, 1);
-                    display_rect_translate(&bar_value_primary, 1, 1);
-                    display_rect_translate(&bar_value_secondary, 1, 1);
-                    display_draw_rect(prefer_side, orientation, prefer_side ?
-                        &bar_rect_secondary : &bar_rect_primary, DISPLAY_COLOR_BLACK, 1);
-                    display_fill_rect(prefer_side, orientation, prefer_side ?
-                        &bar_value_secondary : &bar_value_primary, DISPLAY_COLOR_BLACK);
-                    display_rect_translate(&bar_rect_primary, -1, -1);
-                    display_rect_translate(&bar_rect_secondary, -1, -1);
-                    display_rect_translate(&bar_value_primary, -1, -1);
-                    display_rect_translate(&bar_value_secondary, -1, -1);
-                }
-                display_draw_rect(prefer_side, orientation, prefer_side ?
-                    &bar_rect_secondary : &bar_rect_primary, active ?
-                    DISPLAY_COLOR_BLACK : DISPLAY_COLOR_WHITE, 1);
-                display_fill_rect(prefer_side, orientation, prefer_side ?
-                    &bar_value_secondary : &bar_value_primary, active ?
-                    DISPLAY_COLOR_BLACK : DISPLAY_COLOR_WHITE);
-            }
-            else
-            {
-                if (!active)
-                {
-                    display_rect_translate(&bar_rect_primary, 1, 1);
-                    display_rect_translate(&bar_rect_secondary, 1, 1);
-                    display_rect_translate(&bar_value_primary, 1, 1);
-                    display_rect_translate(&bar_value_secondary, 1, 1);
-                    display_draw_rect(0, orientation, &bar_rect_primary, DISPLAY_COLOR_BLACK, 1);
-                    display_draw_rect(1, orientation, &bar_rect_secondary, DISPLAY_COLOR_BLACK, 1);
-                    display_fill_rect(0, orientation, &bar_value_primary, DISPLAY_COLOR_BLACK);
-                    display_fill_rect(1, orientation, &bar_value_secondary, DISPLAY_COLOR_BLACK);
-                    display_rect_translate(&bar_rect_primary, -1, -1);
-                    display_rect_translate(&bar_rect_secondary, -1, -1);
-                    display_rect_translate(&bar_value_primary, -1, -1);
-                    display_rect_translate(&bar_value_secondary, -1, -1);
-                }
-                display_draw_rect(0, orientation, &bar_rect_primary, active ?
-                    DISPLAY_COLOR_BLACK : DISPLAY_COLOR_WHITE, 1);
-                display_draw_rect(1, orientation, &bar_rect_secondary,  active ?
-                    DISPLAY_COLOR_BLACK : DISPLAY_COLOR_WHITE, 1);
-                display_fill_rect(0, orientation, &bar_value_primary,  active ?
-                    DISPLAY_COLOR_BLACK : DISPLAY_COLOR_WHITE);
-                display_fill_rect(1, orientation, &bar_value_secondary,  active ?
-                    DISPLAY_COLOR_BLACK : DISPLAY_COLOR_WHITE);
-            }
-        }
-        break;
-        case SETTINGS_ITEM_SWITCH:
-        {
-            char icon_primary[60], icon_secondary[60];
-            char selected_icon[30];
-            sprintf(selected_icon, items[item_index].current_value ?
-                    "check_box" : "check_box_unchecked");
-            int icon_size_raw, icon_size_primary, icon_size_secondary;
-            display_get_icon(selected_icon, DISPLAY_FORMAT_PAL, false, NULL, &icon_size_raw);
-            display_get_icon(selected_icon, formats[0], false, icon_primary,
-                             &icon_size_primary);
-            display_get_icon(selected_icon, formats[1], false, icon_secondary,
-                             &icon_size_secondary);
-
-            // Draw content
-            subcontrol_origin.x -= icon_size_raw;
-            subcontrol_origin_primary = display_vector_compensation(
-                &subcontrol_origin, formats[0]
-            );
-            subcontrol_origin_secondary = display_vector_compensation(
-                &subcontrol_origin, formats[1]
-            );
-            if (orientation == DISPLAY_ORIENTATION_VERTICAL_TILED)
-            {
-                if (!active)
-                {
-                    display_draw_image(prefer_side, orientation, (prefer_side ?
-                        subcontrol_origin_secondary.x : subcontrol_origin_primary.x) + 1,
-                        (prefer_side ? subcontrol_origin_secondary.y :
-                        subcontrol_origin_primary.y) + 1, prefer_side ? icon_secondary :
-                        icon_primary, prefer_side ? icon_size_secondary :
-                        icon_size_primary, DISPLAY_COLOR_BLACK);
-                }
-                display_draw_image(prefer_side, orientation, prefer_side ?
-                    subcontrol_origin_secondary.x : subcontrol_origin_primary.x,
-                    prefer_side ? subcontrol_origin_secondary.y :
-                    subcontrol_origin_primary.y, prefer_side ? icon_secondary :
-                    icon_primary, prefer_side ? icon_size_secondary :
-                    icon_size_primary, active ? DISPLAY_COLOR_BLACK : DISPLAY_COLOR_WHITE);
-            }
-            else
-            {
-                if (!active)
-                {
-                    display_draw_image(0, orientation, subcontrol_origin_primary.x + 1,
-                        subcontrol_origin_primary.y + 1, icon_primary, icon_size_primary,
-                        DISPLAY_COLOR_BLACK);
-                    display_draw_image(1, orientation, subcontrol_origin_secondary.x + 1,
-                        subcontrol_origin_secondary.y + 1, icon_secondary,
-                        icon_size_secondary, DISPLAY_COLOR_BLACK);
-                }
-                display_draw_image(0, orientation, subcontrol_origin_primary.x,
-                    subcontrol_origin_primary.y, icon_primary, icon_size_primary,
-                    active ? DISPLAY_COLOR_BLACK : DISPLAY_COLOR_WHITE);
-                display_draw_image(1, orientation, subcontrol_origin_secondary.x,
-                    subcontrol_origin_secondary.y, icon_secondary, icon_size_secondary,
-                    active ? DISPLAY_COLOR_BLACK : DISPLAY_COLOR_WHITE);
-            }
-        }
-        break;
-        default:
-            break;
-    }
-    display_rect_expand(&item_rect_primary, 1, 1);
-    display_rect_expand(&item_rect_secondary, 1, 1);
-    display_update(0, orientation, &item_rect_primary);
-    display_update(1, orientation, &item_rect_secondary);
 }
 
 static void ui_settings_draw_display_position(int index, display_format_t formats[],
@@ -1194,6 +575,13 @@ static void ui_settings_on_draw(ui_settings_t *settings, display_format_t *forma
                          display_orientation_t orientation)
 {
     wkc_settings_t *current_settings = wkc_settings_get_current();
+    int logical_width = orientation == DISPLAY_ORIENTATION_HORIZONTAL ?
+                        DISPLAY_WIDTH_PAL : DISPLAY_HEIGHT_PAL;
+    int logical_height = orientation == DISPLAY_ORIENTATION_HORIZONTAL ?
+                         DISPLAY_HEIGHT_PAL : DISPLAY_WIDTH_PAL;
+    display_vector_t center = {
+        .x = logical_width / 2, .y = logical_height / 2
+    };
     if (!settings->show && !settings->draw_request)
         return;
 
@@ -1207,17 +595,19 @@ static void ui_settings_on_draw(ui_settings_t *settings, display_format_t *forma
         {
             language_options[i] = wkc_translations_get_language_name_from_index(i);
         }
-        ui_settings_item_t main_items[] = {
-            { .type = SETTINGS_ITEM_LABEL, .name = wkc_translations_get_string("settings_display_settings") },
-            { .type = SETTINGS_ITEM_LABEL, .name = wkc_translations_get_string("settings_misc_settings") },
-            { .type = SETTINGS_ITEM_LABEL, .name = wkc_translations_get_string("settings_advanced_settings") },
+        ui_menu_item_t main_items[] = {
+            { .type = UI_MENU_ITEM_LABEL, .name = wkc_translations_get_string("settings_display_settings") },
+            { .type = UI_MENU_ITEM_LABEL, .name = wkc_translations_get_string("settings_misc_settings") },
+            { .type = UI_MENU_ITEM_LABEL, .name = wkc_translations_get_string("settings_advanced_settings") },
             {
-                .type = SETTINGS_ITEM_PICKER,
-                .min = 0,
-                .max = language_count - 1,
+                .type = UI_MENU_ITEM_PICKER,
+                .count = language_count,
                 .name = wkc_translations_get_string("settings_language"),
                 .options = language_options,
                 .current_value = current_settings->language
+            },
+            {
+                .type = UI_MENU_ITEM_END
             }
         };
         if (settings->show || settings->hirerachy_index == 0 &&
@@ -1228,16 +618,18 @@ static void ui_settings_on_draw(ui_settings_t *settings, display_format_t *forma
                 DISPLAY_CLEAR_SCREEN(0);
                 DISPLAY_CLEAR_SCREEN(1);
             }
-            ui_settings_draw_item(~settings->selected_index[0], true, 0, formats, orientation,
-            main_items, 4);
+            ui_common_menu_draw_item(main_items, settings->selected_index[0], true,
+                                     0, &center, UI_MENU_ALIGN_CENTER,
+                                     UI_MENU_ALIGN_CENTER, formats, orientation, true, 0);
         }
         else
         {
-            ui_settings_draw_item(settings->last_selected_index, false, 0, formats,
-                                  orientation, main_items, 4);
-            ui_settings_draw_item(settings->selected_index[0], true, 0, formats, orientation,
-            main_items, 4);
-            settings->last_selected_index = settings->selected_index[0];
+            ui_common_menu_draw_item(main_items, settings->last_selected_index, false,
+                                     0, &center, UI_MENU_ALIGN_CENTER,
+                                     UI_MENU_ALIGN_CENTER, formats, orientation, false, 0);
+            ui_common_menu_draw_item(main_items, settings->selected_index[0], true,
+                                     0, &center, UI_MENU_ALIGN_CENTER,
+                                     UI_MENU_ALIGN_CENTER, formats, orientation, false, 0);
         }
         free(language_options);
     }
@@ -1259,53 +651,61 @@ static void ui_settings_on_draw(ui_settings_t *settings, display_format_t *forma
             wkc_translations_get_string("settings_screen_id_1"),
             wkc_translations_get_string("settings_screen_id_2"),
         };
-        ui_settings_item_t items[] = {
+        ui_menu_item_t items[] = {
             {
-                .type = SETTINGS_ITEM_PICKER,
+                .type = UI_MENU_ITEM_PICKER,
                 .name = wkc_translations_get_string("settings_screen_orientation"),
-                .min = 0, .max = 2,
+                .count = 3,
                 .options = orientation_options,
                 .current_value = wkc_settings_get_current()->display.orientation
             },
             {
-                .type = SETTINGS_ITEM_PICKER,
+                .type = UI_MENU_ITEM_PICKER,
                 .name = wkc_translations_get_string("settings_output_mode"),
-                .min = 0, .max = 2,
+                .count = 3,
                 .options = output_mode_options,
                 .current_value = wkc_settings_get_current()->display.output_mode
             },
             {
-                .type = SETTINGS_ITEM_LABEL,
+                .type = UI_MENU_ITEM_LABEL,
                 .name = wkc_translations_get_string("settings_adjust_position")
             },
             {
-                .type = SETTINGS_ITEM_PICKER,
+                .type = UI_MENU_ITEM_PICKER,
                 .name = wkc_translations_get_string("settings_capture_output"),
-                .min = 0, .max = 1,
+                .count = 2,
                 .options = capture_index_options,
                 .current_value = wkc_settings_get_current()->display.capture_index
             },
             {
-                .type = SETTINGS_ITEM_SWITCH,
+                .type = UI_MENU_ITEM_SWITCH,
                 .name = wkc_translations_get_string("settings_capture_osd"),
-                .min = 0, .max = 1,
+                .count = 2,
                 .current_value = wkc_settings_get_current()->display.capture_osd
             },
+            {
+                .type = UI_MENU_ITEM_END
+            }
         };
-        if (settings->show)
+        if (settings->show || settings->last_selected_index < 0)
         {
-            ui_settings_draw_item(~settings->selected_index[settings->hirerachy_index],
-                                  true, 1, formats, orientation, items,
-                                  sizeof(items) / sizeof(ui_settings_item_t));
+            if (orientation != DISPLAY_ORIENTATION_VERTICAL_TILED)
+                DISPLAY_CLEAR_SCREEN(0);
+            DISPLAY_CLEAR_SCREEN(1);
+            ui_common_menu_draw_item(items, settings->selected_index
+                                     [settings->hirerachy_index], true,
+                                     1, &center, UI_MENU_ALIGN_CENTER,
+                                     UI_MENU_ALIGN_CENTER, formats, orientation, true, 0);
         }
         else
         {
-            ui_settings_draw_item(settings->last_selected_index, false, 1, formats,
-                                  orientation, items,
-                                  sizeof(items) / sizeof(ui_settings_item_t));
-            ui_settings_draw_item(settings->selected_index[settings->hirerachy_index],
-                                  true, 1, formats, orientation, items,
-                                  sizeof(items) / sizeof(ui_settings_item_t));
+            ui_common_menu_draw_item(items, settings->last_selected_index, false,
+                                     1, &center, UI_MENU_ALIGN_CENTER,
+                                     UI_MENU_ALIGN_CENTER, formats, orientation, false, 0);
+            ui_common_menu_draw_item(items, settings->selected_index
+                                     [settings->hirerachy_index], true,
+                                     1, &center, UI_MENU_ALIGN_CENTER,
+                                     UI_MENU_ALIGN_CENTER, formats, orientation, false, 0);
         }
     }
     else if (settings->menu_state == UI_SETTINGS_MISC)
@@ -1320,74 +720,90 @@ static void ui_settings_on_draw(ui_settings_t *settings, display_format_t *forma
             wkc_translations_get_string("settings_top"),
             wkc_translations_get_string("settings_bottom")
         };
-        ui_settings_item_t items[] = {
+        ui_menu_item_t items[] = {
             {
-                .type = SETTINGS_ITEM_PICKER,
+                .type = UI_MENU_ITEM_PICKER,
                 .name = wkc_translations_get_string("settings_power_save"),
-                .min = 0, .max = 3,
+                .count = 4,
                 .options = power_save_options,
                 .current_value = wkc_settings_get_current()->power_save
             },
             {
-                .type = SETTINGS_ITEM_SWITCH,
+                .type = UI_MENU_ITEM_SWITCH,
                 .name = wkc_translations_get_string("settings_keep_advertise"),
                 .current_value = wkc_settings_get_current()->keep_advertise
             },
             {
-                .type = SETTINGS_ITEM_SWITCH,
+                .type = UI_MENU_ITEM_SWITCH,
                 .name = wkc_translations_get_string("settings_remember_peripherals"),
                 .current_value = wkc_settings_get_current()->peripherals.remember_state
             },
             {
-                .type = SETTINGS_ITEM_PICKER,
+                .type = UI_MENU_ITEM_PICKER,
                 .name = wkc_translations_get_string("settings_homepage_status_bar_position"),
-                .min = 0, .max = 1,
+                .count = 2,
                 .options = homepage_status_bar_position_options,
                 .current_value = wkc_settings_get_current()->homepage_status_bar_position
+            },
+            {
+                .type = UI_MENU_ITEM_END
             }
         };
-        if (settings->show)
+        if (settings->show || settings->last_selected_index < 0)
         {
-            ui_settings_draw_item(~settings->selected_index[settings->hirerachy_index],
-                                  true, 1, formats, orientation, items,
-                                  sizeof(items) / sizeof(ui_settings_item_t));
+            if (orientation != DISPLAY_ORIENTATION_VERTICAL_TILED)
+                DISPLAY_CLEAR_SCREEN(0);
+            DISPLAY_CLEAR_SCREEN(1);
+            ui_common_menu_draw_item(items, settings->selected_index
+                                     [settings->hirerachy_index], true,
+                                     1, &center, UI_MENU_ALIGN_CENTER,
+                                     UI_MENU_ALIGN_CENTER, formats, orientation, true, 0);
         }
         else
         {
-            ui_settings_draw_item(settings->last_selected_index, false, 1, formats,
-                                  orientation, items,
-                                  sizeof(items) / sizeof(ui_settings_item_t));
-            ui_settings_draw_item(settings->selected_index[settings->hirerachy_index],
-                                  true, 1, formats, orientation, items,
-                                  sizeof(items) / sizeof(ui_settings_item_t));
+            ui_common_menu_draw_item(items, settings->last_selected_index, false,
+                                     1, &center, UI_MENU_ALIGN_CENTER,
+                                     UI_MENU_ALIGN_CENTER, formats, orientation, false, 0);
+            ui_common_menu_draw_item(items, settings->selected_index
+                                     [settings->hirerachy_index], true,
+                                     1, &center, UI_MENU_ALIGN_CENTER,
+                                     UI_MENU_ALIGN_CENTER, formats, orientation, false, 0);
         }
     }
     else if (settings->menu_state == UI_SETTINGS_ADVANCED)
     {
-        ui_settings_item_t items[] = {
+        ui_menu_item_t items[] = {
             {
-                .type = SETTINGS_ITEM_LABEL,
+                .type = UI_MENU_ITEM_LABEL,
                 .name = wkc_translations_get_string("settings_clear_paired_devices")
             },
             {
-                .type = SETTINGS_ITEM_LABEL,
+                .type = UI_MENU_ITEM_LABEL,
                 .name = wkc_translations_get_string("settings_factory_reset")
+            },
+            {
+                .type = UI_MENU_ITEM_END
             }
         };
-        if (settings->show)
+        if (settings->show || settings->last_selected_index < 0)
         {
-            ui_settings_draw_item(~settings->selected_index[settings->hirerachy_index],
-                                  true, 1, formats, orientation, items,
-                                  sizeof(items) / sizeof(ui_settings_item_t));
+            if (orientation != DISPLAY_ORIENTATION_VERTICAL_TILED)
+                DISPLAY_CLEAR_SCREEN(0);
+            DISPLAY_CLEAR_SCREEN(1);
+            ui_common_menu_draw_item(items, settings->selected_index
+                                     [settings->hirerachy_index], true,
+                                     1, &center, UI_MENU_ALIGN_CENTER,
+                                     UI_MENU_ALIGN_CENTER, formats, orientation, true, 0);
         }
         else
         {
-            ui_settings_draw_item(settings->last_selected_index, false, 1, formats,
-                                  orientation, items,
-                                  sizeof(items) / sizeof(ui_settings_item_t));
-            ui_settings_draw_item(settings->selected_index[settings->hirerachy_index],
-                                  true, 1, formats, orientation, items,
-                                  sizeof(items) / sizeof(ui_settings_item_t));
+            ui_common_menu_draw_item(items, settings->last_selected_index, false,
+                                     1, &center, UI_MENU_ALIGN_CENTER,
+                                     UI_MENU_ALIGN_CENTER, formats, orientation, false, 0);
+            ui_common_menu_draw_item(items, settings->selected_index
+                                     [settings->hirerachy_index], true,
+                                     1, &center, UI_MENU_ALIGN_CENTER,
+                                     UI_MENU_ALIGN_CENTER, formats, orientation, false, 0);
         }
     }
     else if (settings->menu_state == UI_SETTINGS_DISPLAY_POSITION)
@@ -1695,6 +1111,7 @@ static void ui_settings_on_key_event(ui_settings_t *settings, int key_code)
                     {
                         wkc_settings_load_default();
                         wkc_security_load_default();
+                        camera_control_reset();
                         esp_restart();
                     }
                 }

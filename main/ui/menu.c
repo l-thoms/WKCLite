@@ -11,7 +11,6 @@
 #include "peripherals/pwm.h"
 #include "io/io_extend.h"
 #include "esp_log.h"
-#include "camera/camera_control.h"
 #include "jpeg_decoder.h"
 #include "io/filesystem.h"
 
@@ -60,7 +59,7 @@ static void ui_menu_draw_item(ui_menu_t *menu, int item_index, bool highlight,
         strcpy(text, menu->brightness_tweak ?
                      wkc_translations_get_string("menu_tweaking") :
                      wkc_translations_get_string("menu_brightness"));
-        strcpy(image_name, "brightness_1");
+        strcpy(image_name, "brightness");
         break;
     case 5:
         int fan_level = pwm_device_get_fan_level();
@@ -464,30 +463,39 @@ static void ui_menu_on_key_event(ui_menu_t *menu, int key_code)
             else if (menu->selected_index == 2)
             {
                 int ensure = wkc_storage_ensure_capture_dir();
-                static int camera_test_channel = 0;
-                ESP_LOGI("MENU", "Test channel %d", camera_test_channel);
-                camera_test_channel = !camera_test_channel;
-                uint8_t *capture_buffer;
-                int capture_result = camera_capture(95, orientation, JPEG_SUBSAMPLE_422,
-                                      false, &capture_buffer);
-                if (capture_result > 0)
+                if (ensure)
                 {
-                    ESP_LOGI("MENU", "Camera capture OKAY");
-                    if (ensure == 0)
-                        wkc_save("/sdcard/wkc_capture/testimage.jpg",
-                            (char*)capture_buffer, (size_t)capture_result);
+                    ui_shell_show_toast(menu->base.parent,
+                        wkc_translations_get_string("files_insert_sd_card"), 5);
                 }
                 else
-                    ESP_LOGE("MENU", "Camera capture FAILED");
-                ui_shell_show_toast(menu->base.parent,
-                    wkc_translations_get_string("menu_capture_under_development"), 5);
-                camera_set_channel(camera_test_channel);
+                {
+                    ui_page_t *camera = ui_shell_find_page(menu->base.parent,
+                        UI_PAGE_TYPE_CAMERA);
+                    if (camera != NULL)
+                        ui_shell_show_page(menu->base.parent, camera);
+                }
             }
             else if (menu->selected_index == 3)
             {
-                ui_page_t *files = ui_shell_find_page(menu->base.parent, UI_PAGE_TYPE_FILES);
-                if (files != NULL)
-                    ui_shell_show_page(menu->base.parent, files);
+                int ensure = wkc_storage_ensure_capture_dir();
+                if (ensure)
+                {
+                    ui_shell_show_toast(menu->base.parent,
+                        wkc_translations_get_string("files_insert_sd_card"), 5);
+                }
+                else if (wkc_directory_file_count(CAPTURE_DIR) <= 0)
+                {
+                    ui_shell_show_toast(menu->base.parent,
+                        wkc_translations_get_string("files_empty_directory"), 5);
+                }
+                else
+                {
+                    ui_page_t *files = ui_shell_find_page(menu->base.parent,
+                        UI_PAGE_TYPE_FILES);
+                    if (files != NULL)
+                        ui_shell_show_page(menu->base.parent, files);
+                }
             }
             else if (menu->selected_index == 4)
             {

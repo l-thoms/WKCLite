@@ -1,5 +1,5 @@
 /*
-generate_pll global_clock -pll_type PLLVE -input_freq 8 -output_freqs { {36}} -fb_mode EXT_FEEDBACK -output_phases { {0}} -output_duties { {50}}
+generate_pll global_clock -pll_type PLLVE -input_freq 8 -output_freqs { {72}} -fb_mode EXT_FEEDBACK -output_phases { {0}} -output_duties { {50}}
 */
 `timescale 1ns/1ps
 module global_clock(
@@ -59,10 +59,10 @@ defparam global_clock.CLKFB_HIGH = 8'h39;
 defparam global_clock.CLKFB_LOW = 8'h3A;
 defparam global_clock.VCO_POST_DIV = 1'h0;
 defparam global_clock.CLKDIV0_EN = 1'h1;
-defparam global_clock.CLKOUT0_HIGH = 8'h0C;
-defparam global_clock.CLKOUT0_LOW = 8'h0C;
+defparam global_clock.CLKOUT0_HIGH = 8'h05;
+defparam global_clock.CLKOUT0_LOW = 8'h06;
 defparam global_clock.CLKOUT0_BYPASS = 1'h0;
-defparam global_clock.CLKOUT0_TRIM = 1'h0;
+defparam global_clock.CLKOUT0_TRIM = 1'h1;
 defparam global_clock.CLKOUT0_DEL = 8'h00;
 defparam global_clock.CLKOUT0_PHASE = 3'h0;
 defparam global_clock.CLKDIV1_EN = 1'h0;

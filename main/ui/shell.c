@@ -44,6 +44,7 @@ typedef struct ui_shell_t
     display_format_t format_primary;
     display_format_t format_secondary;
     display_orientation_t orientation;
+    int interval;
     QueueHandle_t queue;
 } ui_shell_t;
 
@@ -232,13 +233,20 @@ ui_shell_t *ui_shell_create()
     return (ui_shell_t*)result;
 }
 
+void ui_shell_acquire_interval(ui_shell_t *shell, int interval)
+{
+    if (interval < shell->interval)
+        shell->interval = interval;
+}
+
 void ui_shell_mainloop(ui_shell_t *shell)
 {
     if(shell != NULL)
         for(;;)
         {
             ui_shell_queue_info_t queue_info = { .event_type = QUEUE_EVENT_UPDATE };
-            xQueueReceive(shell->queue, &queue_info, 500 / portTICK_PERIOD_MS);
+            xQueueReceive(shell->queue, &queue_info, shell->interval / portTICK_PERIOD_MS);
+            shell->interval = 500;
             // Show page in backlog
             if(shell->page_backlog != NULL)
             {
@@ -270,6 +278,7 @@ void ui_shell_mainloop(ui_shell_t *shell)
                     shell->format_secondary != formats[1] ||
                     shell->orientation != new_orientation)
                 {
+                    vTaskDelay(2100 / portTICK_PERIOD_MS);
                     ui_shell_close_toast(shell);
                     ui_page_on_format_changed(current);
                     shell->format_primary = formats[0];

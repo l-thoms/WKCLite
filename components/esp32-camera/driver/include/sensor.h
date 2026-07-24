@@ -34,7 +34,7 @@ typedef enum {
     MEGA_CCM_PID =0x039E,
     HM1055_PID = 0x0955,
     HM0360_PID = 0x0360,
-    GM7150BC_PID = 0x7150
+    SAA7113_PID = 0x7113
 } camera_pid_t;
 
 typedef enum {
@@ -55,7 +55,7 @@ typedef enum {
     CAMERA_MEGA_CCM,
     CAMERA_HM1055,
     CAMERA_HM0360,
-    CAMERA_GM7150BC,
+    CAMERA_SAA7113,
     CAMERA_MODEL_MAX,
     CAMERA_NONE,
 } camera_model_t;
@@ -78,7 +78,7 @@ typedef enum {
     MEGA_CCM_SCCB_ADDR = 0x1F, // 0x3E >> 1
     HM1055_SCCB_ADDR   = 0x24,
     HM0360_SCCB_ADDR   = 0x12,
-    GM7150BC_SCCB_ADDR   = 0x5D,
+    SAA7113_SCCB_ADDR   = 0x25,
 } camera_sccb_addr_t;
 
 typedef enum {
@@ -123,8 +123,8 @@ typedef enum {
     FRAMESIZE_QSXGA,    // 2560x1920
     FRAMESIZE_5MP,      // 2592x1944
     // CVBS Single Field
-    FRAMESIZE_PAL,      // 720x288
     FRAMESIZE_NTSC,     // 720x240
+    FRAMESIZE_PAL,      // 720x288
     FRAMESIZE_INVALID
 } framesize_t;
 

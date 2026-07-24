@@ -37,6 +37,8 @@ typedef struct
 {
     uint8_t *frame_buffer;
     int64_t sync_time_us;
+    uint64_t transmit_ticks;
+    uint64_t transmit_num;
     display_format_t format;
     display_format_t last_format;
     gpio_num_t vsync_gpio;
@@ -77,3 +79,7 @@ uint8_t* display_control_get_primary_overlay_buffer();
 uint8_t* display_control_get_secondary_overlay_buffer();
 void display_set_power_down(bool power_down);
 void display_control_get_formats(display_format_t *formats);
+void display_control_record_operate_time();
+void display_control_cancel_operate_time(int64_t cancel_duration);
+void display_control_operate_hang_request();
+void display_control_operate_hang_release();

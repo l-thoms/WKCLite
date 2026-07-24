@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
 #include "esp_log.h"
 #include "command_parser.h"
 #include "cJSON.h"
@@ -23,7 +24,6 @@
 #include "ui/menu.h"
 #include "peripherals/lock.h"
 #include "peripherals/adc.h"
-#include "time.h"
 #include "io/io_extend.h"
 #include "display/display_control.h"
 
@@ -97,13 +97,13 @@ int wkc_write_command(uint16_t conn_handle, uint16_t attr_handle,
             int ret = wkc_settings_save_by_item((char*)(command + 1));
             if(ret != 0)
             {
-                ESP_LOGE("TAG", "Invalid settings item");
+                ESP_LOGE(TAG, "Invalid settings item");
                 os_mbuf_append(notify_om, (uint8_t[]){(uint8_t)1}, 1);
                 ble_gatts_notify_custom(conn_handle, attr_handle, notify_om);
             }
             else
             {
-                ESP_LOGI("TAG", "Settings item changed");
+                ESP_LOGI(TAG, "Settings item changed");
                 WKC_NOTIFY_DEFAULT();
             }
         }

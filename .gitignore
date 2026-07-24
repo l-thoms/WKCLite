@@ -30,7 +30,7 @@ build/
 *.map
 flasher_args.json # Generated in build directory
 sdkconfig.old
-sdkconfig
+sdkconfig.ci
 
 # ESP-IDF dependencies
 # For older versions or manual component management
@@ -79,6 +79,7 @@ Desktop.ini
 
 # VSCode data
 .vscode/
+.devcontainer/
 
 # PCB project, see OSHWHUB
 design/

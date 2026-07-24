@@ -12,14 +12,14 @@
 #include "pwm.h"
 #include "lock.h"
 
-#define BATTERY_VALUE_FULL 3050
+#define BATTERY_VALUE_FULL 3250
 #define BATTERY_VALUE_CHARGING_FULL 3530
 // 2350 limit
 #define BATTERY_VALUE_EMPTY 2450
 // 2750 limit
 #define BATTERY_VALUE_CHARGING_EMPTY 2850
 #define BATTERY_VALUE_LENGTH 10
-#define BATTERY_STATE_SWITCH_THRESHOLD 60
+#define BATTERY_STATE_SWITCH_THRESHOLD BATTERY_VALUE_LENGTH
 #define BATTERY_VALID_THRESHOLD 150
 #define BATTERY_POW_COMPENSATION 2.7f
 
@@ -28,6 +28,7 @@
 static adc_oneshot_unit_handle_t current_unit_handle;
 
 static bool current_ir_value = false;
+static bool temp_increment = false;
 static bool battery_value_init = false;
 static int battery_value_storage[BATTERY_VALUE_LENGTH] = { 0 };
 static int battery_state_switch_count = BATTERY_STATE_SWITCH_THRESHOLD;
@@ -84,13 +85,37 @@ static void adc_calculate_battery_percentage(bool recalculate)
                                 (BATTERY_VALUE_FULL - BATTERY_VALUE_EMPTY) * 100);
     if(calculated_percentage > 100) calculated_percentage = 100;
     if(calculated_percentage < 0) calculated_percentage = 0;
-    if (calculated_percentage != current_battery_result) // Single-directional increment
+    if (calculated_percentage != current_battery_result)
     {
+        if (current_battery_index > BATTERY_VALUE_LENGTH && !recalculate)
+        {
+            if(!temp_increment &&
+                (state == BATTERY_STATE_NORMAL &&
+                calculated_percentage > current_battery_result + 2 ||
+                state == BATTERY_STATE_CHRG &&
+                calculated_percentage < current_battery_result - 2))
+            {
+                temp_increment = true;
+            }
+            else if (state == BATTERY_STATE_NORMAL &&
+                     calculated_percentage < current_battery_result ||
+                     state == BATTERY_STATE_CHRG &&
+                     calculated_percentage > current_battery_result)
+            {
+                temp_increment = false;
+            }
+        }
         if (current_battery_index < BATTERY_VALUE_LENGTH || state == BATTERY_STATE_UNDEF ||
-            state == BATTERY_STATE_NORMAL && calculated_percentage < current_battery_result ||
-            state == BATTERY_STATE_CHRG && calculated_percentage > current_battery_result ||
+            state == BATTERY_STATE_NORMAL &&
+            (calculated_percentage < current_battery_result ||
+             calculated_percentage > current_battery_result && temp_increment) ||
+            state == BATTERY_STATE_CHRG &&
+            (calculated_percentage > current_battery_result ||
+             calculated_percentage < current_battery_result && temp_increment) ||
             recalculate)
+        {
             current_battery_result = calculated_percentage;
+        }
         if (state == BATTERY_STATE_CHRG && current_battery_result == 100)
             current_battery_result = 99;
         else if (state == BATTERY_STATE_STDBY)
@@ -109,6 +134,7 @@ static void adc_monitor_task(void *params)
         if (state != fetch && !init)
         {
             state = fetch;
+            temp_increment = false;
             battery_state_switch_count = BATTERY_STATE_SWITCH_THRESHOLD;
             goto adc_monitor_next;
         }

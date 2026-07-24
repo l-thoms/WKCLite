@@ -43,6 +43,7 @@ typedef struct
     int file_index_end;
     bool delete_confirm;
     char **file_list;
+    int from_camera;
     ui_files_state_t state;
     file_info_t current_file_info;
 } ui_files_t;
@@ -907,6 +908,8 @@ static void ui_files_on_key_event(ui_files_t *files, int key_code)
             if (key_code == UI_KEY_CODE_EXIT)
             {
                 ui_shell_show_page(files->base.parent,
+                    files->from_camera ?
+                    ui_shell_find_page(files->base.parent, UI_PAGE_TYPE_CAMERA) :
                     ui_shell_find_page(files->base.parent, UI_PAGE_TYPE_HOME));
             }
             else if (key_code == UI_KEY_CODE_UP)
@@ -1023,6 +1026,12 @@ static void ui_files_on_format_changed(ui_files_t *files)
     files->draw_request = true;
 }
 
+static void ui_files_on_mainloop(ui_files_t *files, bool on_foreground)
+{
+    if (!on_foreground && files->from_camera)
+        files->from_camera -= 1;
+}
+
 ui_page_t *ui_files_create()
 {
     ui_files_t *files = (ui_files_t*)calloc(1, sizeof(ui_files_t));
@@ -1031,5 +1040,16 @@ ui_page_t *ui_files_create()
     files->base.on_draw = (ui_page_draw_event_t)ui_files_on_draw;
     files->base.on_key_event = (ui_page_key_event_t)ui_files_on_key_event;
     files->base.on_format_changed = (ui_page_event_t)ui_files_on_format_changed;
+    files->base.on_mainloop = (ui_page_mainloop_event_t)ui_files_on_mainloop;
     return (ui_page_t*)files;
+}
+
+void ui_files_show_from_camera(ui_shell_t *shell)
+{
+    if (!shell) return;
+    ui_page_t *page = ui_shell_find_page(shell, UI_PAGE_TYPE_FILES);
+    if (!page) return;
+    ui_files_t *files = (ui_files_t*)page;
+    files->from_camera = 2;
+    ui_shell_show_page(shell, page);
 }

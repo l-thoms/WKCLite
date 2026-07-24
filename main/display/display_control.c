@@ -1,4 +1,6 @@
 #include <string.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/semphr.h"
 #include "driver/i2s_std.h"
 #include "driver/spi_master.h"
 #include "driver/gpio.h"
@@ -23,6 +25,9 @@
 // PAL: 768x576 active, transmit 800x625
 // NTSC: 640x480 active, transmit 800x525
 
+#define OPERATE_THRESHOLD 2000000
+#define OPERATE_PRE       1000000
+
 #define DISP_GPIO GPIO_NUM_21
 
 #define SYNC_DIFF_PAL_STD 9600000
@@ -41,6 +46,12 @@ static display_sync_info_t secondary_sync_info;
 
 static bool current_power_state = false;
 static int64_t power_save_begin = 0;
+
+static int64_t last_operate_time;
+static int64_t last_cancel_start;
+static int64_t last_cancel_duration;
+static SemaphoreHandle_t operate_hang_semaphore;
+static int operate_hang_count;
 
 static i2s_chan_config_t primary_chan_config = {
     .id = I2S_NUM_0,
@@ -109,7 +120,7 @@ static bool IRAM_ATTR i2s_controller_tx_callback(i2s_chan_handle_t handle, i2s_e
     int frame_size = sync_info->format == DISPLAY_FORMAT_NTSC ?
                                           I2S_FRAME_SIZE_NTSC :
                                           I2S_FRAME_SIZE_PAL;
-    int start_offset = sync_info->format == DISPLAY_FORMAT_NTSC ? 55 : 80;
+    int start_offset = sync_info->format == DISPLAY_FORMAT_NTSC ? -72 : -48;
     if (sync_info == &primary_sync_info)
     {
         start_offset += 16 * current_settings->display.position[0].output_timing;
@@ -125,6 +136,8 @@ static bool IRAM_ATTR i2s_controller_tx_callback(i2s_chan_handle_t handle, i2s_e
 
     if(sync_info->channel_reset)
     {
+        sync_info->transmit_ticks = 0;
+        sync_info->transmit_num = 0;
         sync_info->transmission_offset = CPU_CYCLE_TO_PIXEL(new_transmission_time  -
                                          sync_info->transmission_cycle_count) - start_offset -
                                          (sync_info->intr_edge == GPIO_INTR_NEGEDGE) *
@@ -134,10 +147,14 @@ static bool IRAM_ATTR i2s_controller_tx_callback(i2s_chan_handle_t handle, i2s_e
     else
     {
         // Transmission loss detect
-        int skip_transmission_count = (new_transmission_time - last_transmission_time_result +
-                                      I2S_TRANSMISSION_UNIT_TIME / 2) /
-                                      I2S_TRANSMISSION_UNIT_TIME - 1;
-        sync_info->transmission_offset += event->size * 4 * skip_transmission_count;
+        sync_info->transmit_num += 1;
+        sync_info->transmit_ticks += new_transmission_time - last_transmission_time_result;
+        int skip_transmit_count = (sync_info->transmit_ticks +
+                                  I2S_TRANSMISSION_UNIT_TIME / 2) /
+                                  I2S_TRANSMISSION_UNIT_TIME - sync_info->transmit_num;
+
+        sync_info->transmission_offset += event->size * 4 * skip_transmit_count;
+        sync_info->transmit_num += skip_transmit_count;
     }
 
     int current_transmission_offset = sync_info->transmission_offset;
@@ -179,6 +196,8 @@ static bool IRAM_ATTR i2s_controller_tx_callback(i2s_chan_handle_t handle, i2s_e
         int selected_y = selected_y_coarse * actual_den + selected_x_coarse / actual;
         if (selected_x < active_left || selected_x >= active_left + DISPLAY_WIDTH_PAL)
         {
+            // Begin of the horizontal line and tell FPGA to set horizontal resolution
+            // 10: NTSC, 11: PAL
             if (selected_x < active_left && selected_x >= active_left - 16)
                 buf[i] = sync_info->format == DISPLAY_FORMAT_NTSC ? 0x00020000 : 0x00030000;
             continue;
@@ -294,7 +313,10 @@ static void IRAM_ATTR vsync_isr(void *args)
     sync_info->last_cpu_cycle = cpu_cycle;
     int diff_std = sync_info->format == DISPLAY_FORMAT_NTSC ? SYNC_DIFF_NTSC_STD :
                                         SYNC_DIFF_PAL_STD;
-    if(diff > diff_std * 5 / 4 || diff < diff_std / 2)
+    if (diff > diff_std * 5 / 4 || diff < diff_std * 3 / 4 ||
+        (cycle_us - last_operate_time > 0 &&
+        last_operate_time + OPERATE_THRESHOLD - cycle_us > 0) ||
+        operate_hang_count > 0)
         sync_info->diff_broken = 3;
 
     double diff_average = 0;
@@ -383,8 +405,10 @@ void display_control_init_sync_info(display_sync_info_t *sync_info, uint8_t *fra
     sync_info->auto_compensation_minor = 0;
     sync_info->transmission_cycle_count = 0;
     sync_info->switch_field = false;
-    sync_info->channel_reset = false;
+    sync_info->channel_reset = 0;
     sync_info->last_transmit_time = 0;
+    sync_info->transmit_ticks = 0;
+    sync_info->transmit_num = 0;
     sync_info->intr_edge = intr_edge;
 
     gpio_set_direction(vsync_gpio, GPIO_MODE_INPUT);
@@ -425,6 +449,7 @@ static void display_control_polling_task(void *params)
         bool primary_reset_format = false, secondary_reset_format = false;
         if (primary_sync_info.format != primary_sync_info.last_format)
         {
+            display_control_cancel_operate_time(2000000);
             primary_reset_format = true;
             primary_sync_info.last_format = primary_sync_info.format;
             ESP_LOGI("DISPLAY_CONTROL", "Switching primary format...");
@@ -432,6 +457,7 @@ static void display_control_polling_task(void *params)
 
         if (secondary_sync_info.format != secondary_sync_info.last_format)
         {
+            display_control_cancel_operate_time(2000000);
             secondary_reset_format = true;
             secondary_sync_info.last_format = secondary_sync_info.format;
             ESP_LOGI("DISPLAY_CONTROL", "Switching secondary format...");
@@ -542,6 +568,8 @@ void display_settings_update()
     io_extend_set_offset(1, secondary_offset);
     gpio_write(GPIO_NUM_EXTEND | 8, current_settings->display.capture_index);
     gpio_write(GPIO_NUM_EXTEND | 9, current_settings->display.capture_osd);
+    gpio_write(GPIO_NUM_EXTEND | 14, primary_sync_info.format != DISPLAY_FORMAT_NTSC);
+    gpio_write(GPIO_NUM_EXTEND | 13, secondary_sync_info.format != DISPLAY_FORMAT_NTSC);
 }
 
 void display_set_power_down(bool power_down)
@@ -551,6 +579,7 @@ void display_set_power_down(bool power_down)
 
 void display_control_init()
 {
+    operate_hang_semaphore = xSemaphoreCreateMutex();
     gpio_write(DISP_GPIO, 1);
     display_settings_update();
     vTaskDelay(100 / portTICK_PERIOD_MS);
@@ -609,4 +638,36 @@ void display_control_get_formats(display_format_t *formats)
 {
     formats[0] = primary_sync_info.format;
     formats[1] = secondary_sync_info.format;
+}
+
+void display_control_record_operate_time()
+{
+    int64_t current_time = esp_timer_get_time();
+    if (!(current_time - last_cancel_start > 0 &&
+        last_cancel_start + last_cancel_duration - current_time > 0))
+        last_operate_time = current_time - OPERATE_PRE;
+}
+
+void display_control_cancel_operate_time(int64_t cancel_duration)
+{
+    int64_t current_time = esp_timer_get_time();
+    last_operate_time = current_time - OPERATE_THRESHOLD - OPERATE_PRE;
+    last_cancel_duration = cancel_duration;
+    last_cancel_start = current_time;
+}
+
+void display_control_operate_hang_request()
+{
+    xSemaphoreTake(operate_hang_semaphore, portMAX_DELAY);
+    operate_hang_count += 1;
+    xSemaphoreGive(operate_hang_semaphore);
+}
+
+void display_control_operate_hang_release()
+{
+    xSemaphoreTake(operate_hang_semaphore, portMAX_DELAY);
+    if (operate_hang_count > 0)
+        operate_hang_count--;
+    display_control_record_operate_time();
+    xSemaphoreGive(operate_hang_semaphore);
 }

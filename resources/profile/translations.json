@@ -268,7 +268,7 @@
     "settings_homepage_status_bar_position": {
         "en_us": "Status Bar Position",
         "zh_cn": "主页状态栏位置",
-        "zh_tw": "主頁状態欄位置"
+        "zh_tw": "主頁狀態欄位置"
     },
     "settings_top": {
         "en_us": "Top",
@@ -409,5 +409,230 @@
         "en_us": "Device disconnected",
         "zh_cn": "设备断开连接",
         "zh_tw": "設備斷開連接"
+    },
+    "camera_error_update": {
+        "en_us": "Some error occurs when updating settings",
+        "zh_cn": "更新设置时出现错误",
+        "zh_tw": "更新設定時出現錯誤"
+    },
+    "camera_input_channel": {
+        "en_us": "Input Channel",
+        "zh_cn": "输入通道",
+        "zh_tw": "輸入通道"
+    },
+    "camera_prefer_square_pixel": {
+        "en_us": "Prefer Square Pixel",
+        "zh_cn": "使用方形像素",
+        "zh_tw": "使用方形像素"
+    },
+    "camera_quality": {
+        "en_us": "Quality",
+        "zh_cn": "图像质量",
+        "zh_tw": "圖像品質"
+    },
+    "camera_low": {
+        "en_us": "Low",
+        "zh_cn": "低",
+        "zh_tw": "低"
+    },
+    "camera_medium": {
+        "en_us": "Medium",
+        "zh_cn": "中",
+        "zh_tw": "中"
+    },
+    "camera_high": {
+        "en_us": "High",
+        "zh_cn": "高",
+        "zh_tw": "高"
+    },
+    "camera_timeout": {
+        "en_us": "Timeout",
+        "zh_cn": "定时拍摄",
+        "zh_tw": "定時拍攝"
+    },
+    "camera_disabled": {
+        "en_us": "Disabled",
+        "zh_cn": "禁用",
+        "zh_tw": "禁用"
+    },
+    "camera_auto_gain": {
+        "en_us": "Auto Gain",
+        "zh_cn": "自动增益",
+        "zh_tw": "自動增益"
+    },
+    "camera_gain": {
+        "en_us": "Gain",
+        "zh_cn": "增益",
+        "zh_tw": "增益"
+    },
+    "camera_brightness": {
+        "en_us": "Brightness",
+        "zh_cn": "亮度",
+        "zh_tw": "亮度"
+    },
+    "camera_contrast": {
+        "en_us": "Contrast",
+        "zh_cn": "对比度",
+        "zh_tw": "對比度"
+    },
+    "camera_saturation": {
+        "en_us": "Saturation",
+        "zh_cn": "饱和度",
+        "zh_tw": "飽和度"
+    },
+    "camera_hue": {
+        "en_us": "Hue",
+        "zh_cn": "色相",
+        "zh_tw": "色相"
+    },
+    "camera_advanced": {
+        "en_us": "Advanced Settings",
+        "zh_cn": "高级设置",
+        "zh_tw": "進階設定"
+    },
+    "camera_fuse": {
+        "en_us": "Fuse",
+        "zh_cn": "模拟功能选择",
+        "zh_tw": "模擬功能選擇"
+    },
+    "camera_bypass": {
+        "en_us": "Bypass",
+        "zh_cn": "禁用",
+        "zh_tw": "禁用"
+    },
+    "camera_fuse_amp": {
+        "en_us": "Amplifier",
+        "zh_cn": "放大",
+        "zh_tw": "放大"
+    },
+    "camera_fuse_amp_aa": {
+        "en_us": "Amplifier and Anti-alias",
+        "zh_cn": "放大及抗混叠",
+        "zh_tw": "放大及抗混疊"
+    },
+    "camera_white_peak_control": {
+        "en_us": "White Peak Control",
+        "zh_cn": "白峰控制",
+        "zh_tw": "白峰控制"
+    },
+    "camera_aperture": {
+        "en_us": "Aperture",
+        "zh_cn": "孔径系数",
+        "zh_tw": "孔徑係數"
+    },
+    "camera_auto_gain_interval": {
+        "en_us": "Auto Gain Interval",
+        "zh_cn": "自动增益间隔",
+        "zh_tw": "自動增益間隔"
+    },
+    "camera_per_line": {
+        "en_us": "Per Line",
+        "zh_cn": "每行",
+        "zh_tw": "每行"
+    },
+    "camera_per_frame": {
+        "en_us": "Per Frame",
+        "zh_cn": "每帧",
+        "zh_tw": "每幀"
+    },
+    "camera_bandpass_center": {
+        "en_us": "Bandpass Center",
+        "zh_cn": "带通中心",
+        "zh_tw": "帶通中心"
+    },
+    "camera_prefilter": {
+        "en_us": "Prefilter",
+        "zh_cn": "预滤波",
+        "zh_tw": "預濾波"
+    },
+    "camera_bandpass_enabled": {
+        "en_us": "Bandpass Enabled",
+        "zh_cn": "带通有效",
+        "zh_tw": "帶通有效"
+    },
+    "camera_invert": {
+        "en_us": "Invert",
+        "zh_cn": "反色",
+        "zh_tw": "反色"
+    },
+    "camera_chroma_bandwidth": {
+        "en_us": "Chroma Bandwidth",
+        "zh_cn": "色度带宽",
+        "zh_tw": "色度帶寬"
+    },
+    "camera_narrow": {
+        "en_us": "Narrow",
+        "zh_cn": "窄",
+        "zh_tw": "窄"
+    },
+    "camera_default": {
+        "en_us": "Default",
+        "zh_cn": "默认",
+        "zh_tw": "默認"
+    },
+    "camera_wide": {
+        "en_us": "Wide",
+        "zh_cn": "宽",
+        "zh_tw": "寬"
+    },
+    "camera_chroma_comb_filter": {
+        "en_us": "Chroma Comb Filter",
+        "zh_cn": "色度梳状滤波",
+        "zh_tw": "色度梳狀濾波"
+    },
+    "camera_color_standard": {
+        "en_us": "Subcarrier",
+        "zh_cn": "色彩标准",
+        "zh_tw": "色彩標準"
+    },
+    "camera_auto": {
+        "en_us": "Auto",
+        "zh_cn": "自动",
+        "zh_tw": "自動"
+    },
+    "camera_chroma_gain": {
+        "en_us": "Chroma Gain",
+        "zh_cn": "色度增益",
+        "zh_tw": "色度增益"
+    },
+    "camera_chroma_gain_auto": {
+        "en_us": "Auto Chroma Gain",
+        "zh_cn": "自动色度增益",
+        "zh_tw": "自動色度增益"
+    },
+    "camera_chroma_killer": {
+        "en_us": "Chroma Killer",
+        "zh_cn": "低色度自动清除",
+        "zh_tw": "低色度自動清除"
+    },
+    "camera_reset": {
+        "en_us": "Reset Camera Settings",
+        "zh_cn": "重置所有相机设置",
+        "zh_tw": "重置所有相機設定"
+    },
+    "camera_reset_confirm": {
+        "en_us": "Are you sure to reset camera?",
+        "zh_cn": "是否确定重置所有相机设置?",
+        "zh_tw": "是否確定重置所有相機設定?"
+    },
+    "camera_ok": {
+        "en_us": "Ok",
+        "zh_cn": "是",
+        "zh_tw": "是"
+    },
+    "camera_cancel": {
+        "en_us": "Cancel",
+        "zh_cn": "否",
+        "zh_tw": "否"
+    },
+    "camera_fail": {
+        "en_us": "Failed to take a photo",
+        "zh_cn": "拍摄失败",
+        "zh_tw": "拍攝失敗"
+    },
+    "camera_not_ready": {
+        "en_us": "The camera hasn't been set up yet, trying setting it up again...",
+        "zh_cn": "相机尚未配置完成，正在尝试重新配置...",
+        "zh_tw": "相機尚未配置完成，正在嘗試重新配置..."
     }
 }

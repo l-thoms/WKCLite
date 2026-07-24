@@ -154,6 +154,7 @@ void display_set_pixel(int screen_index, display_orientation_t orientation, int 
 
 void display_update(int screen_index, display_orientation_t orientation, display_rect_t *range)
 {
+    display_control_record_operate_time();
     uint16_t *buffer_main, *buffer_overlay, *buffer;
     if (screen_index == 0)
     {
@@ -194,6 +195,7 @@ void display_update(int screen_index, display_orientation_t orientation, display
 void display_fill_rect(int screen_index, display_orientation_t orientation, display_rect_t *rect,
                        display_color_t color)
 {
+    display_control_record_operate_time();
     for(int y = rect->y; y < rect->y + rect->height; y++)
         for(int x = rect->x; x < rect->x + rect->width; x++)
             display_set_pixel(screen_index, orientation, x, y, color);
@@ -202,6 +204,7 @@ void display_fill_rect(int screen_index, display_orientation_t orientation, disp
 void display_fill_ellipse(int screen_index, display_orientation_t orientation,
                           display_rect_t *rect, display_color_t color)
 {
+    display_control_record_operate_time();
     if(rect->width <= 2 || rect->height <= 2)
     {
         display_fill_rect(screen_index, orientation, rect, color);
@@ -248,6 +251,7 @@ void display_fill_rounded_rect(int screen_index, display_orientation_t orientati
 void display_draw_line(int screen_index, display_orientation_t orientation, display_line_t *line,
                        display_color_t color, int stroke)
 {
+    display_control_record_operate_time();
     display_rect_t bound = {
         .x = line->x1 < line->x2 ? line->x1 : line->x2,
         .y = line->y1 < line->y2 ? line->y1 : line->y2,
@@ -303,6 +307,7 @@ void display_draw_rect(int screen_index, display_orientation_t orientation, disp
 void display_draw_ellipse(int screen_index, display_orientation_t orientation,
                           display_rect_t *rect, display_color_t color, int stroke)
 {
+    display_control_record_operate_time();
     float a = rect->width / 2.0f;
     float b = rect->height / 2.0f;
     float ox = rect->x + a - 0.5f;
@@ -342,6 +347,7 @@ void display_draw_rounded_rect(int screen_index, display_orientation_t orientati
                                display_rect_t *rect, display_color_t color, int corner_radius,
                                int stroke)
 {
+    display_control_record_operate_time();
     // Draw corners
     for(int i = 0; i < 4; i++)
     {
@@ -407,6 +413,7 @@ static int get_bit_from_buffer(uint8_t *buffer, int index)
 void display_draw_single_char(int screen_index, display_orientation_t orientation, int x, int y,
                               display_color_t color, display_format_t format, int code_point)
 {
+    display_control_record_operate_time();
     int y_offset = format == DISPLAY_FORMAT_NTSC &&
                    orientation == DISPLAY_ORIENTATION_HORIZONTAL ? -2 : 0;
     int width, start_position, page_width;
@@ -441,6 +448,7 @@ void display_draw_text(int screen_index, display_orientation_t orientation, int 
 void display_draw_image(int screen_index, display_orientation_t orientation, int x, int y,
                         char *path, int source_width, display_color_t color)
 {
+    display_control_record_operate_time();
     size_t image_size;
     if (wkc_get_file_size(path, &image_size)) return;
     uint8_t *image = (uint8_t*)heap_caps_malloc(image_size, MALLOC_CAP_SPIRAM);

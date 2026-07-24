@@ -59,44 +59,22 @@ static void select_battery_icon(char *battery_icon_char, int value, bool chargin
                              battery_icon_index, battery_icon_char, actaual_width);
 }
 
-static void ui_home_draw_status_icon(const char *name, display_format_t formats[],
-                                     display_orientation_t orientation, display_vector_t *icon_draw_index)
-{
-    char icon[60] = { 0 };
-    int icon_width;
-    display_vector_t icon_coordinate_primary = display_coordinate_compensation(
-                                              icon_draw_index->x, icon_draw_index->y - 2,
-                                              formats[0]);
-    display_get_icon(name, formats[0], false, icon, &icon_width);
-    display_draw_image(0, orientation, icon_coordinate_primary.x + 1,
-                       icon_coordinate_primary.y + 1, icon, icon_width, DISPLAY_COLOR_BLACK);
-    display_draw_image(0, orientation, icon_coordinate_primary.x,
-                       icon_coordinate_primary.y, icon, icon_width, DISPLAY_COLOR_WHITE);
-    if(orientation != DISPLAY_ORIENTATION_VERTICAL_TILED)
-    {
-        display_vector_t icon_coordinate_secondary = display_coordinate_compensation(
-                                              icon_draw_index->x, icon_draw_index->y - 2,
-                                              formats[1]);
-        display_get_icon(name, formats[1], false, icon, &icon_width);
-        display_draw_image(1, orientation, icon_coordinate_secondary.x + 1,
-                           icon_coordinate_secondary.y + 1, icon, icon_width, DISPLAY_COLOR_BLACK);
-        display_draw_image(1, orientation, icon_coordinate_secondary.x,
-                           icon_coordinate_secondary.y, icon, icon_width, DISPLAY_COLOR_WHITE);
-    }
-    icon_draw_index->x += 24;
-}
-
 static void ui_home_on_draw(ui_home_t *home, display_format_t *formats, display_orientation_t orientation)
 {
     int logical_width = orientation == DISPLAY_ORIENTATION_HORIZONTAL ?
                         DISPLAY_WIDTH_PAL : DISPLAY_HEIGHT_PAL;
+    int logical_height = orientation == DISPLAY_ORIENTATION_HORIZONTAL ?
+                         DISPLAY_HEIGHT_PAL : DISPLAY_WIDTH_PAL;
+    bool update = home->show || home->time_query_request || home->status_query_request ||
+                  home->battery_query_request;
     if(home->show)
     {
         DISPLAY_CLEAR_SCREEN(0);
         DISPLAY_CLEAR_SCREEN(1);
         home->show = false;
     }
-    int global_y = wkc_settings_get_current()->homepage_status_bar_position ? 250 : 14;
+    int global_y = wkc_settings_get_current()->homepage_status_bar_position ?
+                   logical_height - 36 : 14;
     display_vector_t icon_draw_origin = {
         .x = 16, .y = global_y
     };
@@ -192,29 +170,17 @@ static void ui_home_on_draw(ui_home_t *home, display_format_t *formats, display_
         display_fill_rect(1, orientation, &update_rect_secondary, DISPLAY_COLOR_TRANSPARENT);
 
         if (home->last_power_save_value)
-        {
-            ui_home_draw_status_icon("power_save", formats, orientation, &icon_draw_origin);
-        }
+            ui_common_draw_status_icon("power_save", formats, orientation, &icon_draw_origin);
         if (protocol_ble_is_device_connected())
-        {
-            ui_home_draw_status_icon("bluetooth", formats, orientation, &icon_draw_origin);
-        }
+            ui_common_draw_status_icon("bluetooth", formats, orientation, &icon_draw_origin);
         if (ble_gap_adv_active())
-        {
-            ui_home_draw_status_icon("advertise", formats, orientation, &icon_draw_origin);
-        }
+            ui_common_draw_status_icon("advertise", formats, orientation, &icon_draw_origin);
         if (pwm_device_get_fan_level())
-        {
-            ui_home_draw_status_icon("fan", formats, orientation, &icon_draw_origin);
-        }
+            ui_common_draw_status_icon("fan", formats, orientation, &icon_draw_origin);
         if (pwm_device_get_eye_level())
-        {
-            ui_home_draw_status_icon("eye", formats, orientation, &icon_draw_origin);
-        }
+            ui_common_draw_status_icon("eye", formats, orientation, &icon_draw_origin);
         if (lock_get_state())
-        {
-            ui_home_draw_status_icon("lock", formats, orientation, &icon_draw_origin);
-        }
+            ui_common_draw_status_icon("lock", formats, orientation, &icon_draw_origin);
 
         display_rect_union(&total_rect_primary, &update_rect_primary);
         display_rect_union(&total_rect_secondary, &update_rect_secondary);
@@ -225,17 +191,19 @@ static void ui_home_on_draw(ui_home_t *home, display_format_t *formats, display_
     if(home->battery_query_request)
     {
         char battery_value[10];
-        sprintf(battery_value, "%d%%", home->last_battery_value);
-        int icon_height_primary = display_coordinate_compensation(0, 24, formats[0]).y;
-        int icon_height_secondary = display_coordinate_compensation(0, 24, formats[0]).y;
+        if (home->last_battery_plugged)
+            sprintf(battery_value, "%3d%%", home->last_battery_value);
+        else
+            sprintf(battery_value, " ??");
         // Draw battery icon and text
+        display_vector_t icon_coordinate = {
+            .x = logical_width - 78, .y = icon_draw_origin.y - 2
+        };
         display_vector_t icon_coordinate_primary = display_coordinate_compensation(
-                                                   logical_width - 78, icon_draw_origin.y - 2,
+                         icon_coordinate.x, icon_coordinate.y, formats[0]);
 
-                                                  formats[0]);
         display_vector_t icon_coordinate_secondary = display_coordinate_compensation(
-                                                     logical_width - 78, icon_draw_origin.y - 2,
-                                                     formats[1]);
+                         icon_coordinate.x, icon_coordinate.y, formats[1]);
         char battery_icon_primary[60];
         char battery_icon_secondary[60];
         int battery_icon_width_primary, battery_icon_width_secondary;
@@ -252,19 +220,19 @@ static void ui_home_on_draw(ui_home_t *home, display_format_t *formats, display_
         text_position_descriptor_t *descriptor_secondary = font_measure_text(battery_value,
                                    formats[1], 0, &text_length,
                                    &text_size_secondary);
-
-        display_rect_t battery_rect_primary = {
-            .x = icon_coordinate_primary.x,
-            .y = icon_coordinate_primary.y,
-            .width = battery_icon_width_primary + text_size_primary.x + 20,
-            .height = icon_height_primary + 1
+        display_rect_t battery_rect = {
+            .x = icon_coordinate.x,
+            .y = icon_coordinate.y,
+            .width = DISPLAY_WIDTH_PAL - icon_coordinate.x,
+            .height = 25
         };
-        display_rect_t battery_rect_secondary = {
-            .x = icon_coordinate_secondary.x,
-            .y = icon_coordinate_secondary.y,
-            .width = battery_icon_width_secondary + text_size_secondary.x + 20,
-            .height = icon_height_secondary + 1
-        };
+        display_rect_expand(&battery_rect, 0, 1);
+        display_rect_t battery_rect_primary = display_rect_compensation(
+            &battery_rect, formats[0]
+        );
+        display_rect_t battery_rect_secondary = display_rect_compensation(
+            &battery_rect, formats[1]
+        );
         display_fill_rect(0, orientation, &battery_rect_primary, DISPLAY_COLOR_TRANSPARENT);
         display_fill_rect(1, orientation, &battery_rect_secondary, DISPLAY_COLOR_TRANSPARENT);
 
@@ -310,8 +278,11 @@ static void ui_home_on_draw(ui_home_t *home, display_format_t *formats, display_
         free(descriptor_secondary);
         home->battery_query_request = false;
     }
-    display_update(0, orientation, &total_rect_primary);
-    display_update(1, orientation, &total_rect_secondary);
+    if (update)
+    {
+        display_update(0, orientation, &total_rect_primary);
+        display_update(1, orientation, &total_rect_secondary);
+    }
 }
 
 static void ui_home_on_key_event(ui_home_t *home, int key_code)

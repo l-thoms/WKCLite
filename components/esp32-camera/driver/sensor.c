@@ -20,7 +20,7 @@ const camera_sensor_info_t camera_sensor[CAMERA_MODEL_MAX] = {
     {CAMERA_MEGA_CCM, "MEGA_CCM", MEGA_CCM_SCCB_ADDR, MEGA_CCM_PID, FRAMESIZE_5MP, true},
     {CAMERA_HM1055, "HM1055", HM1055_SCCB_ADDR, HM1055_PID, FRAMESIZE_HD, false},
     {CAMERA_HM0360, "HM0360", HM0360_SCCB_ADDR, HM0360_PID, FRAMESIZE_VGA, false},
-    {CAMERA_GM7150BC, "GM7150BC", GM7150BC_SCCB_ADDR, GM7150BC_PID, FRAMESIZE_PAL, false}
+    {CAMERA_SAA7113, "SAA7113", SAA7113_SCCB_ADDR, SAA7113_PID, FRAMESIZE_PAL, false}
 };
 
 const resolution_info_t resolution[FRAMESIZE_INVALID] = {
@@ -52,8 +52,8 @@ const resolution_info_t resolution[FRAMESIZE_INVALID] = {
     { 2560, 1920, ASPECT_RATIO_4X3   }, /* QSXGA  */
     { 2592, 1944, ASPECT_RATIO_4X3   }, /* 5MP */
     // CVBS single field
-    { 720, 288, ASPECT_RATIO_5x2 },
-    { 720, 240, ASPECT_RATIO_3x1 }
+    { 720, 240, ASPECT_RATIO_3x1 },
+    { 720, 288, ASPECT_RATIO_5x2 }
 };
 
 camera_sensor_info_t *esp_camera_sensor_get_info(sensor_id_t *id)

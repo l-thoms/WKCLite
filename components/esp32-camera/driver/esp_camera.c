@@ -15,9 +15,9 @@
 /*
  * Original Copyright [2026] Espressif Systems (Shanghai) PTE LTD
  * Licensed under Apache License 2.0
- * Modify Date: 2026-06-28
+ * Modify Date: 2026-07-23
  * Modifier: Thoms Liu
- * Modification: Remove probe for sensors, add support for GM7150BC
+ * Modification: Remove probe for sensors, add support for SAA7113
  */
 
 #include <stdio.h>
@@ -321,7 +321,7 @@ esp_err_t esp_camera_init(const camera_config_t *config)
     //    ESP_LOGE(TAG, "Camera probe failed with error 0x%x(%s)", err, esp_err_to_name(err));
     //    goto fail;
     //}
-    camera_model_t camera_model = CAMERA_GM7150BC;
+    camera_model_t camera_model = CAMERA_SAA7113;
 
     framesize_t frame_size = (framesize_t) config->frame_size;
     pixformat_t pix_format = (pixformat_t) config->pixel_format;

@@ -16,3 +16,4 @@ int wkc_get_file_size(const char *path, size_t *size);
 int wkc_open(const char *path, char *buffer, size_t size);
 int wkc_save(const char *path, char *buffer, size_t size);
 bool wkc_file_exist(const char *path);
+int wkc_directory_file_count(const char *path);

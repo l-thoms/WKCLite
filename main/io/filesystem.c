@@ -77,17 +77,6 @@ esp_err_t wkc_storage_init_dynamic()
     return ret;
 }
 
-int wkc_storage_ensure_capture_dir()
-{
-    DIR *capture_dir = opendir(CAPTURE_DIR);
-    if (capture_dir)
-    {
-        closedir(capture_dir);
-        return 0;
-    }
-    else return mkdir(CAPTURE_DIR, 0755);
-}
-
 void wkc_storage_remove_sdcard()
 {
     if (sd_card)
@@ -129,6 +118,34 @@ esp_err_t wkc_storage_init_sdcard()
         return ret;
     }
     return ret;
+}
+
+int wkc_storage_ensure_capture_dir()
+{
+    int ret;
+    if (!sd_card)
+    {
+        ret = wkc_storage_init_sdcard();
+        if (ret) return ret;
+    }
+    DIR *capture_dir = opendir(CAPTURE_DIR);
+    if (capture_dir)
+    {
+        closedir(capture_dir);
+        return 0;
+    }
+    else
+    {
+        if(mkdir(CAPTURE_DIR, 0755))
+        {
+            wkc_storage_remove_sdcard();
+            ret = wkc_storage_init_sdcard();
+            if (wkc_storage_init_sdcard() || mkdir(CAPTURE_DIR, 0755))
+                return 1;
+            return 0;
+        }
+        return 0;
+    }
 }
 
 int wkc_copy(const char *src, const char *dst)
@@ -190,4 +207,19 @@ bool wkc_file_exist(const char *path)
     if(file == NULL)return false;
     fclose(file);
     return true;
+}
+
+int wkc_directory_file_count(const char *path)
+{
+    DIR *capture_dir = opendir(CAPTURE_DIR);
+    if (!capture_dir) return -1;
+    struct dirent *directory_dirent;
+    int file_count = 0;
+    while (directory_dirent = readdir(capture_dir))
+    {
+        if (directory_dirent->d_type == DT_REG)
+            file_count++;
+    }
+    closedir(capture_dir);
+    return file_count;
 }

@@ -28,6 +28,7 @@
 #include "ui/device_info.h"
 #include "ui/settings.h"
 #include "ui/files.h"
+#include "ui/camera.h"
 #include "peripherals/adc.h"
 #include "peripherals/pwm.h"
 #include "peripherals/lock.h"
@@ -90,12 +91,9 @@ void app_main(void)
 
     ESP_LOGI("MAIN", "Init display...");
     display_control_init();
-    vTaskDelay(50 / portTICK_PERIOD_MS);
+    vTaskDelay(500 / portTICK_PERIOD_MS);
 
     ui_shell_t *shell = ui_shell_create();
-
-    ESP_LOGI("MAIN", "Init camera...");
-    camera_init();
 
     ESP_LOGI("MAIN", "Init bluetooth...");
     protocol_ble_init(shell);
@@ -106,11 +104,13 @@ void app_main(void)
     ui_page_t *device_info = ui_device_info_create();
     ui_page_t *settings = ui_settings_create();
     ui_page_t *files = ui_files_create();
+    ui_page_t *camera = ui_camera_create();
     ui_shell_add_page(shell, home);
     ui_shell_add_page(shell, menu);
     ui_shell_add_page(shell, device_info);
     ui_shell_add_page(shell, settings);
     ui_shell_add_page(shell, files);
+    ui_shell_add_page(shell, camera);
     ui_shell_show_page(shell, home);
     power_key_set_shell(shell);
     lock_set_shell(shell);

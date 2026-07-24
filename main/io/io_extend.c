@@ -14,7 +14,7 @@
 #define IO_EXTEND_ADDRESS 0x2c
 #define IO_EXTEND_RTC_ADDRESS 0x51
 
-#define IO_EXTEND_CAMERA_ADDRESS 0x5D
+#define IO_EXTEND_CAMERA_ADDRESS 0x25
 
 #define TAG "IO_EXTEND"
 
@@ -63,7 +63,6 @@ void io_extend_init()
         if (i2c_master_transmit(io_extend_rtc_device, (uint8_t[]){ 0 }, 1, -1))
         {
             ESP_LOGE("I2C_INIT", "IO extend RTC test failed");
-            continue;
         }
         else
             ESP_LOGI("I2C_INIT", "IO extend RTC test successed");
@@ -176,8 +175,12 @@ bool io_extend_is_time_valid()
 int io_extend_load_time()
 {
     uint8_t read_data[7];
-    while (i2c_master_transmit(io_extend_rtc_device, (uint8_t[]) { 2 }, 1, -1));
-    while (i2c_master_receive(io_extend_rtc_device, read_data, 7, -1));
+    int trial = 100;
+    while (i2c_master_transmit(io_extend_rtc_device, (uint8_t[]) { 2 }, 1, -1))
+        if (--trial == 0) return 1;
+    trial = 100;
+    while(i2c_master_receive(io_extend_rtc_device, read_data, 7, -1))
+        if (--trial == 0) return 1;
     if (read_data[0] & 0x80)
         return 1;
     time_valid = true;
@@ -199,7 +202,9 @@ int io_extend_save_time(struct tm *time_data)
     if (settimeofday(&(struct timeval) { .tv_sec = mktime(time_data) },
                  &(struct timezone) { .tz_minuteswest = 0, .tz_dsttime = DST_NONE }))
         return 1;
-    while (i2c_master_transmit(io_extend_rtc_device, (uint8_t[]) { 2,
+    time_valid = true;
+    int trial = 100;
+    while ((i2c_master_transmit(io_extend_rtc_device, (uint8_t[]) { 2,
         time_data->tm_sec / 10 << 4 | time_data->tm_sec % 10,
         time_data->tm_min / 10 << 4 | time_data->tm_min % 10,
         time_data->tm_hour / 10 << 4 | time_data->tm_hour % 10,
@@ -207,8 +212,14 @@ int io_extend_save_time(struct tm *time_data)
         time_data->tm_wday,
         (time_data->tm_mon + 1) / 10 << 4 | time_data->tm_mon % 10,
         (time_data->tm_year - 100) / 10 << 4 | time_data->tm_year % 10
-    }, 8, -1));
-    time_valid = true;
+    }, 8, -1)))
+    {
+        if (--trial == 0)
+        {
+            ESP_LOGW("IO_EXTEND", "Cannot save time into RTC");
+            break;
+        }
+    }
     return 0;
 }
 

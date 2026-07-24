@@ -414,8 +414,7 @@ void display_draw_single_char(int screen_index, display_orientation_t orientatio
                               display_color_t color, display_format_t format, int code_point)
 {
     display_control_record_operate_time();
-    int y_offset = format == DISPLAY_FORMAT_NTSC &&
-                   orientation == DISPLAY_ORIENTATION_HORIZONTAL ? -2 : 0;
+    int y_offset = format == DISPLAY_FORMAT_NTSC ? -2 : 0;
     int width, start_position, page_width;
     size_t page_size;
     font_get_glyph_width(code_point, &width, &start_position, format);

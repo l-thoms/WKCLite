@@ -454,18 +454,52 @@ int camera_capture(uint8_t **result)
             capture_processing_buffer[y * dest_width * 2 + x] = selected_buffer[y / 2 * dest_width * 2 + x];
         }
     }
+    // Rotate image
+    display_orientation_t orientation = wkc_settings_get_current()->
+        display.orientation;
+    int enc_width, enc_height;
+    if (orientation != DISPLAY_ORIENTATION_HORIZONTAL)
+    {
+        // Borrow result buffer for rotation
+        for (int y = 0; y < fb1->height; y++)
+        {
+            for (int x = 0; x < dest_width / 2; x++)
+            {
+                uint8_t merged_u = ((int)capture_processing_buffer[y * 2 * dest_width * 2 +
+                        x * 4] + capture_processing_buffer[(y * 2 + 1) * dest_width * 2 +
+                        x * 4]) / 2;
+                uint8_t merged_v = ((int)capture_processing_buffer[y * 2 * dest_width * 2 +
+                        x * 4 + 2] + capture_processing_buffer[(y * 2 + 1) * dest_width * 2 +
+                        x * 4 + 2]) / 2;
+                uint8_t *y1 = &capture_processing_buffer[y * 2 * dest_width * 2 + x * 4 + 1];
+                uint8_t *y2 = y1 + 2, *y3 = y1 + dest_width * 2, *y4 = y3 + 2;
+                uint8_t *du1 = &capture_result_buffer[(dest_width / 2 - x - 1) * fb1->height * 8 + y * 4];
+                uint8_t *dy1 = du1 + 1, *dv1  = du1 + 2, *dy2 = du1 + 3;
+                uint8_t *du2 = du1 + fb1->height * 4, *dy3 = du2 + 1, *dv2 = du2 + 2, *dy4 = du2 + 3;
+                *du1 = merged_u; *du2 = merged_u; *dv1 = merged_v; *dv2 = merged_v;
+                *dy1 = *y2; *dy2 = *y4; *dy3 = *y1; *dy4 = *y3;
+            }
+        }
+        memcpy(capture_processing_buffer, capture_result_buffer,
+               fb1->height * 2 * dest_width * 2);
+        enc_width = fb1->height * 2;
+        enc_height = dest_width;
+    }
+    else
+    {
+        enc_width = dest_width;
+        enc_height = fb1->height * 2;
+    }
 
     // Encode JPEG
     uint8_t quality = camera_control.quality == CAMERA_QUALITY_LOW ? 90 : 95;
     uint8_t subsampling = camera_control.quality == CAMERA_QUALITY_HIGH ?
                           JPEG_SUBSAMPLE_422 : JPEG_SUBSAMPLE_420;
     jpeg_enc_config_t enc_config = {
-        .width = dest_width, .height = fb1->height * 2,
+        .width = enc_width, .height = enc_height,
         .hfm_task_core = 1, .quality = quality,
         .src_type = JPEG_PIXEL_FORMAT_CbYCrY, .subsampling = subsampling,
-        .rotate = wkc_settings_get_current()->
-                  display.orientation == DISPLAY_ORIENTATION_HORIZONTAL ?
-                  JPEG_ROTATE_0D : JPEG_ROTATE_270D
+        .rotate = JPEG_ROTATE_0D
     };
 
     if (jpeg_enc_open(&enc_config, &enc_handle) || !enc_handle)

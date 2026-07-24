@@ -278,7 +278,9 @@ void ui_shell_mainloop(ui_shell_t *shell)
                     shell->format_secondary != formats[1] ||
                     shell->orientation != new_orientation)
                 {
-                    vTaskDelay(2100 / portTICK_PERIOD_MS);
+                    if (shell->format_primary != formats[0] ||
+                    shell->format_secondary != formats[1])
+                        vTaskDelay(2100 / portTICK_PERIOD_MS);
                     ui_shell_close_toast(shell);
                     ui_page_on_format_changed(current);
                     shell->format_primary = formats[0];

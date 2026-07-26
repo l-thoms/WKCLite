@@ -13,3 +13,4 @@ extern wkc_userprofile_t current_profile;
 
 void wkc_userprofile_init();
 void wkc_userprofile_save();
+void wkc_userprofile_load_default();

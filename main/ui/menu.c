@@ -21,6 +21,7 @@ typedef struct
     int last_selected_index;
     bool draw_request;
     bool brightness_tweak;
+    int horizontal_mirror_count;
 } ui_menu_t;
 
 static void ui_menu_on_show(ui_menu_t *menu)
@@ -394,6 +395,10 @@ static void ui_menu_on_key_event(ui_menu_t *menu, int key_code)
             menu->brightness_tweak = false;
             menu->draw_request = true;
             break;
+        case UI_KEY_CODE_MENU:
+            if (++menu->horizontal_mirror_count == 10)
+                gpio_write(GPIO_NUM_EXTEND | 20, 1);
+            break;
     }
     else switch (key_code)
     {
@@ -500,6 +505,7 @@ static void ui_menu_on_key_event(ui_menu_t *menu, int key_code)
             else if (menu->selected_index == 4)
             {
                 menu->brightness_tweak = true;
+                menu->horizontal_mirror_count = 0;
                 menu->draw_request = true;
             }
             else if (menu->selected_index == 5)

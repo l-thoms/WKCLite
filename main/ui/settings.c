@@ -10,6 +10,7 @@
 #include "math.h"
 #include "profile/translations.h"
 #include "profile/settings.h"
+#include "profile/userprofile.h"
 
 typedef enum
 {
@@ -1109,6 +1110,7 @@ static void ui_settings_on_key_event(ui_settings_t *settings, int key_code)
                     }
                     else
                     {
+                        wkc_userprofile_load_default();
                         wkc_settings_load_default();
                         wkc_security_load_default();
                         camera_control_reset();

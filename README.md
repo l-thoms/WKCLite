@@ -19,7 +19,7 @@ An analog binocular kigurumi vision enhancemnent project based on ESP32-S3 modul
 
 ## Notice
 * It's recommended to use PAL format camera because of the higher resolution. For the headset, it's better to choose one with a good deinterlacing feature.
-* It's recommended to take some anti-moisture precautions to keep the circuitry stable.
+* It's recommended to take some anti-moisture precautions to keep the circuitry stable. **Otherwise, you might run into situations including, but not limited to,** things like the screen suddenly dimming, flipping, or the time information not being saved. If the screen image flips unexpectedly, you can try pressing the menu button multiple times in brightness adjustment mode to manually flip it back.
 * Communication protocol does not use BLE native pairing method for the convenience of mobile phone operation. See `main/protocol`.
 
 ## Known Issues

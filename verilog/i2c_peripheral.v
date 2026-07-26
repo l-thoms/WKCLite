@@ -48,8 +48,8 @@ module i2c_peripheral (
     // Automatically power down when DISP lows
     assign PWDN = pwdn_val & DISP;
 
-    // Reg 2: Lock/Brightness, LOCKA LOCKB BRIP BRIN
-    //                         RWC   RWC   RWC  RWC
+    // Reg 2: Lock/Brightness, MIR LOCKA LOCKB BRIP BRIN
+    //                         RWC RWC   RWC   RWC  RWC
     output LOCKA, LOCKB, BRIP, BRIN;
 
     // Reg 3, 4: Offset
@@ -58,11 +58,11 @@ module i2c_peripheral (
 
     reg [1:0] locka_rec = 0;
     reg [1:0] lockb_rec = 0;
-    reg [1:0] brip_rec = 0;
+    reg [2:0] brip_rec = 0;
     reg [1:0] brin_rec = 0;
     reg [22:0] locka_cnt = 0;
     reg [22:0] lockb_cnt = 0;
-    reg [22:0] brip_cnt = 0;
+    reg [24:0] brip_cnt = 0;
     reg [22:0] brin_cnt = 0;
 
     assign LOCKA = locka_cnt > 3000000;
@@ -114,7 +114,7 @@ module i2c_peripheral (
             end
 
             if (brip_rec[1] != brip_rec[0]) begin
-                brip_cnt <= 16000000;
+                brip_cnt <= brip_rec[2] ? 32000000 : 16000000;
             end else begin
                 if (brip_cnt != 0) brip_cnt <= brip_cnt - 1;
             end
@@ -289,9 +289,18 @@ module i2c_peripheral (
                                     if (write_value[2]) lockb_rec[0] <= !lockb_rec[0];
                                 end
                                 if (brip_cnt == 0 && brin_cnt == 0 &&
-                                    write_value[1] != write_value[0]) begin
-                                    if (write_value[1]) brip_rec[0] <= !brip_rec[0];
-                                    if (write_value[0]) brin_rec[0] <= !brin_rec[0];
+                                    (write_value[4] ||
+                                    write_value[1] != write_value[0])) begin
+                                    if (write_value[4]) begin
+                                        brip_rec[2] <= 1;
+                                        brip_rec[0] <= !brip_rec[0];
+                                    end else begin
+                                        if (write_value[1]) begin
+                                            brip_rec[2] <= 0;
+                                            brip_rec[0] <= !brip_rec[0];
+                                        end
+                                        if (write_value[0]) brin_rec[0] <= !brin_rec[0];
+                                    end
                                 end
                             end
                             `I2C_REG_OFFSET_1: begin

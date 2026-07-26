@@ -10,7 +10,7 @@
 
 wkc_userprofile_t current_profile;
 
-static void userprofile_load_default()
+void wkc_userprofile_load_default()
 {
     assert(wkc_file_exist(USERPROFILE_PATH_DEFAULT));
     wkc_copy(USERPROFILE_PATH_DEFAULT, USERPROFILE_PATH_ACTIVE);
@@ -26,7 +26,7 @@ static void userprofile_parse()
     cJSON *profile_json = cJSON_Parse(profile_buffer);
     if(profile_json == NULL)
     {
-        userprofile_load_default();
+        wkc_userprofile_load_default();
         userprofile_parse();
         return;
     }
@@ -73,7 +73,7 @@ void wkc_userprofile_init()
     if(!wkc_file_exist(USERPROFILE_PATH_ACTIVE))
     {
         ESP_LOGW("WKC_USERPROFILE", "Userprofile does not exist, create default");
-        userprofile_load_default();
+        wkc_userprofile_load_default();
         wkc_userprofile_init();
         return;
     }

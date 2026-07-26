@@ -458,6 +458,7 @@ int camera_capture(uint8_t **result)
     display_orientation_t orientation = wkc_settings_get_current()->
         display.orientation;
     int enc_width, enc_height;
+    uint8_t *input_buffer, *final_buffer;
     if (orientation != DISPLAY_ORIENTATION_HORIZONTAL)
     {
         // Borrow result buffer for rotation
@@ -480,15 +481,17 @@ int camera_capture(uint8_t **result)
                 *dy1 = *y2; *dy2 = *y4; *dy3 = *y1; *dy4 = *y3;
             }
         }
-        memcpy(capture_processing_buffer, capture_result_buffer,
-               fb1->height * 2 * dest_width * 2);
         enc_width = fb1->height * 2;
         enc_height = dest_width;
+        input_buffer = capture_result_buffer;
+        final_buffer = capture_processing_buffer;
     }
     else
     {
         enc_width = dest_width;
         enc_height = fb1->height * 2;
+        input_buffer = capture_processing_buffer;
+        final_buffer = capture_result_buffer;
     }
 
     // Encode JPEG
@@ -507,8 +510,8 @@ int camera_capture(uint8_t **result)
         ESP_LOGE("CAMERA", "Cannot set encode handle");
         goto camera_capture_end;
     }
-    int enc_result = jpeg_enc_process(enc_handle, capture_processing_buffer,
-                     fb1->height * 4 * dest_width, capture_result_buffer,
+    int enc_result = jpeg_enc_process(enc_handle, input_buffer,
+                     fb1->height * 4 * dest_width, final_buffer,
                      DISPLAY_WIDTH_PAL * DISPLAY_HEIGHT_PAL * 8, &ret);
     if (enc_result)
     {
@@ -516,7 +519,7 @@ int camera_capture(uint8_t **result)
         ret = -1;
         goto camera_capture_end;
     }
-    *result = capture_result_buffer;
+    *result = final_buffer;
     camera_capture_end:
     if (fb1)
         esp_camera_fb_return(fb1);

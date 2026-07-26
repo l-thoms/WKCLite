@@ -89,11 +89,6 @@ void io_extend_init()
             ESP_LOGE("I2C_INIT", "IO extend reg 1 receive failed");
             pass = false;
         }
-        else if (read_buffer & (1 << 5))
-        {
-            ESP_LOGE("I2C_INIT", "IO extend reg 1 busy: %d", read_buffer);
-            pass = false;
-        }
 
         write_buffer = 2;
         if (i2c_master_transmit(io_extend_device, &write_buffer, 1, -1))
@@ -109,6 +104,30 @@ void io_extend_init()
         else if (read_buffer & 15)
         {
             ESP_LOGE("I2C_INIT", "IO extend reg 2 busy: %d", read_buffer);
+            pass = false;
+        }
+
+        write_buffer = 3;
+        if (i2c_master_transmit(io_extend_device, &write_buffer, 1, -1))
+        {
+            ESP_LOGE("I2C_INIT", "IO extend reg 3 test failed");
+            pass = false;
+        }
+        else if (i2c_master_receive(io_extend_device, &read_buffer, 1, -1))
+        {
+            ESP_LOGE("I2C_INIT", "IO extend reg 3 receive failed");
+            pass = false;
+        }
+
+        write_buffer = 4;
+        if (i2c_master_transmit(io_extend_device, &write_buffer, 1, -1))
+        {
+            ESP_LOGE("I2C_INIT", "IO extend reg 4 test failed");
+            pass = false;
+        }
+        else if (i2c_master_receive(io_extend_device, &read_buffer, 1, -1))
+        {
+            ESP_LOGE("I2C_INIT", "IO extend reg 4 receive failed");
             pass = false;
         }
     } while (!pass);

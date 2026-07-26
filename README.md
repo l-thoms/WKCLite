@@ -32,6 +32,13 @@ An analog binocular kigurumi vision enhancemnent project based on ESP32-S3 modul
 
 ## License
 Verilog code `verilog/` and resource generator `resgen/` are under **MIT license**, the rest of code is under **GNU GPL v3.0**. Third-party components retain their respactive licenses.
+
+### Third-party
+* The default binary icon and font files are derivative works: \
+  Icons: [Material Design Icons](https://github.com/google/material-design-icons) → **Apache License Version 2.0**, see `NOTICE` \
+  Fonts: [Source Han Sans](https://github.com/adobe-fonts/source-han-sans) → **OFL-1.1**, see `NOTICE` \
+  Full license texts are located in `third_party/`
+
 * [esp32-camera](https://github.com/espressif/esp32-camera) → **Apache License Version 2.0**
 * [esp_new_jpeg](https://github.com/espressif/esp-adf-libs/blob/master/esp_new_jpeg) → **MIT License**
 * [littlefs](https://github.com/littlefs-project/littlefs) → **BSD-3-Clause license**

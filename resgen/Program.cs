@@ -4,7 +4,7 @@
     {
 		/*
 		 Font example:
-         font "Source Han Sans SC" 00 04 20 2c 2e 9f ac d7 ff ff
+         font <font_name> 00 04 20 2c 2e 9f ac d7 ff ff
          Images example:
          images <path/to/image_raw_directory> <path/to/image_output_directory>
          */

@@ -1,0 +1,37 @@
+NOTICE
+This file contains attribution for converted binary graphical assets only: Material Icons and Source Han Sans font binaries.
+
+====================================================================
+1. Material Icons
+Copyright 2014 Google LLC
+Original source: https://fonts.google.com/icons
+Original License: Apache License 2.0
+
+Workflow:
+Official Material Icons artwork → monochrome binary PNG `images_raw/` → custom embedded binary format `resources/images/` processed by resource generator `resgen/`.
+All generated icon binary files are derivative works licensed under Apache License 2.0.
+Full license text: `third_party/LICENSE.Apache-2.0`
+
+====================================================================
+2. Source Han Sans
+Copyright 2014–present Google LLC & Adobe Systems Incorporated
+Original License: SIL Open Font License 1.1
+
+Workflow:
+Original OTF font file → character subsetting & rasterization by resource generator `resgen/` → custom embedded binary font format `fonts/`.
+All converted font binary files are derivative font works subject to OFL-1.1.
+
+Important clarification:
+The generated binary font files are modified derivative works.
+The binaries contain no embedded font metadata. This project does NOT use "Source Han Sans" as the primary display name for these converted font artifacts.
+Full license text: `third_party/LICENSE.OFL-1.1`
+
+====================================================================
+
+Other embedded third-party source code components are listed in README.md,
+and their corresponding license documents reside within each component's own directory.
+The license of the project's own source code does NOT apply to third-party content.
+
+Note:
+Pre-built binaries committed to this repository, as well as any binaries newly generated
+by end users via `resgen/`, remain derivative works bound by the respective licenses listed above.

@@ -32,6 +32,13 @@
 
 ## 许可证
 Verilog 代码 `verilog/` 及资源生成代码 `resgen/` 采用 **MIT** 许可证，其余代码采用 **GNU GPL v3.0** 许可证。第三方组件保留原始许可。
+
+### 第三方组件
+* 本项目所用的二进制图标和字体文件为衍生作品： \
+  图标：[Material Design Icons](https://github.com/google/material-design-icons)，采用 **Apache License Version 2.0** 许可，详见 `NOTICE` \
+  字体：[Source Han Sans](https://github.com/adobe-fonts/source-han-sans)，采用 **OFL-1.1** 许可，详见 `NOTICE` \
+  许可证全文位于 `third_party/`
+
 * [esp32-camera](https://github.com/espressif/esp32-camera)，采用 **Apache License Version 2.0** 许可。
 * [esp_new_jpeg](https://github.com/espressif/esp-adf-libs/blob/master/esp_new_jpeg)，采用 **MIT** 许可。
 * [littlefs](https://github.com/littlefs-project/littlefs)，采用 **BSD-3-Clause** 许可。

@@ -81,5 +81,9 @@ Desktop.ini
 .vscode/
 .devcontainer/
 
+# Resources file
+!fonts/*.bin
+!resources/images/*.bin
+
 # PCB project, see OSHWHUB
 design/

@@ -13,6 +13,9 @@ An analog binocular kigurumi vision enhancemnent project based on ESP32-S3 modul
 * SAA7113-based Camera capture
 * BLE-Based communication protocol
 
+## Video Introduction (Chinese)
+* [https://www.bilibili.com/video/BV1TD3Y6qEnB](https://www.bilibili.com/video/BV1TD3Y6qEnB)
+
 ## Usage
 * For ESP32-S3 code, build with ESP-IDF 6.x.
 * For Verilog code, compile with [AGM Supra](https://www.agmcn.com/developer/tool/) and flash through 3-pin programming port (TCK, TMS, GND) with [AGM DAP-LINK](https://www.agmcn.com/doc/6878.html). The device and the programmer need to be connected to the same computer.

@@ -13,6 +13,9 @@
 * 基于 SAA7113 的拍照功能
 * 基于 BLE 的通信协议
 
+## 视频介绍
+* [https://www.bilibili.com/video/BV1TD3Y6qEnB](https://www.bilibili.com/video/BV1TD3Y6qEnB)
+
 ## 使用方法
 * 对于 ESP32-S3 的代码，使用 ESP-IDF 6.x 编译。
 * 对于 Verilog 代码，使用 [AGM Supra](https://www.agmcn.com/developer/tool/) 编译，并通过主板上的 3-pin 烧录口 (TCK、TMS、GND) 连接 [AGM DAP-LINK](https://www.agmcn.com/doc/6878.html) 烧录。板子和烧录器需连接到同一台电脑。

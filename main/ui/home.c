@@ -30,6 +30,10 @@ typedef struct
     bool last_valid;
     int64_t last_power_save_query_time;
     bool last_battery_charging;
+    int last_status_bar_position;
+    bool last_eye_state;
+    bool last_fan_state;
+    bool last_lock_state;
 } ui_home_t;
 
 static void ui_home_on_show(ui_home_t *home)
@@ -166,8 +170,12 @@ static void ui_home_on_draw(ui_home_t *home, display_format_t *formats, display_
             .x = icon_coordinate_secondary.x, .width = update_size_secondary.x + 1,
             .y = icon_coordinate_secondary.y, .height = update_size_secondary.y + 1
         };
+        display_rect_expand(&update_rect_primary, 1, 1);
+        display_rect_expand(&update_rect_secondary, 1, 1);
         display_fill_rect(0, orientation, &update_rect_primary, DISPLAY_COLOR_TRANSPARENT);
         display_fill_rect(1, orientation, &update_rect_secondary, DISPLAY_COLOR_TRANSPARENT);
+        display_rect_expand(&update_rect_primary, -1, -1);
+        display_rect_expand(&update_rect_secondary, -1, -1);
 
         if (home->last_power_save_value)
             ui_common_draw_status_icon("power_save", formats, orientation, &icon_draw_origin);
@@ -280,6 +288,8 @@ static void ui_home_on_draw(ui_home_t *home, display_format_t *formats, display_
     }
     if (update)
     {
+        display_rect_expand(&total_rect_primary, 1, 1);
+        display_rect_expand(&total_rect_secondary, 1, 1);
         display_update(0, orientation, &total_rect_primary);
         display_update(1, orientation, &total_rect_secondary);
     }
@@ -298,7 +308,13 @@ static void ui_home_on_key_event(ui_home_t *home, int key_code)
 static void ui_home_on_mainloop(ui_home_t *home, bool on_foreground)
 {
     int64_t current_time = esp_timer_get_time();
-    if(current_time - home->last_power_save_query_time >= 1000000)
+    int current_status_bar_position = wkc_settings_get_current()->homepage_status_bar_position;
+    if (on_foreground && home->last_status_bar_position != current_status_bar_position)
+    {
+        home->last_status_bar_position = current_status_bar_position;
+        home->show = true;
+    }
+    if (current_time - home->last_power_save_query_time >= 1000000)
     {
         home->last_power_save_query_time = current_time;
         bool new_power_save_value = adc_monitor_read_ir();
@@ -333,6 +349,19 @@ static void ui_home_on_mainloop(ui_home_t *home, bool on_foreground)
             home->last_valid = io_extend_is_time_valid();
         }
     }
+    bool current_eye_state = !!pwm_device_get_eye_level();
+    bool current_fan_state = !!pwm_device_get_fan_level();
+    bool current_lock_state = lock_get_state();
+    if (current_eye_state != home->last_eye_state ||
+        current_fan_state != home->last_fan_state ||
+        current_lock_state != home->last_lock_state)
+    {
+        home->status_query_request = true;
+        home->time_query_request = true;
+    }
+    home->last_eye_state = current_eye_state;
+    home->last_fan_state = current_fan_state;
+    home->last_lock_state = current_lock_state;
 }
 
 static void _ui_home_request_update_priv(ui_page_t *page)
@@ -341,6 +370,7 @@ static void _ui_home_request_update_priv(ui_page_t *page)
     ui_home_t *home = (ui_home_t*)page;
     home->status_query_request = true;
     home->time_query_request = true;
+    home->battery_query_request = true;
     home->last_power_save_value = adc_monitor_read_ir();
     int64_t current_time = esp_timer_get_time();
     home->last_power_save_query_time = current_time;
@@ -372,5 +402,9 @@ ui_page_t *ui_home_create()
     home->last_battery_charging = false;
     home->last_battery_plugged = false;
     home->last_valid = false;
+    home->last_eye_state = false;
+    home->last_fan_state = false;
+    home->last_lock_state = false;
+    home->last_status_bar_position = wkc_settings_get_current()->homepage_status_bar_position;
     return (ui_page_t*)home;
 }

@@ -1183,7 +1183,7 @@ static void ui_camera_on_key_event(ui_camera_t *camera, int key_code)
         }
         else if (camera->selected_index[0] == 2 && key_code == UI_KEY_CODE_OK)
         {
-            ui_files_show_from_camera(camera->base.parent);
+            ui_files_show(camera->base.parent, true);
         }
     }
     else
@@ -1285,4 +1285,26 @@ ui_page_t *ui_camera_create()
     camera->base.on_mainloop = (ui_page_mainloop_event_t)ui_camera_on_mainloop;
     camera->base.on_format_changed = (ui_page_event_t)ui_camera_on_format_changed;
     return (ui_page_t*)camera;
+}
+
+int ui_camera_show(ui_shell_t *shell)
+{
+    if (!shell) return 1;
+    int ensure = wkc_storage_ensure_capture_dir();
+    if (ensure)
+    {
+        ui_shell_show_toast(shell,
+            wkc_translations_get_string("files_insert_sd_card"), 5);
+        return 1;
+    }
+    else
+    {
+        ui_page_t *camera = ui_shell_find_page(shell, UI_PAGE_TYPE_CAMERA);
+        if (camera != NULL)
+        {
+            ui_shell_show_page(shell, camera);
+            return 0;
+        }
+    }
+    return 1;
 }

@@ -65,6 +65,11 @@
         "zh_cn": "已锁定",
         "zh_tw": "已鎖定"
     },
+    "menu_lock": {
+        "en_us": "Lock",
+        "zh_cn": "头壳锁",
+        "zh_tw": "頭殼鎖"
+    },
     "menu_unlocked": {
         "en_us": "Unlocked",
         "zh_cn": "未锁定",
@@ -91,34 +96,39 @@
         "zh_tw": "設備資訊"
     },
     "device_info_device_name": {
-        "en_us": "Device Name: ",
-        "zh_cn": "设备名称: ",
-        "zh_tw": "設備名稱: "
+        "en_us": "Device Name",
+        "zh_cn": "设备名称",
+        "zh_tw": "設備名稱"
     },
     "device_info_owner": {
-        "en_us": "Owner: ",
-        "zh_cn": "持有者: ",
-        "zh_tw": "持有者: "
+        "en_us": "Owner",
+        "zh_cn": "持有者",
+        "zh_tw": "持有者"
     },
     "device_info_character": {
-        "en_us": "Character: ",
-        "zh_cn": "角色: ",
-        "zh_tw": "角色: "
+        "en_us": "Character",
+        "zh_cn": "角色",
+        "zh_tw": "角色"
     },
     "device_info_manufacturer": {
-        "en_us": "Manufacturer: ",
-        "zh_cn": "店家: ",
-        "zh_tw": "店家: "
+        "en_us": "Manufacturer",
+        "zh_cn": "店家",
+        "zh_tw": "店家"
     },
     "device_info_model": {
-        "en_us": "Device Model: ",
-        "zh_cn": "设备型号: ",
-        "zh_tw": "設備型號: "
+        "en_us": "Device Model",
+        "zh_cn": "设备型号",
+        "zh_tw": "設備型號"
     },
     "device_info_mac_address": {
-        "en_us": "MAC Address: ",
-        "zh_cn": "MAC地址: ",
-        "zh_tw": "MAC位址: "
+        "en_us": "MAC Address",
+        "zh_cn": "MAC地址",
+        "zh_tw": "MAC位址"
+    },
+    "device_info_protocol_version": {
+        "en_us": "Protocol Version",
+        "zh_cn": "协议版本",
+        "zh_tw": "協議版本"
     },
     "files_empty_directory": {
         "en_us": "Capture directory is empty",
@@ -634,5 +644,25 @@
         "en_us": "The camera hasn't been set up yet, trying setting it up again...",
         "zh_cn": "相机尚未配置完成，正在尝试重新配置...",
         "zh_tw": "相機尚未配置完成，正在嘗試重新配置..."
+    },
+    "shortcut_shortcuts": {
+        "en_us": "Shortcuts",
+        "zh_cn": "快捷操作",
+        "zh_tw": "快捷操作"
+    },
+    "shortcut_open": {
+        "en_us": "Open",
+        "zh_cn": "打开",
+        "zh_tw": "打開"
+    },
+    "shortcut_lock": {
+        "en_us": "Lock",
+        "zh_cn": "锁定",
+        "zh_tw": "鎖定"
+    },
+    "shortcut_unlock": {
+        "en_us": "Unlock",
+        "zh_cn": "解锁",
+        "zh_tw": "解鎖"
     }
 }

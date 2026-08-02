@@ -30,7 +30,7 @@ An analog binocular kigurumi vision enhancemnent project based on ESP32-S3 modul
 
 ## TODO
 - [x] Implement camera capture
-- [ ] Improve the protocol and add support for shortcut and settings table
+- [x] Improve the protocol and add support for shortcut and settings table
 - [ ] Digital camera input
 
 ## License

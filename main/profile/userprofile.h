@@ -6,11 +6,11 @@ typedef struct
     char *owner;
     char *character;
     char *manufacturer;
-    bool busy;
 } wkc_userprofile_t;
-
-extern wkc_userprofile_t current_profile;
 
 void wkc_userprofile_init();
 void wkc_userprofile_save();
 void wkc_userprofile_load_default();
+wkc_userprofile_t *wkc_userprofile_get_current();
+void wkc_userprofile_acquire_semaphore();
+void wkc_userprofile_release_semaphore();

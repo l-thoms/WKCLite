@@ -46,7 +46,7 @@
 #define MFG_BLOCK_DEVICE_MODEL 0x03
 
 const uint8_t mfg_head[2] = { 0x1e, 0x3b };
-const uint8_t protocol_version[4] = { 0, 0, 0, 1 };
+uint8_t protocol_version[4] = { 0, 1, 0, 0 };
 
 typedef struct {
     // Actual data length + 1
@@ -81,8 +81,9 @@ static void ext_adv_build(ble_ext_adv_item_t *items, int count, uint8_t *data)
 
 static int ext_adv_calc_mfg_data_size()
 {
-    return strlen(current_profile.owner) + strlen(current_profile.character) +
-           strlen(current_profile.manufacturer) + strlen(DEVICE_MODEL) + 14;
+    wkc_userprofile_t *profile = wkc_userprofile_get_current();
+    return strlen(profile->owner) + strlen(profile->character) +
+           strlen(profile->manufacturer) + strlen(DEVICE_MODEL) + 14;
 }
 
 // begins with 0x3b1e(16-bit Little endian) stands for 'WKC' (22*26^2+10*26+2=15134=0x3b1e)
@@ -96,26 +97,27 @@ static void ext_adv_build_mfg_data(uint8_t *data)
     memcpy(&data[0], mfg_head, 2);
     memcpy(&data[2], protocol_version, 4);
     int data_pos = 6;
+    wkc_userprofile_t *profile = wkc_userprofile_get_current();
 
     // Fill owner
-    int item_length = strlen(current_profile.owner);
+    int item_length = strlen(profile->owner);
     data[data_pos] = item_length + 1;
     data[data_pos + 1] = MFG_BLOCK_OWNER;
-    memcpy(&data[data_pos + 2], current_profile.owner, item_length);
+    memcpy(&data[data_pos + 2], profile->owner, item_length);
     data_pos += item_length + 2;
 
     // Fill character
-    item_length = strlen(current_profile.character);
+    item_length = strlen(profile->character);
     data[data_pos] = item_length + 1;
     data[data_pos + 1] = MFG_BLOCK_CHARACTER;
-    memcpy(&data[data_pos + 2], current_profile.character, item_length);
+    memcpy(&data[data_pos + 2], profile->character, item_length);
     data_pos += item_length + 2;
 
     // Fill manufacturer
-    item_length = strlen(current_profile.manufacturer);
+    item_length = strlen(profile->manufacturer);
     data[data_pos] = item_length + 1;
     data[data_pos + 1] = MFG_BLOCK_MANUFACTURER;
-    memcpy(&data[data_pos + 2], current_profile.manufacturer, item_length);
+    memcpy(&data[data_pos + 2], profile->manufacturer, item_length);
     data_pos += item_length + 2;
 
     // Fill device model
@@ -233,7 +235,7 @@ static int gatt_svr_command_access(uint16_t conn_handle, uint16_t attr_handle,
             }
             // Write characteristics
             uint16_t command_length = os_mbuf_len(om), command_length_out;
-            uint8_t *command = calloc(command_length, 1);
+            uint8_t *command = calloc(command_length + 1, 1);
             ble_hs_mbuf_to_flat(om, command, command_length, &command_length_out);
             wkc_write_command(conn_handle, attr_handle, command, command_length, current_shell);
             free(command);
@@ -246,12 +248,12 @@ static int gatt_svr_command_access(uint16_t conn_handle, uint16_t attr_handle,
 
 static int ble_gap_event_handler(struct ble_gap_event *event, void *arg);
 
-// TODO: Update to extended advertise to transmit device info
 static int set_adv_fields()
 {
     int rc = 0;
     uint8_t *mfg_data = NULL, *ext_adv_data = NULL;
     struct os_mbuf *ext_adv_mbuf = NULL;
+    wkc_userprofile_t *profile = wkc_userprofile_get_current();
 
     rc = ble_hs_util_ensure_addr(0);
     if (rc != 0)
@@ -305,8 +307,8 @@ static int set_adv_fields()
         },
         {
             .data_type = BLE_HS_ADV_TYPE_COMP_NAME,
-            .data_length = strlen(current_profile.device_name),
-            .data = (uint8_t*)current_profile.device_name
+            .data_length = strlen(profile->device_name),
+            .data = (uint8_t*)profile->device_name
         },
         {
             .data_type = BLE_HS_ADV_TYPE_APPEARANCE,
@@ -364,16 +366,22 @@ static int set_adv_fields()
 
 static void advertise()
 {
-    char *device_name = current_profile.device_name;
+    wkc_userprofile_acquire_semaphore();
+    char *device_name = wkc_userprofile_get_current()->device_name;
     int rc = ble_svc_gap_device_name_set(device_name);
     if (rc != 0)
     {
         ESP_LOGE(TAG, "failed to set device name to %s, error code: %d",
                  device_name, rc);
+        wkc_userprofile_release_semaphore();
         return;
     }
 
-    if (set_adv_fields()) return;
+    if (set_adv_fields())
+    {
+        wkc_userprofile_release_semaphore();
+        return;
+    }
 
     rc = ble_gap_ext_adv_start(0, 0, 0);
     ESP_LOGI(TAG, "Start advertise.");
@@ -382,6 +390,7 @@ static void advertise()
         ui_home_update_from_shell(current_shell);
     else
         ESP_LOGE(TAG, "ext_adv start failed, reason: %d, %d", rc);
+    wkc_userprofile_release_semaphore();
 }
 
 static int ble_gap_event_handler(struct ble_gap_event *event, void *arg)
@@ -502,4 +511,9 @@ void protocol_ble_init(ui_shell_t *shell)
     vTaskDelay(50 / portTICK_PERIOD_MS);
     advertise();
     ESP_LOGI(TAG, "Protocol BLE okay");
+}
+
+uint8_t *protocol_get_version()
+{
+    return protocol_version;
 }

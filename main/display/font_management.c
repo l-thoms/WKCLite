@@ -115,7 +115,7 @@ void font_preload()
     font_preload_format(DISPLAY_FORMAT_NTSC);
 }
 
-static uint16_t *string_to_utf_16(char *text, int *output_length)
+uint16_t *font_char_to_utf_16(char *text, int *output_length)
 {
     if (text == NULL || output_length == NULL)
     {
@@ -162,7 +162,7 @@ static uint16_t *string_to_utf_16(char *text, int *output_length)
         }
     }
 
-    uint16_t *utf16_str = (uint16_t *)malloc(utf16_len * sizeof(uint16_t));
+    uint16_t *utf16_str = (uint16_t *)calloc(utf16_len + 1, sizeof(uint16_t));
     if (utf16_str == NULL)
     {
         *output_length = 0;
@@ -213,6 +213,65 @@ static uint16_t *string_to_utf_16(char *text, int *output_length)
     }
     *output_length = utf16_len;
     return utf16_str;
+}
+
+char *font_crop_text(char *text, int max_length)
+{
+    if (text == NULL || max_length <= 0)
+    {
+        return NULL;
+    }
+
+    size_t src_len = 0;
+    while (text[src_len] != '\0')
+    {
+        src_len++;
+    }
+
+    size_t limit = (size_t)max_length;
+    if (src_len <= limit)
+    {
+        char *res = (char *)malloc(src_len + 1);
+        if (!res) return NULL;
+        for (size_t i = 0; i <= src_len; i++)
+            res[i] = text[i];
+        return res;
+    }
+
+    size_t cut_pos = limit;
+
+    while (cut_pos > 0)
+    {
+        uint8_t byte = (uint8_t)text[cut_pos];
+        if ((byte & 0xC0) == 0x80)
+        {
+            cut_pos--;
+        }
+        else
+        {
+            break;
+        }
+    }
+
+    if (cut_pos == 0)
+    {
+        char *empty = (char *)malloc(1);
+        if (empty)
+            empty[0] = '\0';
+        return empty;
+    }
+
+    char *out = (char *)malloc(cut_pos + 1);
+    if (!out)
+        return NULL;
+
+    for (size_t i = 0; i < cut_pos; i++)
+    {
+        out[i] = text[i];
+    }
+    out[cut_pos] = '\0';
+
+    return out;
 }
 
 static bool font_get_glyph_width_preloaded(int code_point, int *width, int *start_position,
@@ -364,7 +423,7 @@ text_position_descriptor_t* font_measure_text(char *text, display_format_t forma
 
     // UTF8 to UTF16
     int utf16_len = 0;
-    uint16_t *utf16_text = string_to_utf_16(text, &utf16_len);
+    uint16_t *utf16_text = font_char_to_utf_16(text, &utf16_len);
     if (utf16_text == NULL || utf16_len == 0) return NULL;
     if (text_length) *text_length = utf16_len;
 

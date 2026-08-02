@@ -6,7 +6,6 @@
 #include "settings.h"
 #include "io/filesystem.h"
 #include "freertos/FreeRTOS.h"
-#include "freertos/semphr.h"
 #include "freertos/task.h"
 
 #define SETTINGS_PATH_DEFAULT "/data_static/profile/settings.json"
@@ -15,16 +14,6 @@
 #define SECURITY_PATH_ACTIVE "/data_dynamic/profile/security.json"
 
 static wkc_settings_t current_settings = { 0 };
-static char *current_settings_output = NULL;
-
-SemaphoreHandle_t settings_semaphore = NULL;
-
-#define WKC_MODIFY_STRING(old_value, new_value)             \
-{                                                           \
-    free(old_value);                                        \
-    old_value = calloc(strlen(new_value) + 1, 1);           \
-    memcpy(old_value, new_value, strlen(new_value) + 1);    \
-}
 
 char* current_security_storage[10];
 
@@ -212,52 +201,6 @@ void wkc_settings_save()
     free(result);
 }
 
-int wkc_settings_save_by_item(char *item)
-{
-    int ret = 0;
-    bool userprofile_modified = false, settings_modified = false;
-    cJSON *item_json = cJSON_Parse(item);
-    if(item_json == NULL) return 1;
-    cJSON *child = item_json->child;
-    xSemaphoreTake(settings_semaphore, portMAX_DELAY);
-    do
-    {
-        if(strcmp(child->string, "device_name") == 0 && cJSON_GetStringValue(child) != NULL)
-        {
-            char *child_dup = strdup(cJSON_GetStringValue(child));
-            if(strlen(child_dup) > 30) child_dup[30] = 0;
-            WKC_MODIFY_STRING(current_profile.device_name, child_dup)
-            userprofile_modified = true;
-            free(child_dup);
-        }
-        else if(strcmp(child->string, "owner") == 0 && cJSON_GetStringValue(child) != NULL)
-        {
-            WKC_MODIFY_STRING(current_profile.owner, cJSON_GetStringValue(child))
-            userprofile_modified = true;
-        }
-        else if (strcmp(child->string, "character") == 0 && cJSON_GetStringValue(child) != NULL)
-        {
-            WKC_MODIFY_STRING(current_profile.character, cJSON_GetStringValue(child))
-            userprofile_modified = true;
-        }
-        else if (strcmp(child->string, "manufacturer") == 0 && cJSON_GetStringValue(child) != NULL)
-        {
-            WKC_MODIFY_STRING(current_profile.manufacturer, cJSON_GetStringValue(child))
-            userprofile_modified = true;
-        }
-        // TODO: Simplify settings, use custom shortcut instead
-        else ret = 1;
-
-        child = child->next;
-    } while (child != NULL);
-    if (userprofile_modified)
-        wkc_userprofile_save();
-    if (settings_modified)
-        wkc_settings_save();
-    xSemaphoreGive(settings_semaphore);
-    return ret;
-}
-
 void wkc_security_save()
 {
     int security_length = 0;
@@ -301,9 +244,6 @@ void wkc_settings_init()
         return;
     }
     settings_parse();
-    if(settings_semaphore == NULL)
-        settings_semaphore = xSemaphoreCreateMutex();
-
 }
 
 void wkc_security_init()
@@ -316,47 +256,4 @@ void wkc_security_init()
         return;
     }
     security_parse();
-}
-
-char *wkc_settings_get_current_output()
-{
-    return current_settings_output;
-}
-
-void wkc_settings_set_current_output(char *key_name)
-{
-    if (current_settings_output)
-    {
-        free(current_settings_output);
-        current_settings_output = NULL;
-    }
-    if (key_name == NULL || strlen(key_name) == 0)
-        current_settings_output = wkc_settings_write();
-
-    else
-    {
-        cJSON *settings_output_json = cJSON_CreateObject();
-        if (strcmp(key_name, "device_name") == 0)
-        {
-            cJSON_AddStringToObject(settings_output_json, "device_name",
-                                    current_profile.device_name);
-        }
-        else if (strcmp(key_name, "owner") == 0)
-        {
-            cJSON_AddStringToObject(settings_output_json, "owner",
-                                    current_profile.owner);
-        }
-        else if (strcmp(key_name, "character") == 0)
-        {
-            cJSON_AddStringToObject(settings_output_json, "character",
-                                    current_profile.character);
-        }
-        else if (strcmp(key_name, "manufacturer") == 0)
-        {
-            cJSON_AddStringToObject(settings_output_json, "manufacturer",
-                                    current_profile.manufacturer);
-        }
-        current_settings_output = cJSON_Print(settings_output_json);
-        cJSON_Delete(settings_output_json);
-    }
 }

@@ -10,3 +10,4 @@ bool lock_check_power();
 void lock_set_from_isr(bool state, bool force, bool check);
 void lock_set_shell(ui_shell_t *shell);
 void lock_init();
+char *lock_result_to_char(int result);

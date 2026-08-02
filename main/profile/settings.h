@@ -37,7 +37,6 @@ typedef struct
 } wkc_settings_t;
 
 extern char* current_security_storage[10];
-extern SemaphoreHandle_t settings_semaphore;
 
 int clamp(int value, int min, int max);
 void wkc_settings_load_default();
@@ -45,10 +44,7 @@ void wkc_security_load_default();
 wkc_settings_t *wkc_settings_get_current();
 char* wkc_settings_write();
 void wkc_settings_save();
-int wkc_settings_save_by_item(char *item);
 void wkc_security_save();
 void wkc_security_append_key(char *key);
 void wkc_settings_init();
 void wkc_security_init();
-char *wkc_settings_get_current_output();
-void wkc_settings_set_current_output(char *key_name);

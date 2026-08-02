@@ -48,6 +48,8 @@ typedef struct ui_shell_t
     QueueHandle_t queue;
 } ui_shell_t;
 
+ui_shell_t *current_shell = NULL;
+
 static void toast_get_region(ui_toast_t *toast, display_rect_t *bound, display_format_t format,
                       display_orientation_t orientation)
 {
@@ -230,6 +232,7 @@ ui_shell_t *ui_shell_create()
     result->key_backlog = -1;
     result->toast.message = NULL;
     result->queue = xQueueCreate(10, sizeof(ui_shell_queue_info_t));
+    current_shell = result;
     return (ui_shell_t*)result;
 }
 
@@ -295,4 +298,9 @@ void ui_shell_mainloop(ui_shell_t *shell)
             else
                 ui_shell_sync_toast(shell, NULL, 0);
         }
+}
+
+ui_shell_t *ui_shell_get_current()
+{
+    return current_shell;
 }

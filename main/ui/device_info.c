@@ -10,6 +10,7 @@
 #include "esp_log.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/semphr.h"
+#include "protocol/ble.h"
 
 typedef struct
 {
@@ -69,30 +70,41 @@ void ui_device_info_text_write_line(char *text, int draw_x, int *draw_y,
 void ui_device_info_on_draw(ui_device_info_t *device_info, display_format_t* formats,
                             display_orientation_t orientation)
 {
+    wkc_userprofile_acquire_semaphore();
+    wkc_userprofile_t *profile = wkc_userprofile_get_current();
     int logical_width = orientation == DISPLAY_ORIENTATION_HORIZONTAL ?
                         DISPLAY_WIDTH_PAL : DISPLAY_HEIGHT_PAL;
     int logical_height = orientation == DISPLAY_ORIENTATION_HORIZONTAL ?
                          DISPLAY_HEIGHT_PAL : DISPLAY_WIDTH_PAL;
-    if(!device_info->draw_request)return;
+    if(!device_info->draw_request)
+    {
+        wkc_userprofile_release_semaphore();
+        return;
+    }
     DISPLAY_CLEAR_SCREEN(0);
     DISPLAY_CLEAR_SCREEN(1);
 
-    xSemaphoreTake(settings_semaphore, portMAX_DELAY);
-    char device_name[strlen(current_profile.device_name) + 1];
-    strcpy(device_name, current_profile.device_name);
-    char owner[strlen(current_profile.owner) + 1];
-    strcpy(owner, current_profile.owner);
-    char character[strlen(current_profile.character) + 1];
-    strcpy(character, current_profile.character);
-    char manufacturer[strlen(current_profile.manufacturer) + 1];
-    strcpy(manufacturer, current_profile.manufacturer);
+    char device_name[strlen(profile->device_name) + 1];
+    strcpy(device_name, profile->device_name);
+    char owner[strlen(profile->owner) + 1];
+    strcpy(owner, profile->owner);
+    char character[strlen(profile->character) + 1];
+    strcpy(character, profile->character);
+    char manufacturer[strlen(profile->manufacturer) + 1];
+    strcpy(manufacturer, profile->manufacturer);
     char model[] = "WKC Lite (ESP32-S3)";
     char mac_address[18];
     uint8_t mac_raw[6];
     esp_read_mac(mac_raw, ESP_MAC_BT);
     sprintf(mac_address, "%02X:%02X:%02X:%02X:%02X:%02X",
         mac_raw[0], mac_raw[1], mac_raw[2], mac_raw[3], mac_raw[4], mac_raw[5]);
-    xSemaphoreGive(settings_semaphore);
+    char protocol_version[17];
+    uint8_t *protocol_version_block = protocol_get_version();
+    sprintf(protocol_version, "v%d.%d.%d.%d",
+            (int)protocol_version_block[0],
+            (int)protocol_version_block[1],
+            (int)protocol_version_block[2],
+            (int)protocol_version_block[3]);
 
     char *device_name_title = wkc_translations_get_string("device_info_device_name");
     char *owner_title = wkc_translations_get_string("device_info_owner");
@@ -100,20 +112,23 @@ void ui_device_info_on_draw(ui_device_info_t *device_info, display_format_t* for
     char *manufacturer_title = wkc_translations_get_string("device_info_manufacturer");
     char *model_title = wkc_translations_get_string("device_info_model");
     char *mac_address_title = wkc_translations_get_string("device_info_mac_address");
+    char *protocol_version_title = wkc_translations_get_string("device_info_protocol_version");
 
-    char device_name_combined[strlen(device_name) + strlen(device_name_title) + 1];
-    char owner_combined[strlen(owner) + strlen(owner_title) + 1];
-    char character_combined[strlen(character) + strlen(character_title) + 1];
-    char manufacturer_combined[strlen(manufacturer) + strlen(manufacturer_title) + 1];
-    char model_combined[strlen(model) + strlen(model_title) + 1];
-    char mac_address_combined[strlen(mac_address) + strlen(mac_address_title)];
+    char device_name_combined[strlen(device_name) + strlen(device_name_title) + 3];
+    char owner_combined[strlen(owner) + strlen(owner_title) + 3];
+    char character_combined[strlen(character) + strlen(character_title) + 3];
+    char manufacturer_combined[strlen(manufacturer) + strlen(manufacturer_title) + 3];
+    char model_combined[strlen(model) + strlen(model_title) + 3];
+    char mac_address_combined[strlen(mac_address) + strlen(mac_address_title) + 3];
+    char protocol_version_combined[strlen(protocol_version_title) + strlen(protocol_version) + 3];
 
-    sprintf(device_name_combined, "%s%s",device_name_title, device_name);
-    sprintf(owner_combined, "%s%s",owner_title, owner);
-    sprintf(character_combined, "%s%s",character_title, character);
-    sprintf(manufacturer_combined, "%s%s",manufacturer_title, manufacturer);
-    sprintf(model_combined, "%s%s",model_title, model);
-    sprintf(mac_address_combined, "%s%s",mac_address_title, mac_address);
+    sprintf(device_name_combined, "%s: %s",device_name_title, device_name);
+    sprintf(owner_combined, "%s: %s",owner_title, owner);
+    sprintf(character_combined, "%s: %s",character_title, character);
+    sprintf(manufacturer_combined, "%s: %s",manufacturer_title, manufacturer);
+    sprintf(model_combined, "%s: %s",model_title, model);
+    sprintf(mac_address_combined, "%s: %s",mac_address_title, mac_address);
+    sprintf(protocol_version_combined, "%s: %s",protocol_version_title, protocol_version);
 
     int total_width = 0, total_height = 0;
 
@@ -123,6 +138,7 @@ void ui_device_info_on_draw(ui_device_info_t *device_info, display_format_t* for
     ui_device_info_text_size_append(manufacturer_combined, &total_width, &total_height);
     ui_device_info_text_size_append(model_combined, &total_width, &total_height);
     ui_device_info_text_size_append(mac_address_combined, &total_width, &total_height);
+    ui_device_info_text_size_append(protocol_version_combined, &total_width, &total_height);
 
     int draw_x = (logical_width - total_width) / 2;
     int draw_y = (logical_height - total_height) / 2;
@@ -152,12 +168,14 @@ void ui_device_info_on_draw(ui_device_info_t *device_info, display_format_t* for
     ui_device_info_text_write_line(manufacturer_combined, draw_x, &draw_y, formats, orientation);
     ui_device_info_text_write_line(model_combined, draw_x, &draw_y, formats, orientation);
     ui_device_info_text_write_line(mac_address_combined, draw_x, &draw_y, formats, orientation);
+    ui_device_info_text_write_line(protocol_version_combined, draw_x, &draw_y, formats, orientation);
 
     display_rect_expand(&border_rect_primary, 2, 2);
     display_rect_expand(&border_rect_secondary, 2, 2);
     display_update(0, orientation, &border_rect_primary);
     display_update(1, orientation, &border_rect_secondary);
     device_info->draw_request = false;
+    wkc_userprofile_release_semaphore();
 }
 
 void ui_device_info_on_key_event(ui_device_info_t *device_info, int key_code)

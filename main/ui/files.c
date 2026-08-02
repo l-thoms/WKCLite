@@ -1044,12 +1044,33 @@ ui_page_t *ui_files_create()
     return (ui_page_t*)files;
 }
 
-void ui_files_show_from_camera(ui_shell_t *shell)
+int ui_files_show(ui_shell_t *shell, bool from_camera)
 {
-    if (!shell) return;
-    ui_page_t *page = ui_shell_find_page(shell, UI_PAGE_TYPE_FILES);
-    if (!page) return;
-    ui_files_t *files = (ui_files_t*)page;
-    files->from_camera = 2;
-    ui_shell_show_page(shell, page);
+    if (!shell) return 1;
+
+    int ensure = wkc_storage_ensure_capture_dir();
+    if (ensure)
+    {
+        ui_shell_show_toast(shell,
+            wkc_translations_get_string("files_insert_sd_card"), 5);
+        return 1;
+    }
+    else if (wkc_directory_file_count(CAPTURE_DIR) <= 0)
+    {
+        ui_shell_show_toast(shell,
+            wkc_translations_get_string("files_empty_directory"), 5);
+        return 1;
+    }
+    else
+    {
+        ui_files_t *files = (ui_files_t*)ui_shell_find_page(shell,
+            UI_PAGE_TYPE_FILES);
+        if (files)
+        {
+            ui_shell_show_page(shell, &files->base);
+            files->from_camera = from_camera ? 2 : 0;
+            return 0;
+        }
+        return 1;
+    }
 }

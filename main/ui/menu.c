@@ -13,6 +13,8 @@
 #include "esp_log.h"
 #include "jpeg_decoder.h"
 #include "io/filesystem.h"
+#include "camera.h"
+#include "files.h"
 
 typedef struct
 {
@@ -467,40 +469,11 @@ static void ui_menu_on_key_event(ui_menu_t *menu, int key_code)
             }
             else if (menu->selected_index == 2)
             {
-                int ensure = wkc_storage_ensure_capture_dir();
-                if (ensure)
-                {
-                    ui_shell_show_toast(menu->base.parent,
-                        wkc_translations_get_string("files_insert_sd_card"), 5);
-                }
-                else
-                {
-                    ui_page_t *camera = ui_shell_find_page(menu->base.parent,
-                        UI_PAGE_TYPE_CAMERA);
-                    if (camera != NULL)
-                        ui_shell_show_page(menu->base.parent, camera);
-                }
+                ui_camera_show(menu->base.parent);
             }
             else if (menu->selected_index == 3)
             {
-                int ensure = wkc_storage_ensure_capture_dir();
-                if (ensure)
-                {
-                    ui_shell_show_toast(menu->base.parent,
-                        wkc_translations_get_string("files_insert_sd_card"), 5);
-                }
-                else if (wkc_directory_file_count(CAPTURE_DIR) <= 0)
-                {
-                    ui_shell_show_toast(menu->base.parent,
-                        wkc_translations_get_string("files_empty_directory"), 5);
-                }
-                else
-                {
-                    ui_page_t *files = ui_shell_find_page(menu->base.parent,
-                        UI_PAGE_TYPE_FILES);
-                    if (files != NULL)
-                        ui_shell_show_page(menu->base.parent, files);
-                }
+                ui_files_show(menu->base.parent, false);
             }
             else if (menu->selected_index == 4)
             {
@@ -521,10 +494,8 @@ static void ui_menu_on_key_event(ui_menu_t *menu, int key_code)
             else if(menu->selected_index == 7)
             {
                 int lock_result = lock_set(!lock_get_state(), false);
-                if (lock_result == 1)
-                    ui_shell_show_toast(menu->base.parent, wkc_translations_get_string("menu_lock_too_fast"), 5);
-                else if (lock_result == 2)
-                    ui_shell_show_toast(menu->base.parent, wkc_translations_get_string("menu_lock_check_battery"), 5);
+                if (lock_result)
+                    ui_shell_show_toast(menu->base.parent, lock_result_to_char(lock_result), 5);
                 else
                     menu->draw_request = true;
             }

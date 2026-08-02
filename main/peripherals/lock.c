@@ -7,6 +7,7 @@
 #include "ui/shell.h"
 #include "ui/home.h"
 #include "ui/menu.h"
+#include "profile/translations.h"
 
 static bool locked = false;
 static SemaphoreHandle_t lock_semaphore = NULL;
@@ -115,4 +116,13 @@ void lock_init()
 void lock_set_shell(ui_shell_t *shell)
 {
     current_shell = shell;
+}
+
+char *lock_result_to_char(int result)
+{
+    if (result == 1)
+        return wkc_translations_get_string("menu_lock_too_fast");
+    else if (result == 2)
+        return wkc_translations_get_string("menu_lock_check_battery");
+    else return NULL;
 }

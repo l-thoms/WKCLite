@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/semphr.h"
 #include "esp_system.h"
 #include "esp_log.h"
 #include "userprofile.h"
@@ -9,6 +11,7 @@
 #define USERPROFILE_PATH_ACTIVE "/data_dynamic/profile/userprofile.json"
 
 wkc_userprofile_t current_profile;
+static SemaphoreHandle_t userprofile_semaphore;
 
 void wkc_userprofile_load_default()
 {
@@ -70,6 +73,7 @@ void wkc_userprofile_save()
 
 void wkc_userprofile_init()
 {
+    if (!userprofile_semaphore) userprofile_semaphore = xSemaphoreCreateMutex();
     if(!wkc_file_exist(USERPROFILE_PATH_ACTIVE))
     {
         ESP_LOGW("WKC_USERPROFILE", "Userprofile does not exist, create default");
@@ -77,6 +81,20 @@ void wkc_userprofile_init()
         wkc_userprofile_init();
         return;
     }
-    current_profile.busy = false;
     userprofile_parse();
+}
+
+wkc_userprofile_t *wkc_userprofile_get_current()
+{
+    return &current_profile;
+}
+
+void wkc_userprofile_acquire_semaphore()
+{
+    xSemaphoreTake(userprofile_semaphore, portMAX_DELAY);
+}
+
+void wkc_userprofile_release_semaphore()
+{
+    xSemaphoreGive(userprofile_semaphore);
 }

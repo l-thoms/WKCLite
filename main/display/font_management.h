@@ -5,6 +5,8 @@
 #include "display_common.h"
 
 void font_preload();
+uint16_t *font_char_to_utf_16(char *text, int *output_length);
+char *font_crop_text(char *text, int max_length);
 void font_get_glyph_width(int code_point, int *width, int *start_position,
                           display_format_t format);
 text_position_descriptor_t* font_measure_text(char *text, display_format_t format,

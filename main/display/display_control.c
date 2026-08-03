@@ -148,13 +148,17 @@ static bool IRAM_ATTR i2s_controller_tx_callback(i2s_chan_handle_t handle, i2s_e
     {
         // Transmission loss detect
         sync_info->transmit_num += 1;
-        sync_info->transmit_ticks += new_transmission_time - last_transmission_time_result;
-        int skip_transmit_count = (sync_info->transmit_ticks +
-                                  I2S_TRANSMISSION_UNIT_TIME / 2) /
-                                  I2S_TRANSMISSION_UNIT_TIME - sync_info->transmit_num;
-
-        sync_info->transmission_offset += event->size * 4 * skip_transmit_count;
-        sync_info->transmit_num += skip_transmit_count;
+        int transmit_increment = new_transmission_time - last_transmission_time_result;
+        sync_info->transmit_ticks += transmit_increment;
+        if (transmit_increment <= I2S_TRANSMISSION_UNIT_TIME)
+        {
+            int calculated_transmit_num = (sync_info->transmit_ticks +
+                                          I2S_TRANSMISSION_UNIT_TIME / 2) /
+                                          I2S_TRANSMISSION_UNIT_TIME;
+            int skip_transmit_count = calculated_transmit_num - sync_info->transmit_num;
+            sync_info->transmission_offset += event->size * 4 * skip_transmit_count;
+            sync_info->transmit_num += skip_transmit_count;
+        }
     }
 
     int current_transmission_offset = sync_info->transmission_offset;

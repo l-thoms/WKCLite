@@ -10,9 +10,7 @@
 #include "io/filesystem.h"
 #include "profile/translations.h"
 #include "display/graphics.h"
-#include "display/display_control.h"
 #include "ui_common.h"
-#include "page.h"
 #include "shell.h"
 
 typedef enum

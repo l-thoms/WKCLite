@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 #include "display/display_common.h"
 #include "display/graphics.h"
 #include "ui_common.h"

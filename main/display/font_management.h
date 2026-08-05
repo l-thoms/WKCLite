@@ -1,7 +1,6 @@
 #pragma once
 
 #include <stdint.h>
-#include "graphics.h"
 #include "display_common.h"
 
 void font_preload();

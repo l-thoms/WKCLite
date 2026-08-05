@@ -3,16 +3,13 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "ui_common.h"
-#include "page.h"
 #include "shell.h"
 #include "math.h"
 #include "profile/translations.h"
 #include "peripherals/lock.h"
 #include "peripherals/pwm.h"
 #include "io/io_extend.h"
-#include "esp_log.h"
-#include "jpeg_decoder.h"
-#include "io/filesystem.h"
+#include "protocol/ble.h"
 #include "camera.h"
 #include "files.h"
 
@@ -60,8 +57,8 @@ static void ui_menu_draw_item(ui_menu_t *menu, int item_index, bool highlight,
         break;
     case 4:
         strcpy(text, menu->brightness_tweak ?
-                     wkc_translations_get_string("menu_tweaking") :
-                     wkc_translations_get_string("menu_brightness"));
+               wkc_translations_get_string("menu_tweaking") :
+               wkc_translations_get_string("menu_brightness"));
         strcpy(image_name, "brightness");
         break;
     case 5:
@@ -485,11 +482,13 @@ static void ui_menu_on_key_event(ui_menu_t *menu, int key_code)
             {
                 pwm_device_toggle_fan();
                 menu->draw_request = true;
+                protocol_ble_notify_update_command("fan");
             }
             else if (menu->selected_index == 6)
             {
                 pwm_device_toggle_eye();
                 menu->draw_request = true;
+                protocol_ble_notify_update_command("eye");
             }
             else if(menu->selected_index == 7)
             {

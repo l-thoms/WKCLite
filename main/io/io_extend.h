@@ -1,7 +1,6 @@
 #pragma once
 
-#include "esp_system.h"
-#include "time.h"
+#include <sys/time.h>
 
 #define GPIO_NUM_EXTEND 0x80
 #define IO_EXTEND_REG_POWER 0x00

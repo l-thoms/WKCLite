@@ -1,21 +1,12 @@
-#include <stdio.h>
-#include <dirent.h>
-#include <inttypes.h>
-#include "sdkconfig.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "esp_chip_info.h"
-#include "esp_flash.h"
-#include "esp_system.h"
 #include "esp_log.h"
-#include "esp_timer.h"
 #include "driver/gpio.h"
 #include "nvs_flash.h"
 #include "protocol/ble.h"
 #include "io/filesystem.h"
 #include "io/i2c_bus.h"
 #include "io/io_extend.h"
-#include "io/spi_bus.h"
 #include "io/power_key.h"
 #include "profile/userprofile.h"
 #include "profile/settings.h"
@@ -32,7 +23,6 @@
 #include "peripherals/adc.h"
 #include "peripherals/pwm.h"
 #include "peripherals/lock.h"
-#include "camera/camera_control.h"
 
 void app_main(void)
 {
@@ -63,9 +53,6 @@ void app_main(void)
     i2c_bus_init();
     io_extend_init();
     io_extend_load_time();
-
-    ESP_LOGI("MAIN", "Init SPI...");
-    spi_bus_init();
 
     ESP_LOGI("MAIN", "Init sdcard...");
     if(wkc_storage_init_sdcard())

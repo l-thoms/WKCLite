@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include "shell.h"
-#include "display/graphics.h"
 
 ui_shell_t *ui_page_get_parent(ui_page_t *page)
 {

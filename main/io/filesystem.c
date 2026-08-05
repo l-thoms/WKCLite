@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <sys/stat.h>
-#include "esp_system.h"
 #include "esp_log.h"
-#include "esp_spiffs.h"
 #include "esp_littlefs.h"
 #include "esp_vfs_fat.h"
 #include "driver/sdmmc_host.h"
@@ -57,13 +55,14 @@ esp_err_t wkc_storage_init_fonts()
 esp_err_t wkc_storage_init_dynamic()
 {
     ESP_LOGI(TAG, "Init dynamic partition...");
-    esp_vfs_spiffs_conf_t conf = {
+    esp_vfs_littlefs_conf_t conf = {
         .base_path = "/data_dynamic",
         .partition_label = "data_dynamic",
-        .max_files = 5,
+        .read_only = false,
+        .dont_mount = false,
         .format_if_mount_failed = true
     };
-    esp_err_t ret = esp_vfs_spiffs_register(&conf);
+    esp_err_t ret = esp_vfs_littlefs_register(&conf);
     if(ret != ESP_OK)
     {
         if(ret == ESP_FAIL)

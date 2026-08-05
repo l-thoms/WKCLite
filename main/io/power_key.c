@@ -2,10 +2,8 @@
 #include "esp_log.h"
 #include "peripherals/lock.h"
 #include "io_extend.h"
-#include "peripherals/pwm.h"
 #include "ui/shell.h"
 #include "esp_timer.h"
-#include "rom/ets_sys.h"
 #include "esp_sleep.h"
 #include "display/display_control.h"
 

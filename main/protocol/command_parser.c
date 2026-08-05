@@ -1,38 +1,21 @@
 #include <stdio.h>
 #include <string.h>
-#include <time.h>
+#include <sys/time.h>
 #include "esp_log.h"
 #include "command_parser.h"
 #include "cJSON.h"
-#include "profile/userprofile.h"
-#include "profile/settings.h"
-#include "ble.h"
-#include "nimble/ble.h"
-#include "nimble/nimble_port.h"
-#include "nimble/nimble_port_freertos.h"
-#include "host/ble_hs.h"
-#include "host/util/util.h"
-#include "host/ble_gap.h"
 #include "host/ble_gatt.h"
 #include "host/ble_uuid.h"
-#include "services/gap/ble_svc_gap.h"
-#include "services/gatt/ble_svc_gatt.h"
-#include "mbedtls/error.h"
+#include "host/ble_hs.h"
 #include "ui/ui_common.h"
 #include "ui/shell.h"
-#include "ui/home.h"
-#include "ui/menu.h"
-#include "peripherals/lock.h"
-#include "peripherals/adc.h"
 #include "io/io_extend.h"
 #include "display/display_control.h"
 #include "shortcut.h"
 #include "quicksettings.h"
 
-#define TAG "WKC_CMD_PARSER"
-
-#define WKC_NOTIFY_DEFAULT() do {                                       \
-os_mbuf_append(notify_om, (uint8_t[]) {(uint8_t)0}, 1);                 \
+#define WKC_NOTIFY_DEFAULT() do {                                           \
+os_mbuf_append(notify_om, (uint8_t[]) {(uint8_t)WKC_NOTIFY_SUCCESSED}, 1);  \
 ble_gatts_notify_custom(conn_handle, attr_handle, notify_om);} while(0)
 
 #define WKC_NOTIFY_SINGLE(result) do {                                  \
@@ -76,7 +59,7 @@ int wkc_write_command(uint16_t conn_handle, uint16_t attr_handle,
                 };
                 if(io_extend_save_time(&time_data))
                 {
-                    WKC_NOTIFY_SINGLE(1);
+                    WKC_NOTIFY_SINGLE(WKC_NOTIFY_FAILED);
                 }
                 else WKC_NOTIFY_DEFAULT();
             }
@@ -87,25 +70,25 @@ int wkc_write_command(uint16_t conn_handle, uint16_t attr_handle,
             WKC_NOTIFY_DEFAULT();
             break;
         case WKC_CMD_READ_SHORTCUT_ITEM:
-            WKC_NOTIFY_SINGLE(protocol_shortcut_get_table((char*)&command[1]));
+            WKC_NOTIFY_SINGLE(!!protocol_shortcut_get_table((char*)&command[1]));
             break;
         case WKC_CMD_WRITE_SHORTCUT:
-            WKC_NOTIFY_SINGLE(protocol_shortcut_write((char*)&command[1]));
+            WKC_NOTIFY_SINGLE(!!protocol_shortcut_write((char*)&command[1]));
             break;
         case WKC_CMD_READ_SETTINGS_TABLE:
             protocol_quicksettings_get_table(NULL);
             WKC_NOTIFY_DEFAULT();
             break;
         case WKC_CMD_READ_SETTINGS_ITEM:
-            WKC_NOTIFY_SINGLE(protocol_quicksettings_get_table((char*)&command[1]));
+            WKC_NOTIFY_SINGLE(!!protocol_quicksettings_get_table((char*)&command[1]));
             break;
         case WKC_CMD_WRITE_SETTINGS:
-            WKC_NOTIFY_SINGLE(protocol_quicksettings_write((char*)&command[1]));
+            WKC_NOTIFY_SINGLE(!!protocol_quicksettings_write((char*)&command[1]));
             break;
         default:
         {
-            WKC_NOTIFY_SINGLE(1);
-            ESP_LOGE(TAG, "Command unsupported");
+            WKC_NOTIFY_SINGLE(WKC_NOTIFY_FAILED);
+            ESP_LOGE("WKC_CMD_PARSER", "Command unsupported");
         }
         break;
     }
@@ -169,15 +152,18 @@ cJSON *wkc_table_item_extract(wkc_table_item_t *item, bool value_only)
 
     cJSON *item_json = cJSON_CreateObject();
     cJSON_AddStringToObject(item_json, "name", item->name);
-    cJSON_AddStringToObject(item_json, "display_name", item->display_name);
-    cJSON_AddStringToObject(item_json, "type", table_type_to_char(
+    if (!value_only)
+    {
+        cJSON_AddStringToObject(item_json, "display_name", item->display_name);
+        cJSON_AddStringToObject(item_json, "type", table_type_to_char(
         item->type));
+    }
     switch (item->type)
     {
         case WKC_TABLE_ITEM_ACTION:
         case WKC_TABLE_ITEM_PICKER:
         {
-            if (!value_only)
+            if (!value_only || item->type == WKC_TABLE_ITEM_ACTION)
             {
                 cJSON *options_json = cJSON_AddArrayToObject(item_json, "options");
                 for (int k = 0; k < item->count; k++)
@@ -256,6 +242,7 @@ wkc_table_item_t *wkc_table_group_find_item(wkc_table_group_t *groups, int count
             {
                 return &groups[i].items[j];
             }
+            j += 1;
         }
     }
     return NULL;

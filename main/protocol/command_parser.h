@@ -30,6 +30,14 @@ typedef enum
     WKC_TABLE_ITEM_END
 } wkc_table_item_type_t;
 
+typedef enum
+{
+    WKC_NOTIFY_SUCCESSED = 0x00,
+    WKC_NOTIFY_FAILED = 0x01,
+    WKC_NOTIFY_CONNECTION_OCCUPIED = 0x02,
+    WKC_NOTIFY_UPDATE_REQUIRED = 0x10
+} wkc_notify_type_t;
+
 typedef struct
 {
     wkc_table_item_type_t type;

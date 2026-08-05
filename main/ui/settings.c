@@ -1,11 +1,12 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
+#include "esp_system.h"
+#include "protocol/ble.h"
 #include "display/graphics.h"
 #include "display/display_control.h"
 #include "ui_common.h"
 #include "camera/camera_control.h"
-#include "page.h"
 #include "shell.h"
 #include "math.h"
 #include "profile/translations.h"
@@ -924,6 +925,7 @@ static void ui_settings_on_key_event(ui_settings_t *settings, int key_code)
                     current_settings->display.orientation %= 3;
                     refresh = true;
                     wkc_settings_save();
+                    protocol_ble_notify_update_command("screen_orientation");
                 }
                 else if (*current_index == 1 &&
                         (key_code == UI_KEY_CODE_LEFT || key_code == UI_KEY_CODE_RIGHT))
@@ -936,6 +938,7 @@ static void ui_settings_on_key_event(ui_settings_t *settings, int key_code)
                     refresh = true;
                     display_settings_update();
                     wkc_settings_save();
+                    protocol_ble_notify_update_command("output_mode");
                 }
                 else if (*current_index == 2 && key_code == UI_KEY_CODE_OK)
                 {
@@ -953,6 +956,7 @@ static void ui_settings_on_key_event(ui_settings_t *settings, int key_code)
                     refresh = true;
                     display_settings_update();
                     wkc_settings_save();
+                    protocol_ble_notify_update_command("capture_card_output");
                 }
                 else if (*current_index == 4 && key_code == UI_KEY_CODE_OK)
                 {
@@ -961,6 +965,7 @@ static void ui_settings_on_key_event(ui_settings_t *settings, int key_code)
                     refresh = true;
                     display_settings_update();
                     wkc_settings_save();
+                    protocol_ble_notify_update_command("capture_with_osd");
                 }
                 *current_index %= 5;
             }
@@ -1050,12 +1055,14 @@ static void ui_settings_on_key_event(ui_settings_t *settings, int key_code)
                     current_settings->power_save %= 4;
                     refresh = true;
                     wkc_settings_save();
+                    protocol_ble_notify_update_command("power_save");
                 }
                 else if (*current_index == 1 && key_code == UI_KEY_CODE_OK)
                 {
                     current_settings->keep_advertise = !current_settings->keep_advertise;
                     refresh = true;
                     wkc_settings_save();
+                    protocol_ble_notify_update_command("keep_advertise");
                 }
                 else if (*current_index == 2 && key_code == UI_KEY_CODE_OK)
                 {
@@ -1063,6 +1070,7 @@ static void ui_settings_on_key_event(ui_settings_t *settings, int key_code)
                     !current_settings->peripherals.remember_state;
                     refresh = true;
                     wkc_settings_save();
+                    protocol_ble_notify_update_command("remember_peripherals");
                 }
                 else if (*current_index == 3 &&
                         (key_code == UI_KEY_CODE_LEFT) || key_code == UI_KEY_CODE_RIGHT)
@@ -1071,6 +1079,7 @@ static void ui_settings_on_key_event(ui_settings_t *settings, int key_code)
                         !current_settings->homepage_status_bar_position;
                     refresh = true;
                     wkc_settings_save();
+                    protocol_ble_notify_update_command("homepage_status_bar_position");
                 }
                 *current_index %= 4;
             }

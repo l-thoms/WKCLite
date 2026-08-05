@@ -1,8 +1,6 @@
 #pragma once
 
-#include "esp_camera.h"
 #include "display/display_common.h"
-#include "esp_jpeg_common.h"
 
 #define ANALOG_CONFIG_DEFAULT() { \
     .fuse = ANALOG_FUSE_AMP_AA, \

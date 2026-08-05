@@ -1,5 +1,4 @@
 #include "ui_common.h"
-#include "page.h"
 #include "esp_timer.h"
 #include "shell.h"
 #include <string.h>

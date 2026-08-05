@@ -1,7 +1,6 @@
 #pragma once
 
 #include <stdint.h>
-#include <math.h>
 
 #define DISPLAY_WIDTH_PAL 384
 #define DISPLAY_WIDTH_NISC 320

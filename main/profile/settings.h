@@ -1,8 +1,5 @@
 #pragma once
 
-#include "freertos/FreeRTOS.h"
-#include "freertos/semphr.h"
-
 typedef struct
 {
     bool remember_state;

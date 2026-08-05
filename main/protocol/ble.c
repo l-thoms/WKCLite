@@ -2,12 +2,9 @@
 #include <string.h>
 #include <stdint.h>
 #include "esp_log.h"
-#include "nvs_flash.h"
 #include "esp_bt.h"
-#include "esp_nimble_hci.h"
 #include "esp_random.h"
 #include "freertos/task.h"
-#include "nimble/ble.h"
 #include "nimble/nimble_port.h"
 #include "nimble/nimble_port_freertos.h"
 #include "host/ble_hs.h"
@@ -15,7 +12,6 @@
 #include "host/ble_gap.h"
 #include "host/ble_gatt.h"
 #include "host/ble_uuid.h"
-#include "host/ble_sm.h"
 #include "services/gap/ble_svc_gap.h"
 #include "services/gatt/ble_svc_gatt.h"
 #include "command_parser.h"
@@ -24,8 +20,6 @@
 #include "ui/ui_common.h"
 #include "ui/shell.h"
 #include "ui/home.h"
-#include "display/display_common.h"
-#include "esp_mac.h"
 #include "security.h"
 #include "profile/translations.h"
 
@@ -46,7 +40,7 @@
 #define MFG_BLOCK_DEVICE_MODEL 0x03
 
 const uint8_t mfg_head[2] = { 0x1e, 0x3b };
-uint8_t protocol_version[4] = { 0, 1, 0, 0 };
+uint8_t protocol_version[4] = { 0, 1, 1, 0 };
 
 typedef struct {
     // Actual data length + 1
@@ -163,7 +157,7 @@ static int gatt_svr_security_access(uint16_t conn_handle, uint16_t attr_handle,
             {
                 ui_shell_show_toast(current_shell,
                     wkc_translations_get_string("ble_disconnect_previous_device"), 5);
-                rc = 2;
+                rc = (int)WKC_NOTIFY_CONNECTION_OCCUPIED;
             }
             else if (protocol_security_verify(om_data, passkey, om_length) == 0)
             {
@@ -172,15 +166,15 @@ static int gatt_svr_security_access(uint16_t conn_handle, uint16_t attr_handle,
                 ui_home_update_from_shell(current_shell);
                 current_handle = conn_handle;
                 ESP_LOGI(TAG, "Device verify okay");
-                rc = 0;
+                rc = (int)WKC_NOTIFY_SUCCESSED;
             }
             else
             {
                 ui_shell_show_toast(current_shell,
                     wkc_translations_get_string("ble_verification_failed"), 5);
-                rc = 1;
+                rc = (int)WKC_NOTIFY_FAILED;
             }
-            os_mbuf_append(notify_om, &rc, 1);
+            os_mbuf_append(notify_om, (uint8_t[]) { rc }, 1);
             ble_gatts_notify_custom(conn_handle, attr_handle, notify_om);
             os_mbuf_free_chain(notify_om);
         }
@@ -433,6 +427,21 @@ static int ble_gap_event_handler(struct ble_gap_event *event, void *arg)
     }
 
     return 0;
+}
+
+void protocol_ble_notify_update_command(const char *name)
+{
+    if (current_handle == BLE_HS_CONN_HANDLE_NONE) return;
+    struct os_mbuf *notify_om = ble_hs_mbuf_att_pkt();
+    os_mbuf_append(notify_om, (uint8_t[]){ WKC_NOTIFY_UPDATE_REQUIRED }, 1);
+    os_mbuf_append(notify_om, name, (uint16_t)strlen(name));
+    uint16_t command_attr_handle;
+    ble_uuid16_t svc_uuid = BLE_UUID16_INIT(GATT_SVC_UUID);
+    ble_uuid16_t chr_uuid = BLE_UUID16_INIT(GATT_CHR_COMMAND_UUID);
+    ble_gatts_find_chr(&svc_uuid.u, &chr_uuid.u,
+                      NULL,  &command_attr_handle);
+    ble_gatts_notify_custom(current_handle, command_attr_handle, notify_om);
+    os_mbuf_free_chain(notify_om);
 }
 
 bool protocol_ble_is_device_connected()

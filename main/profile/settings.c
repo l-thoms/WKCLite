@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "esp_system.h"
 #include "esp_log.h"
-#include "userprofile.h"
 #include "cJSON.h"
 #include "settings.h"
 #include "io/filesystem.h"

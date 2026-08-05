@@ -4,7 +4,7 @@
 #include <locale.h>
 #include <string.h>
 #include <errno.h>
-#include "esp_log.h"
+#include <math.h>
 #include "graphics.h"
 #include "font_management.h"
 #include "io/filesystem.h"

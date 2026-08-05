@@ -243,12 +243,17 @@ static void quicksettings_check_settings_home()
     }
 }
 
+static void quicksettings_update()
+{
+    quicksettings_check_settings_home();
+    wkc_settings_save();
+}
+
 uint8_t protocol_quicksettings_write(char *command)
 {
     cJSON *command_json = cJSON_Parse(command);
     if (!command_json) return 1;
     wkc_userprofile_acquire_semaphore();
-    quicksettings_check_settings_home();
     cJSON *child = command_json->child;
     wkc_userprofile_t *profile = wkc_userprofile_get_current();
     wkc_settings_t *settings = wkc_settings_get_current();
@@ -288,52 +293,52 @@ uint8_t protocol_quicksettings_write(char *command)
         {
             settings->display.orientation = (int)cJSON_GetNumberValue(child);
             display_settings_update();
-            wkc_settings_save();
+            quicksettings_update();
             ret = 0;
         }
         else if (strcmp(child->string, "output_mode") == 0)
         {
             settings->display.output_mode = (int)cJSON_GetNumberValue(child);
             display_settings_update();
-            wkc_settings_save();
+            quicksettings_update();
             ret = 0;
         }
         else if (strcmp(child->string, "capture_card_output") == 0)
         {
             settings->display.capture_index = (int)cJSON_GetNumberValue(child);
             display_settings_update();
-            wkc_settings_save();
+            quicksettings_update();
             ret = 0;
         }
         else if (strcmp(child->string, "capture_with_osd") == 0)
         {
             settings->display.capture_osd = cJSON_IsTrue(child);
             display_settings_update();
-            wkc_settings_save();
+            quicksettings_update();
             ret = 0;
         }
         else if (strcmp(child->string, "power_save") == 0)
         {
             settings->power_save = (int)cJSON_GetNumberValue(child);
-            wkc_settings_save();
+            quicksettings_update();
             ret = 0;
         }
         else if (strcmp(child->string, "keep_advertise") == 0)
         {
             settings->keep_advertise = cJSON_IsTrue(child);
-            wkc_settings_save();
+            quicksettings_update();
             ret = 0;
         }
         else if (strcmp(child->string, "remember_peripherals") == 0)
         {
             settings->peripherals.remember_state = cJSON_IsTrue(child);
-            wkc_settings_save();
+            quicksettings_update();
             ret = 0;
         }
         else if (strcmp(child->string, "homepage_status_bar_position") == 0)
         {
             settings->homepage_status_bar_position = cJSON_GetNumberValue(child);
-            wkc_settings_save();
+            quicksettings_update();
             ret = 0;
         }
         child = child->next;

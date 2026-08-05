@@ -1,3 +1,5 @@
+#include <time.h>
+#include <sys/time.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "driver/i2c_master.h"
@@ -6,9 +8,7 @@
 #include "esp_system.h"
 #include "esp_log.h"
 #include "io_extend.h"
-#include "time.h"
 #include "esp_rtc_time.h"
-#include "sys/time.h"
 #include <unistd.h>
 
 #define IO_EXTEND_ADDRESS 0x2c

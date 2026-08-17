@@ -8,11 +8,13 @@
 #include "peripherals/lock.h"
 #include "peripherals/pwm.h"
 #include "peripherals/adc.h"
+#include "peripherals/battery_calibration.h"
 #include "protocol/ble.h"
 #include "display/graphics.h"
 #include "host/ble_gap.h"
 #include "io/io_extend.h"
 #include "profile/settings.h"
+#include "profile/translations.h"
 
 typedef struct
 {
@@ -24,6 +26,7 @@ typedef struct
     bool last_power_save_value;
     int last_battery_value;
     bool last_battery_plugged;
+    bool last_battery_calibrated;
     int last_minute;
     int last_hour;
     bool last_valid;
@@ -58,6 +61,7 @@ static void select_battery_icon(char *battery_icon_char, int value, bool chargin
                              value < 80 ? 4:
                              value < 90 ? 5:
                              6;
+    if (charging && battery_icon_index < 6) battery_icon_index = 0;
     display_get_icon_indexed(charging ? "charging" : "battery", format, false,
                              battery_icon_index, battery_icon_char, actaual_width);
 }
@@ -197,11 +201,16 @@ static void ui_home_on_draw(ui_home_t *home, display_format_t *formats, display_
 
     if(home->battery_query_request)
     {
-        char battery_value[10];
-        if (home->last_battery_plugged)
-            sprintf(battery_value, "%3d%%", home->last_battery_value);
-        else
+        char battery_value[20];
+
+        if (!home->last_battery_plugged)
             sprintf(battery_value, " ??");
+        else if (!battery_calibration_is_valid())
+            sprintf(battery_value, wkc_translations_get_string("battery_uncalibrated"));
+        else if (home->last_battery_charging && home->last_battery_value < 100)
+            sprintf(battery_value, wkc_translations_get_string("battery_charging"));
+        else
+            sprintf(battery_value, "%3d%%", home->last_battery_value);
         // Draw battery icon and text
         display_vector_t icon_coordinate = {
             .x = logical_width - 78, .y = icon_draw_origin.y - 2
@@ -215,9 +224,11 @@ static void ui_home_on_draw(ui_home_t *home, display_format_t *formats, display_
         char battery_icon_secondary[60];
         int battery_icon_width_primary, battery_icon_width_secondary;
         select_battery_icon(battery_icon_primary, home->last_battery_value,
-            home->last_battery_charging, home->last_battery_plugged, formats[0], &battery_icon_width_primary);
+            home->last_battery_charging, home->last_battery_plugged &&
+            battery_calibration_is_valid(), formats[0], &battery_icon_width_primary);
         select_battery_icon(battery_icon_secondary, home->last_battery_value,
-            home->last_battery_charging, home->last_battery_plugged, formats[1], &battery_icon_width_secondary);
+            home->last_battery_charging, home->last_battery_plugged &&
+            battery_calibration_is_valid(), formats[1], &battery_icon_width_secondary);
 
         int text_length;
         display_vector_t text_size_primary, text_size_secondary;
@@ -325,13 +336,15 @@ static void ui_home_on_mainloop(ui_home_t *home, bool on_foreground)
         int battery_value;
         bool charging;
         bool plugged;
+        bool calibrated = battery_calibration_is_valid();
         adc_monitor_read_battery(&battery_value, &charging, &plugged);
         if (charging != home->last_battery_charging || battery_value != home->last_battery_value ||
-            plugged != home->last_battery_plugged)
+            plugged != home->last_battery_plugged || calibrated != home->last_battery_calibrated)
         {
             home->last_battery_charging = charging;
             home->last_battery_value = battery_value;
             home->last_battery_plugged = plugged;
+            home->last_battery_calibrated = calibrated;
             home->battery_query_request = true;
         }
         time_t current_time = time(NULL);
@@ -400,6 +413,7 @@ ui_page_t *ui_home_create()
     home->last_power_save_value = false;
     home->last_battery_charging = false;
     home->last_battery_plugged = false;
+    home->last_battery_calibrated = false;
     home->last_valid = false;
     home->last_eye_state = false;
     home->last_fan_state = false;

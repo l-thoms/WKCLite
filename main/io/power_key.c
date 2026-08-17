@@ -6,15 +6,10 @@
 #include "esp_timer.h"
 #include "esp_sleep.h"
 #include "display/display_control.h"
+#include "peripherals/battery_calibration.h"
 
-static bool power_state = true;
 static ui_shell_t *current_shell = NULL;
 int64_t last_keydown_time = 0;
-
-bool power_key_get_state()
-{
-    return power_state;
-}
 
 static void power_key_isr(void *args)
 {
@@ -35,9 +30,8 @@ static void power_key_isr(void *args)
             ui_shell_show_toast(current_shell, "已解锁", 5);
         return;
     }
-    power_state = !power_state;
     lock_set_from_isr(false, false, true);
-    if (!power_state)
+    if (!battery_calibration_is_calibrating())
     {
         esp_sleep_enable_ext0_wakeup(GPIO_NUM_0, 0);
         esp_light_sleep_start();

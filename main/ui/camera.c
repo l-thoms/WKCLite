@@ -13,8 +13,10 @@
 #include "profile/settings.h"
 #include "esp_log.h"
 #include "io/filesystem.h"
+#include "io/io_extend.h"
 #include "camera/camera_control.h"
 #include "display/display_control.h"
+#include "peripherals/battery_calibration.h"
 
 #define UI_CAMERA_CHECK_UPDATE(update) \
 { \
@@ -1300,7 +1302,13 @@ int ui_camera_show(ui_shell_t *shell)
         ui_page_t *camera = ui_shell_find_page(shell, UI_PAGE_TYPE_CAMERA);
         if (camera != NULL)
         {
-            ui_shell_show_page(shell, camera);
+            if (battery_calibration_is_calibrating())
+            {
+                ui_shell_show_toast(ui_shell_get_current(), wkc_translations_get_string(
+                    "camera_disabled_calibrate"), 5);
+                return 1;
+            }
+            else ui_shell_show_page(shell, camera);
             return 0;
         }
     }

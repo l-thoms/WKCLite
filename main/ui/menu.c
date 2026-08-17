@@ -8,6 +8,7 @@
 #include "profile/translations.h"
 #include "peripherals/lock.h"
 #include "peripherals/pwm.h"
+#include "peripherals/battery_calibration.h"
 #include "io/io_extend.h"
 #include "protocol/ble.h"
 #include "camera.h"
@@ -480,15 +481,33 @@ static void ui_menu_on_key_event(ui_menu_t *menu, int key_code)
             }
             else if (menu->selected_index == 5)
             {
-                pwm_device_toggle_fan();
-                menu->draw_request = true;
-                protocol_ble_notify_update_command("fan");
+                if (battery_calibration_is_calibrating())
+                {
+                    ui_shell_show_toast(ui_shell_get_current(), wkc_translations_get_string(
+                        "menu_peripherals_disable_calibrate"), 5);
+                    protocol_ble_notify_update_command("fan");
+                }
+                else
+                {
+                    pwm_device_toggle_fan();
+                    menu->draw_request = true;
+                    protocol_ble_notify_update_command("fan");
+                }
             }
             else if (menu->selected_index == 6)
             {
-                pwm_device_toggle_eye();
-                menu->draw_request = true;
-                protocol_ble_notify_update_command("eye");
+                if (battery_calibration_is_calibrating())
+                {
+                    ui_shell_show_toast(ui_shell_get_current(), wkc_translations_get_string(
+                        "menu_peripherals_disable_calibrate"), 5);
+                    protocol_ble_notify_update_command("eye");
+                }
+                else
+                {
+                    pwm_device_toggle_eye();
+                    menu->draw_request = true;
+                    protocol_ble_notify_update_command("eye");
+                }
             }
             else if(menu->selected_index == 7)
             {
@@ -497,6 +516,7 @@ static void ui_menu_on_key_event(ui_menu_t *menu, int key_code)
                     ui_shell_show_toast(menu->base.parent, lock_result_to_char(lock_result), 5);
                 else
                     menu->draw_request = true;
+                protocol_ble_notify_update_command("lock");
             }
         }
         break;

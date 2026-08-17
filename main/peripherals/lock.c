@@ -8,6 +8,8 @@
 #include "ui/home.h"
 #include "ui/menu.h"
 #include "profile/translations.h"
+#include "peripherals/battery_calibration.h"
+#include "protocol/ble.h"
 
 static bool locked = false;
 static SemaphoreHandle_t lock_semaphore = NULL;
@@ -57,11 +59,14 @@ static int _lock_set_priv(bool state, bool force, bool first_lock)
 bool lock_check_power()
 {
     int power_value;
-    bool plugged;
-    adc_monitor_read_battery(&power_value, NULL, &plugged);
-    if (!plugged || power_value < 10)
+    bool plugged, charging;
+    adc_monitor_read_battery(&power_value, &charging, &plugged);
+    if (!plugged || power_value < 10 && !charging || power_value < 20 && charging)
     {
+        bool locked_pre = locked;
         _lock_set_priv(false, true, false);
+        if (locked_pre)
+            protocol_ble_notify_update_command("lock");
         return false;
     }
     return true;
@@ -70,7 +75,11 @@ bool lock_check_power()
 int lock_set(bool state, bool force)
 {
     if (lock_check_power())
-        return _lock_set_priv(state, force, false);
+    {
+        if (!battery_calibration_is_calibrating())
+            return _lock_set_priv(state, force, false);
+        else return 3;
+    }
     else return 2;
 }
 
@@ -124,5 +133,7 @@ char *lock_result_to_char(int result)
         return wkc_translations_get_string("menu_lock_too_fast");
     else if (result == 2)
         return wkc_translations_get_string("menu_lock_check_battery");
+    else if (result == 3)
+        return wkc_translations_get_string("menu_peripherals_disable_calibrate");
     else return NULL;
 }

@@ -11,6 +11,8 @@
 #include "ui/home.h"
 #include "ui/camera.h"
 #include "ui/files.h"
+#include "peripherals/battery_calibration.h"
+#include "protocol/ble.h"
 
 static char *shortcut_output = NULL;
 static int read_pos = 0;
@@ -50,8 +52,8 @@ int protocol_shortcut_get_table(char *key)
 {
     clear_output();
     char *lock_options[] = {
-        wkc_translations_get_string("shortcut_lock"),
-        wkc_translations_get_string("shortcut_unlock")
+        wkc_translations_get_string("shortcut_unlock"),
+        wkc_translations_get_string("shortcut_lock")
     };
     char *open[] = { wkc_translations_get_string("shortcut_open") };
     wkc_table_item_t shortcut_items[] = {
@@ -86,11 +88,12 @@ int protocol_shortcut_get_table(char *key)
             .value = pwm_device_get_fan_level()
         },
         {
-            .type = WKC_TABLE_ITEM_ACTION,
+            .type = WKC_TABLE_ITEM_PICKER,
             .name = "lock",
             .display_name = wkc_translations_get_string("menu_lock"),
             .count = 2,
-            .options = lock_options
+            .options = lock_options,
+            .value = lock_get_state()
         },
         {
             .type = WKC_TABLE_ITEM_END
@@ -168,24 +171,52 @@ uint8_t protocol_shortcut_write(char *command)
         else if (strcmp(child->string, "eye") == 0)
         {
             int level = (int)cJSON_GetNumberValue(child);
-            pwm_device_set_eye_level(level);
-            shortcut_check_menu_home();
+            if (battery_calibration_is_calibrating())
+            {
+                ui_shell_show_toast(ui_shell_get_current(), wkc_translations_get_string(
+                    "menu_peripherals_disable_calibrate"), 5);
+                protocol_ble_notify_update_command("eye");
+            }
+            else
+            {
+                pwm_device_set_eye_level(level);
+                shortcut_check_menu_home();
+            }
             ret = 0;
         }
         else if (strcmp(child->string, "fan") == 0)
         {
             int level = (int)cJSON_GetNumberValue(child);
-            pwm_device_set_fan_level(level);
-            shortcut_check_menu_home();
+            if (battery_calibration_is_calibrating())
+            {
+                ui_shell_show_toast(ui_shell_get_current(), wkc_translations_get_string(
+                    "menu_peripherals_disable_calibrate"), 5);
+                protocol_ble_notify_update_command("fan");
+            }
+            else
+            {
+                pwm_device_set_fan_level(level);
+                shortcut_check_menu_home();
+            }
             ret = 0;
         }
         else if (strcmp(child->string, "lock") == 0)
         {
-            bool state = !(int)cJSON_GetNumberValue(child);
-            int lock_result = lock_set(state, false);
-            if (lock_result)
-                ui_shell_show_toast(ui_shell_get_current(), lock_result_to_char(lock_result), 5);
-            shortcut_check_menu_home();
+            bool state = (int)cJSON_GetNumberValue(child);
+            if (battery_calibration_is_calibrating())
+            {
+                ui_shell_show_toast(ui_shell_get_current(), wkc_translations_get_string(
+                    "menu_peripherals_disable_calibrate"), 5);
+            }
+            else
+            {
+                int lock_result = lock_set(state, false);
+                if (lock_result)
+                    ui_shell_show_toast(ui_shell_get_current(),
+                        lock_result_to_char(lock_result), 5);
+                shortcut_check_menu_home();
+            }
+            protocol_ble_notify_update_command("lock");
             ret = 0;
         }
         child = child->next;

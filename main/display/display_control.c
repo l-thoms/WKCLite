@@ -17,6 +17,7 @@
 #include "graphics.h"
 #include "profile/settings.h"
 #include "peripherals/adc.h"
+#include "peripherals/battery_calibration.h"
 
 // PAL: 768x576 active, transmit 800x625
 // NTSC: 640x480 active, transmit 800x525
@@ -514,7 +515,8 @@ static void display_control_polling_task(void *params)
             power_save_begin = esp_timer_get_time();
             current_power_state = false;
         }
-        else if (esp_timer_get_time() - power_save_begin > power_save_time)
+        else if (esp_timer_get_time() - power_save_begin > power_save_time &&
+                 !battery_calibration_is_calibrating())
         {
             current_power_state = true;
         }

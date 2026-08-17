@@ -2,23 +2,17 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_system.h"
-#include "esp_adc/adc_oneshot.h"
 #include "esp_log.h"
 #include "io/io_extend.h"
 #include "adc.h"
 #include "pwm.h"
 #include "lock.h"
+#include "battery_calibration.h"
+#include "profile/settings.h"
+#include "ui/ui_common.h"
+#include "esp_random.h"
 
-#define BATTERY_VALUE_FULL 3250
-#define BATTERY_VALUE_CHARGING_FULL 3530
-// 2350 limit
-#define BATTERY_VALUE_EMPTY 2450
-// 2750 limit
-#define BATTERY_VALUE_CHARGING_EMPTY 2850
-#define BATTERY_VALUE_LENGTH 10
-#define BATTERY_STATE_SWITCH_THRESHOLD BATTERY_VALUE_LENGTH
 #define BATTERY_VALID_THRESHOLD 150
-#define BATTERY_POW_COMPENSATION 2.7f
 
 #define IR_VALUE_THRESHOLD 3650
 
@@ -26,98 +20,155 @@ static adc_oneshot_unit_handle_t current_unit_handle;
 
 static bool current_ir_value = false;
 static bool temp_increment = false;
-static bool battery_value_init = false;
-static int battery_value_storage[BATTERY_VALUE_LENGTH] = { 0 };
-static int battery_state_switch_count = BATTERY_STATE_SWITCH_THRESHOLD;
-static battery_state_t battery_state_storage[BATTERY_VALUE_LENGTH] = { 0 };
-static int current_battery_index = 0;
 static int current_battery_result = 0;
 static battery_state_t state;
-static bool is_battery_plugged = false;
+static int battery_invalid_count = 0;
+ui_page_type_t last_page_type;
+static int charging_value = -1;
+static int stdby_value = -1;
 
-static bool battery_value_check_valid()
+double adc_value_to_voltage(int adc_value)
 {
-    int battery_value_max = INT16_MIN, battery_value_min = INT16_MAX;
-    for (int i = 0; i < BATTERY_VALUE_LENGTH; i++)
-    {
-        if (battery_state_storage[i] != BATTERY_STATE_NORMAL &&
-            battery_state_storage[i] != BATTERY_STATE_CHRG)
-        {
-            if (battery_value_storage[i] > battery_value_max)
-                battery_value_max = battery_value_storage[i];
-            if (battery_value_storage[i] < battery_value_min)
-                battery_value_min = battery_value_storage[i];
-        }
-    }
-    return battery_value_max - battery_value_min < BATTERY_VALID_THRESHOLD;
+    return adc_value * 1.5 / 4096 * 3.3;
 }
 
-static void adc_calculate_battery_percentage(bool recalculate)
+double battery_value_to_vbat(double battery_value)
 {
-    int battery_value_average = 0;
-    int battery_value_corrected[BATTERY_VALUE_LENGTH];
-    memcpy(battery_value_corrected, battery_value_storage, sizeof(int) * BATTERY_VALUE_LENGTH);
-    // Scale value by state, to uncharged format
-    for (int i = 0; i < BATTERY_VALUE_LENGTH; i++)
+    double battery_uniform = battery_value / 100;
+    return -0.7 * pow(battery_uniform, 4) + 3.6 * pow (battery_uniform, 3) -
+           4.5 * pow(battery_uniform, 2) + 2.8 * battery_uniform + 3;
+}
+
+// Assume R_load = 1 in 100%
+double vbat_to_resistance(double vbat)
+{
+    return 0.6966 * pow(vbat - 3, 4) - 2.572 * pow(vbat - 3, 3) +
+           4.63 * pow(vbat - 3, 2) - 3.704 * (vbat - 3) + 1.778;
+}
+
+static inline double rload_get_from_stdby(double vload)
+{
+    return vload / BATTERY_VOLTAGE_FULL / (1 - vload / BATTERY_VOLTAGE_FULL);
+}
+
+static inline double pload_get_from_stdby(double vload)
+{
+    return pow(vload, 2) / rload_get_from_stdby(vload);
+}
+
+static inline double rload_get(double vload, double pload)
+{
+    return pow(vload, 2) / pload;
+}
+
+static inline double iload_get(double vload, double pload)
+{
+    return vload / pload;
+}
+
+static double vbat_to_battery_value(double vbat)
+{
+    int iter = 12;
+    // Actually the charging and standby voltage may be slightly higher than 4.2V
+    double battery_value_start = 0, battery_value_end = 125; // About 4.8V
+    while (iter--)
     {
-        if (battery_state_storage[i] == BATTERY_STATE_STDBY)
+        double battery_value_mid = (battery_value_start + battery_value_end) / 2;
+        double vbat_mid = battery_value_to_vbat(battery_value_mid);
+        if (vbat_mid < vbat)
+            battery_value_start = battery_value_mid;
+        else
+            battery_value_end = battery_value_mid;
+    }
+    return (battery_value_start + battery_value_end) / 2;
+}
+
+static inline double battery_aux_function(double vload, double pload, double vbat_ideal)
+{
+    return vload * (1 + vbat_to_resistance(vbat_ideal) / rload_get(vload, pload)) - vbat_ideal;
+}
+
+static inline double battery_aux_derivative(double vload, double pload, double vbat_ideal)
+{
+    return vload / rload_get(vload, pload) * (2.7864 * pow(vbat_ideal - 3, 3) -
+           7.716 * pow (vbat_ideal - 3, 2) + 9.26 * (vbat_ideal - 3) - 3.704) - 1;
+}
+
+double battery_value_get_coarse(double vload, double pload)
+{
+    double derivative_zp_start = BATTERY_VOLTAGE_EMPTY,
+           derivative_zp_end = battery_value_to_vbat(125),
+           derivative_zp;
+    int iter = 10;
+    if (battery_aux_function(vload, pload, 3.) < 0) return 0;
+    // Calculate derivative = 0
+    double derivative_zp_end_value = battery_aux_derivative(vload, pload,
+                                     derivative_zp_end);
+    if (derivative_zp_end_value < 0) derivative_zp = derivative_zp_end;
+    else
+    {
+        while (iter--)
         {
-            battery_value_corrected[i] = BATTERY_VALUE_FULL;
+            double derivative_zp_mid = (derivative_zp_start + derivative_zp_end) / 2;
+            double derivative_zp_mid_value = battery_aux_derivative(vload, pload,
+                                             derivative_zp_mid);
+            if (derivative_zp_mid_value < 0)
+            {
+                derivative_zp_start = derivative_zp_mid;
+            }
+            else
+            {
+                derivative_zp_end = derivative_zp_mid;
+            }
         }
-        else if (battery_state_storage[i] == BATTERY_STATE_CHRG)
-        {
-            battery_value_corrected[i] = (int)(BATTERY_VALUE_EMPTY +
-                powf((float)(battery_value_corrected[i] - BATTERY_VALUE_CHARGING_EMPTY) /
-                (BATTERY_VALUE_CHARGING_FULL - BATTERY_VALUE_CHARGING_EMPTY),
-                BATTERY_POW_COMPENSATION) *
-                (BATTERY_VALUE_FULL - BATTERY_VALUE_EMPTY) + 0.5f);
-        }
+        derivative_zp = (derivative_zp_start + derivative_zp_end) / 2;
     }
 
-    for (int i = 0; i < BATTERY_VALUE_LENGTH; i++)
-        battery_value_average += battery_value_corrected[i];
-    battery_value_average = (int)((float)battery_value_average / BATTERY_VALUE_LENGTH + 0.5f);
-
-    int calculated_percentage = (int)round((float)(battery_value_average - BATTERY_VALUE_EMPTY) /
-                                (BATTERY_VALUE_FULL - BATTERY_VALUE_EMPTY) * 100);
-    if(calculated_percentage > 100) calculated_percentage = 100;
-    if(calculated_percentage < 0) calculated_percentage = 0;
-    if (calculated_percentage != current_battery_result)
+    if (battery_aux_function(vload, pload, derivative_zp) > 0)
+        return vbat_to_battery_value(derivative_zp);
+    else
     {
-        if (current_battery_index > BATTERY_VALUE_LENGTH && !recalculate)
+        double battery_voltage_start = BATTERY_VOLTAGE_EMPTY;
+        double battery_voltage_end = derivative_zp;
+        iter = 10;
+        while (iter--)
         {
-            if(!temp_increment &&
-                (state == BATTERY_STATE_NORMAL &&
-                calculated_percentage > current_battery_result + 2 ||
-                state == BATTERY_STATE_CHRG &&
-                calculated_percentage < current_battery_result - 2))
-            {
-                temp_increment = true;
-            }
-            else if (state == BATTERY_STATE_NORMAL &&
-                     calculated_percentage < current_battery_result ||
-                     state == BATTERY_STATE_CHRG &&
-                     calculated_percentage > current_battery_result)
-            {
-                temp_increment = false;
-            }
+            double battery_voltage_mid = (battery_voltage_start + battery_voltage_end) / 2;
+            double battery_aux_mid = battery_aux_function(vload, pload, battery_voltage_mid);
+            if(battery_aux_mid < 0)
+                battery_voltage_end = battery_voltage_mid;
+            else
+                battery_voltage_start = battery_voltage_mid;
         }
-        if (current_battery_index < BATTERY_VALUE_LENGTH || state == BATTERY_STATE_UNDEF ||
-            state == BATTERY_STATE_NORMAL &&
-            (calculated_percentage < current_battery_result ||
-             calculated_percentage > current_battery_result && temp_increment) ||
-            state == BATTERY_STATE_CHRG &&
-            (calculated_percentage > current_battery_result ||
-             calculated_percentage < current_battery_result && temp_increment) ||
-            recalculate)
-        {
-            current_battery_result = calculated_percentage;
-        }
-        if (state == BATTERY_STATE_CHRG && current_battery_result == 100)
-            current_battery_result = 99;
-        else if (state == BATTERY_STATE_STDBY)
-            current_battery_result = 100;
+        return vbat_to_battery_value((battery_voltage_start + battery_voltage_end) / 2);
     }
+}
+
+static int battery_value_get_precise(double vload, double pload)
+{
+    double zero_point = battery_calibration_get_current()->value_zero;
+    double full_point = vbat_to_battery_value(
+        battery_calibration_get_current()->voltage_charging);
+    double current_point = battery_value_get_coarse(vload, pload);
+    return clamp((int)((current_point - zero_point) / (full_point - zero_point) * 100 +
+                 0.5), 0, 100);
+}
+
+static int battery_value_get(double vload, double pload)
+{
+    int precise_value = battery_value_get_precise(vload, pload);
+    if (precise_value < current_battery_result ||
+        precise_value >= current_battery_result + 5)
+        return precise_value;
+    else return current_battery_result;
+}
+
+int adc_monitor_read_channel(adc_channel_t channel)
+{
+    int read_value;
+    if (adc_oneshot_read(current_unit_handle, channel, &read_value))
+        return -1;
+    return read_value;
 }
 
 static void adc_monitor_task(void *params)
@@ -127,60 +178,133 @@ static void adc_monitor_task(void *params)
     do
     {
         // Pause monitor while state changed
-        battery_state_t fetch = io_extend_fetch(0);
+        battery_state_t fetch = io_extend_fetch(0) & 3;
+
         if (state != fetch && !init)
         {
-            state = fetch;
             temp_increment = false;
-            battery_state_switch_count = BATTERY_STATE_SWITCH_THRESHOLD;
-            goto adc_monitor_next;
+            if (battery_invalid_count == 0)
+            {
+                if (state == BATTERY_STATE_STDBY && fetch == BATTERY_STATE_NORMAL &&
+                    battery_calibration_is_calibrating() && charging_value != -1 &&
+                    stdby_value != -1)
+                {
+                    ESP_LOGI("ADC", "Begin calibrate");
+                    battery_calibration_calibrate(adc_value_to_voltage(charging_value),
+                        adc_value_to_voltage(stdby_value));
+                }
+                else
+                {
+                    vTaskDelay(1000 / portTICK_PERIOD_MS);
+                }
+            }
+            state = fetch;
+            continue;
         }
         if (lock_is_busy() || pwm_device_power_skip())
-            goto adc_monitor_next;
-
-        int read_ir_value, read_battery_value;
-        esp_err_t result = adc_oneshot_read(current_unit_handle, ADC_CHANNEL_1,
-            &read_ir_value);
-        if(result == ESP_OK) current_ir_value = read_ir_value > IR_VALUE_THRESHOLD;
-        result = adc_oneshot_read(current_unit_handle, ADC_CHANNEL_0, &read_battery_value);
-        if(result)
-        {
-            ESP_LOGE("ADC", "Failed to read ADC value, reason: %d", result);
-        }
-        // Fix voltage drop on pwm peripherals
-        if (fetch == BATTERY_STATE_NORMAL)
-            read_battery_value += pwm_device_get_power_compensation_value();
-        //printf("The battery ADC value is: %d, %d\n", read_battery_value, current_battery_result);
-        // Record battery value
-        if (!battery_value_init)
-        {
-            for (int i = 0; i < BATTERY_VALUE_LENGTH; i++)
-            {
-                battery_value_storage[i] = read_battery_value;
-                battery_state_storage[i] = fetch;
-            }
-            battery_value_init = true;
-        }
-        battery_value_storage[current_battery_index %
-                              BATTERY_VALUE_LENGTH] = read_battery_value;
-        battery_state_storage[current_battery_index %
-                              BATTERY_VALUE_LENGTH] = fetch;
-        current_battery_index += 1;
-        state = fetch;
-        adc_calculate_battery_percentage(battery_state_switch_count > 0);
-        is_battery_plugged = battery_value_check_valid();
-        if (battery_state_switch_count > 0)
-            battery_state_switch_count -= 1;
-        if (pwm_device_is_init())
-        {
-            pwm_device_check_power();
-            lock_check_power();
-        }
-        adc_monitor_next:
-        if(!init)
         {
             vTaskDelay(1000 / portTICK_PERIOD_MS);
+            continue;
         }
+        ui_page_t *current_page = ui_shell_get_current_page(
+                                  ui_shell_get_current());
+        ui_page_type_t current_page_type = UI_PAGE_TYPE_HOME;
+        if (!init && current_page)
+        {
+            ui_page_type_t current_page_type = current_page->type;
+            if (current_page_type == UI_PAGE_TYPE_CAMERA && last_page_type != UI_PAGE_TYPE_CAMERA ||
+                current_page_type != UI_PAGE_TYPE_CAMERA && last_page_type == UI_PAGE_TYPE_CAMERA)
+            {
+                last_page_type = current_page_type;
+                vTaskDelay(1000 / portTICK_PERIOD_MS);
+                continue;
+            }
+            else
+                last_page_type = current_page_type;
+        }
+
+        int read_ir_value, read_battery_value;
+        read_ir_value = adc_monitor_read_channel(ADC_IR_CHANNEL);
+        if(read_ir_value < 0)
+        {
+            ESP_LOGE("ADC", "Failed to read IR value");
+        }
+        else
+        {
+            current_ir_value = read_ir_value > IR_VALUE_THRESHOLD;
+        }
+
+        int battery_value_min = INT_MAX, battery_value_max = INT_MIN;
+        double battery_value_average = 0;
+        for (int i = 0; i < 10; i++)
+        {
+            int current = adc_monitor_read_channel(ADC_BATTERY_CHANNEL);
+            if (current == -1) battery_invalid_count = 5;
+            if (battery_value_min > current) battery_value_min = current;
+            if (battery_value_max < current) battery_value_max = current;
+            battery_value_average += current / 10.;
+            vTaskDelay (100 / portTICK_PERIOD_MS);
+        }
+        fetch = io_extend_fetch(0) & 3;
+        current_page = ui_shell_get_current_page(ui_shell_get_current());
+        if (!init && current_page)
+        {
+            current_page_type = current_page->type;
+        }
+        if (state != fetch || current_page_type != last_page_type && !init && current_page)
+        {
+            vTaskDelay(1000 / portTICK_PERIOD_MS);
+            continue;
+        }
+        else if (battery_value_max - battery_value_min >= BATTERY_VALID_THRESHOLD)
+        {
+            battery_invalid_count = 5;
+        }
+        read_battery_value = (int)(battery_value_average + 0.5);
+
+        battery_calibration_data_t *calibration_data = battery_calibration_get_current();
+
+        if (fetch == BATTERY_STATE_CHRG)
+        {
+            double coefficient = vbat_to_battery_value(
+                battery_calibration_get_current()->voltage_stdby
+            ) / 100;
+            current_battery_result = clamp((int)(vbat_to_battery_value(
+                adc_value_to_voltage(read_battery_value)) * coefficient + 0.5f), 0, 99);
+
+            if (battery_invalid_count == 0)
+                charging_value = read_battery_value;
+        }
+        else if (fetch == BATTERY_STATE_STDBY)
+        {
+            if (battery_invalid_count == 0)
+                stdby_value = read_battery_value;
+            current_battery_result = 100;
+        }
+        else
+        {
+            double current_power = calibration_data->power_base;
+            int current_eye_level = clamp(pwm_device_get_eye_level(), 0, 3);
+            int current_fan_level = clamp(pwm_device_get_fan_level(), 0, 3);
+            if (current_eye_level > 0)
+                current_power += calibration_data->power_eye[current_eye_level - 1];
+            if (current_fan_level > 0)
+                current_power += calibration_data->power_fan[current_fan_level - 1];
+            if (current_page_type == UI_PAGE_TYPE_CAMERA)
+                current_power += calibration_data->power_camera;
+            current_battery_result = battery_value_get(adc_value_to_voltage(
+                                     read_battery_value), current_power);
+            charging_value = -1;
+            stdby_value = -1;
+        }
+
+        if (battery_invalid_count > 0)
+            battery_invalid_count -= 1;
+        else
+            battery_invalid_count = 0;
+
+        pwm_device_check_power();
+        lock_check_power();
     } while (!init);
 }
 
@@ -196,14 +320,14 @@ void adc_monitor_init()
         .bitwidth = ADC_BITWIDTH_12,
         .atten = ADC_ATTEN_DB_12,
     };
-    ESP_ERROR_CHECK(adc_oneshot_config_channel(current_unit_handle, ADC_CHANNEL_0,
+    ESP_ERROR_CHECK(adc_oneshot_config_channel(current_unit_handle, ADC_BATTERY_CHANNEL,
         &adc_channel_config));
 
     adc_channel_config = (adc_oneshot_chan_cfg_t) {
         .bitwidth = ADC_BITWIDTH_12,
         .atten = ADC_ATTEN_DB_6,
     };
-    ESP_ERROR_CHECK(adc_oneshot_config_channel(current_unit_handle, ADC_CHANNEL_1,
+    ESP_ERROR_CHECK(adc_oneshot_config_channel(current_unit_handle, ADC_IR_CHANNEL,
         &adc_channel_config));
     // Read first value
     bool init = true;
@@ -221,11 +345,9 @@ void adc_monitor_read_battery(int *value, bool *charging, bool *plugged)
     if(value != NULL)
     {
         *value = current_battery_result;
-        //*value = battery_value_storage[current_battery_index %
-        //         BATTERY_VALUE_LENGTH] + current_battery_result * 10000;
     }
     if(charging != NULL)
         *charging = state != BATTERY_STATE_NORMAL;
     if(plugged != NULL)
-        *plugged = is_battery_plugged;
+        *plugged = battery_invalid_count == 0;
 }

@@ -12,6 +12,7 @@
 #include "profile/translations.h"
 #include "profile/settings.h"
 #include "profile/userprofile.h"
+#include "peripherals/battery_calibration.h"
 
 typedef enum
 {
@@ -776,6 +777,11 @@ static void ui_settings_on_draw(ui_settings_t *settings, display_format_t *forma
     {
         ui_menu_item_t items[] = {
             {
+                .type = UI_MENU_ITEM_SWITCH,
+                .name = wkc_translations_get_string("settings_battery_calibration_mode"),
+                .current_value = battery_calibration_is_calibrating()
+            },
+            {
                 .type = UI_MENU_ITEM_LABEL,
                 .name = wkc_translations_get_string("settings_clear_paired_devices")
             },
@@ -1088,18 +1094,26 @@ static void ui_settings_on_key_event(ui_settings_t *settings, int key_code)
             {
                 if (key_code == UI_KEY_CODE_UP || key_code == UI_KEY_CODE_DOWN)
                 {
-                    *current_index += 1;
-                    *current_index %= 2;
+                    *current_index += key_code == UI_KEY_CODE_DOWN ? 1 : 2;
+                    *current_index %= 3;
                     refresh = true;
                 }
                 else if (key_code == UI_KEY_CODE_OK)
                 {
-                    settings->hirerachy_index += 1;
-                    settings->menu_state = UI_SETTINGS_ADVANCED_CONFIRM;
-                    settings->show = true;
-                    *next_index = 0;
-                    settings->last_selected_index = 0;
-                    refresh = true;
+                    if (*current_index == 0)
+                    {
+                        battery_calibration_set(!battery_calibration_is_calibrating());
+                        refresh = true;
+                    }
+                    else
+                    {
+                        settings->hirerachy_index += 1;
+                        settings->menu_state = UI_SETTINGS_ADVANCED_CONFIRM;
+                        settings->show = true;
+                        *next_index = 0;
+                        settings->last_selected_index = 0;
+                        refresh = true;
+                    }
                 }
             }
             break;
@@ -1112,7 +1126,7 @@ static void ui_settings_on_key_event(ui_settings_t *settings, int key_code)
                         ui_settings_on_key_event(settings, UI_KEY_CODE_EXIT);
                         return;
                     }
-                    else if (settings->selected_index[settings->hirerachy_index - 1] == 0)
+                    else if (settings->selected_index[settings->hirerachy_index - 1] == 1)
                     {
                         wkc_security_load_default();
                         esp_restart();

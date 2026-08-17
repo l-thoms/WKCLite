@@ -23,6 +23,7 @@
 #include "peripherals/adc.h"
 #include "peripherals/pwm.h"
 #include "peripherals/lock.h"
+#include "peripherals/battery_calibration.h"
 
 void app_main(void)
 {
@@ -59,6 +60,7 @@ void app_main(void)
         ESP_LOGW("MAIN", "Unable to mount sdcard");
 
     ESP_LOGI("MAIN", "Init ADC...");
+    battery_calibration_init();
     adc_monitor_init();
 
     ESP_LOGI("MAIN", "Init Lock...");

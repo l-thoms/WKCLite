@@ -70,6 +70,11 @@
         "zh_cn": "头壳锁",
         "zh_tw": "頭殼鎖"
     },
+    "menu_peripherals_disable_calibrate": {
+        "en_us": "Peripherals are disabled during battery calibration.",
+        "zh_cn": "电量校准期间禁止使用外设。",
+        "zh_tw": "電量校正期間禁止使用周邊設備。"
+    },
     "menu_unlocked": {
         "en_us": "Unlocked",
         "zh_cn": "未锁定",
@@ -289,6 +294,11 @@
         "en_us": "Bottom",
         "zh_cn": "居下",
         "zh_tw": "居下"
+    },
+    "settings_battery_calibration_mode": {
+        "en_us": "Battery Calibration Mode",
+        "zh_cn": "电量校准模式",
+        "zh_tw": "電量校正模式"
     },
     "settings_clear_paired_devices": {
         "en_us": "Clear Paired Devices",
@@ -645,6 +655,11 @@
         "zh_cn": "相机尚未配置完成，正在尝试重新配置...",
         "zh_tw": "相機尚未配置完成，正在嘗試重新配置..."
     },
+    "camera_disabled_calibrate": {
+        "en_us": "Camera is disabled during battery calibration.",
+        "zh_cn": "电量校准期间禁止使用相机。",
+        "zh_tw": "電量校正期間禁止使用相機。"
+    },
     "shortcut_shortcuts": {
         "en_us": "Shortcuts",
         "zh_cn": "快捷操作",
@@ -664,5 +679,30 @@
         "en_us": "Unlock",
         "zh_cn": "解锁",
         "zh_tw": "解鎖"
+    },
+    "battery_calibrating": {
+        "en_us": "Battery is calibrating, please do not power down",
+        "zh_cn": "正在校准电量，请勿断电",
+        "zh_tw": "正在校正電量，請勿斷電"
+    },
+    "battery_uncalibrated": {
+        "en_us": " ??",
+        "zh_cn": "待校准",
+        "zh_tw": "待校正"
+    },
+    "battery_charging": {
+        "en_us": "  …",
+        "zh_cn": "充电中",
+        "zh_tw": "充電中"
+    },
+    "battery_calibrated": {
+        "en_us": "Battery calibration okay",
+        "zh_cn": "电量校准完成",
+        "zh_tw": "電量校正完成"
+    },
+    "battery_calibrate_failed": {
+        "en_us": "Battery calibrate failed",
+        "zh_cn": "电量校准失败",
+        "zh_tw": "電量校正失敗"
     }
 }

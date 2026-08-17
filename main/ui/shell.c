@@ -206,6 +206,7 @@ ui_page_t *ui_shell_find_page(ui_shell_t *shell, ui_page_type_t type)
 
 ui_page_t *ui_shell_get_current_page(ui_shell_t *shell)
 {
+    if (!shell) return NULL;
     return shell->current_page;
 }
 

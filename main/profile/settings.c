@@ -9,12 +9,12 @@
 
 #define SETTINGS_PATH_DEFAULT "/data_static/profile/settings.json"
 #define SETTINGS_PATH_ACTIVE "/data_dynamic/profile/settings.json"
-#define SECURITY_PATH_DEFAULT "/data_static/profile/security.json"
-#define SECURITY_PATH_ACTIVE "/data_dynamic/profile/security.json"
+#define SECURITY_PATH_ACTIVE "/data_dynamic/profile/security.bin"
 
 static wkc_settings_t current_settings = { 0 };
 
-char* current_security_storage[10];
+int current_security_storage_length = 0;
+uint8_t current_security_storage[16][10] = { 0 };
 
 int clamp(int value, int min, int max)
 {
@@ -33,7 +33,7 @@ void wkc_settings_load_default()
 
 void wkc_security_load_default()
 {
-    wkc_copy(SECURITY_PATH_DEFAULT, SECURITY_PATH_ACTIVE);
+    wkc_save(SECURITY_PATH_ACTIVE, (char*)current_security_storage, 0);
 }
 
 static void settings_parse()
@@ -127,36 +127,11 @@ static void settings_parse()
 static void security_parse()
 {
     size_t security_size;
-    wkc_get_file_size(SECURITY_PATH_ACTIVE, &security_size);
-    char security_buffer[security_size];
-    wkc_open(SECURITY_PATH_ACTIVE, security_buffer, security_size);
-
-    cJSON *security_json = cJSON_Parse(security_buffer);
-    if(security_json == NULL)
-    {
-        wkc_security_load_default();
-        security_parse();
-        return;
-    }
-
-    cJSON *security_storage = NULL;
-    security_storage = cJSON_GetObjectItem(security_json, "security_storage");
-    int arr_size = cJSON_GetArraySize(security_storage);
-    if(arr_size > 10) arr_size = 10;
-    if(arr_size <= 0)
-    {
-        cJSON_Delete(security_storage);
-        return;
-    }
-
-    for(int i = 0; i < arr_size; i++)
-    {
-        cJSON *security_item = cJSON_GetArrayItem(security_storage, i);
-        char *security_item_str = cJSON_GetStringValue(security_item);
-        current_security_storage[i] = (char*)malloc(strlen(security_item_str) + 1);
-        strncpy(current_security_storage[i], security_item_str, strlen(security_item_str) + 1);
-    }
-    cJSON_Delete(security_storage);
+    if (wkc_get_file_size(SECURITY_PATH_ACTIVE, &security_size)) return;
+    if (security_size > sizeof(current_security_storage))
+        security_size = sizeof(current_security_storage);
+    wkc_open(SECURITY_PATH_ACTIVE, (char*)current_security_storage, security_size);
+    current_security_storage_length = security_size / 16;
 }
 
 char* wkc_settings_write()
@@ -202,34 +177,18 @@ void wkc_settings_save()
 
 void wkc_security_save()
 {
-    int security_length = 0;
-    for(int i = 0; i < 10; i++)
-        if(current_security_storage[i] != NULL)
-            security_length++;
-        else break;
-    cJSON *security_json = cJSON_CreateObject();
-    cJSON *string_array = cJSON_AddArrayToObject(security_json, "security_storage");
-    for(int i = 0; i < security_length; i++)
-    {
-        cJSON *string_object = cJSON_CreateString(current_security_storage[i]);
-        cJSON_AddItemToArray(string_array, string_object);
-    }
-    char *result = cJSON_Print(security_json);
-    wkc_save(SECURITY_PATH_ACTIVE, result, strlen(result) + 1);
-    cJSON_Delete(security_json);
-    free(result);
+    wkc_save(SETTINGS_PATH_ACTIVE, (char*)current_security_storage,
+             16 * current_security_storage_length);
 }
 
-void wkc_security_append_key(char *key)
+void wkc_security_append_key(uint8_t *key)
 {
-    if(current_security_storage[9] != NULL) free(current_security_storage[9]);
-    for(int i = 8; i >= 0; i--)
+    for (int i = 8; i >= 0; i--)
     {
-        current_security_storage[i + 1] = current_security_storage[i];
+        memcpy(current_security_storage[i + 1], current_security_storage[i], 16);
     }
-    current_security_storage[0] = malloc(17);
     memcpy(current_security_storage[0], key, 16);
-    current_security_storage[0][16] = 0;
+    if (current_security_storage_length < 10) current_security_storage_length += 1;
     wkc_security_save();
 }
 
@@ -255,4 +214,9 @@ void wkc_security_init()
         return;
     }
     security_parse();
+}
+
+int wkc_get_security_storage_length()
+{
+    return current_security_storage_length;
 }

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stdint.h>
+
 typedef struct
 {
     bool remember_state;
@@ -33,7 +35,7 @@ typedef struct
     peripheral_settings_t peripherals;
 } wkc_settings_t;
 
-extern char* current_security_storage[10];
+extern uint8_t current_security_storage[16][10];
 
 int clamp(int value, int min, int max);
 void wkc_settings_load_default();
@@ -42,6 +44,7 @@ wkc_settings_t *wkc_settings_get_current();
 char* wkc_settings_write();
 void wkc_settings_save();
 void wkc_security_save();
-void wkc_security_append_key(char *key);
+void wkc_security_append_key(uint8_t *key);
 void wkc_settings_init();
 void wkc_security_init();
+int wkc_get_security_storage_length();

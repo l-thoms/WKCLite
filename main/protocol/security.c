@@ -41,7 +41,7 @@ uint8_t *protocol_security_get_public_key(int *key_length)
 
 int protocol_security_verify(uint8_t *data, int passkey, int input_length)
 {
-    uint8_t output[512] = { 0 }, empty[16] = { 0 };
+    uint8_t output[512] = { 0 };
     size_t output_length;
     psa_status_t verify_result = psa_asymmetric_decrypt(key_id, PSA_ALG_RSA_OAEP(PSA_ALG_SHA_256),
                                  data, input_length, NULL, 0, output, sizeof(output),
@@ -63,16 +63,13 @@ int protocol_security_verify(uint8_t *data, int passkey, int input_length)
                      verify_result);
             return 1;
         }
-        wkc_security_append_key((char*)&output[5]);
+        wkc_security_append_key(&output[5]);
         return 0;
     }
     else
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < wkc_get_security_storage_length(); i++)
         {
-            if (current_security_storage[i] == NULL ||
-                memcmp(empty, current_security_storage[i], 16) == 0)
-                continue;
             if (memcmp(&output[1], current_security_storage[i], 16) == 0)
                 return 0;
         }

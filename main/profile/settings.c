@@ -177,7 +177,7 @@ void wkc_settings_save()
 
 void wkc_security_save()
 {
-    wkc_save(SETTINGS_PATH_ACTIVE, (char*)current_security_storage,
+    wkc_save(SECURITY_PATH_ACTIVE, (char*)current_security_storage,
              16 * current_security_storage_length);
 }
 

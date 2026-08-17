@@ -61,7 +61,7 @@ static void select_battery_icon(char *battery_icon_char, int value, bool chargin
                              value < 80 ? 4:
                              value < 90 ? 5:
                              6;
-    if (charging && battery_icon_index < 6) battery_icon_index = 0;
+    if (charging && value < 100) battery_icon_index = 0;
     display_get_icon_indexed(charging ? "charging" : "battery", format, false,
                              battery_icon_index, battery_icon_char, actaual_width);
 }

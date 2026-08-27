@@ -1,54 +1,46 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "esp_log.h"
-#include "cJSON.h"
+#include "esp_heap_caps.h"
 #include "io/filesystem.h"
+#include "display/display_control.h"
 #include "settings.h"
 
-#define TRANSLATIONS_PATH "/data_static/profile/translations.json"
+#define TRANSLATIONS_PATH "/data_static/profile/translations.bin"
 
-static cJSON *translations_document = NULL;
+static uint8_t *translations_document = NULL;
 
 int wkc_translations_init()
 {
     if (translations_document)
     {
-        cJSON_Delete(translations_document);
+        free(translations_document);
         translations_document = NULL;
     }
     size_t translations_size;
     int ret = 0;
-    char *translations_buffer = NULL;
     if (wkc_get_file_size(TRANSLATIONS_PATH, &translations_size))
     {
         ret = 1;
         goto translations_init_end;
     }
-    translations_buffer = calloc(translations_size, 1);
-    if (wkc_open(TRANSLATIONS_PATH, translations_buffer, translations_size))
-    {
-        ret = 1;
-        goto translations_init_end;
-    }
-    translations_document = cJSON_Parse(translations_buffer);
-    if (!translations_document)
+    translations_document = heap_caps_calloc(translations_size, 1, MALLOC_CAP_SPIRAM);
+    if (wkc_open(TRANSLATIONS_PATH, (char*)translations_document, translations_size))
     {
         ret = 1;
         goto translations_init_end;
     }
 
     translations_init_end:
-    if (translations_buffer)
-        free(translations_buffer);
+    if (translations_document && ret != 0)
+        free(translations_document);
     return ret;
 }
 
 int wkc_translations_get_languages_count()
 {
     if (!translations_document) return 0;
-    cJSON *language_list = cJSON_GetObjectItem(translations_document, "language_list");
-    if (!language_list) return 0;
-    return cJSON_GetArraySize(language_list);
+    return ((int*)translations_document)[0];
 }
 
 static char *wkc_translations_get_string_priv(char *key_name, int language_id)
@@ -66,44 +58,24 @@ static char *wkc_translations_get_string_priv(char *key_name, int language_id)
     }
     if (language_id >= languages_count) language_id = 0;
 
-    cJSON *language_list = cJSON_GetObjectItem(translations_document, "language_list");
-    if (!language_list)
+    int item_index = 0;
+    int *translations_indexes = &((int*)translations_document)[1];
+    while (translations_indexes[item_index] > 0)
     {
-        ESP_LOGE("TRANSLATIONS", "Failed to get languages list");
-        goto translations_failed;
-    }
-    cJSON *language_item = cJSON_GetArrayItem(language_list, language_id);
-    if (!language_item)
-    {
-        ESP_LOGE("TRANSLATIONS", "Failed to get languages item");
-        goto translations_failed;
-    }
-    char *language_name = cJSON_GetStringValue(language_item);
-    if (!language_name)
-    {
-        ESP_LOGE("TRANSLATIONS", "Failed to get languages name");
-        goto translations_failed;
+        int selected_index = translations_indexes[item_index];
+        if (strcmp(key_name, (char*)&translations_document[selected_index]) == 0)
+        {
+            for (int i = 0; i < language_id + 1; i++)
+            {
+                selected_index += strlen((char*)&translations_document[selected_index]) + 1;
+            }
+            return (char*)&translations_document[selected_index];
+        }
+        item_index += 1;
     }
 
-    cJSON *translations_item = cJSON_GetObjectItem(translations_document, key_name);
-    if (!translations_item)
-    {
-        ESP_LOGE("TRANSLATIONS", "Failed to get translation item");
-        goto translations_failed;
-    }
-    cJSON *translations_result = cJSON_GetObjectItem(translations_item, language_name);
-    if (!translations_result)
-    {
-        ESP_LOGE("TRANSLATIONS", "Failed to get translation result");
-        goto translations_failed;
-    }
-    char *ret = cJSON_GetStringValue(translations_result);
-    if (!ret)
-    {
-        ESP_LOGE("TRANSLATIONS", "Translation result is null");
-        goto translations_failed;
-    }
-    return ret;
+    ESP_LOGE("TRANSLATIONS", "Failed to get translations result");
+
     translations_failed:
     return key_name;
 }
@@ -115,6 +87,7 @@ char *wkc_translations_get_string(char *key_name)
         ESP_LOGE("TRANSLATIONS", "Translations does not initialized");
         return key_name;
     }
+    display_control_record_operate_time();
     int language_id = wkc_settings_get_current()->language;
     return wkc_translations_get_string_priv(key_name, language_id);
 }

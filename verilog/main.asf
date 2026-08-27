@@ -1,1 +1,2 @@
 set_config -loc 18 0 0 CFG_RCOSC_EN 1'b1
+set_instance_assignment -name CFG_KEEP -to LOCK_PWDN 2'b01 -extension

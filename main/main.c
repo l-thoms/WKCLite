@@ -13,6 +13,7 @@
 #include "profile/translations.h"
 #include "display/display_control.h"
 #include "display/font_management.h"
+#include "camera/camera_control.h"
 #include "ui/shell.h"
 #include "ui/home.h"
 #include "ui/menu.h"
@@ -54,6 +55,9 @@ void app_main(void)
     i2c_bus_init();
     io_extend_init();
     io_extend_load_time();
+
+    ESP_LOGI("MAIN", "Init Camera...");
+    camera_control_init();
 
     ESP_LOGI("MAIN", "Init sdcard...");
     if(wkc_storage_init_sdcard())
@@ -106,14 +110,13 @@ void app_main(void)
 
     bool plugged;
     adc_monitor_read_battery(NULL, NULL, &plugged);
-    // 警告: 当前设备未连接电池，请确保连接的电源（如充电宝）供电稳定，以免意外关机。
-    // Warning: The current device is not connected to a battery. Please ensure that the connected power source (such as a power bank) provides stable power to avoid accidental shutdown.
+
     if(!plugged)
     ui_shell_show_toast(shell,
         wkc_translations_get_string("main_battery_disconnected_warning"), 30);
     // Begin main loop
     ESP_LOGI("MAIN", "Entering Mainloop...");
-    //ui_shell_mainloop(shell);
+
     xTaskCreatePinnedToCore((TaskFunction_t)ui_shell_mainloop, "mainloop", 8192, shell, 5, NULL, 1);
     return;
 }

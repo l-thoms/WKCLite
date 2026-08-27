@@ -625,6 +625,231 @@
         "zh_cn": "低色度自动清除",
         "zh_tw": "低色度自動清除"
     },
+    "camera_none": {
+        "en_us": "None",
+        "zh_cn": "无",
+        "zh_tw": "無"
+    },
+    "camera_normal": {
+        "en_us": "Normal",
+        "zh_cn": "普通",
+        "zh_tw": "普通"
+    },
+    "camera_chroma_bandpass_width": {
+        "en_us": "Chroma Bandpass Width",
+        "zh_cn": "色度带通宽度",
+        "zh_tw": "色度帶通寬度"
+    },
+    "camera_blank_level": {
+        "en_us": "Blank Level",
+        "zh_cn": "黑色电平",
+        "zh_tw": "黑準位"
+    },
+    "camera_adaptive_comb_filter": {
+        "en_us": "Adaptive Comb Filter",
+        "zh_cn": "自适应梳状滤波",
+        "zh_tw": "自適應梳狀濾波"
+    },
+    "camera_operation_mode": {
+        "en_us": "Operation Mode",
+        "zh_cn": "工作模式",
+        "zh_tw": "工作模式"
+    },
+    "camera_mode_0": {
+        "en_us": "Mode 0",
+        "zh_cn": "模式0",
+        "zh_tw": "模式0"
+    },
+    "camera_mode_1": {
+        "en_us": "Mode 1",
+        "zh_cn": "模式1",
+        "zh_tw": "模式1"
+    },
+    "camera_pal_delay_line": {
+        "en_us": "PAL Delay Line",
+        "zh_cn": "PAL延迟线",
+        "zh_tw": "PAL延遲線"
+    },
+    "camera_sharp_center": {
+        "en_us": "Sharp Center",
+        "zh_cn": "锐化中心",
+        "zh_tw": "銳利中心"
+    },
+    "camera_cti_level": {
+        "en_us": "CTI Level",
+        "zh_cn": "CTI电平",
+        "zh_tw": "CTI電平"
+    },
+    "camera_sharpness": {
+        "en_us": "Sharpness",
+        "zh_cn": "锐度",
+        "zh_tw": "銳利度"
+    },
+    "camera_ntsc_hue_correct": {
+        "en_us": "NTSC Hue Correction",
+        "zh_cn": "NTSC色相校正",
+        "zh_tw": "NTSC色相校正"
+    },
+    "camera_sharpness_coring": {
+        "en_us": "Sharpness Coring",
+        "zh_cn": "锐化Coring",
+        "zh_tw": "銳利度Coring"
+    },
+    "camera_vertical_peaking": {
+        "en_us": "Vertical Peaking",
+        "zh_cn": "垂直峰化",
+        "zh_tw": "垂直峰化"
+    },
+    "camera_chroma_coring": {
+        "en_us": "Chroma Coring",
+        "zh_cn": "色度Coring",
+        "zh_tw": "色度Coring"
+    },
+    "camera_vertical_peaking_coring": {
+        "en_us": "Vertical Peaking Coring",
+        "zh_cn": "垂直峰化Coring",
+        "zh_tw": "垂直峰化Coring"
+    },
+    "camera_cif_level": {
+        "en_us": "CIF Compensation",
+        "zh_cn": "CIF补偿",
+        "zh_tw": "CIF補償"
+    },
+    "camera_luma_antialias": {
+        "en_us": "Luma Anti-alias",
+        "zh_cn": "亮度抗混叠",
+        "zh_tw": "亮度抗混疊"
+    },
+    "camera_chroma_antialias": {
+        "en_us": "Chroma Anti-alias",
+        "zh_cn": "色度抗混叠",
+        "zh_tw": "色度抗混疊"
+    },
+    "camera_agc_max_correction": {
+        "en_us": "AGC Max Correction",
+        "zh_cn": "AGC最大校正",
+        "zh_tw": "AGC最大校正"
+    },
+    "camera_peak_agc_gain": {
+        "en_us": "Peak AGC Gain",
+        "zh_cn": "峰值AGC增益",
+        "zh_tw": "峰值AGC增益"
+    },
+    "camera_manual_gain": {
+        "en_us": "Manual Gain",
+        "zh_cn": "手动增益",
+        "zh_tw": "手動增益"
+    },
+    "camera_white_peak_threshold": {
+        "en_us": "White Peak Threshold",
+        "zh_cn": "白峰阈值",
+        "zh_tw": "白峰臨界值"
+    },
+    "camera_clamping_level": {
+        "en_us": "Clamping Level",
+        "zh_cn": "钳位电平",
+        "zh_tw": "鉗位電平"
+    },
+    "camera_color_killer_max": {
+        "en_us": "Chroma Killer Hysteresis",
+        "zh_cn": "色度清除滞后",
+        "zh_tw": "色度清除遲滯"
+    },
+    "camera_color_killer_min": {
+        "en_us": "Chroma Killer Threshold",
+        "zh_cn": "色度清除阈值",
+        "zh_tw": "色度清除閾值"
+    },
+    "camera_comb_filter_strength": {
+        "en_us": "Comb Filter Strength Reduction",
+        "zh_cn": "降低梳状滤波强度",
+        "zh_tw": "降低梳狀濾波強度"
+    },
+    "camera_comb_threshold_1": {
+        "en_us": "Comb Threshold 1",
+        "zh_cn": "梳状滤波阈值1",
+        "zh_tw": "梳狀濾波閾值1"
+    },
+    "camera_comb_threshold_2": {
+        "en_us": "Comb Threshold 2",
+        "zh_cn": "梳状滤波阈值2",
+        "zh_tw": "梳狀濾波閾值2"
+    },
+    "camera_color_killer_fast": {
+        "en_us": "Color Killer Fast Mode",
+        "zh_cn": "色度清除快速模式",
+        "zh_tw": "色度清除快速模式"
+    },
+    "camera_luma_delay": {
+        "en_us": "Luma Delay",
+        "zh_cn": "亮度延迟",
+        "zh_tw": "亮度延遲"
+    },
+    "camera_horizontal_enhancement": {
+        "en_us": "Horizontal Enhancement",
+        "zh_cn": "水平增强",
+        "zh_tw": "水平增強"
+    },
+    "camera_chroma_low_pass": {
+        "en_us": "Chroma Low Pass",
+        "zh_cn": "色度低通",
+        "zh_tw": "色度低通"
+    },
+    "camera_noisy_color_killer": {
+        "en_us": "Noisy Color Killer",
+        "zh_cn": "噪声色度清除",
+        "zh_tw": "雜訊色度清除"
+    },
+    "camera_blue_stretch": {
+        "en_us": "Blue Stretch",
+        "zh_cn": "蓝色拉伸",
+        "zh_tw": "藍色拉伸"
+    },
+    "camera_luma_hf_noise": {
+        "en_us": "Luma HF Noise Reduction",
+        "zh_cn": "亮度高频降噪",
+        "zh_tw": "亮度高頻降噪"
+    },
+    "camera_noise_smallest": {
+        "en_us": "Smallest",
+        "zh_cn": "最小",
+        "zh_tw": "最小"
+    },
+    "camera_noise_small": {
+        "en_us": "Small",
+        "zh_cn": "小",
+        "zh_tw": "小"
+    },
+    "camera_noise_medium": {
+        "en_us": "Medium",
+        "zh_cn": "中",
+        "zh_tw": "中"
+    },
+    "camera_clamping_mode": {
+        "en_us": "Clamping Mode",
+        "zh_cn": "钳位模式",
+        "zh_tw": "鉗位模式"
+    },
+    "camera_clamp_sync_top": {
+        "en_us": "Sync Top",
+        "zh_cn": "同步顶",
+        "zh_tw": "同步頂"
+    },
+    "camera_clamp_pedestal": {
+        "en_us": "Pedestal",
+        "zh_cn": "基准电平",
+        "zh_tw": "基準電平"
+    },
+    "camera_luma_clamp": {
+        "en_us": "Luma Clamp",
+        "zh_cn": "亮度钳位",
+        "zh_tw": "亮度鉗位"
+    },
+    "camera_chroma_clamp": {
+        "en_us": "Chroma Clamp",
+        "zh_cn": "色度钳位",
+        "zh_tw": "色度鉗位"
+    },
     "camera_reset": {
         "en_us": "Reset Camera Settings",
         "zh_cn": "重置所有相机设置",
@@ -656,9 +881,14 @@
         "zh_tw": "相機尚未配置完成，正在嘗試重新配置..."
     },
     "camera_disabled_calibrate": {
-        "en_us": "Camera is disabled during battery calibration.",
-        "zh_cn": "电量校准期间禁止使用相机。",
-        "zh_tw": "電量校正期間禁止使用相機。"
+        "en_us": "Camera is disabled during battery calibration",
+        "zh_cn": "电量校准期间禁止使用相机",
+        "zh_tw": "電量校正期間禁止使用相機"
+    },
+    "camera_control_not_available": {
+        "en_us": "Camera control not available",
+        "zh_cn": "相机控件无效",
+        "zh_tw": "相機控件無效"
     },
     "shortcut_shortcuts": {
         "en_us": "Shortcuts",

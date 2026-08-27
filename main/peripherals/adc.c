@@ -272,12 +272,12 @@ static void adc_monitor_task(void *params)
             current_battery_result = clamp((int)(vbat_to_battery_value(
                 adc_value_to_voltage(read_battery_value)) * coefficient + 0.5f), 0, 99);
 
-            if (battery_invalid_count == 0)
+            if (battery_invalid_count == 0 && battery_calibration_is_calibrating())
                 charging_value = read_battery_value;
         }
         else if (fetch == BATTERY_STATE_STDBY)
         {
-            if (battery_invalid_count == 0)
+            if (battery_invalid_count == 0 && battery_calibration_is_calibrating())
                 stdby_value = read_battery_value;
             current_battery_result = 100;
         }
@@ -294,6 +294,10 @@ static void adc_monitor_task(void *params)
                 current_power += calibration_data->power_camera;
             current_battery_result = battery_value_get(adc_value_to_voltage(
                                      read_battery_value), current_power);
+        }
+
+        if (fetch == BATTERY_STATE_NORMAL || !battery_calibration_is_calibrating())
+        {
             charging_value = -1;
             stdby_value = -1;
         }

@@ -82,11 +82,15 @@ module i2s_osd_pdm (
 
         if (bpo == 'b011 && !INTR_EDGE || bpo == 'b100 && INTR_EDGE) begin
             clk_div_count <= 0;
-            address_out <= 0;
             current_offset <= 0;
+            if (OFFSET < 128) begin
+                address_out <= 0;
+            end else begin
+                address_out <= 256 - OFFSET;
+            end
         end
         else if (clk_div_count == clk_div - 1) begin
-            if (current_offset < OFFSET) begin
+            if (current_offset < OFFSET && OFFSET < 128) begin
                 current_offset <= current_offset + 1;
                 Q1I <= 0;
                 Q2I <= 0;
@@ -225,7 +229,7 @@ module main (
     Q21, Q22,
     SCL, SDA,
     STDBY, CHRG,
-    PWDN, DISP,
+    PWDN, LOCK_PWDN,
     LOCKA, LOCKB,
     BRIP, BRIN,
     CSEL1, CSEL2
@@ -239,7 +243,7 @@ module main (
     inout SDA;
     input STDBY, CHRG;
     output PWDN;
-    input DISP;
+    inout LOCK_PWDN;
     output LOCKA, LOCKB, BRIP, BRIN;
     output CSEL1, CSEL2;
     wire GCLK, CLKFB, MODE, INTR_EDGE, F1, F2;
@@ -250,7 +254,7 @@ module main (
         .LOCKA(LOCKA), .LOCKB(LOCKB),
         .BRIP(BRIP), .BRIN(BRIN),
         .STDBY(STDBY), .CHRG(CHRG),
-        .DISP(DISP), .PWDN(PWDN), .OUTPUT_MODE(MODE),
+        .LOCK_PWDN(LOCK_PWDN), .PWDN(PWDN), .OUTPUT_MODE(MODE),
         .CSEL1(CSEL1), .CSEL2(CSEL2),
         .OFFSET_PRIMARY(OFFSET_PRIMARY), .OFFSET_SECONDARY(OFFSET_SECONDARY),
         .F1(F1), .F2(F2)

@@ -29,6 +29,10 @@
     parent->status_request = true; \
 }
 
+#define UI_CAMERA_SET_OPTIONS(item, options) do { \
+    (item) = malloc(sizeof(options)); \
+    memcpy((item), (options), sizeof(options)); } while(0)
+
 #define CAMERA_SAVE_PATTERN "/sdcard/wkc_capture/%04d%02d%02d_%08d.jpg"
 
 const char *common_range_options[] = {
@@ -53,7 +57,8 @@ typedef struct ui_camera_t
     ui_menu_item_t *current_menu[10];
 } ui_camera_t;
 
-static ui_menu_item_t *ui_camera_build_analog_menu();
+static ui_menu_item_t *ui_camera_build_saa7113_menu();
+static ui_menu_item_t *ui_camera_build_tw9910_menu();
 static ui_menu_item_t *ui_camera_build_reset_menu();
 
 static int ui_camera_get_menu_count(ui_camera_t *camera)
@@ -130,12 +135,6 @@ static void ui_camera_saturation_action(ui_menu_item_t *item, ui_camera_t *paren
     UI_CAMERA_CHECK_UPDATE(camera_control_update());
 }
 
-static void ui_camera_hue_action(ui_menu_item_t *item, ui_camera_t *parent)
-{
-    camera_control_get_current()->hue = item->current_value - 18;
-    UI_CAMERA_CHECK_UPDATE(camera_control_update());
-}
-
 static void ui_camera_resolution_action(ui_menu_item_t *item, ui_camera_t *parent)
 {
     camera_control_get_current()->resolution = item->current_value;
@@ -144,8 +143,22 @@ static void ui_camera_resolution_action(ui_menu_item_t *item, ui_camera_t *paren
 
 static void ui_camera_advanced_action(ui_menu_item_t *item, ui_camera_t *parent)
 {
-    ui_camera_menu_push(parent, ui_camera_build_analog_menu());
-    parent->last_selected_index = -1;
+    if (camera_control_get_current()->device_type == CAMERA_DEVICE_SAA7113)
+    {
+        ui_camera_menu_push(parent, ui_camera_build_saa7113_menu());
+        parent->last_selected_index = -1;
+    }
+    else if (camera_control_get_current()->device_type == CAMERA_DEVICE_TW9910)
+    {
+        ui_camera_menu_push(parent, ui_camera_build_tw9910_menu());
+        parent->last_selected_index = -1;
+    }
+    else
+    {
+        ui_shell_show_toast(parent->base.parent,
+            wkc_translations_get_string("camera_control_not_available"), 5);
+    }
+
 }
 
 #pragma endregion
@@ -163,12 +176,6 @@ static ui_menu_item_t *ui_camera_build_common_menu()
         wkc_translations_get_string("camera_low"),
         wkc_translations_get_string("camera_medium"),
         wkc_translations_get_string("camera_high")
-    };
-    char *hue_options[] = {
-        "-180°", "-170°", "-160°", "-150°", "-140°", "-130°", "-120°", "-110°", "-100°",
-        "-90°", "-80°", "-70°", "-60°", "-50°", "-40°", "-30°", "-20°", "-10°", "0°",
-        "+10°", "+20°", "+30°", "+40°", "+50°", "+60°", "+70°", "+80°", "+90°", "+100°",
-        "+110°", "+120°", "+130°", "+140°", "+150°", "+160°", "+170°", "+180°",
     };
     ui_menu_item_t items[] = {
         {
@@ -214,13 +221,6 @@ static ui_menu_item_t *ui_camera_build_common_menu()
             .action = (ui_menu_action_t)ui_camera_saturation_action
         },
         {
-            .type = UI_MENU_ITEM_PICKER,
-            .name = wkc_translations_get_string("camera_hue"),
-            .current_value = (int)camera_control_get_current()->hue + 18,
-            .count = sizeof(hue_options) / sizeof(char*),
-            .action = (ui_menu_action_t)ui_camera_hue_action
-        },
-        {
             .type = UI_MENU_ITEM_SWITCH,
             .name = wkc_translations_get_string("camera_prefer_square_pixel"),
             .current_value = (int)camera_control_get_current()->resolution,
@@ -236,20 +236,12 @@ static ui_menu_item_t *ui_camera_build_common_menu()
         }
     };
 
-    items[0].options = malloc(sizeof(channel_options));
-    memcpy(items[0].options, channel_options, sizeof(channel_options));
-    items[1].options = malloc(sizeof(timeout_options));
-    memcpy(items[1].options, timeout_options, sizeof(timeout_options));
-    items[2].options = malloc(sizeof(quality_options));
-    memcpy(items[2].options, quality_options, sizeof(quality_options));
-    items[3].options = malloc(sizeof(common_range_options));
-    memcpy(items[3].options, common_range_options, sizeof(common_range_options));
-    items[4].options = malloc(sizeof(common_range_options));
-    memcpy(items[4].options, common_range_options, sizeof(common_range_options));
-    items[5].options = malloc(sizeof(common_range_options));
-    memcpy(items[5].options, common_range_options, sizeof(common_range_options));
-    items[6].options = malloc(sizeof(hue_options));
-    memcpy(items[6].options, hue_options, sizeof(hue_options));
+    UI_CAMERA_SET_OPTIONS(items[0].options, channel_options);
+    UI_CAMERA_SET_OPTIONS(items[1].options, timeout_options);
+    UI_CAMERA_SET_OPTIONS(items[2].options, quality_options);
+    UI_CAMERA_SET_OPTIONS(items[3].options, common_range_options);
+    UI_CAMERA_SET_OPTIONS(items[4].options, common_range_options);
+    UI_CAMERA_SET_OPTIONS(items[5].options, common_range_options);
 
     ui_menu_item_t *build_result = malloc(sizeof(items));
     memcpy(build_result, items, sizeof(items));
@@ -263,113 +255,119 @@ static void ui_camera_reset_action(ui_menu_item_t *item, ui_camera_t *parent)
     parent->selected_index[ui_camera_get_menu_count(parent)] = 1;
 }
 
-#pragma region ui_camera_analog_menu_actions
+#pragma region ui_camera_saa7113_menu_actions
 
-static void ui_camera_analog_fuse_action(ui_menu_item_t *item, ui_camera_t *parent)
+static void ui_camera_saa7113_fuse_action(ui_menu_item_t *item, ui_camera_t *parent)
 {
-    camera_control_get_current()->device_config.analog.fuse = item->current_value;
+    camera_control_get_current()->device_config.saa7113.fuse = item->current_value;
     UI_CAMERA_CHECK_UPDATE(camera_control_update());
 }
 
-static void ui_camera_analog_auto_gain_action(ui_menu_item_t *item, ui_camera_t *parent)
+static void ui_camera_saa7113_auto_gain_action(ui_menu_item_t *item, ui_camera_t *parent)
 {
-    camera_control_get_current()->device_config.analog.auto_gain = item->current_value;
+    camera_control_get_current()->device_config.saa7113.auto_gain = item->current_value;
     UI_CAMERA_CHECK_UPDATE(camera_control_update());
 }
 
-static void ui_camera_analog_gain_action(ui_menu_item_t *item, ui_camera_t *parent)
+static void ui_camera_saa7113_gain_action(ui_menu_item_t *item, ui_camera_t *parent)
 {
-    camera_control_get_current()->device_config.analog.gain = item->current_value - 10;
+    camera_control_get_current()->device_config.saa7113.gain = item->current_value - 10;
     UI_CAMERA_CHECK_UPDATE(camera_control_update());
 }
 
-static void ui_camera_analog_auto_gain_interval_action(ui_menu_item_t *item, ui_camera_t *parent)
+static void ui_camera_saa7113_auto_gain_interval_action(ui_menu_item_t *item, ui_camera_t *parent)
 {
-    camera_control_get_current()->device_config.analog.auto_gain_interval = item->current_value;
+    camera_control_get_current()->device_config.saa7113.auto_gain_interval = item->current_value;
     UI_CAMERA_CHECK_UPDATE(camera_control_update());
 }
 
-static void ui_camera_analog_white_peak_action(ui_menu_item_t *item, ui_camera_t *parent)
+static void ui_camera_saa7113_white_peak_action(ui_menu_item_t *item, ui_camera_t *parent)
 {
-    camera_control_get_current()->device_config.analog.white_peak_control = item->current_value;
+    camera_control_get_current()->device_config.saa7113.white_peak_control = item->current_value;
     UI_CAMERA_CHECK_UPDATE(camera_control_update());
 }
 
-static void ui_camera_analog_aperture_action(ui_menu_item_t *item, ui_camera_t *parent)
+static void ui_camera_saa7113_aperture_action(ui_menu_item_t *item, ui_camera_t *parent)
 {
-    camera_control_get_current()->device_config.analog.aperture = item->current_value;
+    camera_control_get_current()->device_config.saa7113.aperture = item->current_value;
     UI_CAMERA_CHECK_UPDATE(camera_control_update());
 }
 
-static void ui_camera_analog_bandpass_enabled_action(ui_menu_item_t *item, ui_camera_t *parent)
+static void ui_camera_saa7113_bandpass_enabled_action(ui_menu_item_t *item, ui_camera_t *parent)
 {
-    camera_control_get_current()->device_config.analog.bandpass_enabled = item->current_value;
+    camera_control_get_current()->device_config.saa7113.bandpass_enabled = item->current_value;
     UI_CAMERA_CHECK_UPDATE(camera_control_update());
 }
 
-static void ui_camera_analog_bandpass_center_action(ui_menu_item_t *item, ui_camera_t *parent)
+static void ui_camera_saa7113_bandpass_center_action(ui_menu_item_t *item, ui_camera_t *parent)
 {
-    camera_control_get_current()->device_config.analog.bandpass_center = item->current_value;
+    camera_control_get_current()->device_config.saa7113.bandpass_center = item->current_value;
     UI_CAMERA_CHECK_UPDATE(camera_control_update());
 }
 
-static void ui_camera_analog_prefilter_action(ui_menu_item_t *item, ui_camera_t *parent)
+static void ui_camera_saa7113_prefilter_action(ui_menu_item_t *item, ui_camera_t *parent)
 {
-    camera_control_get_current()->device_config.analog.prefilter_enabled = item->current_value;
+    camera_control_get_current()->device_config.saa7113.prefilter_enabled = item->current_value;
     UI_CAMERA_CHECK_UPDATE(camera_control_update());
 }
 
-static void ui_camera_analog_invert_action(ui_menu_item_t *item, ui_camera_t *parent)
+static void ui_camera_saa7113_invert_action(ui_menu_item_t *item, ui_camera_t *parent)
 {
-    camera_control_get_current()->device_config.analog.invert = item->current_value;
+    camera_control_get_current()->device_config.saa7113.invert = item->current_value;
     UI_CAMERA_CHECK_UPDATE(camera_control_update());
 }
 
-static void ui_camera_analog_color_standard_action(ui_menu_item_t *item, ui_camera_t *parent)
+static void ui_camera_saa7113_hue_action(ui_menu_item_t *item, ui_camera_t *parent)
 {
-    camera_control_get_current()->device_config.analog.color_standard = item->current_value;
+    camera_control_get_current()->device_config.saa7113.hue = item->current_value - 18;
     UI_CAMERA_CHECK_UPDATE(camera_control_update());
 }
 
-static void ui_camera_analog_chroma_gain_auto_action(ui_menu_item_t *item, ui_camera_t *parent)
+static void ui_camera_saa7113_color_standard_action(ui_menu_item_t *item, ui_camera_t *parent)
 {
-    camera_control_get_current()->device_config.analog.chroma_gain_auto = item->current_value;
+    camera_control_get_current()->device_config.saa7113.color_standard = item->current_value;
     UI_CAMERA_CHECK_UPDATE(camera_control_update());
 }
 
-static void ui_camera_analog_chroma_gain_action(ui_menu_item_t *item, ui_camera_t *parent)
+static void ui_camera_saa7113_chroma_gain_auto_action(ui_menu_item_t *item, ui_camera_t *parent)
 {
-    camera_control_get_current()->device_config.analog.chroma_gain_control = item->current_value - 10;
+    camera_control_get_current()->device_config.saa7113.chroma_gain_auto = item->current_value;
     UI_CAMERA_CHECK_UPDATE(camera_control_update());
 }
 
-static void ui_camera_analog_chroma_bandwidth_action(ui_menu_item_t *item, ui_camera_t *parent)
+static void ui_camera_saa7113_chroma_gain_action(ui_menu_item_t *item, ui_camera_t *parent)
 {
-    camera_control_get_current()->device_config.analog.chroma_bandwidth = item->current_value;
+    camera_control_get_current()->device_config.saa7113.chroma_gain_control = item->current_value - 10;
     UI_CAMERA_CHECK_UPDATE(camera_control_update());
 }
 
-static void ui_camera_analog_chroma_comb_filter_enabled_action(ui_menu_item_t *item, ui_camera_t *parent)
+static void ui_camera_saa7113_chroma_bandwidth_action(ui_menu_item_t *item, ui_camera_t *parent)
 {
-    camera_control_get_current()->device_config.analog.chroma_comb_filter_enabled = item->current_value;
+    camera_control_get_current()->device_config.saa7113.chroma_bandwidth = item->current_value;
     UI_CAMERA_CHECK_UPDATE(camera_control_update());
 }
 
-static void ui_camera_analog_chroma_killer_action(ui_menu_item_t *item, ui_camera_t *parent)
+static void ui_camera_saa7113_chroma_comb_filter_enabled_action(ui_menu_item_t *item, ui_camera_t *parent)
 {
-    camera_control_get_current()->device_config.analog.chroma_killer_enabled = item->current_value;
+    camera_control_get_current()->device_config.saa7113.chroma_comb_filter_enabled = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_saa7113_chroma_killer_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.saa7113.chroma_killer_enabled = item->current_value;
     UI_CAMERA_CHECK_UPDATE(camera_control_update());
 }
 
 #pragma endregion
 
-static ui_menu_item_t *ui_camera_build_analog_menu()
+static ui_menu_item_t *ui_camera_build_saa7113_menu()
 {
     // 0.Fuse, 1.Auto Gain, 2.Gain, 3.Auto Gain Interval, 4.White Peak Control, 5.Aperture,
     // 6.Bandpass Enabled, 7.Bandpass Center, 8.Prefilter Enabled, 9.Invert,
     // 10.Color Standard, 11.Chroma Gain Auto, 12.Chroma Gain, 13.Chroma Bandwidth,
     // 14.Chroma Comb Filter Enabled, 15.Chroma Killer, 16.Raw Output
-    analog_config_t *analog = &camera_control_get_current()->device_config.analog;
+    saa7113_config_t *saa7113_config = &camera_control_get_current()->device_config.saa7113;
     char *fuse_options[] = {
         wkc_translations_get_string("camera_bypass"),
         wkc_translations_get_string("camera_fuse_amp"),
@@ -384,6 +382,12 @@ static ui_menu_item_t *ui_camera_build_analog_menu()
     };
     char *bandpass_center_options[] = {
         "4.1MHz", "3.8MHz", "2.6MHz", "2.9MHz"
+    };
+    char *hue_options[] = {
+        "-180°", "-170°", "-160°", "-150°", "-140°", "-130°", "-120°", "-110°", "-100°",
+        "-90°", "-80°", "-70°", "-60°", "-50°", "-40°", "-30°", "-20°", "-10°", "0°",
+        "+10°", "+20°", "+30°", "+40°", "+50°", "+60°", "+70°", "+80°", "+90°", "+100°",
+        "+110°", "+120°", "+130°", "+140°", "+150°", "+160°", "+170°", "+180°",
     };
     char *color_standard_options[] = {
         wkc_translations_get_string("camera_auto"),
@@ -403,106 +407,113 @@ static ui_menu_item_t *ui_camera_build_analog_menu()
         {
             .type = UI_MENU_ITEM_PICKER,
             .name = wkc_translations_get_string("camera_fuse"),
-            .current_value = (int)analog->fuse,
+            .current_value = (int)saa7113_config->fuse,
             .count = sizeof(fuse_options) / sizeof(char*),
-            .action = (ui_menu_action_t)ui_camera_analog_fuse_action
+            .action = (ui_menu_action_t)ui_camera_saa7113_fuse_action
         },
         {
             .type = UI_MENU_ITEM_SWITCH,
             .name = wkc_translations_get_string("camera_auto_gain"),
-            .current_value = (int)analog->auto_gain,
-            .action = (ui_menu_action_t)ui_camera_analog_auto_gain_action
+            .current_value = (int)saa7113_config->auto_gain,
+            .action = (ui_menu_action_t)ui_camera_saa7113_auto_gain_action
         },
         {
             .type = UI_MENU_ITEM_PICKER,
             .name = wkc_translations_get_string("camera_gain"),
-            .current_value = (int)analog->gain + 10,
+            .current_value = (int)saa7113_config->gain + 10,
             .count = sizeof(common_range_options) / sizeof(char*),
-            .action = (ui_menu_action_t)ui_camera_analog_gain_action
+            .action = (ui_menu_action_t)ui_camera_saa7113_gain_action
         },
         {
             .type = UI_MENU_ITEM_PICKER,
             .name = wkc_translations_get_string("camera_auto_gain_interval"),
-            .current_value = (int)analog->auto_gain_interval,
+            .current_value = (int)saa7113_config->auto_gain_interval,
             .count = sizeof(auto_gain_interval_options) / sizeof(char*),
-            .action = (ui_menu_action_t)ui_camera_analog_auto_gain_interval_action
+            .action = (ui_menu_action_t)ui_camera_saa7113_auto_gain_interval_action
         },
         {
             .type = UI_MENU_ITEM_SWITCH,
             .name = wkc_translations_get_string("camera_white_peak_control"),
-            .current_value = (int)analog->white_peak_control,
-            .action = (ui_menu_action_t)ui_camera_analog_white_peak_action
+            .current_value = (int)saa7113_config->white_peak_control,
+            .action = (ui_menu_action_t)ui_camera_saa7113_white_peak_action
         },
         {
             .type = UI_MENU_ITEM_PICKER,
             .name = wkc_translations_get_string("camera_aperture"),
-            .current_value = (int)analog->aperture,
+            .current_value = (int)saa7113_config->aperture,
             .count = sizeof(aperture_options) / sizeof(char*),
-            .action = (ui_menu_action_t)ui_camera_analog_aperture_action
+            .action = (ui_menu_action_t)ui_camera_saa7113_aperture_action
         },
         {
             .type = UI_MENU_ITEM_SWITCH,
             .name = wkc_translations_get_string("camera_bandpass_enabled"),
-            .current_value = (int)analog->bandpass_enabled,
-            .action = (ui_menu_action_t)ui_camera_analog_bandpass_enabled_action
+            .current_value = (int)saa7113_config->bandpass_enabled,
+            .action = (ui_menu_action_t)ui_camera_saa7113_bandpass_enabled_action
         },
         {
             .type = UI_MENU_ITEM_PICKER,
             .name = wkc_translations_get_string("camera_bandpass_center"),
-            .current_value = (int)analog->bandpass_center,
+            .current_value = (int)saa7113_config->bandpass_center,
             .count = sizeof(bandpass_center_options) / sizeof(char*),
-            .action = (ui_menu_action_t)ui_camera_analog_bandpass_center_action
+            .action = (ui_menu_action_t)ui_camera_saa7113_bandpass_center_action
         },
         {
             .type = UI_MENU_ITEM_SWITCH,
             .name = wkc_translations_get_string("camera_prefilter"),
-            .current_value = (int)analog->prefilter_enabled,
-            .action = (ui_menu_action_t)ui_camera_analog_prefilter_action
+            .current_value = (int)saa7113_config->prefilter_enabled,
+            .action = (ui_menu_action_t)ui_camera_saa7113_prefilter_action
         },
         {
             .type = UI_MENU_ITEM_SWITCH,
             .name = wkc_translations_get_string("camera_invert"),
-            .current_value = (int)analog->invert,
-            .action = (ui_menu_action_t)ui_camera_analog_invert_action
+            .current_value = (int)saa7113_config->invert,
+            .action = (ui_menu_action_t)ui_camera_saa7113_invert_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_hue"),
+            .current_value = (int)saa7113_config->hue + 18,
+            .count = sizeof(hue_options) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_saa7113_hue_action
         },
         {
             .type = UI_MENU_ITEM_PICKER,
             .name = wkc_translations_get_string("camera_color_standard"),
-            .current_value = (int)analog->color_standard,
+            .current_value = (int)saa7113_config->color_standard,
             .count = sizeof(color_standard_options) / sizeof(char*),
-            .action = (ui_menu_action_t)ui_camera_analog_color_standard_action
+            .action = (ui_menu_action_t)ui_camera_saa7113_color_standard_action
         },
         {
             .type = UI_MENU_ITEM_SWITCH,
             .name = wkc_translations_get_string("camera_chroma_gain_auto"),
-            .current_value = (int)analog->chroma_gain_auto,
-            .action = (ui_menu_action_t)ui_camera_analog_chroma_gain_auto_action
+            .current_value = (int)saa7113_config->chroma_gain_auto,
+            .action = (ui_menu_action_t)ui_camera_saa7113_chroma_gain_auto_action
         },
         {
             .type = UI_MENU_ITEM_PICKER,
             .name = wkc_translations_get_string("camera_chroma_gain"),
-            .current_value = (int)analog->chroma_gain_control + 10,
+            .current_value = (int)saa7113_config->chroma_gain_control + 10,
             .count = sizeof(common_range_options) / sizeof(char*),
-            .action = (ui_menu_action_t)ui_camera_analog_chroma_gain_action
+            .action = (ui_menu_action_t)ui_camera_saa7113_chroma_gain_action
         },
         {
             .type = UI_MENU_ITEM_PICKER,
             .name = wkc_translations_get_string("camera_chroma_bandwidth"),
-            .current_value = (int)analog->chroma_bandwidth,
+            .current_value = (int)saa7113_config->chroma_bandwidth,
             .count = sizeof(chroma_bandwidth_options) / sizeof(char*),
-            .action = (ui_menu_action_t)ui_camera_analog_chroma_bandwidth_action
+            .action = (ui_menu_action_t)ui_camera_saa7113_chroma_bandwidth_action
         },
         {
             .type = UI_MENU_ITEM_SWITCH,
             .name = wkc_translations_get_string("camera_chroma_comb_filter"),
-            .current_value = (int)analog->chroma_comb_filter_enabled,
-            .action = (ui_menu_action_t)ui_camera_analog_chroma_comb_filter_enabled_action
+            .current_value = (int)saa7113_config->chroma_comb_filter_enabled,
+            .action = (ui_menu_action_t)ui_camera_saa7113_chroma_comb_filter_enabled_action
         },
         {
             .type = UI_MENU_ITEM_SWITCH,
             .name = wkc_translations_get_string("camera_chroma_killer"),
-            .current_value = (int)analog->chroma_killer_enabled,
-            .action = (ui_menu_action_t)ui_camera_analog_chroma_killer_action
+            .current_value = (int)saa7113_config->chroma_killer_enabled,
+            .action = (ui_menu_action_t)ui_camera_saa7113_chroma_killer_action
         },
         {
             .type = UI_MENU_ITEM_LABEL,
@@ -513,23 +524,616 @@ static ui_menu_item_t *ui_camera_build_analog_menu()
             .type = UI_MENU_ITEM_END,
         }
     };
+    UI_CAMERA_SET_OPTIONS(items[0].options, fuse_options);
+    UI_CAMERA_SET_OPTIONS(items[2].options, common_range_options);
+    UI_CAMERA_SET_OPTIONS(items[3].options, auto_gain_interval_options);
+    UI_CAMERA_SET_OPTIONS(items[5].options, aperture_options);
+    UI_CAMERA_SET_OPTIONS(items[7].options, bandpass_center_options);
+    UI_CAMERA_SET_OPTIONS(items[10].options, hue_options);
+    UI_CAMERA_SET_OPTIONS(items[11].options, color_standard_options);
+    UI_CAMERA_SET_OPTIONS(items[13].options, common_range_options);
+    UI_CAMERA_SET_OPTIONS(items[14].options, chroma_bandwidth_options);
 
-    items[0].options = malloc(sizeof(fuse_options));
-    memcpy(items[0].options, fuse_options, sizeof(fuse_options));
-    items[2].options = malloc(sizeof(common_range_options));
-    memcpy(items[2].options, common_range_options, sizeof(common_range_options));
-    items[3].options = malloc(sizeof(auto_gain_interval_options));
-    memcpy(items[3].options, auto_gain_interval_options, sizeof(auto_gain_interval_options));
-    items[5].options = malloc(sizeof(aperture_options));
-    memcpy(items[5].options, aperture_options, sizeof(aperture_options));
-    items[7].options = malloc(sizeof(bandpass_center_options));
-    memcpy(items[7].options, bandpass_center_options, sizeof(bandpass_center_options));
-    items[10].options = malloc(sizeof(color_standard_options));
-    memcpy(items[10].options, color_standard_options, sizeof(color_standard_options));
-    items[12].options = malloc(sizeof(common_range_options));
-    memcpy(items[12].options, common_range_options, sizeof(common_range_options));
-    items[13].options = malloc(sizeof(chroma_bandwidth_options));
-    memcpy(items[13].options, chroma_bandwidth_options, sizeof(chroma_bandwidth_options));
+    ui_menu_item_t *build_result = malloc(sizeof(items));
+    memcpy(build_result, items, sizeof(items));
+    return build_result;
+}
+
+#pragma region ui_camera_tw9910_menu_actions
+
+static void ui_camera_tw9910_auto_gain_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.auto_gain = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_chroma_bandpass_width_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.chroma_bandpass_width = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_blank_level_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.blank_level = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_adaptive_comb_filter_enabled_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.adaptive_comb_filter_enabled = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_operation_mode_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.operation_mode = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_pal_delay_line_enabled_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.pal_delay_line_enabled = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_sharp_center_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.sharp_center = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_cti_level_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.cti_level = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_sharpness_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.sharpness = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_ntsc_hue_correct_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.ntsc_hue_correct = item->current_value - 10;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_sharpness_coring_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.sharpness_coring = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_vertical_peaking_level_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.vertical_peaking_level = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_cti_coring_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.cti_coring = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_chroma_coring_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.chroma_coring = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_vertical_peaking_coring_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.vertical_peaking_coring = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_cif_level_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.cif_level = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_luma_antialias_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.luma_antialias = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_chroma_antialias_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.chroma_antialias = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_color_standard_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.color_standard = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_auto_gain_max_correction_level_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.auto_gain_max_correction_level = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_peak_agc_loop_gain_control_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.peak_agc_loop_gain_control = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_manual_gain_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.manual_gain_level = item->current_value - 10;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_white_peak_threshold_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.white_peak_threshold = item->current_value - 10;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_clamping_level_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.clamping_level = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_color_killer_max_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.color_killer_max = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_color_killer_min_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.color_killer_min = item->current_value - 10;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_comb_filter_strength_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.comb_filter_strength = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_adaptive_comb_filter_threshold_control_1_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.adaptive_comb_filter_threshold_control_1 = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_adaptive_comb_filter_threshold_control_2_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.adaptive_comb_filter_threshold_control_2 = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_color_killer_fast_mode_enabled_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.color_killer_fast_mode_enabled = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_luma_delay_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.luma_delay = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_prefilter_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.prefilter = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_chroma_low_pass_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.chroma_low_pass = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_noisy_color_killer_enabled_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.noisy_color_killer_enabled = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_blue_stretch_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.blue_stretch = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_luma_hf_noise_reduction_level_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.luma_hf_noise_reduction_level = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_clamping_mode_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.clamping_mode = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_luma_clamp_enabled_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.luma_clamp_enabled = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+static void ui_camera_tw9910_chroma_clamp_enabled_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.chroma_clamp_enabled = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
+#pragma endregion
+
+static ui_menu_item_t *ui_camera_build_tw9910_menu()
+{
+    tw9910_config_t *config = &camera_control_get_current()->device_config.tw9910;
+    char *bandpass_options[] = {
+        wkc_translations_get_string("camera_normal"),
+        wkc_translations_get_string("camera_wide")
+    };
+    char *blank_level_options[] = {
+        wkc_translations_get_string("camera_auto"),
+        "0IRE", "7.5IRE"
+    };
+    char *operation_mode_options[] = {
+        wkc_translations_get_string("camera_mode_0"),
+        wkc_translations_get_string("camera_mode_1")
+    };
+    char *sharp_center_options[] = {
+        wkc_translations_get_string("camera_normal"),
+        wkc_translations_get_string("camera_high")
+    };
+    char *range_0_3[] = { "0", "1", "2", "3" };
+    char *range_0_7[] = { "0", "1", "2", "3", "4", "5", "6", "7" };
+    char *range_0_15[] = {
+        "0", "1", "2", "3", "4", "5", "6", "7",
+        "8", "9", "10", "11", "12", "13", "14", "15"
+    };
+    char *cif_level_options[] = {
+        wkc_translations_get_string("camera_none"),
+        "1.5dB", "3dB", "6dB"
+    };
+    char *color_standard_options[] = {
+        wkc_translations_get_string("camera_auto"),
+        "NTSC", "PAL", "SECAM", "NTSC4.43", "PAL(M)", "PAL(CN)", "PAL60"
+    };
+    char *prefilter_options[] = {
+        wkc_translations_get_string("camera_auto"),
+        wkc_translations_get_string("camera_bypass"),
+        wkc_translations_get_string("camera_horizontal_enhancement"),
+        "CIF", "QCIF", "ICON"
+    };
+    char *chroma_low_pass_options[] = {
+        wkc_translations_get_string("camera_disabled"),
+        wkc_translations_get_string("camera_low"),
+        wkc_translations_get_string("camera_medium"),
+        wkc_translations_get_string("camera_high")
+    };
+    char *hf_noise_options[] = {
+        wkc_translations_get_string("camera_none"),
+        wkc_translations_get_string("camera_noise_smallest"),
+        wkc_translations_get_string("camera_noise_small"),
+        wkc_translations_get_string("camera_noise_medium")
+    };
+    char *clamping_mode_options[] = {
+        wkc_translations_get_string("camera_auto"),
+        wkc_translations_get_string("camera_clamp_sync_top"),
+        wkc_translations_get_string("camera_clamp_pedestal")
+    };
+    ui_menu_item_t items[] = {
+        {
+            .type = UI_MENU_ITEM_SWITCH,
+            .name = wkc_translations_get_string("camera_auto_gain"),
+            .current_value = (int)config->auto_gain,
+            .action = (ui_menu_action_t)ui_camera_tw9910_auto_gain_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_chroma_bandpass_width"),
+            .current_value = (int)config->chroma_bandpass_width,
+            .count = sizeof(bandpass_options) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_chroma_bandpass_width_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_blank_level"),
+            .current_value = (int)config->blank_level,
+            .count = sizeof(blank_level_options) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_blank_level_action
+        },
+        {
+            .type = UI_MENU_ITEM_SWITCH,
+            .name = wkc_translations_get_string("camera_adaptive_comb_filter"),
+            .current_value = (int)config->adaptive_comb_filter_enabled,
+            .action = (ui_menu_action_t)ui_camera_tw9910_adaptive_comb_filter_enabled_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_operation_mode"),
+            .current_value = (int)config->operation_mode,
+            .count = sizeof(operation_mode_options) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_operation_mode_action
+        },
+        {
+            .type = UI_MENU_ITEM_SWITCH,
+            .name = wkc_translations_get_string("camera_pal_delay_line"),
+            .current_value = (int)config->pal_delay_line_enabled,
+            .action = (ui_menu_action_t)ui_camera_tw9910_pal_delay_line_enabled_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_sharp_center"),
+            .current_value = (int)config->sharp_center,
+            .count = sizeof(sharp_center_options) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_sharp_center_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_cti_level"),
+            .current_value = (int)config->cti_level,
+            .count = sizeof(range_0_3) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_cti_level_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_sharpness"),
+            .current_value = (int)config->sharpness,
+            .count = sizeof(range_0_15) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_sharpness_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_ntsc_hue_correct"),
+            .current_value = (int)config->ntsc_hue_correct + 10,
+            .count = sizeof(common_range_options) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_ntsc_hue_correct_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_sharpness_coring"),
+            .current_value = (int)config->sharpness_coring,
+            .count = sizeof(range_0_15) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_sharpness_coring_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_vertical_peaking"),
+            .current_value = (int)config->vertical_peaking_level,
+            .count = sizeof(range_0_7) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_vertical_peaking_level_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = "CTI Coring",
+            .current_value = (int)config->cti_coring,
+            .count = sizeof(range_0_3) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_cti_coring_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_chroma_coring"),
+            .current_value = (int)config->chroma_coring,
+            .count = sizeof(range_0_3) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_chroma_coring_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_vertical_peaking_coring"),
+            .current_value = (int)config->vertical_peaking_coring,
+            .count = sizeof(range_0_3) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_vertical_peaking_coring_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_cif_level"),
+            .current_value = (int)config->cif_level,
+            .count = sizeof(cif_level_options) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_cif_level_action
+        },
+        {
+            .type = UI_MENU_ITEM_SWITCH,
+            .name = wkc_translations_get_string("camera_luma_antialias"),
+            .current_value = (int)config->luma_antialias,
+            .action = (ui_menu_action_t)ui_camera_tw9910_luma_antialias_action
+        },
+        {
+            .type = UI_MENU_ITEM_SWITCH,
+            .name = wkc_translations_get_string("camera_chroma_antialias"),
+            .current_value = (int)config->chroma_antialias,
+            .action = (ui_menu_action_t)ui_camera_tw9910_chroma_antialias_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_color_standard"),
+            .current_value = (int)config->color_standard,
+            .count = sizeof(color_standard_options) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_color_standard_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_agc_max_correction"),
+            .current_value = (int)config->auto_gain_max_correction_level,
+            .count = sizeof(range_0_15) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_auto_gain_max_correction_level_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_peak_agc_gain"),
+            .current_value = (int)config->peak_agc_loop_gain_control,
+            .count = sizeof(range_0_7) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_peak_agc_loop_gain_control_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_manual_gain"),
+            .current_value = (int)config->manual_gain_level + 10,
+            .count = sizeof(common_range_options) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_manual_gain_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_white_peak_threshold"),
+            .current_value = (int)config->white_peak_threshold + 10,
+            .count = sizeof(common_range_options) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_white_peak_threshold_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_clamping_level"),
+            .current_value = (int)config->clamping_level,
+            .count = sizeof(range_0_15) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_clamping_level_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_color_killer_max"),
+            .current_value = (int)config->color_killer_max,
+            .count = sizeof(range_0_3) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_color_killer_max_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_color_killer_min"),
+            .current_value = (int)config->color_killer_min + 10,
+            .count = sizeof(common_range_options) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_color_killer_min_action
+        },
+        {
+            .type = UI_MENU_ITEM_SWITCH,
+            .name = wkc_translations_get_string("camera_comb_filter_strength"),
+            .current_value = !!(int)config->comb_filter_strength,
+            .action = (ui_menu_action_t)ui_camera_tw9910_comb_filter_strength_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_comb_threshold_1"),
+            .current_value = (int)config->adaptive_comb_filter_threshold_control_1,
+            .count = sizeof(range_0_7) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_adaptive_comb_filter_threshold_control_1_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_comb_threshold_2"),
+            .current_value = (int)config->adaptive_comb_filter_threshold_control_2,
+            .count = sizeof(range_0_15) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_adaptive_comb_filter_threshold_control_2_action
+        },
+        {
+            .type = UI_MENU_ITEM_SWITCH,
+            .name = wkc_translations_get_string("camera_color_killer_fast"),
+            .current_value = (int)config->color_killer_fast_mode_enabled,
+            .action = (ui_menu_action_t)ui_camera_tw9910_color_killer_fast_mode_enabled_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_luma_delay"),
+            .current_value = (int)config->luma_delay,
+            .count = sizeof(range_0_7) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_luma_delay_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_prefilter"),
+            .current_value = (int)config->prefilter,
+            .count = sizeof(prefilter_options) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_prefilter_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_chroma_low_pass"),
+            .current_value = (int)config->chroma_low_pass,
+            .count = sizeof(chroma_low_pass_options) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_chroma_low_pass_action
+        },
+        {
+            .type = UI_MENU_ITEM_SWITCH,
+            .name = wkc_translations_get_string("camera_noisy_color_killer"),
+            .current_value = (int)config->noisy_color_killer_enabled,
+            .action = (ui_menu_action_t)ui_camera_tw9910_noisy_color_killer_enabled_action
+        },
+        {
+            .type = UI_MENU_ITEM_SWITCH,
+            .name = wkc_translations_get_string("camera_blue_stretch"),
+            .current_value = (int)config->blue_stretch,
+            .action = (ui_menu_action_t)ui_camera_tw9910_blue_stretch_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_luma_hf_noise"),
+            .current_value = (int)config->luma_hf_noise_reduction_level,
+            .count = sizeof(hf_noise_options) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_luma_hf_noise_reduction_level_action
+        },
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_clamping_mode"),
+            .current_value = (int)config->clamping_mode,
+            .count = sizeof(clamping_mode_options) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_clamping_mode_action
+        },
+        {
+            .type = UI_MENU_ITEM_SWITCH,
+            .name = wkc_translations_get_string("camera_luma_clamp"),
+            .current_value = (int)config->luma_clamp_enabled,
+            .action = (ui_menu_action_t)ui_camera_tw9910_luma_clamp_enabled_action
+        },
+        {
+            .type = UI_MENU_ITEM_SWITCH,
+            .name = wkc_translations_get_string("camera_chroma_clamp"),
+            .current_value = (int)config->chroma_clamp_enabled,
+            .action = (ui_menu_action_t)ui_camera_tw9910_chroma_clamp_enabled_action
+        },
+        {
+            .type = UI_MENU_ITEM_LABEL,
+            .name = wkc_translations_get_string("camera_reset"),
+            .action = (ui_menu_action_t)ui_camera_reset_action
+        },
+        {
+            .type = UI_MENU_ITEM_END
+        }
+    };
+
+    UI_CAMERA_SET_OPTIONS(items[1].options, bandpass_options);
+    UI_CAMERA_SET_OPTIONS(items[2].options, blank_level_options);
+    UI_CAMERA_SET_OPTIONS(items[4].options, operation_mode_options);
+    UI_CAMERA_SET_OPTIONS(items[6].options, sharp_center_options);
+    UI_CAMERA_SET_OPTIONS(items[7].options, range_0_3);
+    UI_CAMERA_SET_OPTIONS(items[8].options, range_0_15);
+    UI_CAMERA_SET_OPTIONS(items[9].options, common_range_options);
+    UI_CAMERA_SET_OPTIONS(items[10].options, range_0_15);
+    UI_CAMERA_SET_OPTIONS(items[11].options, range_0_7);
+    UI_CAMERA_SET_OPTIONS(items[12].options, range_0_3);
+    UI_CAMERA_SET_OPTIONS(items[13].options, range_0_3);
+    UI_CAMERA_SET_OPTIONS(items[14].options, range_0_3);
+    UI_CAMERA_SET_OPTIONS(items[15].options, cif_level_options);
+    UI_CAMERA_SET_OPTIONS(items[18].options, color_standard_options);
+    UI_CAMERA_SET_OPTIONS(items[19].options, range_0_15);
+    UI_CAMERA_SET_OPTIONS(items[20].options, range_0_7);
+    UI_CAMERA_SET_OPTIONS(items[21].options, common_range_options);
+    UI_CAMERA_SET_OPTIONS(items[22].options, common_range_options);
+    UI_CAMERA_SET_OPTIONS(items[23].options, range_0_15);
+    UI_CAMERA_SET_OPTIONS(items[24].options, range_0_3);
+    UI_CAMERA_SET_OPTIONS(items[25].options, common_range_options);
+    UI_CAMERA_SET_OPTIONS(items[27].options, range_0_7);
+    UI_CAMERA_SET_OPTIONS(items[28].options, range_0_15);
+    UI_CAMERA_SET_OPTIONS(items[30].options, range_0_7);
+    UI_CAMERA_SET_OPTIONS(items[31].options, prefilter_options);
+    UI_CAMERA_SET_OPTIONS(items[32].options, chroma_low_pass_options);
+    UI_CAMERA_SET_OPTIONS(items[35].options, hf_noise_options);
+    UI_CAMERA_SET_OPTIONS(items[36].options, clamping_mode_options);
 
     ui_menu_item_t *build_result = malloc(sizeof(items));
     memcpy(build_result, items, sizeof(items));
@@ -1299,6 +1903,14 @@ int ui_camera_show(ui_shell_t *shell)
     }
     else
     {
+        camera_device_type_t device_type = camera_control_get_current()->device_type;
+        if (device_type != CAMERA_DEVICE_SAA7113 &&
+            device_type != CAMERA_DEVICE_TW9910)
+        {
+            ui_shell_show_toast(shell,
+                wkc_translations_get_string("camera_control_not_available"), 5);
+            return 1;
+        }
         ui_page_t *camera = ui_shell_find_page(shell, UI_PAGE_TYPE_CAMERA);
         if (camera != NULL)
         {

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <sys/time.h>
+#include "camera/camera_control.h"
 
 #define GPIO_NUM_EXTEND 0x80
 #define IO_EXTEND_REG_POWER 0x00
@@ -11,7 +12,7 @@
 void io_extend_init();
 int io_extend_read_camera(uint8_t reg, uint8_t *value);
 int io_extend_write_camera(uint8_t reg, uint8_t value);
-int io_extend_test_camera();
+camera_device_type_t io_extend_probe_camera();
 void io_extend_set_offset(int index, int offset);
 uint8_t io_extend_fetch(uint8_t reg);
 bool io_extend_is_time_valid();

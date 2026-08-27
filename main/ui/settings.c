@@ -1021,7 +1021,7 @@ static void ui_settings_on_key_event(ui_settings_t *settings, int key_code)
                                 *y_offset += 1;
                         }
                         *y_offset = clamp(*y_offset, -16, 16);
-                        *x_offset = clamp(*x_offset, 0, 255);
+                        *x_offset = clamp(*x_offset, -128, 127);
                         display_settings_update();
                         wkc_settings_save();
                     }

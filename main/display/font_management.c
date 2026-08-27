@@ -6,6 +6,7 @@
 #include <errno.h>
 #include <math.h>
 #include "graphics.h"
+#include "display_control.h"
 #include "font_management.h"
 #include "io/filesystem.h"
 #include "esp_heap_caps.h"
@@ -418,6 +419,7 @@ text_position_descriptor_t* font_measure_text(char *text, display_format_t forma
         size->y = 0;
     }
     if (text == NULL || *text == '\0') return NULL;
+    display_control_record_operate_time();
 
     int font_height = 16;
 

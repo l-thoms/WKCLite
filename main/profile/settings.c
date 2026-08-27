@@ -21,6 +21,11 @@ int clamp(int value, int min, int max)
     return value < min ? min : value > max ? max : value;
 }
 
+void local_clamp(int *value, int min, int max)
+{
+    *value = *value < min ? min : *value > max ? max : *value;
+}
+
 wkc_settings_t *wkc_settings_get_current()
 {
     return &current_settings;
@@ -95,7 +100,7 @@ static void settings_parse()
 
                 if (x_offset)
                     current_settings.display.position[i].x_offset =
-                        clamp((int)cJSON_GetNumberValue(x_offset), 0, 255);
+                        clamp((int)cJSON_GetNumberValue(x_offset), -128, 127);
                 if (y_offset)
                     current_settings.display.position[i].y_offset =
                         clamp((int)cJSON_GetNumberValue(y_offset), -16, 16);

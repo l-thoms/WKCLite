@@ -7,21 +7,24 @@
 `define I2C_ACK_WRITE       6
 `define I2C_READ_VALUE      7
 
-`define DEVICE_ADDRESS      6'h2c
+`define DEVICE_ADDRESS      7'h2c
 `define CLK_SLOW_DIV        7999
 
-`define I2C_REG_POWER       0
-`define I2C_REG_DISP_CTRL   1
-`define I2C_REG_LOCK_BRI    2
-`define I2C_REG_OFFSET_1    3
-`define I2C_REG_OFFSET_2    4
+`define I2C_REG_POWER                   0
+`define I2C_REG_DISP_CTRL               1
+`define I2C_REG_LOCK_BRI                2
+`define I2C_REG_OFFSET_1                3
+`define I2C_REG_OFFSET_2                4
+`define I2C_REG_ADVANCED_LOCK_CONTROL   5
+
+// TODO: Lock I2C mode, needs 5.1k pull-up on LOCK_PWDN on lock controller board
 
 module i2c_peripheral (
     SCL, SDA, MCLK, INTR_EDGE,
     LOCKA, LOCKB,
     BRIP, BRIN,
     STDBY, CHRG,
-    DISP, PWDN, OUTPUT_MODE,
+    LOCK_PWDN, PWDN, OUTPUT_MODE,
     CSEL1, CSEL2,
     OFFSET_PRIMARY, OFFSET_SECONDARY,
     F1, F2
@@ -34,19 +37,15 @@ module i2c_peripheral (
     //                     RO    RO
     input STDBY, CHRG;
 
-    // Reg 1: Display control, F1, F2 OUTPUT_MODE INTR_EDGE PWDN CSEL1 CSEL2
-    //                         RW, RW,RW          RW        RW   RW    RW
-    input DISP;
-    output PWDN;
+    // Reg 1: Display control, F1 F2 OUTPUT_MODE INTR_EDGE PWDN CSEL1 CSEL2
+    //                         RW RW RW          RW        RW   RW    RW
+    output reg PWDN = 0;
     output reg OUTPUT_MODE = 0;
     output reg INTR_EDGE = 0;
     output reg CSEL1 = 0;
     output reg CSEL2 = 0;
     output reg F1 = 0;
     output reg F2 = 0;
-    reg pwdn_val = 1;
-    // Automatically power down when DISP lows
-    assign PWDN = pwdn_val & DISP;
 
     // Reg 2: Lock/Brightness, MIR LOCKA LOCKB BRIP BRIN
     //                         RWC RWC   RWC   RWC  RWC
@@ -55,6 +54,15 @@ module i2c_peripheral (
     // Reg 3, 4: Offset
     output reg [7:0] OFFSET_PRIMARY = 0;
     output reg [7:0] OFFSET_SECONDARY = 0;
+
+    // Reg 5: Advanced lock control, LOCK_PWDN LOCK_MODE_DETECT LOCK_MODE
+    //                               RW        RW               RO
+    inout LOCK_PWDN; // Pull-down to guarantee backward compatibility
+    reg lock_pwdn_val = 0;
+    reg [1:0] lock_mode_detect = 0;
+    reg lock_mode = 0; // 0: classic motor lock; 1: I2C EM lock (not implemented)
+    assign LOCK_PWDN = lock_mode_detect == 'b11 &&
+                       (lock_mode == 1 || lock_pwdn_val == 1) ? lock_pwdn_val : 'bz;
 
     reg [1:0] locka_rec = 0;
     reg [1:0] lockb_rec = 0;
@@ -100,7 +108,6 @@ module i2c_peripheral (
 
     // Calculate Timeout
     always @(posedge MCLK) begin
-
             if (locka_rec[1] != locka_rec[0]) begin
                 locka_cnt <= 8000000;
             end else begin
@@ -129,6 +136,12 @@ module i2c_peripheral (
             lockb_rec[1] <= lockb_rec[0];
             brip_rec[1] <= brip_rec[0];
             brin_rec[1] <= brin_rec[0];
+
+            // Lock mode detect
+            if (!lock_mode_detect[1] && lock_mode_detect[0]) begin
+                lock_mode <= LOCK_PWDN;
+            end
+            lock_mode_detect[1] <= lock_mode_detect[0];
     end
 
     // All components managed by MCLK
@@ -225,7 +238,7 @@ module i2c_peripheral (
                                               (F2 << 5) |
                                               (OUTPUT_MODE << 4) |
                                               (INTR_EDGE << 3) |
-                                              (pwdn_val << 2) |
+                                              (PWDN << 2) |
                                               (CSEL1 << 1) |
                                               CSEL2;
                             end
@@ -240,6 +253,11 @@ module i2c_peripheral (
                             end
                             `I2C_REG_OFFSET_2: begin
                                 read_value <= OFFSET_SECONDARY;
+                            end
+                            `I2C_REG_ADVANCED_LOCK_CONTROL: begin
+                                read_value <= (lock_pwdn_val << 2) |
+                                              (lock_mode_detect[0] << 1) |
+                                              lock_mode;
                             end
                             default: begin
                                 read_value <= 0;
@@ -278,7 +296,7 @@ module i2c_peripheral (
                                 F2 <= write_value[5];
                                 OUTPUT_MODE <= write_value[4];
                                 INTR_EDGE <= write_value[3];
-                                pwdn_val <= write_value[2];
+                                PWDN <= write_value[2];
                                 CSEL1 <= write_value[1];
                                 CSEL2 <= write_value[0];
                             end
@@ -308,6 +326,10 @@ module i2c_peripheral (
                             end
                             `I2C_REG_OFFSET_2: begin
                                 OFFSET_SECONDARY <= write_value;
+                            end
+                            `I2C_REG_ADVANCED_LOCK_CONTROL: begin
+                                lock_pwdn_val <= write_value[2];
+                                lock_mode_detect[0] <= write_value[1];
                             end
                         endcase
                     end else begin

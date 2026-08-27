@@ -5,6 +5,7 @@
 #include "driver/i2c_master.h"
 #include "driver/gpio.h"
 #include "io/i2c_bus.h"
+#include "camera/camera_control.h"
 #include "esp_system.h"
 #include "esp_log.h"
 #include "io_extend.h"
@@ -13,47 +14,38 @@
 
 #define IO_EXTEND_ADDRESS 0x2c
 #define IO_EXTEND_RTC_ADDRESS 0x51
-
-#define IO_EXTEND_CAMERA_ADDRESS 0x25
+#define IO_EXTEND_SAA7113_ADDRESS 0x25
+#define IO_EXTEND_TW9910_ADDRESS 0x45
 
 #define TAG "IO_EXTEND"
 
 static i2c_master_dev_handle_t io_extend_device;
 static i2c_master_dev_handle_t io_extend_rtc_device;
-static i2c_master_dev_handle_t io_extend_camera_device;
+static i2c_master_dev_handle_t io_extend_saa7113_device;
+static i2c_master_dev_handle_t io_extend_tw9910_device;
 static uint8_t io_extend_output_reg1 = 0;
 static bool time_valid = false;
+
+static void io_extend_add_device(uint16_t address, int speed,
+                                 i2c_master_dev_handle_t *out_handle)
+{
+    i2c_device_config_t device_config = {
+        .dev_addr_length = I2C_ADDR_BIT_LEN_7,
+        .device_address = address,
+        .scl_speed_hz = speed
+    };
+    ESP_ERROR_CHECK(i2c_master_bus_add_device(get_i2c_master_bus_handle(),
+    &device_config, out_handle));
+}
 
 void io_extend_init()
 {
     gpio_install_isr_service(ESP_INTR_FLAG_EDGE);
-    i2c_device_config_t device_config = {
-        .dev_addr_length = I2C_ADDR_BIT_LEN_7,
-        .device_address = IO_EXTEND_ADDRESS,
-        .scl_speed_hz = 100000
-    };
 
-    ESP_ERROR_CHECK(i2c_master_bus_add_device(get_i2c_master_bus_handle(),
-    &device_config, &io_extend_device));
-
-    i2c_device_config_t rtc_device_config = {
-        .dev_addr_length = I2C_ADDR_BIT_LEN_7,
-        .device_address = IO_EXTEND_RTC_ADDRESS,
-        .scl_speed_hz = 100000
-    };
-
-    ESP_ERROR_CHECK(i2c_master_bus_add_device(get_i2c_master_bus_handle(),
-    &rtc_device_config, &io_extend_rtc_device));
-
-    i2c_device_config_t camera_device_config = {
-        .dev_addr_length = I2C_ADDR_BIT_LEN_7,
-        .device_address = IO_EXTEND_CAMERA_ADDRESS,
-        .scl_speed_hz = 100000
-    };
-
-    ESP_ERROR_CHECK(i2c_master_bus_add_device(get_i2c_master_bus_handle(),
-    &camera_device_config, &io_extend_camera_device));
-
+    io_extend_add_device(IO_EXTEND_ADDRESS, 100000, &io_extend_device);
+    io_extend_add_device(IO_EXTEND_RTC_ADDRESS, 100000, &io_extend_rtc_device);
+    io_extend_add_device(IO_EXTEND_SAA7113_ADDRESS, 100000, &io_extend_saa7113_device);
+    io_extend_add_device(IO_EXTEND_TW9910_ADDRESS, 100000, &io_extend_tw9910_device);
     bool pass;
     do
     {
@@ -69,65 +61,12 @@ void io_extend_init()
 
         if (i2c_master_transmit(io_extend_device, &write_buffer, 1, -1))
         {
-            ESP_LOGE("I2C_INIT", "IO extend reg 0 test failed");
+            ESP_LOGE("I2C_INIT", "IO extend FPGA test failed");
             pass = false;
         }
         else if (i2c_master_receive(io_extend_device, &read_buffer, 1, -1))
         {
-            ESP_LOGE("I2C_INIT", "IO extend reg 0 receive failed");
-            pass = false;
-        }
-
-        write_buffer = 1;
-        if (i2c_master_transmit(io_extend_device, &write_buffer, 1, -1))
-        {
-            ESP_LOGE("I2C_INIT", "IO extend reg 1 test failed");
-            pass = false;
-        }
-        else if (i2c_master_receive(io_extend_device, &read_buffer, 1, -1))
-        {
-            ESP_LOGE("I2C_INIT", "IO extend reg 1 receive failed");
-            pass = false;
-        }
-
-        write_buffer = 2;
-        if (i2c_master_transmit(io_extend_device, &write_buffer, 1, -1))
-        {
-            ESP_LOGE("I2C_INIT", "IO extend reg 2 test failed");
-            pass = false;
-        }
-        else if (i2c_master_receive(io_extend_device, &read_buffer, 1, -1))
-        {
-            ESP_LOGE("I2C_INIT", "IO extend reg 2 receive failed");
-            pass = false;
-        }
-        else if (read_buffer & 15)
-        {
-            ESP_LOGE("I2C_INIT", "IO extend reg 2 busy: %d", read_buffer);
-            pass = false;
-        }
-
-        write_buffer = 3;
-        if (i2c_master_transmit(io_extend_device, &write_buffer, 1, -1))
-        {
-            ESP_LOGE("I2C_INIT", "IO extend reg 3 test failed");
-            pass = false;
-        }
-        else if (i2c_master_receive(io_extend_device, &read_buffer, 1, -1))
-        {
-            ESP_LOGE("I2C_INIT", "IO extend reg 3 receive failed");
-            pass = false;
-        }
-
-        write_buffer = 4;
-        if (i2c_master_transmit(io_extend_device, &write_buffer, 1, -1))
-        {
-            ESP_LOGE("I2C_INIT", "IO extend reg 4 test failed");
-            pass = false;
-        }
-        else if (i2c_master_receive(io_extend_device, &read_buffer, 1, -1))
-        {
-            ESP_LOGE("I2C_INIT", "IO extend reg 4 receive failed");
+            ESP_LOGE("I2C_INIT", "IO extend FPGA receive failed");
             pass = false;
         }
     } while (!pass);
@@ -136,17 +75,21 @@ void io_extend_init()
 
 int io_extend_read_camera(uint8_t reg, uint8_t *value)
 {
+    camera_device_type_t device_type = camera_control_get_current()->device_type;
+    if (device_type == CAMERA_DEVICE_NONE) return 1;
+    i2c_master_dev_handle_t device = device_type == CAMERA_DEVICE_SAA7113 ?
+                            io_extend_saa7113_device : io_extend_tw9910_device;
     int trial = 100;
     while (trial--)
     {
-        if (i2c_master_transmit(io_extend_camera_device, &reg, 1, -1) == 0)
+        if (i2c_master_transmit(device, &reg, 1, -1) == 0)
             break;
+        if (trial == 0) return 1;
     }
-    if (trial == 0) return 1;
     trial = 100;
     while (trial--)
     {
-        if (i2c_master_receive(io_extend_camera_device, value, 1, -1) == 0)
+        if (i2c_master_receive(device, value, 1, -1) == 0)
             return 0;
     }
     return 1;
@@ -154,21 +97,60 @@ int io_extend_read_camera(uint8_t reg, uint8_t *value)
 
 int io_extend_write_camera(uint8_t reg, uint8_t value)
 {
+    camera_device_type_t device_type = camera_control_get_current()->device_type;
+    if (device_type == CAMERA_DEVICE_NONE) return 1;
+    i2c_master_dev_handle_t device = device_type == CAMERA_DEVICE_SAA7113 ?
+                            io_extend_saa7113_device : io_extend_tw9910_device;
     int trial = 100;
     uint8_t write_value[] = { reg, value };
     while (trial--)
     {
-        if (i2c_master_transmit(io_extend_camera_device, write_value, 2, -1) == 0)
+        if (i2c_master_transmit(device, write_value, 2, -1) == 0)
             return 0;
         ESP_LOGW("IO_EXTEND", "Trial %d: %02X, %02X", 100 - trial, (int)reg, (int)value);
     }
     return 1;
 }
 
-int io_extend_test_camera()
+camera_device_type_t io_extend_probe_camera()
 {
-    uint8_t write_buffer[2] = { 0 };
-    return i2c_master_transmit(io_extend_camera_device, write_buffer, 2, -1);
+    uint8_t write_buffer = 0;
+    i2c_master_dev_handle_t devices[] = {
+        io_extend_saa7113_device, io_extend_tw9910_device
+    };
+    int trial = 100;
+    camera_device_type_t inferred_camera_type = CAMERA_DEVICE_NONE;
+
+    while (trial--)
+    {
+        if (gpio_write(GPIO_NUM_EXTEND | 10, 1) == 0)
+            break;
+        if (trial == 0)
+        {
+            return CAMERA_DEVICE_NONE;
+        }
+    }
+    vTaskDelay(200 / portTICK_PERIOD_MS);
+
+    for (int i = 0; i < sizeof(devices) / sizeof(i2c_master_dev_handle_t); i++)
+    {
+        trial = 100;
+        bool inferred = false;
+        while (trial--)
+        {
+            if (i2c_master_transmit(devices[i], &write_buffer, 1, -1) == 0)
+            {
+                inferred_camera_type = i == 0 ? CAMERA_DEVICE_SAA7113 :
+                                                CAMERA_DEVICE_TW9910;
+                inferred = true;
+                break;
+            }
+        }
+        if (inferred) break;
+    }
+
+    gpio_write(GPIO_NUM_EXTEND | 10, 0);
+    return inferred_camera_type;
 }
 
 uint8_t io_extend_fetch(uint8_t reg)
@@ -196,10 +178,10 @@ int io_extend_load_time()
     uint8_t read_data[7];
     int trial = 100;
     while (i2c_master_transmit(io_extend_rtc_device, (uint8_t[]) { 2 }, 1, -1))
-        if (--trial == 0) return 1;
+        if (trial-- == 0) return 1;
     trial = 100;
     while(i2c_master_receive(io_extend_rtc_device, read_data, 7, -1))
-        if (--trial == 0) return 1;
+        if (trial-- == 0) return 1;
     if (read_data[0] & 0x80)
         return 1;
     time_valid = true;
@@ -233,7 +215,7 @@ int io_extend_save_time(struct tm *time_data)
         (time_data->tm_year - 100) / 10 << 4 | time_data->tm_year % 10
     }, 8, -1)))
     {
-        if (--trial == 0)
+        if (trial-- == 0)
         {
             ESP_LOGW("IO_EXTEND", "Cannot save time into RTC");
             break;

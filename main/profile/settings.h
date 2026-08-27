@@ -38,6 +38,7 @@ typedef struct
 extern uint8_t current_security_storage[16][10];
 
 int clamp(int value, int min, int max);
+void local_clamp(int *value, int min, int max);
 void wkc_settings_load_default();
 void wkc_security_load_default();
 wkc_settings_t *wkc_settings_get_current();

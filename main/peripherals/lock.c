@@ -10,6 +10,7 @@
 #include "profile/translations.h"
 #include "peripherals/battery_calibration.h"
 #include "protocol/ble.h"
+#include "display/display_control.h"
 
 static bool locked = false;
 static SemaphoreHandle_t lock_semaphore = NULL;
@@ -115,6 +116,21 @@ void lock_set_from_isr(bool state, bool force, bool check)
 
 void lock_init()
 {
+    // Backward compatible with v0.5.x
+    gpio_write(DISP_GPIO, 0);
+    gpio_write(GPIO_NUM_EXTEND | 42, 0);
+    gpio_write(GPIO_NUM_EXTEND | 41, 0);
+    gpio_write(GPIO_NUM_EXTEND | 41, 1);
+    int lock_type = gpio_read(GPIO_NUM_EXTEND | 40);
+    if (lock_type == 0 || lock_type == 1)
+    {
+        ESP_LOGI("LOCK", "Current lock type is %s lock",
+                 lock_type == 0 ? "classic motor" : "I2C EM");
+        if (lock_type == 1)
+            ESP_LOGW("LOCK", "I2C EM lock driver is not implemented");
+    }
+    else
+        ESP_LOGE("LOCK", "Lock control invalid");
     lock_semaphore = xSemaphoreCreateMutex();
     lock_queue = xQueueCreate(1, sizeof(lock_queue_arg_t));
     xTaskCreatePinnedToCore((TaskFunction_t)lock_check_queue,

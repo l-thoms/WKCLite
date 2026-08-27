@@ -25,7 +25,7 @@ BRIN      PIN_3
 STDBY     PIN_19
 CHRG      PIN_20
 PWDN      PIN_29
-DISP      PIN_28
+LOCK_PWDN PIN_28 # Breaking change
 
 CSEL1     PIN_1
 CSEL2     PIN_5

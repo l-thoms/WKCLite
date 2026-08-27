@@ -25,8 +25,6 @@
 #define OPERATE_THRESHOLD 2000000
 #define OPERATE_PRE       1000000
 
-#define DISP_GPIO GPIO_NUM_21
-
 #define SYNC_DIFF_PAL_STD 9600000
 #define SYNC_DIFF_NTSC_STD 8008000
 #define I2S_TRANSMISSION_UNIT_TIME 122880
@@ -582,6 +580,7 @@ void display_set_power_down(bool power_down)
 void display_control_init()
 {
     operate_hang_semaphore = xSemaphoreCreateMutex();
+    gpio_set_pull_mode(DISP_GPIO, GPIO_PULLDOWN_ONLY);
     gpio_write(DISP_GPIO, 1);
     display_settings_update();
     vTaskDelay(100 / portTICK_PERIOD_MS);

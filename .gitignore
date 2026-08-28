@@ -83,7 +83,7 @@ Desktop.ini
 
 # Resources file
 !fonts/*.bin
-!resources/images/*.bin
+!resources/**/*.bin
 
 # PCB project, see OSHWHUB
 design/

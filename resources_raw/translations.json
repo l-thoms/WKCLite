@@ -6,14 +6,14 @@
         "zh_tw": "繁體中文"
     },
     "main_battery_disconnected_warning": {
-        "en_us": "Warning: The current device is not connected to a battery. Please ensure that the connected power source (such as a power bank) provides stable power to avoid accidental shutdown.",
-        "zh_cn": "警告: 当前设备未连接电池，请确保连接的电源（如充电宝）供电稳定，以免意外关机。",
-        "zh_tw": "警告: 當前設備未連接電池，請確保連接的電源（如移動電源）供電穩定，以免意外關機。"
+        "en_us": "Warning: The current device may not been connected to a battery. Please ensure that the connected power source (such as a power bank) provides stable power to avoid accidental shutdown.",
+        "zh_cn": "警告: 当前设备可能未连接电池，请确保连接的电源（如充电宝）供电稳定，以免意外关机。",
+        "zh_tw": "警告: 當前設備可能未連接電池，請確保連接的電源（如移動電源）供電穩定，以免意外關機。"
     },
     "menu_device_info": {
-        "en_us": "Info",
-        "zh_cn": "基本信息",
-        "zh_tw": "基本訊息"
+        "en_us": "About",
+        "zh_cn": "关于设备",
+        "zh_tw": "關於設備"
     },
     "menu_settings": {
         "en_us": "Settings",
@@ -916,14 +916,19 @@
         "zh_tw": "正在校正電量，請勿斷電"
     },
     "battery_uncalibrated": {
-        "en_us": " ??",
+        "en_us": "Uncalibrated",
         "zh_cn": "待校准",
         "zh_tw": "待校正"
     },
     "battery_charging": {
-        "en_us": "  …",
+        "en_us": "Charging",
         "zh_cn": "充电中",
         "zh_tw": "充電中"
+    },
+    "battery_unknown": {
+        "en_us": "Unknown",
+        "zh_cn": "未知",
+        "zh_tw": "未知"
     },
     "battery_calibrated": {
         "en_us": "Battery calibration okay",

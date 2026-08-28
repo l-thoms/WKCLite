@@ -113,7 +113,7 @@ void app_main(void)
 
     if(!plugged)
     ui_shell_show_toast(shell,
-        wkc_translations_get_string("main_battery_disconnected_warning"), 30);
+        wkc_translations_get_string("main_battery_disconnected_warning"), 10);
     // Begin main loop
     ESP_LOGI("MAIN", "Entering Mainloop...");
 

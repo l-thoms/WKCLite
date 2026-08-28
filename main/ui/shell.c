@@ -56,7 +56,7 @@ static void toast_get_region(ui_toast_t *toast, display_rect_t *bound, display_f
     int logical_height = orientation == DISPLAY_ORIENTATION_HORIZONTAL ?
                          DISPLAY_HEIGHT_PAL : DISPLAY_WIDTH_PAL;
     display_vector_t toast_origin = display_coordinate_compensation(18,
-                                    logical_height - 18, format);
+                                    logical_height - 14, format);
     int text_length;
     display_vector_t text_size;
     int selected_width = orientation == DISPLAY_ORIENTATION_HORIZONTAL ?

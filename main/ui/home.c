@@ -36,6 +36,7 @@ typedef struct
     bool last_eye_state;
     bool last_fan_state;
     bool last_lock_state;
+    int last_update_width;
 } ui_home_t;
 
 static void ui_home_on_show(ui_home_t *home)
@@ -81,7 +82,7 @@ static void ui_home_on_draw(ui_home_t *home, display_format_t *formats, display_
         home->show = false;
     }
     int global_y = wkc_settings_get_current()->homepage_status_bar_position ?
-                   logical_height - 36 : 14;
+                   logical_height - 32 : 14;
     display_vector_t icon_draw_origin = {
         .x = 16, .y = global_y
     };
@@ -197,6 +198,7 @@ static void ui_home_on_draw(ui_home_t *home, display_format_t *formats, display_
         display_rect_union(&total_rect_secondary, &update_rect_secondary);
         home->status_query_request = false;
         home->time_query_request = false;
+        home->last_update_width = update_width;
     }
 
     if(home->battery_query_request)
@@ -204,94 +206,95 @@ static void ui_home_on_draw(ui_home_t *home, display_format_t *formats, display_
         char battery_value[20];
 
         if (!home->last_battery_plugged)
-            sprintf(battery_value, " ??");
+            sprintf(battery_value, orientation == DISPLAY_ORIENTATION_VERTICAL ? "??" :
+                    wkc_translations_get_string("battery_unknown"));
         else if (!battery_calibration_is_valid())
-            sprintf(battery_value, wkc_translations_get_string("battery_uncalibrated"));
+            sprintf(battery_value, orientation == DISPLAY_ORIENTATION_VERTICAL ? "??" :
+                    wkc_translations_get_string("battery_uncalibrated"));
         else if (home->last_battery_charging && home->last_battery_value < 100)
-            sprintf(battery_value, wkc_translations_get_string("battery_charging"));
+            sprintf(battery_value, orientation == DISPLAY_ORIENTATION_VERTICAL ? "... " :
+                    wkc_translations_get_string("battery_charging"));
         else
-            sprintf(battery_value, "%3d%%", home->last_battery_value);
+            sprintf(battery_value, "%d%%", home->last_battery_value);
         // Draw battery icon and text
         display_vector_t icon_coordinate = {
-            .x = logical_width - 78, .y = icon_draw_origin.y - 2
+            .x = logical_width - 16, .y = icon_draw_origin.y - 2
         };
-        display_vector_t icon_coordinate_primary = display_coordinate_compensation(
-                         icon_coordinate.x, icon_coordinate.y, formats[0]);
-
-        display_vector_t icon_coordinate_secondary = display_coordinate_compensation(
-                         icon_coordinate.x, icon_coordinate.y, formats[1]);
-        char battery_icon_primary[60];
-        char battery_icon_secondary[60];
-        int battery_icon_width_primary, battery_icon_width_secondary;
-        select_battery_icon(battery_icon_primary, home->last_battery_value,
-            home->last_battery_charging, home->last_battery_plugged &&
-            battery_calibration_is_valid(), formats[0], &battery_icon_width_primary);
-        select_battery_icon(battery_icon_secondary, home->last_battery_value,
-            home->last_battery_charging, home->last_battery_plugged &&
-            battery_calibration_is_valid(), formats[1], &battery_icon_width_secondary);
 
         int text_length;
-        display_vector_t text_size_primary, text_size_secondary;
+        display_vector_t text_size;
+        free(font_measure_text(battery_value, DISPLAY_FORMAT_PAL, 0,
+             &text_length, &text_size));
         text_position_descriptor_t *descriptor_primary = font_measure_text(battery_value,
-                                   formats[0], 0, &text_length,
-                                   &text_size_primary);
+                                   formats[0], 0, NULL, NULL);
         text_position_descriptor_t *descriptor_secondary = font_measure_text(battery_value,
-                                   formats[1], 0, &text_length,
-                                   &text_size_secondary);
-        display_rect_t battery_rect = {
-            .x = icon_coordinate.x,
-            .y = icon_coordinate.y,
-            .width = DISPLAY_WIDTH_PAL - icon_coordinate.x,
-            .height = 25
+                                   formats[1], 0, NULL, NULL);
+        char battery_icon_primary[60] = { 0 },
+             battery_icon_secondary[60] = { 0 };
+        int icon_width_primary, icon_width_secondary;
+        select_battery_icon(battery_icon_primary, home->last_battery_value,
+                            home->last_battery_charging, home->last_battery_plugged,
+                            formats[0], &icon_width_primary);
+        select_battery_icon(battery_icon_secondary, home->last_battery_value,
+                            home->last_battery_charging, home->last_battery_plugged,
+                            formats[1], &icon_width_secondary);
+        int icon_origin = icon_coordinate.x - text_size.x - 30;
+        display_rect_t update_rect = {
+            .x = home->last_update_width + 16, .y = icon_coordinate.y,
+            .width = icon_coordinate.x - update_rect.x + 2, .height = 24 + 1
         };
-        display_rect_expand(&battery_rect, 0, 1);
-        display_rect_t battery_rect_primary = display_rect_compensation(
-            &battery_rect, formats[0]
-        );
-        display_rect_t battery_rect_secondary = display_rect_compensation(
-            &battery_rect, formats[1]
-        );
-        display_fill_rect(0, orientation, &battery_rect_primary, DISPLAY_COLOR_TRANSPARENT);
-        display_fill_rect(1, orientation, &battery_rect_secondary, DISPLAY_COLOR_TRANSPARENT);
+        display_rect_t update_rect_primary = display_rect_compensation(
+            &update_rect, formats[0]);
+        display_rect_t update_rect_secondary = display_rect_compensation(
+            &update_rect, formats[1]);
+        display_rect_expand(&update_rect_primary, 0, 1);
+        display_rect_expand(&update_rect_secondary, 0, 1);
+        display_fill_rect(0, orientation, &update_rect_primary, DISPLAY_COLOR_TRANSPARENT);
+        display_fill_rect(0, orientation, &update_rect_secondary, DISPLAY_COLOR_TRANSPARENT);
 
+        icon_draw_origin_primary = display_coordinate_compensation(icon_origin,
+                                   icon_coordinate.y, formats[0]);
+        icon_draw_origin_secondary = display_coordinate_compensation(icon_origin,
+                                   icon_coordinate.y, formats[1]);
         if (orientation != DISPLAY_ORIENTATION_VERTICAL_TILED)
         {
-            display_draw_image(0, orientation, icon_coordinate_primary.x + 1,
-                               icon_coordinate_primary.y + 1, battery_icon_primary,
-                               battery_icon_width_primary, DISPLAY_COLOR_BLACK);
-            display_draw_image(0, orientation, icon_coordinate_primary.x,
-                               icon_coordinate_primary.y, battery_icon_primary,
-                               battery_icon_width_primary, DISPLAY_COLOR_WHITE);
+            display_draw_image(0, orientation, icon_draw_origin_primary.x + 1,
+                               icon_draw_origin_primary.y + 1, battery_icon_primary,
+                               icon_width_primary, DISPLAY_COLOR_BLACK);
+            display_draw_image(0, orientation, icon_draw_origin_primary.x,
+                               icon_draw_origin_primary.y, battery_icon_primary,
+                               icon_width_primary, DISPLAY_COLOR_WHITE);
         }
-        display_draw_image(1, orientation, icon_coordinate_secondary.x + 1,
-                           icon_coordinate_secondary.y + 1, battery_icon_secondary,
-                           battery_icon_width_secondary, DISPLAY_COLOR_BLACK);
-        display_draw_image(1, orientation, icon_coordinate_secondary.x,
-                           icon_coordinate_secondary.y, battery_icon_secondary,
-                           battery_icon_width_secondary, DISPLAY_COLOR_WHITE);
+        display_draw_image(1, orientation, icon_draw_origin_secondary.x + 1,
+                           icon_draw_origin_secondary.y + 1, battery_icon_secondary,
+                           icon_width_secondary, DISPLAY_COLOR_BLACK);
+        display_draw_image(1, orientation, icon_draw_origin_secondary.x,
+                           icon_draw_origin_secondary.y, battery_icon_secondary,
+                           icon_width_secondary, DISPLAY_COLOR_WHITE);
 
-        display_vector_t text_coordinate_primary = display_coordinate_compensation(
-                                                  logical_width - 52, icon_draw_origin.y, formats[0]);
-        display_vector_t text_coordinate_secondary = display_coordinate_compensation(
-                                                    logical_width - 52, icon_draw_origin.y, formats[1]);
+        icon_origin += 30;
+        icon_draw_origin_primary = display_coordinate_compensation(icon_origin,
+                                   icon_coordinate.y + 2, formats[0]);
+        icon_draw_origin_secondary = display_coordinate_compensation(icon_origin,
+                                   icon_coordinate.y + 2, formats[1]);
         if (orientation != DISPLAY_ORIENTATION_VERTICAL_TILED)
         {
-            display_draw_text(0, orientation, text_coordinate_primary.x + 1,
-                              text_coordinate_primary.y + 1, descriptor_primary, text_length,
-                              DISPLAY_COLOR_BLACK, formats[0]);
-            display_draw_text(0, orientation, text_coordinate_primary.x,
-                              text_coordinate_primary.y, descriptor_primary, text_length,
-                              DISPLAY_COLOR_WHITE, formats[0]);
+            display_draw_text(0, orientation, icon_draw_origin_primary.x + 1,
+                            icon_draw_origin_primary.y + 1, descriptor_primary, text_length,
+                            DISPLAY_COLOR_BLACK, formats[0]);
+            display_draw_text(0, orientation, icon_draw_origin_primary.x,
+                            icon_draw_origin_primary.y, descriptor_primary, text_length,
+                            DISPLAY_COLOR_WHITE, formats[0]);
         }
-        display_draw_text(1, orientation, text_coordinate_secondary.x + 1,
-                          text_coordinate_secondary.y + 1, descriptor_secondary, text_length,
+        display_draw_text(1, orientation, icon_draw_origin_secondary.x + 1,
+                          icon_draw_origin_secondary.y + 1, descriptor_secondary, text_length,
                           DISPLAY_COLOR_BLACK, formats[1]);
-        display_draw_text(1, orientation, text_coordinate_secondary.x,
-                          text_coordinate_secondary.y, descriptor_secondary, text_length,
+        display_draw_text(1, orientation, icon_draw_origin_secondary.x,
+                          icon_draw_origin_secondary.y, descriptor_secondary, text_length,
                           DISPLAY_COLOR_WHITE, formats[1]);
 
-        display_rect_union(&total_rect_primary, &battery_rect_primary);
-        display_rect_union(&total_rect_secondary, &battery_rect_secondary);
+        display_rect_union(&total_rect_primary, &update_rect_primary);
+        display_rect_union(&total_rect_secondary, &update_rect_secondary);
         free(descriptor_primary);
         free(descriptor_secondary);
         home->battery_query_request = false;

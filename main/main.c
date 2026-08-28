@@ -112,8 +112,7 @@ void app_main(void)
     adc_monitor_read_battery(NULL, NULL, &plugged);
 
     if(!plugged)
-    ui_shell_show_toast(shell,
-        wkc_translations_get_string("main_battery_disconnected_warning"), 10);
+        ui_home_indicate(shell, 2);
     // Begin main loop
     ESP_LOGI("MAIN", "Entering Mainloop...");
 

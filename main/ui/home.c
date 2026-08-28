@@ -36,7 +36,8 @@ typedef struct
     bool last_eye_state;
     bool last_fan_state;
     bool last_lock_state;
-    int last_update_width;
+    int last_status_origin;
+    int indicate_id;
 } ui_home_t;
 
 static void ui_home_on_show(ui_home_t *home)
@@ -77,6 +78,8 @@ static void ui_home_on_draw(ui_home_t *home, display_format_t *formats, display_
                   home->battery_query_request;
     if(home->show)
     {
+        if (!home->indicate_id)
+            ui_shell_show_toast(home->base.parent, NULL, -1);
         DISPLAY_CLEAR_SCREEN(0);
         DISPLAY_CLEAR_SCREEN(1);
         home->show = false;
@@ -198,7 +201,7 @@ static void ui_home_on_draw(ui_home_t *home, display_format_t *formats, display_
         display_rect_union(&total_rect_secondary, &update_rect_secondary);
         home->status_query_request = false;
         home->time_query_request = false;
-        home->last_update_width = update_width;
+        home->last_status_origin = icon_draw_origin.x;
     }
 
     if(home->battery_query_request)
@@ -206,13 +209,19 @@ static void ui_home_on_draw(ui_home_t *home, display_format_t *formats, display_
         char battery_value[20];
 
         if (!home->last_battery_plugged)
-            sprintf(battery_value, orientation == DISPLAY_ORIENTATION_VERTICAL ? "??" :
-                    wkc_translations_get_string("battery_unknown"));
+        {
+            if (home->last_battery_value == 100)
+                sprintf(battery_value, orientation == DISPLAY_ORIENTATION_VERTICAL ? "??" :
+                        wkc_translations_get_string("battery_unplugged"));
+            else
+                sprintf(battery_value, orientation == DISPLAY_ORIENTATION_VERTICAL ? "??" :
+                        wkc_translations_get_string("battery_unknown"));
+        }
         else if (!battery_calibration_is_valid())
             sprintf(battery_value, orientation == DISPLAY_ORIENTATION_VERTICAL ? "??" :
                     wkc_translations_get_string("battery_uncalibrated"));
         else if (home->last_battery_charging && home->last_battery_value < 100)
-            sprintf(battery_value, orientation == DISPLAY_ORIENTATION_VERTICAL ? "... " :
+            sprintf(battery_value, orientation == DISPLAY_ORIENTATION_VERTICAL ? "..." :
                     wkc_translations_get_string("battery_charging"));
         else
             sprintf(battery_value, "%d%%", home->last_battery_value);
@@ -240,7 +249,7 @@ static void ui_home_on_draw(ui_home_t *home, display_format_t *formats, display_
                             formats[1], &icon_width_secondary);
         int icon_origin = icon_coordinate.x - text_size.x - 30;
         display_rect_t update_rect = {
-            .x = home->last_update_width + 16, .y = icon_coordinate.y,
+            .x = home->last_status_origin, .y = icon_coordinate.y,
             .width = icon_coordinate.x - update_rect.x + 2, .height = 24 + 1
         };
         display_rect_t update_rect_primary = display_rect_compensation(
@@ -321,6 +330,19 @@ static void ui_home_on_key_event(ui_home_t *home, int key_code)
 static void ui_home_on_mainloop(ui_home_t *home, bool on_foreground)
 {
     int64_t current_time = esp_timer_get_time();
+    if (on_foreground)
+    {
+        if (home->indicate_id > 0)
+        {
+            ui_shell_show_toast(home->base.parent, home->indicate_id == 2 ?
+                wkc_translations_get_string("main_battery_disconnected_warning") :
+                wkc_translations_get_string("ble_device_disconnected"),
+                home->indicate_id == 2 ? 10 : 5);
+            home->indicate_id = -1;
+        }
+        else if (home->indicate_id < 0)
+            home->indicate_id = 0;
+    }
     int current_status_bar_position = wkc_settings_get_current()->homepage_status_bar_position;
     if (on_foreground && home->last_status_bar_position != current_status_bar_position)
     {
@@ -399,6 +421,13 @@ void ui_home_update_from_shell(ui_shell_t *shell)
     {
         _ui_home_request_update_priv(current_page);
     }
+}
+
+void ui_home_indicate(ui_shell_t *shell, int msg_id)
+{
+    ui_home_t *home = (ui_home_t*)ui_shell_find_page(shell, UI_PAGE_TYPE_HOME);
+    if(home == NULL) return;
+    home->indicate_id = msg_id;
 }
 
 ui_page_t *ui_home_create()

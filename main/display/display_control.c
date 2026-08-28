@@ -522,7 +522,12 @@ static void display_control_polling_task(void *params)
         if (!last_power_state && current_power_state)
             gpio_write(DISP_GPIO, 0);
         else if (last_power_state && !current_power_state)
+        {
+            ui_shell_t *shell = ui_shell_get_current();
             gpio_write(DISP_GPIO, 1);
+            if (shell)
+                ui_shell_set_wakeup(shell);
+        }
 
         vTaskDelay(50 / portTICK_PERIOD_MS);
     }

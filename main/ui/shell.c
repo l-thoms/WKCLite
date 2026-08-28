@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
+#include "math.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "ui_common.h"
@@ -12,6 +13,7 @@
 #include "esp_timer.h"
 
 #define MAX_PAGE_STORAGE_COUNT 10
+#define TOAST_TRANSITION_DURATION 200000
 
 typedef enum
 {
@@ -32,6 +34,8 @@ typedef struct
     int64_t start_time;
     display_orientation_t orientation;
     int duration;
+    int last_offset[2];
+    bool animating;
 } ui_toast_t;
 
 typedef struct ui_shell_t
@@ -46,6 +50,7 @@ typedef struct ui_shell_t
     display_orientation_t orientation;
     int interval;
     QueueHandle_t queue;
+    bool wakeup;
 } ui_shell_t;
 
 ui_shell_t *current_shell = NULL;
@@ -75,21 +80,31 @@ static void toast_get_region(ui_toast_t *toast, display_rect_t *bound, display_f
     free(descriptor);
 }
 
-static void ui_shell_close_toast(ui_shell_t *shell)
+static void ui_shell_clear_toast(ui_shell_t *shell, bool update)
 {
-    // Clear toast display region
     display_rect_t bound[2];
     toast_get_region(&shell->toast, &bound[0], shell->format_primary, shell->toast.orientation);
     toast_get_region(&shell->toast, &bound[1], shell->format_secondary, shell->toast.orientation);
 
-    display_rect_expand(bound, 1, 1);
-    display_rect_expand(bound + 1, 1, 1);
+    display_rect_translate(&bound[0], shell->toast.last_offset[0], 0);
+    display_rect_translate(&bound[1], shell->toast.last_offset[1], 0);
+
+    display_rect_expand(&bound[0], 1, 1);
+    display_rect_expand(&bound[1], 1, 1);
 
     display_fill_rect(2, shell->toast.orientation, &bound[0], DISPLAY_COLOR_TRANSPARENT);
     display_fill_rect(3, shell->toast.orientation, &bound[1], DISPLAY_COLOR_TRANSPARENT);
 
-    display_update(0, shell->toast.orientation, &bound[0]);
-    display_update(1, shell->toast.orientation, &bound[1]);
+    if (update)
+    {
+        display_update(0, shell->toast.orientation, &bound[0]);
+        display_update(1, shell->toast.orientation, &bound[1]);
+    }
+}
+
+static void ui_shell_close_toast(ui_shell_t *shell)
+{
+    ui_shell_clear_toast(shell, true);
 
     // Free toast
     if (shell->toast.message)
@@ -97,13 +112,14 @@ static void ui_shell_close_toast(ui_shell_t *shell)
         free(shell->toast.message);
         shell->toast.message = NULL;
     }
+    shell->toast.animating = false;
 }
 
 static void ui_shell_sync_toast(ui_shell_t *shell, char *msg, int duration)
 {
-    if(shell == NULL) return;
+    if (shell == NULL) return;
     int64_t current_time = esp_timer_get_time();
-    if(shell->toast.message != NULL)
+    if (shell->toast.message != NULL)
     {
         if (current_time - shell->toast.start_time > (int64_t)shell->toast.duration * 1000000 ||
            duration < 0 || msg != NULL)
@@ -115,53 +131,120 @@ static void ui_shell_sync_toast(ui_shell_t *shell, char *msg, int duration)
         shell->toast.message = msg;
         shell->toast.orientation = shell->orientation;
         shell->toast.duration = duration;
-        display_rect_t bound_primary, bound_secondary;
-        toast_get_region(&shell->toast, &bound_primary, shell->format_primary, shell->orientation);
-        toast_get_region(&shell->toast, &bound_secondary, shell->format_secondary, shell->orientation);
+        shell->toast.start_time = current_time;
+    }
 
-        display_fill_rounded_rect(2, shell->orientation, &bound_primary, DISPLAY_COLOR_BLACK, 3);
-        display_draw_rounded_rect(2, shell->orientation, &bound_primary, DISPLAY_COLOR_WHITE, 3, 1);
-        if (shell->orientation != DISPLAY_ORIENTATION_VERTICAL_TILED)
+    if (shell->toast.message != NULL)
+    {
+        ui_shell_clear_toast(shell, false);
+        display_rect_t bound_primary, bound_secondary;
+        toast_get_region(&shell->toast, &bound_primary, shell->format_primary,
+                         shell->orientation);
+        toast_get_region(&shell->toast, &bound_secondary, shell->format_secondary,
+                         shell->orientation);
+
+        int current_offset[2];
+        bool animation_stop = false;
+        if (current_time > shell->toast.start_time + (shell->toast.duration - 1) *
+            1000000)
         {
-            display_fill_rounded_rect(3, shell->orientation, &bound_secondary, DISPLAY_COLOR_BLACK, 3);
-            display_draw_rounded_rect(3, shell->orientation, &bound_secondary, DISPLAY_COLOR_WHITE, 3, 1);
+            shell->interval = 10;
+        }
+        if (current_time < shell->toast.start_time + TOAST_TRANSITION_DURATION)
+        {
+            shell->toast.animating = true;
+            current_offset[0] = (int)(-powf(1 - (float)(current_time -
+                shell->toast.start_time) / TOAST_TRANSITION_DURATION, 2) *
+                (bound_primary.x + bound_primary.width));
+            current_offset[1] = (int)(-powf(1 - (float)(current_time -
+                shell->toast.start_time) / TOAST_TRANSITION_DURATION, 2) *
+                (bound_secondary.x + bound_secondary.width));
+        }
+        else if (current_time > shell->toast.start_time + shell->toast.duration *
+                 1000000 - TOAST_TRANSITION_DURATION)
+        {
+            shell->toast.animating = true;
+            current_offset[0] = (int)(-powf((float)(shell->toast.start_time +
+                shell->toast.duration * 1000000 - TOAST_TRANSITION_DURATION -
+                current_time) / TOAST_TRANSITION_DURATION, 2) * (bound_primary.x +
+                bound_primary.width));
+            current_offset[1] = (int)(-powf((float)(shell->toast.start_time +
+                shell->toast.duration * 1000000 - TOAST_TRANSITION_DURATION -
+                current_time) / TOAST_TRANSITION_DURATION, 2) * (bound_secondary.x +
+                bound_secondary.width));
+        }
+        else
+        {
+            current_offset[0] = 0;
+            current_offset[1] = 0;
+            animation_stop = true;
         }
 
-        int text_length;
-        display_vector_t text_size;
+        display_rect_translate(&bound_primary, current_offset[0], 0);
+        display_rect_translate(&bound_secondary, current_offset[1], 0);
+        if (shell->toast.animating)
+        {
+            shell->interval = 0;
+            display_fill_rounded_rect(2, shell->orientation, &bound_primary,
+                                      DISPLAY_COLOR_BLACK, 3);
+            display_draw_rounded_rect(2, shell->orientation, &bound_primary,
+                                      DISPLAY_COLOR_WHITE, 3, 1);
+            if (shell->orientation != DISPLAY_ORIENTATION_VERTICAL_TILED)
+            {
+                display_fill_rounded_rect(3, shell->orientation, &bound_secondary, DISPLAY_COLOR_BLACK, 3);
+                display_draw_rounded_rect(3, shell->orientation, &bound_secondary, DISPLAY_COLOR_WHITE, 3, 1);
+            }
 
-        int selected_width = shell->orientation == DISPLAY_ORIENTATION_HORIZONTAL ?
-                             DISPLAY_WIDTH_PAL : DISPLAY_HEIGHT_PAL;
-        text_position_descriptor_t *descriptor_primary = font_measure_text(shell->toast.message,
-                                   shell->format_primary, selected_width - 64,
-                                   &text_length, &text_size);
-        text_position_descriptor_t *descriptor_secondary = font_measure_text(shell->toast.message,
-                                   shell->format_secondary,
-                                   selected_width - 64, &text_length, &text_size);
-        display_draw_text(2, shell->orientation, bound_primary.x + 6, bound_primary.y + 3,
-                          descriptor_primary, text_length, DISPLAY_COLOR_WHITE, shell->format_primary);
+            int text_length;
+            display_vector_t text_size;
 
-        if (shell->orientation != DISPLAY_ORIENTATION_VERTICAL_TILED)
-            display_draw_text(3, shell->orientation, bound_secondary.x + 6, bound_secondary.y + 3,
-                descriptor_secondary, text_length, DISPLAY_COLOR_WHITE, shell->format_secondary);
-        free(descriptor_primary);
-        free(descriptor_secondary);
-        display_rect_expand(&bound_primary, 1, 1);
-        display_rect_expand(&bound_secondary, 1, 1);
-        display_update(0, shell->orientation, &bound_primary);
-        display_update(1, shell->orientation, &bound_secondary);
-        shell->toast.start_time = current_time;
+            int selected_width = shell->orientation == DISPLAY_ORIENTATION_HORIZONTAL ?
+                                 DISPLAY_WIDTH_PAL : DISPLAY_HEIGHT_PAL;
+            text_position_descriptor_t *descriptor_primary = font_measure_text(shell->toast.message,
+                                       shell->format_primary, selected_width - 64,
+                                       &text_length, &text_size);
+            text_position_descriptor_t *descriptor_secondary = font_measure_text(shell->toast.message,
+                                       shell->format_secondary,
+                                       selected_width - 64, &text_length, &text_size);
+            display_draw_text(2, shell->orientation, bound_primary.x + 6 +
+                              current_offset[0], bound_primary.y + 3, descriptor_primary,
+                              text_length, DISPLAY_COLOR_WHITE, shell->format_primary);
+
+            if (shell->orientation != DISPLAY_ORIENTATION_VERTICAL_TILED)
+                display_draw_text(3, shell->orientation, bound_secondary.x + 6 +
+                    current_offset[1], bound_secondary.y + 3, descriptor_secondary,
+                    text_length, DISPLAY_COLOR_WHITE, shell->format_secondary);
+            free(descriptor_primary);
+            free(descriptor_secondary);
+            display_rect_expand(&bound_primary, 1, 1);
+            display_rect_expand(&bound_secondary, 1, 1);
+            display_rect_t animated_bound_primary, animated_bound_secondary;
+            toast_get_region(&shell->toast, &animated_bound_primary, shell->format_primary,
+                             shell->orientation);
+            toast_get_region(&shell->toast, &animated_bound_secondary, shell->format_secondary,
+                             shell->orientation);
+            display_rect_translate(&animated_bound_primary, shell->toast.last_offset[0], 0);
+            display_rect_translate(&animated_bound_secondary, shell->toast.last_offset[1], 0);
+            display_rect_expand(&animated_bound_primary, 1, 1);
+            display_rect_expand(&animated_bound_secondary, 1, 1);
+            display_rect_union(&animated_bound_primary, &bound_primary);
+            display_rect_union(&animated_bound_secondary, &bound_secondary);
+            display_update(0, shell->orientation, &animated_bound_primary);
+            display_update(1, shell->orientation, &animated_bound_secondary);
+            memcpy(shell->toast.last_offset, current_offset, 2 * sizeof(int));
+            if (animation_stop)
+                shell->toast.animating = false;
+        }
     }
 }
 
 void ui_shell_show_toast(ui_shell_t *shell, char *message, int duration)
 {
-    if(shell == NULL) return;
+    if (shell == NULL) return;
     char *msg_copy = NULL;
     if (message != NULL)
     {
-        msg_copy = calloc(strlen(message) + 1, 1);
-        strcpy(msg_copy, message);
+        msg_copy = strdup(message);
     }
     int result = xQueueSendToBack(shell->queue, (&(ui_shell_queue_info_t) {
         .event_type = QUEUE_EVENT_TOAST, .num = duration, .msg = msg_copy
@@ -172,7 +255,7 @@ void ui_shell_show_toast(ui_shell_t *shell, char *message, int duration)
 void ui_shell_show_page(ui_shell_t *shell, ui_page_t *page)
 {
     for(int i = 0; i < MAX_PAGE_STORAGE_COUNT; i++)
-        if(shell->page_storage[i] == page)
+        if (shell->page_storage[i] == page)
         {
             shell->page_backlog = page;
             xQueueSendToBack(shell->queue, &(ui_shell_queue_info_t) {
@@ -185,10 +268,10 @@ void ui_shell_show_page(ui_shell_t *shell, ui_page_t *page)
 void ui_shell_add_page(ui_shell_t *shell, ui_page_t *page)
 {
     for (int i = 0; i < MAX_PAGE_STORAGE_COUNT; i++)
-        if(shell->page_storage[i] == page) return;
+        if (shell->page_storage[i] == page) return;
     for (int i = 0; i < MAX_PAGE_STORAGE_COUNT; i++)
     {
-        if(shell->page_storage[i] == NULL)
+        if (shell->page_storage[i] == NULL)
         {
             shell->page_storage[i] = page;
             page->parent = shell;
@@ -200,7 +283,7 @@ void ui_shell_add_page(ui_shell_t *shell, ui_page_t *page)
 ui_page_t *ui_shell_find_page(ui_shell_t *shell, ui_page_type_t type)
 {
     for(int i = 0; i < MAX_PAGE_STORAGE_COUNT; i++)
-        if(shell->page_storage[i]->type == type) return shell->page_storage[i];
+        if (shell->page_storage[i]->type == type) return shell->page_storage[i];
     return NULL;
 }
 
@@ -243,36 +326,47 @@ void ui_shell_acquire_interval(ui_shell_t *shell, int interval)
         shell->interval = interval;
 }
 
+void ui_shell_set_wakeup(ui_shell_t *shell)
+{
+    if (shell)
+        shell->wakeup = true;
+}
+
 void ui_shell_mainloop(ui_shell_t *shell)
 {
-    if(shell != NULL)
-        for(;;)
+    if (shell != NULL)
+        for (;;)
         {
             ui_shell_queue_info_t queue_info = { .event_type = QUEUE_EVENT_UPDATE };
             xQueueReceive(shell->queue, &queue_info, shell->interval / portTICK_PERIOD_MS);
             shell->interval = 500;
             // Show page in backlog
-            if(shell->page_backlog != NULL)
+            if (shell->page_backlog != NULL)
             {
-                if(shell->page_backlog != shell->current_page)
+                if (shell->page_backlog != shell->current_page)
                 {
                     shell->current_page = shell->page_backlog;
                     ui_page_on_show(shell->current_page);
                 }
             }
-            if(shell->current_page != NULL && shell->key_backlog != -1)
+            ui_page_t *current = shell->current_page;
+            if (current != NULL && shell->wakeup)
             {
-                ui_page_on_key_event(shell->current_page,shell->key_backlog);
+                ui_page_on_wakeup(current);
+                shell->wakeup = false;
+            }
+            if (current != NULL && shell->key_backlog != -1)
+            {
+                ui_page_on_key_event(current,shell->key_backlog);
                 shell->key_backlog = -1;
             }
-            for(int i = 0; i < MAX_PAGE_STORAGE_COUNT; i++)
+            for (int i = 0; i < MAX_PAGE_STORAGE_COUNT; i++)
             {
-                if(shell->page_storage[i] == NULL) continue;
+                if (shell->page_storage[i] == NULL) continue;
                 ui_page_on_mainloop(shell->page_storage[i],
-                    shell->page_storage[i] == shell->current_page);
+                    shell->page_storage[i] == current);
             }
-            ui_page_t *current = shell->current_page;
-            if(current != NULL)
+            if (current != NULL)
             {
                 display_format_t formats[2];
                 display_control_get_formats(formats);
@@ -294,7 +388,7 @@ void ui_shell_mainloop(ui_shell_t *shell)
                 ui_page_on_draw(current, (display_format_t[]) {
                     shell->format_primary, shell->format_secondary }, shell->orientation);
             }
-            if(queue_info.event_type == QUEUE_EVENT_TOAST)
+            if (queue_info.event_type == QUEUE_EVENT_TOAST)
                 ui_shell_sync_toast(shell, queue_info.msg, queue_info.num);
             else
                 ui_shell_sync_toast(shell, NULL, 0);

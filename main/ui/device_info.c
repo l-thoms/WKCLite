@@ -76,6 +76,7 @@ void ui_device_info_on_draw(ui_device_info_t *device_info, display_format_t* for
         wkc_userprofile_release_semaphore();
         return;
     }
+    ui_shell_show_toast(device_info->base.parent, NULL, -1);
     DISPLAY_CLEAR_SCREEN(0);
     DISPLAY_CLEAR_SCREEN(1);
 

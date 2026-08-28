@@ -8,7 +8,7 @@
     "main_battery_disconnected_warning": {
         "en_us": "Warning: The current device may not been connected to a battery. Please ensure that the connected power source (such as a power bank) provides stable power to avoid accidental shutdown.",
         "zh_cn": "警告: 当前设备可能未连接电池，请确保连接的电源（如充电宝）供电稳定，以免意外关机。",
-        "zh_tw": "警告: 當前設備可能未連接電池，請確保連接的電源（如移動電源）供電穩定，以免意外關機。"
+        "zh_tw": "警告: 當前設備可能未連接電池，請確保連接的電源（如行動電源）供電穩定，以免意外關機。"
     },
     "menu_device_info": {
         "en_us": "About",
@@ -71,9 +71,9 @@
         "zh_tw": "頭殼鎖"
     },
     "menu_peripherals_disable_calibrate": {
-        "en_us": "Peripherals are disabled during battery calibration.",
-        "zh_cn": "电量校准期间禁止使用外设。",
-        "zh_tw": "電量校正期間禁止使用周邊設備。"
+        "en_us": "Peripherals are disabled during battery calibration",
+        "zh_cn": "电量校准期间禁止使用外设",
+        "zh_tw": "電量校正期間禁止使用周邊設備"
     },
     "menu_unlocked": {
         "en_us": "Unlocked",
@@ -89,11 +89,6 @@
         "en_us": "Please check your battery.",
         "zh_cn": "请确保电量充足再上锁",
         "zh_tw": "請確保電量充足再上鎖"
-    },
-    "menu_capture_under_development": {
-        "en_us": "Camera capture is still under development.",
-        "zh_cn": "拍摄功能仍在开发中，敬请期待。",
-        "zh_tw": "拍摄功能仍在開發中，敬請期待。"
     },
     "device_info_title": {
         "en_us": "Device Information",
@@ -929,6 +924,11 @@
         "en_us": "Unknown",
         "zh_cn": "未知",
         "zh_tw": "未知"
+    },
+    "battery_unplugged": {
+        "en_us": "Unplugged",
+        "zh_cn": "未接入",
+        "zh_tw": "未接入"
     },
     "battery_calibrated": {
         "en_us": "Battery calibration okay",

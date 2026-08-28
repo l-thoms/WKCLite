@@ -55,6 +55,7 @@ typedef struct ui_camera_t
     bool timeout_start;
     bool timeout_clear;
     ui_menu_item_t *current_menu[10];
+    bool last_power_save;
 } ui_camera_t;
 
 static ui_menu_item_t *ui_camera_build_saa7113_menu();
@@ -1322,6 +1323,7 @@ static void ui_camera_on_draw(ui_camera_t *camera, display_format_t *formats,
     int max_items = orientation == DISPLAY_ORIENTATION_HORIZONTAL ? 7 : 10;
     if (camera->show)
     {
+        ui_shell_show_toast(camera->base.parent, NULL, -1);
         DISPLAY_CLEAR_SCREEN(0);
         DISPLAY_CLEAR_SCREEN(1);
     }
@@ -1679,6 +1681,8 @@ static void ui_camera_on_draw(ui_camera_t *camera, display_format_t *formats,
 static void ui_camera_capture(ui_camera_t *camera,
                               display_orientation_t orientation, bool ignore_timeout)
 {
+    if (camera->last_power_save)
+        return;
     camera_control_t *control = camera_control_get_current();
     int64_t current_time = esp_timer_get_time();
     if (!camera_is_ready())
@@ -1699,6 +1703,7 @@ static void ui_camera_capture(ui_camera_t *camera,
     else
     {
         uint8_t *capture_result;
+        ui_shell_show_toast(camera->base.parent, NULL, -1);
         DISPLAY_CLEAR_SCREEN(0);
         DISPLAY_CLEAR_SCREEN(1);
         int image_size = camera_capture(&capture_result);
@@ -1861,14 +1866,19 @@ static void ui_camera_on_mainloop(ui_camera_t *camera, bool on_foreground)
 {
     if (!on_foreground)
     {
+        camera->last_power_save = false;
         if (camera_get_power_state())
             camera_powerdown();
     }
     else
     {
+        if (!camera->last_power_save)
+        {
+            camera->last_power_save = display_get_power_save();
+        }
         if (camera->timeout != 0)
         {
-            ui_shell_acquire_interval(camera->base.parent, 100);
+            ui_shell_acquire_interval(camera->base.parent, 10);
             if (esp_timer_get_time() - camera->timeout > 0)
             {
                 ui_camera_capture(camera, ui_shell_get_orientation(camera->base.parent),
@@ -1877,6 +1887,15 @@ static void ui_camera_on_mainloop(ui_camera_t *camera, bool on_foreground)
             }
         }
     }
+}
+
+static void ui_camera_on_wakeup(ui_camera_t *camera)
+{
+    ui_camera_t *parent = camera;
+    camera->last_power_save = false;
+    vTaskDelay(200 / portTICK_PERIOD_MS);
+    UI_CAMERA_CHECK_UPDATE(camera_poweron());
+    UI_CAMERA_CHECK_UPDATE(camera_set_channel(camera_control_get_current()->channel));
 }
 
 ui_page_t *ui_camera_create()
@@ -1888,6 +1907,7 @@ ui_page_t *ui_camera_create()
     camera->base.on_key_event = (ui_page_key_event_t)ui_camera_on_key_event;
     camera->base.on_mainloop = (ui_page_mainloop_event_t)ui_camera_on_mainloop;
     camera->base.on_format_changed = (ui_page_event_t)ui_camera_on_format_changed;
+    camera->base.on_wakeup = (ui_page_event_t)ui_camera_on_wakeup;
     return (ui_page_t*)camera;
 }
 

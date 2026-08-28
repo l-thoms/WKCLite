@@ -95,6 +95,7 @@ static void ui_settings_draw_display_position(int index, display_format_t format
 
     if (index == 0)
     {
+        ui_shell_show_toast(ui_shell_get_current(), NULL, -1);
         DISPLAY_CLEAR_SCREEN(0);
         DISPLAY_CLEAR_SCREEN(1);
 
@@ -618,6 +619,7 @@ static void ui_settings_on_draw(ui_settings_t *settings, display_format_t *forma
         {
             if (settings->menu_state != UI_SETTINGS_ADVANCED_CONFIRM)
             {
+                ui_shell_show_toast(settings->base.parent, NULL, -1);
                 DISPLAY_CLEAR_SCREEN(0);
                 DISPLAY_CLEAR_SCREEN(1);
             }
@@ -692,6 +694,7 @@ static void ui_settings_on_draw(ui_settings_t *settings, display_format_t *forma
         };
         if (settings->show || settings->last_selected_index < 0)
         {
+            ui_shell_show_toast(settings->base.parent, NULL, -1);
             if (orientation != DISPLAY_ORIENTATION_VERTICAL_TILED)
                 DISPLAY_CLEAR_SCREEN(0);
             DISPLAY_CLEAR_SCREEN(1);
@@ -754,6 +757,7 @@ static void ui_settings_on_draw(ui_settings_t *settings, display_format_t *forma
         };
         if (settings->show || settings->last_selected_index < 0)
         {
+            ui_shell_show_toast(settings->base.parent, NULL, -1);
             if (orientation != DISPLAY_ORIENTATION_VERTICAL_TILED)
                 DISPLAY_CLEAR_SCREEN(0);
             DISPLAY_CLEAR_SCREEN(1);
@@ -795,6 +799,7 @@ static void ui_settings_on_draw(ui_settings_t *settings, display_format_t *forma
         };
         if (settings->show || settings->last_selected_index < 0)
         {
+            ui_shell_show_toast(settings->base.parent, NULL, -1);
             if (orientation != DISPLAY_ORIENTATION_VERTICAL_TILED)
                 DISPLAY_CLEAR_SCREEN(0);
             DISPLAY_CLEAR_SCREEN(1);

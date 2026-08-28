@@ -8,6 +8,7 @@
 #include "display/display_control.h"
 #include "peripherals/battery_calibration.h"
 
+static bool power_state = true;
 static ui_shell_t *current_shell = NULL;
 int64_t last_keydown_time = 0;
 
@@ -33,8 +34,16 @@ static void power_key_isr(void *args)
     lock_set_from_isr(false, false, true);
     if (!battery_calibration_is_calibrating())
     {
-        esp_sleep_enable_ext0_wakeup(GPIO_NUM_0, 0);
-        esp_light_sleep_start();
+        power_state = !power_state;
+        if (!power_state)
+        {
+            esp_sleep_enable_ext0_wakeup(GPIO_NUM_0, 0);
+            esp_light_sleep_start();
+        }
+        else
+        {
+            display_reset_power_save();
+        }
     }
 }
 

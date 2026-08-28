@@ -42,6 +42,7 @@ typedef struct ui_page_t
     ui_page_key_event_t on_key_event;
     ui_page_mainloop_event_t on_mainloop;
     ui_page_event_t on_format_changed;
+    ui_page_event_t on_wakeup;
 } ui_page_t;
 
 typedef enum

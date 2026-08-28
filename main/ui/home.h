@@ -4,3 +4,4 @@
 
 ui_page_t *ui_home_create();
 void ui_home_update_from_shell(ui_shell_t *shell);
+void ui_home_indicate(ui_shell_t *shell, int msg_id);

@@ -404,7 +404,7 @@ static int ble_gap_event_handler(struct ble_gap_event *event, void *arg)
             if (event->disconnect.conn.conn_handle == current_handle)
             {
                 current_handle = BLE_HS_CONN_HANDLE_NONE;
-                ui_shell_show_toast(current_shell, wkc_translations_get_string("ble_device_disconnected"), 5);
+                ui_home_indicate(current_shell, 1);
                 ui_shell_show_page(current_shell, ui_shell_find_page(
                     current_shell, UI_PAGE_TYPE_HOME));
                 ESP_LOGI(TAG, "Active device disconnected");

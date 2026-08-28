@@ -81,12 +81,12 @@
         "zh_tw": "未鎖定"
     },
     "menu_lock_too_fast": {
-        "en_us": "Please try again later.",
+        "en_us": "Please try again later",
         "zh_cn": "操作太快，请稍候再试",
         "zh_tw": "操作太快，請稍候再試"
     },
     "menu_lock_check_battery": {
-        "en_us": "Please check your battery.",
+        "en_us": "Please check your battery",
         "zh_cn": "请确保电量充足再上锁",
         "zh_tw": "請確保電量充足再上鎖"
     },

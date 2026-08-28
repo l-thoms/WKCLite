@@ -184,7 +184,7 @@ static void ui_shell_sync_toast(ui_shell_t *shell, char *msg, int duration)
         display_rect_translate(&bound_secondary, current_offset[1], 0);
         if (shell->toast.animating)
         {
-            shell->interval = 0;
+            shell->interval = 10;
             display_fill_rounded_rect(2, shell->orientation, &bound_primary,
                                       DISPLAY_COLOR_BLACK, 3);
             display_draw_rounded_rect(2, shell->orientation, &bound_primary,
@@ -206,18 +206,19 @@ static void ui_shell_sync_toast(ui_shell_t *shell, char *msg, int duration)
             text_position_descriptor_t *descriptor_secondary = font_measure_text(shell->toast.message,
                                        shell->format_secondary,
                                        selected_width - 64, &text_length, &text_size);
-            display_draw_text(2, shell->orientation, bound_primary.x + 6 +
-                              current_offset[0], bound_primary.y + 3, descriptor_primary,
-                              text_length, DISPLAY_COLOR_WHITE, shell->format_primary);
+            display_draw_text(2, shell->orientation, bound_primary.x + 6,
+                bound_primary.y + 3, descriptor_primary, text_length,
+                DISPLAY_COLOR_WHITE, shell->format_primary);
 
             if (shell->orientation != DISPLAY_ORIENTATION_VERTICAL_TILED)
-                display_draw_text(3, shell->orientation, bound_secondary.x + 6 +
-                    current_offset[1], bound_secondary.y + 3, descriptor_secondary,
-                    text_length, DISPLAY_COLOR_WHITE, shell->format_secondary);
+                display_draw_text(3, shell->orientation, bound_secondary.x + 6,
+                    bound_secondary.y + 3, descriptor_secondary, text_length,
+                    DISPLAY_COLOR_WHITE, shell->format_secondary);
             free(descriptor_primary);
             free(descriptor_secondary);
             display_rect_expand(&bound_primary, 1, 1);
             display_rect_expand(&bound_secondary, 1, 1);
+
             display_rect_t animated_bound_primary, animated_bound_secondary;
             toast_get_region(&shell->toast, &animated_bound_primary, shell->format_primary,
                              shell->orientation);

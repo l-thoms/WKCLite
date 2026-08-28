@@ -144,19 +144,20 @@ double battery_value_get_coarse(double vload, double pload)
     }
 }
 
-static int battery_value_get_precise(double vload, double pload)
+double battery_value_get_precise(double vload, double pload)
 {
     double zero_point = battery_calibration_get_current()->value_zero;
     double full_point = vbat_to_battery_value(
         battery_calibration_get_current()->voltage_charging);
     double current_point = battery_value_get_coarse(vload, pload);
-    return clamp((int)((current_point - zero_point) / (full_point - zero_point) * 100 +
-                 0.5), 0, 100);
+    return (current_point - zero_point) / (full_point - zero_point) * 100;
 }
 
 static int battery_value_get(double vload, double pload)
 {
-    int precise_value = battery_value_get_precise(vload, pload);
+    int precise_value = clamp((int)(0.5 + battery_value_get_precise(vload, pload) *
+                        battery_calibration_get_current()->compensation_coefficient),
+                        0, 100);
     if (precise_value < current_battery_result ||
         precise_value >= current_battery_result + 5)
         return precise_value;

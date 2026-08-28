@@ -11,6 +11,7 @@ typedef struct
     double power_eye[3];
     double power_fan[3];
     double power_camera;
+    double compensation_coefficient;
 } battery_calibration_data_t;
 
 void battery_calibration_init();

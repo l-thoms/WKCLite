@@ -149,6 +149,17 @@ int battery_calibration_calibrate(double voltage_charging, double voltage_stdby)
     memcpy(&calibration_data.power_eye, &power_eye, sizeof(power_eye));
     memcpy(&calibration_data.power_fan, &power_fan, sizeof(power_fan));
     calibration_data.power_camera = power_camera;
+    vTaskDelay(2000 / portTICK_PERIOD_MS);
+    double voltage_compensation = 0;
+    for (int i = 0; i < 10; i++)
+    {
+        int voltage_read = adc_monitor_read_channel(ADC_BATTERY_CHANNEL);
+        if (voltage_read < 0) goto battery_calibrate_failed;
+        voltage_compensation += adc_value_to_voltage(voltage_read) / 10;
+        vTaskDelay(100 / portTICK_PERIOD_MS);
+    }
+    calibration_data.compensation_coefficient = 100 / battery_value_get_precise(
+                                                voltage_compensation, power_base);
 
     wkc_save(CALIBRATION_DATA_PATH, (char*)&calibration_data, sizeof(battery_calibration_data_t));
     calibration_valid = true;

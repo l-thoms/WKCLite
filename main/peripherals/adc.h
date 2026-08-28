@@ -23,4 +23,5 @@ double battery_value_get_coarse(double vload, double pload);
 double vbat_to_resistance(double vbat);
 int adc_monitor_read_channel(adc_channel_t channel);
 void adc_monitor_read_battery(int *value, bool *charging, bool *plugged);
+double battery_value_get_precise(double vload, double pload);
 bool adc_monitor_read_ir();

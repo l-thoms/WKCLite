@@ -459,7 +459,6 @@ static void ui_files_on_draw(ui_files_t *files, display_format_t *formats,
 
     if (files->show)
     {
-        ui_shell_show_toast(files->base.parent, NULL, -1);
         DISPLAY_CLEAR_SCREEN(0);
         DISPLAY_CLEAR_SCREEN(1);
         display_rect_t border_rect_primary = display_rect_compensation(&border_rect, formats[0]);

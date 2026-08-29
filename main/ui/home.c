@@ -37,7 +37,6 @@ typedef struct
     bool last_fan_state;
     bool last_lock_state;
     int last_status_origin;
-    int indicate_id;
 } ui_home_t;
 
 static void ui_home_on_show(ui_home_t *home)
@@ -78,8 +77,6 @@ static void ui_home_on_draw(ui_home_t *home, display_format_t *formats, display_
                   home->battery_query_request;
     if(home->show)
     {
-        if (!home->indicate_id)
-            ui_shell_show_toast(home->base.parent, NULL, -1);
         DISPLAY_CLEAR_SCREEN(0);
         DISPLAY_CLEAR_SCREEN(1);
         home->show = false;
@@ -259,7 +256,7 @@ static void ui_home_on_draw(ui_home_t *home, display_format_t *formats, display_
         display_rect_expand(&update_rect_primary, 0, 1);
         display_rect_expand(&update_rect_secondary, 0, 1);
         display_fill_rect(0, orientation, &update_rect_primary, DISPLAY_COLOR_TRANSPARENT);
-        display_fill_rect(0, orientation, &update_rect_secondary, DISPLAY_COLOR_TRANSPARENT);
+        display_fill_rect(1, orientation, &update_rect_secondary, DISPLAY_COLOR_TRANSPARENT);
 
         icon_draw_origin_primary = display_coordinate_compensation(icon_origin,
                                    icon_coordinate.y, formats[0]);
@@ -330,19 +327,6 @@ static void ui_home_on_key_event(ui_home_t *home, int key_code)
 static void ui_home_on_mainloop(ui_home_t *home, bool on_foreground)
 {
     int64_t current_time = esp_timer_get_time();
-    if (on_foreground)
-    {
-        if (home->indicate_id > 0)
-        {
-            ui_shell_show_toast(home->base.parent, home->indicate_id == 2 ?
-                wkc_translations_get_string("main_battery_disconnected_warning") :
-                wkc_translations_get_string("ble_device_disconnected"),
-                home->indicate_id == 2 ? 10 : 5);
-            home->indicate_id = -1;
-        }
-        else if (home->indicate_id < 0)
-            home->indicate_id = 0;
-    }
     int current_status_bar_position = wkc_settings_get_current()->homepage_status_bar_position;
     if (on_foreground && home->last_status_bar_position != current_status_bar_position)
     {
@@ -421,13 +405,6 @@ void ui_home_update_from_shell(ui_shell_t *shell)
     {
         _ui_home_request_update_priv(current_page);
     }
-}
-
-void ui_home_indicate(ui_shell_t *shell, int msg_id)
-{
-    ui_home_t *home = (ui_home_t*)ui_shell_find_page(shell, UI_PAGE_TYPE_HOME);
-    if(home == NULL) return;
-    home->indicate_id = msg_id;
 }
 
 ui_page_t *ui_home_create()

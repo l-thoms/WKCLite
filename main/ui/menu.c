@@ -323,7 +323,6 @@ static void ui_menu_on_draw(ui_menu_t *menu, display_format_t *formats, display_
     if(!menu->draw_request) return;
     if(menu->last_selected_index == -1) // Draw whole page
     {
-        ui_shell_show_toast(menu->base.parent, NULL, -1);
         DISPLAY_CLEAR_SCREEN(0);
         DISPLAY_CLEAR_SCREEN(1);
         ui_shell_show_toast(menu->base.parent, NULL, 0);

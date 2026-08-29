@@ -1323,7 +1323,6 @@ static void ui_camera_on_draw(ui_camera_t *camera, display_format_t *formats,
     int max_items = orientation == DISPLAY_ORIENTATION_HORIZONTAL ? 7 : 10;
     if (camera->show)
     {
-        ui_shell_show_toast(camera->base.parent, NULL, -1);
         DISPLAY_CLEAR_SCREEN(0);
         DISPLAY_CLEAR_SCREEN(1);
     }
@@ -1703,7 +1702,6 @@ static void ui_camera_capture(ui_camera_t *camera,
     else
     {
         uint8_t *capture_result;
-        ui_shell_show_toast(camera->base.parent, NULL, -1);
         DISPLAY_CLEAR_SCREEN(0);
         DISPLAY_CLEAR_SCREEN(1);
         int image_size = camera_capture(&capture_result);

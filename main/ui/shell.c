@@ -136,7 +136,6 @@ static void ui_shell_sync_toast(ui_shell_t *shell, char *msg, int duration)
 
     if (shell->toast.message != NULL)
     {
-        ui_shell_clear_toast(shell, false);
         display_rect_t bound_primary, bound_secondary;
         toast_get_region(&shell->toast, &bound_primary, shell->format_primary,
                          shell->orientation);
@@ -184,6 +183,7 @@ static void ui_shell_sync_toast(ui_shell_t *shell, char *msg, int duration)
         display_rect_translate(&bound_secondary, current_offset[1], 0);
         if (shell->toast.animating)
         {
+            ui_shell_clear_toast(shell, false);
             shell->interval = 10;
             display_fill_rounded_rect(2, shell->orientation, &bound_primary,
                                       DISPLAY_COLOR_BLACK, 3);

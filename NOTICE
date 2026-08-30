@@ -8,7 +8,7 @@ Original source: https://fonts.google.com/icons
 Original License: Apache License 2.0
 
 Workflow:
-Official Material Icons artwork → monochrome binary PNG `images_raw/` → custom embedded binary format `resources/images/` processed by resource generator `resgen/`.
+Official Material Icons artwork → monochrome binary PNG `resources_raw/images/` → custom embedded binary format `resources/images/` processed by resource generator `resgen/`.
 All generated icon binary files are derivative works licensed under Apache License 2.0.
 Full license text: `third_party/LICENSE.Apache-2.0`
 

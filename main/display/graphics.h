@@ -3,13 +3,17 @@
 #include "font_management.h"
 #include "display_common.h"
 
-#define DISPLAY_CLEAR_SCREEN(index) do {                                               \
-display_fill_rect(index, DISPLAY_ORIENTATION_HORIZONTAL, &(display_rect_t) {          \
+#define DISPLAY_UPDATE_FULLSCREEN(index) do { \
+    display_update(index, DISPLAY_ORIENTATION_HORIZONTAL, &(display_rect_t) {       \
+    .x = 0, .y = 0, .width = DISPLAY_WIDTH_PAL, .height = DISPLAY_HEIGHT_PAL        \
+});} while (0)
+
+#define DISPLAY_CLEAR_SCREEN(index) do {                                            \
+display_fill_rect(index, DISPLAY_ORIENTATION_HORIZONTAL, &(display_rect_t) {        \
     .x = 0, .y = 0, .width = DISPLAY_WIDTH_PAL, .height = DISPLAY_HEIGHT_PAL        \
 }, DISPLAY_COLOR_TRANSPARENT);                                                      \
-display_update(index, DISPLAY_ORIENTATION_HORIZONTAL, &(display_rect_t) {             \
-    .x = 0, .y = 0, .width = DISPLAY_WIDTH_PAL, .height = DISPLAY_HEIGHT_PAL        \
-});} while(0)
+DISPLAY_UPDATE_FULLSCREEN(index);                                                   \
+} while(0)
 
 void display_rect_translate(display_rect_t *rect, int x, int y);
 void display_rect_expand(display_rect_t *rect, int x, int y);

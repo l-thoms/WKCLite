@@ -31,7 +31,7 @@
                 }
                 Fonts.GenerateFontResource(args[1], range);
             }
-            else if (args[0].ToLower() == "image")
+            else if (args[0].ToLower() == "images")
             {
                 if (args.Length < 3) return;
                 Images.GenerateImageResource(args[1], args[2]);

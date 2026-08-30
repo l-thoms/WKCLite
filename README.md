@@ -25,9 +25,6 @@ An analog binocular kigurumi vision enhancemnent project based on ESP32-S3 modul
 * It's recommended to take some anti-moisture precautions to keep the circuitry stable. **Otherwise, you might run into situations including, but not limited to,** things like the screen suddenly dimming, flipping, or the time information not being saved. If the screen image flips unexpectedly, you can try pressing the menu button multiple times in brightness adjustment mode to manually flip it back.
 * Communication protocol does not use BLE native pairing method for the convenience of mobile phone operation. See `main/protocol`.
 
-## Known Issues
-* The accuracy of battery level detection is relatively limited, so if needed, you can measure it yourself and adjust the detection threshold.
-
 ## TODO
 - [x] Implement camera capture
 - [x] Improve the protocol and add support for shortcut and settings table

@@ -1,11 +1,16 @@
 #include "shell.h"
 #include "string.h"
+#include "profile/settings.h"
 #include "profile/userprofile.h"
 #include "profile/translations.h"
 #include "esp_mac.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/semphr.h"
 #include "protocol/ble.h"
+
+#define LOGO_PREFIX "/data_static/priv_images/wkclite_logo_"
+#define LOGO_WIDTH_PAL 120
+#define LOGO_WIDTH_NTSC 100
 
 typedef struct
 {
@@ -45,17 +50,17 @@ void ui_device_info_text_write_line(char *text, int draw_x, int *draw_y,
                                                formats[0]);
     display_vector_t draw_coordinate_secondary = display_coordinate_compensation(draw_x, *draw_y,
                                                  formats[1]);
-    display_draw_text(0, orientation, draw_coordinate_primary.x + 1, draw_coordinate_primary.y + 1,
-                      descriptor_primary, text_length, DISPLAY_COLOR_BLACK, formats[0]);
-    display_draw_text(0, orientation, draw_coordinate_primary.x, draw_coordinate_primary.y,
-                      descriptor_primary, text_length, DISPLAY_COLOR_WHITE, formats[0]);
     if (orientation != DISPLAY_ORIENTATION_VERTICAL_TILED)
     {
-        display_draw_text(1, orientation, draw_coordinate_secondary.x + 1, draw_coordinate_secondary.y + 1,
-                          descriptor_secondary, text_length, DISPLAY_COLOR_BLACK, formats[1]);
-        display_draw_text(1, orientation, draw_coordinate_secondary.x, draw_coordinate_secondary.y,
-                          descriptor_secondary, text_length, DISPLAY_COLOR_WHITE, formats[1]);
+        display_draw_text(0, orientation, draw_coordinate_primary.x + 1, draw_coordinate_primary.y + 1,
+                        descriptor_primary, text_length, DISPLAY_COLOR_BLACK, formats[0]);
+        display_draw_text(0, orientation, draw_coordinate_primary.x, draw_coordinate_primary.y,
+                        descriptor_primary, text_length, DISPLAY_COLOR_WHITE, formats[0]);
     }
+    display_draw_text(1, orientation, draw_coordinate_secondary.x + 1, draw_coordinate_secondary.y + 1,
+                      descriptor_secondary, text_length, DISPLAY_COLOR_BLACK, formats[1]);
+    display_draw_text(1, orientation, draw_coordinate_secondary.x, draw_coordinate_secondary.y,
+                      descriptor_secondary, text_length, DISPLAY_COLOR_WHITE, formats[1]);
     *draw_y += size_raw.y;
     free(descriptor_raw);
     free(descriptor_primary);
@@ -76,7 +81,8 @@ void ui_device_info_on_draw(ui_device_info_t *device_info, display_format_t* for
         wkc_userprofile_release_semaphore();
         return;
     }
-    DISPLAY_CLEAR_SCREEN(0);
+    if (orientation != DISPLAY_ORIENTATION_VERTICAL_TILED)
+        DISPLAY_CLEAR_SCREEN(0);
     DISPLAY_CLEAR_SCREEN(1);
 
     char device_name[strlen(profile->device_name) + 1];
@@ -136,26 +142,7 @@ void ui_device_info_on_draw(ui_device_info_t *device_info, display_format_t* for
     ui_device_info_text_size_append(protocol_version_combined, &total_width, &total_height);
 
     int draw_x = (logical_width - total_width) / 2;
-    int draw_y = (logical_height - total_height) / 2;
-    // Draw border
-    display_rect_t border_rect = {
-        .x = draw_x - 12,
-        .width = total_width + 24,
-        .y = draw_y - 12,
-        .height = total_height + 24
-    };
-    display_rect_t border_rect_primary = display_rect_compensation(&border_rect, formats[0]);
-    display_rect_t border_rect_secondary = display_rect_compensation(&border_rect, formats[1]);
-    display_rect_translate(&border_rect_primary, 1, 1);
-    display_rect_translate(&border_rect_secondary, 1, 1);
-    display_draw_rounded_rect(0, orientation, &border_rect_primary, DISPLAY_COLOR_BLACK, 10, 2);
-    if (orientation != DISPLAY_ORIENTATION_VERTICAL_TILED)
-        display_draw_rounded_rect(1, orientation, &border_rect_secondary, DISPLAY_COLOR_BLACK, 10, 2);
-    display_rect_translate(&border_rect_primary, -1, -1);
-    display_rect_translate(&border_rect_secondary, -1, -1);
-    display_draw_rounded_rect(0, orientation, &border_rect_primary, DISPLAY_COLOR_WHITE, 10, 2);
-    if (orientation != DISPLAY_ORIENTATION_VERTICAL_TILED)
-        display_draw_rounded_rect(1, orientation, &border_rect_secondary, DISPLAY_COLOR_WHITE, 10, 2);
+    int draw_y = (logical_height - total_height) / 2 - 32;
 
     ui_device_info_text_write_line(device_name_combined, draw_x, &draw_y, formats, orientation);
     ui_device_info_text_write_line(owner_combined, draw_x, &draw_y, formats, orientation);
@@ -165,10 +152,57 @@ void ui_device_info_on_draw(ui_device_info_t *device_info, display_format_t* for
     ui_device_info_text_write_line(mac_address_combined, draw_x, &draw_y, formats, orientation);
     ui_device_info_text_write_line(protocol_version_combined, draw_x, &draw_y, formats, orientation);
 
-    display_rect_expand(&border_rect_primary, 2, 2);
-    display_rect_expand(&border_rect_secondary, 2, 2);
-    display_update(0, orientation, &border_rect_primary);
-    display_update(1, orientation, &border_rect_secondary);
+    draw_y += 4;
+    display_line_t separator = {
+        .x1 = draw_x, .x2 = draw_x + total_width,
+        .y1 = draw_y, .y2 = draw_y
+    };
+    display_line_t separator_primary = display_line_compensation(&separator, formats[0]);
+    display_line_t separator_secondary = display_line_compensation(&separator, formats[1]);
+    if (orientation != DISPLAY_ORIENTATION_VERTICAL_TILED)
+    {
+        display_draw_line(0, orientation, &separator_primary, DISPLAY_COLOR_WHITE, 1);
+        display_line_translate(&separator_primary, 1, 1);
+        display_draw_line(0, orientation, &separator_primary, DISPLAY_COLOR_BLACK, 1);
+    }
+    display_draw_line(1, orientation, &separator_secondary, DISPLAY_COLOR_WHITE, 1);
+    display_line_translate(&separator_secondary, 1, 1);
+    display_draw_line(1, orientation, &separator_secondary, DISPLAY_COLOR_BLACK, 1);
+
+    draw_y += 12;
+    int logo_x = (logical_width - LOGO_WIDTH_PAL) / 2;
+    display_vector_t logo_coordinate_primary = display_coordinate_compensation(
+        logo_x, draw_y, formats[0]);
+    display_vector_t logo_coordinate_secondary = display_coordinate_compensation(
+        logo_x, draw_y, formats[1]);
+
+    char logo_path_primary[50] = { 0 },
+         logo_path_secondary[50] = { 0 };
+    sprintf(logo_path_primary, "%s%s.bin", LOGO_PREFIX,
+            formats[0] == DISPLAY_FORMAT_NTSC ? "ntsc" : "pal");
+    sprintf(logo_path_secondary, "%s%s.bin", LOGO_PREFIX,
+            formats[1] == DISPLAY_FORMAT_NTSC ? "ntsc" : "pal");
+    if (orientation != DISPLAY_ORIENTATION_VERTICAL_TILED)
+    {
+        display_draw_image(0, orientation, logo_coordinate_primary.x + 1,
+                           logo_coordinate_primary.y + 1, logo_path_primary,
+                           formats[0] == DISPLAY_FORMAT_NTSC ? LOGO_WIDTH_NTSC :
+                           LOGO_WIDTH_PAL, DISPLAY_COLOR_BLACK);
+        display_draw_image(0, orientation, logo_coordinate_primary.x,
+                           logo_coordinate_primary.y, logo_path_primary,
+                           formats[0] == DISPLAY_FORMAT_NTSC ? LOGO_WIDTH_NTSC :
+                           LOGO_WIDTH_PAL, DISPLAY_COLOR_WHITE);
+    }
+    display_draw_image(1, orientation, logo_coordinate_secondary.x + 1,
+                       logo_coordinate_secondary.y + 1, logo_path_secondary,
+                       formats[1] == DISPLAY_FORMAT_NTSC ? LOGO_WIDTH_NTSC :
+                       LOGO_WIDTH_PAL, DISPLAY_COLOR_BLACK);
+    display_draw_image(1, orientation, logo_coordinate_secondary.x,
+                       logo_coordinate_secondary.y, logo_path_secondary,
+                       formats[1] == DISPLAY_FORMAT_NTSC ? LOGO_WIDTH_NTSC :
+                       LOGO_WIDTH_PAL, DISPLAY_COLOR_WHITE);
+    DISPLAY_UPDATE_FULLSCREEN(0);
+    DISPLAY_UPDATE_FULLSCREEN(1);
     device_info->draw_request = false;
     wkc_userprofile_release_semaphore();
 }
@@ -188,6 +222,14 @@ void ui_device_info_on_key_event(ui_device_info_t *device_info, int key_code)
     }
 }
 
+void ui_device_info_on_format_changed(ui_device_info_t *device_info)
+{
+    if (wkc_settings_get_current()->display.orientation == DISPLAY_ORIENTATION_VERTICAL_TILED)
+        DISPLAY_CLEAR_SCREEN(0);
+
+    ui_device_info_on_show(device_info);
+}
+
 ui_page_t *ui_device_info_create()
 {
     ui_device_info_t *device_info = (ui_device_info_t*)calloc(1, sizeof(ui_device_info_t));
@@ -195,6 +237,6 @@ ui_page_t *ui_device_info_create()
     device_info->base.on_show = (ui_page_event_t)ui_device_info_on_show;
     device_info->base.on_draw = (ui_page_draw_event_t)ui_device_info_on_draw;
     device_info->base.on_key_event = (ui_page_key_event_t)ui_device_info_on_key_event;
-    device_info->base.on_format_changed = (ui_page_event_t)ui_device_info_on_show;
+    device_info->base.on_format_changed = (ui_page_event_t)ui_device_info_on_format_changed;
     return (ui_page_t*)device_info;
 }

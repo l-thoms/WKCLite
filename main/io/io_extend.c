@@ -16,6 +16,7 @@
 #define IO_EXTEND_RTC_ADDRESS 0x51
 #define IO_EXTEND_SAA7113_ADDRESS 0x25
 #define IO_EXTEND_TW9910_ADDRESS 0x45
+#define IO_EXTEND_TW9910_ALT_ADDRESS 0x44
 
 #define TAG "IO_EXTEND"
 
@@ -23,8 +24,10 @@ static i2c_master_dev_handle_t io_extend_device;
 static i2c_master_dev_handle_t io_extend_rtc_device;
 static i2c_master_dev_handle_t io_extend_saa7113_device;
 static i2c_master_dev_handle_t io_extend_tw9910_device;
+static i2c_master_dev_handle_t io_extend_tw9910_alt_device;
 static uint8_t io_extend_output_reg1 = 0;
 static bool time_valid = false;
+static bool tw9910_alt = false;
 
 static void io_extend_add_device(uint16_t address, int speed,
                                  i2c_master_dev_handle_t *out_handle)
@@ -46,6 +49,7 @@ void io_extend_init()
     io_extend_add_device(IO_EXTEND_RTC_ADDRESS, 100000, &io_extend_rtc_device);
     io_extend_add_device(IO_EXTEND_SAA7113_ADDRESS, 100000, &io_extend_saa7113_device);
     io_extend_add_device(IO_EXTEND_TW9910_ADDRESS, 100000, &io_extend_tw9910_device);
+    io_extend_add_device(IO_EXTEND_TW9910_ADDRESS, 100000, &io_extend_tw9910_alt_device);
     bool pass;
     do
     {
@@ -78,7 +82,8 @@ int io_extend_read_camera(uint8_t reg, uint8_t *value)
     camera_device_type_t device_type = camera_control_get_current()->device_type;
     if (device_type == CAMERA_DEVICE_NONE) return 1;
     i2c_master_dev_handle_t device = device_type == CAMERA_DEVICE_SAA7113 ?
-                            io_extend_saa7113_device : io_extend_tw9910_device;
+                            io_extend_saa7113_device : tw9910_alt ?
+                            io_extend_tw9910_alt_device : io_extend_tw9910_device;
     int trial = 100;
     while (trial--)
     {
@@ -100,7 +105,8 @@ int io_extend_write_camera(uint8_t reg, uint8_t value)
     camera_device_type_t device_type = camera_control_get_current()->device_type;
     if (device_type == CAMERA_DEVICE_NONE) return 1;
     i2c_master_dev_handle_t device = device_type == CAMERA_DEVICE_SAA7113 ?
-                            io_extend_saa7113_device : io_extend_tw9910_device;
+                            io_extend_saa7113_device : tw9910_alt ?
+                            io_extend_tw9910_alt_device : io_extend_tw9910_device;
     int trial = 100;
     uint8_t write_value[] = { reg, value };
     while (trial--)
@@ -116,7 +122,8 @@ camera_device_type_t io_extend_probe_camera()
 {
     uint8_t write_buffer = 0;
     i2c_master_dev_handle_t devices[] = {
-        io_extend_saa7113_device, io_extend_tw9910_device
+        io_extend_saa7113_device, io_extend_tw9910_device,
+        io_extend_tw9910_alt_device
     };
     int trial = 100;
     camera_device_type_t inferred_camera_type = CAMERA_DEVICE_NONE;
@@ -131,6 +138,7 @@ camera_device_type_t io_extend_probe_camera()
         }
     }
     vTaskDelay(200 / portTICK_PERIOD_MS);
+    tw9910_alt = false;
 
     for (int i = 0; i < sizeof(devices) / sizeof(i2c_master_dev_handle_t); i++)
     {
@@ -142,6 +150,7 @@ camera_device_type_t io_extend_probe_camera()
             {
                 inferred_camera_type = i == 0 ? CAMERA_DEVICE_SAA7113 :
                                                 CAMERA_DEVICE_TW9910;
+                if (i == 2) tw9910_alt = true;
                 inferred = true;
                 break;
             }

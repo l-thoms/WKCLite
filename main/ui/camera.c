@@ -542,6 +542,12 @@ static ui_menu_item_t *ui_camera_build_saa7113_menu()
 
 #pragma region ui_camera_tw9910_menu_actions
 
+static void ui_camera_tw9910_color_killer_hysteresis_action(ui_menu_item_t *item, ui_camera_t *parent)
+{
+    camera_control_get_current()->device_config.tw9910.color_killer_hysteresis = item->current_value;
+    UI_CAMERA_CHECK_UPDATE(camera_control_update());
+}
+
 static void ui_camera_tw9910_auto_gain_action(ui_menu_item_t *item, ui_camera_t *parent)
 {
     camera_control_get_current()->device_config.tw9910.auto_gain = item->current_value;
@@ -781,6 +787,12 @@ static void ui_camera_tw9910_chroma_clamp_enabled_action(ui_menu_item_t *item, u
 static ui_menu_item_t *ui_camera_build_tw9910_menu()
 {
     tw9910_config_t *config = &camera_control_get_current()->device_config.tw9910;
+    char *color_killer_hysteresis_options[] = {
+        wkc_translations_get_string("camera_fastest"),
+        wkc_translations_get_string("camera_fast"),
+        wkc_translations_get_string("camera_medium"),
+        wkc_translations_get_string("camera_slow")
+    };
     char *bandpass_options[] = {
         wkc_translations_get_string("camera_normal"),
         wkc_translations_get_string("camera_wide")
@@ -809,7 +821,7 @@ static ui_menu_item_t *ui_camera_build_tw9910_menu()
     };
     char *color_standard_options[] = {
         wkc_translations_get_string("camera_auto"),
-        "NTSC", "PAL", "SECAM", "NTSC4.43", "PAL(M)", "PAL(CN)", "PAL60"
+        "NTSC", "PAL", "SECAM", "NTSC4.43", "PAL-M", "PAL-N", "PAL60-4.43"
     };
     char *prefilter_options[] = {
         wkc_translations_get_string("camera_auto"),
@@ -835,6 +847,13 @@ static ui_menu_item_t *ui_camera_build_tw9910_menu()
         wkc_translations_get_string("camera_clamp_pedestal")
     };
     ui_menu_item_t items[] = {
+        {
+            .type = UI_MENU_ITEM_PICKER,
+            .name = wkc_translations_get_string("camera_color_killer_hysterisis"),
+            .current_value = (int)config->color_killer_hysteresis,
+            .count = sizeof(color_killer_hysteresis_options) / sizeof(char*),
+            .action = (ui_menu_action_t)ui_camera_tw9910_color_killer_hysteresis_action
+        },
         {
             .type = UI_MENU_ITEM_SWITCH,
             .name = wkc_translations_get_string("camera_auto_gain"),
@@ -1107,34 +1126,35 @@ static ui_menu_item_t *ui_camera_build_tw9910_menu()
         }
     };
 
-    UI_CAMERA_SET_OPTIONS(items[1].options, bandpass_options);
-    UI_CAMERA_SET_OPTIONS(items[2].options, blank_level_options);
-    UI_CAMERA_SET_OPTIONS(items[4].options, operation_mode_options);
-    UI_CAMERA_SET_OPTIONS(items[6].options, sharp_center_options);
-    UI_CAMERA_SET_OPTIONS(items[7].options, range_0_3);
-    UI_CAMERA_SET_OPTIONS(items[8].options, range_0_15);
-    UI_CAMERA_SET_OPTIONS(items[9].options, common_range_options);
-    UI_CAMERA_SET_OPTIONS(items[10].options, range_0_15);
-    UI_CAMERA_SET_OPTIONS(items[11].options, range_0_7);
-    UI_CAMERA_SET_OPTIONS(items[12].options, range_0_3);
+    UI_CAMERA_SET_OPTIONS(items[0].options, color_killer_hysteresis_options);
+    UI_CAMERA_SET_OPTIONS(items[2].options, bandpass_options);
+    UI_CAMERA_SET_OPTIONS(items[3].options, blank_level_options);
+    UI_CAMERA_SET_OPTIONS(items[5].options, operation_mode_options);
+    UI_CAMERA_SET_OPTIONS(items[7].options, sharp_center_options);
+    UI_CAMERA_SET_OPTIONS(items[8].options, range_0_3);
+    UI_CAMERA_SET_OPTIONS(items[9].options, range_0_15);
+    UI_CAMERA_SET_OPTIONS(items[10].options, common_range_options);
+    UI_CAMERA_SET_OPTIONS(items[11].options, range_0_15);
+    UI_CAMERA_SET_OPTIONS(items[12].options, range_0_7);
     UI_CAMERA_SET_OPTIONS(items[13].options, range_0_3);
     UI_CAMERA_SET_OPTIONS(items[14].options, range_0_3);
-    UI_CAMERA_SET_OPTIONS(items[15].options, cif_level_options);
-    UI_CAMERA_SET_OPTIONS(items[18].options, color_standard_options);
-    UI_CAMERA_SET_OPTIONS(items[19].options, range_0_15);
-    UI_CAMERA_SET_OPTIONS(items[20].options, range_0_7);
-    UI_CAMERA_SET_OPTIONS(items[21].options, common_range_options);
+    UI_CAMERA_SET_OPTIONS(items[15].options, range_0_3);
+    UI_CAMERA_SET_OPTIONS(items[16].options, cif_level_options);
+    UI_CAMERA_SET_OPTIONS(items[19].options, color_standard_options);
+    UI_CAMERA_SET_OPTIONS(items[20].options, range_0_15);
+    UI_CAMERA_SET_OPTIONS(items[21].options, range_0_7);
     UI_CAMERA_SET_OPTIONS(items[22].options, common_range_options);
-    UI_CAMERA_SET_OPTIONS(items[23].options, range_0_15);
-    UI_CAMERA_SET_OPTIONS(items[24].options, range_0_3);
-    UI_CAMERA_SET_OPTIONS(items[25].options, common_range_options);
-    UI_CAMERA_SET_OPTIONS(items[27].options, range_0_7);
-    UI_CAMERA_SET_OPTIONS(items[28].options, range_0_15);
-    UI_CAMERA_SET_OPTIONS(items[30].options, range_0_7);
-    UI_CAMERA_SET_OPTIONS(items[31].options, prefilter_options);
-    UI_CAMERA_SET_OPTIONS(items[32].options, chroma_low_pass_options);
-    UI_CAMERA_SET_OPTIONS(items[35].options, hf_noise_options);
-    UI_CAMERA_SET_OPTIONS(items[36].options, clamping_mode_options);
+    UI_CAMERA_SET_OPTIONS(items[23].options, common_range_options);
+    UI_CAMERA_SET_OPTIONS(items[24].options, range_0_15);
+    UI_CAMERA_SET_OPTIONS(items[25].options, range_0_3);
+    UI_CAMERA_SET_OPTIONS(items[26].options, common_range_options);
+    UI_CAMERA_SET_OPTIONS(items[28].options, range_0_7);
+    UI_CAMERA_SET_OPTIONS(items[29].options, range_0_15);
+    UI_CAMERA_SET_OPTIONS(items[31].options, range_0_7);
+    UI_CAMERA_SET_OPTIONS(items[32].options, prefilter_options);
+    UI_CAMERA_SET_OPTIONS(items[33].options, chroma_low_pass_options);
+    UI_CAMERA_SET_OPTIONS(items[36].options, hf_noise_options);
+    UI_CAMERA_SET_OPTIONS(items[37].options, clamping_mode_options);
 
     ui_menu_item_t *build_result = malloc(sizeof(items));
     memcpy(build_result, items, sizeof(items));
@@ -1726,7 +1746,7 @@ static void ui_camera_capture(ui_camera_t *camera,
             time_t current_time_from_day = mktime(&current_tm_from_day);
 
             sprintf(file_name, CAMERA_SAVE_PATTERN, current_tm->tm_year + 1900,
-                current_tm->tm_mon, current_tm->tm_mday,
+                current_tm->tm_mon + 1, current_tm->tm_mday,
                 (int)((current_timeval.tv_sec - current_time_from_day) * 1000 +
                 current_timeval.tv_usec / 1000));
             if(wkc_save(file_name, (char*)capture_result, image_size))
@@ -1921,6 +1941,12 @@ int ui_camera_show(ui_shell_t *shell)
     }
     else
     {
+        if (camera_control_init())
+        {
+            ui_shell_show_toast(shell,
+                wkc_translations_get_string("camera_control_not_initialized"), 5);
+            return 1;
+        }
         camera_device_type_t device_type = camera_control_get_current()->device_type;
         if (device_type != CAMERA_DEVICE_SAA7113 &&
             device_type != CAMERA_DEVICE_TW9910)

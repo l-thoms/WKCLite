@@ -147,10 +147,15 @@ static int camera_control_update_tw9910()
 {
     tw9910_config_t *tw9910 = &camera_control.device_config.tw9910;
 
+    int vdelay = camera_control.current_format == DISPLAY_FORMAT_NTSC ? 20 : 24;
+    int vactive = camera_control.current_format == DISPLAY_FORMAT_NTSC ? 240 : 288;
+    int hdelay = camera_control.current_format == DISPLAY_FORMAT_NTSC ? 10 : 5;
+    int hactive = 720;
+
     int brightness_calculated = (int)(127 / 10.f * camera_control.brightness);
-    int contrast_calculated = (int)(128 + 127 / 10.f * camera_control.contrast);
-    if (contrast_calculated < 0) contrast_calculated = 0;
-    else if (contrast_calculated > 255) contrast_calculated = 255;
+    int contrast_calculated = camera_control.contrast < 0 ?
+                              (int)(9.2f * (camera_control.contrast + 10)) :
+                              92 + (int)(16.3f * camera_control.contrast);
     int saturation_calculated = (int)(128 + 127 / 10.f * camera_control.saturation);
     if (saturation_calculated < 0) saturation_calculated = 0;
     else if (saturation_calculated > 255) saturation_calculated = 255;
@@ -220,7 +225,18 @@ static int camera_control_update_tw9910()
     tw9910->last_color_standard = tw9910->color_standard;
 
     CAMERA_WRITE_REG(0x02, 0x40 | (camera_control.channel << 2));
-    CAMERA_WRITE_REG(0x06, (!tw9910->auto_gain << 4));
+    CAMERA_WRITE_REG(0x03, 0x20);
+    CAMERA_WRITE_REG(0x04, tw9910->color_killer_hysteresis << 5);
+    CAMERA_WRITE_REG(0x05, 0x00);
+    CAMERA_WRITE_REG(0x06, !tw9910->auto_gain << 4);
+    CAMERA_WRITE_REG(0x07, ((vdelay >> 8) & 0x03) << 6 |
+                           ((vactive >> 8) & 0x03) << 4 |
+                           ((hdelay >> 8) & 0x03) << 2 |
+                           ((hactive >> 8) & 0x03));
+    CAMERA_WRITE_REG(0x08, vdelay & 0xFF);
+    CAMERA_WRITE_REG(0x09, vactive & 0xFF);
+    CAMERA_WRITE_REG(0x0A, hdelay & 0xFF);
+    CAMERA_WRITE_REG(0x0B, hactive & 0xFF);
     CAMERA_WRITE_REG(0x0C, (tw9910->chroma_bandpass_width << 7) |
         (1 << 6) |
         (0 << 5) |
@@ -234,7 +250,7 @@ static int camera_control_update_tw9910()
     CAMERA_WRITE_REG(0x12, (tw9910->sharp_center << 7) | (1 << 6) |
         ((tw9910->cti_level & 3) << 4) | tw9910->sharpness);
     CAMERA_WRITE_REG(0x13, saturation_calculated);  // Reg 0x13 SAT_U
-    CAMERA_WRITE_REG(0x14, saturation_calculated);  // Reg 0x14 SAT_V (同 U)
+    CAMERA_WRITE_REG(0x14, saturation_calculated);  // Reg 0x14 SAT_V
     CAMERA_WRITE_REG(0x15, ntsc_hue_correct_calculated);
     CAMERA_WRITE_REG(0x17, (tw9910->sharpness_coring << 4) |
         (tw9910->vertical_peaking_level & 7));
@@ -242,6 +258,7 @@ static int camera_control_update_tw9910()
         ((tw9910->chroma_coring & 3) << 4) |
         ((tw9910->vertical_peaking_coring & 3) << 2) |
         (tw9910->cif_level & 3));
+    CAMERA_WRITE_REG(0x19, 0x40);
     CAMERA_WRITE_REG(0x1A, (!!tw9910->luma_antialias << 3) |
         (!!tw9910->chroma_antialias << 1));
     CAMERA_WRITE_REG(0x21, ((tw9910->auto_gain_max_correction_level & 0xF) << 4) |
@@ -398,17 +415,6 @@ int camera_control_init()
         profile_size != sizeof(camera_control_t) ||
         wkc_open(CAMERA_PROFILE_PATH, (char*)&camera_control, sizeof(camera_control)))
         camera_control_reset();
-
-    camera_control.device_type = io_extend_probe_camera();
-    if (camera_control.device_type == CAMERA_DEVICE_NONE)
-    {
-        ESP_LOGE("CAMERA_CONTROL", "Cannot find camera control device.");
-        return 1;
-    }
-    else
-        ESP_LOGI("CAMERA_CONTROL", "Current camera control is %s",
-                 camera_control.device_type == CAMERA_DEVICE_SAA7113 ? "SAA7113":
-                 "TW9910");
     local_clamp(&camera_control.brightness, -10, 10);
     local_clamp(&camera_control.contrast, -10, 10);
     local_clamp(&camera_control.saturation, -10, 10);
@@ -447,6 +453,7 @@ int camera_control_init()
     local_clamp(&camera_control.device_config.tw9910.luma_delay, 0, 7);
     local_clamp(&camera_control.device_config.tw9910.luma_hf_noise_reduction_level, 0, 3);
 
+    local_clamp((int*)&camera_control.device_config.tw9910.color_killer_hysteresis, 0, 3);
     local_clamp((int*)&camera_control.device_config.tw9910.blank_level, 0, 2);
     local_clamp((int*)&camera_control.device_config.tw9910.chroma_bandpass_width, 0, 2);
     local_clamp((int*)&camera_control.device_config.tw9910.sharp_center, 0, 1);
@@ -472,6 +479,17 @@ int camera_control_init()
         ESP_LOGE("CAMERA", "Cannot allocate result buffer.");
         return 1;
     }
+
+    camera_control.device_type = io_extend_probe_camera();
+    if (camera_control.device_type == CAMERA_DEVICE_NONE)
+    {
+        ESP_LOGE("CAMERA_CONTROL", "Cannot find camera control device.");
+        return 1;
+    }
+    else
+        ESP_LOGI("CAMERA_CONTROL", "Current camera control is %s",
+                 camera_control.device_type == CAMERA_DEVICE_SAA7113 ? "SAA7113":
+                 "TW9910");
     display_format_t formats[2];
     display_control_get_formats(formats);
     if (camera_set_format_priv(formats[camera_control.channel], true))
@@ -677,7 +695,9 @@ int camera_capture(uint8_t **result)
     }
 
     // Encode JPEG
-    uint8_t quality = camera_control.quality == CAMERA_QUALITY_LOW ? 90 : 95;
+    uint8_t quality = camera_control.quality == CAMERA_QUALITY_LOW ? 90 :
+                                                CAMERA_QUALITY_MEDIUM ? 95 :
+                                                99;
     uint8_t subsampling = camera_control.quality == CAMERA_QUALITY_HIGH ?
                           JPEG_SUBSAMPLE_422 : JPEG_SUBSAMPLE_420;
     jpeg_enc_config_t enc_config = {
@@ -744,6 +764,11 @@ int camera_set_channel(int channel)
                 return 1;
             }
         }
+    }
+    else if (camera_control_update())
+    {
+        ESP_LOGE("CAMERA", "Cannot update format");
+        return 1;
     }
     camera_control_ready = true;
     return 0;

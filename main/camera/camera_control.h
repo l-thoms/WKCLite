@@ -25,6 +25,7 @@
 }
 
 #define TW9910_CONFIG_DEFAULT() { \
+    .color_killer_hysteresis = TW9910_COLOR_KILLER_HYSTERESIS_FASTEST, \
     .auto_gain = true, \
     .chroma_bandpass_width = TW9910_CHROMA_BANDPASS_WIDE, \
     .blank_level = TW9910_BLANK_LEVEL_AUTO, \
@@ -179,6 +180,14 @@ typedef struct
 
 typedef enum
 {
+    TW9910_COLOR_KILLER_HYSTERESIS_FASTEST,
+    TW9910_COLOR_KILLER_HYSTERESIS_FAST,
+    TW9910_COLOR_KILLER_HYSTERESIS_MEDIUM,
+    TW9910_COLOR_KILLER_HYSTERESIS_SLOW
+} tw9910_color_killer_hysteresis_t;
+
+typedef enum
+{
     TW9910_CHROMA_BANDPASS_NORMAL,
     TW9910_CHROMA_BANDPASS_WIDE
 } tw9910_chroma_bandpass_width_t;
@@ -243,6 +252,8 @@ typedef enum
 
 typedef struct
 {
+    // Reg 04
+    tw9910_color_killer_hysteresis_t color_killer_hysteresis;
     // Reg 06
     bool auto_gain;
     // Reg 0C

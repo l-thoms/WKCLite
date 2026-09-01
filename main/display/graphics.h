@@ -54,5 +54,3 @@ void display_get_icon(const char *name, display_format_t format,
 void display_get_icon_indexed(const char *name, display_format_t format,
                               bool prefer_large,
                               int index, char *icon, int *actual_width);
-void display_record_operate_time();
-void display_cancel_operate_time();

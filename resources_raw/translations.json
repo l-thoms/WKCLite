@@ -460,6 +460,21 @@
         "zh_cn": "高",
         "zh_tw": "高"
     },
+    "camera_fastest": {
+        "en_us": "Fastest",
+        "zh_cn": "最快",
+        "zh_tw": "最快"
+    },
+    "camera_fast": {
+        "en_us": "Fast",
+        "zh_cn": "快",
+        "zh_tw": "快"
+    },
+    "camera_slow": {
+        "en_us": "Slow",
+        "zh_cn": "慢",
+        "zh_tw": "慢"
+    },
     "camera_timeout": {
         "en_us": "Timeout",
         "zh_cn": "定时拍摄",
@@ -630,6 +645,11 @@
         "zh_cn": "普通",
         "zh_tw": "普通"
     },
+    "camera_color_killer_hysterisis": {
+        "en_us": "Chroma Killer Hysteresis",
+        "zh_cn": "色度清除滞后",
+        "zh_tw": "色度清除遲滯"
+    },
     "camera_chroma_bandpass_width": {
         "en_us": "Chroma Bandpass Width",
         "zh_cn": "色度带通宽度",
@@ -637,7 +657,7 @@
     },
     "camera_blank_level": {
         "en_us": "Blank Level",
-        "zh_cn": "黑色电平",
+        "zh_cn": "黑电平",
         "zh_tw": "黑準位"
     },
     "camera_adaptive_comb_filter": {
@@ -746,14 +766,14 @@
         "zh_tw": "鉗位電平"
     },
     "camera_color_killer_max": {
-        "en_us": "Chroma Killer Hysteresis",
-        "zh_cn": "色度清除滞后",
-        "zh_tw": "色度清除遲滯"
+        "en_us": "Chroma Killer Max",
+        "zh_cn": "色度清除最大值",
+        "zh_tw": "色度清除最大值"
     },
     "camera_color_killer_min": {
-        "en_us": "Chroma Killer Threshold",
-        "zh_cn": "色度清除阈值",
-        "zh_tw": "色度清除閾值"
+        "en_us": "Chroma Killer Min",
+        "zh_cn": "色度清除最小值",
+        "zh_tw": "色度清除最小值"
     },
     "camera_comb_filter_strength": {
         "en_us": "Comb Filter Strength Reduction",
@@ -884,6 +904,11 @@
         "en_us": "Camera control not available",
         "zh_cn": "相机控件无效",
         "zh_tw": "相機控件無效"
+    },
+    "camera_control_not_initialized": {
+        "en_us": "Camera control not initialized",
+        "zh_cn": "相机未初始化",
+        "zh_tw": "相機未初始化"
     },
     "shortcut_shortcuts": {
         "en_us": "Shortcuts",

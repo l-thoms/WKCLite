@@ -15,6 +15,7 @@
 #include "services/gap/ble_svc_gap.h"
 #include "services/gatt/ble_svc_gatt.h"
 #include "command_parser.h"
+#include "security.h"
 #include "profile/userprofile.h"
 #include "profile/settings.h"
 #include "ui/ui_common.h"
@@ -40,7 +41,7 @@
 #define MFG_BLOCK_DEVICE_MODEL 0x03
 
 const uint8_t mfg_head[2] = { 0x1e, 0x3b };
-uint8_t protocol_version[4] = { 0, 1, 1, 0 };
+uint8_t protocol_version[4] = { 0, 2, 0, 0 };
 
 typedef struct {
     // Actual data length + 1
@@ -139,11 +140,14 @@ static int gatt_svr_security_access(uint16_t conn_handle, uint16_t attr_handle,
             int key_length;
             uint8_t *key_buffer = protocol_security_get_public_key(&key_length);
 
-            char *verification = wkc_translations_get_string("ble_passkey");
-            char *message = (char*)calloc(strlen(verification) + 7, 1);
-            sprintf(message, "%s%06d", verification, passkey);
-            ui_shell_show_toast(current_shell, message, 30);
-            free(message);
+            if (passkey >= 0)
+            {
+                char *verification = wkc_translations_get_string("ble_passkey");
+                char *message = (char*)calloc(strlen(verification) + 7, 1);
+                sprintf(message, "%s%06d", verification, passkey);
+                ui_shell_show_toast(current_shell, message, 30);
+                free(message);
+            }
 
             rc = os_mbuf_append(om, key_buffer, key_length);
             free(key_buffer);
@@ -159,7 +163,8 @@ static int gatt_svr_security_access(uint16_t conn_handle, uint16_t attr_handle,
                     wkc_translations_get_string("ble_disconnect_previous_device"), 5);
                 rc = (int)WKC_NOTIFY_CONNECTION_OCCUPIED;
             }
-            else if (protocol_security_verify(om_data, passkey, om_length) == 0)
+            else if (passkey >= 0 &&
+                     protocol_security_verify(om_data, passkey, om_length) == 0)
             {
                 ui_shell_show_toast(current_shell,
                     wkc_translations_get_string("ble_verification_success"), 5);
@@ -172,9 +177,16 @@ static int gatt_svr_security_access(uint16_t conn_handle, uint16_t attr_handle,
             {
                 ui_shell_show_toast(current_shell,
                     wkc_translations_get_string("ble_verification_failed"), 5);
+                passkey = -1;
                 rc = (int)WKC_NOTIFY_FAILED;
             }
-            os_mbuf_append(notify_om, (uint8_t[]) { rc }, 1);
+            int rc_packed_length;
+            uint8_t *rc_packed = wkc_command_pack((uint8_t*)&rc, 1, &rc_packed_length);
+            if (rc_packed)
+            {
+                os_mbuf_append(notify_om, rc_packed, rc_packed_length);
+                free(rc_packed);
+            }
             ble_gatts_notify_custom(conn_handle, attr_handle, notify_om);
             os_mbuf_free_chain(notify_om);
         }
@@ -228,11 +240,24 @@ static int gatt_svr_command_access(uint16_t conn_handle, uint16_t attr_handle,
                 return BLE_ATT_ERR_WRITE_NOT_PERMITTED;
             }
             // Write characteristics
-            uint16_t command_length = os_mbuf_len(om), command_length_out;
-            uint8_t *command = calloc(command_length + 1, 1);
-            ble_hs_mbuf_to_flat(om, command, command_length, &command_length_out);
-            wkc_write_command(conn_handle, attr_handle, command, command_length, current_shell);
-            free(command);
+            uint16_t command_length = os_mbuf_len(om);
+            int command_length_out;
+            uint8_t *command_raw = calloc(command_length + 1, 1);
+            ble_hs_mbuf_to_flat(om, command_raw, command_length,
+                                (uint16_t*)&command_length_out);
+            uint8_t *command = wkc_command_unpack(command_raw, command_length,
+                               &command_length_out);
+            if (command)
+            {
+                wkc_write_command(conn_handle, attr_handle, command,
+                                  command_length_out, current_shell);
+                free(command);
+            }
+            else
+            {
+                wkc_write_command(conn_handle, attr_handle, NULL, 0, current_shell);
+            }
+            free(command_raw);
             return 0;
         }
         default:
@@ -404,6 +429,7 @@ static int ble_gap_event_handler(struct ble_gap_event *event, void *arg)
             if (event->disconnect.conn.conn_handle == current_handle)
             {
                 current_handle = BLE_HS_CONN_HANDLE_NONE;
+                protocol_security_set_aes(NULL);
                 ui_shell_show_toast(current_shell, wkc_translations_get_string("ble_device_disconnected"), 5);
                 ui_shell_show_page(current_shell, ui_shell_find_page(
                     current_shell, UI_PAGE_TYPE_HOME));
@@ -433,14 +459,30 @@ void protocol_ble_notify_update_command(const char *name)
 {
     if (current_handle == BLE_HS_CONN_HANDLE_NONE) return;
     struct os_mbuf *notify_om = ble_hs_mbuf_att_pkt();
-    os_mbuf_append(notify_om, (uint8_t[]){ WKC_NOTIFY_UPDATE_REQUIRED }, 1);
-    os_mbuf_append(notify_om, name, (uint16_t)strlen(name));
+    uint8_t *update_request_raw = calloc(strlen(name) + 2, 1);
+    uint8_t *update_request_packed = NULL;
+    if (!update_request_raw) goto notify_update_end;
+    update_request_raw[0] = WKC_NOTIFY_UPDATE_REQUIRED;
+    sprintf((char*)&update_request_raw[1], "%s", name);
+    int update_request_length;
+    update_request_packed = wkc_command_pack(update_request_raw,
+                            strlen(name) + 1, &update_request_length);
+    if (!update_request_packed)
+        goto notify_update_end;
+
+    os_mbuf_append(notify_om, update_request_packed, update_request_length);
     uint16_t command_attr_handle;
     ble_uuid16_t svc_uuid = BLE_UUID16_INIT(GATT_SVC_UUID);
     ble_uuid16_t chr_uuid = BLE_UUID16_INIT(GATT_CHR_COMMAND_UUID);
     ble_gatts_find_chr(&svc_uuid.u, &chr_uuid.u,
                       NULL,  &command_attr_handle);
     ble_gatts_notify_custom(current_handle, command_attr_handle, notify_om);
+
+    notify_update_end:
+    if (update_request_raw)
+        free(update_request_raw);
+    if (update_request_packed)
+        free(update_request_packed);
     os_mbuf_free_chain(notify_om);
 }
 

@@ -183,15 +183,18 @@ int protocol_quicksettings_get_table(char *key)
     };
     wkc_table_group_t groups[] = {
         {
-            .name = wkc_translations_get_string("device_info_title"),
+            .name = "device_info",
+            .display_name = wkc_translations_get_string("device_info_title"),
             .items = userprofile_items
         },
         {
-            .name = wkc_translations_get_string("settings_display_settings"),
+            .name = "display_settings",
+            .display_name = wkc_translations_get_string("settings_display_settings"),
             .items = display_items
         },
         {
-            .name = wkc_translations_get_string("settings_misc_settings"),
+            .name = "misc_settings",
+            .display_name = wkc_translations_get_string("settings_misc_settings"),
             .items = misc_items
         }
     };

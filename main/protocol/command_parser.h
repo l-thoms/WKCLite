@@ -10,7 +10,7 @@ typedef enum
 {
     WKC_CMD_NONE,
     WKC_CMD_KEY_CODE,
-    WKC_CMD_TIME_SYNC,
+    WKC_CMD_TIME_SYNC, // Deprecated
     WKC_CMD_READ_SHORTCUT_TABLE,
     WKC_CMD_READ_SHORTCUT_ITEM,
     WKC_CMD_WRITE_SHORTCUT,
@@ -61,10 +61,12 @@ typedef struct
 typedef struct
 {
     char *name;
+    char *display_name;
     wkc_table_item_t *items;
 } wkc_table_group_t;
 
-
+uint8_t *wkc_command_unpack(uint8_t *command, int length, int *output_length);
+uint8_t *wkc_command_pack(uint8_t *command, int length, int *output_length);
 int wkc_write_command(uint16_t conn_handle, uint16_t attr_handle,
 uint8_t* command, int length, ui_shell_t *shell);
 uint8_t *wkc_get_command_output(int *length);
@@ -72,3 +74,6 @@ cJSON *wkc_table_item_extract(wkc_table_item_t *item, bool value_only);
 char *wkc_table_build(wkc_table_group_t *groups, int group_num);
 wkc_table_item_t *wkc_table_group_find_item(wkc_table_group_t *groups, int count,
                                             const char *name);
+bool wkc_verify_rx_timestamp(uint64_t time_data);
+bool wkc_verify_conn_timestamp(uint64_t time_data);
+void wkc_append_conn_timestamp(uint64_t time_data);

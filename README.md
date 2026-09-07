@@ -1,5 +1,8 @@
 # WKC Lite (Walking Kiger Camera Lite)
 
+> [!WARNING]
+> The communication protocol has been upgraded to v0.2.0.0 and is no longer compatible with the old mobile app. Please update the app [WKCCommunicator](https://github.com/l-thoms/WKCCommunicator) to the latest version.
+
 # ![WKCLite_Logo](./WKCLite.svg)
 
 [简体中文](./README_CN.md)
@@ -10,7 +13,7 @@ An analog binocular kigurumi vision enhancemnent project based on ESP32-S3 modul
 * I2S-based dual OSD display
 * Driving peripherals such as fan, glowing eye and lock (lock may need to be designed and ported by users)
 * External capture card output
-* SAA7113-based Camera capture
+* SAA7113/TW9910-based Camera capture
 * BLE-Based communication protocol
 
 ## Video Introduction (Chinese)
@@ -21,14 +24,9 @@ An analog binocular kigurumi vision enhancemnent project based on ESP32-S3 modul
 * For Verilog code, compile with [AGM Supra](https://www.agmcn.com/developer/tool/) and flash through 3-pin programming port (TCK, TMS, GND) with [AGM DAP-LINK](https://www.agmcn.com/doc/6878.html). The device and the programmer need to be connected to the same computer.
 
 ## Notice
-* It's recommended to use PAL format camera because of the higher resolution. For the headset, it's better to choose one with a good deinterlacing feature.
+* It's recommended to use PAL format camera because of the higher resolution. For the headset, it's better to choose one with a good deinterlacing and comb filter feature.
 * It's recommended to take some anti-moisture precautions to keep the circuitry stable. **Otherwise, you might run into situations including, but not limited to,** things like the screen suddenly dimming, flipping, or the time information not being saved. If the screen image flips unexpectedly, you can try pressing the menu button multiple times in brightness adjustment mode to manually flip it back.
 * Communication protocol does not use BLE native pairing method for the convenience of mobile phone operation. See `main/protocol`.
-
-## TODO
-- [x] Implement camera capture
-- [x] Improve the protocol and add support for shortcut and settings table
-- [ ] Digital camera input
 
 ## License
 Verilog code `verilog/` and resource generator `resgen/` are under **MIT license**, the rest of code is under **GNU GPL v3.0**. Third-party components retain their respactive licenses.

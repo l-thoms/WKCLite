@@ -2,6 +2,8 @@
 #include <string.h>
 #include <sys/time.h>
 #include "esp_log.h"
+#include "psa/crypto.h"
+#include "security.h"
 #include "command_parser.h"
 #include "cJSON.h"
 #include "host/ble_gatt.h"
@@ -14,23 +16,122 @@
 #include "shortcut.h"
 #include "quicksettings.h"
 
-#define WKC_NOTIFY_DEFAULT() do {                                           \
-os_mbuf_append(notify_om, (uint8_t[]) {(uint8_t)WKC_NOTIFY_SUCCESSED}, 1);  \
-ble_gatts_notify_custom(conn_handle, attr_handle, notify_om);} while(0)
+#define WKC_NOTIFY_SINGLE(result) do { \
+    int notify_length; \
+    uint8_t *notify_packed = wkc_command_pack((uint8_t[]) { result }, 1, &notify_length); \
+    if (notify_packed) \
+    { \
+        os_mbuf_append(notify_om, notify_packed, notify_length);  \
+        ble_gatts_notify_custom(conn_handle, attr_handle, notify_om); \
+        free(notify_packed); \
+    } \
+} while(0)
 
-#define WKC_NOTIFY_SINGLE(result) do {                                  \
-os_mbuf_append(notify_om, (uint8_t[]) {(uint8_t)result}, 1);            \
-ble_gatts_notify_custom(conn_handle, attr_handle, notify_om);} while(0)
+#define WKC_NOTIFY_DEFAULT() WKC_NOTIFY_SINGLE(0)
 
 static wkc_command_t current_command = WKC_CMD_NONE;
+// Microseconds from 1970/1/1
+static uint64_t rx_timestamp = 0;
+static uint64_t conn_timestamp = 0;
+
+static bool wkc_verify_timestamp_priv(uint64_t time_data, uint64_t *reference,
+                                      bool append)
+{
+    if (time_data > *reference)
+    {
+        if (append)
+            *reference = time_data;
+        return true;
+    }
+    else return false;
+}
+
+bool wkc_verify_rx_timestamp(uint64_t time_data)
+{
+    return wkc_verify_timestamp_priv(time_data, &rx_timestamp, true);
+}
+
+bool wkc_verify_conn_timestamp(uint64_t time_data)
+{
+    return wkc_verify_timestamp_priv(time_data, &conn_timestamp, false);
+}
+
+void wkc_append_conn_timestamp(uint64_t time_data)
+{
+    if (time_data > conn_timestamp)
+        conn_timestamp = time_data;
+}
+
+void wkc_command_reset_timestamp()
+{
+    rx_timestamp = 0;
+}
+
+uint8_t *wkc_command_unpack(uint8_t *command, int length, int *output_length)
+{
+    if (!output_length) return NULL;
+    if (!command || length < 28)
+    {
+        *output_length = 0;
+        return NULL;
+    }
+    uint8_t *result = calloc(length - 28, 1);
+
+    int status = protocol_security_decrypt(command, length, result, output_length);
+    if (status) goto command_unpack_failed;
+
+    // Verify timestamp
+    uint64_t timestamp;
+    memcpy(&timestamp, &result[*output_length - 8], 8);
+    if (!wkc_verify_rx_timestamp(timestamp)) goto command_unpack_failed;
+    *output_length -= 8;
+    result[*output_length] = 0;
+
+    return result;
+    command_unpack_failed:
+    *output_length = 0;
+    free(result);
+    return NULL;
+}
+
+uint8_t *wkc_command_pack(uint8_t *command, int length, int *output_length)
+{
+    if (!output_length || !command) return NULL;
+
+    uint8_t *command_with_timestamp = calloc(length + 8, 1);
+    uint8_t *result = calloc(length + 36, 1);
+    if (!command_with_timestamp || !result) return NULL;
+    memcpy(command_with_timestamp, command, length);
+    struct timeval tv;
+    gettimeofday(&tv, NULL);
+    uint64_t tx_time = tv.tv_sec * 1000000 + tv.tv_usec;
+    memcpy(&command_with_timestamp[length], &tx_time, 8);
+    int status = protocol_security_encrypt(command_with_timestamp, length + 8, result,
+                                           output_length);
+    free(command_with_timestamp);
+    if (status == 0)
+    {
+        *output_length += 12;
+        return result;
+    }
+
+    *output_length = 0;
+    free(result);
+    return NULL;
+}
 
 int wkc_write_command(uint16_t conn_handle, uint16_t attr_handle,
     uint8_t* command, int length, ui_shell_t *shell)
 {
-    if(length == 0) return 0;
+    struct os_mbuf *notify_om = ble_hs_mbuf_att_pkt();
+    if(length == 0)
+    {
+        os_mbuf_free_chain(notify_om);
+        WKC_NOTIFY_SINGLE(1);
+        return 0;
+    }
     wkc_command_t command_type = command[0];
     current_command = (wkc_command_t)command_type;
-    struct os_mbuf *notify_om = ble_hs_mbuf_att_pkt();
     int ret = 0;
     display_reset_power_save();
     switch (command_type)
@@ -41,6 +142,7 @@ int wkc_write_command(uint16_t conn_handle, uint16_t attr_handle,
             WKC_NOTIFY_DEFAULT();
         }
         break;
+        // Deprecated
         case WKC_CMD_TIME_SYNC:
         {
             if (length < 7)
@@ -99,28 +201,35 @@ int wkc_write_command(uint16_t conn_handle, uint16_t attr_handle,
 // Android does not support long read, so the data should be splitted
 uint8_t *wkc_get_command_output(int *length)
 {
+    uint8_t *result_raw = NULL;
     uint8_t *result = NULL;
+    int length_raw = 0;
     *length = 0;
     char *placeholder = "\0{}";
     switch (current_command)
     {
         case WKC_CMD_READ_SHORTCUT_TABLE:
         case WKC_CMD_READ_SHORTCUT_ITEM:
-            result = malloc(PROTOCOL_READ_REQUEST_LENGTH + 1);
-            *length = protocol_shortcut_get_current_output(result,
-                      PROTOCOL_READ_REQUEST_LENGTH);
+            result_raw = malloc(PROTOCOL_READ_REQUEST_LENGTH + 1);
+            length_raw = protocol_shortcut_get_current_output(result_raw,
+                         PROTOCOL_READ_REQUEST_LENGTH);
             break;
         case WKC_CMD_READ_SETTINGS_TABLE:
         case WKC_CMD_READ_SETTINGS_ITEM:
-            result = malloc(PROTOCOL_READ_REQUEST_LENGTH + 1);
-            *length = protocol_quicksettings_get_current_output(result,
-                      PROTOCOL_READ_REQUEST_LENGTH);
+            result_raw = malloc(PROTOCOL_READ_REQUEST_LENGTH + 1);
+            length_raw = protocol_quicksettings_get_current_output(result_raw,
+                         PROTOCOL_READ_REQUEST_LENGTH);
             break;
         default:
-            *length = sizeof(placeholder) - 1;
-            result = malloc(*length);
-            memcpy(result, placeholder, *length);
+            length_raw = sizeof(placeholder) - 1;
+            result_raw = malloc(length_raw);
+            memcpy(result_raw, placeholder, length_raw);
             break;
+    }
+    if (result_raw)
+    {
+        result = wkc_command_pack(result_raw, length_raw, length);
+        free(result_raw);
     }
     return result;
 }
@@ -212,6 +321,7 @@ char *wkc_table_build(wkc_table_group_t *groups, int group_num)
     {
         cJSON *group_json = cJSON_CreateObject();
         cJSON_AddStringToObject(group_json, "name", groups[i].name);
+        cJSON_AddStringToObject(group_json, "display_name", groups[i].display_name);
         cJSON *items_json = cJSON_AddArrayToObject(group_json, "items");
 
         int j = 0;

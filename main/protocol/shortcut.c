@@ -101,7 +101,8 @@ int protocol_shortcut_get_table(char *key)
     };
     wkc_table_group_t groups[] = {
         {
-            .name = wkc_translations_get_string("shortcut_shortcuts"),
+            .name = "shortcuts",
+            .display_name = wkc_translations_get_string("shortcut_shortcuts"),
             .items = shortcut_items
         }
     };
